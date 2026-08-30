@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #1B2B5E;
+  --color-navy-dark: #0d1632;
+  --color-gold: #f5a124;
+  --color-gold-light: #f7b84b;
+  --color-cream: #ffffff;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #ffffff;
+  color: #1E1E2A;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B2B5E;
+  border-radius: 3px;
+}
+
+/* ── Responsive baseline (max-width: 900px) ──────────────── */
+@media (max-width: 900px) {
+  /* Hero two-column → single column */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Card grids → single column */
+  .grid-3,
+  .grid-4,
+  .grid-5 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer grid → two columns then stack */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Desktop nav hidden */
+  .nav-desktop {
+    display: none !important;
+  }
+
+  /* Hamburger button visible */
+  .nav-hamburger {
+    display: flex !important;
+  }
+
+  /* Hide desktop CTA in nav bar */
+  .nav-cta-desktop {
+    display: none !important;
+  }
+
+  /* Announcement bar: hide request button on small screens */
+  .announcement-cta {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Footer fully stacks */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Responsive additions ────────────────────────────────────── */
+
+/* Minimum font size on phones */
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+}
+
+/* KeyFactsStrip — 2-up at 768, 1-up at 480 */
+@media (max-width: 768px) {
+  .key-facts-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 480px) {
+  .key-facts-grid { grid-template-columns: 1fr !important; }
+  .key-facts-article { border-right: none !important; border-bottom: 1px solid #eef0f8 !important; }
+}
+
+/* CardGrid — 1-up on phones */
+@media (max-width: 480px) {
+  .card-grid { grid-template-columns: 1fr !important; }
+}
+
+/* RelatedPages — 2-up at 768, 1-up at 480 */
+@media (max-width: 768px) {
+  .related-pages-grid { grid-template-columns: 1fr 1fr !important; }
+}
+@media (max-width: 480px) {
+  .related-pages-grid { grid-template-columns: 1fr !important; }
+}
+
+/* StepTimeline — single column on phones */
+@media (max-width: 600px) {
+  .step-timeline {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  .step-timeline-divider { display: none !important; }
+}
+
+/* OnThisPageNav — hide below 1024px */
+@media (max-width: 1024px) {
+  .on-this-page-nav-wrap { display: none !important; }
+}
+
+/* PageHero flagship — stack below 768px */
+@media (max-width: 768px) {
+  .hero-flagship-inner {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  .hero-flagship-left {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* PageHero heading — prevent overflow on small screens */
+@media (max-width: 480px) {
+  .page-hero-h1 { font-size: clamp(26px, 7vw, 38px) !important; }
+}
+@media (max-width: 768px) {
+  .page-hero-h1-flagship { font-size: clamp(28px, 6vw, 44px) !important; }
+}
+
+/* Breadcrumbs — hide middle items on very small screens */
+@media (max-width: 480px) {
+  .breadcrumb-middle { display: none !important; }
+}
+
+/* ── Card header stacking (icon | title+desc | right pill) ────── */
+/*
+ * Apply .card-header-stack to the outer flex row of any card header that
+ * has the pattern: [icon tile] + [title / description] + [right-aligned badge/pill].
+ * Below 768px it stacks into three full-width rows:
+ *   Row 1: icon inline-left + title to the right of icon
+ *   Row 2: pill/badge, full width, left-aligned
+ *   Row 3: description, full width
+ */
+.card-header-stack {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .card-header-stack {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* Icon tile + title stay on the same row — icon is already first child,
+     title is inside the second child (flex: 1 div).
+     The third child (pill/badge) drops to its own row. */
+  .card-header-stack > *:last-child {
+    flex-basis: 100% !important;
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+    order: 3;
+  }
+
+  /* Ensure icon tile doesn't grow */
+  .card-header-stack > *:first-child {
+    flex-shrink: 0 !important;
+    order: 1;
+  }
+
+  /* Title+description container takes remaining width on first row */
+  .card-header-stack > *:nth-child(2) {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    order: 2;
+  }
+}
+
+/* ── Footer responsive ───────────────────────────────────────── */
+
+/* footer-main-grid: 5-col on desktop, 1-col on mobile */
+@media (max-width: 768px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr !important;
+    padding: 40px 24px !important;
+    gap: 0 !important;
+  }
+
+  /* Brand column always fully visible */
+  .footer-main-grid > *:first-child {
+    margin-bottom: 32px;
+  }
+
+  /* Accordion columns */
+  .footer-col {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Show the toggle button on mobile, hide desktop heading */
+  .footer-col-toggle {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-col-desktop-heading {
+    display: none !important;
+  }
+
+  /* Collapse content by default */
+  .footer-col-content {
+    display: none;
+    padding-bottom: 16px;
+  }
+
+  .footer-col-content.footer-col-open {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Always show content on desktop */
+  .footer-col-content {
+    display: block !important;
+  }
+
+  /* Hide mobile toggle on desktop */
+  .footer-col-toggle {
+    display: none !important;
+  }
+
+  /* Always show desktop heading on desktop */
+  .footer-col-desktop-heading {
+    display: block !important;
+  }
+}
+
+/* footer-location-row */
+@media (max-width: 768px) {
+  .footer-location-row {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .footer-location-row li button {
+    font-size: 12px !important;
+  }
+}
+
+/* ── ProcessJourney ──────────────────────────────────────────── */
+.pj-rail-v { display: none; }
+
+.pj-rail-progress {
+  position: absolute;
+  inset: 0;
+  background: #f5a124;
+  box-shadow: 0 0 12px rgba(245,161,36,0.45);
+  width: 0%;
+  transition: width 1.2s ease-out;
+}
+.pj-rail-progress.pj-animated { width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pj-rail-progress { transition: none; width: 100%; }
+  .pj-medallion { transition: none !important; }
+  .pj-card { transition: none !important; }
+}
+
+@media (max-width: 900px) {
+  /* Switch to vertical layout */
+  .pj-rail-h { display: none !important; }
+  .pj-rail-v {
+    display: block;
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e8edf6;
+    overflow: hidden;
+  }
+  .pj-rail-v .pj-rail-progress {
+    width: 100% !important;
+    height: 0%;
+    transition: height 1.2s ease-out;
+  }
+  .pj-rail-v .pj-rail-progress.pj-animated { height: 100%; width: 100% !important; }
+  @media (prefers-reduced-motion: reduce) {
+    .pj-rail-v .pj-rail-progress { transition: none; height: 100%; }
+  }
+
+  .pj-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+  }
+  .pj-step {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding-top: 0 !important;
+  }
+  .pj-medallion-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+  }
+  .pj-card { width: 100% !important; flex: 1; }
+  .pj-medallion { margin-bottom: 0 !important; }
+  .pj-header { max-width: 100% !important; }
+}
+
+/* news-grid: 2-col desktop, single-col mobile */
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .news-grid article:first-child {
+    grid-row: auto !important;
+  }
+}
+
+/* Resources page tab bar — horizontal scroller on mobile */
+@media (max-width: 768px) {
+  .resources-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .resources-tabs::-webkit-scrollbar { display: none; }
+  .resources-tabs button { white-space: nowrap; }
+}
+
+/* Blog page: sidebar drops below on mobile */
+@media (max-width: 900px) {
+  .blog-layout { flex-direction: column !important; }
+  .blog-sidebar { width: 100% !important; position: static !important; }
+}
+
+/* Tools page: accordion panels full width on mobile */
+@media (max-width: 768px) {
+  .tools-card-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Segmentation tiles grid ─────────────────────────── */
+.segmentation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .segmentation-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .segmentation-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Tools strip inner wrapper ───────────────────────── */
+@media (max-width: 768px) {
+  .tools-strip-inner { flex-direction: column !important; align-items: flex-start !important; }
+}
+
+/* ── Sticky mobile CTA ───────────────────────────────── */
+.sticky-mobile-cta { display: none; }
+@media (max-width: 768px) {
+  .sticky-mobile-cta { display: flex; }
+}
+
+/* ── Points Calculator responsive layout ────────────── */
+@media (max-width: 768px) {
+  .points-result-card { position: static !important; width: 100% !important; margin-top: 24px; }
+  .points-layout { flex-direction: column !important; }
+}
+
+/* ── ComplianceDisclaimer grid ───────────────────────── */
+.compliance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .compliance-grid { grid-template-columns: 1fr; gap: 16px; }
+}
