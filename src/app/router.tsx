@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { withNavigate } from "@/lib/withNavigate"
 import { LEGACY_ROUTE_REDIRECTS } from "@/lib/navigation"
 import { ROUTE } from "@/data/routes"
+import HomePage from "@/pages/HomePage"
 import BookConsultationPage from "@/pages/BookConsultationPage"
 
 import EmployerSponsorshipPage from "@/pages/employer-sponsored/EmployerSponsorshipPage"
@@ -52,6 +53,7 @@ import ChecklistsPage from "@/pages/practice/ChecklistsPage"
 import ToolsPage from "@/pages/practice/ToolsPage"
 
 const Pages = {
+  Home: HomePage,
   EmployerSponsorship: withNavigate(EmployerSponsorshipPage),
   EmployerNomination186: withNavigate(EmployerNomination186Page),
   SkillRequirements186: withNavigate(SkillRequirements186Page),
@@ -102,7 +104,7 @@ const legacyRedirects = Object.entries(LEGACY_ROUTE_REDIRECTS).map(([from, to]) 
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<Pages.Home />} />
       <Route path={`/${ROUTE.bookConsultation}`} element={<Pages.BookConsultation />} />
 
       <Route path={`/${ROUTE.employerSponsoredVisas}`} element={<Pages.EmployerSponsorship />} />
