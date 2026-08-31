@@ -3,8 +3,7 @@ import { useAppNavigate } from '@/lib/navigation'
 import { intakeRefNumber, useIntakeSubmit } from '@/lib/api'
 import ContactForm from '@/components/forms/ContactForm'
 
-// PLACEHOLDER — replace with real professional photo before launch
-import nanakLogo from '/src/imports/nanak-facebook-profile.png'
+import navpreetPhoto from '@/imports/navpreet-aulakh.jpg'
 import AustralianSkyline from '@/components/ui/AustralianSkyline'
 import cardKangaroo from '/src/imports/card-kangaroo.png'
 import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, NAVY_MID, NAVY_GRAD, NAVY_GRAD_V, HERO_GRAD, CREAM, GREY_BAND, TEXT } from '@/theme'
@@ -18,6 +17,7 @@ import { CardGrid } from '@/components/page/CardGrid'
 import { CtaBand } from '@/components/page/CtaBand'
 import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import { ROUTE } from '@/data/routes'
+import { usePageSeo } from '@/hooks/usePageSeo'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
@@ -435,6 +435,18 @@ const FAQS = [
 
 function FaqSection() {
   const [open, setOpen] = useState<number | null>(null)
+  const [faqs, setFaqs] = useState(FAQS)
+
+  React.useEffect(() => {
+    import('@/lib/contentApi').then(({ fetchFaqByPageKey }) => {
+      fetchFaqByPageKey('homepage').then((col) => {
+        if (col?.items?.length) {
+          setFaqs(col.items.map((item) => ({ q: item.q, a: item.a })))
+        }
+      })
+    })
+  }, [])
+
   return (
     <section style={{ background: '#ffffff', padding: '88px 24px', borderTop: '1px solid #eef0f6' }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
@@ -449,7 +461,7 @@ function FaqSection() {
 
         {/* Accordion */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {FAQS.map((faq, i) => (
+          {faqs.map((faq, i) => (
             <div key={i}
               style={{ background: '#ffffff', border: open === i ? `1.5px solid ${GOLD}` : '1.5px solid #e8eaf0', borderRadius: 14, overflow: 'hidden', boxShadow: open === i ? '0 4px 20px rgba(245,161,36,0.1)' : '0 1px 4px rgba(27,43,94,0.04)', transition: 'border-color 0.2s, box-shadow 0.2s' }}
             >
@@ -490,9 +502,7 @@ export default function HomePage() {
   const [hoveredTile, setHoveredTile] = useState<string | null>(null)
   const [showSticky, setShowSticky] = useState(false)
 
-  React.useEffect(() => {
-    document.title = 'Australian Migration Agents | Nanak Migration Group'
-  }, [])
+  usePageSeo('home')
 
   React.useEffect(() => {
     function onScroll() {
@@ -1348,19 +1358,17 @@ export default function HomePage() {
 
           </div>
 
-          {/* RIGHT — Founder panel (photo to come — see pre-launch checklist) */}
-          <div style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-              <div style={{ width: 100, height: 100, borderRadius: '50%', background: 'rgba(245,161,36,0.15)', border: '2px solid rgba(245,161,36,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src={nanakLogo} alt="Nanak Migration Group monogram" style={{ width: 64, height: 64, objectFit: 'contain', opacity: 0.9 }} />
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Photo to come</div>
-              </div>
-            </div>
+          {/* RIGHT — Founder panel */}
+          <div style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
+            <img
+              src={navpreetPhoto}
+              alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,22,50,0.92) 0%, rgba(13,22,50,0.35) 45%, rgba(13,22,50,0.08) 100%)' }} />
             {/* credential card */}
             <div style={{ position: 'absolute', bottom: '12%', left: 24, zIndex: 2, display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.2)', borderLeft: `3px solid ${GOLD}`, borderRadius: 8, padding: '12px 18px' }}>
-              <img src={nanakLogo} alt="Nanak Migration Group" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', flexShrink: 0, opacity: 0.9 }} />
+              <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#ffffff', lineHeight: 1.2 }}>Navpreet Aulakh</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 1 }}>Founder, Registered Migration Agent</div>
