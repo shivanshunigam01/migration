@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { GOLD, NAVY, NAVY_DARK, GREY_BAND, TEXT } from '@/theme'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
@@ -8,21 +8,67 @@ import { CtaBand } from '@/components/page/CtaBand'
 import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import StructuredData from '@/components/page/StructuredData'
 import { NAV_ITEMS } from '@/data/navItems'
+import { ROUTE } from '@/data/routes'
 import { PAGE_META } from '@/data/pageMeta'
 import { BLOG_POSTS } from '@/data/blogPosts'
+import { fetchPublishedBlogs } from '@/lib/contentApi'
+import { usePageSeo } from '@/lib/usePageSeo'
 
-/* ── Derive unique categories ─────────────────────────── */
-const ALL_BLOG_CATEGORIES = Array.from(new Set(BLOG_POSTS.map(p => p.category)))
+type DisplayPost = {
+  id: string
+  slug: string
+  date: string
+  category: string
+  title: string
+  standfirst: string
+  relatedRoute: string
+}
+
+function formatDate(iso?: string) {
+  if (!iso) return ''
+  return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+}
 
 export default function BlogPage({ navigate }: { navigate: (page: string) => void }) {
   const [query, setQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
+  const [posts, setPosts] = useState<DisplayPost[]>([])
+
+  usePageSeo('blog', PAGE_META['blog'])
 
   useEffect(() => {
-    document.title = PAGE_META['blog'].title
+    fetchPublishedBlogs().then((remote) => {
+      if (remote && remote.length > 0) {
+        setPosts(
+          remote.map((p) => ({
+            id: p.id,
+            slug: p.slug,
+            date: formatDate(p.publishedAt),
+            category: p.category,
+            title: p.title,
+            standfirst: p.standfirst,
+            relatedRoute: p.relatedRoute,
+          }))
+        )
+      } else {
+        setPosts(
+          BLOG_POSTS.map((p) => ({
+            id: p.id,
+            slug: p.id,
+            date: p.date,
+            category: p.category,
+            title: p.title,
+            standfirst: p.standfirst,
+            relatedRoute: p.relatedRoute,
+          }))
+        )
+      }
+    })
   }, [])
 
-  const filtered = BLOG_POSTS.filter(post => {
+  const ALL_BLOG_CATEGORIES = useMemo(() => Array.from(new Set(posts.map((p) => p.category))), [posts])
+
+  const filtered = posts.filter((post) => {
     const matchesQuery =
       !query ||
       post.title.toLowerCase().includes(query.toLowerCase()) ||
@@ -30,6 +76,8 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
     const matchesCategory = !activeCategory || post.category === activeCategory
     return matchesQuery && matchesCategory
   })
+
+  const openPost = (post: DisplayPost) => navigate(`${ROUTE.blog}/${post.slug}`)
 
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#fff', color: TEXT }}>
@@ -113,7 +161,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   cursor: 'pointer',
                   transition: 'box-shadow 0.15s',
                 }}
-                onClick={() => navigate(post.relatedRoute)}
+                onClick={() => openPost(post)}
                 onMouseEnter={e => {
                   ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(27,43,94,0.12)'
                 }}
@@ -249,10 +297,10 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
               Recent Posts
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-              {BLOG_POSTS.slice(0, 6).map(post => (
+              {posts.slice(0, 6).map(post => (
                 <button
                   key={post.id}
-                  onClick={() => navigate(post.relatedRoute)}
+                  onClick={() => openPost(post)}
                   style={{
                     background: 'none',
                     border: 'none',

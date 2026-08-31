@@ -49,6 +49,7 @@ import AboutPage from "@/pages/practice/AboutPage"
 import ResourcesPage from "@/pages/practice/ResourcesPage"
 import GuidesPage from "@/pages/practice/GuidesPage"
 import BlogPage from "@/pages/practice/BlogPage"
+import BlogPostPage from "@/pages/practice/BlogPostPage"
 import ChecklistsPage from "@/pages/practice/ChecklistsPage"
 import ToolsPage from "@/pages/practice/ToolsPage"
 
@@ -92,6 +93,7 @@ const Pages = {
   Resources: withNavigate(ResourcesPage),
   Guides: withNavigate(GuidesPage),
   Blog: withNavigate(BlogPage),
+  BlogPost: withNavigate(BlogPostPage),
   Checklists: withNavigate(ChecklistsPage),
   Tools: withNavigate(ToolsPage),
   BookConsultation: withNavigate(BookConsultationPage),
@@ -151,6 +153,7 @@ export default function AppRouter() {
       <Route path={`/${ROUTE.resources}`} element={<Pages.Resources />} />
       <Route path={`/${ROUTE.guides}`} element={<Pages.Guides />} />
       <Route path={`/${ROUTE.blog}`} element={<Pages.Blog />} />
+      <Route path={`/${ROUTE.blog}/:slug`} element={<Pages.BlogPost />} />
       <Route path={`/${ROUTE.checklists}`} element={<Pages.Checklists />} />
       <Route path={`/${ROUTE.tools}`} element={<Pages.Tools />} />
 

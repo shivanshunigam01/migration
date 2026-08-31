@@ -17,7 +17,7 @@ import { CardGrid } from '@/components/page/CardGrid'
 import { CtaBand } from '@/components/page/CtaBand'
 import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import { ROUTE } from '@/data/routes'
-import { usePageSeo } from '@/hooks/usePageSeo'
+import { usePageSeo } from '@/lib/usePageSeo'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
