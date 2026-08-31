@@ -18,6 +18,7 @@ import { CtaBand } from '@/components/page/CtaBand'
 import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import { ROUTE } from '@/data/routes'
 import { usePageSeo } from '@/lib/usePageSeo'
+import { fetchPublishedBlogs } from '@/lib/contentApi'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
@@ -501,8 +502,26 @@ export default function HomePage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [hoveredTile, setHoveredTile] = useState<string | null>(null)
   const [showSticky, setShowSticky] = useState(false)
+  const [news, setNews] = useState(NEWS)
 
   usePageSeo('home')
+
+  React.useEffect(() => {
+    fetchPublishedBlogs().then((posts) => {
+      if (!posts?.length) return
+      setNews(
+        posts.slice(0, 3).map((p) => ({
+          date: p.publishedAt
+            ? new Date(p.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+            : '',
+          category: p.category,
+          title: p.title,
+          standfirst: p.standfirst,
+          slug: p.slug,
+        }))
+      )
+    })
+  }, [])
 
   React.useEffect(() => {
     function onScroll() {
@@ -1260,27 +1279,28 @@ export default function HomePage() {
           <div className="news-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
 
             {/* Featured card — navy panel, no image */}
-            {NEWS[0] && (
+            {news[0] && (
               <article
                 style={{ gridRow: '1 / 3', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s' }}
+                onClick={() => navigate(`${ROUTE.blog}/${(news[0] as { slug?: string }).slug || ''}`)}
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 16px 48px rgba(13,22,50,0.35)'; el.style.transform = 'translateY(-3px)'; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = 'none'; el.style.transform = 'none'; }}
               >
                 {/* Category + date */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
-                  <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: NAVY_DARK, background: GOLD, padding: '4px 12px', borderRadius: 100 }}>{NEWS[0].category}</span>
-                  <span style={{ fontSize: 11, color: 'rgba(245,161,36,0.7)', fontWeight: 500 }}>{NEWS[0].date}</span>
+                  <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: NAVY_DARK, background: GOLD, padding: '4px 12px', borderRadius: 100 }}>{news[0].category}</span>
+                  <span style={{ fontSize: 11, color: 'rgba(245,161,36,0.7)', fontWeight: 500 }}>{news[0].date}</span>
                 </div>
                 {/* Headline */}
                 <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 400, color: '#ffffff', margin: '0 0 20px', lineHeight: 1.2, letterSpacing: '-0.01em', flex: 1 }}>
-                  {NEWS[0].title.startsWith('[DRAFT]') && (
+                  {news[0].title.startsWith('[DRAFT]') && (
                     <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 4 }}>DRAFT</span>
                   )}
-                  {NEWS[0].title.startsWith('[DRAFT]') ? NEWS[0].title.replace('[DRAFT] ', '') : NEWS[0].title}
+                  {news[0].title.startsWith('[DRAFT]') ? news[0].title.replace('[DRAFT] ', '') : news[0].title}
                 </h3>
                 {/* Standfirst */}
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, margin: '0 0 32px', WebkitLineClamp: 3, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
-                  {NEWS[0].standfirst}
+                  {news[0].standfirst}
                 </p>
                 {/* Read more */}
                 <a href="#" style={{ fontSize: 13, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
@@ -1291,8 +1311,9 @@ export default function HomePage() {
             )}
 
             {/* Side cards — SURFACE, gold hairline top, no image */}
-            {NEWS.slice(1).map((n, i) => (
+            {news.slice(1).map((n, i) => (
               <article key={i}
+                onClick={() => navigate(`${ROUTE.blog}/${(n as { slug?: string }).slug || ''}`)}
                 style={{ background: '#ffffff', borderRadius: 16, borderTop: `3px solid ${GOLD}`, padding: '28px 28px 28px', display: 'flex', flexDirection: 'column', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s' }}
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 8px 32px rgba(27,43,94,0.1)'; el.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = 'none'; el.style.transform = 'none'; }}

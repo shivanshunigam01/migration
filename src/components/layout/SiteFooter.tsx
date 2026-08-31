@@ -3,6 +3,7 @@ import { GOLD, NAVY, NAVY_DARK } from '@/theme'
 import NanakLogo from '@/components/layout/NanakLogo'
 import { ROUTE } from '@/data/routes'
 import { useIntakeSubmit } from '@/lib/api'
+import { useSiteContent } from '@/hooks/useSiteContent'
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────
 const jsonLd = {
@@ -37,7 +38,7 @@ const jsonLd = {
 }
 
 // ── Newsletter form (preserved exactly) ─────────────────────────────────
-function NewsletterForm() {
+function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: string }) {
   const { submit, loading, error, success } = useIntakeSubmit('newsletter')
   const [email, setEmail] = useState('')
   const [hp, setHp] = useState('')
@@ -145,7 +146,7 @@ function NewsletterForm() {
           transition: 'background 0.15s',
         }}
       >
-        {loading ? 'Subscribing…' : 'Subscribe →'}
+        {loading ? 'Subscribing…' : buttonLabel}
       </button>
       </div>
       <input
@@ -289,6 +290,7 @@ function ColHeading({ children }: { children: React.ReactNode }) {
 
 // ── Main component ─────────────────────────────────────────────────────────
 export default function SiteFooter({ navigate }: { navigate: (page: string) => void }) {
+  const { newsletter } = useSiteContent()
   const [openCol, setOpenCol] = useState<string | null>(null)
   const toggleCol = (id: string) => setOpenCol((prev) => (prev === id ? null : id))
 
@@ -443,7 +445,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   color: 'rgba(255,255,255,0.5)',
                 }}
               >
-                Immigration Updates
+                {newsletter.eyebrow || 'Immigration Updates'}
               </span>
             </div>
             <div
@@ -456,13 +458,13 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                 lineHeight: 1.2,
               }}
             >
-              Australia immigration news straight to your inbox
+              {newsletter.title || 'Australia immigration news straight to your inbox'}
             </div>
             <div style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
-              Policy updates, visa changes, occupation list alerts — no spam, unsubscribe any time.
+              {newsletter.subtext || 'Policy updates, visa changes, occupation list alerts — no spam, unsubscribe any time.'}
             </div>
           </div>
-          <NewsletterForm />
+          <NewsletterForm buttonLabel={newsletter.buttonLabel} />
         </div>
       </div>
 
