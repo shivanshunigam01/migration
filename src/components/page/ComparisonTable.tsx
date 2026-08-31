@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { NAVY } from '@/theme'
+import { Reveal } from '@/components/motion'
 
 export interface ComparisonColumn {
   key: string
@@ -35,17 +36,14 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
   }, [])
 
   if (isMobile) {
-    // Stacked card layout — one card per row
     return (
-      <div>
+      <Reveal preset="up">
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {rows.map((row, i) => (
             <div key={i} style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 12px rgba(27,43,94,0.06)' }}>
-              {/* Feature header */}
               <div style={{ background: NAVY, padding: '10px 16px' }}>
                 <span style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>{row.feature}</span>
               </div>
-              {/* Column values */}
               <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {columns.map(col => (
                   <div key={col.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
@@ -64,12 +62,12 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
             {caption}
           </p>
         )}
-      </div>
+      </Reveal>
     )
   }
 
   return (
-    <div>
+    <Reveal preset="up">
       <div style={{ overflowX: 'auto' }}>
         <table style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 24px rgba(27,43,94,0.07)', minWidth: 480, width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
           <thead>
@@ -115,6 +113,6 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
           {caption}
         </p>
       )}
-    </div>
+    </Reveal>
   )
 }

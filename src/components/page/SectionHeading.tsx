@@ -1,3 +1,4 @@
+import { Reveal } from '@/components/motion'
 import { NAVY } from '@/theme'
 
 export interface SectionHeadingProps {
@@ -13,7 +14,7 @@ export interface SectionHeadingProps {
 export function SectionHeading({ kicker, title, intro, accent = NAVY, light = false, marginBottom }: SectionHeadingProps) {
   const mb = marginBottom ?? (intro ? 48 : 52)
   return (
-    <div style={{ textAlign: 'center', marginBottom: mb }}>
+    <Reveal preset="up" style={{ textAlign: 'center', marginBottom: mb }}>
       {kicker && (
         <div style={{
           fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
@@ -35,6 +36,6 @@ export function SectionHeading({ kicker, title, intro, accent = NAVY, light = fa
           fontSize: 16, maxWidth: 540, margin: '0 auto', lineHeight: 1.6,
         }}>{intro}</p>
       )}
-    </div>
+    </Reveal>
   )
 }

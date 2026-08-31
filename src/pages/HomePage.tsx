@@ -19,6 +19,9 @@ import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import { ROUTE } from '@/data/routes'
 import { usePageSeo } from '@/lib/usePageSeo'
 import { fetchPublishedBlogs } from '@/lib/contentApi'
+import { motion, useReducedMotion } from 'framer-motion'
+import { Reveal, Stagger, StaggerItem, ShieldGlow } from '@/components/motion'
+import { fadeUp, slideRight, staggerContainer } from '@/components/motion/variants'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
@@ -449,16 +452,17 @@ function FaqSection() {
   }, [])
 
   return (
-    <section style={{ background: '#ffffff', padding: '88px 24px', borderTop: '1px solid #eef0f6' }}>
-      <div style={{ maxWidth: 860, margin: '0 auto' }}>
+    <section style={{ background: '#ffffff', padding: '88px 24px', borderTop: '1px solid #eef0f6', position: 'relative', overflow: 'hidden' }}>
+      <ShieldGlow tone="gold" size={400} top="-20%" right="-10%" opacity={0.2} />
+      <div style={{ maxWidth: 860, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
         {/* Heading */}
-        <div style={{ textAlign: 'center', marginBottom: 52 }}>
+        <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Got Questions?</div>
           <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
             Frequently Asked <em style={{ fontStyle: 'italic', color: GOLD }}>Questions</em>
           </h2>
-        </div>
+        </Reveal>
 
         {/* Accordion */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -503,6 +507,7 @@ export default function HomePage() {
   const [hoveredTile, setHoveredTile] = useState<string | null>(null)
   const [showSticky, setShowSticky] = useState(false)
   const [news, setNews] = useState(NEWS)
+  const reduceMotion = useReducedMotion()
 
   usePageSeo('home')
 
@@ -585,52 +590,58 @@ export default function HomePage() {
 
       {/* ── HERO ──────────────────────────────────────────── */}
       <section style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: HERO_GRAD }}>
-        {/* Soft radial glow blobs */}
-        <div style={{ position: 'absolute', top: '-10%', left: '60%', width: 700, height: 700, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 65%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: '0', left: '-5%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(27,43,94,0.05) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <ShieldGlow tone="soft" size={700} top="-10%" left="55%" opacity={0.95} />
+        <ShieldGlow tone="navy" size={500} bottom="0" left="-5%" opacity={0.7} />
+        <ShieldGlow tone="gold" size={360} top="20%" right="8%" opacity={0.35} />
 
         {/* Australian skyline — flush to bottom edge */}
         <AustralianSkyline />
 
         {/* Kangaroo — bottom-right accent */}
-        <img
+        <motion.img
           src={cardKangaroo}
           alt=""
           aria-hidden="true"
+          initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+          animate={{ opacity: 0.18, y: 0 }}
+          transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           style={{
             position: 'absolute',
             bottom: 0,
             right: '4%',
             width: 160,
             height: 'auto',
-            opacity: 0.18,
             pointerEvents: 'none',
             userSelect: 'none',
           }}
         />
 
-        <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 24px', width: '100%' }}>
+        <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 24px', width: '100%', zIndex: 1 }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 56, alignItems: 'center' }}>
-            <div>
+            <motion.div
+              variants={staggerContainer}
+              initial={reduceMotion ? false : 'hidden'}
+              animate="visible"
+            >
               {/* MARA badge */}
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 28, padding: '6px 14px 6px 8px', background: 'rgba(27,43,94,0.08)', border: '1px solid rgba(27,43,94,0.15)', borderRadius: 100 }}>
+              <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 28, padding: '6px 14px 6px 8px', background: 'rgba(27,43,94,0.08)', border: '1px solid rgba(27,43,94,0.15)', borderRadius: 100 }}>
                 <div style={{ width: 22, height: 22, borderRadius: '50%', backgroundColor: NAVY, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon name="check" size={10} color={GOLD} />
                 </div>
                 <span style={{ color: NAVY, fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>MARA-Registered · MARN 2619467</span>
-              </div>
+              </motion.div>
 
-              <h1 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
+              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
                 Your pathway
                 <br /><em style={{ fontStyle: 'italic', color: GOLD }}>to Australia</em>
                 <br />starts here.
-              </h1>
+              </motion.h1>
 
-              <p style={{ color: '#4a4560', fontSize: 17, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 520 }}>
+              <motion.p variants={fadeUp} style={{ color: '#4a4560', fontSize: 17, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 520 }}>
                 Nanak Migration Group — MARA-registered agents with 14 years of experience helping skilled workers, students and families navigate Australia's visa system.
-              </p>
+              </motion.p>
 
-              <div style={{
+              <motion.div variants={fadeUp} style={{
                 background: 'rgba(27,43,94,0.04)',
                 borderLeft: '4px solid #f5a124',
                 borderRadius: '0 8px 8px 0',
@@ -641,40 +652,51 @@ export default function HomePage() {
                 <span style={{ fontSize: 14, lineHeight: 1.6, color: '#1B2B5E' }}>
                   <strong>Nanak Migration Group</strong> is a MARA-registered migration agency (MARN 2619467) helping individuals, families and employers navigate Australian immigration from offices in Melbourne, Sydney, Brisbane and Perth.
                 </span>
-              </div>
+              </motion.div>
 
-              <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 36 }}>
-                <a href="#contact" style={{ background: NAVY_GRAD, color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: '0 4px 20px rgba(13,22,50,0.25)', transition: 'opacity 0.2s' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = '0.88')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = '1')}
-                >Book Free Consultation →</a>
-                <a href="#visas" style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-block', boxShadow: '0 4px 20px rgba(245,161,36,0.35)', transition: 'background-color 0.2s' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = GOLD_LIGHT)}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.backgroundColor = GOLD)}
-                >Explore Visas</a>
-              </div>
+              <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 36 }}>
+                <motion.a
+                  href="#contact"
+                  whileHover={reduceMotion ? undefined : { y: -2, scale: 1.02 }}
+                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                  style={{ background: NAVY_GRAD, color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: '0 4px 20px rgba(13,22,50,0.25)' }}
+                >Book Free Consultation →</motion.a>
+                <motion.a
+                  href="#visas"
+                  whileHover={reduceMotion ? undefined : { y: -2, scale: 1.02, backgroundColor: GOLD_LIGHT }}
+                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                  style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-block', boxShadow: '0 4px 20px rgba(245,161,36,0.35)' }}
+                >Explore Visas</motion.a>
+              </motion.div>
 
-            </div>
+            </motion.div>
 
             {/* AI Pathway Assessment — faded into hero */}
-            <div style={{ position: 'relative' }}>
+            <motion.div
+              style={{ position: 'relative' }}
+              variants={slideRight}
+              initial={reduceMotion ? false : 'hidden'}
+              animate="visible"
+              transition={{ delay: 0.2 }}
+            >
               <PathwayAssessment />
               {/* fade overlay — blends widget edges into hero gradient */}
               <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to bottom, ${HERO_GRAD.split(',')[0].replace('linear-gradient(160deg,', '').trim()} 0%, transparent 18%, transparent 72%, rgba(27,43,94,0.05) 100%)`, pointerEvents: 'none', borderRadius: 16 }} />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(232,240,250,0.7) 0%, transparent 20%, transparent 80%, rgba(232,240,250,0.7) 100%)', pointerEvents: 'none', borderRadius: 16 }} />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── SEGMENTATION TILES ────────────────────────────── */}
-      <section style={{ background: '#ffffff', padding: '64px 24px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' }}>
+      <section style={{ background: '#ffffff', padding: '64px 24px', position: 'relative', overflow: 'hidden' }}>
+        <ShieldGlow tone="gold" size={420} top="-30%" right="-8%" opacity={0.25} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <Reveal preset="up" style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Where are you starting from?</div>
             <h2 style={{ fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 40px 0' }}>Choose your starting point</h2>
-          </div>
-          <div className="segmentation-grid">
+          </Reveal>
+          <Stagger className="segmentation-grid">
             {([
               {
                 id: 'skilled',
@@ -761,34 +783,35 @@ export default function HomePage() {
             ] as { id: string; label: string; desc: string; cta: string; route: string; icon: React.ReactNode }[]).map(tile => {
               const hovered = hoveredTile === tile.id
               return (
-                <div
-                  key={tile.id}
-                  onMouseEnter={() => setHoveredTile(tile.id)}
-                  onMouseLeave={() => setHoveredTile(null)}
-                  onClick={() => navigate(tile.route)}
-                  style={{
-                    background: '#ffffff',
-                    border: '1.5px solid #e8edf5',
-                    borderRadius: 12,
-                    borderTop: hovered ? '3px solid #f5a124' : '3px solid transparent',
-                    padding: '24px',
-                    transform: hovered ? 'translateY(-3px)' : 'none',
-                    transition: 'transform 0.15s, border-top 0.15s, box-shadow 0.15s',
-                    boxShadow: hovered ? '0 8px 24px rgba(27,43,94,0.10)' : '0 2px 8px rgba(27,43,94,0.05)',
-                    cursor: 'pointer',
-                  }}
-                >
-                  {tile.icon}
-                  <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginTop: 12 }}>{tile.label}</div>
-                  <div style={{ fontSize: 13, color: '#64748b', marginTop: 4 }}>{tile.desc}</div>
-                  <span
-                    onClick={e => { e.stopPropagation(); navigate(tile.route) }}
-                    style={{ display: 'block', color: '#f5a124', fontSize: 13, fontWeight: 600, marginTop: 14, cursor: 'pointer' }}
-                  >{tile.cta} →</span>
-                </div>
+                <StaggerItem key={tile.id} preset="scale">
+                  <motion.div
+                    onMouseEnter={() => setHoveredTile(tile.id)}
+                    onMouseLeave={() => setHoveredTile(null)}
+                    onClick={() => navigate(tile.route)}
+                    whileHover={reduceMotion ? undefined : { y: -5 }}
+                    style={{
+                      background: '#ffffff',
+                      border: '1.5px solid #e8edf5',
+                      borderRadius: 12,
+                      borderTop: hovered ? '3px solid #f5a124' : '3px solid transparent',
+                      padding: '24px',
+                      boxShadow: hovered ? '0 8px 24px rgba(27,43,94,0.10)' : '0 2px 8px rgba(27,43,94,0.05)',
+                      cursor: 'pointer',
+                      height: '100%',
+                    }}
+                  >
+                    {tile.icon}
+                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginTop: 12 }}>{tile.label}</div>
+                    <div style={{ fontSize: 13, color: '#64748b', marginTop: 4 }}>{tile.desc}</div>
+                    <span
+                      onClick={e => { e.stopPropagation(); navigate(tile.route) }}
+                      style={{ display: 'block', color: '#f5a124', fontSize: 13, fontWeight: 600, marginTop: 14, cursor: 'pointer' }}
+                    >{tile.cta} →</span>
+                  </motion.div>
+                </StaggerItem>
               )
             })}
-          </div>
+          </Stagger>
         </div>
       </section>
 
@@ -834,31 +857,33 @@ export default function HomePage() {
         ]
         return (
           <>
-            <section style={{ background: GREY_BAND, padding: '80px 24px' }}>
-              <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-                <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <section style={{ background: GREY_BAND, padding: '80px 24px', position: 'relative', overflow: 'hidden' }}>
+              <ShieldGlow tone="navy" size={480} bottom="-40%" left="30%" opacity={0.2} />
+              <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
+                <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 48 }}>
                   <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Visa Pathways</div>
                   <h2 style={{ fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>Browse all visa categories</h2>
-                </div>
+                </Reveal>
                 <CardGrid cards={HUB_CARDS} columns={3} accent={NAVY} navigate={navigate} />
               </div>
             </section>
 
             {/* ── TRUST BAND ────────────────────────────────────── */}
-            <section style={{ background: NAVY, padding: '40px 24px' }}>
-              <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '32px 64px', alignItems: 'center' }}>
+            <section style={{ background: NAVY, padding: '40px 24px', position: 'relative', overflow: 'hidden' }}>
+              <ShieldGlow tone="gold" size={380} top="-60%" right="10%" opacity={0.25} />
+              <Stagger style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '32px 64px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
                 {[
                   { label: 'MARN 2619467', sub: 'MARA Registered Agent' },
                   { label: '14 Years', sub: 'Migration experience' },
                   { label: '4 Offices', sub: 'Melbourne · Sydney · Brisbane · Perth' },
                   { label: 'OMARA', sub: 'Code of Conduct Compliant' },
                 ].map(item => (
-                  <div key={item.label} style={{ textAlign: 'center' }}>
+                  <StaggerItem key={item.label} style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 22, fontWeight: 800, color: GOLD, letterSpacing: '-0.01em' }}>{item.label}</div>
                     <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 4, letterSpacing: '0.04em' }}>{item.sub}</div>
-                  </div>
+                  </StaggerItem>
                 ))}
-              </div>
+              </Stagger>
             </section>
           </>
         )
@@ -1142,8 +1167,9 @@ export default function HomePage() {
       <ProcessJourney />
 
       {/* ── TOOLS STRIP ───────────────────────────────────── */}
-      <section style={{ background: NAVY, padding: '48px 24px' }}>
-        <div className="tools-strip-inner" style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap' }}>
+      <section style={{ background: NAVY, padding: '48px 24px', position: 'relative', overflow: 'hidden' }}>
+        <ShieldGlow tone="gold" size={420} bottom="-50%" left="-5%" opacity={0.3} />
+        <Reveal preset="scale" className="tools-strip-inner" style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>FREE TOOLS</div>
             <div style={{ fontSize: 24, fontWeight: 700, color: '#ffffff', marginBottom: 8 }}>Check your position in minutes</div>
@@ -1154,27 +1180,31 @@ export default function HomePage() {
                 { label: 'Occupation Search', route: 'tools' },
                 { label: 'English Converter', route: 'tools' },
               ] as { label: string; route: string }[]).map(chip => (
-                <button
+                <motion.button
                   key={chip.label}
                   onClick={() => navigate(chip.route)}
+                  whileHover={reduceMotion ? undefined : { y: -2, backgroundColor: 'rgba(255,255,255,0.18)' }}
                   style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#ffffff', fontSize: 12, fontWeight: 600, padding: '6px 14px', borderRadius: 20, cursor: 'pointer' }}
-                >{chip.label}</button>
+                >{chip.label}</motion.button>
               ))}
             </div>
           </div>
-          <button
+          <motion.button
             onClick={() => navigate('tools')}
+            whileHover={reduceMotion ? undefined : { y: -3, scale: 1.03 }}
+            whileTap={reduceMotion ? undefined : { scale: 0.98 }}
             style={{ background: GOLD, color: NAVY, border: 'none', padding: '14px 28px', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0 }}
-          >Explore all tools →</button>
-        </div>
+          >Explore all tools →</motion.button>
+        </Reveal>
       </section>
 
       {/* ── ACCREDITATIONS ────────────────────────────────── */}
-      <section style={{ background: '#f8fafd', padding: '72px 24px', borderTop: '1px solid #e8edf5' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+      <section style={{ background: '#f8fafd', padding: '72px 24px', borderTop: '1px solid #e8edf5', position: 'relative', overflow: 'hidden' }}>
+        <ShieldGlow tone="soft" size={500} top="-20%" left="40%" opacity={0.8} />
+        <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Heading */}
-          <div style={{ textAlign: 'center', marginBottom: 52 }}>
+          <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Registration</div>
             <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3.5vw, 42px)', fontWeight: 300, lineHeight: 1.1, color: NAVY, margin: '0 auto 14px', letterSpacing: '-0.03em' }}>
               Credentials &amp; <em style={{ fontStyle: 'italic', color: GOLD }}>Registration</em>
@@ -1182,13 +1212,14 @@ export default function HomePage() {
             <p style={{ fontSize: 14, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
               Regulated and recognised by Australia's foremost professional bodies.
             </p>
-          </div>
+          </Reveal>
 
           {/* Badge cards */}
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch', gap: 24, flexWrap: 'wrap' }}>
+          <Stagger style={{ display: 'flex', justifyContent: 'center', alignItems: 'stretch', gap: 24, flexWrap: 'wrap' }}>
 
             {/* MARA badge */}
-            <div style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)' }}>
+            <StaggerItem preset="scale">
+            <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Registration Badge — 2619467" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
@@ -1197,10 +1228,12 @@ export default function HomePage() {
                 <div style={{ fontSize: 12, color: '#6b7280' }}>MARN 2619467</div>
                 <a href="https://www.mara.gov.au" target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginTop: 6 }}>www.mara.gov.au →</a>
               </div>
-            </div>
+            </motion.div>
+            </StaggerItem>
 
             {/* MIA */}
-            <div style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)' }}>
+            <StaggerItem preset="scale">
+            <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src="/src/imports/logo-preview-selection.png" alt="Migration Institute of Australia logo" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
@@ -1208,10 +1241,12 @@ export default function HomePage() {
                 <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Migration Institute of Australia</div>
                 <div style={{ fontSize: 12, color: '#6b7280' }}>Professional Member</div>
               </div>
-            </div>
+            </motion.div>
+            </StaggerItem>
 
             {/* QEAC */}
-            <div style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)' }}>
+            <StaggerItem preset="scale">
+            <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img src="/src/imports/Qualified-australian-agent-logo.png" alt="QEAC — Qualified Education Agent Counsellors logo" style={{ maxHeight: 110, maxWidth: 180, objectFit: 'contain' }} />
               </div>
@@ -1219,10 +1254,12 @@ export default function HomePage() {
                 <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>QEAC Certified</div>
                 <div style={{ fontSize: 12, color: '#6b7280' }}>Qualified Education Agent Counsellors</div>
               </div>
-            </div>
+            </motion.div>
+            </StaggerItem>
 
             {/* DoHA / OMARA compliance */}
-            <div style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)' }}>
+            <StaggerItem preset="scale">
+            <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: 96, height: 96, borderRadius: 20, background: `linear-gradient(135deg, ${NAVY} 0%, #1e3aaa 100%)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(245,161,36,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -1233,9 +1270,10 @@ export default function HomePage() {
                 <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>DoHA Regulated</div>
                 <div style={{ fontSize: 12, color: '#6b7280' }}>OMARA Code of Conduct Compliant</div>
               </div>
-            </div>
+            </motion.div>
+            </StaggerItem>
 
-          </div>
+          </Stagger>
 
           {/* Credential chips — driven by TRUST_LOGOS */}
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 12, marginTop: 36 }}>
@@ -1257,11 +1295,12 @@ export default function HomePage() {
           See PAGE_STANDARD.md pre-launch checklist. */}
 
       {/* ── NEWS ──────────────────────────────────────────── */}
-      <section id="news" style={{ background: GREY_BAND, padding: '96px 24px', borderTop: '1px solid #e8edf5' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <section id="news" style={{ background: GREY_BAND, padding: '96px 24px', borderTop: '1px solid #e8edf5', position: 'relative', overflow: 'hidden' }}>
+        <ShieldGlow tone="navy" size={520} top="-10%" right="-15%" opacity={0.15} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Header row */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52 }}>
+          <Reveal preset="up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52 }}>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Latest Updates</div>
               <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.5vw, 46px)', fontWeight: 300, lineHeight: 1.08, color: NAVY, margin: 0, letterSpacing: '-0.03em' }}>
@@ -1273,18 +1312,19 @@ export default function HomePage() {
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
             >View all articles →</a>
-          </div>
+          </Reveal>
 
           {/* Featured + side cards */}
-          <div className="news-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
+          <Stagger className="news-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
 
             {/* Featured card — navy panel, no image */}
             {news[0] && (
-              <article
-                style={{ gridRow: '1 / 3', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s' }}
+              <StaggerItem preset="scale" style={{ gridRow: '1 / 3' }}>
+              <motion.article
+                style={{ height: '100%', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
                 onClick={() => navigate(`${ROUTE.blog}/${(news[0] as { slug?: string }).slug || ''}`)}
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 16px 48px rgba(13,22,50,0.35)'; el.style.transform = 'translateY(-3px)'; }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = 'none'; el.style.transform = 'none'; }}
+                whileHover={reduceMotion ? undefined : { y: -4, boxShadow: '0 16px 48px rgba(13,22,50,0.35)' }}
+                transition={{ duration: 0.22 }}
               >
                 {/* Category + date */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
@@ -1307,16 +1347,18 @@ export default function HomePage() {
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GOLD}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(245,161,36,0.4)'}
                 >Read more →</a>
-              </article>
+              </motion.article>
+              </StaggerItem>
             )}
 
             {/* Side cards — SURFACE, gold hairline top, no image */}
             {news.slice(1).map((n, i) => (
-              <article key={i}
+              <StaggerItem key={i} preset="scale">
+              <motion.article
                 onClick={() => navigate(`${ROUTE.blog}/${(n as { slug?: string }).slug || ''}`)}
-                style={{ background: '#ffffff', borderRadius: 16, borderTop: `3px solid ${GOLD}`, padding: '28px 28px 28px', display: 'flex', flexDirection: 'column', cursor: 'pointer', transition: 'box-shadow 0.2s, transform 0.2s' }}
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 8px 32px rgba(27,43,94,0.1)'; el.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = 'none'; el.style.transform = 'none'; }}
+                whileHover={reduceMotion ? undefined : { y: -3, boxShadow: '0 8px 32px rgba(27,43,94,0.1)' }}
+                transition={{ duration: 0.22 }}
+                style={{ height: '100%', background: '#ffffff', borderRadius: 16, borderTop: `3px solid ${GOLD}`, padding: '28px 28px 28px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
               >
                 {/* Category + date on one line */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
@@ -1339,10 +1381,11 @@ export default function HomePage() {
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY}
                 >Read more →</a>
-              </article>
+              </motion.article>
+              </StaggerItem>
             ))}
 
-          </div>
+          </Stagger>
 
           {/* Editorial footnote */}
           <p style={{ fontSize: 12, fontStyle: 'italic', color: '#9ca3af', marginTop: 24, textAlign: 'right' }}>
@@ -1354,10 +1397,11 @@ export default function HomePage() {
 
       {/* ── CONTACT ───────────────────────────────────────── */}
       <section id="contact" style={{ background: HERO_GRAD, position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'relative', maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 440, alignItems: 'center' }}>
+        <ShieldGlow tone="gold" size={480} top="10%" left="-10%" opacity={0.3} />
+        <div style={{ position: 'relative', maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 440, alignItems: 'center', zIndex: 1 }}>
 
           {/* LEFT — copy */}
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '72px 48px 72px 64px' }}>
+          <Reveal preset="left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '72px 48px 72px 64px' }}>
             <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.2vw, 46px)', fontWeight: 700, lineHeight: 1.1, color: '#1E1E2A', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
               Ready to start your<br />Australian journey?
             </h2>
@@ -1367,20 +1411,21 @@ export default function HomePage() {
 
             {/* CTA button */}
             <div style={{ marginBottom: 28 }}>
-              <a href="#" onClick={(e) => { e.preventDefault(); document.querySelector('#contact form')?.scrollIntoView({ behavior: 'smooth' }) }}
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, backgroundColor: NAVY, color: '#fff', padding: '14px 28px', borderRadius: 7, fontSize: 15, fontWeight: 600, textDecoration: 'none', transition: 'background-color 0.2s, transform 0.15s' }}
-                onMouseEnter={(e) => { const el = e.currentTarget; el.style.backgroundColor = GOLD; el.style.color = NAVY_DARK; el.style.transform = 'translateY(-2px)' }}
-                onMouseLeave={(e) => { const el = e.currentTarget; el.style.backgroundColor = NAVY; el.style.color = '#fff'; el.style.transform = 'translateY(0)' }}
+              <motion.a
+                href="#"
+                onClick={(e) => { e.preventDefault(); document.querySelector('#contact form')?.scrollIntoView({ behavior: 'smooth' }) }}
+                whileHover={reduceMotion ? undefined : { y: -2, backgroundColor: GOLD, color: NAVY_DARK }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, backgroundColor: NAVY, color: '#fff', padding: '14px 28px', borderRadius: 7, fontSize: 15, fontWeight: 600, textDecoration: 'none' }}
               >
                 Book Free Consultation
-              </a>
+              </motion.a>
             </div>
 
 
-          </div>
+          </Reveal>
 
           {/* RIGHT — Founder panel */}
-          <div style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
+          <Reveal preset="right" style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
             <img
               src={navpreetPhoto}
               alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
@@ -1396,34 +1441,35 @@ export default function HomePage() {
                 <div style={{ fontSize: 11, color: GOLD, fontWeight: 600, marginTop: 2, letterSpacing: '0.02em' }}>MARN 2619467</div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* Contact form band below */}
-        <div style={{ background: '#fff', padding: '48px 24px 64px', borderTop: '1px solid #e8eaf0' }}>
+        <Reveal preset="up" style={{ background: '#fff', padding: '48px 24px 64px', borderTop: '1px solid #e8eaf0' }}>
           <div style={{ maxWidth: 640, margin: '0 auto' }}>
             <ContactForm />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* ── OFFICE LOCATIONS ──────────────────────────────── */}
-      <section style={{ background: '#F5F5F7', padding: '80px 24px', borderTop: '1px solid #e4e4e8' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <section style={{ background: '#F5F5F7', padding: '80px 24px', borderTop: '1px solid #e4e4e8', position: 'relative', overflow: 'hidden' }}>
+        <ShieldGlow tone="navy" size={440} bottom="-30%" right="20%" opacity={0.12} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           {/* Heading */}
-          <div style={{ textAlign: 'center', marginBottom: 52 }}>
+          <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Where to Find Us</div>
             <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
               Our Offices Around <em style={{ fontStyle: 'italic', color: GOLD }}>Australia</em>
             </h2>
-          </div>
+          </Reveal>
 
           {/* 5 office cards */}
           <p style={{ textAlign: 'center', fontSize: 13, color: '#9ca3af', marginBottom: 20, lineHeight: 1.6 }}>
             Office addresses to be confirmed before launch.
           </p>
-          <div className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+          <Stagger className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
             {[
               { city: 'Melbourne', label: 'Head Office', address: 'Level 8, 350 Collins St', suburb: 'Melbourne VIC 3000', maps: 'https://maps.google.com/?q=350+Collins+St+Melbourne+VIC+3000' },
               { city: 'Sydney', label: 'NSW Office', address: '81–83 Campbell St', suburb: 'Surry Hills NSW 2010', maps: 'https://maps.google.com/?q=81+Campbell+St+Surry+Hills+NSW+2010' },
@@ -1431,7 +1477,11 @@ export default function HomePage() {
               { city: 'Perth', label: 'WA Office', address: 'Level 2, 1 Altona St', suburb: 'West Perth WA 6005', maps: 'https://maps.google.com/?q=1+Altona+St+West+Perth+WA+6005' },
               { city: 'Geelong', label: 'Regional VIC', address: 'Suite 1, 41 Malop St', suburb: 'Geelong VIC 3220', maps: 'https://maps.google.com/?q=41+Malop+St+Geelong+VIC+3220' },
             ].map((office, i) => (
-              <div key={office.city} style={{
+              <StaggerItem key={office.city} preset="scale">
+              <motion.div
+                whileHover={reduceMotion ? undefined : { y: -4, boxShadow: '0 12px 36px rgba(27,43,94,0.13)' }}
+                transition={{ duration: 0.22 }}
+                style={{
                 background: '#ffffff',
                 borderRadius: 16,
                 padding: '28px 22px 24px',
@@ -1439,10 +1489,8 @@ export default function HomePage() {
                 boxShadow: '0 4px 20px rgba(245,161,36,0.08)',
                 display: 'flex', flexDirection: 'column', gap: 0,
                 position: 'relative',
-                transition: 'box-shadow 0.2s, transform 0.2s',
+                height: '100%',
               }}
-                onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 12px 36px rgba(27,43,94,0.13)'; el.style.transform = 'translateY(-3px)' }}
-                onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.boxShadow = '0 4px 20px rgba(245,161,36,0.08)'; el.style.transform = 'none' }}
               >
                 {/* Head office badge */}
                 {i === 0 && (
@@ -1491,9 +1539,10 @@ export default function HomePage() {
                   </svg>
                   Get Directions
                 </a>
-              </div>
+              </motion.div>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
 
           {/* Subtext */}
           <p style={{ textAlign: 'center', fontSize: 12.5, color: '#9ca3af', marginTop: 32, lineHeight: 1.6 }}>

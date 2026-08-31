@@ -1,6 +1,9 @@
 import React from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY, NAVY_DARK, GOLD, HERO_GRAD } from '@/theme'
+import { ShieldGlow } from '@/components/motion'
+import { fadeUp, slideRight, staggerContainer, easeOutExpo } from '@/components/motion/variants'
 
 export interface PageHeroCtaButton {
   label: string
@@ -51,87 +54,114 @@ export function PageHero({
   footnote,
   navigate,
 }: PageHeroProps) {
+  const reduce = useReducedMotion()
+
   function handleCta(cta: PageHeroCtaButton) {
     if (cta.page) navigate(cta.page)
   }
 
   const leftContent = (
-    <>
+    <motion.div
+      variants={staggerContainer}
+      initial={reduce ? false : 'hidden'}
+      animate="visible"
+    >
       {maraBadge && (
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '5px 14px 5px 8px', background: 'rgba(27,43,94,0.08)', border: '1px solid rgba(27,43,94,0.20)', borderRadius: 100 }}>
+        <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '5px 14px 5px 8px', background: 'rgba(27,43,94,0.08)', border: '1px solid rgba(27,43,94,0.20)', borderRadius: 100 }}>
           <div style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: GOLD, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
             <Icon name="check" size={11} color="#fff" />
           </div>
           <span style={{ color: NAVY, fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>MARA-Registered Agent · MARN 2619467</span>
-        </div>
+        </motion.div>
       )}
 
       {(eyebrow || eyebrowSub) && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+        <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
           {eyebrow && (
             <span style={{ background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>
               {eyebrow}
             </span>
           )}
           {eyebrowSub && <span style={{ color: '#6b7280', fontSize: 12 }}>{eyebrowSub}</span>}
-        </div>
+        </motion.div>
       )}
 
-      <h1 className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: variant === 'flagship' ? 'clamp(32px, 5vw, 50px)' : 'clamp(26px, 5vw, 54px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
+      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: variant === 'flagship' ? 'clamp(32px, 5vw, 50px)' : 'clamp(26px, 5vw, 54px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
         {title}
-      </h1>
+      </motion.h1>
 
-      <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, margin: '0 0 8px', maxWidth: variant === 'standard' ? 620 : 500 }}>
+      <motion.p variants={fadeUp} style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, margin: '0 0 8px', maxWidth: variant === 'standard' ? 620 : 500 }}>
         {deck}
-      </p>
+      </motion.p>
 
       {currentAsAt && (
-        <p style={{ fontSize: 12, color: '#9ca3af', margin: '0 0 28px', fontStyle: 'italic' }}>
+        <motion.p variants={fadeUp} style={{ fontSize: 12, color: '#9ca3af', margin: '0 0 28px', fontStyle: 'italic' }}>
           General information current as at {currentAsAt}. Requirements are subject to change — verify with the Department of Home Affairs before lodging.
-        </p>
+        </motion.p>
       )}
 
       {shortAnswer && (
-        <div style={{ background: '#ffffff', border: `1px solid #e5e9f5`, borderLeft: `4px solid ${accent}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', marginBottom: 32, boxShadow: '0 2px 16px rgba(27,43,94,0.07)' }}>
+        <motion.div
+          variants={fadeUp}
+          whileHover={reduce ? undefined : { y: -2, boxShadow: '0 8px 28px rgba(27,43,94,0.12)' }}
+          transition={{ duration: 0.25 }}
+          style={{ background: '#ffffff', border: `1px solid #e5e9f5`, borderLeft: `4px solid ${accent}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', marginBottom: 32, boxShadow: '0 2px 16px rgba(27,43,94,0.07)' }}
+        >
           <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
             <Icon name="info" size={16} color={accent} />
             <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: accent }}>The Short Answer</span>
           </div>
           <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{shortAnswer}</div>
           {footnote && <p style={{ fontSize: 11.5, color: '#9ca3af', margin: '10px 0 0', fontStyle: 'italic' }}>{footnote}</p>}
-        </div>
+        </motion.div>
       )}
 
       {(primaryCta || secondaryCta) && (
-        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
+        <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
           {primaryCta && (
-            <button
+            <motion.button
+              whileHover={reduce ? undefined : { y: -2, scale: 1.02 }}
+              whileTap={reduce ? undefined : { scale: 0.98 }}
               onClick={() => handleCta(primaryCta)}
               style={{ backgroundColor: GOLD, color: NAVY_DARK, border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', boxShadow: '0 4px 20px rgba(245,161,36,0.40)' }}
             >
               {primaryCta.label}
-            </button>
+            </motion.button>
           )}
           {secondaryCta && (
-            <button
+            <motion.button
+              whileHover={reduce ? undefined : { y: -2 }}
+              whileTap={reduce ? undefined : { scale: 0.98 }}
               onClick={() => handleCta(secondaryCta)}
               style={{ background: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, borderRadius: 10, padding: '14px 28px', fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               {secondaryCta.label}
-            </button>
+            </motion.button>
           )}
-        </div>
+        </motion.div>
       )}
-    </>
+    </motion.div>
   )
 
   if (variant === 'flagship') {
     return (
-      <header style={{ background: HERO_GRAD, padding: '64px 32px 0', overflow: 'hidden' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+      <header style={{ background: HERO_GRAD, padding: '64px 32px 0', overflow: 'hidden', position: 'relative' }}>
+        <ShieldGlow tone="soft" size={640} top="-18%" right="-8%" opacity={0.9} />
+        <ShieldGlow tone="gold" size={420} bottom="-20%" left="-6%" opacity={0.55} />
+        <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div className="hero-flagship-inner" style={{ display: 'flex', gap: 64, alignItems: 'flex-start' }}>
             <div className="hero-flagship-left" style={{ flex: '0 0 580px', minWidth: 0 }}>{leftContent}</div>
-            {rightColumn && <div style={{ flex: 1, paddingBottom: 40, minWidth: 0 }}>{rightColumn}</div>}
+            {rightColumn && (
+              <motion.div
+                style={{ flex: 1, paddingBottom: 40, minWidth: 0 }}
+                variants={slideRight}
+                initial={reduce ? false : 'hidden'}
+                animate="visible"
+                transition={{ delay: 0.15, duration: 0.7, ease: easeOutExpo }}
+              >
+                {rightColumn}
+              </motion.div>
+            )}
           </div>
         </div>
         <div style={{ height: 40 }} />
@@ -141,8 +171,10 @@ export function PageHero({
 
   // standard / hub / support
   return (
-    <header style={{ background: HERO_GRAD, padding: '64px 32px 56px', overflow: 'hidden' }}>
-      <div style={{ maxWidth: variant === 'hub' ? 1000 : 800, margin: '0 auto' }}>
+    <header style={{ background: HERO_GRAD, padding: '64px 32px 56px', overflow: 'hidden', position: 'relative' }}>
+      <ShieldGlow tone="soft" size={560} top="-20%" right="-10%" opacity={0.85} />
+      <ShieldGlow tone="navy" size={380} bottom="-30%" left="-8%" opacity={0.5} />
+      <div style={{ maxWidth: variant === 'hub' ? 1000 : 800, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {leftContent}
       </div>
     </header>

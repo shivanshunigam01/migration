@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from '@/components/ui/Icon'
 import { NAVY } from '@/theme'
+import { Reveal } from '@/components/motion'
 
 export type CalloutVariant = 'note' | 'warning' | 'danger' | 'tip'
 
@@ -45,7 +46,7 @@ export function Callout({ variant, title, children, panel = false, borderWidth =
 
   if (panel) {
     return (
-      <div style={panelStyle}>
+      <Reveal preset="scale" style={panelStyle}>
         <div style={{ width: 40, height: 40, borderRadius: 10, background: `${v.iconColor}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
           <Icon name={v.iconName} size={18} color={v.iconColor} />
         </div>
@@ -53,14 +54,14 @@ export function Callout({ variant, title, children, panel = false, borderWidth =
           {title && <div style={{ fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 12 }}>{title}</div>}
           <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{children}</div>
         </div>
-      </div>
+      </Reveal>
     )
   }
 
   return (
-    <div style={inlineStyle}>
+    <Reveal preset="up" style={inlineStyle}>
       <Icon name={v.iconName} size={15} color={v.iconColor} />
       <div style={{ fontSize: 13, color: v.labelColor, lineHeight: 1.65 }}>{children}</div>
-    </div>
+    </Reveal>
   )
 }

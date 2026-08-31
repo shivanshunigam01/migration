@@ -1,5 +1,7 @@
 import React from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { NAVY, NAVY_DARK, GOLD } from '@/theme'
+import { Reveal, ShieldGlow } from '@/components/motion'
 
 /* Shared decorative SVG — compass rose + Southern Cross arc */
 export function CompassDecor({
@@ -89,14 +91,18 @@ export interface CtaBandProps {
 }
 
 export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, footnote, languages = ['Hindi', 'Punjabi', 'English'], navigate }: CtaBandProps) {
+  const reduce = useReducedMotion()
+
   function handleCta(cta: CtaBandCta) {
     if (cta.page) navigate(cta.page)
   }
 
   return (
     <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_DARK} 100%)`, padding: '72px 32px', position: 'relative', overflow: 'hidden' }}>
+      <ShieldGlow tone="gold" size={480} top="-30%" left="-10%" opacity={0.35} />
+      <ShieldGlow tone="soft" size={360} bottom="-20%" right="10%" opacity={0.12} pulse={false} />
       <CompassDecor size={380} compassColor="#ffffff" compassOpacity={0.05} starColor={GOLD} starOpacity={0.15} />
-      <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <Reveal preset="scale" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
         <div>
           <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
             {title}
@@ -116,25 +122,29 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12, flexShrink: 0 }}>
-          <button
+          <motion.button
+            whileHover={reduce ? undefined : { y: -3, scale: 1.03, boxShadow: '0 10px 36px rgba(245,161,36,0.55)' }}
+            whileTap={reduce ? undefined : { scale: 0.98 }}
             onClick={() => handleCta(primaryCta)}
-            style={{ display: 'block', textAlign: 'center' as const, backgroundColor: GOLD, color: NAVY_DARK, border: 'none', padding: '14px 32px', borderRadius: 8, fontSize: 16, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', boxShadow: '0 6px 28px rgba(245,161,36,0.50)', whiteSpace: 'nowrap' as const }}
+            style={{ display: 'block', textAlign: 'center' as const, backgroundColor: accent, color: NAVY_DARK, border: 'none', padding: '14px 32px', borderRadius: 8, fontSize: 16, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', boxShadow: '0 6px 28px rgba(245,161,36,0.50)', whiteSpace: 'nowrap' as const }}
           >
             {primaryCta.label}
-          </button>
+          </motion.button>
           {secondaryCta && (
-            <button
+            <motion.button
+              whileHover={reduce ? undefined : { y: -2 }}
+              whileTap={reduce ? undefined : { scale: 0.98 }}
               onClick={() => handleCta(secondaryCta)}
               style={{ display: 'block', textAlign: 'center' as const, backgroundColor: 'transparent', color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px 28px', borderRadius: 12, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', whiteSpace: 'nowrap' as const }}
             >
               {secondaryCta.label}
-            </button>
+            </motion.button>
           )}
           {footnote && (
             <div style={{ textAlign: 'center' as const, fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>{footnote}</div>
           )}
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

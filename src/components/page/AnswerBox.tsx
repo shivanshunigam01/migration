@@ -1,7 +1,6 @@
-// One-component answer box for direct answers and LLM visibility.
-// First sentence must be a complete standalone answer naming the visa subclass.
 import React from 'react'
 import { NAVY, GOLD } from '@/theme'
+import { Reveal } from '@/components/motion'
 
 export interface AnswerBoxProps {
   children: React.ReactNode
@@ -9,7 +8,7 @@ export interface AnswerBoxProps {
 
 export function AnswerBox({ children }: AnswerBoxProps) {
   return (
-    <div style={{
+    <Reveal preset="shield" style={{
       background: 'rgba(27,43,94,0.04)',
       borderLeft: `4px solid ${GOLD}`,
       borderRadius: '0 8px 8px 0',
@@ -32,6 +31,6 @@ export function AnswerBox({ children }: AnswerBoxProps) {
       }}>
         {children}
       </div>
-    </div>
+    </Reveal>
   )
 }

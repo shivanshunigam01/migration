@@ -1,6 +1,8 @@
 import React from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY } from '@/theme'
+import { Stagger, StaggerItem } from '@/components/motion'
 
 export interface PageCard {
   icon?: string
@@ -25,8 +27,10 @@ export interface CardGridProps {
 }
 
 export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navigate }: CardGridProps) {
+  const reduce = useReducedMotion()
+
   return (
-    <div className="card-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 20 }}>
+    <Stagger className="card-grid" style={{ display: 'grid', gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 20 }}>
       {cards.map((card, i) => {
         const color = accent
         const isButton = !!card.page && !!navigate
@@ -42,12 +46,11 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
           cursor: isButton ? 'pointer' : 'default',
           textAlign: 'left' as const,
           fontFamily: 'Inter, system-ui, sans-serif',
-          transition: 'box-shadow 0.15s',
+          width: '100%',
         }
 
         const inner = (
           <>
-            {/* Badge + title row */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
               {card.badge && (
                 <span style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 700, color, opacity: 0.3, lineHeight: 1, flexShrink: 0 }}>
@@ -79,20 +82,32 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
 
         if (isButton) {
           return (
-            <button
-              key={i}
-              onClick={() => navigate!(card.page!)}
-              style={cardStyle}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 6px 24px rgba(27,43,94,0.1)' }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = dark ? 'none' : '0 2px 12px rgba(27,43,94,0.05)' }}
-            >
-              {inner}
-            </button>
+            <StaggerItem key={i} preset="scale">
+              <motion.button
+                onClick={() => navigate!(card.page!)}
+                style={cardStyle}
+                whileHover={reduce ? undefined : { y: -4, boxShadow: '0 12px 32px rgba(27,43,94,0.12)' }}
+                whileTap={reduce ? undefined : { scale: 0.985 }}
+                transition={{ duration: 0.22 }}
+              >
+                {inner}
+              </motion.button>
+            </StaggerItem>
           )
         }
 
-        return <article key={i} style={cardStyle}>{inner}</article>
+        return (
+          <StaggerItem key={i} preset="scale">
+            <motion.div
+              style={cardStyle}
+              whileHover={reduce ? undefined : { y: -4, boxShadow: dark ? '0 12px 32px rgba(0,0,0,0.2)' : '0 12px 32px rgba(27,43,94,0.1)' }}
+              transition={{ duration: 0.22 }}
+            >
+              {inner}
+            </motion.div>
+          </StaggerItem>
+        )
       })}
-    </div>
+    </Stagger>
   )
 }
