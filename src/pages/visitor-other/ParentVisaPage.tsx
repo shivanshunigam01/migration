@@ -82,7 +82,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
       }}>
 
         <div style={{ position: 'relative', maxWidth: 1120, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: 48, alignItems: 'start' }}>
+          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 420px', gap: 48, alignItems: 'start' }}>
             {/* Left */}
             <div>
               {/* Pill badge */}
@@ -141,7 +141,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               </div>
 
               {/* Stats row */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginTop: 48 }}>
+              <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginTop: 48 }}>
                 {STATS.map((st) => (
                   <div key={st.label} style={{
                     background: '#fff', borderRadius: 10,
@@ -205,7 +205,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
         <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 40, paddingLeft: 16 }}>
           All parent visa applicants must meet the following core requirements regardless of visa subclass.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
           {ELIGIBILITY.map((item) => (
             <div key={item.title} style={{
               background: 'white', borderRadius: 14, padding: '24px 28px',
@@ -236,7 +236,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
         <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
           Four main subclasses cover different circumstances. Offshore and onshore streams are available.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
           {[
             {
               code: '103', name: 'Migrant Parent', type: 'Offshore', cost: 'Stage 1 ~$405 + Stage 2 ~$2,800', wait: '20–30+ years',
@@ -314,7 +314,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
         <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
           Important factors to understand before lodging a parent visa application.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+        <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           {[
             { icon: 'alert', color: ROSE, title: 'Two-stage payment (Contributory)', body: 'The ~$47,000 contributory fee is paid in two stages. Stage 1 is paid on application; Stage 2 (the larger amount) is paid before the visa is granted. Failure to pay Stage 2 on time results in refusal.' },
             { icon: 'shield', color: GOLD, title: 'Assurance of support', body: 'Some parent visa subclasses require an Assurance of Support — a bond lodged with the government that can be drawn on if the parent accesses certain social security payments. The bond is typically held for 10 years.' },

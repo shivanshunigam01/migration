@@ -141,8 +141,7 @@ export function GlowButton(props: GlowButtonProps) {
     >
     return (
       <a
-        ref={ref as React.RefObject<HTMLAnchorElement>}
-        className={classes}
+        ref={ref as React.RefObject<HTMLAnchorElement>} className={classes}
         style={style}
         onMouseEnter={(e) => {
           popIn()
@@ -174,8 +173,7 @@ export function GlowButton(props: GlowButtonProps) {
   return (
     <button
       ref={ref as React.RefObject<HTMLButtonElement>}
-      type={buttonRest.type ?? "button"}
-      className={classes}
+      type={buttonRest.type ?? "button"} className={classes}
       style={style}
       onMouseEnter={(e) => {
         popIn()

@@ -71,7 +71,7 @@ export default function BookConsultationForm() {
         />
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+      <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
         <div>
           <label htmlFor="book-email" style={labelStyle}>Email *</label>
           <input

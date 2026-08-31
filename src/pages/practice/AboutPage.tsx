@@ -75,7 +75,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
 
       {/* ── HERO — two column ── */}
       <div style={{ background: HERO_GRAD, padding: '72px 32px 0', overflow: 'hidden' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 420px', gap: 72, alignItems: 'end' }}>
+        <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 420px', gap: 72, alignItems: 'end' }}>
 
           {/* Left — copy */}
           <div style={{ paddingBottom: 60 }}>
@@ -95,7 +95,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               </div>
             </div>
 
-            <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 54, fontWeight: 700, color: NAVY, lineHeight: 1.08, margin: '0 0 6px' }}>
+            <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(34px, 8vw, 54px)', fontWeight: 700, color: NAVY, lineHeight: 1.08, margin: '0 0 6px' }}>
               Navpreet Aulakh
             </h1>
             <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 27, fontWeight: 400, color: GOLD, margin: '0 0 20px', lineHeight: 1.3 }}>
@@ -169,7 +169,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
 
       {/* ── STATS BAND ── */}
       <div style={{ background: NAVY, padding: '32px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, borderRadius: 16, overflow: 'hidden' }}>
+        <div className="grid-5" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, borderRadius: 16, overflow: 'hidden' }}>
           {[
             { num: '10+', label: 'Years in migration law & practice', icon: 'briefcase' },
             { num: '3', label: 'State offices — VIC, WA, NSW', icon: 'mappin' },
@@ -234,7 +234,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
 
       {/* ── WHY INDEPENDENT ADVICE ── */}
       <div style={{ background: NAVY, padding: '80px 32px' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+        <div className="grid-2" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>The Practice Philosophy</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: '#fff', margin: '0 0 20px', lineHeight: 1.2 }}>
@@ -275,7 +275,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Practice Areas</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>What We Advise On</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+          <div className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
             {SERVICE_AREAS.map((area, i) => (
               <div key={i} style={{ background: '#fafbfe', border: `1.5px solid ${area.color}20`, borderRadius: 16, padding: '22px 20px', textAlign: 'center' }}>
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: `${area.color}12`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
@@ -298,7 +298,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             <p style={{ color: '#6b7280', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>Every person giving migration advice in Australia must be registered. Here is everything you need to verify ours.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {/* OMARA registration card */}
             <div style={{ background: '#fff', border: `2px solid ${GOLD}25`, borderRadius: 20, padding: '28px 28px', boxShadow: '0 4px 24px rgba(27,43,94,0.08)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
@@ -377,7 +377,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
 
       {/* ── COMMUNITY ── */}
       <div style={{ background: NAVY, padding: '64px 32px' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
+        <div className="grid-2" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Language Access</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 34, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>

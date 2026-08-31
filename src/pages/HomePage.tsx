@@ -291,7 +291,7 @@ function PathwayAssessment() {
   }
 
   return (
-    <div style={{ background: '#ffffff', borderRadius: 16, boxShadow: '0 24px 64px rgba(13,22,50,0.22), 0 2px 8px rgba(13,22,50,0.08)', border: '1px solid #e8eaf0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: 520 }}>
+    <div className="pathway-widget newsletter-row" style={{ background: '#ffffff', borderRadius: 16, boxShadow: '0 24px 64px rgba(13,22,50,0.22), 0 2px 8px rgba(13,22,50,0.08)', border: '1px solid #e8eaf0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: 520 }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid #f0f0f5', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -418,13 +418,13 @@ function NewsletterForm() {
     </div>
   )
   return (
-    <form onSubmit={e => { e.preventDefault(); if (email) setDone(true) }} style={{ display: 'flex', gap: 0, flexShrink: 0, boxShadow: '0 4px 24px rgba(13,22,50,0.2)', borderRadius: 10 }}>
+    <form onSubmit={e => { e.preventDefault(); if (email) setDone(true) }} style={{ display: 'flex', gap: 0, flexShrink: 0, boxShadow: '0 4px 24px rgba(13,22,50,0.2)', borderRadius: 10, width: '100%', maxWidth: 420 }}>
       <input
         type="email" required value={email} onChange={e => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        style={{ padding: '14px 20px', fontSize: 15, border: 'none', borderRadius: '10px 0 0 10px', outline: 'none', width: 260, color: NAVY_DARK, background: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}
+        placeholder="your@email.com" className="newsletter-input"
+        style={{ padding: '14px 20px', fontSize: 15, border: 'none', borderRadius: '10px 0 0 10px', outline: 'none', width: 260, flex: 1, minWidth: 0, color: NAVY_DARK, background: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}
       />
-      <button type="submit" style={{ padding: '14px 26px', background: NAVY, color: '#fff', border: 'none', borderRadius: '0 10px 10px 0', fontSize: 15, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.02em', fontFamily: "'Gilroy', sans-serif", transition: 'background 0.15s' }}
+      <button type="submit" className="newsletter-btn" style={{ padding: '14px 26px', background: NAVY, color: '#fff', border: 'none', borderRadius: '0 10px 10px 0', fontSize: 15, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.02em', fontFamily: "'Gilroy', sans-serif", transition: 'background 0.15s' }}
         onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = NAVY_MID}
         onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = NAVY}
       >
@@ -543,8 +543,14 @@ export default function HomePage() {
       setShowSticky(scrolled && !nearBottom)
     }
     window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  React.useEffect(() => {
+    document.body.classList.toggle('has-sticky-cta', showSticky)
+    return () => document.body.classList.remove('has-sticky-cta')
+  }, [showSticky])
 
   const navigate = useAppNavigate()
 
@@ -1116,20 +1122,20 @@ export default function HomePage() {
             ),
           },
         ] as { tag: string; heading: string; body: string; pills: { label: string; href: string }[]; cta: string; href: string; imgLeft: boolean; illustration: React.ReactNode }[]).map((row, i) => (
-          <div key={row.tag as string} style={{
+          <div key={row.tag as string} className="grid-2 pathway-row" style={{
             maxWidth: 1160, margin: '0 auto', padding: '0 24px',
             display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, alignItems: 'stretch',
             marginBottom: i < 3 ? 4 : 0,
           }}>
             {/* Illustration panel — left */}
             {row.imgLeft && (
-              <div style={{ minHeight: 420, background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px', overflow: 'hidden', position: 'relative' }}>
+              <div className="pathway-illus" style={{ minHeight: 420, background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px', overflow: 'hidden', position: 'relative' }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(248,250,253,0) 40%, #f8fafd 100%)', pointerEvents: 'none', zIndex: 1 }} />
                 <div style={{ width: '100%', opacity: 0.92 }}>{row.illustration}</div>
               </div>
             )}
             {/* Text panel */}
-            <div style={{ background: '#ffffff', padding: '60px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div className="pathway-text" style={{ background: '#ffffff', padding: '60px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>{row.tag}</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 2.8vw, 40px)', fontWeight: 300, lineHeight: 1.15, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', whiteSpace: 'pre-line' }}>
                 {row.heading}
@@ -1156,7 +1162,7 @@ export default function HomePage() {
             </div>
             {/* Illustration panel — right */}
             {!row.imgLeft && (
-              <div style={{ minHeight: 420, background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px', overflow: 'hidden', position: 'relative' }}>
+              <div className="pathway-illus" style={{ minHeight: 420, background: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '32px', overflow: 'hidden', position: 'relative' }}>
                 <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, rgba(248,250,253,0) 40%, #f8fafd 100%)', pointerEvents: 'none', zIndex: 1 }} />
                 <div style={{ width: '100%', opacity: 0.92 }}>{row.illustration}</div>
               </div>
@@ -1313,7 +1319,7 @@ export default function HomePage() {
           </Reveal>
 
           {/* Featured + side cards */}
-          <Stagger className="news-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
+          <Stagger className="news-grid grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'stretch' }}>
 
             {/* Featured card — navy panel, no image */}
             {news[0] && (
@@ -1396,10 +1402,10 @@ export default function HomePage() {
       {/* ── CONTACT ───────────────────────────────────────── */}
       <section id="contact" style={{ background: HERO_GRAD, position: 'relative', overflow: 'hidden' }}>
         <ShieldGlow tone="gold" size={480} top="10%" left="-10%" opacity={0.3} />
-        <div style={{ position: 'relative', maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 440, alignItems: 'center', zIndex: 1 }}>
+        <div className="grid-2 contact-split" style={{ position: 'relative', maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 440, alignItems: 'center', zIndex: 1 }}>
 
           {/* LEFT — copy */}
-          <Reveal preset="left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '72px 48px 72px 64px' }}>
+          <Reveal preset="left" className="contact-copy" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '72px 48px 72px 64px' }}>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 3.2vw, 48px)', fontWeight: 700, lineHeight: 1.1, color: '#1E1E2A', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
               Ready to start your<br />Australian journey?
             </h2>
@@ -1424,7 +1430,7 @@ export default function HomePage() {
           </Reveal>
 
           {/* RIGHT — Founder panel */}
-          <Reveal preset="right" style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
+          <Reveal preset="right" className="contact-photo" style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
             <img
               src={navpreetPhoto}
               alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
@@ -1566,8 +1572,7 @@ export default function HomePage() {
 
       {/* ── STICKY MOBILE CTA ─────────────────────────────── */}
       {showSticky && (
-        <div
-          className="sticky-mobile-cta"
+        <div className="sticky-mobile-cta"
           style={{
             position: 'fixed',
             bottom: 0,

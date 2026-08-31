@@ -248,7 +248,7 @@ function StateCommitmentSection() {
       <div style={{ maxWidth: 900, margin: '0 auto' }}>
         <SectionHeading kicker="Section 3" title="The State Commitment" accent={INDIGO}
           intro="Accepting a state or territory nomination for the 190 visa generally involves a commitment to live and work in that state. This is a genuine obligation — not merely aspirational." />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
           {bullets.map(b => (
             <div key={b.label} style={{ background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 12, padding: '18px 18px' }}>
               <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 8 }}>
@@ -282,7 +282,7 @@ function WhoSuitsSection() {
       <div style={{ maxWidth: 960, margin: '0 auto' }}>
         <SectionHeading kicker="Section 4" title="Who This Generally Suits" accent={INDIGO}
           intro="The 190 is particularly well-suited to several applicant profiles. Whether it is the right pathway depends on your individual points score, occupation, and preferred location." />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 18 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 18 }}>
           {profiles.map(p => (
             <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '22px 20px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ marginBottom: 10 }}><Icon name={p.icon} size={28} color={INDIGO} /></div>

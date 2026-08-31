@@ -447,7 +447,7 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
             intro="Most adult applicants must pass an online citizenship test and make the Australian Values Statement as part of the application."
             accent={ROYAL}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {TEST_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
@@ -497,7 +497,7 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
             intro="Time spent outside Australia during the 4-year residence period generally reduces qualifying residence. Understanding the absence thresholds matters before applying."
             accent={ROYAL}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginBottom: 24 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14, marginBottom: 24 }}>
             {ABSENCE_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>

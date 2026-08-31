@@ -145,8 +145,7 @@ const AustralianSkyline: React.FC = () => (
 
       {/* — Uluru silhouette — x: 600–650 */}
       <path
-        d="M 600 200 L 602 185 Q 610 172 620 168 Q 630 165 638 168 Q 646 172 648 182 L 650 200 Z"
-        className="sky sky-1"
+        d="M 600 200 L 602 185 Q 610 172 620 168 Q 630 165 638 168 Q 646 172 648 182 L 650 200 Z" className="sky sky-1"
         fill="none"
       />
 

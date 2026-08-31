@@ -348,7 +348,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>Two clocks run at once. Your true deadline is whichever expires first. No competitor computes both simultaneously.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 40, alignItems: 'start' }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 40, alignItems: 'start' }}>
             {/* Inputs */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
@@ -394,7 +394,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
             {/* Results panel */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {/* Two clock cards side by side */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {/* Results clock */}
                 <div style={{ background: 'rgba(255,255,255,0.05)', border: `2px solid ${urgencyColor(calc.resultsLeftDays)}30`, borderRadius: 16, padding: '22px 20px', textAlign: 'center' }}>
                   <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.resultsLeftDays), marginBottom: 12 }}>Results Clock</div>
@@ -524,7 +524,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               </div>
               <p style={{ margin: '12px 0 0', fontSize: 15, color: '#4b5563', lineHeight: 1.65 }}>{stream.note}</p>
             </div>
-            <div style={{ padding: '28px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+            <div className="grid-2" style={{ padding: '28px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
               <div>
                 <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Requirements</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -563,7 +563,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
       {/* ── AGE LIMIT ── */}
       <div style={{ background: '#fafbfe', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'start' }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'start' }}>
             <div>
               <SectionHeading kicker="From mid-2024" title="The 485 Age Limit: 35, With Exemptions" accent={PURPLE} />
 
@@ -639,7 +639,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
             <SectionHeading kicker="Using the 485 Well" title="Your 485 Runway — What to Do When" accent={PURPLE} />
             <p style={{ color: '#6b7280', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>The 485 is not a waiting room. It is your PR preparation window. Here is how to use every month of it.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {RUNWAY_ACTIONS.map((action, i) => {
               const priorityColor = action.priority === 'critical' ? RED : action.priority === 'high' ? AMBER : '#6b7280'
               const priorityBg = action.priority === 'critical' ? 'rgba(220,38,38,0.08)' : action.priority === 'high' ? 'rgba(245,161,36,0.08)' : '#fafbfe'

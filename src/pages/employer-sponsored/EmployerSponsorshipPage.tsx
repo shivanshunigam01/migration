@@ -221,7 +221,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
             accent={CAT_EMPLOYER}
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {VISA_INFO.map((visa) => {
               const isOpen = selectedVisa === visa.code
               return (
@@ -239,7 +239,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                     <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: '0 0 12px', lineHeight: 1.25 }}>{visa.name}</h3>
                     <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, margin: '0 0 20px' }}>{visa.summary}</p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
+                    <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
                       {[
                         { label: 'Duration', val: visa.duration },
                         { label: 'PR Pathway', val: visa.prPathway },
@@ -296,7 +296,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
       {/* ── COST ESTIMATOR ───────────────────────────────────── */}
       <section style={{ background: '#ffffff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 56, alignItems: 'start' }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 56, alignItems: 'start' }}>
 
             {/* Left — controls */}
             <div>
@@ -481,7 +481,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               note: 'For 482, family members can be included in the same application.',
             },
           ].map((phase, i) => (
-            <div key={phase.phase} style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 32, marginBottom: i < 2 ? 32 : 0, position: 'relative' }}>
+            <div key={phase.phase} className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 32, marginBottom: i < 2 ? 32 : 0, position: 'relative' }}>
               {/* Connector line */}
               {i < 2 && <div style={{ position: 'absolute', left: 28, top: '100%', width: 2, height: 32, background: 'linear-gradient(to bottom, #e5eaf4, transparent)' }} />}
 
@@ -503,7 +503,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Phase content */}
               <div style={{ background: '#fff', borderRadius: 14, border: '1.5px solid #e5eaf4', padding: '24px 28px' }}>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>{phase.desc}</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, marginBottom: 14 }}>
+                <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, marginBottom: 14 }}>
                   {phase.steps.map(s => (
                     <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <Icon name="check" size={13} color={GOLD} />
@@ -521,7 +521,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
       {/* ── OBLIGATIONS DASHBOARD ────────────────────────────── */}
       <section style={{ background: '#ffffff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Compliance</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
@@ -538,7 +538,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
               {OBLIGATIONS.map(ob => (
                 <div key={ob.title} style={{ background: '#f8fafd', borderRadius: 13, border: ob.status === 'critical' ? `1.5px solid rgba(220,38,38,0.2)` : '1.5px solid #e5eaf4', padding: '20px 20px' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
@@ -568,7 +568,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
             accent={CAT_EMPLOYER}
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
             {CASE_STUDIES.map(cs => (
               <div key={cs.company} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 18, padding: '28px 28px', backdropFilter: 'blur(12px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>

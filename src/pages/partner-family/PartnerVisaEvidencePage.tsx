@@ -447,7 +447,7 @@ export default function PartnerVisaEvidencePage({ navigate }: { navigate: (page:
             intro="Not all couples fit the same mould. Partner visa evidence requirements apply equally to all genuine couples, regardless of how the relationship began or how it is structured."
             accent={PURPLE}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {APART_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>

@@ -454,7 +454,7 @@ function PathwaySummaryWidget() {
       </div>
       <div style={{ marginTop: 20, padding: '12px 14px', background: `${TEAL}08`, border: `1px solid ${TEAL}20`, borderRadius: 10 }}>
         <div style={{ fontSize: 12, fontWeight: 600, color: TEAL, marginBottom: 4 }}>Key eligibility figures</div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px' }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px' }}>
           {[
             { val: '2 yrs', lbl: 'Qualifying period' },
             { val: 'Under 45', lbl: 'Age at lodgement' },

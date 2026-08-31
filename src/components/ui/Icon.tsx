@@ -76,8 +76,7 @@ export default function Icon({ name, size = 18, color = 'currentColor', classNam
     <LucideIcon
       size={size}
       color={color}
-      strokeWidth={1.75}
-      className={className}
+      strokeWidth={1.75} className={className}
       aria-hidden={ariaHidden ?? true}
     />
   )

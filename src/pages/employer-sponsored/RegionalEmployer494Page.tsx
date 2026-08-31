@@ -126,7 +126,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
       }}>
 
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 48, alignItems: 'start' }}>
+          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 48, alignItems: 'start' }}>
             {/* Left column */}
             <div>
               {/* Pill badge */}
@@ -236,7 +236,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
           </div>
 
           {/* Stats row */}
-          <div style={{
+          <div className="grid-4" style={{
             display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
             gap: 0, marginTop: 56,
             border: '1px solid rgba(27,43,94,0.1)',
@@ -272,7 +272,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             All criteria must be satisfied at time of application.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {ELIGIBILITY.map((e, i) => (
               <div key={i} style={{
                 background: '#fff', borderRadius: 14, padding: '24px',
@@ -305,7 +305,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             The 494 operates through two distinct streams.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
             {STREAMS.map((stream, i) => (
               <div key={i} style={{
                 background: '#fff', borderRadius: 14, padding: '28px',
@@ -374,7 +374,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             Important factors to keep in mind throughout your 494 journey.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {CONSIDERATIONS.map((c, i) => (
               <div key={i} style={{
                 background: 'rgba(245,161,36,0.08)', border: `1px solid rgba(245,161,36,0.25)`,

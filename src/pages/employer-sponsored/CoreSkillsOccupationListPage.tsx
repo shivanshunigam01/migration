@@ -83,7 +83,7 @@ function RemovedFromListSection() {
           intro="Occupation lists may change without notice. If an occupation you rely on is removed from the CSOL, the impact depends on the stage of your application."
           accent={BLUE}
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 18 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 18 }}>
           {steps.map((s, i) => (
             <div key={i} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '22px 20px', display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               <div><Icon name={s.icon} size={26} color={BLUE} /></div>
@@ -110,7 +110,7 @@ function WhatIsCsol() {
     <section style={{ background: '#fff', padding: '72px 32px' }}>
       <div style={{ maxWidth: 920, margin: '0 auto' }}>
         <SectionHeading kicker="About the CSOL" title="What Is the Core Skills Occupation List?" accent={BLUE} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
           <div>
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
               The Core Skills Occupation List (CSOL) is the list of occupations eligible for the Core Skills stream of the Skills in Demand (SID) subclass 482 visa, introduced in December 2024. The CSOL replaced the former MLTSSL and STSOL as the primary occupation list for the employer-sponsored temporary work visa stream.

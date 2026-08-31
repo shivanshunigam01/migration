@@ -213,7 +213,7 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
             ))}
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="grid-3">
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {tabCards.map(card => {
               const isHovered = hovered === card.code
               const clickable = card.route !== null
@@ -251,7 +251,7 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Relationship Evidence" title="What the Department looks for" intro="DHA assesses genuineness across four categories. No single category is decisive — a holistic picture is what wins." accent={CAT_PARTNER} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }} className="grid-4">
+          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
             {PILLARS.map(p => (
               <div key={p.title} style={{ background: '#f8fafd', borderTop: `3px solid ${p.color}`, borderRadius: 16, padding: '28px 22px', border: `1px solid ${p.color}1a`, borderTopWidth: 3 }}>
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: `${p.color}14`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>

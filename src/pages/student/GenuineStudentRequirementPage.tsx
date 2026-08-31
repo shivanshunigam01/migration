@@ -367,7 +367,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
             intro="The Genuine Student requirement replaced the Genuine Temporary Entrant test for all student visa applications lodged on or after 23 March 2024. Understanding the difference matters."
             accent={BLUE}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 32 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 32 }}>
             {CHANGES.map(c => (
               <div key={c.was ?? c.is} style={{ borderRadius: 16, overflow: 'hidden', border: `1.5px solid ${BORDER}`, boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ padding: '12px 18px', background: c.was ? `${ROSE}08` : `${GREEN}08`, borderBottom: `1px solid ${c.was ? ROSE : GREEN}20`, display: 'flex', gap: 8, alignItems: 'center' }}>
@@ -450,7 +450,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
             intro="How your study pathway — and any changes to it — is viewed under the GS requirement."
             accent={BLUE}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {PROGRESSION_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '18px 16px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 8 }}>

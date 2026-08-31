@@ -112,8 +112,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
       </div>
 
       {/* Main two-column layout */}
-      <div
-        className="blog-layout"
+      <div className="blog-layout"
         style={{ display: 'flex', gap: 40, alignItems: 'flex-start', maxWidth: 1200, margin: '0 auto', padding: '64px 24px' }}
       >
         {/* Main column */}
@@ -271,8 +270,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
         </div>
 
         {/* Sidebar */}
-        <aside
-          className="blog-sidebar"
+        <aside className="blog-sidebar"
           style={{ width: 280, flexShrink: 0, position: 'sticky', top: 80 }}
         >
           {/* Recent posts panel */}

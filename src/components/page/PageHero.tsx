@@ -136,7 +136,7 @@ export function PageHero({
 
   if (variant === 'flagship') {
     return (
-      <header style={{ background: HERO_GRAD, padding: '64px 32px 0', overflow: 'hidden', position: 'relative' }}>
+      <header className="page-hero-section page-hero-section-flagship" style={{ background: HERO_GRAD, padding: '64px 32px 0', overflow: 'hidden', position: 'relative' }}>
         <ShieldGlow tone="soft" size={640} top="-18%" right="-8%" opacity={0.9} />
         <ShieldGlow tone="gold" size={420} bottom="-20%" left="-6%" opacity={0.55} />
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
@@ -162,7 +162,7 @@ export function PageHero({
 
   // standard / hub / support
   return (
-    <header style={{ background: HERO_GRAD, padding: '64px 32px 56px', overflow: 'hidden', position: 'relative' }}>
+    <header className="page-hero-section" style={{ background: HERO_GRAD, padding: '64px 32px 56px', overflow: 'hidden', position: 'relative' }}>
       <ShieldGlow tone="soft" size={560} top="-20%" right="-10%" opacity={0.85} />
       <ShieldGlow tone="navy" size={380} bottom="-30%" left="-8%" opacity={0.5} />
       <div style={{ maxWidth: variant === 'hub' ? 1000 : 800, margin: '0 auto', position: 'relative', zIndex: 1 }}>

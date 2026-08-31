@@ -80,7 +80,7 @@ export default function ContactForm() {
         onHoneypotChange={setHp}
         submitLabel="Send message →"
       >
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+        <div className="grid-2 form-grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
           <div>
             <label htmlFor="contact-name" style={labelStyle}>Full name *</label>
             <input

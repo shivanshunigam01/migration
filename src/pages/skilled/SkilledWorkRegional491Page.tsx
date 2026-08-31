@@ -147,7 +147,7 @@ function PRPathwaySection() {
           intro="The 491 is a provisional visa. To obtain permanent residence, you must separately apply for the Skilled Regional (Residence) visa (subclass 191) after meeting the residence, income, and compliance requirements."
           accent={GREEN}
         />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
           {PR_REQUIREMENTS.map(r => (
             <div key={r.label} style={{ border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', padding: '14px 16px', background: 'rgba(27,43,94,0.04)', borderBottom: '1px solid rgba(27,43,94,0.10)' }}>
@@ -250,7 +250,7 @@ function ObligationsSection() {
           intro="The 491 visa is one of the more prescriptive temporary visas in the Australian system. The conditions apply throughout the five-year visa period and affect every member of the household."
           accent={GREEN}
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
           {items.map(item => (
             <div key={item.title} style={{ background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 12, padding: '18px 18px' }}>
               <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 8 }}>

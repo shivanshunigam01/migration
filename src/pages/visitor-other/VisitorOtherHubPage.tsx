@@ -186,7 +186,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {/* Subclass 600 */}
             <div style={{ background: '#fff', borderRadius: 18, border: '1.5px solid #e5eaf4', boxShadow: '0 4px 20px rgba(27,43,94,0.06)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ padding: '28px 28px 24px', flex: 1 }}>
@@ -198,7 +198,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                 </div>
                 <div style={{ fontSize: 12, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 600</div>
                 <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Visitor Visa</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
+                <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
                   {[
                     { label: 'Max Stay', val: 'Up to 12 months' },
                     { label: 'Applies', val: 'Any nationality' },
@@ -242,7 +242,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                 </div>
                 <div style={{ fontSize: 12, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 601</div>
                 <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Electronic Travel Authority (ETA)</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
+                <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
                   {[
                     { label: 'Stay per visit', val: 'Up to 3 months' },
                     { label: 'Validity', val: '12 months' },
@@ -273,7 +273,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                 </div>
                 <div style={{ fontSize: 12, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 651</div>
                 <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>eVisitor</h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
+                <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
                   {[
                     { label: 'Stay per visit', val: 'Up to 3 months' },
                     { label: 'Validity', val: '12 months' },
@@ -313,7 +313,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
       {/* ── SECTION 2: Genuine Visitor Requirement ───────────── */}
       <section style={{ background: '#ffffff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
 
             {/* Left — explanation */}
             <div>
@@ -385,7 +385,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
             {/* Can do */}
             <div style={{ background: 'rgba(245,161,36,0.07)', border: '1px solid rgba(245,161,36,0.25)', borderRadius: 18, padding: '28px 28px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
@@ -438,7 +438,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
       {/* ── SECTION 4: Working Holiday Visas ─────────────────── */}
       <section style={{ background: '#f8fafd', padding: '80px 32px', borderTop: '1px solid #e8edf5', borderBottom: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>Working Holiday</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
@@ -452,7 +452,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
               </p>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
               {/* 417 */}
               <div style={{ background: '#fff', borderRadius: 16, border: '1.5px solid #e5eaf4', padding: '24px 24px', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 16, right: 16, background: '#f5a124', color: '#fff', fontSize: 11, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', borderRadius: 100, padding: '3px 9px' }}>Coming Soon</div>
@@ -506,7 +506,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {[
               {
                 title: 'Bridging Visa',

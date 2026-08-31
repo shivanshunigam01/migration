@@ -243,7 +243,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
           <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 40, paddingLeft: 16 }}>
             Core facts every student visa applicant should understand before applying.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {[
               { icon: 'clock', color: GOLD, title: 'Visa duration', body: 'Granted for the length of your registered course plus 2 months (up to 5 years). If your course is extended, you must apply for a new student visa.' },
               { icon: 'briefcase', color: '#2563eb', title: 'Work rights', body: '48 hours per fortnight during semester. Unlimited during scheduled course breaks. Work rights also extend to secondary holders (your partner and dependants over 18).' },
@@ -277,7 +277,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
           <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
             The subclass 500 covers all levels of study at CRICOS-registered providers.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
             {STREAMS.map((stream, i) => (
               <div key={i} style={{
                 background: 'white', borderRadius: 12, padding: '18px 22px',
@@ -305,7 +305,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
           <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
             Understanding why applications fail helps you build a stronger case.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 14 }}>
+          <div className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 14 }}>
             {REFUSAL_REASONS.map((r) => (
               <div key={r.label} style={{
                 background: 'white', borderRadius: 12, padding: '20px 18px',

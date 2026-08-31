@@ -146,7 +146,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
       }}>
 
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 48, alignItems: 'start' }}>
+          <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 48, alignItems: 'start' }}>
             {/* Left column */}
             <div>
               {/* Pill badge */}
@@ -293,7 +293,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
           </div>
 
           {/* Stats row */}
-          <div style={{
+          <div className="grid-4" style={{
             display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
             gap: 0, marginTop: 56,
             border: '1px solid rgba(27,43,94,0.1)',
@@ -329,7 +329,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             Australia operates three separate visitor visa frameworks — your passport determines which applies.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {(['eta', 'evisitor', 'subclass600'] as const).map((key) => {
               const detail = VISA_DETAILS[key]
               const accent = key === 'eta' ? GOLD : key === 'evisitor' ? ACCENT : CAT_EMPLOYER
@@ -380,7 +380,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             The Subclass 600 has four streams — most applicants use the Tourist stream.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {VISA_600_STREAMS.map((s, i) => (
               <div key={i} style={{
                 background: '#fff', borderRadius: 14, padding: '22px 24px',
@@ -416,7 +416,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             Address these issues proactively to maximise your chances of approval.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {REFUSAL_REASONS.map((r, i) => (
               <div key={i} style={{
                 background: '#ffffff', border: `1px solid rgba(220,38,38,0.18)`,
@@ -448,7 +448,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             Important rules and restrictions all visitor visa holders should know.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {CONSIDERATIONS.map((c, i) => (
               <div key={i} style={{
                 background: '#ffffff', border: `1px solid rgba(79,70,229,0.18)`,

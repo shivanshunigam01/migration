@@ -35,8 +35,7 @@ export function Stagger({
   }
 
   return (
-    <motion.div
-      className={className}
+    <motion.div className={className}
       style={style}
       variants={fast ? staggerFast : staggerContainer}
       initial="hidden"

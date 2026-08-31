@@ -437,7 +437,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
           <SectionHeading kicker="Visa Subclasses" title="Six pathways. One points system." accent={CAT_SKILLED} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="grid-3">
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {VISAS.map(v => {
               const isHovered = activeVisa === v.code
               const clickable = v.route !== null
@@ -506,7 +506,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
       {/* ── Section 2: Points system ─────────────────────────── */}
       <section style={{ background: '#ffffff', padding: '88px 24px', borderTop: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="hero-grid">
+          <div className="grid-2 hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: "'Gilroy', sans-serif" }}>The Points System</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 3vw, 42px)', fontWeight: 700, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.12 }}>
@@ -531,7 +531,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
             </div>
 
             {/* Factor tiles */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
+            <div className="grid-2 table-scroll-wrap" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14 }}>
               {FACTORS.map(f => (
                 <div key={f.label} style={{ background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 14, padding: '18px 18px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
@@ -563,6 +563,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
           </div>
 
           <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
+            <div className="table-scroll-min">
             {/* Header row */}
             <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', background: NAVY }}>
               <div style={{ padding: '16px 20px', fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif" }}>Factor</div>
@@ -593,6 +594,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                 ))}
               </div>
             ))}
+            </div>
           </div>
           <p style={{ fontSize: 11.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 16, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
@@ -601,7 +603,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
       {/* ── Section 4: Points Estimator ─────────────────────── */}
       <section style={{ background: '#ffffff', padding: '88px 24px', borderTop: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="hero-grid">
+          <div className="grid-2 hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: "'Gilroy', sans-serif" }}>Points Estimator</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: NAVY, margin: '0 0 18px', letterSpacing: '-0.02em' }}>
@@ -610,7 +612,8 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
               <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.75, margin: '0 0 20px', fontFamily: "'Gilroy', sans-serif" }}>
                 This estimator covers three factors — age, English, and overseas experience. A full score also includes qualifications, Australian experience, and nomination bonuses. Use this to get a baseline before a formal assessment.
               </p>
-              <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0' }}>
+              <div className="table-scroll-wrap grid-3" style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0' }}>
+                <div className="table-scroll-min">
                 <div style={{ background: NAVY, padding: '14px 20px', display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr', gap: 8 }}>
                   {['Category', 'Description', 'Max pts'].map(h => (
                     <div key={h} style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "'Gilroy', sans-serif" }}>{h}</div>
@@ -631,6 +634,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                     <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{row.max} pts</div>
                   </div>
                 ))}
+                </div>
               </div>
               <p style={{ fontSize: 11.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
             </div>
@@ -703,7 +707,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative' }}>
           <SectionHeading kicker="The Process" title="SkillSelect — from EOI to visa grant" intro="Four clear stages. We prepare and manage each one." accent={CAT_SKILLED} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0, position: 'relative' }}>
+          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0, position: 'relative' }}>
             <div style={{ position: 'absolute', top: 36, left: '12.5%', right: '12.5%', height: 2, background: `rgba(245,161,36,0.3)`, zIndex: 0 }} />
             {[
               { num: '01', title: 'EOI Submitted', desc: 'Complete your Expression of Interest in SkillSelect. Declare your occupation, points claims, and personal details. We verify every claim before lodgement.' },
@@ -728,7 +732,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <SectionHeading kicker="Skills Assessments" title="Skills assessment before you apply" intro="Most skilled visa applicants must obtain a positive skills assessment from the relevant Australian assessing authority before submitting an EOI. The body depends on your ANZSCO occupation code." accent={CAT_SKILLED} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }} className="grid-3">
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16 }}>
             {ASSESSORS.map(body => (
               <div key={body.name} style={{ background: '#f8fafd', borderRadius: 14, border: '1.5px solid #e5eaf4', padding: '20px 20px', display: 'flex', alignItems: 'flex-start', gap: 14 }}>
                 <div style={{ width: 42, height: 42, borderRadius: 10, background: 'rgba(27,43,94,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -753,7 +757,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
       {/* ── Section 7: Invitation rounds ────────────────────── */}
       <section style={{ background: '#f8fafd', padding: '88px 24px', borderTop: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: 56, alignItems: 'start' }} className="hero-grid">
+          <div className="grid-sidebar hero-grid" style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: 56, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: "'Gilroy', sans-serif" }}>Invitation Rounds</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 18px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
@@ -771,7 +775,8 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                 <span style={{ fontSize: 13, fontWeight: 700, color: '#0d1632' }}>[DRAFT]</span>
                 <span style={{ fontSize: 13, color: '#0d1632', marginLeft: 8 }}>Replace with verified DHA data before launch.</span>
               </div>
-              <div style={{ borderRadius: 14, overflow: 'hidden', border: '1.5px solid #e5eaf4' }}>
+              <div className="table-scroll-wrap" style={{ borderRadius: 14, overflow: 'hidden', border: '1.5px solid #e5eaf4' }}>
+                <div className="table-scroll-min">
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr 0.8fr 1fr 1fr', background: NAVY, padding: '12px 20px', gap: 8 }}>
                   {['Round','Date','Visa','Score','Invites'].map(h => (
                     <div key={h} style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.7)', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>{h}</div>
@@ -786,6 +791,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                     <div style={{ fontSize: 14, color: '#374151', fontFamily: "'Gilroy', sans-serif" }}>{row.invites}</div>
                   </div>
                 ))}
+                </div>
               </div>
               <p style={{ fontSize: 11.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
             </div>

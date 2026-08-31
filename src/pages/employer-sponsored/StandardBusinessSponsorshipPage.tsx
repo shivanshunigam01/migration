@@ -211,7 +211,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
 
       {/* ── ELIGIBILITY ── */}
       <div style={{ background: '#fff', padding: '72px 32px' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
+        <div className="grid-2" style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
           <div>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: BLUE, marginBottom: 12 }}>Who Can Apply</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 34, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>SBS eligibility requirements</h2>
@@ -262,7 +262,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="The Sequence" title="Three approvals. One sequence." intro="Each stage is a separate DHA decision. A refusal at Stage 1 does not prevent reapplication but resets the clock for every stage that follows." accent={GOLD} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {THREE_STEPS.map((step, i) => (
               <div key={i} style={{ background: '#fff', border: `2px solid ${i === 0 ? step.color + '40' : '#e8edf6'}`, borderRadius: 18, overflow: 'hidden', boxShadow: i === 0 ? '0 6px 32px rgba(14,116,144,0.1)' : '0 1px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ height: 5, background: step.color, width: '100%' }} />
@@ -296,7 +296,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Ongoing Duties" title="Sponsorship obligations" intro="SBS approval is not a one-time event. These obligations continue for the life of each sponsored worker's visa — and beyond, in some cases." accent={GOLD} light />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 24 }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 24 }}>
             {/* Sidebar nav */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               {OBLIGATIONS.map((ob) => (

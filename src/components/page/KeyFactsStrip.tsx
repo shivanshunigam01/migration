@@ -28,8 +28,7 @@ export function KeyFactsStrip({ facts, accent = NAVY, background = '#fff' }: Key
       <Stagger className="key-facts-grid" style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', display: 'grid', gridTemplateColumns: `repeat(${facts.length}, 1fr)` }}>
         {facts.map((fact, i) => (
           <StaggerItem key={i} as="article">
-            <motion.div
-              className="key-facts-article"
+            <motion.div className="key-facts-article"
               whileHover={reduce ? undefined : { y: -3 }}
               transition={{ duration: 0.22 }}
               style={{

@@ -81,8 +81,7 @@ export function FloatingParticles({
         const top = ((i * 53) % 100)
         return (
           <span
-            key={i}
-            className="nm-particle"
+            key={i} className="nm-particle"
             style={{
               position: "absolute",
               left: `${left}%`,

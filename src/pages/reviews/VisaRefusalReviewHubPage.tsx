@@ -419,7 +419,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
         <div style={{ position: 'absolute', top: '-5%', left: '55%', width: 500, height: 500, borderRadius: '50%', background: `radial-gradient(circle, ${RED}0a 0%, transparent 65%)`, pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', top: '-8%', right: '20%', width: 480, height: 480, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,255,255,0.88) 0%, transparent 65%)', pointerEvents: 'none' }} />
 
-        <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 420px', gap: 56, alignItems: 'start' }} className="hero-grid">
+        <div className="hero-grid" style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 420px', gap: 56, alignItems: 'start' }}>
           <div>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '5px 14px 5px 6px', background: RED_LIGHT, border: `1.5px solid ${RED}55`, borderRadius: 100 }}>
               <span style={{ width: 22, height: 22, borderRadius: '50%', background: RED, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -454,7 +454,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
         {/* Stat tiles */}
         <div style={{ maxWidth: 1160, margin: '40px auto 0' }}>
           <div style={{ height: 1, background: 'rgba(27,43,94,0.12)', marginBottom: 28 }} />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }} className="grid-4">
+          <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }}>
             {[
               { val: '28 days', label: 'ART lodgement window (most visas)', note: '35 days for protection' },
               { val: '~$3,272', label: 'ART application fee', note: 'refunded if successful' },
@@ -476,7 +476,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
           <SectionHeading kicker="All Pathways" title="Every pathway after a refusal or cancellation." accent={GOLD} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="grid-3">
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {CARDS.map(card => {
               const isHovered = hoveredCard === card.code
               const clickable = card.route !== null
@@ -562,7 +562,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
         <div style={{ maxWidth: 960, margin: '0 auto', position: 'relative' }}>
           <SectionHeading kicker="Bars & Conditions" title="Common bars that limit your options" intro="These provisions can significantly limit your ability to lodge further applications or access review. Identifying which bars apply to you is critical before taking any action." accent={GOLD} light />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="hero-grid">
+          <div className="grid-2 hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
             {[
               { title: 'Section 48 Bar', impact: 'HIGH', desc: 'If you were refused a visa while onshore, this bar prevents you from applying for most visas in Australia. Exceptions exist for certain subclasses — protection, resolution of status, some family visas.', impactColor: RED },
               { title: 'Schedule 3 Criteria', impact: 'HIGH', desc: 'Triggered by unlawful presence or certain circumstances at application. Requires compelling reasons to waive. The standard is very high and rarely met without evidence.', impactColor: RED },
@@ -646,7 +646,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <SectionHeading kicker="Character & Compliance" title="Other issues that affect your visa" intro="Beyond refusals and bars, character, health, and re-entry bans can close visa pathways entirely. Early advice is essential." accent={GOLD} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="grid-3">
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {[
               { title: 'Character Test (s501)', icon: 'shield', desc: 'Persons with substantial criminal records (12+ months imprisonment), associations with criminal groups, or not of good character may fail the character test. A visa can be refused or cancelled.' },
               { title: 'Health Requirements', icon: 'heart', desc: 'Most visas require meeting health criteria. Waivers exist for some subclasses where the cost or prejudice to Australia is deemed acceptable. Our agents advise on waiver prospects.' },

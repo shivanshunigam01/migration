@@ -283,7 +283,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
       {/* ── DEADLINE CALCULATOR ── */}
       <div id="deadline-calc" style={{ background: NAVY, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
 
             {/* Inputs */}
             <div>
@@ -439,7 +439,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
       <div style={{ background: GREY_BAND, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="What Happens Next" title="The ART Review Process" accent={RED} />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {PROCESS_STEPS.map((s, i) => (
               <div key={i} style={{ background: s.urgent ? '#fff9f9' : '#fff', border: `1.5px solid ${s.urgent ? RED + '25' : '#e8edf6'}`, borderRadius: 16, padding: '22px 22px', position: 'relative', overflow: 'hidden' }}>
                 {s.urgent && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: RED }} />}

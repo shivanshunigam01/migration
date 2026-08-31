@@ -126,7 +126,7 @@ function HowRoundsWork() {
           intro="Understanding how the Department of Home Affairs issues invitations is essential to managing expectations about when — and whether — you will receive one."
           accent={INDIGO}
         />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
           {ROUND_POINTS.map(p => (
             <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>

@@ -43,6 +43,34 @@ button, input, textarea, select {
   font-family: 'Gilroy', sans-serif;
 }
 
+/* ── Global mobile baseline ─────────────────────────────── */
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+#root {
+  overflow-x: clip;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  body.has-sticky-cta {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -58,6 +86,16 @@ button, input, textarea, select {
 @media (max-width: 900px) {
   /* Hero two-column → single column */
   .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Two-column grids → single column */
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Asymmetric sidebar layouts → stack */
+  .grid-sidebar {
     grid-template-columns: 1fr !important;
   }
 
@@ -423,4 +461,187 @@ button, input, textarea, select {
 }
 @media (max-width: 768px) {
   .compliance-grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ── Site header & announcement bar ──────────────────── */
+.site-header-pad {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.announcement-bar-inner {
+  flex-wrap: wrap;
+  height: auto !important;
+  min-height: 42px;
+  padding: 8px 0;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .site-header-pad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .announcement-bar-inner .announcement-divider { display: none !important; }
+  .announcement-bar-inner .announcement-text {
+    white-space: normal !important;
+    text-align: center;
+    font-size: 13px !important;
+    line-height: 1.4;
+  }
+  .announcement-bar-inner .announcement-badges {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.mega-menu-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+}
+
+/* ── Newsletter / email capture forms ────────────────── */
+.newsletter-row {
+  display: flex;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .newsletter-row {
+    flex-direction: column !important;
+  }
+  .newsletter-row .newsletter-input {
+    width: 100% !important;
+    border-radius: 10px 10px 0 0 !important;
+  }
+  .newsletter-row .newsletter-btn {
+    width: 100% !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+}
+
+/* ── Form field grids ────────────────────────────────── */
+@media (max-width: 480px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Home pathway & contact sections ─────────────────── */
+@media (max-width: 900px) {
+  .pathway-row .pathway-illus {
+    min-height: 260px !important;
+    order: -1;
+  }
+  .pathway-row .pathway-text {
+    padding: 32px 24px !important;
+  }
+  .contact-split .contact-copy {
+    padding: 48px 24px !important;
+  }
+  .contact-split .contact-photo {
+    min-height: 300px !important;
+  }
+}
+
+.pathway-widget {
+  height: auto !important;
+  min-height: 400px;
+  max-height: 70vh;
+}
+
+/* ── Page hero mobile padding ────────────────────────── */
+@media (max-width: 768px) {
+  .page-hero-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .page-hero-section-flagship {
+    padding-top: 40px !important;
+  }
+  .hero-flagship-left {
+    flex: 1 1 auto !important;
+  }
+}
+
+/* ── Section padding scale ───────────────────────────── */
+@media (max-width: 768px) {
+  .section-pad-mobile {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .section-pad-tight {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+}
+
+/* ── Scrollable data / comparison tables ─────────────── */
+.table-scroll-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+.table-scroll-wrap .table-scroll-min {
+  min-width: 520px;
+}
+
+/* ── Sticky mobile CTA safe area ─────────────────────── */
+@media (max-width: 768px) {
+  .sticky-mobile-cta {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+/* ── Breadcrumb bar ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .breadcrumb-bar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* ── Page layout with sidebar nav ────────────────────── */
+.page-with-sidebar {
+  display: flex;
+  gap: 48px;
+}
+
+@media (max-width: 1024px) {
+  .page-with-sidebar {
+    flex-direction: column !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .page-with-sidebar > :first-child {
+    display: none !important;
+  }
+}
+
+/* ── Resources tabs horizontal scroll ────────────────── */
+@media (max-width: 768px) {
+  .resources-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap !important;
+  }
+  .resources-tabs::-webkit-scrollbar { display: none; }
+  .resources-tabs button { white-space: nowrap; flex-shrink: 0; }
+}
+
+/* ── Touch-friendly minimum tap targets ──────────────── */
+@media (max-width: 768px) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

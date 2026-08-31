@@ -287,7 +287,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
                 <div style={{ background: `rgba(27,43,94,0.08)`, borderBottom: `1px solid rgba(27,43,94,0.12)`, padding: '12px 20px' }}>
                   <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, letterSpacing: '0.02em' }}>{group.level}</div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
+                <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
                   {group.visas.map((v, i) => (
                     <div key={v.code} style={{ padding: '14px 18px', borderBottom: i < group.visas.length - (group.visas.length % 2 === 0 ? 2 : 1) ? `1px solid ${BORDER}` : 'none', borderRight: i % 2 === 0 ? `1px solid ${BORDER}` : 'none' }}>
                       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 4 }}>
@@ -340,7 +340,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
             title="Test Validity Periods and Booking"
             accent={AMBER}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {[
               { icon: 'clock', color: AMBER, heading: 'Most tests are valid for 3 years', body: "IELTS, PTE Academic, TOEFL iBT, and Cambridge C1 Advanced results are generally accepted for 3 years from the date of the test. OET results are generally accepted for 2 years. Some assessing authorities apply a shorter validity period — check with your authority." },
               { icon: 'alert', color: ROSE, heading: "Validity runs from the test date, not the results date", body: "The 3-year validity period is calculated from the date you sat the test, not the date you received your results. If you are cutting it close to the expiry date when you receive an invitation, you may have less time than you expect." },
@@ -370,7 +370,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
             intro="For the subclass 189, 190 and 491 visas, English proficiency above the Competent level adds points to your EOI score in SkillSelect."
             accent={AMBER}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 }}>
             {[
               { level: 'Competent English', score: 'IELTS 6.0 in each band (generally)', points: 0, color: '#6b7280', note: 'Minimum required — earns no additional points.' },
               { level: 'Proficient English', score: 'IELTS 7.0 in each band (generally)', points: 10, color: GREEN, note: 'Adds 10 points to your EOI score.' },

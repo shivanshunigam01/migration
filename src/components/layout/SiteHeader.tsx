@@ -136,6 +136,12 @@ export default function SiteHeader({
     }
   }, [closeNav])
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.classList.toggle('menu-open', mobileOpen)
+    return () => document.body.classList.remove('menu-open')
+  }, [mobileOpen])
+
   const activeNavItem = navItems.find(i => i.label === openNav) ?? null
   const megaCols = Math.min(activeNavItem?.categories?.length ?? 0, 5)
   const catColors = ['#1B2B5E','#1B2B5E','#1B2B5E','#1B2B5E','#1B2B5E','#1B2B5E']
@@ -143,20 +149,19 @@ export default function SiteHeader({
   return (
     <>
       {/* ── ANNOUNCEMENT BAR ─────────────────────────────── */}
-      <div style={{ background: 'linear-gradient(90deg, #e8f0fa 0%, #f4f8ff 35%, #ffffff 60%, #eef3fb 100%)', padding: '0 24px', borderBottom: '1px solid #dde6f5' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', height: 42, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+      <div className="announcement-bar" style={{ background: 'linear-gradient(90deg, #e8f0fa 0%, #f4f8ff 35%, #ffffff 60%, #eef3fb 100%)', padding: '0 24px', borderBottom: '1px solid #dde6f5' }}>
+        <div className="announcement-bar-inner" style={{ maxWidth: 1200, margin: '0 auto', height: 42, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
+          <div className="announcement-badges" style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
             <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 100, background: GOLD, color: NAVY_DARK }}>EMPLOYERS</span>
             {['482','186'].map(code => (
               <span key={code} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 100, background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)' }}>{code}</span>
             ))}
           </div>
-          <span style={{ width: 1, height: 18, background: 'rgba(27,43,94,0.12)', flexShrink: 0 }} />
-          <span style={{ fontSize: 14, color: '#374151', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
+          <span className="announcement-divider" style={{ width: 1, height: 18, background: 'rgba(27,43,94,0.12)', flexShrink: 0 }} />
+          <span className="announcement-text" style={{ fontSize: 14, color: '#374151', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
             <strong style={{ fontWeight: 700, color: NAVY }}>Sponsoring staff?</strong>{' '}Employer readiness discussion — no charge.
           </span>
-          <a href="mailto:visa@nanakmigration.com.au?subject=Employer%20sponsorship%20readiness%20discussion"
-            className="announcement-cta"
+          <a href="mailto:visa@nanakmigration.com.au?subject=Employer%20sponsorship%20readiness%20discussion" className="announcement-cta"
             style={{ flexShrink: 0, fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, padding: '7px 16px', borderRadius: 100, background: GOLD, boxShadow: '0 2px 12px rgba(245,161,36,0.4)', transition: 'all 0.15s', whiteSpace: 'nowrap' }}
             onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD_LIGHT; el.style.boxShadow = '0 4px 18px rgba(245,161,36,0.55)' }}
             onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.boxShadow = '0 2px 12px rgba(245,161,36,0.4)' }}
@@ -168,7 +173,7 @@ export default function SiteHeader({
       </div>
 
       {/* ── STICKY NAV ───────────────────────────────────── */}
-      <header id="site-header-root" style={{ position: 'sticky', top: 0, zIndex: 50, padding: '0 32px', overflow: 'visible', background: NAVY, borderBottom: '1px solid rgba(245,161,36,0.18)', boxShadow: '0 2px 24px rgba(13,22,50,0.35)' }}
+      <header id="site-header-root" className="site-header-pad" style={{ position: 'sticky', top: 0, zIndex: 50, padding: '0 32px', overflow: 'visible', background: NAVY, borderBottom: '1px solid rgba(245,161,36,0.18)', boxShadow: '0 2px 24px rgba(13,22,50,0.35)' }}
         onMouseLeave={scheduleClose}
         onMouseEnter={cancelClose}>
         <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 32, height: 64 }}>
@@ -357,8 +362,7 @@ export default function SiteHeader({
           {/* Desktop CTA */}
           <GlowButton
             as="a"
-            href="/book-consultation"
-            className="nav-cta-desktop"
+            href="/book-consultation" className="nav-cta-desktop"
             size="md"
             variant="gold"
             style={{ flexShrink: 0, whiteSpace: 'nowrap' }}
@@ -377,7 +381,7 @@ export default function SiteHeader({
 
         {/* ── MEGA-MENU PANEL ─────────────────────────────── */}
         {openNav && activeNavItem?.categories && (
-          <div
+          <div className="mega-menu-panel"
             onMouseEnter={cancelClose}
             onMouseLeave={scheduleClose}
             style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', width: '100vw', backgroundColor: '#ffffff', borderTop: '1px solid #e5e7eb', boxShadow: '0 16px 48px rgba(0,0,0,0.12)', zIndex: 300 }}>
@@ -423,7 +427,7 @@ export default function SiteHeader({
                       ))}
                       {/* Divider + link groups */}
                       <div style={{ borderTop: '1px solid #dde6f5', marginTop: 12, paddingTop: 12 }}>
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 10px' }}>
+                        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 10px' }}>
                           {/* Free Tools */}
                           <div>
                             <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>

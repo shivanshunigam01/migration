@@ -266,7 +266,7 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
             accent={CAT_STUDENT}
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }} className="grid-3">
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
             {CARDS.map(card => {
               const hovered = activeCard === card.code
               const clickable = card.route !== null
@@ -305,7 +305,8 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
             accent={CAT_STUDENT}
           />
 
-          <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
+          <div className="table-scroll-wrap" style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
+            <div className="table-scroll-min">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', background: NAVY, padding: '14px 24px' }}>
               {['Cost item', 'Amount (AUD)', 'Notes'].map((h, i) => (
                 <div key={h} style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif", textAlign: i > 0 ? 'right' : 'left', minWidth: i === 1 ? 130 : i === 2 ? 200 : 'auto' }}>{h}</div>
@@ -321,6 +322,7 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
                 </div>
               )
             })}
+            </div>
           </div>
 
           <div style={{ marginTop: 16, padding: '14px 18px', background: `${GOLD}0e`, border: `1px solid ${GOLD}33`, borderRadius: 10, display: 'flex', alignItems: 'flex-start', gap: 10 }}>

@@ -57,8 +57,7 @@ export function AmbientTheatre({ className, style }: AmbientTheatreProps) {
 
   return (
     <div
-      aria-hidden
-      className={className}
+      aria-hidden className={className}
       style={{
         position: "absolute",
         inset: 0,

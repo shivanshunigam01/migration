@@ -271,7 +271,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 17, maxWidth: 560, margin: '0 auto' }}>The decisions that shape your outcome — and when they're actually made.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}>
             {[
               {
                 stage: 'Before You Enrol',
@@ -392,7 +392,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                   </div>
                 </div>
 
-                <div style={{ padding: '28px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
+                <div className="grid-2" style={{ padding: '28px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
                   <div>
                     <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Occupation List Status</div>
                     <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
@@ -442,7 +442,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       {/* ── 485 RUNWAY PLANNER ── */}
       <div style={{ background: '#fff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Interactive Planner</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Your 485 Runway Planner</h2>
@@ -611,7 +611,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Common Student-to-PR Drift Risks</h2>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>The decisions students most often get wrong — and the cost of each.</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {DRIFT_RISKS.map((risk, i) => {
               const sev = risk.severity === 'high' ? { bg: 'rgba(220,38,38,0.1)', border: 'rgba(220,38,38,0.25)', dot: '#dc2626', label: 'High risk' }
                 : risk.severity === 'medium' ? { bg: 'rgba(245,161,36,0.08)', border: 'rgba(245,161,36,0.25)', dot: GOLD, label: 'Medium risk' }

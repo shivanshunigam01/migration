@@ -53,8 +53,7 @@ export function Reveal({
   }
 
   return (
-    <motion.div
-      className={className}
+    <motion.div className={className}
       style={style}
       variants={variants}
       initial="hidden"

@@ -193,7 +193,7 @@ function TimelinePlanner() {
   }, [lodgementDate])
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
+    <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
       <div>
         <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: ROSE, marginBottom: 12 }}>Interactive Planner</div>
         <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Your 309/100 Timeline</h2>

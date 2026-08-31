@@ -170,7 +170,7 @@ function WorkExperience() {
     <section id="work-experience" style={{ background: GREY_BG, padding: '80px 32px' }}>
       <div style={{ maxWidth: 1060, margin: '0 auto' }}>
         <SectionHeading kicker="Section 3" title="How Work Experience Is Counted" accent={GREEN} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginBottom: 28 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginBottom: 28 }}>
           {/* What counts / doesn't */}
           <div style={{ background: '#fff', border: `1px solid ${BORDER}`, borderRadius: 14, padding: '28px 26px', boxShadow: '0 2px 12px rgba(27,43,94,0.05)' }}>
             <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 20px' }}>What generally counts</h3>

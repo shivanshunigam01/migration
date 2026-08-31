@@ -296,7 +296,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
             Core requirements across all three 186 streams. Additional stream-specific criteria apply.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {eligibilityItems.map((item, i) => (
               <div key={i} style={{
                 background: 'white',
@@ -392,7 +392,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
             borderRadius: 14, padding: 32,
             boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
           }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, alignItems: 'start' }}>
+            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, alignItems: 'start' }}>
               <div>
                 <div style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,

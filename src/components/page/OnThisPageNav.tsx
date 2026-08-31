@@ -15,8 +15,7 @@ const BORDER = '#e8edf6'
 export function OnThisPageNav({ sections, active, accent = '#f5a124' }: OnThisPageNavProps) {
   return (
     <nav
-      aria-label="On this page"
-      className="on-this-page-nav-wrap"
+      aria-label="On this page" className="on-this-page-nav-wrap"
       style={{ position: 'sticky', top: 88, width: 200, flexShrink: 0, alignSelf: 'flex-start' as const }}
     >
       <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#9ca3af', marginBottom: 14 }}>

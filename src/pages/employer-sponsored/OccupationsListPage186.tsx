@@ -85,7 +85,7 @@ function HowToRead() {
     <section id="how-to-read" style={{ background: GREY_BG, padding: '72px 32px' }}>
       <div style={{ maxWidth: 1060, margin: '0 auto' }}>
         <SectionHeading kicker="Guide" title="How to Read This List" accent={GREEN} />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
+        <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
           {cols.map(c => (
             <div key={c.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '24px 22px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ marginBottom: 10 }}><Icon name={c.icon} size={28} color={GREEN} /></div>

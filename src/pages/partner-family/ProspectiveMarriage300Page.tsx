@@ -319,7 +319,7 @@ export default function ProspectiveMarriage300Page({ navigate }: { navigate: (pa
             intro="Demonstrating genuine intention to marry — not just an engagement — is central to the subclass 300 assessment. The Notice of Intended Marriage (NOIM) plays an important role."
             accent={ROSE}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {NOIM_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
@@ -387,7 +387,7 @@ export default function ProspectiveMarriage300Page({ navigate }: { navigate: (pa
             intro="The subclass 300 visa does not lead directly to permanent residence. After the marriage, the couple takes the next step in the partner visa pathway."
             accent={ROSE}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {AFTER_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>

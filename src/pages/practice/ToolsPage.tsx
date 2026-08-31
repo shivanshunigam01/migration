@@ -251,8 +251,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
         </div>
 
         {/* ── Product card grid ─────────────────────────────── */}
-        <div
-          className="tools-card-grid"
+        <div className="tools-card-grid"
           style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 24, marginBottom: 56 }}
         >
           {TOOL_CARDS.map(card => (

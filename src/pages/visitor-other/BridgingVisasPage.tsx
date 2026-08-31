@@ -223,7 +223,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
       </section>
 
 
-      <div style={{ maxWidth: 1260, margin: '0 auto', padding: '48px 32px 0', display: 'flex', gap: 48 }}>
+      <div className="page-with-sidebar" style={{ maxWidth: 1260, margin: '0 auto', padding: '48px 32px 0', display: 'flex', gap: 48 }}>
         <OnThisPageNav sections={TOC} accent={STEEL} />
         <div style={{ flex: 1 }} />
       </div>
@@ -289,7 +289,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
             intro="If you hold a BVA and need to leave Australia temporarily, a Bridging Visa B must be applied for before you depart. Do not depart on a BVA."
             accent={STEEL}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {BVB_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
@@ -339,7 +339,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
             intro="The Bridging Visa E is generally available to people who are in Australia unlawfully. Understanding this pathway — and its limitations — is important for people in this situation."
             accent={STEEL}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {BVE_POINTS.map(p => (
               <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '20px 18px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>

@@ -109,13 +109,13 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
         flexDirection: 'column',
       }}
     >
-      <div style={{ display: 'flex', gap: 0 }}>
+      <div className="newsletter-row" style={{ display: 'flex', gap: 0 }}>
       <input
         type="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
+        placeholder="your@email.com" className="newsletter-input"
         style={{
           padding: '14px 20px',
           fontSize: 15,
@@ -123,6 +123,8 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
           borderRadius: '10px 0 0 10px',
           outline: 'none',
           width: 260,
+          flex: 1,
+          minWidth: 0,
           color: NAVY_DARK,
           background: '#ffffff',
           fontFamily: "'Gilroy', sans-serif",
@@ -130,7 +132,7 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
       />
       <button
         type="submit"
-        disabled={loading}
+        disabled={loading} className="newsletter-btn"
         style={{
           padding: '14px 26px',
           background: loading ? '#9ca3af' : NAVY,
@@ -307,8 +309,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
     const isOpen = openCol === id
     return (
       <div className="footer-col">
-        <button
-          className="footer-col-toggle"
+        <button className="footer-col-toggle"
           aria-expanded={isOpen}
           onClick={() => toggleCol(id)}
           style={{
@@ -521,8 +522,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
 
       {/* ── Band 3: Main footer grid ─────────────────────────────────── */}
       <div style={{ background: NAVY }}>
-        <div
-          className="footer-main-grid"
+        <div className="footer-main-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '2fr 1.2fr 1.2fr 1.2fr 1.2fr',
@@ -801,8 +801,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             Visa Services Across Australia
           </div>
           <nav aria-label="Service locations">
-            <ul
-              className="footer-location-row"
+            <ul className="footer-location-row"
               style={{
                 listStyle: 'none',
                 margin: 0,

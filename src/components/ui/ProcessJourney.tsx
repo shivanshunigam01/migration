@@ -114,8 +114,7 @@ export default function ProcessJourney() {
         <div style={{ position: 'relative' }}>
 
           {/* Horizontal rail — desktop only */}
-          <div
-            className="pj-rail-h"
+          <div className="pj-rail-h"
             style={{ position: 'absolute', top: 23, left: 'calc(12.5% - 6px)', right: 'calc(12.5% - 6px)', height: 2, background: '#e8edf6', zIndex: 0, overflow: 'visible', borderRadius: 2 }}
           >
             <div className={`pj-rail-progress${animated ? ' pj-animated' : ''}`} />
@@ -127,8 +126,7 @@ export default function ProcessJourney() {
           </div>
 
           {/* Steps grid */}
-          <div
-            className="pj-grid"
+          <div className="pj-grid grid-4"
             style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, position: 'relative', zIndex: 1 }}
           >
             {STEPS.map((step, i) => {
@@ -138,14 +136,12 @@ export default function ProcessJourney() {
 
               return (
                 <div
-                  key={step.num}
-                  className="pj-step"
+                  key={step.num} className="pj-step"
                   style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                 >
                   {/* Medallion column (becomes flex row child on mobile) */}
                   <div className="pj-medallion-col">
-                    <div
-                      className="pj-medallion"
+                    <div className="pj-medallion"
                       style={{
                         width: 48,
                         height: 48,
@@ -169,8 +165,7 @@ export default function ProcessJourney() {
                   </div>
 
                   {/* Card */}
-                  <div
-                    className="pj-card"
+                  <div className="pj-card"
                     tabIndex={0}
                     role="article"
                     aria-label={`Step ${step.num}: ${step.title}`}

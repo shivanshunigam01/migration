@@ -284,7 +284,7 @@ export default function StateNominationPage({ navigate }: { navigate: (page: str
             intro="Accepting a state or territory nomination — and being granted a visa on that basis — carries real obligations. Understanding these before you apply is important."
             accent={VIOLET}
           />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 24 }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 24 }}>
             {COMMITMENT_POINTS.map(p => (
               <div key={p.heading} style={{ background: `rgba(27,43,94,0.04)`, border: `1.5px solid rgba(27,43,94,0.12)`, borderRadius: 14, padding: '20px 18px' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>

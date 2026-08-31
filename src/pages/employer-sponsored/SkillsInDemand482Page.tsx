@@ -264,7 +264,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
           <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
             All three streams share a base set of eligibility criteria. Stream-specific salary and LMT requirements apply in addition.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {eligibilityItems.map((item, i) => (
               <div key={i} style={{
                 background: 'white',

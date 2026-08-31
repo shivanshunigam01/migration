@@ -368,7 +368,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
       {/* ── POINTS EXPIRY PLANNER ── */}
       <div id="expiry" style={{ background: NAVY, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <SectionHeading kicker="The Moat Feature" title="Points Expiry Planner" intro="Your 189 score is not static. Age points fall on your birthday. English tests expire. Skills assessments lapse. Enter your dates below — we map every event that changes your competitive position." accent={GOLD} light marginBottom={32} />
               <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
@@ -450,7 +450,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
       <div style={{ background: '#fff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeading kicker="DHA Official 2024–25" title="Complete Points Schedule" accent={GOLD} />
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
+          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {POINTS_CATEGORIES.map(cat => (
               <div key={cat.heading} style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 16, overflow: 'hidden' }}>
                 <div style={{ background: NAVY, padding: '14px 20px' }}>
@@ -475,7 +475,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
       {/* ── RECENT INVITATION ROUNDS ── */}
       <div style={{ background: GREY_BAND, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
+          <div className="grid-sidebar" style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>SkillSelect</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Recent Invitation Rounds</h2>
@@ -521,7 +521,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
           <div style={{ position: 'relative' }}>
             {/* Connector */}
             <div style={{ position: 'absolute', top: 32, left: 'calc(10% + 28px)', right: 'calc(10% + 28px)', height: 2, background: `linear-gradient(90deg, ${GOLD} 0%, ${NAVY}30 100%)`, zIndex: 0 }} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 20, position: 'relative', zIndex: 1 }}>
+            <div className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 20, position: 'relative', zIndex: 1 }}>
               {[
                 { step: '01', title: 'Skills Assessment', body: 'Get your occupation assessed by the relevant authority (e.g. Engineers Australia, VETASSESS).', time: '4–16 weeks' },
                 { step: '02', title: 'English Test', body: 'Sit IELTS, PTE, TOEFL or OET to meet at least Competent (IELTS 6) — aim for Superior for +20 pts.', time: '1–4 weeks' },

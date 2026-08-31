@@ -191,7 +191,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
 
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
+      <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
         <div>
           <label style={{ fontSize: 13, fontWeight: 700, color: '#374151', marginBottom: 6, display: 'block', letterSpacing: '0.03em' }}>
             English test
