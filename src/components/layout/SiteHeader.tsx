@@ -3,6 +3,7 @@ import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, GRADIENT_CARD_LIGHT } from '@/theme'
 import { CompassDecor } from '@/components/page/CtaBand'
 import NanakLogo from '@/components/layout/NanakLogo'
 import Icon from '@/components/ui/Icon'
+import { GlowButton } from '@/components/ui/GlowButton'
 
 /* ── Types ──────────────────────────────────────────────── */
 type NavSubItem = { label: string; desc: string; icon: string; code?: string; href?: string; route?: string }
@@ -354,12 +355,17 @@ export default function SiteHeader({
           </nav>
 
           {/* Desktop CTA */}
-          <a href="/book-consultation" onClick={(e) => { e.preventDefault(); navigate('book-consultation') }} className="nav-cta-desktop" style={{ flexShrink: 0, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 24px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 2px 16px rgba(245,161,36,0.35)', transition: 'background-color 0.2s, box-shadow 0.2s', whiteSpace: 'nowrap' }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.backgroundColor = GOLD_LIGHT; el.style.boxShadow = '0 4px 24px rgba(245,161,36,0.55)' }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.backgroundColor = GOLD; el.style.boxShadow = '0 2px 16px rgba(245,161,36,0.35)' }}
+          <GlowButton
+            as="a"
+            href="/book-consultation"
+            className="nav-cta-desktop"
+            size="md"
+            variant="gold"
+            style={{ flexShrink: 0, whiteSpace: 'nowrap' }}
+            onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}
           >
             Book Consultation
-          </a>
+          </GlowButton>
 
           {/* Hamburger (mobile) */}
           <button className="nav-hamburger" onClick={() => setMobileOpen(v => !v)}
@@ -625,10 +631,16 @@ export default function SiteHeader({
             </div>
 
             <div style={{ marginTop: 24 }}>
-              <a href="/book-consultation" onClick={(e) => { e.preventDefault(); navigate('book-consultation'); setMobileOpen(false) }}
-                style={{ display: 'block', padding: '13px', background: GOLD, borderRadius: 8, color: NAVY_DARK, fontSize: 14, fontWeight: 700, textAlign: 'center', textDecoration: 'none', fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <GlowButton
+                as="a"
+                href="/book-consultation"
+                block
+                size="md"
+                variant="gold"
+                onClick={(e) => { e.preventDefault(); navigate('book-consultation'); setMobileOpen(false) }}
+              >
                 Book Free Consultation
-              </a>
+              </GlowButton>
             </div>
           </div>
         </div>

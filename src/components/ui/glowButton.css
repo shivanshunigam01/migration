@@ -1,0 +1,232 @@
+/* Animated CTA — rotating border, shield glow, pop hover */
+.glow-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  isolation: isolate;
+  border: none;
+  cursor: pointer;
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: visible;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.glow-cta:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: grayscale(0.2);
+}
+
+.glow-cta__shield {
+  position: absolute;
+  inset: -18px;
+  border-radius: 22px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--glow-opacity, 0.55);
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--glow-core, rgba(245, 161, 36, 0.45)) 0%,
+    var(--glow-mid, rgba(245, 161, 36, 0.18)) 38%,
+    transparent 70%
+  );
+  filter: blur(10px);
+  transform: scale(var(--glow-scale, 1));
+  animation: glow-cta-breathe 2.8s ease-in-out infinite;
+}
+
+.glow-cta__ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 12px;
+  z-index: 0;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--glow-angle, 0deg),
+    transparent 0%,
+    var(--glow-ring, #f5a124) 12%,
+    #fff6e0 22%,
+    transparent 35%,
+    transparent 55%,
+    var(--glow-ring, #f5a124) 68%,
+    transparent 82%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: glow-cta-spin 3.2s linear infinite;
+  opacity: 0.95;
+}
+
+.glow-cta__shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.glow-cta__shine::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 45%;
+  height: 180%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%) rotate(12deg);
+  animation: glow-cta-shine 4.5s ease-in-out infinite;
+}
+
+.glow-cta__inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: inherit;
+  box-sizing: border-box;
+}
+
+.glow-cta--gold .glow-cta__inner {
+  background: linear-gradient(135deg, #f7b84b 0%, #f5a124 48%, #e89410 100%);
+  color: #0d1632;
+  box-shadow:
+    0 4px 18px rgba(245, 161, 36, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.glow-cta--navy .glow-cta__inner {
+  background: linear-gradient(135deg, #24386f 0%, #1b2b5e 50%, #0d1632 100%);
+  color: #f5a124;
+  box-shadow:
+    0 4px 20px rgba(13, 22, 50, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --glow-core: rgba(27, 43, 94, 0.5);
+  --glow-mid: rgba(245, 161, 36, 0.22);
+  --glow-ring: #f5a124;
+}
+
+.glow-cta--outline .glow-cta__inner {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+  --glow-core: rgba(255, 255, 255, 0.2);
+  --glow-mid: rgba(245, 161, 36, 0.15);
+  --glow-ring: rgba(255, 255, 255, 0.7);
+}
+
+.glow-cta--block {
+  width: 100%;
+}
+
+.glow-cta--sm {
+  font-size: 12px;
+  padding: 0;
+}
+
+.glow-cta--sm .glow-cta__inner {
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+.glow-cta--md {
+  font-size: 14px;
+  padding: 0;
+}
+
+.glow-cta--md .glow-cta__inner {
+  padding: 12px 26px;
+}
+
+.glow-cta--lg {
+  font-size: 16px;
+  padding: 0;
+}
+
+.glow-cta--lg .glow-cta__inner {
+  padding: 15px 34px;
+}
+
+.glow-cta:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.03);
+  filter: brightness(1.04);
+}
+
+.glow-cta:hover:not(:disabled) .glow-cta__shield {
+  opacity: 0.9;
+  --glow-scale: 1.08;
+}
+
+.glow-cta:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow-cta__shield,
+  .glow-cta__ring,
+  .glow-cta__shine::after {
+    animation: none !important;
+  }
+
+  .glow-cta:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+@keyframes glow-cta-spin {
+  to {
+    --glow-angle: 360deg;
+  }
+}
+
+@keyframes glow-cta-breathe {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.75;
+  }
+}
+
+@keyframes glow-cta-shine {
+  0%,
+  55% {
+    transform: translateX(-140%) rotate(12deg);
+  }
+  75%,
+  100% {
+    transform: translateX(320%) rotate(12deg);
+  }
+}
+
+@property --glow-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}

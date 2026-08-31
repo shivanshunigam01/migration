@@ -22,6 +22,7 @@ import { fetchPublishedBlogs } from '@/lib/contentApi'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Reveal, Stagger, StaggerItem, ShieldGlow } from '@/components/motion'
 import { fadeUp, slideRight, staggerContainer } from '@/components/motion/variants'
+import { GlowButton } from '@/components/ui/GlowButton'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
@@ -380,9 +381,16 @@ function PathwayAssessment() {
               Summary sent — our team will be in touch.
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
-              <button type="button" onClick={() => navigate('book-consultation')} style={{ flex: 1, padding: '11px 14px', background: GOLD, color: NAVY_DARK, border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+              <GlowButton
+                type="button"
+                size="sm"
+                variant="gold"
+                block
+                style={{ flex: 1 }}
+                onClick={() => navigate('book-consultation')}
+              >
                 Book Free Consultation →
-              </button>
+              </GlowButton>
               <button type="button" onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
                 Start over
               </button>
@@ -655,18 +663,12 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 36 }}>
-                <motion.a
-                  href="#contact"
-                  whileHover={reduceMotion ? undefined : { y: -2, scale: 1.02 }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                  style={{ background: NAVY_GRAD, color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: '0 4px 20px rgba(13,22,50,0.25)' }}
-                >Book Free Consultation →</motion.a>
-                <motion.a
-                  href="#visas"
-                  whileHover={reduceMotion ? undefined : { y: -2, scale: 1.02, backgroundColor: GOLD_LIGHT }}
-                  whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                  style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-block', boxShadow: '0 4px 20px rgba(245,161,36,0.35)' }}
-                >Explore Visas</motion.a>
+                <GlowButton as="a" href="#contact" size="lg" variant="navy">
+                  Book Free Consultation →
+                </GlowButton>
+                <GlowButton as="a" href="#visas" size="lg" variant="gold">
+                  Explore Visas
+                </GlowButton>
               </motion.div>
 
             </motion.div>
@@ -1189,12 +1191,9 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <motion.button
-            onClick={() => navigate('tools')}
-            whileHover={reduceMotion ? undefined : { y: -3, scale: 1.03 }}
-            whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-            style={{ background: GOLD, color: NAVY, border: 'none', padding: '14px 28px', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', flexShrink: 0 }}
-          >Explore all tools →</motion.button>
+          <GlowButton size="lg" variant="gold" onClick={() => navigate('tools')} style={{ flexShrink: 0 }}>
+            Explore all tools →
+          </GlowButton>
         </Reveal>
       </section>
 
@@ -1411,14 +1410,15 @@ export default function HomePage() {
 
             {/* CTA button */}
             <div style={{ marginBottom: 28 }}>
-              <motion.a
-                href="#"
+              <GlowButton
+                as="a"
+                href="#contact form"
+                size="lg"
+                variant="navy"
                 onClick={(e) => { e.preventDefault(); document.querySelector('#contact form')?.scrollIntoView({ behavior: 'smooth' }) }}
-                whileHover={reduceMotion ? undefined : { y: -2, backgroundColor: GOLD, color: NAVY_DARK }}
-                style={{ display: 'inline-flex', alignItems: 'center', gap: 10, backgroundColor: NAVY, color: '#fff', padding: '14px 28px', borderRadius: 7, fontSize: 15, fontWeight: 600, textDecoration: 'none' }}
               >
                 Book Free Consultation
-              </motion.a>
+              </GlowButton>
             </div>
 
 
@@ -1590,10 +1590,13 @@ export default function HomePage() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.29 6.29l.52-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/>
               </svg>
             </a>
-            <button
+            <GlowButton
+              size="md"
+              variant="gold"
               onClick={() => navigate('contact')}
-              style={{ background: GOLD, color: NAVY, border: 'none', padding: '10px 20px', borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}
-            >Book Free Consultation</button>
+            >
+              Book Free Consultation
+            </GlowButton>
           </div>
         </div>
       )}

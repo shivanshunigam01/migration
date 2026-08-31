@@ -1,7 +1,7 @@
 import React from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
 import { NAVY, NAVY_DARK, GOLD } from '@/theme'
 import { Reveal, ShieldGlow } from '@/components/motion'
+import { GlowButton } from '@/components/ui/GlowButton'
 
 /* Shared decorative SVG — compass rose + Southern Cross arc */
 export function CompassDecor({
@@ -91,8 +91,6 @@ export interface CtaBandProps {
 }
 
 export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, footnote, languages = ['Hindi', 'Punjabi', 'English'], navigate }: CtaBandProps) {
-  const reduce = useReducedMotion()
-
   function handleCta(cta: CtaBandCta) {
     if (cta.page) navigate(cta.page)
   }
@@ -121,24 +119,14 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
           )}
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12, flexShrink: 0 }}>
-          <motion.button
-            whileHover={reduce ? undefined : { y: -3, scale: 1.03, boxShadow: '0 10px 36px rgba(245,161,36,0.55)' }}
-            whileTap={reduce ? undefined : { scale: 0.98 }}
-            onClick={() => handleCta(primaryCta)}
-            style={{ display: 'block', textAlign: 'center' as const, backgroundColor: accent, color: NAVY_DARK, border: 'none', padding: '14px 32px', borderRadius: 8, fontSize: 16, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', boxShadow: '0 6px 28px rgba(245,161,36,0.50)', whiteSpace: 'nowrap' as const }}
-          >
+        <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 14, flexShrink: 0, alignItems: 'stretch' }}>
+          <GlowButton size="lg" variant="gold" onClick={() => handleCta(primaryCta)} style={{ ['--glow-ring' as string]: accent }}>
             {primaryCta.label}
-          </motion.button>
+          </GlowButton>
           {secondaryCta && (
-            <motion.button
-              whileHover={reduce ? undefined : { y: -2 }}
-              whileTap={reduce ? undefined : { scale: 0.98 }}
-              onClick={() => handleCta(secondaryCta)}
-              style={{ display: 'block', textAlign: 'center' as const, backgroundColor: 'transparent', color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.25)', padding: '12px 28px', borderRadius: 12, fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', whiteSpace: 'nowrap' as const }}
-            >
+            <GlowButton size="md" variant="outline" onClick={() => handleCta(secondaryCta)}>
               {secondaryCta.label}
-            </motion.button>
+            </GlowButton>
           )}
           {footnote && (
             <div style={{ textAlign: 'center' as const, fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>{footnote}</div>

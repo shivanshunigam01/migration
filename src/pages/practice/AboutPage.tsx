@@ -4,6 +4,7 @@ import SiteFooter from '@/components/layout/SiteFooter'
 import { NAV_ITEMS } from '@/data/navItems'
 import navpreetPhoto from '@/imports/navpreet-aulakh.jpg'
 import Icon from '@/components/ui/Icon'
+import { GlowButton } from '@/components/ui/GlowButton'
 
 const GOLD = '#f5a124'
 const NAVY = '#1B2B5E'
@@ -136,7 +137,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             </div>
 
             <div style={{ display: 'flex', gap: 12 }}>
-              <a href="#contact" style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 20px rgba(245,161,36,0.4)' }}>Book a Consultation</a>
+              <GlowButton as="a" href="#contact" size="lg" variant="gold">Book a Consultation</GlowButton>
               <a href="#career" style={{ backgroundColor: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600 }}>Career & Experience →</a>
             </div>
           </div>
@@ -428,14 +429,13 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             Book a consultation with Navpreet Aulakh — Registered Migration Agent MARN 2619467 — in English, Hindi or Punjabi.
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#contact" style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '16px 40px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 800, boxShadow: '0 6px 28px rgba(245,161,36,0.45)' }}>
+            <GlowButton as="a" href="#contact" size="lg" variant="gold">
               Book a Consultation
-            </a>
-            <a href="https://www.mara.gov.au/search-the-register" target="_blank" rel="noopener noreferrer"
-              style={{ backgroundColor: 'rgba(255,255,255,0.08)', color: '#fff', border: '2px solid rgba(255,255,255,0.2)', padding: '16px 32px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}>
+            </GlowButton>
+            <GlowButton as="a" href="https://www.mara.gov.au/search-the-register" size="lg" variant="outline" target="_blank" rel="noopener noreferrer">
               <Icon name="external" size={15} color="#fff" />
               Verify MARN 2619467
-            </a>
+            </GlowButton>
           </div>
           <div style={{ marginTop: 20, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
             Nanak Migration Group · ABN 47 648 226 804 · www.nanakmigration.com.au

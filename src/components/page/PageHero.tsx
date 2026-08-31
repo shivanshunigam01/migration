@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY, NAVY_DARK, GOLD, HERO_GRAD } from '@/theme'
 import { ShieldGlow } from '@/components/motion'
+import { GlowButton } from '@/components/ui/GlowButton'
 import { fadeUp, slideRight, staggerContainer, easeOutExpo } from '@/components/motion/variants'
 
 export interface PageHeroCtaButton {
@@ -119,24 +120,14 @@ export function PageHero({
       {(primaryCta || secondaryCta) && (
         <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
           {primaryCta && (
-            <motion.button
-              whileHover={reduce ? undefined : { y: -2, scale: 1.02 }}
-              whileTap={reduce ? undefined : { scale: 0.98 }}
-              onClick={() => handleCta(primaryCta)}
-              style={{ backgroundColor: GOLD, color: NAVY_DARK, border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', boxShadow: '0 4px 20px rgba(245,161,36,0.40)' }}
-            >
+            <GlowButton size="lg" variant="gold" onClick={() => handleCta(primaryCta)}>
               {primaryCta.label}
-            </motion.button>
+            </GlowButton>
           )}
           {secondaryCta && (
-            <motion.button
-              whileHover={reduce ? undefined : { y: -2 }}
-              whileTap={reduce ? undefined : { scale: 0.98 }}
-              onClick={() => handleCta(secondaryCta)}
-              style={{ background: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, borderRadius: 10, padding: '14px 28px', fontSize: 15, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
-            >
+            <GlowButton size="lg" variant="navy" glow={false} onClick={() => handleCta(secondaryCta)}>
               {secondaryCta.label}
-            </motion.button>
+            </GlowButton>
           )}
         </motion.div>
       )}

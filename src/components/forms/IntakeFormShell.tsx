@@ -1,5 +1,6 @@
 import React from "react"
 import { GOLD, NAVY, NAVY_DARK } from "@/theme"
+import { GlowButton } from "@/components/ui/GlowButton"
 
 const BORDER = "#e8edf6"
 
@@ -100,26 +101,16 @@ export function IntakeFormShell({
         </div>
       )}
 
-      <button
+      <GlowButton
         type="submit"
         disabled={loading}
-        style={{
-          marginTop: 20,
-          width: "100%",
-          minHeight: 48,
-          background: loading ? "#9ca3af" : NAVY,
-          color: GOLD,
-          border: "none",
-          borderRadius: 8,
-          fontSize: 14,
-          fontWeight: 700,
-          cursor: loading ? "not-allowed" : "pointer",
-          fontFamily: "Inter, system-ui, sans-serif",
-          transition: "background 0.15s",
-        }}
+        block
+        size="lg"
+        variant="navy"
+        style={{ marginTop: 20, minHeight: 48 }}
       >
         {loading ? "Sending…" : submitLabel}
-      </button>
+      </GlowButton>
     </form>
   )
 }

@@ -10,6 +10,8 @@
     "format": "oxfmt"
   },
   "dependencies": {
+    "@theatre/core": "^0.7.2",
+    "animejs": "^4.5.0",
     "framer-motion": "^13.1.1",
     "lucide-react": "^1.35.0",
     "react": "^19.0.0",
