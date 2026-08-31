@@ -44,9 +44,22 @@ button, input, textarea, select {
 }
 
 /* ── Global mobile baseline ─────────────────────────────── */
-img, video, svg {
+img, video {
   max-width: 100%;
+}
+
+img:not(.img-cover):not(.img-contain) {
   height: auto;
+}
+
+.img-cover {
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+svg {
+  max-width: 100%;
 }
 
 html {

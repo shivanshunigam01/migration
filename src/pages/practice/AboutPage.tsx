@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
 import { NAV_ITEMS } from '@/data/navItems'
-import navpreetPhoto from '@/imports/navpreet-aulakh.jpg'
+import { NAVPREET_PHOTO } from '@/lib/siteAssets'
 import Icon from '@/components/ui/Icon'
 import { GlowButton } from '@/components/ui/GlowButton'
 
@@ -88,7 +88,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
-              <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', border: `2px solid ${GOLD}40` }} />
+              <img src={NAVPREET_PHOTO} alt="Navpreet Aulakh" style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', border: `2px solid ${GOLD}40` }} />
               <div>
                 <div style={{ fontSize: 13, color: '#6b7280', fontWeight: 500 }}>Founded by</div>
                 <div style={{ fontSize: 17, fontWeight: 700, color: NAVY }}>Nanak Migration Group</div>
@@ -150,7 +150,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               borderRadius: '24px 24px 0 0',
             }} />
             <img
-              src={navpreetPhoto}
+              className="img-cover"
+              src={NAVPREET_PHOTO}
               alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
               style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', height: '110%', maxWidth: 'none', objectFit: 'cover', objectPosition: 'top center' }}
             />
@@ -420,7 +421,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       {/* ── CTA ── */}
       <div style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_DARK} 100%)`, padding: '72px 32px', borderTop: `4px solid ${GOLD}` }}>
         <div style={{ maxWidth: 820, margin: '0 auto', textAlign: 'center' }}>
-          <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 64, height: 64, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', border: `3px solid ${GOLD}50`, marginBottom: 24 }} />
+          <img src={NAVPREET_PHOTO} alt="Navpreet Aulakh" style={{ width: 64, height: 64, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', border: `3px solid ${GOLD}50`, marginBottom: 24 }} />
           <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 42, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.15 }}>
             Regulated advice.<br />
             <span style={{ color: GOLD }}>Real language. Real outcomes.</span>

@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|robots\\.txt|sitemap\\.xml|navpreet-aulakh\\.jpg|logo\\.png|icons\\.svg).*)", "destination": "/index.html" }
   ]
 }

@@ -3,7 +3,7 @@ import { useAppNavigate } from '@/lib/navigation'
 import { intakeRefNumber, useIntakeSubmit } from '@/lib/api'
 import ContactForm from '@/components/forms/ContactForm'
 
-import navpreetPhoto from '@/imports/navpreet-aulakh.jpg'
+import { NAVPREET_PHOTO } from '@/lib/siteAssets'
 import AustralianSkyline from '@/components/ui/AustralianSkyline'
 import cardKangaroo from '/src/imports/card-kangaroo.png'
 import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, NAVY_MID, NAVY_GRAD, NAVY_GRAD_V, HERO_GRAD, CREAM, GREY_BAND, TEXT } from '@/theme'
@@ -1432,14 +1432,15 @@ export default function HomePage() {
           {/* RIGHT — Founder panel */}
           <Reveal preset="right" className="contact-photo" style={{ position: 'relative', minHeight: 460, overflow: 'hidden', alignSelf: 'stretch', background: 'linear-gradient(135deg, #1B2B5E 0%, #0d1632 100%)' }}>
             <img
-              src={navpreetPhoto}
+              className="img-cover"
+              src={NAVPREET_PHOTO}
               alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,22,50,0.92) 0%, rgba(13,22,50,0.35) 45%, rgba(13,22,50,0.08) 100%)' }} />
             {/* credential card */}
             <div style={{ position: 'absolute', bottom: '12%', left: 24, zIndex: 2, display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.2)', borderLeft: `3px solid ${GOLD}`, borderRadius: 8, padding: '12px 18px' }}>
-              <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }} />
+              <img src={NAVPREET_PHOTO} alt="Navpreet Aulakh" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff', lineHeight: 1.2 }}>Navpreet Aulakh</div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginTop: 1 }}>Founder, Registered Migration Agent</div>

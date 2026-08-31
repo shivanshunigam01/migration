@@ -1,5 +1,5 @@
 import React from 'react'
-import navpreetPhoto from '@/imports/navpreet-aulakh.jpg'
+import { NAVPREET_PHOTO } from '@/lib/siteAssets'
 
 interface ReviewedByProps {
   lastReviewed?: string
@@ -18,7 +18,7 @@ export default function ReviewedBy({ lastReviewed = 'July 2026' }: ReviewedByPro
       margin: '16px 0 0 0',
     }}>
       <img
-        src={navpreetPhoto}
+        src={NAVPREET_PHOTO}
         alt="Navpreet Aulakh"
         style={{ width: 32, height: 32, objectFit: 'cover', objectPosition: 'top center', borderRadius: '50%', flexShrink: 0 }}
       />
