@@ -3,9 +3,8 @@ import { useAppNavigate } from '@/lib/navigation'
 import { intakeRefNumber, useIntakeSubmit } from '@/lib/api'
 import ContactForm from '@/components/forms/ContactForm'
 
-import { NAVPREET_PHOTO } from '@/lib/siteAssets'
+import { NAVPREET_PHOTO, MARA_BADGE, MIA_LOGO, QEAC_LOGO, CARD_KANGAROO } from '@/lib/siteAssets'
 import AustralianSkyline from '@/components/ui/AustralianSkyline'
-import cardKangaroo from '/src/imports/card-kangaroo.png'
 import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, NAVY_MID, NAVY_GRAD, NAVY_GRAD_V, HERO_GRAD, CREAM, GREY_BAND, TEXT } from '@/theme'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
@@ -613,7 +612,7 @@ export default function HomePage() {
 
         {/* Kangaroo — bottom-right accent */}
         <motion.img
-          src={cardKangaroo}
+          src={CARD_KANGAROO}
           alt=""
           aria-hidden="true"
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
@@ -1225,7 +1224,7 @@ export default function HomePage() {
             <StaggerItem preset="scale">
             <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Registration Badge — 2619467" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
+                <img className="img-contain" src={MARA_BADGE} alt="MARA Registration Badge — 2619467" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>MARA Registered Agent</div>
@@ -1239,7 +1238,7 @@ export default function HomePage() {
             <StaggerItem preset="scale">
             <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src="/src/imports/logo-preview-selection.png" alt="Migration Institute of Australia logo" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
+                <img className="img-contain" src={MIA_LOGO} alt="Migration Institute of Australia logo" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Migration Institute of Australia</div>
@@ -1252,7 +1251,7 @@ export default function HomePage() {
             <StaggerItem preset="scale">
             <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img src="/src/imports/Qualified-australian-agent-logo.png" alt="QEAC — Qualified Education Agent Counsellors logo" style={{ maxHeight: 110, maxWidth: 180, objectFit: 'contain' }} />
+                <img className="img-contain" src={QEAC_LOGO} alt="QEAC — Qualified Education Agent Counsellors logo" style={{ maxHeight: 110, maxWidth: 180, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>QEAC Certified</div>

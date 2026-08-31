@@ -58,6 +58,12 @@ img:not(.img-cover):not(.img-contain) {
   object-fit: cover;
 }
 
+.img-contain {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 svg {
   max-width: 100%;
 }

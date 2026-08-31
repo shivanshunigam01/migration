@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
 import { NAV_ITEMS } from '@/data/navItems'
-import { NAVPREET_PHOTO } from '@/lib/siteAssets'
+import { NAVPREET_PHOTO, MARA_BADGE, QEAC_LOGO } from '@/lib/siteAssets'
 import Icon from '@/components/ui/Icon'
 import { GlowButton } from '@/components/ui/GlowButton'
 
@@ -161,7 +161,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               <div style={{ fontSize: 16, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
               <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>Navpreet Aulakh</div>
               <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
-                <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Badge" style={{ height: 32, objectFit: 'contain' }} />
+                <img className="img-contain" src={MARA_BADGE} alt="MARA Badge" style={{ height: 32, objectFit: 'contain' }} />
               </div>
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             {/* OMARA registration card */}
             <div style={{ background: '#fff', border: `2px solid ${GOLD}25`, borderRadius: 20, padding: '28px 28px', boxShadow: '0 4px 24px rgba(27,43,94,0.08)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
-                <img src="/src/imports/mara-badge-2619467-hires.png" alt="OMARA Registration Badge" style={{ height: 56, objectFit: 'contain' }} />
+                <img className="img-contain" src={MARA_BADGE} alt="OMARA Registration Badge" style={{ height: 56, objectFit: 'contain' }} />
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: GOLD, marginBottom: 3 }}>OMARA Registered</div>
                   <div style={{ fontSize: 21, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
@@ -358,8 +358,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 16, padding: '22px 24px' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Logos & Accreditations</div>
                 <div style={{ display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
-                  <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Registration Badge" style={{ height: 52, objectFit: 'contain' }} />
-                  <img src="/src/imports/Qualified-australian-agent-logo.png" alt="QEAC — Qualified Education Agent Counsellors" style={{ height: 52, objectFit: 'contain' }} />
+                  <img className="img-contain" src={MARA_BADGE} alt="MARA Registration Badge" style={{ height: 52, objectFit: 'contain' }} />
+                  <img className="img-contain" src={QEAC_LOGO} alt="QEAC — Qualified Education Agent Counsellors" style={{ height: 52, objectFit: 'contain' }} />
                 </div>
               </div>
 
