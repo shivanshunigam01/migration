@@ -80,7 +80,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
   const openPost = (post: DisplayPost) => navigate(`${ROUTE.blog}/${post.slug}`)
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#fff', color: TEXT }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au/' },
@@ -132,7 +132,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                 border: '1.5px solid #e2e8f0',
                 borderRadius: 8,
                 outline: 'none',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 color: TEXT,
                 background: '#fff',
                 boxSizing: 'border-box',
@@ -218,7 +218,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                 <div style={{ padding: '20px 24px 24px' }}>
                   <h3
                     style={{
-                      fontFamily: "'Fraunces', Georgia, serif",
+                      fontFamily: "'Gilroy', sans-serif",
                       fontSize: 18,
                       fontWeight: 400,
                       color: NAVY,
@@ -309,7 +309,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                     padding: '10px 12px',
                     borderRadius: 8,
                     transition: 'background 0.12s',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: "'Gilroy', sans-serif",
                   }}
                   onMouseEnter={e => {
                     ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'
@@ -387,7 +387,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   fontWeight: 600,
                   cursor: 'pointer',
                   textAlign: 'left',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: "'Gilroy', sans-serif",
                 }}
               >
                 All categories
@@ -406,7 +406,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                     fontWeight: 600,
                     cursor: 'pointer',
                     textAlign: 'left',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: "'Gilroy', sans-serif",
                   }}
                 >
                   {cat}

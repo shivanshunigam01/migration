@@ -18,7 +18,7 @@ export default function NanakLogo({ size = 36, light = false }: { size?: number;
       </svg>
       <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
         <span style={{
-          fontFamily: "'Fraunces', Georgia, serif",
+          fontFamily: "'Gilroy', sans-serif",
           fontWeight: 700,
           fontSize: Math.round(size * 0.52),
           color: textColor,

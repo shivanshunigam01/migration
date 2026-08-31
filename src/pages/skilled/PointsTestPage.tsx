@@ -77,7 +77,7 @@ function PointsBreakdownTable() {
                   <Icon name={cat.icon} size={15} color={NAVY} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY }}>{cat.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{cat.heading}</div>
                   <div style={{ fontSize: 12, color: '#6b7280', marginTop: 2 }}>{cat.description}</div>
                 </div>
                 <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, background: 'rgba(27,43,94,0.06)', border: '1px solid rgba(27,43,94,0.20)', padding: '3px 10px', borderRadius: 100, whiteSpace: 'nowrap', flexShrink: 0 }}>
@@ -133,7 +133,7 @@ function HowRoundsWork() {
                 <div style={{ width: 30, height: 30, borderRadius: 8, background: 'rgba(27,43,94,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
               </div>
               <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>{p.body}</p>
             </div>
@@ -187,8 +187,8 @@ function CommonMistakesSection() {
           {MISTAKES.map(m => (
             <div key={m.n} style={{ border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '14px 18px', background: `${m.color}06`, borderBottom: `1px solid ${m.color}18` }}>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 22, fontWeight: 800, color: m.color, flexShrink: 0, width: 36 }}>{m.n}</div>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY }}>{m.heading}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: m.color, flexShrink: 0, width: 36 }}>{m.n}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{m.heading}</div>
               </div>
               <div style={{ padding: '16px 18px', background: '#fff' }}>
                 <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{m.body}</p>
@@ -222,7 +222,7 @@ function PointsSummaryWidget() {
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '26px 24px' }}>
       <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: INDIGO, marginBottom: 4 }}>Points at a glance</div>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 18 }}>
-        <span style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 48, fontWeight: 800, color: NAVY, lineHeight: 1 }}>{POINTS_MINIMUM}</span>
+        <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 48, fontWeight: 800, color: NAVY, lineHeight: 1 }}>{POINTS_MINIMUM}</span>
         <span style={{ fontSize: 14, color: '#9ca3af', fontWeight: 500 }}>minimum (up to {total})</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8, marginBottom: 18 }}>
@@ -300,7 +300,7 @@ export default function PointsTestPage({ navigate }: { navigate: (page: string) 
     document.title = PAGE_META['points-test'].title
   }, [])
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

@@ -68,7 +68,7 @@ function EligibilityChecker({ navigate }: { navigate: (page: string) => void }) 
             <div style={{ display: 'flex', gap: 8 }}>
               {[{ label: 'Yes', val: true }, { label: 'No', val: false }].map(opt => (
                 <button key={opt.label} onClick={() => toggle(q.id, opt.val)}
-                  style={{ flex: 1, padding: '8px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', transition: 'all 0.15s', border: `1.5px solid ${answers[q.id] === opt.val ? ROSE : '#e5e9f5'}`, background: answers[q.id] === opt.val ? `${ROSE}12` : '#f8fafd', color: answers[q.id] === opt.val ? ROSE : '#6b7280', fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  style={{ flex: 1, padding: '8px', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', transition: 'all 0.15s', border: `1.5px solid ${answers[q.id] === opt.val ? ROSE : '#e5e9f5'}`, background: answers[q.id] === opt.val ? `${ROSE}12` : '#f8fafd', color: answers[q.id] === opt.val ? ROSE : '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>
                   {opt.label}
                 </button>
               ))}
@@ -77,7 +77,7 @@ function EligibilityChecker({ navigate }: { navigate: (page: string) => void }) 
         ))}
         {allAnswered && (
           <button onClick={() => setShowResult(true)}
-            style={{ width: '100%', marginTop: 4, padding: '12px', background: ROSE, color: '#fff', border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
+            style={{ width: '100%', marginTop: 4, padding: '12px', background: ROSE, color: '#fff', border: 'none', borderRadius: 10, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
             Check my eligibility →
           </button>
         )}
@@ -101,13 +101,13 @@ function EligibilityChecker({ navigate }: { navigate: (page: string) => void }) 
                 {noSubstantive && (
                   <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.5)', borderRadius: 12, padding: '14px 18px' }}>
                     <div style={{ fontSize: 12, fontWeight: 700, color: AMBER, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}><Icon name="alert" size={12} color={AMBER} /> Schedule 3 warning — no substantive visa</div>
-                    <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.65 }}>Bridging visa holders who were not the holder of a substantive visa immediately before lodgement may attract Schedule 3 criteria. You will need to demonstrate compelling reasons for a waiver.{' '}<button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 12, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: 'Inter, system-ui, sans-serif' }}>See our review hub →</button></div>
+                    <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.65 }}>Bridging visa holders who were not the holder of a substantive visa immediately before lodgement may attract Schedule 3 criteria. You will need to demonstrate compelling reasons for a waiver.{' '}<button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 12, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: "'Gilroy', sans-serif" }}>See our review hub →</button></div>
                   </div>
                 )}
                 {refused && (
                   <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.5)', borderRadius: 12, padding: '14px 18px' }}>
                     <div style={{ fontSize: 12, fontWeight: 700, color: AMBER, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 4 }}><Icon name="alert" size={12} color={AMBER} /> Section 48 bar may apply</div>
-                    <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.65 }}>If you have had a visa refused while onshore, the section 48 bar may prevent you from lodging most onshore applications. Certain visa subclasses including the 820 are exempt, but this depends on your specific history. Obtain advice before proceeding.{' '}<button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 12, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: 'Inter, system-ui, sans-serif' }}>See our review hub →</button></div>
+                    <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.65 }}>If you have had a visa refused while onshore, the section 48 bar may prevent you from lodging most onshore applications. Certain visa subclasses including the 820 are exempt, but this depends on your specific history. Obtain advice before proceeding.{' '}<button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 12, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: "'Gilroy', sans-serif" }}>See our review hub →</button></div>
                   </div>
                 )}
               </div>
@@ -136,7 +136,7 @@ function PillarSelector() {
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
         {PILLARS.map((pillar, i) => (
           <button key={i} onClick={() => setOpenPillar(i)}
-            style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 18px', background: openPillar === i ? '#fff' : '#f0f2f8', border: `2px solid ${openPillar === i ? pillar.color : 'transparent'}`, borderRadius: 12, cursor: 'pointer', textAlign: 'left' as const, boxShadow: openPillar === i ? '0 4px 20px rgba(27,43,94,0.1)' : 'none', transition: 'all 0.15s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+            style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 18px', background: openPillar === i ? '#fff' : '#f0f2f8', border: `2px solid ${openPillar === i ? pillar.color : 'transparent'}`, borderRadius: 12, cursor: 'pointer', textAlign: 'left' as const, boxShadow: openPillar === i ? '0 4px 20px rgba(27,43,94,0.1)' : 'none', transition: 'all 0.15s', fontFamily: "'Gilroy', sans-serif" }}>
             <div style={{ width: 36, height: 36, borderRadius: 10, background: openPillar === i ? `${pillar.color}15` : '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <Icon name={pillar.icon} size={16} color={openPillar === i ? pillar.color : '#9ca3af'} />
             </div>
@@ -234,7 +234,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -266,7 +266,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
                 <span style={{ background: `${ROSE}18`, color: ROSE, border: `1px solid ${ROSE}40`, fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>Subclass 820 / 801</span>
                 <span style={{ color: '#6b7280', fontSize: 12 }}>Onshore · One application · Two stages</span>
               </div>
-              <h1 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 50, fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px' }}>
+              <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 50, fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px' }}>
                 Partner Visa Onshore —{' '}
                 <em style={{ fontStyle: 'italic', color: ROSE }}>820 and 801</em>
               </h1>
@@ -330,7 +330,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <SectionHeading kicker="Section 2" title="820 vs 309 — Which Applies to You?" intro="Same destination. Same government fee. The only practical difference is where you are at lodgement — and where you must be at the first grant." accent={ROSE} />
           <div style={{ textAlign: 'center', marginBottom: 24 }}>
-            <button onClick={() => navigate('partner-visa-309-100')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 14, fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', fontFamily: 'Inter, system-ui, sans-serif' }}>Read the full 309/100 guide →</button>
+            <button onClick={() => navigate('partner-visa-309-100')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 14, fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', fontFamily: "'Gilroy', sans-serif" }}>Read the full 309/100 guide →</button>
           </div>
           <ComparisonTable columns={COMPARE_COLS} rows={COMPARE_ROWS} accent={ROSE} caption="* Verified as at 1 July 2026 — verify current fees with the Department of Home Affairs before lodgement." />
         </div>
@@ -366,7 +366,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
                 <p style={{ margin: 0 }}>Common compelling reasons include: length and genuineness of the relationship, Australian-citizen children, significant hardship to the sponsor, and medical or humanitarian circumstances. There is no guaranteed waiver — the decision-maker has broad discretion.</p>
                 <div style={{ background: `${AMBER}10`, borderRadius: 10, padding: '12px 16px', display: 'flex', gap: 10, alignItems: 'flex-start', marginTop: 4 }}>
                   <Icon name="info" size={14} color={AMBER} />
-                  <div style={{ fontSize: 13, color: '#0d1632' }}>If you are currently on a Bridging Visa, seek registered agent advice <strong>before</strong> lodging. The window to lodging a substantive visa may still be open depending on your situation. <button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 13, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: 'Inter, system-ui, sans-serif' }}>See our review hub</button> for complex onshore cases.</div>
+                  <div style={{ fontSize: 13, color: '#0d1632' }}>If you are currently on a Bridging Visa, seek registered agent advice <strong>before</strong> lodging. The window to lodging a substantive visa may still be open depending on your situation. <button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 13, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: "'Gilroy', sans-serif" }}>See our review hub</button> for complex onshore cases.</div>
                 </div>
               </div>
             </div>
@@ -388,7 +388,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
                 <p style={{ margin: 0 }}>If a section 48 bar applies to you, you should also understand whether the <strong>Administrative Review Tribunal (ART)</strong> review option for your prior refusal is still open. Both strategies should be considered together before any lodgement decision.</p>
                 <div style={{ background: `${ROSE}08`, borderRadius: 10, padding: '12px 16px', display: 'flex', gap: 10, alignItems: 'flex-start', marginTop: 4 }}>
                   <Icon name="info" size={14} color={ROSE} />
-                  <div style={{ fontSize: 13, color: '#0d1632' }}>Do not lodge blindly if you have had a prior onshore refusal. A wrongly lodged application can have consequences. <button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 13, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: 'Inter, system-ui, sans-serif' }}>Speak to our review team first</button>.</div>
+                  <div style={{ fontSize: 13, color: '#0d1632' }}>Do not lodge blindly if you have had a prior onshore refusal. A wrongly lodged application can have consequences. <button onClick={() => navigate('visa-refusal-review')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 13, fontWeight: 700, cursor: 'pointer', padding: 0, textDecoration: 'underline', fontFamily: "'Gilroy', sans-serif" }}>Speak to our review team first</button>.</div>
                 </div>
               </div>
             </div>

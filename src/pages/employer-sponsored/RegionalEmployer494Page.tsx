@@ -103,15 +103,14 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif", background: '#f8fafc', minHeight: '100vh', color: '#1E1E2A' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f8fafc', minHeight: '100vh', color: '#1E1E2A' }}>
       {/* Google Fonts */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap');
-      `}</style>
+        `}</style>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>Home</button>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span>Employer Sponsored</span>
           <span>›</span>
@@ -142,7 +141,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
 
               {/* H1 */}
               <h1 style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Gilroy', sans-serif",
                 fontSize: 'clamp(32px, 5vw, 52px)',
                 fontWeight: 800, color: NAVY,
                 lineHeight: 1.15, marginBottom: 24,
@@ -198,7 +197,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
                 <Icon name="mappin" size={20} color={GOLD} />
-                <h3 style={{ color: NAVY, fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 700, margin: 0 }}>
+                <h3 style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, margin: 0 }}>
                   Regional Area Quick Guide
                 </h3>
               </div>
@@ -251,7 +250,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 background: '#fff',
               }}>
                 <Icon name={s.icon} size={22} color={GOLD} />
-                <span style={{ color: NAVY, fontFamily: "'Fraunces', serif", fontSize: 26, fontWeight: 700 }}>{s.value}</span>
+                <span style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 700 }}>{s.value}</span>
                 <span style={{ color: '#6b7280', fontSize: 13 }}>{s.label}</span>
               </div>
             ))}
@@ -266,7 +265,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="shield" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Eligibility Requirements
             </h2>
           </div>
@@ -288,7 +287,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 }}>
                   <Icon name={e.icon} size={22} color={TEAL} />
                 </div>
-                <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: 0 }}>{e.title}</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: 0 }}>{e.title}</h3>
                 <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{e.body}</p>
               </div>
             ))}
@@ -299,7 +298,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="layers" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Visa Streams
             </h2>
           </div>
@@ -316,7 +315,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                   <Icon name={stream.icon} size={22} color={TEAL} />
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: 0 }}>{stream.title}</h3>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: 0 }}>{stream.title}</h3>
                 </div>
                 <p style={{ color: '#475569', fontSize: 15, lineHeight: 1.7, margin: 0 }}>{stream.body}</p>
               </div>
@@ -328,7 +327,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="trending" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Pathway to Permanent Residence
             </h2>
           </div>
@@ -345,7 +344,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                     color: step.num === 5 ? NAVY_DARK : '#fff',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontWeight: 800, fontSize: 18, flexShrink: 0,
-                    fontFamily: "'Fraunces', serif",
+                    fontFamily: "'Gilroy', sans-serif",
                   }}>
                     {step.num}
                   </div>
@@ -354,7 +353,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                   )}
                 </div>
                 <div style={{ paddingBottom: i < STEPS.length - 1 ? 32 : 0, paddingTop: 10 }}>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 6 }}>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 6 }}>
                     {step.num === 5 && <><Icon name="star" size={14} color={GOLD} />{' '}</>}{step.title}
                   </h3>
                   <p style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
@@ -368,7 +367,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="alert" size={24} color={GOLD} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Key Considerations
             </h2>
           </div>
@@ -390,7 +389,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                   <Icon name={c.icon} size={20} color={GOLD} />
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{c.title}</h3>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{c.title}</h3>
                   <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
                 </div>
               </div>
@@ -402,7 +401,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="info" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Frequently Asked Questions
             </h2>
           </div>
@@ -462,7 +461,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
             <Icon name="zap" size={14} color={GOLD} /> Free Initial Assessment
           </span>
           <h2 style={{
-            fontFamily: "'Fraunces', serif", fontSize: 36, fontWeight: 800,
+            fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 800,
             color: '#fff', marginBottom: 16,
           }}>
             Ready to Start Your Regional Journey?

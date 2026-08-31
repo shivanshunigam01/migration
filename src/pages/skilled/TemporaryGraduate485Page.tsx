@@ -259,7 +259,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
     document.title = PAGE_META['temporary-graduate-485'].title
   }, [])
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -354,14 +354,14 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               <div>
                 <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Date of birth <span style={{ color: 'rgba(79,70,229,0.5)' }}>*</span></label>
                 <input type="date" value={dob} onChange={e => setDob(e.target.value)}
-                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${dob ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: 'Inter, system-ui, sans-serif', boxSizing: 'border-box' }} />
+                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${dob ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
               </div>
               <div>
                 <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>
                   Results release date <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>(not graduation ceremony)</span>
                 </label>
                 <input type="date" value={resultsDate} onChange={e => setResultsDate(e.target.value)}
-                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${resultsDate ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: 'Inter, system-ui, sans-serif', boxSizing: 'border-box' }} />
+                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${resultsDate ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                 <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 5 }}>Check your student portal or academic transcript for the official results date</div>
               </div>
               <div>
@@ -398,7 +398,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                 {/* Results clock */}
                 <div style={{ background: 'rgba(255,255,255,0.05)', border: `2px solid ${urgencyColor(calc.resultsLeftDays)}30`, borderRadius: 16, padding: '22px 20px', textAlign: 'center' }}>
                   <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.resultsLeftDays), marginBottom: 12 }}>Results Clock</div>
-                  <div style={{ fontSize: 56, fontWeight: 900, color: urgencyColor(calc.resultsLeftDays), lineHeight: 1, fontFamily: 'Fraunces, Georgia, serif', marginBottom: 4 }}>
+                  <div style={{ fontSize: 56, fontWeight: 900, color: urgencyColor(calc.resultsLeftDays), lineHeight: 1, fontFamily: "'Gilroy', sans-serif", marginBottom: 4 }}>
                     {calc.resultsLeftDays !== null ? (calc.resultsLeftDays < 0 ? <Icon name="xcirc" size={56} color={urgencyColor(calc.resultsLeftDays)} /> : calc.resultsLeftDays) : '—'}
                   </div>
                   <div style={{ fontSize: 13, color: urgencyColor(calc.resultsLeftDays), fontWeight: 700, marginBottom: 10 }}>
@@ -418,7 +418,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                 {/* Age clock */}
                 <div style={{ background: 'rgba(255,255,255,0.05)', border: `2px solid ${urgencyColor(calc.ageLeftDays)}30`, borderRadius: 16, padding: '22px 20px', textAlign: 'center' }}>
                   <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.ageLeftDays), marginBottom: 12 }}>Age Clock</div>
-                  <div style={{ fontSize: 56, fontWeight: 900, color: urgencyColor(calc.ageLeftDays), lineHeight: 1, fontFamily: 'Fraunces, Georgia, serif', marginBottom: 4 }}>
+                  <div style={{ fontSize: 56, fontWeight: 900, color: urgencyColor(calc.ageLeftDays), lineHeight: 1, fontFamily: "'Gilroy', sans-serif", marginBottom: 4 }}>
                     {calc.ageLeftDays !== null ? (calc.ageLeftDays < 0 ? <Icon name="xcirc" size={56} color={urgencyColor(calc.ageLeftDays)} /> : calc.ageLeftDays) : '—'}
                   </div>
                   <div style={{ fontSize: 13, color: urgencyColor(calc.ageLeftDays), fontWeight: 700, marginBottom: 10 }}>
@@ -448,7 +448,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                     Your True Deadline — Limited by the {calc.trueDeadlineType === 'age' ? 'Age Clock' : 'Results Clock'}
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontSize: 24, fontWeight: 800, color: '#fff', fontFamily: 'Fraunces, Georgia, serif' }}>
+                    <div style={{ fontSize: 24, fontWeight: 800, color: '#fff', fontFamily: "'Gilroy', sans-serif" }}>
                       {calc.trueDeadline.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                     </div>
                     <div style={{ textAlign: 'right' }}>
@@ -516,7 +516,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16 }}>
                 <div>
                   <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: stream.color }}>Previously: {stream.oldName}</span>
-                  <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 26, fontWeight: 700, color: NAVY, margin: '4px 0' }}>{stream.name} ({stream.code})</h3>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 700, color: NAVY, margin: '4px 0' }}>{stream.name} ({stream.code})</h3>
                 </div>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <span style={{ background: `${stream.color}15`, color: stream.color, border: `1px solid ${stream.color}30`, padding: '5px 14px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>Age limit: {stream.ageLimit}</span>

@@ -225,7 +225,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
   ]
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: '#1E1E2A' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: '#1E1E2A' }}>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <PageHero
@@ -301,7 +301,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
                   fontSize: 13,
                   fontWeight: 700,
                   cursor: 'pointer',
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: "'Gilroy', sans-serif",
                   transition: 'background 0.15s, color 0.15s',
                 }}
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.color = '#0d1632' }}
@@ -333,7 +333,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     border: 'none',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: "'Gilroy', sans-serif",
                     fontSize: 16,
                     fontWeight: 700,
                     textAlign: 'left' as const,

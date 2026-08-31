@@ -282,7 +282,7 @@ function GSAtAGlance() {
   return (
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '26px 24px' }}>
       <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: BLUE, marginBottom: 4 }}>GS assessment factors</div>
-      <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 22, fontWeight: 800, color: NAVY, lineHeight: 1.2, marginBottom: 18 }}>
+      <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: NAVY, lineHeight: 1.2, marginBottom: 18 }}>
         5 factors,<br />assessed holistically
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8, marginBottom: 20 }}>
@@ -305,7 +305,7 @@ function GSAtAGlance() {
 
 export default function GenuineStudentRequirementPage({ navigate }: { navigate: (page: string) => void }) {
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -387,7 +387,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
                   <Icon name={d.icon} size={13} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 3 }}>{d.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 3 }}>{d.heading}</div>
                   <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{d.body}</p>
                 </div>
               </div>
@@ -428,7 +428,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
                   <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
                 </div>
               </div>
@@ -457,7 +457,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                     <Icon name={p.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
                 <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{p.body}</p>
               </div>
@@ -479,8 +479,8 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
             {CONCERNS.map(c => (
               <div key={c.n} style={{ border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '14px 18px', background: `rgba(27,43,94,0.04)`, borderBottom: `1px solid rgba(27,43,94,0.10)` }}>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 22, fontWeight: 800, color: NAVY, width: 36, flexShrink: 0 }}>{c.n}</div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY }}>{c.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: NAVY, width: 36, flexShrink: 0 }}>{c.n}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY }}>{c.heading}</div>
                 </div>
                 <div style={{ padding: '16px 18px', background: '#fff' }}>
                   <p style={{ margin: '0 0 12px', fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{c.body}</p>

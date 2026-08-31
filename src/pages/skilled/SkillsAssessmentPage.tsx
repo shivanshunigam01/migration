@@ -231,7 +231,7 @@ export default function SkillsAssessmentPage({ navigate }: { navigate: (page: st
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -333,7 +333,7 @@ export default function SkillsAssessmentPage({ navigate }: { navigate: (page: st
                   <Icon name={m.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{m.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{m.heading}</div>
                   <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{m.body}</p>
                 </div>
               </div>

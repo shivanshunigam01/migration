@@ -169,7 +169,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: '#1a1a2e' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: '#1a1a2e' }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -236,7 +236,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                       <span style={{ fontSize: 11, fontWeight: 700, color: visa.tagColor, background: `${visa.tagColor}18`, border: `1px solid ${visa.tagColor}44`, borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>{visa.tag}</span>
                     </div>
                     <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass {visa.code}</div>
-                    <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 12px', lineHeight: 1.25 }}>{visa.name}</h3>
+                    <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 12px', lineHeight: 1.25 }}>{visa.name}</h3>
                     <p style={{ fontSize: 13, color: '#6b7a8d', lineHeight: 1.7, margin: '0 0 20px' }}>{visa.summary}</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
@@ -254,7 +254,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                     </div>
 
                     <button onClick={() => setSelectedVisa(isOpen ? null : visa.code)}
-                      style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${isOpen ? GOLD : '#e5eaf4'}`, background: isOpen ? GOLD : 'transparent', color: isOpen ? NAVY_DARK : NAVY, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.2s' }}
+                      style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${isOpen ? GOLD : '#e5eaf4'}`, background: isOpen ? GOLD : 'transparent', color: isOpen ? NAVY_DARK : NAVY, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
                     >
                       {isOpen ? 'Hide details ↑' : 'See full details →'}
                     </button>
@@ -301,7 +301,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
             {/* Left — controls */}
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Government Fee Estimator</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
                 Know your costs before you commit
               </h2>
               <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 32 }}>
@@ -314,7 +314,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                 <div style={{ display: 'flex', gap: 8 }}>
                   {(['482', '186', '494'] as const).map(v => (
                     <button key={v} onClick={() => setCalcVisa(v)}
-                      style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: `1.5px solid ${calcVisa === v ? NAVY : '#e5eaf4'}`, background: calcVisa === v ? NAVY : '#fff', color: calcVisa === v ? '#fff' : '#6b7a8d', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.15s' }}
+                      style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: `1.5px solid ${calcVisa === v ? NAVY : '#e5eaf4'}`, background: calcVisa === v ? NAVY : '#fff', color: calcVisa === v ? '#fff' : '#6b7a8d', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
                     >{v}</button>
                   ))}
                 </div>
@@ -327,7 +327,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                   <div style={{ display: 'flex', gap: 8 }}>
                     {[{ val: 'small', label: 'Small (&lt;$10M turnover)' }, { val: 'standard', label: 'Standard ($10M+)' }].map(opt => (
                       <button key={opt.val} onClick={() => setCalcBizSize(opt.val as 'small' | 'standard')}
-                        style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: `1.5px solid ${calcBizSize === opt.val ? NAVY : '#e5eaf4'}`, background: calcBizSize === opt.val ? NAVY : '#fff', color: calcBizSize === opt.val ? '#fff' : '#6b7a8d', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.15s' }}
+                        style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: `1.5px solid ${calcBizSize === opt.val ? NAVY : '#e5eaf4'}`, background: calcBizSize === opt.val ? NAVY : '#fff', color: calcBizSize === opt.val ? '#fff' : '#6b7a8d', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
                         dangerouslySetInnerHTML={{ __html: opt.label }}
                       />
                     ))}
@@ -369,7 +369,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Total banner */}
               <div style={{ background: `linear-gradient(135deg, ${NAVY_DARK} 0%, ${NAVY} 100%)`, borderRadius: 16, padding: '28px 32px', marginBottom: 20 }}>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>Estimated Government Charges</div>
-                <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(36px, 4vw, 52px)', fontWeight: 800, color: '#fff', letterSpacing: '-0.03em' }}>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(36px, 4vw, 52px)', fontWeight: 800, color: '#fff', letterSpacing: '-0.03em' }}>
                   ${totalGov.toLocaleString()}
                 </div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginTop: 4 }}>
@@ -488,7 +488,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Phase label */}
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
                 <div style={{ width: 56, height: 56, borderRadius: '50%', background: phase.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: `0 4px 16px ${phase.color}44` }}>
-                  <span style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 800, color: '#fff' }}>{phase.phase}</span>
+                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 800, color: '#fff' }}>{phase.phase}</span>
                 </div>
                 <div style={{ paddingTop: 4 }}>
                   <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 4, lineHeight: 1.2 }}>{phase.name}</div>
@@ -524,7 +524,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
           <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Compliance</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
                 Employer obligations you must meet
               </h2>
               <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 24 }}>

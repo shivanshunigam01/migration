@@ -115,7 +115,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
       background: '#fff',
       border: '1px solid #e8edf6', borderRadius: 16, padding: 28,
     }}>
-      <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', color: NAVY, fontSize: 18, margin: '0 0 6px' }}>
+      <h3 style={{ fontFamily: "'Gilroy', sans-serif", color: NAVY, fontSize: 18, margin: '0 0 6px' }}>
         GS Self-Assessment
       </h3>
       <p style={{ color: '#6b7280', fontSize: 13, margin: '0 0 20px', lineHeight: 1.5 }}>
@@ -190,7 +190,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#f4f6fb', minHeight: '100vh', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f4f6fb', minHeight: '100vh', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -262,7 +262,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
                 }}>
                   <Icon name={item.icon} size={20} color={item.color} />
                 </div>
-                <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY, margin: '0 0 8px' }}>{item.title}</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, margin: '0 0 8px' }}>{item.title}</h3>
                 <p style={{ color: '#6b7a99', fontSize: 14, margin: 0, lineHeight: 1.65 }}>{item.body}</p>
               </div>
             ))}

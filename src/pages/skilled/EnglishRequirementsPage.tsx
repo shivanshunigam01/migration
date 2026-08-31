@@ -199,7 +199,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -323,7 +323,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
                   <Icon name={e.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{e.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{e.heading}</div>
                   <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{e.body}</p>
                 </div>
               </div>
@@ -352,7 +352,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={card.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{card.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{card.heading}</div>
                 </div>
                 <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{card.body}</p>
               </div>
@@ -377,11 +377,11 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
               { level: 'Superior English',   score: 'IELTS 8.0 in each band (generally)', points: 20, color: TEAL, note: 'Adds 20 points — the maximum for English.' },
             ].map(item => (
               <div key={item.level} style={{ background: `rgba(27,43,94,0.04)`, border: `1.5px solid rgba(27,43,94,0.12)`, borderRadius: 14, padding: '20px 16px', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 36, fontWeight: 800, color: NAVY, lineHeight: 1, marginBottom: 4 }}>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 800, color: NAVY, lineHeight: 1, marginBottom: 4 }}>
                   {item.points > 0 ? `+${item.points}` : '0'}
                 </div>
                 <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 8 }}>points</div>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{item.level}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{item.level}</div>
                 <div style={{ fontSize: 11.5, color: '#6b7280', lineHeight: 1.6 }}>{item.score}</div>
                 <div style={{ fontSize: 11.5, color: '#374151', marginTop: 8, lineHeight: 1.6 }}>{item.note}</div>
               </div>

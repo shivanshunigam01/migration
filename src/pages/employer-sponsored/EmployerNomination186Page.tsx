@@ -243,7 +243,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#f8fafc', minHeight: '100vh' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f8fafc', minHeight: '100vh' }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -344,7 +344,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                   background: NAVY_DARK,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   color: GOLD, fontWeight: 800, fontSize: 14,
-                  fontFamily: 'Fraunces, Georgia, serif',
+                  fontFamily: "'Gilroy', sans-serif",
                 }}>
                   {step.num}
                 </div>

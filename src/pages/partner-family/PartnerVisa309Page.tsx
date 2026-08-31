@@ -196,21 +196,21 @@ function TimelinePlanner() {
     <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
       <div>
         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: ROSE, marginBottom: 12 }}>Interactive Planner</div>
-        <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 36, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Your 309/100 Timeline</h2>
+        <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Your 309/100 Timeline</h2>
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.7, margin: '0 0 28px' }}>Enter your planned lodgement date. We map the key events, the two-year qualifying period, and the expected 100 decision window.</p>
 
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <div>
             <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Planned lodgement date</label>
             <input type="date" value={lodgementDate} onChange={e => setLodgementDate(e.target.value)}
-              style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: 'Inter, system-ui, sans-serif', boxSizing: 'border-box' as const }} />
+              style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' as const }} />
           </div>
           <div>
             <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Relationship type</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {[{ val: 'married' as const, label: 'Married' }, { val: 'defacto' as const, label: 'De facto' }].map(opt => (
                 <button key={opt.val} onClick={() => setRelationshipType(opt.val)}
-                  style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.15)'}`, background: relationshipType === opt.val ? `${ROSE}20` : 'rgba(255,255,255,0.05)', color: relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.6)', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.15)'}`, background: relationshipType === opt.val ? `${ROSE}20` : 'rgba(255,255,255,0.05)', color: relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.6)', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
                   {opt.label}
                 </button>
               ))}
@@ -285,7 +285,7 @@ function PillarSelector() {
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
         {PILLARS.map((pillar, i) => (
           <button key={i} onClick={() => setOpenPillar(i)}
-            style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 18px', background: openPillar === i ? '#fff' : '#f0f2f8', border: `2px solid ${openPillar === i ? pillar.color : 'transparent'}`, borderRadius: 12, cursor: 'pointer', textAlign: 'left' as const, boxShadow: openPillar === i ? '0 4px 20px rgba(27,43,94,0.1)' : 'none', transition: 'all 0.15s', fontFamily: 'Inter, system-ui, sans-serif' }}>
+            style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '14px 18px', background: openPillar === i ? '#fff' : '#f0f2f8', border: `2px solid ${openPillar === i ? pillar.color : 'transparent'}`, borderRadius: 12, cursor: 'pointer', textAlign: 'left' as const, boxShadow: openPillar === i ? '0 4px 20px rgba(27,43,94,0.1)' : 'none', transition: 'all 0.15s', fontFamily: "'Gilroy', sans-serif" }}>
             <div style={{ width: 36, height: 36, borderRadius: 10, background: openPillar === i ? `${pillar.color}15` : '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <Icon name={pillar.icon} size={16} color={openPillar === i ? pillar.color : '#9ca3af'} />
             </div>
@@ -330,7 +330,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -363,7 +363,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
                 <span style={{ background: `${ROSE}18`, color: ROSE, border: `1px solid ${ROSE}40`, fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>Subclass 309 / 100</span>
                 <span style={{ color: '#6b7280', fontSize: 12 }}>Offshore · One application · Two stages</span>
               </div>
-              <h1 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 50, fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px' }}>
+              <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 50, fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px' }}>
                 Partner Visa<br />
                 <span style={{ color: ROSE }}>309 / 100</span><br />
                 <span style={{ fontSize: 38 }}>From Outside Australia</span>

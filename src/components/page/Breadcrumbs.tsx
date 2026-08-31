@@ -25,7 +25,7 @@ export function Breadcrumbs({ items, navigate }: BreadcrumbsProps) {
                 {item.page ? (
                   <button
                     onClick={() => navigate(item.page!)}
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: 'Inter, system-ui, sans-serif', whiteSpace: 'nowrap' as const }}
+                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap' as const }}
                   >
                     {item.label}
                   </button>

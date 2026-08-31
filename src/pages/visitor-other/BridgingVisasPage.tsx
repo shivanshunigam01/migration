@@ -183,7 +183,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -271,7 +271,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
                   <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
                 </div>
               </div>
@@ -296,7 +296,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={p.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
                 <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
               </div>
@@ -321,7 +321,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
                   <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
                 </div>
               </div>
@@ -346,7 +346,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={p.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
                 <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
               </div>

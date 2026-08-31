@@ -111,7 +111,7 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right 10px center',
-    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamily: "'Gilroy', sans-serif",
     outline: 'none',
     boxSizing: 'border-box',
   }
@@ -175,7 +175,7 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
       {/* Total score */}
       <div style={{ background: '#fff', border: `2px solid ${total >= POINTS_MINIMUM ? accent : BORDER}`, borderRadius: 16, padding: '24px 22px', marginBottom: 16, boxShadow: '0 4px 20px rgba(27,43,94,0.08)', textAlign: 'center' }}>
         <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: GOLD, marginBottom: 8 }}>Your estimated score</div>
-        <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 48, fontWeight: 700, color: NAVY, lineHeight: 1, marginBottom: 4 }}>
+        <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 48, fontWeight: 700, color: NAVY, lineHeight: 1, marginBottom: 4 }}>
           {total}
         </div>
         <div style={{ fontSize: 12, color: '#9ca3af', marginBottom: 16 }}>/ 65 minimum</div>
@@ -245,7 +245,7 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
             <button
               type="button"
               onClick={() => setShowEmailGate(true)}
-              style={{ width: '100%', minHeight: 40, background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 13, fontWeight: 600, color: NAVY, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
+              style={{ width: '100%', minHeight: 40, background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 13, fontWeight: 600, color: NAVY, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
             >
               Email my score →
             </button>
@@ -260,7 +260,7 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
                 style={{ position: 'absolute', left: -9999, opacity: 0, height: 0, width: 0 }} />
               {error && <div style={{ fontSize: 11, color: '#dc2626', marginBottom: 8 }}>{error}</div>}
               <button type="submit" disabled={loading}
-                style={{ width: '100%', minHeight: 40, background: loading ? '#9ca3af' : GOLD, border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, color: NAVY, cursor: loading ? 'not-allowed' : 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
+                style={{ width: '100%', minHeight: 40, background: loading ? '#9ca3af' : GOLD, border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 700, color: NAVY, cursor: loading ? 'not-allowed' : 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
                 {loading ? 'Sending…' : 'Send score →'}
               </button>
             </form>
@@ -277,7 +277,7 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
       {(isLastStep || total >= POINTS_MINIMUM) && (
         <button
           onClick={() => navigate ? navigate('book-consultation') : undefined}
-          style={{ width: '100%', minHeight: 44, background: NAVY, color: GOLD, border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', padding: '0 16px', lineHeight: 1.4 }}
+          style={{ width: '100%', minHeight: 44, background: NAVY, color: GOLD, border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", padding: '0 16px', lineHeight: 1.4 }}
         >
           Discuss your score with a registered migration agent
         </button>
@@ -343,7 +343,7 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
             {step > 0 && (
               <button
                 onClick={() => setStep(s => s - 1)}
-                style={{ flex: 1, minHeight: 44, background: '#fff', border: `2px solid ${NAVY}`, borderRadius: 8, fontSize: 14, fontWeight: 700, color: NAVY, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
+                style={{ flex: 1, minHeight: 44, background: '#fff', border: `2px solid ${NAVY}`, borderRadius: 8, fontSize: 14, fontWeight: 700, color: NAVY, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
               >
                 ← Back
               </button>
@@ -351,14 +351,14 @@ export function PointsCalculator({ accent = NAVY, navigate }: PointsCalculatorPr
             {!isLastStep ? (
               <button
                 onClick={() => setStep(s => s + 1)}
-                style={{ flex: 1, minHeight: 44, background: GOLD, border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, color: NAVY, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
+                style={{ flex: 1, minHeight: 44, background: GOLD, border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, color: NAVY, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
               >
                 Continue →
               </button>
             ) : (
               <button
                 onClick={resetAll}
-                style={{ flex: 1, minHeight: 44, background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 14, fontWeight: 500, color: '#6b7280', cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
+                style={{ flex: 1, minHeight: 44, background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 14, fontWeight: 500, color: '#6b7280', cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
               >
                 Reset all
               </button>

@@ -125,7 +125,7 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
           width: 260,
           color: NAVY_DARK,
           background: '#ffffff',
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: "'Gilroy', sans-serif",
         }}
       />
       <button
@@ -142,7 +142,7 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
           cursor: loading ? 'not-allowed' : 'pointer',
           whiteSpace: 'nowrap',
           letterSpacing: '0.02em',
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: "'Gilroy', sans-serif",
           transition: 'background 0.15s',
         }}
       >
@@ -230,7 +230,7 @@ function ColLink({
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamily: "'Gilroy', sans-serif",
     textAlign: 'left',
     width: '100%',
   }
@@ -318,7 +318,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             border: 'none',
             cursor: 'pointer',
             padding: '12px 0',
-            fontFamily: 'Inter, system-ui, sans-serif',
+            fontFamily: "'Gilroy', sans-serif",
             minHeight: 44,
           }}
         >
@@ -370,7 +370,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
   ]
 
   return (
-    <footer role="contentinfo" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <footer role="contentinfo" style={{ fontFamily: "'Gilroy', sans-serif" }}>
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -823,7 +823,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                         cursor: 'pointer',
                         fontSize: 12,
                         color: 'rgba(255,255,255,0.45)',
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: "'Gilroy', sans-serif",
                         padding: 0,
                         transition: 'color 0.15s',
                         whiteSpace: 'nowrap',

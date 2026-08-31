@@ -42,14 +42,14 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
   }, [])
 
   return (
-    <div style={{ fontFamily: "Inter, system-ui, sans-serif", backgroundColor: "#ffffff", color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: "#ffffff", color: NAVY }}>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <div style={{ background: "#f8f9fc", borderBottom: "1px solid #e8eaf0", padding: "10px 32px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#9ca3af" }}>
           <button
             onClick={() => navigate("home")}
-            style={{ background: "none", border: "none", cursor: "pointer", color: "#6b7280", fontSize: 12, padding: 0, fontFamily: "Inter, system-ui, sans-serif" }}
+            style={{ background: "none", border: "none", cursor: "pointer", color: "#6b7280", fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}
           >
             Home
           </button>
@@ -69,7 +69,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
             </div>
             <h1
               style={{
-                fontFamily: "'Fraunces', Georgia, serif",
+                fontFamily: "'Gilroy', sans-serif",
                 fontSize: "clamp(28px, 4vw, 42px)",
                 fontWeight: 700,
                 color: NAVY_DARK,

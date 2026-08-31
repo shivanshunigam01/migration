@@ -62,11 +62,11 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#f4f6fb', minHeight: '100vh', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f4f6fb', minHeight: '100vh', color: NAVY }}>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>Home</button>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span>Partner &amp; Family</span>
           <span>›</span>
@@ -99,7 +99,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
 
               {/* H1 */}
               <h1 style={{
-                fontFamily: 'Fraunces, Georgia, serif', fontSize: 48, fontWeight: 700,
+                fontFamily: "'Gilroy', sans-serif", fontSize: 48, fontWeight: 700,
                 color: NAVY, lineHeight: 1.1, marginBottom: 24,
               }}>
                 Australian{' '}
@@ -148,7 +148,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                     border: '1px solid rgba(27,43,94,0.1)', padding: '14px 16px',
                   }}>
                     <Icon name={st.icon} size={18} color={GOLD} />
-                    <div style={{ color: NAVY, fontSize: 22, fontWeight: 700, marginTop: 8, fontFamily: 'Fraunces, Georgia, serif' }}>{st.value}</div>
+                    <div style={{ color: NAVY, fontSize: 22, fontWeight: 700, marginTop: 8, fontFamily: "'Gilroy', sans-serif" }}>{st.value}</div>
                     <div style={{ color: '#6b7280', fontSize: 11, marginTop: 2, lineHeight: 1.4 }}>{st.desc}</div>
                   </div>
                 ))}
@@ -160,7 +160,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               background: '#fff',
               border: '1px solid #e8edf6', borderRadius: 16, padding: 28,
             }}>
-              <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', color: NAVY, fontSize: 18, marginBottom: 20, margin: '0 0 20px' }}>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", color: NAVY, fontSize: 18, marginBottom: 20, margin: '0 0 20px' }}>
                 Standard vs Contributory
               </h3>
               <div style={{ overflowX: 'auto' }}>
@@ -200,7 +200,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
       <section id="eligibility" style={{ maxWidth: 1120, margin: '0 auto', padding: '64px 32px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
           <div style={{ width: 4, height: 32, background: GOLD, borderRadius: 2 }} />
-          <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Eligibility Requirements</h2>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Eligibility Requirements</h2>
         </div>
         <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 40, paddingLeft: 16 }}>
           All parent visa applicants must meet the following core requirements regardless of visa subclass.
@@ -219,7 +219,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 <Icon name={item.icon} size={20} color={GOLD} />
               </div>
               <div>
-                <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 6px' }}>{item.title}</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 6px' }}>{item.title}</h3>
                 <p style={{ color: '#6b7a99', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             </div>
@@ -231,7 +231,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: '56px 32px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
           <div style={{ width: 4, height: 32, background: GOLD, borderRadius: 2 }} />
-          <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Parent Visa Options</h2>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Parent Visa Options</h2>
         </div>
         <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
           Four main subclasses cover different circumstances. Offshore and onshore streams are available.
@@ -267,7 +267,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                     <span style={{
-                      fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 800, color: NAVY,
+                      fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 800, color: NAVY,
                     }}>
                       {v.code}
                     </span>
@@ -309,7 +309,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: '56px 32px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
           <div style={{ width: 4, height: 32, background: ROSE, borderRadius: 2 }} />
-          <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Key Considerations</h2>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Key Considerations</h2>
         </div>
         <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
           Important factors to understand before lodging a parent visa application.
@@ -330,7 +330,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               }}>
                 <Icon name={c.icon} size={20} color={c.color} />
               </div>
-              <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY, margin: '0 0 10px' }}>{c.title}</h3>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, margin: '0 0 10px' }}>{c.title}</h3>
               <p style={{ color: '#6b7a99', fontSize: 14, margin: 0, lineHeight: 1.65 }}>{c.body}</p>
             </div>
           ))}
@@ -341,7 +341,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
       <section style={{ maxWidth: 1120, margin: '0 auto', padding: '56px 32px 0' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
           <div style={{ width: 4, height: 32, background: GOLD, borderRadius: 2 }} />
-          <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Frequently Asked Questions</h2>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Frequently Asked Questions</h2>
         </div>
         <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
           Common questions about Australian parent visas answered.
@@ -394,7 +394,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
             Registered Migration Agents
           </div>
           <h2 style={{
-            fontFamily: 'Fraunces, Georgia, serif', fontSize: 36, fontWeight: 700,
+            fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700,
             color: 'white', marginBottom: 16, lineHeight: 1.2,
           }}>
             Ready to sponsor your parents?

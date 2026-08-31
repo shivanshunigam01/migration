@@ -80,7 +80,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#fff', color: TEXT }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au/' },
@@ -141,7 +141,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                 fontSize: 14,
                 fontWeight: 700,
                 cursor: 'pointer',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={e => {
@@ -178,7 +178,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 8,
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: "'Gilroy', sans-serif",
                   }}
                   onMouseEnter={e => {
                     const el = e.currentTarget
@@ -225,7 +225,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                 fontSize: 14,
                 fontWeight: 700,
                 cursor: 'pointer',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={e => {
@@ -267,7 +267,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                   </span>
                   <span style={{ fontSize: 11, color: '#9ca3af' }}>{post.date}</span>
                 </div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 400, color: NAVY, margin: 0, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 400, color: NAVY, margin: 0, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
                   {post.title.startsWith('[DRAFT]') ? post.title.replace('[DRAFT] ', '') : post.title}
                 </h3>
                 <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.7, margin: 0 }}>{post.standfirst}</p>
@@ -302,7 +302,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                 fontSize: 14,
                 fontWeight: 700,
                 cursor: 'pointer',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 whiteSpace: 'nowrap',
               }}
               onMouseEnter={e => {
@@ -339,7 +339,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 4,
-                  fontFamily: 'Inter, system-ui, sans-serif',
+                  fontFamily: "'Gilroy', sans-serif",
                   transition: 'box-shadow 0.15s',
                 }}
                 onMouseEnter={e => {

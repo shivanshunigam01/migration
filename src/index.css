@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import './fonts/gilroy.css';
 @import 'tailwindcss';
 
 @theme {
@@ -8,8 +7,8 @@
   --color-gold: #f5a124;
   --color-gold-light: #f7b84b;
   --color-cream: #ffffff;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Gilroy', sans-serif;
+  --font-body: 'Gilroy', sans-serif;
 }
 
 *, *::before, *::after {
@@ -18,12 +17,27 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Gilroy', sans-serif;
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   background-color: #ffffff;
   color: #1E1E2A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+button, input, textarea, select {
+  font-family: 'Gilroy', sans-serif;
 }
 
 ::-webkit-scrollbar {

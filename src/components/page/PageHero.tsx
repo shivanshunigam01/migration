@@ -87,7 +87,7 @@ export function PageHero({
         </motion.div>
       )}
 
-      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: variant === 'flagship' ? 'clamp(32px, 5vw, 50px)' : 'clamp(26px, 5vw, 54px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
+      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(32px, 5vw, 50px)' : 'clamp(26px, 5vw, 54px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
         {title}
       </motion.h1>
 

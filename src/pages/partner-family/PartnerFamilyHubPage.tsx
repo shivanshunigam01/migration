@@ -153,7 +153,7 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#ffffff', color: '#1E1E2A' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -207,7 +207,7 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
           <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginBottom: 40, flexWrap: 'wrap' }}>
             {([['partner', 'Partner Visas', ROSE], ['parent', 'Parent Visas', PURPLE], ['other', 'Child & Other', GREEN]] as const).map(([key, label, color]) => (
               <button key={key} onClick={() => setActiveTab(key)}
-                style={{ padding: '10px 24px', borderRadius: 100, border: `2px solid ${activeTab === key ? color : '#e2e8f0'}`, background: activeTab === key ? color : '#ffffff', color: activeTab === key ? '#ffffff' : '#6b7280', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.2s' }}>
+                style={{ padding: '10px 24px', borderRadius: 100, border: `2px solid ${activeTab === key ? color : '#e2e8f0'}`, background: activeTab === key ? color : '#ffffff', color: activeTab === key ? '#ffffff' : '#6b7280', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}>
                 {label}
               </button>
             ))}
@@ -225,13 +225,13 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
                   style={{ background: '#ffffff', border: `1.5px solid ${isHovered ? accentColor : '#e8edf6'}`, borderRadius: 16, padding: '26px 22px', cursor: clickable ? 'pointer' : 'default', transform: isHovered && clickable ? 'translateY(-4px)' : 'none', boxShadow: isHovered ? '0 16px 40px rgba(27,43,94,0.11)' : '0 1px 6px rgba(27,43,94,0.05)', transition: 'all 0.2s', position: 'relative', display: 'flex', flexDirection: 'column' }}
                 >
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8, marginBottom: 14 }}>
-                    <span style={{ fontSize: 11, fontWeight: 800, padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: 'Inter, system-ui, sans-serif', whiteSpace: 'nowrap' }}>{card.code}</span>
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${card.tagColor}14`, color: card.tagColor, border: `1px solid ${card.tagColor}28`, fontFamily: 'Inter, system-ui, sans-serif', textAlign: 'right' }}>{card.tag}</span>
+                    <span style={{ fontSize: 11, fontWeight: 800, padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap' }}>{card.code}</span>
+                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${card.tagColor}14`, color: card.tagColor, border: `1px solid ${card.tagColor}28`, fontFamily: "'Gilroy', sans-serif", textAlign: 'right' }}>{card.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{card.name}</h3>
-                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: '0 0 14px', fontFamily: 'Inter, system-ui, sans-serif', flex: 1 }}>{card.body}</p>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{card.name}</h3>
+                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: '0 0 14px', fontFamily: "'Gilroy', sans-serif", flex: 1 }}>{card.body}</p>
                   {'note' in card && card.note && (
-                    <div style={{ fontSize: 10.5, fontWeight: 600, color: card.tagColor, fontFamily: 'Inter, system-ui, sans-serif', borderTop: `1px solid ${card.tagColor}1a`, paddingTop: 10, marginTop: 'auto' }}>{card.note}</div>
+                    <div style={{ fontSize: 10.5, fontWeight: 600, color: card.tagColor, fontFamily: "'Gilroy', sans-serif", borderTop: `1px solid ${card.tagColor}1a`, paddingTop: 10, marginTop: 'auto' }}>{card.note}</div>
                   )}
                   {clickable && (
                     <div style={{ position: 'absolute', bottom: 20, right: 20, opacity: isHovered ? 1 : 0, transition: 'opacity 0.2s' }}>
@@ -242,7 +242,7 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
               )
             })}
           </div>
-          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 20, fontFamily: 'Inter, system-ui, sans-serif' }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 20, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -257,16 +257,16 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: `${p.color}14`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                   <Icon name={p.icon} size={20} color={p.color} />
                 </div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 14px' }}>{p.title}</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 14px' }}>{p.title}</h3>
                 <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 7 }}>
                   {p.items.map(item => (
                     <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
                       <Icon name="check" size={11} color={p.color} />
-                      <span style={{ fontSize: 12.5, color: '#4b5563', fontFamily: 'Inter, system-ui, sans-serif', lineHeight: 1.5 }}>{item}</span>
+                      <span style={{ fontSize: 12.5, color: '#4b5563', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.5 }}>{item}</span>
                     </li>
                   ))}
                 </ul>
-                <div style={{ marginTop: 16, padding: '10px 12px', background: `${p.color}08`, borderRadius: 8, fontSize: 11, color: p.color, fontWeight: 600, fontFamily: 'Inter, system-ui, sans-serif', lineHeight: 1.45 }}>{p.note}</div>
+                <div style={{ marginTop: 16, padding: '10px 12px', background: `${p.color}08`, borderRadius: 8, fontSize: 11, color: p.color, fontWeight: 600, fontFamily: "'Gilroy', sans-serif", lineHeight: 1.45 }}>{p.note}</div>
               </div>
             ))}
           </div>
@@ -281,24 +281,24 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
           <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', background: NAVY, padding: '14px 24px', gap: 16 }}>
               {['Visa', 'Stage', 'Est. time'].map((h, i) => (
-                <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'Inter, system-ui, sans-serif', textAlign: i === 2 ? 'right' : 'left' }}>{h}</div>
+                <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif", textAlign: i === 2 ? 'right' : 'left' }}>{h}</div>
               ))}
             </div>
             {PROCESSING.map((row, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', padding: '13px 24px', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7', gap: 16, alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={{ width: 8, height: 8, borderRadius: '50%', background: row.color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 13, color: '#374151', fontFamily: 'Inter, system-ui, sans-serif', fontWeight: 500 }}>{row.visa}</span>
+                  <span style={{ fontSize: 13, color: '#374151', fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{row.visa}</span>
                 </div>
-                <div style={{ fontSize: 12.5, color: '#6b7280', fontFamily: 'Inter, system-ui, sans-serif' }}>{row.stage}</div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: row.color === '#9ca3af' ? '#9ca3af' : NAVY, fontFamily: 'Inter, system-ui, sans-serif', textAlign: 'right', whiteSpace: 'nowrap' }}>{row.time}</div>
+                <div style={{ fontSize: 12.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.stage}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: row.color === '#9ca3af' ? '#9ca3af' : NAVY, fontFamily: "'Gilroy', sans-serif", textAlign: 'right', whiteSpace: 'nowrap' }}>{row.time}</div>
               </div>
             ))}
           </div>
 
           <div style={{ marginTop: 16, padding: '14px 18px', background: `${GOLD}0e`, border: `1px solid ${GOLD}33`, borderRadius: 10, display: 'flex', alignItems: 'flex-start', gap: 10 }}>
             <Icon name="alert" size={14} color={GOLD} />
-            <p style={{ fontSize: 12, color: '#0d1632', lineHeight: 1.6, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p style={{ fontSize: 12, color: '#0d1632', lineHeight: 1.6, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>
               <strong>{DISCLAIMER}.</strong> Processing times are estimates based on published DHA data. Complex cases extend these timelines. The non-contributory parent queue exceeding 30 years is not a typo.
             </p>
           </div>

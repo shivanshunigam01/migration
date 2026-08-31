@@ -366,7 +366,7 @@ function StreamsSection() {
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 100, background: 'rgba(27,43,94,0.07)', border: '1.5px solid rgba(27,43,94,0.16)', marginBottom: 8 }}>
                   <span style={{ fontSize: 10, fontWeight: 700, color: NAVY, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>{s.code}</span>
                 </div>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{s.name}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{s.name}</div>
               </div>
               <div>
                 <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: '0 0 10px' }}>{s.body}</p>
@@ -405,7 +405,7 @@ function PathwayRisksSection() {
                     <Icon name={r.icon} size={16} color={color} />
                   </div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY }}>{r.title}</div>
+                    <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{r.title}</div>
                   </div>
                   <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: color, background: `${color}14`, border: `1px solid ${color}30`, padding: '3px 10px', borderRadius: 100 }}>
                     {severityLabel[r.severity]}
@@ -462,7 +462,7 @@ function PathwaySummaryWidget() {
             { val: 'Competent', lbl: 'English' },
           ].map(f => (
             <div key={f.lbl}>
-              <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: TEAL }}>{f.val}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: TEAL }}>{f.val}</div>
               <div style={{ fontSize: 10, color: '#9ca3af' }}>{f.lbl}</div>
             </div>
           ))}
@@ -482,7 +482,7 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

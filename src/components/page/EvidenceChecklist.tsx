@@ -51,7 +51,7 @@ export function EvidenceChecklist({ groups, dark = false, accent = NAVY, default
                 border: 'none',
                 cursor: 'pointer',
                 textAlign: 'left' as const,
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
               }}
             >
               {grp.icon && (

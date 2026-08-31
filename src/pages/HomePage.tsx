@@ -422,9 +422,9 @@ function NewsletterForm() {
       <input
         type="email" required value={email} onChange={e => setEmail(e.target.value)}
         placeholder="your@email.com"
-        style={{ padding: '14px 20px', fontSize: 14, border: 'none', borderRadius: '10px 0 0 10px', outline: 'none', width: 260, color: NAVY_DARK, background: '#ffffff', fontFamily: 'Inter, system-ui, sans-serif' }}
+        style={{ padding: '14px 20px', fontSize: 14, border: 'none', borderRadius: '10px 0 0 10px', outline: 'none', width: 260, color: NAVY_DARK, background: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}
       />
-      <button type="submit" style={{ padding: '14px 26px', background: NAVY, color: '#fff', border: 'none', borderRadius: '0 10px 10px 0', fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.02em', fontFamily: 'Inter, system-ui, sans-serif', transition: 'background 0.15s' }}
+      <button type="submit" style={{ padding: '14px 26px', background: NAVY, color: '#fff', border: 'none', borderRadius: '0 10px 10px 0', fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.02em', fontFamily: "'Gilroy', sans-serif", transition: 'background 0.15s' }}
         onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = NAVY_MID}
         onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = NAVY}
       >
@@ -467,7 +467,7 @@ function FaqSection() {
         {/* Heading */}
         <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
           <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Got Questions?</div>
-          <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
             Frequently Asked <em style={{ fontStyle: 'italic', color: GOLD }}>Questions</em>
           </h2>
         </Reveal>
@@ -482,7 +482,7 @@ function FaqSection() {
                 onClick={() => setOpen(open === i ? null : i)}
                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '20px 24px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
               >
-                <span style={{ fontSize: 15, fontWeight: 600, color: open === i ? NAVY : '#1a1a2e', lineHeight: 1.4, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <span style={{ fontSize: 15, fontWeight: 600, color: open === i ? NAVY : '#1a1a2e', lineHeight: 1.4, fontFamily: "'Gilroy', sans-serif" }}>
                   {faq.q}
                 </span>
                 <div style={{ width: 28, height: 28, borderRadius: '50%', background: open === i ? NAVY : '#f3f4f8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.2s, transform 0.2s', transform: open === i ? 'rotate(45deg)' : 'none' }}>
@@ -493,7 +493,7 @@ function FaqSection() {
               </button>
               {open === i && (
                 <div style={{ padding: '0 24px 22px', borderTop: '1px solid #f3f4f8' }}>
-                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '16px 0 0', fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '16px 0 0', fontFamily: "'Gilroy', sans-serif" }}>
                     {faq.a}
                   </p>
                 </div>
@@ -549,7 +549,7 @@ export default function HomePage() {
   const navigate = useAppNavigate()
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: TEXT }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: TEXT }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
@@ -639,14 +639,14 @@ export default function HomePage() {
                 <span style={{ color: NAVY, fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>MARA-Registered · MARN 2619467</span>
               </motion.div>
 
-              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
+              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
                 Your pathway
                 <br /><em style={{ fontStyle: 'italic', color: GOLD }}>to Australia</em>
                 <br />starts here.
               </motion.h1>
 
               <motion.p variants={fadeUp} style={{ color: '#4a4560', fontSize: 17, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 520 }}>
-                Nanak Migration Group — MARA-registered agents with 14 years of experience helping skilled workers, students and families navigate Australia's visa system.
+                Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia's visa system.
               </motion.p>
 
               <motion.div variants={fadeUp} style={{
@@ -876,7 +876,6 @@ export default function HomePage() {
               <Stagger style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '32px 64px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
                 {[
                   { label: 'MARN 2619467', sub: 'MARA Registered Agent' },
-                  { label: '14 Years', sub: 'Migration experience' },
                   { label: '4 Offices', sub: 'Melbourne · Sydney · Brisbane · Perth' },
                   { label: 'OMARA', sub: 'Code of Conduct Compliant' },
                 ].map(item => (
@@ -933,27 +932,27 @@ export default function HomePage() {
                 <rect x="175" y="133" width="120" height="6" rx="3" fill={NAVY} opacity="0.08"/>
                 {/* Points badge */}
                 <circle cx="290" cy="88" r="22" fill={GOLD}/>
-                <text x="290" y="94" textAnchor="middle" fill={NAVY_DARK} fontSize="12" fontWeight="800" fontFamily="Inter,sans-serif">85</text>
-                <text x="290" y="105" textAnchor="middle" fill={NAVY_DARK} fontSize="7" fontWeight="600" fontFamily="Inter,sans-serif">PTS</text>
+                <text x="290" y="94" textAnchor="middle" fill={NAVY_DARK} fontSize="12" fontWeight="800" fontFamily="Gilroy,sans-serif">85</text>
+                <text x="290" y="105" textAnchor="middle" fill={NAVY_DARK} fontSize="7" fontWeight="600" fontFamily="Gilroy,sans-serif">PTS</text>
                 {/* Visa subclass chips */}
                 <rect x="175" y="158" width="42" height="20" rx="10" fill={NAVY}/>
-                <text x="196" y="172" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">189</text>
+                <text x="196" y="172" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">189</text>
                 <rect x="224" y="158" width="42" height="20" rx="10" fill={NAVY} opacity="0.7"/>
-                <text x="245" y="172" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">190</text>
+                <text x="245" y="172" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">190</text>
                 <rect x="273" y="158" width="42" height="20" rx="10" fill={NAVY} opacity="0.5"/>
-                <text x="294" y="172" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">491</text>
+                <text x="294" y="172" textAnchor="middle" fill="#fff" fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">491</text>
                 {/* Approval tick */}
                 <circle cx="240" cy="230" r="28" fill="rgba(52,168,83,0.12)"/>
                 <circle cx="240" cy="230" r="20" fill="#34A853"/>
                 <path d="M229 230l7 7 15-15" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                 {/* Floating stat */}
                 <rect x="330" y="100" width="110" height="56" rx="12" fill="#ffffff" filter="url(#shadow1)"/>
-                <text x="385" y="122" textAnchor="middle" fill={NAVY} fontSize="20" fontWeight="800" fontFamily="Inter,sans-serif">186</text>
-                <text x="385" y="138" textAnchor="middle" fill="#9ca3af" fontSize="9" fontFamily="Inter,sans-serif">Visa Subclass</text>
+                <text x="385" y="122" textAnchor="middle" fill={NAVY} fontSize="20" fontWeight="800" fontFamily="Gilroy,sans-serif">186</text>
+                <text x="385" y="138" textAnchor="middle" fill="#9ca3af" fontSize="9" fontFamily="Gilroy,sans-serif">Visa Subclass</text>
                 {/* Floating flag */}
                 <rect x="40" y="130" width="90" height="44" rx="10" fill="#ffffff" filter="url(#shadow1)"/>
                 <text x="85" y="148" textAnchor="middle" fontSize="18">🇦🇺</text>
-                <text x="85" y="164" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="600" fontFamily="Inter,sans-serif">Australia PR</text>
+                <text x="85" y="164" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="600" fontFamily="Gilroy,sans-serif">Australia PR</text>
               </svg>
             ),
           },
@@ -986,14 +985,14 @@ export default function HomePage() {
                 <circle cx="120" cy="195" r="32" fill={NAVY}/>
                 <circle cx="120" cy="183" r="10" fill="rgba(255,255,255,0.9)"/>
                 <path d="M98 212 Q120 202 142 212" stroke="rgba(255,255,255,0.9)" strokeWidth="2" fill="none"/>
-                <text x="120" y="240" textAnchor="middle" fill={NAVY} fontSize="10" fontWeight="600" fontFamily="Inter,sans-serif">Overseas</text>
+                <text x="120" y="240" textAnchor="middle" fill={NAVY} fontSize="10" fontWeight="600" fontFamily="Gilroy,sans-serif">Overseas</text>
                 {/* Destination family */}
                 <circle cx="360" cy="185" r="44" fill={GOLD}/>
                 <circle cx="348" cy="172" r="9" fill="rgba(27,43,94,0.9)"/>
                 <circle cx="368" cy="170" r="9" fill="rgba(27,43,94,0.9)"/>
                 <circle cx="358" cy="186" r="6" fill="rgba(27,43,94,0.7)"/>
                 <path d="M334 200 Q358 190 382 200" stroke="rgba(27,43,94,0.9)" strokeWidth="2" fill="none"/>
-                <text x="360" y="242" textAnchor="middle" fill={NAVY} fontSize="10" fontWeight="600" fontFamily="Inter,sans-serif">Australia</text>
+                <text x="360" y="242" textAnchor="middle" fill={NAVY} fontSize="10" fontWeight="600" fontFamily="Gilroy,sans-serif">Australia</text>
                 {/* Visa card */}
                 <rect x="160" y="260" width="160" height="90" rx="12" fill="#ffffff" filter="url(#shadow2)"/>
                 <defs><filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="14" floodColor="rgba(27,43,94,0.13)"/></filter></defs>
@@ -1001,7 +1000,7 @@ export default function HomePage() {
                 <rect x="172" y="288" width="136" height="5" rx="2.5" fill={NAVY} opacity="0.1"/>
                 <rect x="172" y="300" width="110" height="5" rx="2.5" fill={NAVY} opacity="0.1"/>
                 <rect x="172" y="316" width="50" height="18" rx="9" fill={GOLD}/>
-                <text x="197" y="329" textAnchor="middle" fill={NAVY_DARK} fontSize="8" fontWeight="700" fontFamily="Inter,sans-serif">GRANTED</text>
+                <text x="197" y="329" textAnchor="middle" fill={NAVY_DARK} fontSize="8" fontWeight="700" fontFamily="Gilroy,sans-serif">GRANTED</text>
                 {/* Hearts */}
                 <text x="240" y="145" textAnchor="middle" fontSize="22">❤️</text>
                 <text x="200" y="120" textAnchor="middle" fontSize="14" opacity="0.5">💛</text>
@@ -1038,19 +1037,19 @@ export default function HomePage() {
                 <path d="M222 191 Q240 180 258 191 Q240 202 222 191z" fill={GOLD} opacity="0.9"/>
                 {/* Labels */}
                 <rect x="130" y="135" width="80" height="22" rx="11" fill="rgba(27,43,94,0.08)"/>
-                <text x="170" y="150" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">EMPLOYER</text>
+                <text x="170" y="150" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">EMPLOYER</text>
                 <rect x="270" y="135" width="70" height="22" rx="11" fill="rgba(245,161,36,0.15)"/>
-                <text x="305" y="150" textAnchor="middle" fill="#f5a124" fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">EMPLOYEE</text>
+                <text x="305" y="150" textAnchor="middle" fill="#f5a124" fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">EMPLOYEE</text>
                 {/* Tick approved */}
                 <circle cx="240" cy="240" r="18" fill="#34A853"/>
                 <path d="M231 240l6 6 13-12" stroke="#fff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
                 {/* Floating cards */}
                 <rect x="30" y="200" width="88" height="60" rx="12" fill="#ffffff" filter="url(#shadow3)"/>
-                <text x="74" y="222" textAnchor="middle" fill={NAVY} fontSize="18" fontWeight="800" fontFamily="Inter,sans-serif">482</text>
-                <text x="74" y="238" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="Inter,sans-serif">TSS Visa</text>
+                <text x="74" y="222" textAnchor="middle" fill={NAVY} fontSize="18" fontWeight="800" fontFamily="Gilroy,sans-serif">482</text>
+                <text x="74" y="238" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="Gilroy,sans-serif">TSS Visa</text>
                 <rect x="362" y="200" width="88" height="60" rx="12" fill="#ffffff" filter="url(#shadow3)"/>
-                <text x="406" y="222" textAnchor="middle" fill={GOLD} fontSize="18" fontWeight="800" fontFamily="Inter,sans-serif">186</text>
-                <text x="406" y="238" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="Inter,sans-serif">Perm. Visa</text>
+                <text x="406" y="222" textAnchor="middle" fill={GOLD} fontSize="18" fontWeight="800" fontFamily="Gilroy,sans-serif">186</text>
+                <text x="406" y="238" textAnchor="middle" fill="#9ca3af" fontSize="8" fontFamily="Gilroy,sans-serif">Perm. Visa</text>
                 {/* Arrow progression */}
                 <path d="M118 231 L134 231" stroke={NAVY} strokeWidth="1.5" strokeDasharray="4 3" opacity="0.4"/>
                 <path d="M346 231 L362 231" stroke={GOLD} strokeWidth="1.5" strokeDasharray="4 3" opacity="0.4"/>
@@ -1099,16 +1098,16 @@ export default function HomePage() {
                 {/* Gold seal */}
                 <circle cx="290" cy="286" r="24" fill={GOLD} opacity="0.15"/>
                 <circle cx="290" cy="286" r="17" fill={GOLD}/>
-                <text x="290" y="291" textAnchor="middle" fill={NAVY_DARK} fontSize="9" fontWeight="800" fontFamily="Inter,sans-serif">500</text>
+                <text x="290" y="291" textAnchor="middle" fill={NAVY_DARK} fontSize="9" fontWeight="800" fontFamily="Gilroy,sans-serif">500</text>
                 {/* Pathway arrow cards */}
                 <rect x="30" y="160" width="90" height="48" rx="12" fill="#ffffff" filter="url(#shadow4)"/>
-                <text x="75" y="179" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">Student</text>
-                <text x="75" y="192" textAnchor="middle" fill={GOLD} fontSize="12" fontWeight="800" fontFamily="Inter,sans-serif">500</text>
+                <text x="75" y="179" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">Student</text>
+                <text x="75" y="192" textAnchor="middle" fill={GOLD} fontSize="12" fontWeight="800" fontFamily="Gilroy,sans-serif">500</text>
                 <path d="M122 184 L138 184" stroke={NAVY} strokeWidth="2" strokeLinecap="round" opacity="0.3"/>
                 <path d="M136 181 L140 184 L136 187" stroke={NAVY} strokeWidth="1.5" strokeLinecap="round" opacity="0.3"/>
                 <rect x="355" y="160" width="96" height="48" rx="12" fill="#ffffff" filter="url(#shadow4)"/>
-                <text x="403" y="179" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="700" fontFamily="Inter,sans-serif">Graduate</text>
-                <text x="403" y="192" textAnchor="middle" fill={GOLD} fontSize="12" fontWeight="800" fontFamily="Inter,sans-serif">485</text>
+                <text x="403" y="179" textAnchor="middle" fill={NAVY} fontSize="9" fontWeight="700" fontFamily="Gilroy,sans-serif">Graduate</text>
+                <text x="403" y="192" textAnchor="middle" fill={GOLD} fontSize="12" fontWeight="800" fontFamily="Gilroy,sans-serif">485</text>
                 {/* Stars */}
                 {[[60,80],[400,90],[430,220],[50,280]].map(([x,y],i) => (
                   <text key={i} x={x} y={y} textAnchor="middle" fontSize={i%2===0?16:11} opacity={0.3+i*0.08}>⭐</text>
@@ -1132,7 +1131,7 @@ export default function HomePage() {
             {/* Text panel */}
             <div style={{ background: '#ffffff', padding: '60px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>{row.tag}</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 2.8vw, 38px)', fontWeight: 300, lineHeight: 1.15, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', whiteSpace: 'pre-line' }}>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 2.8vw, 38px)', fontWeight: 300, lineHeight: 1.15, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', whiteSpace: 'pre-line' }}>
                 {row.heading}
               </h2>
               <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 28px' }}>{row.body}</p>
@@ -1205,7 +1204,7 @@ export default function HomePage() {
           {/* Heading */}
           <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Registration</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3.5vw, 42px)', fontWeight: 300, lineHeight: 1.1, color: NAVY, margin: '0 auto 14px', letterSpacing: '-0.03em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3.5vw, 42px)', fontWeight: 300, lineHeight: 1.1, color: NAVY, margin: '0 auto 14px', letterSpacing: '-0.03em' }}>
               Credentials &amp; <em style={{ fontStyle: 'italic', color: GOLD }}>Registration</em>
             </h2>
             <p style={{ fontSize: 14, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
@@ -1279,8 +1278,8 @@ export default function HomePage() {
             {TRUST_LOGOS.map(t => (
               <div key={t.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#f5f7fb', border: '1px solid #e2e8f0', borderRadius: 100, padding: '8px 18px' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                <span style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif' }}>{t.name}</span>
-                <span style={{ fontSize: 11, color: '#6b7280', fontFamily: 'Inter, system-ui, sans-serif' }}>{t.label}</span>
+                <span style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>{t.name}</span>
+                <span style={{ fontSize: 11, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{t.label}</span>
               </div>
             ))}
           </div>
@@ -1302,7 +1301,7 @@ export default function HomePage() {
           <Reveal preset="up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52 }}>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Latest Updates</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.5vw, 46px)', fontWeight: 300, lineHeight: 1.08, color: NAVY, margin: 0, letterSpacing: '-0.03em' }}>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 46px)', fontWeight: 300, lineHeight: 1.08, color: NAVY, margin: 0, letterSpacing: '-0.03em' }}>
                 Migration news &amp; <em style={{ fontStyle: 'italic', color: GOLD }}>policy changes</em>
               </h2>
             </div>
@@ -1331,7 +1330,7 @@ export default function HomePage() {
                   <span style={{ fontSize: 11, color: 'rgba(245,161,36,0.7)', fontWeight: 500 }}>{news[0].date}</span>
                 </div>
                 {/* Headline */}
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 400, color: '#ffffff', margin: '0 0 20px', lineHeight: 1.2, letterSpacing: '-0.01em', flex: 1 }}>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 400, color: '#ffffff', margin: '0 0 20px', lineHeight: 1.2, letterSpacing: '-0.01em', flex: 1 }}>
                   {news[0].title.startsWith('[DRAFT]') && (
                     <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 4 }}>DRAFT</span>
                   )}
@@ -1365,7 +1364,7 @@ export default function HomePage() {
                   <span style={{ fontSize: 11, color: '#9ca3af', fontWeight: 500 }}>{n.date}</span>
                 </div>
                 {/* Headline */}
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 400, color: NAVY, margin: '0 0 12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 400, color: NAVY, margin: '0 0 12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
                   {n.title.startsWith('[DRAFT]') && (
                     <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 3 }}>DRAFT</span>
                   )}
@@ -1401,7 +1400,7 @@ export default function HomePage() {
 
           {/* LEFT — copy */}
           <Reveal preset="left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '72px 48px 72px 64px' }}>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.2vw, 46px)', fontWeight: 700, lineHeight: 1.1, color: '#1E1E2A', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.2vw, 46px)', fontWeight: 700, lineHeight: 1.1, color: '#1E1E2A', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
               Ready to start your<br />Australian journey?
             </h2>
             <p style={{ fontSize: 15, color: '#555', lineHeight: 1.65, maxWidth: 380, margin: '0 0 28px' }}>
@@ -1460,7 +1459,7 @@ export default function HomePage() {
           {/* Heading */}
           <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Where to Find Us</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
               Our Offices Around <em style={{ fontStyle: 'italic', color: GOLD }}>Australia</em>
             </h2>
           </Reveal>

@@ -113,7 +113,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#fff', color: TEXT }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au/' },
@@ -233,7 +233,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: "'Gilroy', sans-serif",
                     alignSelf: 'flex-start',
                     marginTop: 4,
                   }}

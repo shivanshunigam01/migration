@@ -196,7 +196,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -312,7 +312,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
               <div style={{ background: '#fff', borderRadius: 20, overflow: 'hidden', boxShadow: '0 8px 40px rgba(27,43,94,0.12)', border: `2px solid ${scoreColor}30` }}>
                 {/* Score display */}
                 <div style={{ background: `linear-gradient(135deg, ${scoreColor}15 0%, ${scoreColor}08 100%)`, padding: '32px 28px', textAlign: 'center', borderBottom: '1px solid #f0f2f8' }}>
-                  <div style={{ fontSize: 72, fontWeight: 800, color: scoreColor, lineHeight: 1, fontFamily: 'Fraunces, Georgia, serif' }}>{totalPoints}</div>
+                  <div style={{ fontSize: 72, fontWeight: 800, color: scoreColor, lineHeight: 1, fontFamily: "'Gilroy', sans-serif" }}>{totalPoints}</div>
                   <div style={{ fontSize: 14, color: '#6b7280', marginTop: 6 }}>points</div>
                   <div style={{ display: 'inline-block', marginTop: 14, background: `${scoreColor}18`, color: scoreColor, border: `1px solid ${scoreColor}40`, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '5px 16px', borderRadius: 20 }}>{scoreLabel}</div>
                 </div>
@@ -403,7 +403,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                         {field.label} {field.required && <span style={{ color: GOLD }}>*</span>}
                       </label>
                       <input type="date" value={field.val} onChange={e => field.set(e.target.value)}
-                        style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: 'Inter, system-ui, sans-serif', boxSizing: 'border-box' }} />
+                        style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                     </div>
                   ))}
                 </div>
@@ -478,7 +478,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
           <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>SkillSelect</div>
-              <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 36, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Recent Invitation Rounds</h2>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Recent Invitation Rounds</h2>
               <p style={{ color: '#6b7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 24px' }}>
                 DHA runs monthly invitation rounds. The lowest score invited each round gives you the real floor — not the 65-point legislative minimum. Rounds vary by occupation group.
               </p>
@@ -530,7 +530,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 { step: '05', title: 'Invitation → Apply', body: 'Receive an invitation from DHA. You have 60 days to lodge a full visa application with documents.', time: '12–36 months' },
               ].map((s, i) => (
                 <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <div style={{ width: 56, height: 56, borderRadius: '50%', background: i === 0 ? GOLD : '#fff', border: `2px solid ${i === 0 ? GOLD : '#e0e4ef'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, fontSize: 15, fontWeight: 800, color: i === 0 ? NAVY_DARK : NAVY, boxShadow: i === 0 ? '0 4px 16px rgba(245,161,36,0.4)' : '0 2px 8px rgba(27,43,94,0.08)', fontFamily: 'Fraunces, Georgia, serif' }}>{s.step}</div>
+                  <div style={{ width: 56, height: 56, borderRadius: '50%', background: i === 0 ? GOLD : '#fff', border: `2px solid ${i === 0 ? GOLD : '#e0e4ef'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, fontSize: 15, fontWeight: 800, color: i === 0 ? NAVY_DARK : NAVY, boxShadow: i === 0 ? '0 4px 16px rgba(245,161,36,0.4)' : '0 2px 8px rgba(27,43,94,0.08)', fontFamily: "'Gilroy', sans-serif" }}>{s.step}</div>
                   <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{s.title}</div>
                   <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6, marginBottom: 10 }}>{s.body}</div>
                   <div style={{ fontSize: 11, fontWeight: 700, color: GOLD, background: `${GOLD}12`, border: `1px solid ${GOLD}30`, padding: '3px 10px', borderRadius: 20 }}>{s.time}</div>

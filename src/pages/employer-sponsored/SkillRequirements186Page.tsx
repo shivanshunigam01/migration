@@ -173,7 +173,7 @@ function WorkExperience() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 28, marginBottom: 28 }}>
           {/* What counts / doesn't */}
           <div style={{ background: '#fff', border: `1px solid ${BORDER}`, borderRadius: 14, padding: '28px 26px', boxShadow: '0 2px 12px rgba(27,43,94,0.05)' }}>
-            <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 20px' }}>What generally counts</h3>
+            <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 20px' }}>What generally counts</h3>
             <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 10 }}>
               {WE_COUNTS.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
@@ -187,7 +187,7 @@ function WorkExperience() {
           </div>
           {/* Evidence needed */}
           <div style={{ background: '#fff', border: `1px solid ${BORDER}`, borderRadius: 14, padding: '28px 26px', boxShadow: '0 2px 12px rgba(27,43,94,0.05)' }}>
-            <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 20px' }}>Evidence generally required</h3>
+            <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 20px' }}>Evidence generally required</h3>
             <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 14 }}>
               {WE_EVIDENCE.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '12px 14px', background: GREY_BG, borderRadius: 10, border: `1px solid ${BORDER}` }}>
@@ -223,7 +223,7 @@ export default function SkillRequirements186Page({ navigate }: { navigate: (page
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

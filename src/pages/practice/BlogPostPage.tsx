@@ -76,7 +76,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
 
   if (loading) {
     return (
-      <div style={{ fontFamily: "Inter, system-ui, sans-serif", padding: 48, textAlign: "center", color: TEXT }}>
+      <div style={{ fontFamily: "'Gilroy', sans-serif", padding: 48, textAlign: "center", color: TEXT }}>
         Loading article…
       </div>
     )
@@ -84,7 +84,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
 
   if (!post) {
     return (
-      <div style={{ fontFamily: "Inter, system-ui, sans-serif", padding: 48, textAlign: "center", color: TEXT }}>
+      <div style={{ fontFamily: "'Gilroy', sans-serif", padding: 48, textAlign: "center", color: TEXT }}>
         Article not found.{" "}
         <button type="button" onClick={() => navigate(ROUTE.blog)} style={{ color: NAVY, fontWeight: 700 }}>
           Back to blog
@@ -96,7 +96,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
   const displayTitle = post.title.startsWith("[DRAFT]") ? post.title.replace("[DRAFT] ", "") : post.title
 
   return (
-    <div style={{ fontFamily: "Inter, system-ui, sans-serif", background: "#fff", color: TEXT }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: "#fff", color: TEXT }}>
       <StructuredData
         breadcrumbs={[
           { name: "Home", url: "https://www.nanakmigration.com.au/" },

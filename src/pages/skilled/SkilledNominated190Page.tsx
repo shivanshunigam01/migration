@@ -255,7 +255,7 @@ function StateCommitmentSection() {
                 <div style={{ width: 30, height: 30, borderRadius: 8, background: `${INDIGO}12`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Icon name={b.icon} size={14} color={INDIGO} />
                 </div>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, paddingTop: 4 }}>{b.label}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, paddingTop: 4 }}>{b.label}</div>
               </div>
               <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>{b.body}</p>
             </div>
@@ -286,7 +286,7 @@ function WhoSuitsSection() {
           {profiles.map(p => (
             <div key={p.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '22px 20px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ marginBottom: 10 }}><Icon name={p.icon} size={28} color={INDIGO} /></div>
-              <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{p.heading}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{p.heading}</div>
               <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{p.body}</p>
             </div>
           ))}
@@ -302,7 +302,7 @@ export default function SkilledNominated190Page({ navigate }: { navigate: (page:
     document.title = PAGE_META['skilled-nominated-190'].title
   }, [])
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

@@ -73,7 +73,7 @@ export function ResidenceCalculator({ accent = NAVY }: ResidenceCalculatorProps)
     fontSize: 14,
     color: NAVY,
     background: '#fff',
-    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamily: "'Gilroy', sans-serif",
     outline: 'none',
     boxSizing: 'border-box',
   }
@@ -138,7 +138,7 @@ export function ResidenceCalculator({ accent = NAVY }: ResidenceCalculatorProps)
               Indicative result — not an eligibility assessment
             </div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, flexWrap: 'wrap' as const }}>
-              <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 32, fontWeight: 800, color: result.eligible ? '#0d1632' : accent, lineHeight: 1 }}>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 800, color: result.eligible ? '#0d1632' : accent, lineHeight: 1 }}>
                 {formatDate(result.eligibilityDate)}
               </div>
               {result.eligible ? (

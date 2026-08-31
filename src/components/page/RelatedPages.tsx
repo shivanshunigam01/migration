@@ -41,7 +41,7 @@ export function RelatedPages({ pages, navigate, columns = 4 }: RelatedPagesProps
                 padding: '22px 20px 20px',
                 cursor: 'pointer',
                 textAlign: 'left' as const,
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 boxShadow: '0 1px 4px rgba(27,43,94,0.04)',
                 width: '100%',
               }}

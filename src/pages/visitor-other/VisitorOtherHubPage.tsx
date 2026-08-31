@@ -85,7 +85,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
   const visaFinderWidget = (
     <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 20, padding: '32px 28px' }}>
       <div style={{ fontSize: 11, fontWeight: 700, color: TEAL, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8 }}>Visa Finder</div>
-      <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 600, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>Which visitor visa do you need?</div>
+      <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 600, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>Which visitor visa do you need?</div>
       <p style={{ fontSize: 13, color: '#6b7a8d', lineHeight: 1.6, marginBottom: 20 }}>What passport do you hold?</p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: quizResult ? 20 : 0 }}>
@@ -110,7 +110,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                 fontWeight: isSelected ? 600 : 500,
                 cursor: 'pointer',
                 textAlign: 'left',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 transition: 'all 0.15s',
               }}
             >
@@ -127,7 +127,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
           <p style={{ fontSize: 12, color: '#4b5563', lineHeight: 1.65, margin: '0 0 14px' }}>{quizResult.note}</p>
           <button
             onClick={() => navigate('home')}
-            style={{ display: 'block', width: '100%', textAlign: 'center', backgroundColor: GOLD, color: NAVY_DARK, padding: '11px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, fontFamily: 'Inter, system-ui, sans-serif' }}
+            style={{ display: 'block', width: '100%', textAlign: 'center', backgroundColor: GOLD, color: NAVY_DARK, padding: '11px', borderRadius: 8, border: 'none', cursor: 'pointer', fontSize: 13, fontWeight: 700, fontFamily: "'Gilroy', sans-serif" }}
           >
             Get visa advice →
           </button>
@@ -141,7 +141,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
   )
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: '#1a1a2e' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: '#1a1a2e' }}>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <Breadcrumbs
@@ -178,7 +178,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
         <div style={{ maxWidth: 1280, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>Three Options</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
               Visitor Visa Comparison
             </h2>
             <p style={{ fontSize: 15, color: '#6b7a8d', lineHeight: 1.65, maxWidth: 540, margin: '0 auto' }}>
@@ -197,7 +197,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                   <span style={{ fontSize: 11, fontWeight: 700, color: TEAL, background: `rgba(3,105,161,0.1)`, border: `1px solid rgba(3,105,161,0.3)`, borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>Any Nationality</span>
                 </div>
                 <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 600</div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Visitor Visa</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Visitor Visa</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
                   {[
                     { label: 'Max Stay', val: 'Up to 12 months' },
@@ -218,7 +218,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
               <div style={{ padding: '0 28px 24px' }}>
                 <button
                   onClick={() => navigate('visitor-visa')}
-                  style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${TEAL}`, background: 'transparent', color: TEAL, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.2s' }}
+                  style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${TEAL}`, background: 'transparent', color: TEAL, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
                   onMouseEnter={e => { const el = e.currentTarget; el.style.background = TEAL; el.style.color = '#fff' }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = TEAL }}
                 >
@@ -241,7 +241,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                   <span style={{ fontSize: 11, fontWeight: 700, color: '#6b7a8d', background: '#f0f2f8', border: '1px solid #e5eaf4', borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap', marginRight: 72 }}>38 Countries</span>
                 </div>
                 <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 601</div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Electronic Travel Authority (ETA)</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Electronic Travel Authority (ETA)</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
                   {[
                     { label: 'Stay per visit', val: 'Up to 3 months' },
@@ -272,7 +272,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                   <span style={{ fontSize: 11, fontWeight: 700, color: '#f5a124', background: 'rgba(245,161,36,0.1)', border: '1px solid rgba(245,161,36,0.3)', borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>Free</span>
                 </div>
                 <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 651</div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>eVisitor</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>eVisitor</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 16 }}>
                   {[
                     { label: 'Stay per visit', val: 'Up to 3 months' },
@@ -294,7 +294,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
               <div style={{ padding: '0 28px 24px' }}>
                 <button
                   onClick={() => navigate('visitor-visa')}
-                  style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${TEAL}`, background: 'transparent', color: TEAL, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.2s' }}
+                  style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${TEAL}`, background: 'transparent', color: TEAL, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
                   onMouseEnter={e => { const el = e.currentTarget; el.style.background = TEAL; el.style.color = '#fff' }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = TEAL }}
                 >
@@ -318,7 +318,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
             {/* Left — explanation */}
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>Assessment Criteria</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
                 What the Department assesses
               </h2>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 16 }}>
@@ -377,7 +377,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
         <div style={{ maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>Important Distinction</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', letterSpacing: '-0.02em' }}>
               Business Visitor vs. Work
             </h2>
             <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, maxWidth: 560, margin: '0 auto' }}>
@@ -441,7 +441,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
           <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>Working Holiday</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
                 Work while you travel
               </h2>
               <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 20 }}>
@@ -457,7 +457,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
               <div style={{ background: '#fff', borderRadius: 16, border: '1.5px solid #e5eaf4', padding: '24px 24px', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 16, right: 16, background: '#f5a124', color: '#fff', fontSize: 10, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', borderRadius: 100, padding: '3px 9px' }}>Coming Soon</div>
                 <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 417</div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 14px', lineHeight: 1.25 }}>Working Holiday</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 14px', lineHeight: 1.25 }}>Working Holiday</h3>
                 {[
                   { label: 'Age', val: '18–35 (up to 35 for some countries)' },
                   { label: 'Stay', val: '12 months, extendable to 2nd & 3rd year' },
@@ -475,7 +475,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
               <div style={{ background: '#fff', borderRadius: 16, border: '1.5px solid #e5eaf4', padding: '24px 24px', position: 'relative', overflow: 'hidden' }}>
                 <div style={{ position: 'absolute', top: 16, right: 16, background: '#f5a124', color: '#fff', fontSize: 10, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', borderRadius: 100, padding: '3px 9px' }}>Coming Soon</div>
                 <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 462</div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 14px', lineHeight: 1.25 }}>Work and Holiday</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 14px', lineHeight: 1.25 }}>Work and Holiday</h3>
                 {[
                   { label: 'Age', val: '18–30' },
                   { label: 'Stay', val: '12 months, extendable' },
@@ -498,7 +498,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>Status &amp; Pathways</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
               Bridging Visas &amp; Other Status Options
             </h2>
             <p style={{ fontSize: 15, color: '#6b7a8d', lineHeight: 1.65, maxWidth: 540, margin: '0 auto' }}>
@@ -531,7 +531,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                 <div style={{ width: 48, height: 48, borderRadius: 13, background: `rgba(3,105,161,0.1)`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
                   <Icon name={tile.icon} size={24} color={TEAL} />
                 </div>
-                <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 4px', lineHeight: 1.25 }}>{tile.title}</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 4px', lineHeight: 1.25 }}>{tile.title}</h3>
                 <div style={{ fontSize: 12, color: TEAL, fontWeight: 600, marginBottom: 12 }}>{tile.subtitle}</div>
                 <p style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.7, margin: 0 }}>{tile.desc}</p>
               </div>
@@ -549,7 +549,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: TEAL, marginBottom: 12 }}>FAQ</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3.5vw, 40px)', fontWeight: 700, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
               Visitor visa questions answered
             </h2>
           </div>

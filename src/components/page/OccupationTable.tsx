@@ -75,7 +75,7 @@ export function OccupationTable({
     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right 10px center',
-    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamily: "'Gilroy', sans-serif",
     outline: 'none',
   }
 
@@ -94,7 +94,7 @@ export function OccupationTable({
             placeholder="Search by title or ANZSCO code…"
             value={search}
             onChange={e => setSearch(e.target.value)}
-            style={{ width: '100%', padding: '9px 12px 9px 34px', border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 13, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif', outline: 'none', boxSizing: 'border-box' }}
+            style={{ width: '100%', padding: '9px 12px 9px 34px', border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 13, color: NAVY, fontFamily: "'Gilroy', sans-serif", outline: 'none', boxSizing: 'border-box' }}
           />
         </div>
 
@@ -127,7 +127,7 @@ export function OccupationTable({
           <div style={{ fontSize: 16, fontWeight: 600, color: NAVY, marginBottom: 6 }}>No occupations match your search</div>
           <div style={{ fontSize: 13, color: '#9ca3af' }}>Try different keywords, or clear the filters to see all occupations.</div>
           <button onClick={() => { setSearch(''); setListFilter('All'); if (!lockVisaFilter) setVisaFilter('All') }}
-            style={{ marginTop: 16, padding: '8px 18px', background: accent, color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
+            style={{ marginTop: 16, padding: '8px 18px', background: accent, color: '#fff', border: 'none', borderRadius: 8, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
             Clear filters
           </button>
         </div>

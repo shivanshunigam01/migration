@@ -263,8 +263,8 @@ function VisaFinder({ navigate }: { navigate: (page: string) => void }) {
     <div style={{ background: '#ffffff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.22)', border: '1px solid #e8eaf0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
       <div style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_MID} 100%)`, padding: '18px 22px' }}>
-        <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 4, fontFamily: 'Inter, system-ui, sans-serif' }}>Which skilled visa?</div>
-        <div style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.85)', fontFamily: 'Inter, system-ui, sans-serif' }}>Answer 3 questions → get a pathway</div>
+        <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>Which skilled visa?</div>
+        <div style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.85)', fontFamily: "'Gilroy', sans-serif" }}>Answer 3 questions → get a pathway</div>
       </div>
 
       {/* Progress dots */}
@@ -276,7 +276,7 @@ function VisaFinder({ navigate }: { navigate: (page: string) => void }) {
             <div key={k} style={{ width: done ? 18 : active ? 14 : 8, height: 8, borderRadius: 4, background: done ? GOLD : active ? NAVY : '#e5e7eb', transition: 'all 0.3s' }} />
           )
         })}
-        <span style={{ fontSize: 11, color: '#9ca3af', fontFamily: 'Inter, system-ui, sans-serif', marginLeft: 4 }}>
+        <span style={{ fontSize: 11, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", marginLeft: 4 }}>
           {isResult ? 'Done' : `Step ${history.length + 1} of 4`}
         </span>
       </div>
@@ -284,11 +284,11 @@ function VisaFinder({ navigate }: { navigate: (page: string) => void }) {
       <div style={{ padding: '16px 22px 22px', flex: 1 }}>
         {!isResult && q && (
           <>
-            <p style={{ fontSize: 14, fontWeight: 600, color: NAVY_DARK, lineHeight: 1.4, margin: '0 0 14px', fontFamily: 'Inter, system-ui, sans-serif' }}>{q.q}</p>
+            <p style={{ fontSize: 14, fontWeight: 600, color: NAVY_DARK, lineHeight: 1.4, margin: '0 0 14px', fontFamily: "'Gilroy', sans-serif" }}>{q.q}</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {q.opts.map(opt => (
                 <button key={opt.label} onClick={() => choose(opt.next, opt.label)}
-                  style={{ padding: '11px 14px', background: '#f8fafd', border: '1.5px solid #e4e6f0', borderRadius: 10, fontSize: 13, fontWeight: 500, color: NAVY_DARK, cursor: 'pointer', textAlign: 'left', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.15s' }}
+                  style={{ padding: '11px 14px', background: '#f8fafd', border: '1.5px solid #e4e6f0', borderRadius: 10, fontSize: 13, fontWeight: 500, color: NAVY_DARK, cursor: 'pointer', textAlign: 'left', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
                   onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = GOLD; el.style.background = 'rgba(245,161,36,0.05)' }}
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = '#e4e6f0'; el.style.background = '#f8fafd' }}
                 >{opt.label}</button>
@@ -300,25 +300,25 @@ function VisaFinder({ navigate }: { navigate: (page: string) => void }) {
         {isResult && result && (
           <div>
             <div style={{ padding: '14px 16px', borderRadius: 12, border: `2px solid ${result.color}22`, background: `${result.color}08`, marginBottom: 14 }}>
-              <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: result.color, marginBottom: 6, fontFamily: 'Inter, system-ui, sans-serif' }}>Likely pathway</div>
+              <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: result.color, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Likely pathway</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-                <span style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{result.visa}</span>
-                <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: result.color, color: '#fff', fontFamily: 'Inter, system-ui, sans-serif' }}>{result.code}</span>
+                <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{result.visa}</span>
+                <span style={{ fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: result.color, color: '#fff', fontFamily: "'Gilroy', sans-serif" }}>{result.code}</span>
               </div>
-              <p style={{ fontSize: 12.5, color: '#4b5563', lineHeight: 1.6, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>{result.why}</p>
+              <p style={{ fontSize: 12.5, color: '#4b5563', lineHeight: 1.6, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{result.why}</p>
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
-              <a href="#contact" style={{ flex: 1, padding: '11px 14px', background: GOLD, color: NAVY_DARK, border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center', textDecoration: 'none', fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <a href="#contact" style={{ flex: 1, padding: '11px 14px', background: GOLD, color: NAVY_DARK, border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif" }}>
                 Get my points assessed →
               </a>
-              <button onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <button onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
                 Start over
               </button>
             </div>
           </div>
         )}
       </div>
-      <div style={{ padding: '0 22px 14px', fontSize: 10.5, color: '#9ca3af', fontFamily: 'Inter, system-ui, sans-serif', fontStyle: 'italic' }}>
+      <div style={{ padding: '0 22px 14px', fontSize: 10.5, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic' }}>
         Preliminary guidance only — not migration advice. {DISCLAIMER}.
       </div>
     </div>
@@ -387,7 +387,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
   const ptsMsgColor = totalPts >= 65 ? '#f5a124' : totalPts >= 50 ? GOLD : '#dc2626'
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#ffffff', color: '#1E1E2A' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -461,23 +461,23 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                 >
                   {/* Subclass pill */}
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-                    <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.06em', padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                    <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.06em', padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: "'Gilroy', sans-serif" }}>
                       {v.code}
                     </span>
                     <div style={{ display: 'flex', gap: 6 }}>
-                      <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${v.typeColor}14`, color: v.typeColor, border: `1px solid ${v.typeColor}30`, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                      <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${v.typeColor}14`, color: v.typeColor, border: `1px solid ${v.typeColor}30`, fontFamily: "'Gilroy', sans-serif" }}>
                         {v.type}
                       </span>
                       {v.pts !== '—' && (
-                        <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${v.ptsColor}12`, color: v.ptsColor, border: `1px solid ${v.ptsColor}28`, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                        <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${v.ptsColor}12`, color: v.ptsColor, border: `1px solid ${v.ptsColor}28`, fontFamily: "'Gilroy', sans-serif" }}>
                           {v.pts}
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{v.name}</h3>
-                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: '0 0 18px', fontFamily: 'Inter, system-ui, sans-serif' }}>{v.oneLine}</p>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{v.name}</h3>
+                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: '0 0 18px', fontFamily: "'Gilroy', sans-serif" }}>{v.oneLine}</p>
 
                   {/* Attribute chips */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -486,7 +486,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                       { label: v.stateNom ? 'State nomination' : 'No nomination', ok: !v.stateNom },
                       { label: `PR: ${v.prTiming}`, ok: v.type === 'Permanent' },
                     ].map(chip => (
-                      <span key={chip.label} style={{ fontSize: 10.5, fontWeight: 600, padding: '4px 10px', borderRadius: 100, background: '#f1f5f9', color: '#475569', fontFamily: 'Inter, system-ui, sans-serif' }}>{chip.label}</span>
+                      <span key={chip.label} style={{ fontSize: 10.5, fontWeight: 600, padding: '4px 10px', borderRadius: 100, background: '#f1f5f9', color: '#475569', fontFamily: "'Gilroy', sans-serif" }}>{chip.label}</span>
                     ))}
                   </div>
 
@@ -499,7 +499,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
               )
             })}
           </div>
-          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 20, fontFamily: 'Inter, system-ui, sans-serif' }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 20, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -508,23 +508,23 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="hero-grid">
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: 'Inter, system-ui, sans-serif' }}>The Points System</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.12 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: "'Gilroy', sans-serif" }}>The Points System</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3vw, 40px)', fontWeight: 700, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', lineHeight: 1.12 }}>
                 How the points test works
               </h2>
-              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 16px', fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 16px', fontFamily: "'Gilroy', sans-serif" }}>
                 The points test assigns a numeric score to your profile based on six factors. The minimum to register an Expression of Interest (EOI) in SkillSelect is 65 points — but in practice, invitation cutoffs for popular occupations run considerably higher.
               </p>
-              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 16px', fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 16px', fontFamily: "'Gilroy', sans-serif" }}>
                 Points are claimed at EOI submission and must be supported by documentation at visa lodgement. Overclaiming points is a serious matter — it can result in visa refusal and a PIC 4020 fraud finding.
               </p>
-              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>
                 Our agents calculate your verified score, identify legitimate strategies to improve it, and submit your EOI to reflect the strongest defensible position.
               </p>
 
               <div style={{ marginTop: 28, padding: '16px 20px', background: `${NAVY}06`, border: `1px solid ${NAVY}14`, borderRadius: 12 }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 6, fontFamily: 'Inter, system-ui, sans-serif' }}>Maximum points: 80+</div>
-                <div style={{ fontSize: 12.5, color: '#4b5563', lineHeight: 1.6, fontFamily: 'Inter, system-ui, sans-serif' }}>
+                <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Maximum points: 80+</div>
+                <div style={{ fontSize: 12.5, color: '#4b5563', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>
                   A 33-year-old with an IELTS 8 score, a Bachelor's degree, 8 years of overseas experience, and state nomination (190) can score well above 80. Age and English are the two factors most often within reach of improvement.
                 </div>
               </div>
@@ -539,16 +539,16 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                       <Icon name={f.icon} size={16} color={f.color} />
                     </div>
                     <div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif', lineHeight: 1.2 }}>{f.label}</div>
-                      <div style={{ fontSize: 10, fontWeight: 700, color: f.color, fontFamily: 'Inter, system-ui, sans-serif' }}>up to {f.max} pts</div>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, fontFamily: "'Gilroy', sans-serif", lineHeight: 1.2 }}>{f.label}</div>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: f.color, fontFamily: "'Gilroy', sans-serif" }}>up to {f.max} pts</div>
                     </div>
                   </div>
-                  <p style={{ fontSize: 11.5, color: '#6b7280', lineHeight: 1.55, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>{f.note}</p>
+                  <p style={{ fontSize: 11.5, color: '#6b7280', lineHeight: 1.55, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{f.note}</p>
                 </div>
               ))}
             </div>
           </div>
-          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 28, fontFamily: 'Inter, system-ui, sans-serif' }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 28, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -556,8 +556,8 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
       <section style={{ background: '#f8fafd', padding: '88px 24px', borderTop: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 44 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: 'Inter, system-ui, sans-serif' }}>Side by Side</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: "'Gilroy', sans-serif" }}>Side by Side</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
               189 vs 190 vs <em style={{ fontStyle: 'italic', fontWeight: 300, color: GOLD }}>491</em>
             </h2>
           </div>
@@ -565,15 +565,15 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
           <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
             {/* Header row */}
             <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', background: NAVY }}>
-              <div style={{ padding: '16px 20px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'Inter, system-ui, sans-serif' }}>Factor</div>
+              <div style={{ padding: '16px 20px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif" }}>Factor</div>
               {[
                 { code: '189', name: 'Independent', color: GREEN },
                 { code: '190', name: 'Nominated', color: BLUE },
                 { code: '491', name: 'Regional', color: PURPLE },
               ].map(col => (
                 <div key={col.code} style={{ padding: '16px 20px', borderLeft: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: col.color, fontFamily: "'Fraunces', Georgia, serif" }}>{col.code}</div>
-                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, system-ui, sans-serif' }}>{col.name}</div>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: col.color, fontFamily: "'Gilroy', sans-serif" }}>{col.code}</div>
+                  <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', fontFamily: "'Gilroy', sans-serif" }}>{col.name}</div>
                 </div>
               ))}
             </div>
@@ -587,14 +587,14 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
               { label: 'PR timing', vals: ['Immediate', 'Immediate', 'After 3 yrs on 491'], hi: [true, true, false] },
             ].map((row, ri) => (
               <div key={ri} style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', background: ri % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7' }}>
-                <div style={{ padding: '14px 20px', fontSize: 13, color: '#374151', fontWeight: 500, fontFamily: 'Inter, system-ui, sans-serif' }}>{row.label}</div>
+                <div style={{ padding: '14px 20px', fontSize: 13, color: '#374151', fontWeight: 500, fontFamily: "'Gilroy', sans-serif" }}>{row.label}</div>
                 {row.vals.map((v, vi) => (
-                  <div key={vi} style={{ padding: '14px 20px', borderLeft: '1px solid #f0f2f7', textAlign: 'center', fontSize: 12.5, fontWeight: row.hi[vi] ? 700 : 400, color: row.hi[vi] ? NAVY : '#6b7280', fontFamily: 'Inter, system-ui, sans-serif' }}>{v}</div>
+                  <div key={vi} style={{ padding: '14px 20px', borderLeft: '1px solid #f0f2f7', textAlign: 'center', fontSize: 12.5, fontWeight: row.hi[vi] ? 700 : 400, color: row.hi[vi] ? NAVY : '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{v}</div>
                 ))}
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 16, fontFamily: 'Inter, system-ui, sans-serif' }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 16, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -603,17 +603,17 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start' }} className="hero-grid">
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: 'Inter, system-ui, sans-serif' }}>Points Estimator</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 18px', letterSpacing: '-0.02em' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: "'Gilroy', sans-serif" }}>Points Estimator</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 18px', letterSpacing: '-0.02em' }}>
                 How many points might you score?
               </h2>
-              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 20px', fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 20px', fontFamily: "'Gilroy', sans-serif" }}>
                 This estimator covers three factors — age, English, and overseas experience. A full score also includes qualifications, Australian experience, and nomination bonuses. Use this to get a baseline before a formal assessment.
               </p>
               <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0' }}>
                 <div style={{ background: NAVY, padding: '14px 20px', display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr', gap: 8 }}>
                   {['Category', 'Description', 'Max pts'].map(h => (
-                    <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'Inter, system-ui, sans-serif' }}>{h}</div>
+                    <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "'Gilroy', sans-serif" }}>{h}</div>
                   ))}
                 </div>
                 {[
@@ -626,26 +626,26 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                   { cat: 'Partner skills', desc: 'Skilled partner assessment → +10 pts', max: 10 },
                 ].map((row, i) => (
                   <div key={row.cat} style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr', padding: '11px 20px', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7', gap: 8, alignItems: 'center' }}>
-                    <div style={{ fontSize: 12.5, fontWeight: 600, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif' }}>{row.cat}</div>
-                    <div style={{ fontSize: 11, color: '#6b7280', fontFamily: 'Inter, system-ui, sans-serif', lineHeight: 1.5 }}>{row.desc}</div>
-                    <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{row.max} pts</div>
+                    <div style={{ fontSize: 12.5, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>{row.cat}</div>
+                    <div style={{ fontSize: 11, color: '#6b7280', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.5 }}>{row.desc}</div>
+                    <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{row.max} pts</div>
                   </div>
                 ))}
               </div>
-              <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, fontFamily: 'Inter, system-ui, sans-serif' }}>{DISCLAIMER}</p>
+              <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
             </div>
 
             {/* Interactive estimator */}
             <div style={{ background: '#ffffff', border: '1.5px solid #e8edf6', borderRadius: 20, padding: '32px 28px', boxShadow: '0 8px 32px rgba(27,43,94,0.08)' }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, fontFamily: 'Inter, system-ui, sans-serif' }}>Quick Estimator</div>
-              <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 600, color: NAVY, marginBottom: 24, lineHeight: 1.3 }}>Age, English, overseas experience</div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: GOLD, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 8, fontFamily: "'Gilroy', sans-serif" }}>Quick Estimator</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 600, color: NAVY, marginBottom: 24, lineHeight: 1.3 }}>Age, English, overseas experience</div>
 
               {/* Age */}
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: 'Inter, system-ui, sans-serif' }}>Age band</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: "'Gilroy', sans-serif" }}>Age band</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                   {(['18-24','25-32','33-39','40-44'] as AgeBand[]).map(b => (
-                    <button key={b} onClick={() => setAge(b)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${age === b ? NAVY : '#e5eaf4'}`, background: age === b ? NAVY : '#f8fafd', color: age === b ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.15s' }}>
+                    <button key={b} onClick={() => setAge(b)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${age === b ? NAVY : '#e5eaf4'}`, background: age === b ? NAVY : '#f8fafd', color: age === b ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}>
                       {b} <span style={{ opacity: 0.6, fontSize: 10 }}>({AGE_PTS[b]} pts)</span>
                     </button>
                   ))}
@@ -654,10 +654,10 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
 
               {/* English */}
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: 'Inter, system-ui, sans-serif' }}>English level</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: "'Gilroy', sans-serif" }}>English level</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                   {(['Competent','Proficient','Superior','IELTS 8+'] as EnglishLevel[]).map(lvl => (
-                    <button key={lvl} onClick={() => setEnglish(lvl)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${english === lvl ? NAVY : '#e5eaf4'}`, background: english === lvl ? NAVY : '#f8fafd', color: english === lvl ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.15s' }}>
+                    <button key={lvl} onClick={() => setEnglish(lvl)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${english === lvl ? NAVY : '#e5eaf4'}`, background: english === lvl ? NAVY : '#f8fafd', color: english === lvl ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}>
                       {lvl} <span style={{ opacity: 0.6, fontSize: 10 }}>({ENG_PTS[lvl]} pts)</span>
                     </button>
                   ))}
@@ -666,10 +666,10 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
 
               {/* Overseas experience */}
               <div style={{ marginBottom: 24 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: 'Inter, system-ui, sans-serif' }}>Overseas experience</div>
+                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: "'Gilroy', sans-serif" }}>Overseas experience</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                   {(['0-2','3-4','5-7','8+'] as OverseasExp[]).map(exp => (
-                    <button key={exp} onClick={() => setOverseas(exp)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${overseas === exp ? NAVY : '#e5eaf4'}`, background: overseas === exp ? NAVY : '#f8fafd', color: overseas === exp ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', transition: 'all 0.15s' }}>
+                    <button key={exp} onClick={() => setOverseas(exp)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${overseas === exp ? NAVY : '#e5eaf4'}`, background: overseas === exp ? NAVY : '#f8fafd', color: overseas === exp ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}>
                       {exp} yrs <span style={{ opacity: 0.6, fontSize: 10 }}>({OVS_PTS[exp]} pts)</span>
                     </button>
                   ))}
@@ -678,18 +678,18 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
 
               {/* Score display */}
               <div style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_MID} 100%)`, borderRadius: 14, padding: '20px 22px', marginBottom: 14 }}>
-                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4, fontFamily: 'Inter, system-ui, sans-serif' }}>Estimated points (partial)</div>
-                <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 44, fontWeight: 800, color: '#fff', lineHeight: 1, marginBottom: 8 }}>{totalPts}</div>
+                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>Estimated points (partial)</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 44, fontWeight: 800, color: '#fff', lineHeight: 1, marginBottom: 8 }}>{totalPts}</div>
                 <div style={{ display: 'inline-block', background: `${ptsMsgColor}22`, border: `1px solid ${ptsMsgColor}44`, borderRadius: 8, padding: '6px 12px' }}>
-                  <span style={{ fontSize: 12, fontWeight: 600, color: ptsMsgColor, lineHeight: 1.4, fontFamily: 'Inter, system-ui, sans-serif' }}>{ptsMsg}</span>
+                  <span style={{ fontSize: 12, fontWeight: 600, color: ptsMsgColor, lineHeight: 1.4, fontFamily: "'Gilroy', sans-serif" }}>{ptsMsg}</span>
                 </div>
               </div>
 
-              <a href="#contact" style={{ display: 'block', textAlign: 'center', background: GOLD, color: NAVY_DARK, padding: '12px', borderRadius: 9, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: 'Inter, system-ui, sans-serif' }}
+              <a href="#contact" style={{ display: 'block', textAlign: 'center', background: GOLD, color: NAVY_DARK, padding: '12px', borderRadius: 9, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = GOLD_LIGHT }}
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = GOLD }}
               >Get a full assessment →</a>
-              <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, marginBottom: 0, textAlign: 'center', lineHeight: 1.5, fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, marginBottom: 0, textAlign: 'center', lineHeight: 1.5, fontFamily: "'Gilroy', sans-serif" }}>
                 Partial score only — full score includes qualifications, Australian experience, nomination bonuses. {DISCLAIMER}.
               </p>
             </div>
@@ -713,10 +713,10 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
             ].map((step, i) => (
               <div key={step.num} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '0 18px', position: 'relative', zIndex: 1 }}>
                 <div style={{ width: 72, height: 72, borderRadius: '50%', background: i === 3 ? GOLD : 'rgba(255,255,255,0.1)', border: `2px solid ${i === 3 ? GOLD : 'rgba(245,161,36,0.35)'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                  <span style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 800, color: i === 3 ? NAVY_DARK : '#fff' }}>{step.num}</span>
+                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 800, color: i === 3 ? NAVY_DARK : '#fff' }}>{step.num}</span>
                 </div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.25, fontFamily: 'Inter, system-ui, sans-serif' }}>{step.title}</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontFamily: 'Inter, system-ui, sans-serif' }}>{step.desc}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.25, fontFamily: "'Gilroy', sans-serif" }}>{step.title}</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontFamily: "'Gilroy', sans-serif" }}>{step.desc}</div>
               </div>
             ))}
           </div>
@@ -735,15 +735,15 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                   <Icon name={body.icon} size={18} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3, lineHeight: 1.25, fontFamily: 'Inter, system-ui, sans-serif' }}>{body.name}</div>
-                  <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5, fontFamily: 'Inter, system-ui, sans-serif' }}>{body.covers}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3, lineHeight: 1.25, fontFamily: "'Gilroy', sans-serif" }}>{body.name}</div>
+                  <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5, fontFamily: "'Gilroy', sans-serif" }}>{body.covers}</div>
                 </div>
               </div>
             ))}
           </div>
 
           <div style={{ marginTop: 24, background: `${NAVY}08`, border: `1.5px solid ${NAVY}14`, borderRadius: 12, padding: '14px 20px' }}>
-            <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0, fontFamily: 'Inter, system-ui, sans-serif', fontStyle: 'italic' }}>
+            <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic' }}>
               <strong style={{ fontStyle: 'normal' }}>Which body applies to you?</strong> The relevant assessing authority depends on your ANZSCO occupation code — not just your job title. Our registered agents confirm the correct body and manage the assessment on your behalf.
             </p>
           </div>
@@ -755,14 +755,14 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: 56, alignItems: 'start' }} className="hero-grid">
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: 'Inter, system-ui, sans-serif' }}>Invitation Rounds</div>
-              <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 18px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: "'Gilroy', sans-serif" }}>Invitation Rounds</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 18px', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
                 Rounds and points cutoffs
               </h2>
-              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 16, fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
                 DHA runs SkillSelect invitation rounds at irregular intervals — typically monthly for the 189, but timing and cutoff scores change with policy priorities. Being registered with an up-to-date EOI is essential; you cannot be invited if your EOI has lapsed.
               </p>
-              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, fontFamily: 'Inter, system-ui, sans-serif' }}>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, fontFamily: "'Gilroy', sans-serif" }}>
                 Cutoff scores for popular occupations — software engineering, nursing, accounting — have historically been higher than the 65-point minimum. Our agents track live round data and advise on when to update your EOI.
               </p>
             </div>
@@ -774,20 +774,20 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
               <div style={{ borderRadius: 14, overflow: 'hidden', border: '1.5px solid #e5eaf4' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr 0.8fr 1fr 1fr', background: NAVY, padding: '12px 20px', gap: 8 }}>
                   {['Round','Date','Visa','Score','Invites'].map(h => (
-                    <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.7)', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: 'Inter, system-ui, sans-serif' }}>{h}</div>
+                    <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.7)', letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>{h}</div>
                   ))}
                 </div>
                 {INV_ROUNDS.map((row, i) => (
                   <div key={row.round} style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr 0.8fr 1fr 1fr', padding: '13px 20px', gap: 8, borderTop: '1px solid #f0f2f8', background: i % 2 === 0 ? '#fff' : '#f8fafd' }}>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif' }}>{row.round}</div>
-                    <div style={{ fontSize: 13, color: '#374151', fontFamily: 'Inter, system-ui, sans-serif' }}>{row.date}</div>
-                    <div style={{ fontSize: 13, color: '#374151', fontFamily: 'Inter, system-ui, sans-serif' }}>{row.visa}</div>
-                    <div style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 15, fontWeight: 700, color: NAVY }}>{row.score}</div>
-                    <div style={{ fontSize: 13, color: '#374151', fontFamily: 'Inter, system-ui, sans-serif' }}>{row.invites}</div>
+                    <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>{row.round}</div>
+                    <div style={{ fontSize: 13, color: '#374151', fontFamily: "'Gilroy', sans-serif" }}>{row.date}</div>
+                    <div style={{ fontSize: 13, color: '#374151', fontFamily: "'Gilroy', sans-serif" }}>{row.visa}</div>
+                    <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY }}>{row.score}</div>
+                    <div style={{ fontSize: 13, color: '#374151', fontFamily: "'Gilroy', sans-serif" }}>{row.invites}</div>
                   </div>
                 ))}
               </div>
-              <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, fontFamily: 'Inter, system-ui, sans-serif' }}>{DISCLAIMER}</p>
+              <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', marginTop: 10, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
             </div>
           </div>
         </div>

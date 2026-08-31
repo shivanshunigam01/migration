@@ -22,7 +22,7 @@ export function SectionHeading({ kicker, title, intro, accent = NAVY, light = fa
         }}>{kicker}</div>
       )}
       <h2 style={{
-        fontFamily: 'Fraunces, Georgia, serif',
+        fontFamily: "'Gilroy', sans-serif",
         fontSize: 'clamp(26px, 3.5vw, 38px)',
         fontWeight: 700,
         color: light ? '#ffffff' : NAVY,

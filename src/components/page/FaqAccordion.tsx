@@ -48,7 +48,7 @@ export function FaqAccordion({ items, accent = NAVY, dark = false }: FaqAccordio
                 border: 'none',
                 cursor: 'pointer',
                 textAlign: 'left' as const,
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
               }}
             >
               <span style={{ fontSize: 15, fontWeight: 600, color: dark ? '#ffffff' : NAVY, lineHeight: 1.4 }}>

@@ -199,7 +199,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
 
       <StructuredData
         breadcrumbs={[
@@ -247,7 +247,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ background: NAVY, borderRadius: 16, padding: '22px 24px', border: `1px solid rgba(245,161,36,0.3)` }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Important — Name Change</div>
-            <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 20, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.3 }}>The AAT is now the ART</div>
+            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.3 }}>The AAT is now the ART</div>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, margin: 0 }}>
               The Administrative Appeals Tribunal (AAT) was abolished on <strong style={{ color: '#fff' }}>14 October 2024</strong> and replaced by the Administrative Review Tribunal (ART). All new migration review lodgements go to the ART. If your refusal letter says "AAT", those deadlines still apply — but the body you appeal to is now the ART at <a href="https://www.art.gov.au" target="_blank" rel="noopener noreferrer" style={{ color: GOLD, textDecoration: 'none', fontWeight: 600 }}>art.gov.au</a>.
             </p>
@@ -293,7 +293,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                 <div>
                   <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Date on refusal / notification letter <span style={{ color: RED }}>*</span></label>
                   <input type="date" value={notificationDate} onChange={e => setNotificationDate(e.target.value)}
-                    style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${notificationDate ? RED + '60' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: 'Inter, system-ui, sans-serif', boxSizing: 'border-box' }} />
+                    style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${notificationDate ? RED + '60' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                 </div>
 
                 <div>
@@ -348,7 +348,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                     <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: urgencyColor, marginBottom: 12 }}>
                       {deadline.daysLeft <= 0 ? 'Deadline Status' : 'Time Remaining'}
                     </div>
-                    <div style={{ fontSize: 80, fontWeight: 900, color: urgencyColor, lineHeight: 1, fontFamily: 'Fraunces, Georgia, serif', marginBottom: 4 }}>
+                    <div style={{ fontSize: 80, fontWeight: 900, color: urgencyColor, lineHeight: 1, fontFamily: "'Gilroy', sans-serif", marginBottom: 4 }}>
                       {deadline.daysLeft <= 0 ? '0' : deadline.daysLeft}
                     </div>
                     <div style={{ fontSize: 16, color: urgencyColor, fontWeight: 700, marginBottom: 16 }}>
@@ -418,7 +418,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4, letterSpacing: '0.08em' }}>Time Limit</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: dt.days ? NAVY : '#9ca3af', fontFamily: 'Fraunces, Georgia, serif' }}>
+                  <div style={{ fontSize: 18, fontWeight: 800, color: dt.days ? NAVY : '#9ca3af', fontFamily: "'Gilroy', sans-serif" }}>
                     {dt.days ? `${dt.days} days` : 'N/A'}
                   </div>
                 </div>
@@ -444,7 +444,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
               <div key={i} style={{ background: s.urgent ? '#fff9f9' : '#fff', border: `1.5px solid ${s.urgent ? RED + '25' : '#e8edf6'}`, borderRadius: 16, padding: '22px 22px', position: 'relative', overflow: 'hidden' }}>
                 {s.urgent && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: RED }} />}
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14 }}>
-                  <span style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 800, color: s.urgent ? `${RED}30` : '#e8edf6', lineHeight: 1 }}>{s.step}</span>
+                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 800, color: s.urgent ? `${RED}30` : '#e8edf6', lineHeight: 1 }}>{s.step}</span>
                   <div style={{ width: 36, height: 36, borderRadius: 10, background: s.urgent ? `${RED}12` : '#f0f2f8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Icon name={s.icon} size={16} color={s.urgent ? RED : NAVY} />
                   </div>

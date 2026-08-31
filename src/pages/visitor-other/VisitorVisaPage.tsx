@@ -123,15 +123,14 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
   ]
 
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif", background: '#f8fafc', minHeight: '100vh', color: '#1E1E2A' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f8fafc', minHeight: '100vh', color: '#1E1E2A' }}>
       {/* Google Fonts */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap');
-      `}</style>
+        `}</style>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>Home</button>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span>Visitor &amp; Other</span>
           <span>›</span>
@@ -162,7 +161,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
 
               {/* H1 */}
               <h1 style={{
-                fontFamily: "'Fraunces', serif",
+                fontFamily: "'Gilroy', sans-serif",
                 fontSize: 'clamp(32px, 5vw, 52px)',
                 fontWeight: 800, color: NAVY,
                 lineHeight: 1.15, marginBottom: 24,
@@ -218,7 +217,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                 <Icon name="globe" size={20} color={GOLD} />
-                <h3 style={{ color: NAVY, fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 700, margin: 0 }}>
+                <h3 style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, margin: 0 }}>
                   Which Visa Do I Need?
                 </h3>
               </div>
@@ -308,7 +307,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
                 background: '#fff',
               }}>
                 <Icon name={s.icon} size={22} color={GOLD} />
-                <span style={{ color: NAVY, fontFamily: "'Fraunces', serif", fontSize: 26, fontWeight: 700 }}>{s.value}</span>
+                <span style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 700 }}>{s.value}</span>
                 <span style={{ color: '#6b7280', fontSize: 13 }}>{s.label}</span>
               </div>
             ))}
@@ -323,7 +322,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="layers" size={24} color={ACCENT} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               The Three Visitor Visa Types
             </h2>
           </div>
@@ -348,7 +347,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
                   }}>
                     {key === 'eta' ? 'Subclass 601' : key === 'evisitor' ? 'Subclass 651' : 'Subclass 600'}
                   </span>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 14 }}>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 14 }}>
                     {key === 'eta' ? 'Electronic Travel Authority' : key === 'evisitor' ? 'eVisitor' : 'Visitor Visa'}
                   </h3>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -374,7 +373,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="list" size={24} color={ACCENT} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Subclass 600 Streams
             </h2>
           </div>
@@ -393,12 +392,12 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
                   width: 32, height: 32, borderRadius: 8, flexShrink: 0,
                   background: 'rgba(79,70,229,0.1)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: "'Fraunces', serif", fontWeight: 700, color: ACCENT, fontSize: 14,
+                  fontFamily: "'Gilroy', sans-serif", fontWeight: 700, color: ACCENT, fontSize: 14,
                 }}>
                   {i + 1}
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{s.name}</h3>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{s.name}</h3>
                   <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{s.body}</p>
                 </div>
               </div>
@@ -410,7 +409,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="alert" size={24} color={GOLD} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Common Refusal Reasons
             </h2>
           </div>
@@ -431,7 +430,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
                 }}>
                   <Icon name={r.icon} size={20} color="#dc2626" />
                 </div>
-                <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 16, fontWeight: 700, color: NAVY, margin: 0 }}>{r.title}</h3>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, margin: 0 }}>{r.title}</h3>
                 <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{r.body}</p>
               </div>
             ))}
@@ -442,7 +441,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="info" size={24} color={ACCENT} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Key Considerations
             </h2>
           </div>
@@ -464,7 +463,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
                   <Icon name={c.icon} size={20} color={ACCENT} />
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Fraunces', serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{c.title}</h3>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{c.title}</h3>
                   <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
                 </div>
               </div>
@@ -476,7 +475,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="info" size={24} color={ACCENT} />
-            <h2 style={{ fontFamily: "'Fraunces', serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
               Frequently Asked Questions
             </h2>
           </div>
@@ -536,7 +535,7 @@ export default function VisitorVisaPage({ navigate }: { navigate: (page: string)
             <Icon name="shield" size={14} color={GOLD} /> Professional Migration Advice
           </span>
           <h2 style={{
-            fontFamily: "'Fraunces', serif", fontSize: 36, fontWeight: 800,
+            fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 800,
             color: '#fff', marginBottom: 16,
           }}>
             Unsure Which Visa Applies to You?

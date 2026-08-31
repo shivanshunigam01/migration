@@ -45,7 +45,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
           boxShadow: dark ? 'none' : '0 2px 12px rgba(27,43,94,0.05)',
           cursor: isButton ? 'pointer' : 'default',
           textAlign: 'left' as const,
-          fontFamily: 'Inter, system-ui, sans-serif',
+          fontFamily: "'Gilroy', sans-serif",
           width: '100%',
         }
 
@@ -53,7 +53,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
           <>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
               {card.badge && (
-                <span style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 700, color, opacity: 0.3, lineHeight: 1, flexShrink: 0 }}>
+                <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color, opacity: 0.3, lineHeight: 1, flexShrink: 0 }}>
                   {card.badge}
                 </span>
               )}
@@ -62,7 +62,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
                   <Icon name={card.icon} size={18} color={color} />
                 </div>
               )}
-              <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 18, fontWeight: 700, color: dark ? '#fff' : NAVY, margin: 0, lineHeight: 1.3 }}>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: dark ? '#fff' : NAVY, margin: 0, lineHeight: 1.3 }}>
                 {card.title}
               </h3>
             </div>

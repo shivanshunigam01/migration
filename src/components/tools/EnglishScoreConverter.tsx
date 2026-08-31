@@ -184,7 +184,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right 10px center',
-    fontFamily: 'Inter, system-ui, sans-serif',
+    fontFamily: "'Gilroy', sans-serif",
     outline: 'none',
     boxSizing: 'border-box',
   }
@@ -218,7 +218,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
             value={score}
             onChange={e => { setScore(e.target.value); setCalculated(false); setResult(null) }}
             placeholder={isOET ? 'e.g. B+' : 'e.g. 7.0'}
-            style={{ width: '100%', padding: '10px 14px', border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 14, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif', outline: 'none', boxSizing: 'border-box' }}
+            style={{ width: '100%', padding: '10px 14px', border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 14, color: NAVY, fontFamily: "'Gilroy', sans-serif", outline: 'none', boxSizing: 'border-box' }}
             aria-label="Enter your score or grade"
           />
         </div>
@@ -226,7 +226,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
 
       <button
         onClick={calculate}
-        style={{ padding: '11px 28px', background: NAVY, color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif', marginBottom: 24 }}
+        style={{ padding: '11px 28px', background: NAVY, color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", marginBottom: 24 }}
       >
         Convert score
       </button>
@@ -252,7 +252,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
             {navigate && (
               <button
                 onClick={() => navigate('english-requirements')}
-                style={{ marginTop: 16, padding: '9px 18px', background: 'transparent', border: `1.5px solid ${GOLD}`, color: GOLD, borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter, system-ui, sans-serif' }}
+                style={{ marginTop: 16, padding: '9px 18px', background: 'transparent', border: `1.5px solid ${GOLD}`, color: GOLD, borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
               >
                 English requirements guide →
               </button>

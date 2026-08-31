@@ -53,7 +53,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#fff', color: TEXT }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au/' },
@@ -101,7 +101,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                 border: '1.5px solid #e2e8f0',
                 borderRadius: 8,
                 outline: 'none',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
                 color: TEXT,
                 background: '#fff',
                 boxSizing: 'border-box',
@@ -123,7 +123,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: 'pointer',
-                fontFamily: 'Inter, system-ui, sans-serif',
+                fontFamily: "'Gilroy', sans-serif",
               }}
             >
               All categories
@@ -144,7 +144,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                     fontSize: 13,
                     fontWeight: 600,
                     cursor: 'pointer',
-                    fontFamily: 'Inter, system-ui, sans-serif',
+                    fontFamily: "'Gilroy', sans-serif",
                   }}
                 >
                   {cfg.label}
@@ -216,7 +216,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                         display: 'flex',
                         flexDirection: 'column',
                         gap: 8,
-                        fontFamily: 'Inter, system-ui, sans-serif',
+                        fontFamily: "'Gilroy', sans-serif",
                       }}
                       onMouseEnter={e => {
                         const el = e.currentTarget

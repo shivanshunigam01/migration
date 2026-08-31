@@ -217,7 +217,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -267,7 +267,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Decision Architecture</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Every Fork in the Road</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Every Fork in the Road</h2>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 16, maxWidth: 560, margin: '0 auto' }}>The decisions that shape your outcome — and when they're actually made.</p>
           </div>
 
@@ -351,7 +351,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Interactive Tool</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Course → PR Explorer</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Course → PR Explorer</h2>
             <p style={{ fontSize: 16, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>Select a field of study to see your occupation mapping, assessing authority, occupation list status and realistic PR routes.</p>
           </div>
 
@@ -383,7 +383,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
                       <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: occ.color, marginBottom: 6 }}>ANZSCO {occ.anzsco}</div>
-                      <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 4px' }}>{occ.field}</h3>
+                      <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 4px' }}>{occ.field}</h3>
                       <div style={{ fontSize: 14, color: '#6b7280' }}>Assessed by: <strong style={{ color: NAVY }}>{occ.authority}</strong></div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-end' }}>
@@ -445,14 +445,14 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
           <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Interactive Planner</div>
-              <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 36, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Your 485 Runway Planner</h2>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Your 485 Runway Planner</h2>
               <p style={{ color: '#6b7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 28px' }}>Enter your graduation date. We map the key milestones to hit before your 485 expires — so you arrive at PR well before the deadline.</p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <div>
                   <label style={{ fontSize: 12, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 6 }}>Graduation / completion date</label>
                   <input type="date" value={graduationDate} onChange={e => setGraduationDate(e.target.value)}
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, border: '1.5px solid #e0e4ef', color: NAVY, outline: 'none', fontFamily: 'Inter, system-ui, sans-serif', boxSizing: 'border-box' }} />
+                    style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, border: '1.5px solid #e0e4ef', color: NAVY, outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                 </div>
                 <div>
                   <label style={{ fontSize: 12, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 8 }}>Degree level (determines 485 length)</label>
@@ -470,7 +470,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
               {visa485End && (
                 <div style={{ marginTop: 24, background: `${GOLD}10`, border: `1px solid ${GOLD}30`, borderRadius: 12, padding: '16px 20px' }}>
                   <div style={{ fontSize: 12, color: '#6b7280', marginBottom: 4 }}>Your 485 visa will expire approximately</div>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: NAVY, fontFamily: 'Fraunces, Georgia, serif' }}>
+                  <div style={{ fontSize: 20, fontWeight: 800, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>
                     {visa485End.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' })}
                   </div>
                   <div style={{ fontSize: 12, color: GOLD, marginTop: 4, fontWeight: 600 }}>PR lodgement must occur before this date</div>
@@ -526,7 +526,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Points Projection</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>What Study Can Build for You</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>What Study Can Build for You</h2>
             <p style={{ fontSize: 16, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>Toggle your study and work profile to see the indicative points total you can build through the student pathway.</p>
           </div>
 
@@ -567,7 +567,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
             <div style={{ position: 'sticky', top: 72 }}>
               <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 40px rgba(27,43,94,0.12)', border: `2px solid ${scoreColor}30`, overflow: 'hidden' }}>
                 <div style={{ background: `${scoreColor}12`, padding: '28px 24px', textAlign: 'center', borderBottom: '1px solid #f0f2f8' }}>
-                  <div style={{ fontSize: 64, fontWeight: 800, color: scoreColor, lineHeight: 1, fontFamily: 'Fraunces, Georgia, serif' }}>{totalIndicative}</div>
+                  <div style={{ fontSize: 64, fontWeight: 800, color: scoreColor, lineHeight: 1, fontFamily: "'Gilroy', sans-serif" }}>{totalIndicative}</div>
                   <div style={{ fontSize: 13, color: '#6b7280', marginTop: 4 }}>indicative points</div>
                   <div style={{ display: 'inline-block', marginTop: 12, background: `${scoreColor}18`, color: scoreColor, border: `1px solid ${scoreColor}40`, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 14px', borderRadius: 20 }}>{scoreLabel}</div>
                 </div>
@@ -608,7 +608,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Avoid These</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Common Student-to-PR Drift Risks</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Common Student-to-PR Drift Risks</h2>
             <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 16, maxWidth: 520, margin: '0 auto' }}>The decisions students most often get wrong — and the cost of each.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
@@ -638,7 +638,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Questions</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>Student to PR — FAQ</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>Student to PR — FAQ</h2>
           </div>
           <FaqAccordion items={STUDENT_PR_FAQS} accent={GOLD} />
         </div>

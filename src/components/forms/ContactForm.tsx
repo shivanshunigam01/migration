@@ -58,7 +58,7 @@ export default function ContactForm() {
     >
       <h3
         style={{
-          fontFamily: "'Fraunces', Georgia, serif",
+          fontFamily: "'Gilroy', sans-serif",
           fontSize: 22,
           fontWeight: 600,
           color: NAVY_DARK,

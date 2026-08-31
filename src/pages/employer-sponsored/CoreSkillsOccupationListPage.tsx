@@ -87,7 +87,7 @@ function RemovedFromListSection() {
           {steps.map((s, i) => (
             <div key={i} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '22px 20px', display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               <div><Icon name={s.icon} size={26} color={BLUE} /></div>
-              <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY }}>{s.heading}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{s.heading}</div>
               <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{s.body}</p>
             </div>
           ))}
@@ -120,7 +120,7 @@ function WhatIsCsol() {
             </p>
           </div>
           <div>
-            <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Which visas use the CSOL?</div>
+            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Which visas use the CSOL?</div>
             <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12 }}>
               {bullets.map((b, i) => (
                 <div key={i} style={{ background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 10, padding: '12px 14px' }}>
@@ -138,7 +138,7 @@ function WhatIsCsol() {
 
 export default function CoreSkillsOccupationListPage({ navigate }: { navigate: (page: string) => void }) {
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

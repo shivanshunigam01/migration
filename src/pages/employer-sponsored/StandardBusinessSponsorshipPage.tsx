@@ -167,7 +167,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -214,7 +214,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: BLUE, marginBottom: 12 }}>Who Can Apply</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 34, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>SBS eligibility requirements</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 34, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>SBS eligibility requirements</h2>
             <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.8, margin: '0 0 24px' }}>
               DHA assesses the business — not the size of it. The questions are about lawful operation, genuine need, and whether the business has an adverse migration history.
             </p>
@@ -232,7 +232,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
 
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#f5a124', marginBottom: 12 }}>Small Business &amp; Sole Traders</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Can a small business sponsor a worker?</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Can a small business sponsor a worker?</h2>
             <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.3)', borderRadius: 14, padding: '20px 20px', marginBottom: 20 }}>
               <div style={{ fontSize: 15, fontWeight: 700, color: '#0d1632', marginBottom: 8 }}>Yes — no minimum size required.</div>
               <div style={{ fontSize: 14, color: '#0d1632', lineHeight: 1.7 }}>There is no employee count, turnover floor, or trading history minimum to become an SBS holder. A sole trader or business with a single employee can apply.</div>
@@ -316,7 +316,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
               <div style={{ width: 52, height: 52, borderRadius: 14, background: `${activeObligation.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                 <Icon name={activeObligation.icon} size={24} color={activeObligation.color} />
               </div>
-              <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>{activeObligation.title}</h3>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>{activeObligation.title}</h3>
               <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, margin: '0 0 24px' }}>{activeObligation.detail}</p>
               <div style={{ display: 'flex', gap: 10, padding: '14px 18px', background: 'rgba(255,255,255,0.05)', borderRadius: 10, alignItems: 'flex-start' }}>
                 <Icon name="alert" size={15} color={GOLD} />

@@ -257,7 +257,7 @@ function ObligationsSection() {
                 <div style={{ width: 30, height: 30, borderRadius: 8, background: 'rgba(27,43,94,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                   <Icon name={item.icon} size={14} color={NAVY} />
                 </div>
-                <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.3, paddingTop: 3 }}>{item.title}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.3, paddingTop: 3 }}>{item.title}</div>
               </div>
               <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>{item.body}</p>
             </div>
@@ -309,7 +309,7 @@ export default function SkilledWorkRegional491Page({ navigate }: { navigate: (pa
     document.title = PAGE_META['skilled-work-regional-491'].title
   }, [])
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

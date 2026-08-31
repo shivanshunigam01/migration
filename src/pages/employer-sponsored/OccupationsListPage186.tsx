@@ -89,7 +89,7 @@ function HowToRead() {
           {cols.map(c => (
             <div key={c.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '24px 22px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ marginBottom: 10 }}><Icon name={c.icon} size={28} color={GREEN} /></div>
-              <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{c.heading}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{c.heading}</div>
               <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{c.body}</p>
             </div>
           ))}
@@ -105,7 +105,7 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },

@@ -213,7 +213,7 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
   }, [])
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', background: '#ffffff', color: '#1E1E2A' }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
@@ -278,11 +278,11 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
                   style={{ background: '#ffffff', border: `1.5px solid ${hovered ? GOLD : '#e8edf6'}`, borderRadius: 16, padding: '28px 24px', cursor: clickable ? 'pointer' : 'default', transform: hovered && clickable ? 'translateY(-4px)' : 'none', boxShadow: hovered ? '0 16px 40px rgba(27,43,94,0.11)' : '0 1px 6px rgba(27,43,94,0.05)', transition: 'all 0.2s', position: 'relative' }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-                    <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.04em', padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: 'Inter, system-ui, sans-serif' }}>{card.code}</span>
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${card.tagColor}14`, color: card.tagColor, border: `1px solid ${card.tagColor}28`, fontFamily: 'Inter, system-ui, sans-serif' }}>{card.tag}</span>
+                    <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.04em', padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: "'Gilroy', sans-serif" }}>{card.code}</span>
+                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${card.tagColor}14`, color: card.tagColor, border: `1px solid ${card.tagColor}28`, fontFamily: "'Gilroy', sans-serif" }}>{card.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{card.name}</h3>
-                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>{card.summary}</p>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{card.name}</h3>
+                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{card.summary}</p>
                   {clickable && (
                     <div style={{ position: 'absolute', bottom: 22, right: 22, opacity: hovered ? 1 : 0, transition: 'opacity 0.2s' }}>
                       <Icon name="arrowright" size={16} color={GOLD} />
@@ -308,16 +308,16 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
           <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', background: NAVY, padding: '14px 24px' }}>
               {['Cost item', 'Amount (AUD)', 'Notes'].map((h, i) => (
-                <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'Inter, system-ui, sans-serif', textAlign: i > 0 ? 'right' : 'left', minWidth: i === 1 ? 130 : i === 2 ? 200 : 'auto' }}>{h}</div>
+                <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif", textAlign: i > 0 ? 'right' : 'left', minWidth: i === 1 ? 130 : i === 2 ? 200 : 'auto' }}>{h}</div>
               ))}
             </div>
             {COSTS.map((row, i) => {
               const isLiving = row.item.includes('Living-cost')
               return (
                 <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', padding: '14px 24px', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7', alignItems: 'center' }}>
-                  <div style={{ fontSize: 13, color: isLiving ? NAVY : '#374151', fontWeight: isLiving ? 700 : 400, fontFamily: 'Inter, system-ui, sans-serif' }}>{row.item}</div>
-                  <div style={{ fontSize: 13.5, fontWeight: 700, color: NAVY, fontFamily: 'Inter, system-ui, sans-serif', textAlign: 'right', minWidth: 130, paddingLeft: 24 }}>{row.amount}</div>
-                  <div style={{ fontSize: 11.5, color: '#9ca3af', fontFamily: 'Inter, system-ui, sans-serif', textAlign: 'right', minWidth: 200, paddingLeft: 20 }}>{row.note}</div>
+                  <div style={{ fontSize: 13, color: isLiving ? NAVY : '#374151', fontWeight: isLiving ? 700 : 400, fontFamily: "'Gilroy', sans-serif" }}>{row.item}</div>
+                  <div style={{ fontSize: 13.5, fontWeight: 700, color: NAVY, fontFamily: "'Gilroy', sans-serif", textAlign: 'right', minWidth: 130, paddingLeft: 24 }}>{row.amount}</div>
+                  <div style={{ fontSize: 11.5, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", textAlign: 'right', minWidth: 200, paddingLeft: 20 }}>{row.note}</div>
                 </div>
               )
             })}
@@ -325,7 +325,7 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
 
           <div style={{ marginTop: 16, padding: '14px 18px', background: `${GOLD}0e`, border: `1px solid ${GOLD}33`, borderRadius: 10, display: 'flex', alignItems: 'flex-start', gap: 10 }}>
             <Icon name="alert" size={14} color={GOLD} />
-            <p style={{ fontSize: 12, color: '#0d1632', lineHeight: 1.6, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <p style={{ fontSize: 12, color: '#0d1632', lineHeight: 1.6, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>
               <strong>{DISCLAIMER}.</strong> Tuition figures are indicative ranges — contact your institution for exact fees. OSHC rates vary by provider. Agent fees are additional.
             </p>
           </div>
@@ -337,8 +337,8 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)', backgroundSize: '28px 28px', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: 'Inter, system-ui, sans-serif' }}>The Process</div>
-            <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: "'Gilroy', sans-serif" }}>The Process</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
               Five steps from offer to <em style={{ fontStyle: 'italic', fontWeight: 300, color: GOLD }}>visa grant</em>
             </h2>
           </div>
@@ -349,7 +349,7 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
                 {/* Left: number + connector */}
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{ width: 48, height: 48, borderRadius: '50%', background: GOLD, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, zIndex: 1 }}>
-                    <span style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 17, fontWeight: 800, color: NAVY_DARK }}>{step.num}</span>
+                    <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 800, color: NAVY_DARK }}>{step.num}</span>
                   </div>
                   {i < STEPS.length - 1 && (
                     <div style={{ width: 2, flex: 1, minHeight: 24, background: 'rgba(255,255,255,0.12)', margin: '4px 0' }} />
@@ -358,17 +358,17 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
                 {/* Right: content */}
                 <div style={{ paddingBottom: i < STEPS.length - 1 ? 36 : 0, paddingLeft: 16 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6 }}>
-                    <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 19, fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.2 }}>{step.title}</h3>
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: 'rgba(245,161,36,0.18)', color: GOLD, fontFamily: 'Inter, system-ui, sans-serif', whiteSpace: 'nowrap', flexShrink: 0 }}>{step.timing}</span>
+                    <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.2 }}>{step.title}</h3>
+                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: 'rgba(245,161,36,0.18)', color: GOLD, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', flexShrink: 0 }}>{step.timing}</span>
                   </div>
-                  <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.68)', lineHeight: 1.7, margin: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>{step.body}</p>
+                  <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.68)', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{step.body}</p>
                 </div>
               </div>
             ))}
           </div>
 
           <div style={{ marginTop: 44, padding: '16px 22px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 12, textAlign: 'center' }}>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', margin: 0, fontFamily: 'Inter, system-ui, sans-serif', fontStyle: 'italic' }}>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', margin: 0, fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic' }}>
               {DISCLAIMER}. Processing times are estimates and may vary for complex cases or additional information requests.
             </p>
           </div>

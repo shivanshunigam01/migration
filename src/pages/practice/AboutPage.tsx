@@ -61,13 +61,13 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
-    <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#ffffff', color: NAVY }}>
+    <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
 
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: 'Inter, system-ui, sans-serif' }}>Home</button>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span style={{ color: '#1B2B5E', fontWeight: 500 }}>About the Practice</span>
         </div>
@@ -95,10 +95,10 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               </div>
             </div>
 
-            <h1 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 54, fontWeight: 700, color: NAVY, lineHeight: 1.08, margin: '0 0 6px' }}>
+            <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 54, fontWeight: 700, color: NAVY, lineHeight: 1.08, margin: '0 0 6px' }}>
               Navpreet Aulakh
             </h1>
-            <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 26, fontWeight: 400, color: GOLD, margin: '0 0 20px', lineHeight: 1.3 }}>
+            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 400, color: GOLD, margin: '0 0 20px', lineHeight: 1.3 }}>
               Founder · Registered Migration Agent
             </div>
 
@@ -181,7 +181,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               <div style={{ width: 36, height: 36, borderRadius: 10, background: `${GOLD}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
                 <Icon name={stat.icon} size={16} color={GOLD} />
               </div>
-              <div style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 22, fontWeight: 800, color: GOLD, marginBottom: 4 }}>{stat.num}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: GOLD, marginBottom: 4 }}>{stat.num}</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.4 }}>{stat.label}</div>
             </div>
           ))}
@@ -193,7 +193,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Experience</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Career & Professional History</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Career & Professional History</h2>
             <p style={{ color: '#6b7280', fontSize: 16, maxWidth: 480, margin: '0 auto' }}>From Australian law firm practice to building an independent multi-state migration group.</p>
           </div>
 
@@ -237,7 +237,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>The Practice Philosophy</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 36, fontWeight: 700, color: '#fff', margin: '0 0 20px', lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: '#fff', margin: '0 0 20px', lineHeight: 1.2 }}>
               Migration and accounting<br />under one roof — by design.
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.8, margin: '0 0 24px' }}>
@@ -273,7 +273,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Practice Areas</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>What We Advise On</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>What We Advise On</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
             {SERVICE_AREAS.map((area, i) => (
@@ -294,7 +294,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>E-E-A-T</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Credentials & Registration</h2>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Credentials & Registration</h2>
             <p style={{ color: '#6b7280', fontSize: 16, maxWidth: 480, margin: '0 auto' }}>Every person giving migration advice in Australia must be registered. Here is everything you need to verify ours.</p>
           </div>
 
@@ -380,7 +380,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Language Access</div>
-            <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 34, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 34, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>
               Migration advice in English,<br />Hindi and Punjabi
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15, lineHeight: 1.8, margin: '0 0 20px' }}>
@@ -421,7 +421,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <div style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_DARK} 100%)`, padding: '72px 32px', borderTop: `4px solid ${GOLD}` }}>
         <div style={{ maxWidth: 820, margin: '0 auto', textAlign: 'center' }}>
           <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 64, height: 64, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', border: `3px solid ${GOLD}50`, marginBottom: 24 }} />
-          <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 42, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.15 }}>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 42, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.15 }}>
             Regulated advice.<br />
             <span style={{ color: GOLD }}>Real language. Real outcomes.</span>
           </h2>

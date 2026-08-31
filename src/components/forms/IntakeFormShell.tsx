@@ -13,7 +13,7 @@ const inputStyle: React.CSSProperties = {
   outline: "none",
   color: NAVY_DARK,
   background: "#fff",
-  fontFamily: "Inter, system-ui, sans-serif",
+  fontFamily: "'Gilroy', sans-serif",
   boxSizing: "border-box",
 }
 
