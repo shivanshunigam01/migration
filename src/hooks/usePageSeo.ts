@@ -1,28 +1,8 @@
 import { useEffect, useState } from "react"
 import { PAGE_META, type PageMeta } from "@/data/pageMeta"
+import { absoluteUrl, routeKeyToPath } from "@/data/site"
 import { fetchSeoByRouteKey } from "@/lib/contentApi"
-
-function setMetaTag(name: string, content: string, attr: "name" | "property" = "name") {
-  if (!content) return
-  let el = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement | null
-  if (!el) {
-    el = document.createElement("meta")
-    el.setAttribute(attr, name)
-    document.head.appendChild(el)
-  }
-  el.setAttribute("content", content)
-}
-
-function setCanonical(url: string) {
-  if (!url) return
-  let el = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
-  if (!el) {
-    el = document.createElement("link")
-    el.setAttribute("rel", "canonical")
-    document.head.appendChild(el)
-  }
-  el.setAttribute("href", url)
-}
+import { applySeoTags } from "@/lib/seoMeta"
 
 /** Apply SEO meta from CMS with static fallback. */
 export function usePageSeo(routeKey: string, fallback?: PageMeta) {
@@ -50,10 +30,13 @@ export function usePageSeo(routeKey: string, fallback?: PageMeta) {
 
   useEffect(() => {
     if (!meta) return
-    document.title = meta.title
-    setMetaTag("description", meta.metaDescription)
-    if (meta.primaryKeyword) setMetaTag("keywords", meta.primaryKeyword)
-  }, [meta])
+    applySeoTags({
+      title: meta.title,
+      description: meta.metaDescription,
+      keywords: meta.primaryKeyword,
+      canonicalUrl: absoluteUrl(routeKeyToPath(routeKey)),
+    })
+  }, [meta, routeKey])
 
   return meta
 }
@@ -66,11 +49,12 @@ export function useArticleSeo(opts: {
   ogImage?: string
 }) {
   useEffect(() => {
-    document.title = opts.title
-    setMetaTag("description", opts.description)
-    setMetaTag("og:title", opts.title, "property")
-    setMetaTag("og:description", opts.description, "property")
-    if (opts.ogImage) setMetaTag("og:image", opts.ogImage, "property")
-    if (opts.canonicalUrl) setCanonical(opts.canonicalUrl)
+    applySeoTags({
+      title: opts.title,
+      description: opts.description,
+      canonicalUrl: opts.canonicalUrl,
+      ogImage: opts.ogImage,
+      ogType: "article",
+    })
   }, [opts.title, opts.description, opts.canonicalUrl, opts.ogImage])
 }

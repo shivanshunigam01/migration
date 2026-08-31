@@ -2,11 +2,16 @@
   "title": "Nanak Migration Group | Australian Migration Experts",
   "description": "Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia's visa system.",
   "language": "en-AU",
+  "siteUrl": "https://www.nanakmigration.com.au",
   "robots": {
     "index": true
   },
   "icons": {
     "icon": "/logo.png"
+  },
+  "openGraph": {
+    "url": "https://www.nanakmigration.com.au/",
+    "image": "https://www.nanakmigration.com.au/og-image.jpg"
   },
   "accessibility": {
     "addBypassLinks": true,

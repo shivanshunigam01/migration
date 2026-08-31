@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
 import siteConfiguration from './.figma/make/site.json'
+import { seoAssetsPlugin } from './vite-plugin-seo-assets'
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -20,6 +21,7 @@ export default defineConfig(({ mode }) => {
       react(),
       tailwindcss(),
       figmaSiteConfiguration(siteConfiguration),
+      seoAssetsPlugin(),
       figmaErrorOverlayReplay(),
       figmaReactRefreshBoundaryFallback(),
       figmaMakeKitPlugin({ storiesGlob: '/src/**/*.stories.{ts,tsx,js,jsx}' }),
@@ -53,8 +55,10 @@ type FigmaSiteConfiguration = {
     icon?: string
   }
   openGraph?: {
+    url?: string
     image?: string
   }
+  siteUrl?: string
   analytics?: {
     googleAnalyticsId?: string
   }
@@ -85,6 +89,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   const description = config.description ?? ''
   const favicon = config.icons?.icon ?? ''
   const socialImage = config.openGraph?.image ?? ''
+  const siteUrl = (config.siteUrl ?? config.openGraph?.url ?? '').replace(/\/$/, '')
   const language = sanitizeHtmlValue(config.language) || 'en'
   const googleAnalyticsId = sanitizeHtmlValue(config.analytics?.googleAnalyticsId)
   const headStart = config.customScripts?.headStart ?? ''
@@ -139,10 +144,21 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
         if (description) {
           tags.push({ tag: 'meta', attrs: { property: 'og:description', content: description }, injectTo: 'head' })
         }
+        if (siteUrl) {
+          tags.push(
+            { tag: 'link', attrs: { rel: 'canonical', href: `${siteUrl}/` }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:url', content: `${siteUrl}/` }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:type', content: 'website' }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:site_name', content: title }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:locale', content: 'en_AU' }, injectTo: 'head' },
+          )
+        }
         if (socialImage) {
           tags.push(
             { tag: 'meta', attrs: { property: 'og:image', content: socialImage }, injectTo: 'head' },
             { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' }, injectTo: 'head' },
+            { tag: 'meta', attrs: { name: 'twitter:title', content: title }, injectTo: 'head' },
+            { tag: 'meta', attrs: { name: 'twitter:description', content: description }, injectTo: 'head' },
             { tag: 'meta', attrs: { name: 'twitter:image', content: socialImage }, injectTo: 'head' },
           )
         }

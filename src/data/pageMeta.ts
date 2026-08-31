@@ -10,6 +10,41 @@ export interface PageMeta {
 }
 
 export const PAGE_META: Record<string, PageMeta> = {
+  home: {
+    title: 'Nanak Migration Group | Australian Migration Experts',
+    metaDescription: 'Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia\'s visa system.',
+    primaryKeyword: 'Australian migration agents',
+  },
+  about: {
+    title: 'About Nanak Migration Group | Registered Migration Agents',
+    metaDescription: 'Meet Navpreet Aulakh (MARN 2619467) and the Nanak Migration Group team — regulated migration advice in English, Hindi and Punjabi across Australia.',
+    primaryKeyword: 'Nanak Migration Group about',
+  },
+  'book-consultation': {
+    title: 'Book a Consultation | Nanak Migration Group',
+    metaDescription: 'Book a free consultation with a MARA-registered migration agent (MARN 2619467) about your Australian visa pathway.',
+    primaryKeyword: 'book migration consultation Australia',
+  },
+  'regional-494': {
+    title: 'Regional Employer Sponsored Visa (494) | Nanak Migration Group',
+    metaDescription: 'The subclass 494 Regional Employer Sponsored visa helps regional employers nominate skilled workers. Registered agent MARN 2619467.',
+    primaryKeyword: 'subclass 494 regional employer sponsored visa',
+  },
+  'visitor-hub': {
+    title: 'Visitor & Other Visas | Nanak Migration Group',
+    metaDescription: 'Visitor, parent, bridging and citizenship visa guidance from MARA-registered migration agents at Nanak Migration Group.',
+    primaryKeyword: 'visitor visas Australia',
+  },
+  'visitor-visa': {
+    title: 'Visitor Visa (600) | Nanak Migration Group',
+    metaDescription: 'Subclass 600 Visitor visa guidance for tourism, family visits and short business trips to Australia. Registered agent MARN 2619467.',
+    primaryKeyword: 'visitor visa subclass 600 Australia',
+  },
+  'parent-visa': {
+    title: 'Parent Visa Australia | Nanak Migration Group',
+    metaDescription: 'Parent visa options for joining children in Australia — contributory and non-contributory pathways explained by MARN 2619467.',
+    primaryKeyword: 'parent visa Australia',
+  },
   'employer-sponsored-visas': {
     title: 'Employer Sponsored Visas | Nanak Migration Group',
     metaDescription: 'Australian employer-sponsored visas — subclass 482 Skills in Demand, subclass 186 permanent residence, subclass 494 regional. Agent MARN 2619467.',
