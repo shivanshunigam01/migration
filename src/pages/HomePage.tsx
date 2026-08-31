@@ -3,7 +3,7 @@ import { useAppNavigate } from '@/lib/navigation'
 import { intakeRefNumber, useIntakeSubmit } from '@/lib/api'
 import ContactForm from '@/components/forms/ContactForm'
 
-import { NAVPREET_PHOTO, MARA_BADGE, MIA_LOGO, QEAC_LOGO, CARD_KANGAROO } from '@/lib/siteAssets'
+import { NAVPREET_PHOTO, MARA_BADGE, QEAC_LOGO, CARD_KANGAROO } from '@/lib/siteAssets'
 import AustralianSkyline from '@/components/ui/AustralianSkyline'
 import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, NAVY_MID, NAVY_GRAD, NAVY_GRAD_V, HERO_GRAD, CREAM, GREY_BAND, TEXT } from '@/theme'
 import SiteHeader from '@/components/layout/SiteHeader'
@@ -83,7 +83,6 @@ const PRACTICE_LINKS = [
 const TRUST_LOGOS = [
   { name: 'MARA Registered', label: 'MARN 2619467' },
   { name: 'OMARA Code of Conduct', label: 'Compliant member' },
-  { name: 'Migration Institute of Australia', label: 'Member' },
   { name: 'Graduate Diploma in Migration Law and Practice', label: 'Qualified' },
 ]
 
@@ -1230,19 +1229,6 @@ export default function HomePage() {
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>MARA Registered Agent</div>
                 <div style={{ fontSize: 13, color: '#6b7280' }}>MARN 2619467</div>
                 <a href="https://www.mara.gov.au" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginTop: 6 }}>www.mara.gov.au →</a>
-              </div>
-            </motion.div>
-            </StaggerItem>
-
-            {/* MIA */}
-            <StaggerItem preset="scale">
-            <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
-              <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img className="img-contain" src={MIA_LOGO} alt="Migration Institute of Australia logo" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Migration Institute of Australia</div>
-                <div style={{ fontSize: 13, color: '#6b7280' }}>Professional Member</div>
               </div>
             </motion.div>
             </StaggerItem>
