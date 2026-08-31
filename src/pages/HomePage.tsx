@@ -265,7 +265,7 @@ function PathwayAssessment() {
         article: ref,
         consent: { email: true, sms: true, wa: false },
       },
-    }).catch(() => {})
+    })
   }
 
   function restart() {
