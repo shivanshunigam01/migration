@@ -89,8 +89,8 @@ function HowToRead() {
           {cols.map(c => (
             <div key={c.heading} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '24px 22px', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ marginBottom: 10 }}><Icon name={c.icon} size={28} color={GREEN} /></div>
-              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{c.heading}</div>
-              <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{c.body}</p>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{c.heading}</div>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{c.body}</p>
             </div>
           ))}
         </div>
@@ -187,10 +187,10 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
             panel
             title="The Department's published list prevails"
           >
-            <p style={{ margin: '0 0 10px', fontSize: 14, lineHeight: 1.7, color: '#374151' }}>
+            <p style={{ margin: '0 0 10px', fontSize: 15, lineHeight: 1.7, color: '#374151' }}>
               This page shows <strong>sample data only</strong> — it is not the current Department of Home Affairs occupation list. Occupation lists for the 186 visa are published and updated by the Department at immi.homeaffairs.gov.au. Lists may change at any time, including removing occupations, adding new caveats, or changing assessing authority assignments.
             </p>
-            <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: '#0d1632' }}>
+            <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: '#0d1632' }}>
               Always verify the current occupation list on the Department of Home Affairs website before a nomination is lodged. Do not rely solely on this page for compliance decisions.
             </p>
           </Callout>

@@ -66,8 +66,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#9ca3af' }}>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 13, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span style={{ color: '#1B2B5E', fontWeight: 500 }}>About the Practice</span>
         </div>
@@ -81,8 +81,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
           <div style={{ paddingBottom: 60 }}>
             {/* Entity quotable block — AEO anchor */}
             <div style={{ background: '#fff', border: `1px solid ${GOLD}30`, borderLeft: `4px solid ${GOLD}`, borderRadius: '0 12px 12px 0', padding: '18px 22px', marginBottom: 32, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', maxWidth: 560 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>About Nanak Migration</div>
-              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>About Nanak Migration</div>
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
                 Nanak Migration Group is an Australian migration practice led by <strong style={{ color: NAVY }}>Registered Migration Agent Navpreet Aulakh (MARN 2619467)</strong>, operating alongside Nanak Accountants & Associates. The firm provides regulated migration advice in English, Hindi and Punjabi, with offices across Victoria, Western Australia and New South Wales.
               </p>
             </div>
@@ -90,15 +90,15 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
               <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', border: `2px solid ${GOLD}40` }} />
               <div>
-                <div style={{ fontSize: 12, color: '#6b7280', fontWeight: 500 }}>Founded by</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: NAVY }}>Nanak Migration Group</div>
+                <div style={{ fontSize: 13, color: '#6b7280', fontWeight: 500 }}>Founded by</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: NAVY }}>Nanak Migration Group</div>
               </div>
             </div>
 
             <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 54, fontWeight: 700, color: NAVY, lineHeight: 1.08, margin: '0 0 6px' }}>
               Navpreet Aulakh
             </h1>
-            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 400, color: GOLD, margin: '0 0 20px', lineHeight: 1.3 }}>
+            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 27, fontWeight: 400, color: GOLD, margin: '0 0 20px', lineHeight: 1.3 }}>
               Founder · Registered Migration Agent
             </div>
 
@@ -106,16 +106,16 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 24 }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: `${NAVY}08`, border: `1.5px solid ${NAVY}20`, borderRadius: 10, padding: '8px 16px' }}>
                 <Icon name="shield" size={15} color={NAVY} />
-                <span style={{ fontSize: 13, fontWeight: 700, color: NAVY }}>MARN 2619467</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color: NAVY }}>MARN 2619467</span>
                 <span style={{ width: 1, height: 14, background: '#d1d5db' }} />
                 <a href="https://www.mara.gov.au/search-the-register" target="_blank" rel="noopener noreferrer"
-                  style={{ fontSize: 12, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
+                  style={{ fontSize: 13, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4 }}>
                   Verify on OMARA register <Icon name="external" size={11} color={GOLD} />
                 </a>
               </div>
             </div>
 
-            <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.75, maxWidth: 520, margin: '0 0 28px' }}>
+            <p style={{ fontSize: 18, color: '#374151', lineHeight: 1.75, maxWidth: 520, margin: '0 0 28px' }}>
               More than a decade working inside Australian immigration law and migration practice — first in a Sydney law firm, then building an independent practice now operating across three states. Navpreet's focus is employer sponsorship, skilled migration, and the Punjabi and Hindi-speaking diaspora communities that most practices serve only in English.
             </p>
 
@@ -129,7 +129,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                 { label: 'Western Australia', icon: 'mappin' },
                 { label: 'New South Wales', icon: 'mappin' },
               ].map(pill => (
-                <span key={pill.label} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', border: '1px solid #e0e4ef', borderRadius: 20, padding: '6px 14px', fontSize: 13, color: '#374151', boxShadow: '0 1px 4px rgba(27,43,94,0.06)' }}>
+                <span key={pill.label} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#fff', border: '1px solid #e0e4ef', borderRadius: 20, padding: '6px 14px', fontSize: 14, color: '#374151', boxShadow: '0 1px 4px rgba(27,43,94,0.06)' }}>
                   <Icon name={pill.icon} size={13} color={GOLD} />
                   {pill.label}
                 </span>
@@ -138,7 +138,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
 
             <div style={{ display: 'flex', gap: 12 }}>
               <GlowButton as="a" href="#contact" size="lg" variant="gold">Book a Consultation</GlowButton>
-              <a href="#career" style={{ backgroundColor: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600 }}>Career & Experience →</a>
+              <a href="#career" style={{ backgroundColor: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 600 }}>Career & Experience →</a>
             </div>
           </div>
 
@@ -156,9 +156,9 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             />
             {/* Credential card */}
             <div style={{ position: 'absolute', bottom: 32, left: -28, background: '#fff', borderRadius: 14, padding: '14px 18px', boxShadow: '0 8px 32px rgba(27,43,94,0.18)', border: `1px solid ${GOLD}30`, minWidth: 200 }}>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 5 }}>Registered · OMARA</div>
-              <div style={{ fontSize: 15, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
-              <div style={{ fontSize: 12, color: '#6b7280', marginTop: 2 }}>Navpreet Aulakh</div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 5 }}>Registered · OMARA</div>
+              <div style={{ fontSize: 16, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
+              <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>Navpreet Aulakh</div>
               <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Badge" style={{ height: 32, objectFit: 'contain' }} />
               </div>
@@ -181,8 +181,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               <div style={{ width: 36, height: 36, borderRadius: 10, background: `${GOLD}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
                 <Icon name={stat.icon} size={16} color={GOLD} />
               </div>
-              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: GOLD, marginBottom: 4 }}>{stat.num}</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.4 }}>{stat.label}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 23, fontWeight: 800, color: GOLD, marginBottom: 4 }}>{stat.num}</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.4 }}>{stat.label}</div>
             </div>
           ))}
         </div>
@@ -192,9 +192,9 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <div id="career" style={{ background: '#fafbfe', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Experience</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Experience</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Career & Professional History</h2>
-            <p style={{ color: '#6b7280', fontSize: 16, maxWidth: 480, margin: '0 auto' }}>From Australian law firm practice to building an independent multi-state migration group.</p>
+            <p style={{ color: '#6b7280', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>From Australian law firm practice to building an independent multi-state migration group.</p>
           </div>
 
           <div style={{ position: 'relative' }}>
@@ -215,15 +215,15 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                   <div style={{ flex: 1, background: '#fff', border: `1.5px solid ${item.highlight ? item.color + '30' : '#e8edf6'}`, borderRadius: 16, padding: '24px 28px', marginBottom: 12, boxShadow: item.highlight ? '0 4px 24px rgba(27,43,94,0.1)' : '0 1px 6px rgba(27,43,94,0.04)' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 20, marginBottom: 12 }}>
                       <div>
-                        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: item.color, marginBottom: 5 }}>{item.period}</div>
-                        <div style={{ fontSize: 18, fontWeight: 700, color: NAVY, lineHeight: 1.2, marginBottom: 3 }}>{item.role}</div>
-                        <div style={{ fontSize: 13, color: '#6b7280', fontStyle: 'italic' }}>{item.org}</div>
+                        <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: item.color, marginBottom: 5 }}>{item.period}</div>
+                        <div style={{ fontSize: 19, fontWeight: 700, color: NAVY, lineHeight: 1.2, marginBottom: 3 }}>{item.role}</div>
+                        <div style={{ fontSize: 14, color: '#6b7280', fontStyle: 'italic' }}>{item.org}</div>
                       </div>
                       <div style={{ width: 40, height: 40, borderRadius: 12, background: `${item.color}12`, border: `1px solid ${item.color}25`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                         <Icon name={item.icon} size={18} color={item.color} />
                       </div>
                     </div>
-                    <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
+                    <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.75, margin: 0 }}>{item.detail}</p>
                   </div>
                 </div>
               ))}
@@ -236,14 +236,14 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <div style={{ background: NAVY, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>The Practice Philosophy</div>
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: '#fff', margin: '0 0 20px', lineHeight: 1.2 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>The Practice Philosophy</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: '#fff', margin: '0 0 20px', lineHeight: 1.2 }}>
               Migration and accounting<br />under one roof — by design.
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.8, margin: '0 0 24px' }}>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 16, lineHeight: 1.8, margin: '0 0 24px' }}>
               The most common employer sponsorship failures aren't visa failures — they're compliance failures that surface months later: payroll records that don't match the nominated salary, SAF levy errors, record-keeping gaps. Operating alongside Nanak Accountants & Associates means the accounting and the migration work talk to each other from the start.
             </p>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 15, lineHeight: 1.8, margin: 0 }}>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 16, lineHeight: 1.8, margin: 0 }}>
               For individual clients, the same logic applies. Most people who need a migration agent also have tax, business or financial questions that intersect with their visa status. Having both disciplines available — without needing a referral network — is the structural advantage of a combined practice.
             </p>
           </div>
@@ -259,8 +259,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                   <Icon name={item.icon} size={16} color={GOLD} />
                 </div>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 5 }}>{item.title}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>{item.body}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 5 }}>{item.title}</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.65 }}>{item.body}</div>
                 </div>
               </div>
             ))}
@@ -272,7 +272,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <div style={{ background: '#fff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Practice Areas</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Practice Areas</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>What We Advise On</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
@@ -281,8 +281,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: `${area.color}12`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 14px' }}>
                   <Icon name={area.icon} size={20} color={area.color} />
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{area.label}</div>
-                <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>{area.desc}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{area.label}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>{area.desc}</div>
               </div>
             ))}
           </div>
@@ -293,9 +293,9 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <div style={{ background: '#fafbfe', padding: '72px 32px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>E-E-A-T</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>E-E-A-T</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Credentials & Registration</h2>
-            <p style={{ color: '#6b7280', fontSize: 16, maxWidth: 480, margin: '0 auto' }}>Every person giving migration advice in Australia must be registered. Here is everything you need to verify ours.</p>
+            <p style={{ color: '#6b7280', fontSize: 17, maxWidth: 480, margin: '0 auto' }}>Every person giving migration advice in Australia must be registered. Here is everything you need to verify ours.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
@@ -304,8 +304,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
                 <img src="/src/imports/mara-badge-2619467-hires.png" alt="OMARA Registration Badge" style={{ height: 56, objectFit: 'contain' }} />
                 <div>
-                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: GOLD, marginBottom: 3 }}>OMARA Registered</div>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: GOLD, marginBottom: 3 }}>OMARA Registered</div>
+                  <div style={{ fontSize: 21, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
                 </div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
@@ -318,13 +318,13 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                   { label: 'Offices', val: 'VIC · WA · NSW' },
                 ].map((row, i) => (
                   <div key={i} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: i < 5 ? '1px solid #f0f2f8' : 'none' }}>
-                    <span style={{ fontSize: 12, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{row.val}</span>
+                    <span style={{ fontSize: 13, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{row.val}</span>
                   </div>
                 ))}
               </div>
               <a href="https://www.mara.gov.au/search-the-register" target="_blank" rel="noopener noreferrer"
-                style={{ display: 'flex', alignItems: 'center', gap: 8, backgroundColor: NAVY, color: '#fff', padding: '12px 18px', borderRadius: 10, textDecoration: 'none', fontSize: 13, fontWeight: 700 }}>
+                style={{ display: 'flex', alignItems: 'center', gap: 8, backgroundColor: NAVY, color: '#fff', padding: '12px 18px', borderRadius: 10, textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>
                 <Icon name="external" size={14} color="#fff" />
                 Verify MARN 2619467 on the OMARA register
               </a>
@@ -333,7 +333,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             {/* Qualifications & accreditations */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 16, padding: '22px 24px' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Professional Qualifications</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Professional Qualifications</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {[
                     { item: 'Graduate Diploma in Migration Law and Practice', note: 'Registered qualification — OMARA' },
@@ -346,8 +346,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                         <Icon name="check" size={11} color={GOLD} />
                       </div>
                       <div>
-                        <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, lineHeight: 1.3 }}>{q.item}</div>
-                        <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 2 }}>{q.note}</div>
+                        <div style={{ fontSize: 14, fontWeight: 600, color: NAVY, lineHeight: 1.3 }}>{q.item}</div>
+                        <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 2 }}>{q.note}</div>
                       </div>
                     </div>
                   ))}
@@ -355,7 +355,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               </div>
 
               <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 16, padding: '22px 24px' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Logos & Accreditations</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Logos & Accreditations</div>
                 <div style={{ display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
                   <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Registration Badge" style={{ height: 52, objectFit: 'contain' }} />
                   <img src="/src/imports/Qualified-australian-agent-logo.png" alt="QEAC — Qualified Education Agent Counsellors" style={{ height: 52, objectFit: 'contain' }} />
@@ -363,10 +363,10 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               </div>
 
               <div style={{ background: `${GOLD}08`, border: `1px solid ${GOLD}25`, borderRadius: 16, padding: '20px 22px' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
                   <Icon name="shield" size={15} color={GOLD} /> Why registration matters
                 </div>
-                <div style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.7 }}>
+                <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>
                   Under Australian law, only Registered Migration Agents, legal practitioners and certain exempt persons may give migration advice for a fee. Unregistered advice — however well-intentioned — is illegal and uninsured. MARN 2619467 is on the public register and carries professional indemnity insurance.
                 </div>
               </div>
@@ -379,16 +379,16 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <div style={{ background: NAVY, padding: '64px 32px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56, alignItems: 'center' }}>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Language Access</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Language Access</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 34, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>
               Migration advice in English,<br />Hindi and Punjabi
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 15, lineHeight: 1.8, margin: '0 0 20px' }}>
+            <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: 16, lineHeight: 1.8, margin: '0 0 20px' }}>
               Immigration is one of the highest-stakes legal domains most people will ever navigate. Nanak Migration Group was built from the start to serve South Asian communities in their own language — not as a translation service, but because Navpreet's background is in these communities and the nuances of the cases that come from them.
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {['English', 'ਪੰਜਾਬੀ — Punjabi', 'हिंदी — Hindi'].map(lang => (
-                <span key={lang} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 20, padding: '7px 16px', fontSize: 13, color: '#fff', fontWeight: 500 }}>{lang}</span>
+                <span key={lang} style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 20, padding: '7px 16px', fontSize: 14, color: '#fff', fontWeight: 500 }}>{lang}</span>
               ))}
             </div>
           </div>
@@ -401,14 +401,14 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               <div key={i} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 14, overflow: 'hidden' }}>
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
-                  <span style={{ flex: 1, fontSize: 13, fontWeight: 600, color: '#fff', lineHeight: 1.4 }}>{item.q}</span>
+                  <span style={{ flex: 1, fontSize: 14, fontWeight: 600, color: '#fff', lineHeight: 1.4 }}>{item.q}</span>
                   <span style={{ width: 24, height: 24, borderRadius: '50%', background: openFaq === i ? GOLD : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.15s' }}>
                     <Icon name={openFaq === i ? 'minus' : 'plus'} size={12} color={openFaq === i ? NAVY_DARK : '#fff'} />
                   </span>
                 </button>
                 {openFaq === i && (
                   <div style={{ padding: '0 18px 14px', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-                    <div style={{ paddingTop: 12, fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>{item.a}</div>
+                    <div style={{ paddingTop: 12, fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>{item.a}</div>
                   </div>
                 )}
               </div>
@@ -425,7 +425,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             Regulated advice.<br />
             <span style={{ color: GOLD }}>Real language. Real outcomes.</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, lineHeight: 1.7, maxWidth: 520, margin: '0 auto 32px' }}>
             Book a consultation with Navpreet Aulakh — Registered Migration Agent MARN 2619467 — in English, Hindi or Punjabi.
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -437,7 +437,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               Verify MARN 2619467
             </GlowButton>
           </div>
-          <div style={{ marginTop: 20, fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>
+          <div style={{ marginTop: 20, fontSize: 13, color: 'rgba(255,255,255,0.3)' }}>
             Nanak Migration Group · ABN 47 648 226 804 · www.nanakmigration.com.au
           </div>
         </div>

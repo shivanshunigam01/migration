@@ -115,7 +115,7 @@ export default function BookConsultationForm() {
           onChange={(e) => setConsent(e.target.checked)}
           style={{ marginTop: 3, flexShrink: 0 }}
         />
-        <span style={{ fontSize: 12, color: "#6b7280", lineHeight: 1.55 }}>
+        <span style={{ fontSize: 13, color: "#6b7280", lineHeight: 1.55 }}>
           I consent to Nanak Migration Group contacting me by email or phone to arrange a consultation. General information only — not legal or migration advice.
         </span>
       </label>

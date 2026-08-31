@@ -42,13 +42,13 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
           {rows.map((row, i) => (
             <div key={i} style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 12px rgba(27,43,94,0.06)' }}>
               <div style={{ background: NAVY, padding: '10px 16px' }}>
-                <span style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>{row.feature}</span>
+                <span style={{ color: '#fff', fontSize: 14, fontWeight: 700 }}>{row.feature}</span>
               </div>
               <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {columns.map(col => (
                   <div key={col.key} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
-                    <span style={{ fontSize: 12, color: '#6b7280', fontWeight: 500, flexShrink: 0 }}>{col.label}</span>
-                    <span style={{ fontSize: 13, fontWeight: col.highlight ? 600 : 400, color: col.highlight ? accent : '#4b5563', textAlign: 'right' }}>
+                    <span style={{ fontSize: 13, color: '#6b7280', fontWeight: 500, flexShrink: 0 }}>{col.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: col.highlight ? 600 : 400, color: col.highlight ? accent : '#4b5563', textAlign: 'right' }}>
                       {row[col.key] ?? '—'}
                     </span>
                   </div>
@@ -58,7 +58,7 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
           ))}
         </div>
         {caption && (
-          <p style={{ marginTop: 12, fontSize: 11, color: '#9ca3af', fontStyle: 'italic', textAlign: 'center' }}>
+          <p style={{ marginTop: 12, fontSize: 12, color: '#9ca3af', fontStyle: 'italic', textAlign: 'center' }}>
             {caption}
           </p>
         )}
@@ -72,9 +72,9 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
         <table style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 24px rgba(27,43,94,0.07)', minWidth: 480, width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
           <thead>
             <tr style={{ background: NAVY }}>
-              <th scope="col" style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, fontWeight: 700, padding: '14px 24px', textAlign: 'left' }}>Feature</th>
+              <th scope="col" style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14, fontWeight: 700, padding: '14px 24px', textAlign: 'left' }}>Feature</th>
               {columns.map(col => (
-                <th key={col.key} scope="col" style={{ color: '#fff', fontSize: 13, fontWeight: 700, padding: '14px 24px', textAlign: 'left' }}>{col.label}</th>
+                <th key={col.key} scope="col" style={{ color: '#fff', fontSize: 14, fontWeight: 700, padding: '14px 24px', textAlign: 'left' }}>{col.label}</th>
               ))}
             </tr>
           </thead>
@@ -87,12 +87,12 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
                   background: i % 2 === 0 ? GREY_BG : '#fff',
                 }}
               >
-                <th scope="row" style={{ fontSize: 12, color: '#6b7280', fontWeight: 500, padding: '12px 24px', textAlign: 'left' }}>{row.feature}</th>
+                <th scope="row" style={{ fontSize: 13, color: '#6b7280', fontWeight: 500, padding: '12px 24px', textAlign: 'left' }}>{row.feature}</th>
                 {columns.map(col => (
                   <td
                     key={col.key}
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: col.highlight ? 600 : 400,
                       color: col.highlight ? accent : '#4b5563',
                       lineHeight: 1.5,
@@ -109,7 +109,7 @@ export function ComparisonTable({ columns, rows, caption, accent = NAVY }: Compa
       </div>
 
       {caption && (
-        <p style={{ marginTop: 12, fontSize: 11, color: '#9ca3af', fontStyle: 'italic', textAlign: 'center' }}>
+        <p style={{ marginTop: 12, fontSize: 12, color: '#9ca3af', fontStyle: 'italic', textAlign: 'center' }}>
           {caption}
         </p>
       )}

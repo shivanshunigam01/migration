@@ -296,12 +296,12 @@ function PathwayAssessment() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid #f0f0f5', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{ width: 9, height: 9, borderRadius: '50%', backgroundColor: '#f5a124', display: 'inline-block', boxShadow: '0 0 0 3px rgba(245,161,36,0.2)' }} />
-          <span style={{ fontSize: 14, fontWeight: 700, color: NAVY_DARK }}>Pathway Assessment</span>
+          <span style={{ fontSize: 15, fontWeight: 700, color: NAVY_DARK }}>Pathway Assessment</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.1em', color: '#9ca3af', textTransform: 'uppercase' }}>Preliminary</span>
-          <span style={{ fontSize: 10, color: '#d1d5db' }}>·</span>
-          <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.1em', color: '#9ca3af', textTransform: 'uppercase' }}>Not Advice</span>
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', color: '#9ca3af', textTransform: 'uppercase' }}>Preliminary</span>
+          <span style={{ fontSize: 11, color: '#d1d5db' }}>·</span>
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', color: '#9ca3af', textTransform: 'uppercase' }}>Not Advice</span>
         </div>
       </div>
 
@@ -315,7 +315,7 @@ function PathwayAssessment() {
               borderRadius: m.from === 'bot' ? '4px 16px 16px 16px' : '16px 4px 16px 16px',
               background: m.from === 'bot' ? '#f3f4f8' : NAVY,
               color: m.from === 'bot' ? NAVY_DARK : '#ffffff',
-              fontSize: 13.5,
+              fontSize: 14.5,
               lineHeight: 1.55,
               fontWeight: m.from === 'bot' ? 400 : 500,
             }}>
@@ -325,9 +325,9 @@ function PathwayAssessment() {
         ))}
         {done && result && (
           <div style={{ marginTop: 4, padding: '12px 14px', background: 'linear-gradient(135deg, rgba(27,43,94,0.06) 0%, rgba(245,161,36,0.08) 100%)', border: '1px solid rgba(245,161,36,0.25)', borderRadius: 12 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: GOLD, marginBottom: 4 }}>Suggested Pathway</div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: NAVY }}>
-              {result.visa}{result.code && <span style={{ marginLeft: 6, fontSize: 11, padding: '2px 7px', background: NAVY, color: GOLD, borderRadius: 100, fontWeight: 700 }}>{result.code}</span>}
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: GOLD, marginBottom: 4 }}>Suggested Pathway</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: NAVY }}>
+              {result.visa}{result.code && <span style={{ marginLeft: 6, fontSize: 12, padding: '2px 7px', background: NAVY, color: GOLD, borderRadius: 100, fontWeight: 700 }}>{result.code}</span>}
             </div>
           </div>
         )}
@@ -340,7 +340,7 @@ function PathwayAssessment() {
             {currentStep.options.map(opt => (
               <button key={opt.label} onClick={() => choose(opt)} style={{
                 padding: '9px 14px', background: '#ffffff', border: '1.5px solid #e4e6f0',
-                borderRadius: 10, fontSize: 13, fontWeight: 500, color: NAVY_DARK,
+                borderRadius: 10, fontSize: 14, fontWeight: 500, color: NAVY_DARK,
                 cursor: 'pointer', textAlign: 'left', transition: 'all 0.15s',
               }}
                 onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = GOLD; el.style.background = 'rgba(245,161,36,0.05)' }}
@@ -351,25 +351,25 @@ function PathwayAssessment() {
         )}
         {done && showLeadForm && !success && (
           <form onSubmit={submitLead} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: NAVY_DARK, marginBottom: 4 }}>Get your pathway summary emailed</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: NAVY_DARK, marginBottom: 4 }}>Get your pathway summary emailed</div>
             <input type="text" placeholder="Full name" value={name} onChange={e => setName(e.target.value)} required
-              style={{ padding: '9px 12px', border: '1.5px solid #e4e6f0', borderRadius: 8, fontSize: 13, outline: 'none' }} />
+              style={{ padding: '9px 12px', border: '1.5px solid #e4e6f0', borderRadius: 8, fontSize: 14, outline: 'none' }} />
             <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required
-              style={{ padding: '9px 12px', border: '1.5px solid #e4e6f0', borderRadius: 8, fontSize: 13, outline: 'none' }} />
+              style={{ padding: '9px 12px', border: '1.5px solid #e4e6f0', borderRadius: 8, fontSize: 14, outline: 'none' }} />
             <input type="tel" placeholder="Mobile" value={mobile} onChange={e => setMobile(e.target.value)} required
-              style={{ padding: '9px 12px', border: '1.5px solid #e4e6f0', borderRadius: 8, fontSize: 13, outline: 'none' }} />
+              style={{ padding: '9px 12px', border: '1.5px solid #e4e6f0', borderRadius: 8, fontSize: 14, outline: 'none' }} />
             <label style={{ display: 'flex', gap: 8, alignItems: 'flex-start', cursor: 'pointer' }}>
               <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} style={{ marginTop: 2 }} />
-              <span style={{ fontSize: 11, color: '#6b7280', lineHeight: 1.5 }}>I consent to being contacted about my pathway assessment.</span>
+              <span style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.5 }}>I consent to being contacted about my pathway assessment.</span>
             </label>
             <input type="text" name="company_website" value={hp} onChange={e => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true"
               style={{ position: 'absolute', left: -9999, opacity: 0, height: 0, width: 0 }} />
-            {(localError || error) && <div style={{ fontSize: 11, color: '#dc2626' }}>{localError || error}</div>}
+            {(localError || error) && <div style={{ fontSize: 12, color: '#dc2626' }}>{localError || error}</div>}
             <div style={{ display: 'flex', gap: 8 }}>
-              <button type="submit" disabled={loading} style={{ flex: 1, padding: '11px 14px', background: loading ? '#9ca3af' : GOLD, color: NAVY_DARK, border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer' }}>
+              <button type="submit" disabled={loading} style={{ flex: 1, padding: '11px 14px', background: loading ? '#9ca3af' : GOLD, color: NAVY_DARK, border: 'none', borderRadius: 9, fontSize: 14, fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer' }}>
                 {loading ? 'Sending…' : 'Email my summary →'}
               </button>
-              <button type="button" onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+              <button type="button" onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 Start over
               </button>
             </div>
@@ -377,7 +377,7 @@ function PathwayAssessment() {
         )}
         {done && success && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-            <div style={{ padding: '12px 14px', background: 'rgba(245,161,36,0.12)', border: '1px solid rgba(245,161,36,0.35)', borderRadius: 9, fontSize: 13, color: NAVY_DARK }}>
+            <div style={{ padding: '12px 14px', background: 'rgba(245,161,36,0.12)', border: '1px solid rgba(245,161,36,0.35)', borderRadius: 9, fontSize: 14, color: NAVY_DARK }}>
               Summary sent — our team will be in touch.
             </div>
             <div style={{ display: 'flex', gap: 8 }}>
@@ -391,7 +391,7 @@ function PathwayAssessment() {
               >
                 Book Free Consultation →
               </GlowButton>
-              <button type="button" onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+              <button type="button" onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 Start over
               </button>
             </div>
@@ -412,8 +412,8 @@ function NewsletterForm() {
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5 6.5-7" stroke={NAVY} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
       </div>
       <div>
-        <div style={{ fontSize: 14, fontWeight: 700, color: '#ffffff' }}>You're subscribed — thank you!</div>
-        <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>We'll be in touch with the latest updates.</div>
+        <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff' }}>You're subscribed — thank you!</div>
+        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>We'll be in touch with the latest updates.</div>
       </div>
     </div>
   )
@@ -422,9 +422,9 @@ function NewsletterForm() {
       <input
         type="email" required value={email} onChange={e => setEmail(e.target.value)}
         placeholder="your@email.com"
-        style={{ padding: '14px 20px', fontSize: 14, border: 'none', borderRadius: '10px 0 0 10px', outline: 'none', width: 260, color: NAVY_DARK, background: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}
+        style={{ padding: '14px 20px', fontSize: 15, border: 'none', borderRadius: '10px 0 0 10px', outline: 'none', width: 260, color: NAVY_DARK, background: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}
       />
-      <button type="submit" style={{ padding: '14px 26px', background: NAVY, color: '#fff', border: 'none', borderRadius: '0 10px 10px 0', fontSize: 14, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.02em', fontFamily: "'Gilroy', sans-serif", transition: 'background 0.15s' }}
+      <button type="submit" style={{ padding: '14px 26px', background: NAVY, color: '#fff', border: 'none', borderRadius: '0 10px 10px 0', fontSize: 15, fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', letterSpacing: '0.02em', fontFamily: "'Gilroy', sans-serif", transition: 'background 0.15s' }}
         onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = NAVY_MID}
         onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = NAVY}
       >
@@ -466,8 +466,8 @@ function FaqSection() {
 
         {/* Heading */}
         <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
-          <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Got Questions?</div>
-          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
+          <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Got Questions?</div>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 4vw, 48px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
             Frequently Asked <em style={{ fontStyle: 'italic', color: GOLD }}>Questions</em>
           </h2>
         </Reveal>
@@ -482,7 +482,7 @@ function FaqSection() {
                 onClick={() => setOpen(open === i ? null : i)}
                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '20px 24px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
               >
-                <span style={{ fontSize: 15, fontWeight: 600, color: open === i ? NAVY : '#1a1a2e', lineHeight: 1.4, fontFamily: "'Gilroy', sans-serif" }}>
+                <span style={{ fontSize: 16, fontWeight: 600, color: open === i ? NAVY : '#1a1a2e', lineHeight: 1.4, fontFamily: "'Gilroy', sans-serif" }}>
                   {faq.q}
                 </span>
                 <div style={{ width: 28, height: 28, borderRadius: '50%', background: open === i ? NAVY : '#f3f4f8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'background 0.2s, transform 0.2s', transform: open === i ? 'rotate(45deg)' : 'none' }}>
@@ -493,7 +493,7 @@ function FaqSection() {
               </button>
               {open === i && (
                 <div style={{ padding: '0 24px 22px', borderTop: '1px solid #f3f4f8' }}>
-                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '16px 0 0', fontFamily: "'Gilroy', sans-serif" }}>
+                  <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.75, margin: '16px 0 0', fontFamily: "'Gilroy', sans-serif" }}>
                     {faq.a}
                   </p>
                 </div>
@@ -636,16 +636,16 @@ export default function HomePage() {
                 <div style={{ width: 22, height: 22, borderRadius: '50%', backgroundColor: NAVY, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon name="check" size={10} color={GOLD} />
                 </div>
-                <span style={{ color: NAVY, fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>MARA-Registered · MARN 2619467</span>
+                <span style={{ color: NAVY, fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>MARA-Registered · MARN 2619467</span>
               </motion.div>
 
-              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(40px, 6vw, 72px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
+              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(42px, 6vw, 74px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
                 Your pathway
                 <br /><em style={{ fontStyle: 'italic', color: GOLD }}>to Australia</em>
                 <br />starts here.
               </motion.h1>
 
-              <motion.p variants={fadeUp} style={{ color: '#4a4560', fontSize: 17, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 520 }}>
+              <motion.p variants={fadeUp} style={{ color: '#4a4560', fontSize: 18, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 520 }}>
                 Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia's visa system.
               </motion.p>
 
@@ -657,7 +657,7 @@ export default function HomePage() {
                 marginTop: 24,
                 maxWidth: 640,
               }}>
-                <span style={{ fontSize: 14, lineHeight: 1.6, color: '#1B2B5E' }}>
+                <span style={{ fontSize: 15, lineHeight: 1.6, color: '#1B2B5E' }}>
                   <strong>Nanak Migration Group</strong> is a MARA-registered migration agency (MARN 2619467) helping individuals, families and employers navigate Australian immigration from offices in Melbourne, Sydney, Brisbane and Perth.
                 </span>
               </motion.div>
@@ -695,8 +695,8 @@ export default function HomePage() {
         <ShieldGlow tone="gold" size={420} top="-30%" right="-8%" opacity={0.25} />
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <Reveal preset="up" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Where are you starting from?</div>
-            <h2 style={{ fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 40px 0' }}>Choose your starting point</h2>
+            <div style={{ fontSize: 14, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Where are you starting from?</div>
+            <h2 style={{ fontSize: 29, fontWeight: 700, color: NAVY, margin: '0 0 40px 0' }}>Choose your starting point</h2>
           </Reveal>
           <Stagger className="segmentation-grid">
             {([
@@ -803,11 +803,11 @@ export default function HomePage() {
                     }}
                   >
                     {tile.icon}
-                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginTop: 12 }}>{tile.label}</div>
-                    <div style={{ fontSize: 13, color: '#64748b', marginTop: 4 }}>{tile.desc}</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: NAVY, marginTop: 12 }}>{tile.label}</div>
+                    <div style={{ fontSize: 14, color: '#64748b', marginTop: 4 }}>{tile.desc}</div>
                     <span
                       onClick={e => { e.stopPropagation(); navigate(tile.route) }}
-                      style={{ display: 'block', color: '#f5a124', fontSize: 13, fontWeight: 600, marginTop: 14, cursor: 'pointer' }}
+                      style={{ display: 'block', color: '#f5a124', fontSize: 14, fontWeight: 600, marginTop: 14, cursor: 'pointer' }}
                     >{tile.cta} →</span>
                   </motion.div>
                 </StaggerItem>
@@ -863,8 +863,8 @@ export default function HomePage() {
               <ShieldGlow tone="navy" size={480} bottom="-40%" left="30%" opacity={0.2} />
               <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
                 <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 48 }}>
-                  <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Visa Pathways</div>
-                  <h2 style={{ fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>Browse all visa categories</h2>
+                  <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Visa Pathways</div>
+                  <h2 style={{ fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>Browse all visa categories</h2>
                 </Reveal>
                 <CardGrid cards={HUB_CARDS} columns={3} accent={NAVY} navigate={navigate} />
               </div>
@@ -880,8 +880,8 @@ export default function HomePage() {
                   { label: 'OMARA', sub: 'Code of Conduct Compliant' },
                 ].map(item => (
                   <StaggerItem key={item.label} style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 22, fontWeight: 800, color: GOLD, letterSpacing: '-0.01em' }}>{item.label}</div>
-                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 4, letterSpacing: '0.04em' }}>{item.sub}</div>
+                    <div style={{ fontSize: 23, fontWeight: 800, color: GOLD, letterSpacing: '-0.01em' }}>{item.label}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginTop: 4, letterSpacing: '0.04em' }}>{item.sub}</div>
                   </StaggerItem>
                 ))}
               </Stagger>
@@ -1130,16 +1130,16 @@ export default function HomePage() {
             )}
             {/* Text panel */}
             <div style={{ background: '#ffffff', padding: '60px 56px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>{row.tag}</div>
-              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 2.8vw, 38px)', fontWeight: 300, lineHeight: 1.15, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', whiteSpace: 'pre-line' }}>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>{row.tag}</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 2.8vw, 40px)', fontWeight: 300, lineHeight: 1.15, color: NAVY, margin: '0 0 20px', letterSpacing: '-0.02em', whiteSpace: 'pre-line' }}>
                 {row.heading}
               </h2>
-              <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: '0 0 28px' }}>{row.body}</p>
+              <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.75, margin: '0 0 28px' }}>{row.body}</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
                 {row.pills.map(p => (
                   <a key={p.label} href={p.href}
                     onClick={p.href === '/employer-sponsored-visas' ? (e) => { e.preventDefault(); navigate('employer-sponsored-visas') } : undefined}
-                    style={{ padding: '6px 15px', borderRadius: 100, border: '1.5px solid rgba(27,43,94,0.22)', fontSize: 12, fontWeight: 500, color: NAVY, background: 'rgba(27,43,94,0.04)', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.15s' }}
+                    style={{ padding: '6px 15px', borderRadius: 100, border: '1.5px solid rgba(27,43,94,0.22)', fontSize: 13, fontWeight: 500, color: NAVY, background: 'rgba(27,43,94,0.04)', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.15s' }}
                     onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = NAVY; el.style.color = '#fff'; el.style.borderColor = NAVY; }}
                     onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(27,43,94,0.04)'; el.style.color = NAVY; el.style.borderColor = 'rgba(27,43,94,0.22)'; }}
                   >{p.label}</a>
@@ -1147,7 +1147,7 @@ export default function HomePage() {
               </div>
               <a href={row.href}
                 onClick={row.href === '/employer-sponsored-visas' ? (e) => { e.preventDefault(); navigate('employer-sponsored-visas') } : undefined}
-                style={{ display: 'inline-flex', alignSelf: 'flex-start', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, transition: 'color 0.15s' }}
+                style={{ display: 'inline-flex', alignSelf: 'flex-start', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, transition: 'color 0.15s' }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#f5a124'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
               >
@@ -1172,9 +1172,9 @@ export default function HomePage() {
         <ShieldGlow tone="gold" size={420} bottom="-50%" left="-5%" opacity={0.3} />
         <Reveal preset="scale" className="tools-strip-inner" style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 40, flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>FREE TOOLS</div>
-            <div style={{ fontSize: 24, fontWeight: 700, color: '#ffffff', marginBottom: 8 }}>Check your position in minutes</div>
-            <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>Points calculator, occupation search, English score converter and more — free and indicative.</div>
+            <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>FREE TOOLS</div>
+            <div style={{ fontSize: 25, fontWeight: 700, color: '#ffffff', marginBottom: 8 }}>Check your position in minutes</div>
+            <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.75)', marginBottom: 20 }}>Points calculator, occupation search, English score converter and more — free and indicative.</div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               {([
                 { label: 'Points Calculator', route: 'tools' },
@@ -1185,7 +1185,7 @@ export default function HomePage() {
                   key={chip.label}
                   onClick={() => navigate(chip.route)}
                   whileHover={reduceMotion ? undefined : { y: -2, backgroundColor: 'rgba(255,255,255,0.18)' }}
-                  style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#ffffff', fontSize: 12, fontWeight: 600, padding: '6px 14px', borderRadius: 20, cursor: 'pointer' }}
+                  style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#ffffff', fontSize: 13, fontWeight: 600, padding: '6px 14px', borderRadius: 20, cursor: 'pointer' }}
                 >{chip.label}</motion.button>
               ))}
             </div>
@@ -1203,11 +1203,11 @@ export default function HomePage() {
 
           {/* Heading */}
           <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Registration</div>
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3.5vw, 42px)', fontWeight: 300, lineHeight: 1.1, color: NAVY, margin: '0 auto 14px', letterSpacing: '-0.03em' }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Registration</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 300, lineHeight: 1.1, color: NAVY, margin: '0 auto 14px', letterSpacing: '-0.03em' }}>
               Credentials &amp; <em style={{ fontStyle: 'italic', color: GOLD }}>Registration</em>
             </h2>
-            <p style={{ fontSize: 14, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 15, color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
               Regulated and recognised by Australia's foremost professional bodies.
             </p>
           </Reveal>
@@ -1222,9 +1222,9 @@ export default function HomePage() {
                 <img src="/src/imports/mara-badge-2619467-hires.png" alt="MARA Registration Badge — 2619467" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>MARA Registered Agent</div>
-                <div style={{ fontSize: 12, color: '#6b7280' }}>MARN 2619467</div>
-                <a href="https://www.mara.gov.au" target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginTop: 6 }}>www.mara.gov.au →</a>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>MARA Registered Agent</div>
+                <div style={{ fontSize: 13, color: '#6b7280' }}>MARN 2619467</div>
+                <a href="https://www.mara.gov.au" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginTop: 6 }}>www.mara.gov.au →</a>
               </div>
             </motion.div>
             </StaggerItem>
@@ -1236,8 +1236,8 @@ export default function HomePage() {
                 <img src="/src/imports/logo-preview-selection.png" alt="Migration Institute of Australia logo" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Migration Institute of Australia</div>
-                <div style={{ fontSize: 12, color: '#6b7280' }}>Professional Member</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Migration Institute of Australia</div>
+                <div style={{ fontSize: 13, color: '#6b7280' }}>Professional Member</div>
               </div>
             </motion.div>
             </StaggerItem>
@@ -1249,8 +1249,8 @@ export default function HomePage() {
                 <img src="/src/imports/Qualified-australian-agent-logo.png" alt="QEAC — Qualified Education Agent Counsellors logo" style={{ maxHeight: 110, maxWidth: 180, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>QEAC Certified</div>
-                <div style={{ fontSize: 12, color: '#6b7280' }}>Qualified Education Agent Counsellors</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>QEAC Certified</div>
+                <div style={{ fontSize: 13, color: '#6b7280' }}>Qualified Education Agent Counsellors</div>
               </div>
             </motion.div>
             </StaggerItem>
@@ -1261,12 +1261,12 @@ export default function HomePage() {
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: 96, height: 96, borderRadius: 20, background: `linear-gradient(135deg, ${NAVY} 0%, #1e3aaa 100%)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(245,161,36,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                  <span style={{ fontSize: 9, fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>DoHA</span>
+                  <span style={{ fontSize: 10, fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>DoHA</span>
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 3 }}>DoHA Regulated</div>
-                <div style={{ fontSize: 12, color: '#6b7280' }}>OMARA Code of Conduct Compliant</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>DoHA Regulated</div>
+                <div style={{ fontSize: 13, color: '#6b7280' }}>OMARA Code of Conduct Compliant</div>
               </div>
             </motion.div>
             </StaggerItem>
@@ -1278,8 +1278,8 @@ export default function HomePage() {
             {TRUST_LOGOS.map(t => (
               <div key={t.name} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#f5f7fb', border: '1px solid #e2e8f0', borderRadius: 100, padding: '8px 18px' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={NAVY} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                <span style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>{t.name}</span>
-                <span style={{ fontSize: 11, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{t.label}</span>
+                <span style={{ fontSize: 14, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>{t.name}</span>
+                <span style={{ fontSize: 12, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{t.label}</span>
               </div>
             ))}
           </div>
@@ -1300,13 +1300,13 @@ export default function HomePage() {
           {/* Header row */}
           <Reveal preset="up" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Latest Updates</div>
-              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 46px)', fontWeight: 300, lineHeight: 1.08, color: NAVY, margin: 0, letterSpacing: '-0.03em' }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Latest Updates</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 300, lineHeight: 1.08, color: NAVY, margin: 0, letterSpacing: '-0.03em' }}>
                 Migration news &amp; <em style={{ fontStyle: 'italic', color: GOLD }}>policy changes</em>
               </h2>
             </div>
             <a href="#"
-              style={{ fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, whiteSpace: 'nowrap', flexShrink: 0, transition: 'color 0.15s' }}
+              style={{ fontSize: 14, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, whiteSpace: 'nowrap', flexShrink: 0, transition: 'color 0.15s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
             >View all articles →</a>
@@ -1326,22 +1326,22 @@ export default function HomePage() {
               >
                 {/* Category + date */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 28 }}>
-                  <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: NAVY_DARK, background: GOLD, padding: '4px 12px', borderRadius: 100 }}>{news[0].category}</span>
-                  <span style={{ fontSize: 11, color: 'rgba(245,161,36,0.7)', fontWeight: 500 }}>{news[0].date}</span>
+                  <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: NAVY_DARK, background: GOLD, padding: '4px 12px', borderRadius: 100 }}>{news[0].category}</span>
+                  <span style={{ fontSize: 12, color: 'rgba(245,161,36,0.7)', fontWeight: 500 }}>{news[0].date}</span>
                 </div>
                 {/* Headline */}
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 400, color: '#ffffff', margin: '0 0 20px', lineHeight: 1.2, letterSpacing: '-0.01em', flex: 1 }}>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(24px, 2.2vw, 32px)', fontWeight: 400, color: '#ffffff', margin: '0 0 20px', lineHeight: 1.2, letterSpacing: '-0.01em', flex: 1 }}>
                   {news[0].title.startsWith('[DRAFT]') && (
-                    <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 4 }}>DRAFT</span>
+                    <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 4 }}>DRAFT</span>
                   )}
                   {news[0].title.startsWith('[DRAFT]') ? news[0].title.replace('[DRAFT] ', '') : news[0].title}
                 </h3>
                 {/* Standfirst */}
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, margin: '0 0 32px', WebkitLineClamp: 3, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
+                <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, margin: '0 0 32px', WebkitLineClamp: 3, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
                   {news[0].standfirst}
                 </p>
                 {/* Read more */}
-                <a href="#" style={{ fontSize: 13, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
+                <a href="#" style={{ fontSize: 14, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GOLD}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(245,161,36,0.4)'}
                 >Read more →</a>
@@ -1360,22 +1360,22 @@ export default function HomePage() {
               >
                 {/* Category + date on one line */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                  <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, background: 'rgba(245,161,36,0.10)', border: `1px solid rgba(245,161,36,0.28)`, padding: '3px 10px', borderRadius: 100 }}>{n.category}</span>
-                  <span style={{ fontSize: 11, color: '#9ca3af', fontWeight: 500 }}>{n.date}</span>
+                  <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, background: 'rgba(245,161,36,0.10)', border: `1px solid rgba(245,161,36,0.28)`, padding: '3px 10px', borderRadius: 100 }}>{n.category}</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af', fontWeight: 500 }}>{n.date}</span>
                 </div>
                 {/* Headline */}
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 400, color: NAVY, margin: '0 0 12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 400, color: NAVY, margin: '0 0 12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
                   {n.title.startsWith('[DRAFT]') && (
-                    <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 3 }}>DRAFT</span>
+                    <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 3 }}>DRAFT</span>
                   )}
                   {n.title.startsWith('[DRAFT]') ? n.title.replace('[DRAFT] ', '') : n.title}
                 </h3>
                 {/* One-line standfirst — clamped to 2 lines */}
-                <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: '0 0 20px', flex: 1, WebkitLineClamp: 2, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
+                <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65, margin: '0 0 20px', flex: 1, WebkitLineClamp: 2, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
                   {n.standfirst}
                 </p>
                 {/* Read more */}
-                <a href="#" style={{ fontSize: 12, fontWeight: 700, color: NAVY, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, transition: 'color 0.15s' }}
+                <a href="#" style={{ fontSize: 13, fontWeight: 700, color: NAVY, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, transition: 'color 0.15s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY}
                 >Read more →</a>
@@ -1386,7 +1386,7 @@ export default function HomePage() {
           </Stagger>
 
           {/* Editorial footnote */}
-          <p style={{ fontSize: 12, fontStyle: 'italic', color: '#9ca3af', marginTop: 24, textAlign: 'right' }}>
+          <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', marginTop: 24, textAlign: 'right' }}>
             Draft updates shown for layout — verified articles will replace these before launch.
           </p>
 
@@ -1400,10 +1400,10 @@ export default function HomePage() {
 
           {/* LEFT — copy */}
           <Reveal preset="left" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '72px 48px 72px 64px' }}>
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.2vw, 46px)', fontWeight: 700, lineHeight: 1.1, color: '#1E1E2A', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 3.2vw, 48px)', fontWeight: 700, lineHeight: 1.1, color: '#1E1E2A', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
               Ready to start your<br />Australian journey?
             </h2>
-            <p style={{ fontSize: 15, color: '#555', lineHeight: 1.65, maxWidth: 380, margin: '0 0 28px' }}>
+            <p style={{ fontSize: 16, color: '#555', lineHeight: 1.65, maxWidth: 380, margin: '0 0 28px' }}>
               Reach out to our registered migration experts, and we will be happy to guide you through the right visa pathway for your situation.
             </p>
 
@@ -1435,9 +1435,9 @@ export default function HomePage() {
             <div style={{ position: 'absolute', bottom: '12%', left: 24, zIndex: 2, display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.2)', borderLeft: `3px solid ${GOLD}`, borderRadius: 8, padding: '12px 18px' }}>
               <img src={navpreetPhoto} alt="Navpreet Aulakh" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }} />
               <div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#ffffff', lineHeight: 1.2 }}>Navpreet Aulakh</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 1 }}>Founder, Registered Migration Agent</div>
-                <div style={{ fontSize: 11, color: GOLD, fontWeight: 600, marginTop: 2, letterSpacing: '0.02em' }}>MARN 2619467</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff', lineHeight: 1.2 }}>Navpreet Aulakh</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginTop: 1 }}>Founder, Registered Migration Agent</div>
+                <div style={{ fontSize: 12, color: GOLD, fontWeight: 600, marginTop: 2, letterSpacing: '0.02em' }}>MARN 2619467</div>
               </div>
             </div>
           </Reveal>
@@ -1458,14 +1458,14 @@ export default function HomePage() {
 
           {/* Heading */}
           <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Where to Find Us</div>
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 4vw, 46px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
+            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Where to Find Us</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 4vw, 48px)', fontWeight: 400, lineHeight: 1.1, color: NAVY, margin: 0, letterSpacing: '-0.02em' }}>
               Our Offices Around <em style={{ fontStyle: 'italic', color: GOLD }}>Australia</em>
             </h2>
           </Reveal>
 
           {/* 5 office cards */}
-          <p style={{ textAlign: 'center', fontSize: 13, color: '#9ca3af', marginBottom: 20, lineHeight: 1.6 }}>
+          <p style={{ textAlign: 'center', fontSize: 14, color: '#9ca3af', marginBottom: 20, lineHeight: 1.6 }}>
             Office addresses to be confirmed before launch.
           </p>
           <Stagger className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
@@ -1493,7 +1493,7 @@ export default function HomePage() {
               >
                 {/* Head office badge */}
                 {i === 0 && (
-                  <div style={{ position: 'absolute', top: -11, left: 18, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: GOLD, color: NAVY_DARK, padding: '3px 10px', borderRadius: 100 }}>
+                  <div style={{ position: 'absolute', top: -11, left: 18, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: GOLD, color: NAVY_DARK, padding: '3px 10px', borderRadius: 100 }}>
                     Head Office
                   </div>
                 )}
@@ -1508,11 +1508,11 @@ export default function HomePage() {
                 </div>
 
                 {/* City + label */}
-                <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4 }}>{office.label}</div>
-                <h3 style={{ fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 10px', letterSpacing: '-0.01em' }}>{office.city}</h3>
+                <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4 }}>{office.label}</div>
+                <h3 style={{ fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 10px', letterSpacing: '-0.01em' }}>{office.city}</h3>
 
                 {/* Address */}
-                <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.55, margin: '0 0 20px', flexGrow: 1 }}>
+                <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.55, margin: '0 0 20px', flexGrow: 1 }}>
                   {office.address},<br />{office.suburb}
                 </p>
 
@@ -1526,7 +1526,7 @@ export default function HomePage() {
                     padding: '10px 0', borderRadius: 9,
                     background: GOLD,
                     color: NAVY_DARK,
-                    textDecoration: 'none', fontSize: 13, fontWeight: 700,
+                    textDecoration: 'none', fontSize: 14, fontWeight: 700,
                     border: 'none',
                     transition: 'all 0.15s',
                   }}
@@ -1544,7 +1544,7 @@ export default function HomePage() {
           </Stagger>
 
           {/* Subtext */}
-          <p style={{ textAlign: 'center', fontSize: 12.5, color: '#9ca3af', marginTop: 32, lineHeight: 1.6 }}>
+          <p style={{ textAlign: 'center', fontSize: 13.5, color: '#9ca3af', marginTop: 32, lineHeight: 1.6 }}>
             All consultations available in-person or via video — Australia-wide and internationally.
           </p>
 
@@ -1582,7 +1582,7 @@ export default function HomePage() {
             boxShadow: '0 -4px 16px rgba(0,0,0,0.2)',
           }}
         >
-          <span style={{ color: '#ffffff', fontSize: 12 }}>Free 30-minute consultation</span>
+          <span style={{ color: '#ffffff', fontSize: 13 }}>Free 30-minute consultation</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <a href="tel:1300644728" style={{ display: 'flex', alignItems: 'center', color: '#ffffff' }} aria-label="Call us">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

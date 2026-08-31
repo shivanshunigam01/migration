@@ -281,10 +281,10 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
       {/* ── INFO BANNER ── */}
       <div style={{ background: PURPLE, padding: '9px 32px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12 }}>
         <Icon name="info" size={14} color="#fff" />
-        <span style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>
+        <span style={{ fontSize: 14, fontWeight: 600, color: '#fff' }}>
           Streams renamed mid-2024 — PHEW, PVEW and 2PHEW replace the old Graduate Work / Post-Study Work names.
         </span>
-        <a href="#streams" style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.35)', color: '#fff', borderRadius: 6, padding: '3px 12px', fontSize: 12, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>See 2026 Streams →</a>
+        <a href="#streams" style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.35)', color: '#fff', borderRadius: 6, padding: '3px 12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', whiteSpace: 'nowrap' }}>See 2026 Streams →</a>
       </div>
 
       <PageHero
@@ -300,8 +300,8 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
         rightColumn={
           <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 48px rgba(27,43,94,0.12)', border: '1px solid #e8edf6', overflow: 'hidden' }}>
             <div style={{ background: NAVY, padding: '18px 24px' }}>
-              <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>At a Glance — 2026</div>
-              <div style={{ color: '#fff', fontSize: 16, fontWeight: 700 }}>Subclass 485 Key Facts</div>
+              <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>At a Glance — 2026</div>
+              <div style={{ color: '#fff', fontSize: 17, fontWeight: 700 }}>Subclass 485 Key Facts</div>
             </div>
             {[
               { label: 'Visa type', val: 'Temporary Graduate (work rights)', icon: 'briefcase', hi: false },
@@ -321,8 +321,8 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                 <span style={{ width: 26, height: 26, borderRadius: 6, background: row.hi ? `${PURPLE}15` : '#f0f2f8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Icon name={row.icon} size={13} color={row.hi ? PURPLE : '#6b7280'} />
                 </span>
-                <span style={{ fontSize: 12, color: '#6b7280', flex: '0 0 170px' }}>{row.label}</span>
-                <span style={{ fontSize: 13, fontWeight: row.hi ? 700 : 600, color: row.hi ? PURPLE : NAVY }}>{row.val}</span>
+                <span style={{ fontSize: 13, color: '#6b7280', flex: '0 0 170px' }}>{row.label}</span>
+                <span style={{ fontSize: 14, fontWeight: row.hi ? 700 : 600, color: row.hi ? PURPLE : NAVY }}>{row.val}</span>
               </div>
             ))}
           </div>
@@ -345,27 +345,27 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
             <SectionHeading kicker="The Format Edge" title="Your Double Deadline Calculator" accent={PURPLE} />
-            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, maxWidth: 520, margin: '0 auto' }}>Two clocks run at once. Your true deadline is whichever expires first. No competitor computes both simultaneously.</p>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>Two clocks run at once. Your true deadline is whichever expires first. No competitor computes both simultaneously.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 40, alignItems: 'start' }}>
             {/* Inputs */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Date of birth <span style={{ color: 'rgba(79,70,229,0.5)' }}>*</span></label>
+                <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Date of birth <span style={{ color: 'rgba(79,70,229,0.5)' }}>*</span></label>
                 <input type="date" value={dob} onChange={e => setDob(e.target.value)}
-                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${dob ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
+                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 14, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${dob ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
               </div>
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>
-                  Results release date <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)' }}>(not graduation ceremony)</span>
+                <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>
+                  Results release date <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>(not graduation ceremony)</span>
                 </label>
                 <input type="date" value={resultsDate} onChange={e => setResultsDate(e.target.value)}
-                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${resultsDate ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
-                <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.3)', marginTop: 5 }}>Check your student portal or academic transcript for the official results date</div>
+                  style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 14, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${resultsDate ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 5 }}>Check your student portal or academic transcript for the official results date</div>
               </div>
               <div>
-                <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Degree level (determines 485 duration)</label>
+                <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Degree level (determines 485 duration)</label>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                   {[
                     { val: 'bachelor' as const, label: "Bachelor's", yrs: 2 },
@@ -375,9 +375,9 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                     { val: 'diploma' as const, label: 'Diploma / Certificate III+', yrs: 1 },
                   ].map(opt => (
                     <button key={opt.val} onClick={() => setDegreeLevel(opt.val)}
-                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 14px', borderRadius: 8, border: `1.5px solid ${degreeLevel === opt.val ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.1)'}`, background: degreeLevel === opt.val ? 'rgba(79,70,229,0.2)' : 'rgba(255,255,255,0.04)', color: degreeLevel === opt.val ? 'rgba(79,70,229,0.3)' : 'rgba(255,255,255,0.65)', fontSize: 13, fontWeight: degreeLevel === opt.val ? 700 : 400, cursor: 'pointer', textAlign: 'left' }}>
+                      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 14px', borderRadius: 8, border: `1.5px solid ${degreeLevel === opt.val ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.1)'}`, background: degreeLevel === opt.val ? 'rgba(79,70,229,0.2)' : 'rgba(255,255,255,0.04)', color: degreeLevel === opt.val ? 'rgba(79,70,229,0.3)' : 'rgba(255,255,255,0.65)', fontSize: 14, fontWeight: degreeLevel === opt.val ? 700 : 400, cursor: 'pointer', textAlign: 'left' }}>
                       <span>{opt.label}</span>
-                      <span style={{ fontSize: 11, opacity: 0.7 }}>{opt.yrs} yr{opt.yrs !== 1 ? 's' : ''} 485</span>
+                      <span style={{ fontSize: 12, opacity: 0.7 }}>{opt.yrs} yr{opt.yrs !== 1 ? 's' : ''} 485</span>
                     </button>
                   ))}
                 </div>
@@ -387,7 +387,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                 <div style={{ width: 18, height: 18, borderRadius: 4, border: `2px solid ${stream2 ? GREEN : 'rgba(255,255,255,0.3)'}`, background: stream2 ? GREEN : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   {stream2 && <Icon name="check" size={10} color="#fff" />}
                 </div>
-                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>I'm applying for the Second 485 (2PHEW) — age limit 50</span>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>I'm applying for the Second 485 (2PHEW) — age limit 50</span>
               </div>
             </div>
 
@@ -397,45 +397,45 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {/* Results clock */}
                 <div style={{ background: 'rgba(255,255,255,0.05)', border: `2px solid ${urgencyColor(calc.resultsLeftDays)}30`, borderRadius: 16, padding: '22px 20px', textAlign: 'center' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.resultsLeftDays), marginBottom: 12 }}>Results Clock</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.resultsLeftDays), marginBottom: 12 }}>Results Clock</div>
                   <div style={{ fontSize: 56, fontWeight: 900, color: urgencyColor(calc.resultsLeftDays), lineHeight: 1, fontFamily: "'Gilroy', sans-serif", marginBottom: 4 }}>
                     {calc.resultsLeftDays !== null ? (calc.resultsLeftDays < 0 ? <Icon name="xcirc" size={56} color={urgencyColor(calc.resultsLeftDays)} /> : calc.resultsLeftDays) : '—'}
                   </div>
-                  <div style={{ fontSize: 13, color: urgencyColor(calc.resultsLeftDays), fontWeight: 700, marginBottom: 10 }}>
+                  <div style={{ fontSize: 14, color: urgencyColor(calc.resultsLeftDays), fontWeight: 700, marginBottom: 10 }}>
                     {urgencyLabel(calc.resultsLeftDays)}
                   </div>
                   {calc.resultsDeadline && (
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
                       Deadline:<br />
-                      <strong style={{ color: 'rgba(255,255,255,0.75)', fontSize: 12 }}>
+                      <strong style={{ color: 'rgba(255,255,255,0.75)', fontSize: 13 }}>
                         {calc.resultsDeadline.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </strong>
                     </div>
                   )}
-                  {!resultsDate && <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>Enter results date above</div>}
+                  {!resultsDate && <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>Enter results date above</div>}
                 </div>
 
                 {/* Age clock */}
                 <div style={{ background: 'rgba(255,255,255,0.05)', border: `2px solid ${urgencyColor(calc.ageLeftDays)}30`, borderRadius: 16, padding: '22px 20px', textAlign: 'center' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.ageLeftDays), marginBottom: 12 }}>Age Clock</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.ageLeftDays), marginBottom: 12 }}>Age Clock</div>
                   <div style={{ fontSize: 56, fontWeight: 900, color: urgencyColor(calc.ageLeftDays), lineHeight: 1, fontFamily: "'Gilroy', sans-serif", marginBottom: 4 }}>
                     {calc.ageLeftDays !== null ? (calc.ageLeftDays < 0 ? <Icon name="xcirc" size={56} color={urgencyColor(calc.ageLeftDays)} /> : calc.ageLeftDays) : '—'}
                   </div>
-                  <div style={{ fontSize: 13, color: urgencyColor(calc.ageLeftDays), fontWeight: 700, marginBottom: 10 }}>
+                  <div style={{ fontSize: 14, color: urgencyColor(calc.ageLeftDays), fontWeight: 700, marginBottom: 10 }}>
                     {urgencyLabel(calc.ageLeftDays, 'age')}
                   </div>
                   {calc.ageDeadline && (
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
                       Age {stream2 ? '50' : '35'} on:<br />
-                      <strong style={{ color: 'rgba(255,255,255,0.75)', fontSize: 12 }}>
+                      <strong style={{ color: 'rgba(255,255,255,0.75)', fontSize: 13 }}>
                         {calc.ageDeadline.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}
                       </strong>
                     </div>
                   )}
-                  {!dob && <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.25)' }}>Enter date of birth above</div>}
+                  {!dob && <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>Enter date of birth above</div>}
                   {degreeLevel === 'phd' && (
                     <div style={{ marginTop: 8, background: `${GREEN}15`, border: `1px solid ${GREEN}30`, borderRadius: 8, padding: '5px 8px' }}>
-                      <div style={{ fontSize: 10, color: 'rgba(245,161,36,0.4)', fontWeight: 700 }}>PhD — no age limit</div>
+                      <div style={{ fontSize: 11, color: 'rgba(245,161,36,0.4)', fontWeight: 700 }}>PhD — no age limit</div>
                     </div>
                   )}
                 </div>
@@ -444,18 +444,18 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               {/* True deadline */}
               {calc.trueDeadline && (
                 <div style={{ background: `${urgencyColor(calc.trueLeftDays)}12`, border: `2px solid ${urgencyColor(calc.trueLeftDays)}35`, borderRadius: 16, padding: '20px 24px' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.trueLeftDays), marginBottom: 8 }}>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: urgencyColor(calc.trueLeftDays), marginBottom: 8 }}>
                     Your True Deadline — Limited by the {calc.trueDeadlineType === 'age' ? 'Age Clock' : 'Results Clock'}
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontSize: 24, fontWeight: 800, color: '#fff', fontFamily: "'Gilroy', sans-serif" }}>
+                    <div style={{ fontSize: 25, fontWeight: 800, color: '#fff', fontFamily: "'Gilroy', sans-serif" }}>
                       {calc.trueDeadline.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
                     </div>
                     <div style={{ textAlign: 'right' }}>
-                      <div style={{ fontSize: 28, fontWeight: 800, color: urgencyColor(calc.trueLeftDays) }}>
+                      <div style={{ fontSize: 29, fontWeight: 800, color: urgencyColor(calc.trueLeftDays) }}>
                         {calc.trueLeftDays !== null && calc.trueLeftDays >= 0 ? calc.trueLeftDays : '0'}
                       </div>
-                      <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>days remaining</div>
+                      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>days remaining</div>
                     </div>
                   </div>
                 </div>
@@ -465,14 +465,14 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               {calc.visa485End && resultsDate && (
                 <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 14, padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
-                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', marginBottom: 3 }}>Your 485 visa would expire approximately</div>
-                    <div style={{ fontSize: 16, fontWeight: 700, color: '#fff' }}>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 3 }}>Your 485 visa would expire approximately</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: '#fff' }}>
                       {calc.visa485End.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' })}
                     </div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', marginBottom: 2 }}>Duration</div>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(79,70,229,0.3)' }}>{calc.visaDurationYears} years</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 2 }}>Duration</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: 'rgba(79,70,229,0.3)' }}>{calc.visaDurationYears} years</div>
                   </div>
                 </div>
               )}
@@ -480,11 +480,11 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               {!dob && !resultsDate && (
                 <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px dashed rgba(255,255,255,0.1)', borderRadius: 16, padding: '40px 24px', textAlign: 'center' }}>
                   <Icon name="clock" size={36} color="rgba(255,255,255,0.15)" />
-                  <div style={{ marginTop: 14, fontSize: 15, color: 'rgba(255,255,255,0.3)' }}>Enter your details on the left to see both deadlines</div>
+                  <div style={{ marginTop: 14, fontSize: 16, color: 'rgba(255,255,255,0.3)' }}>Enter your details on the left to see both deadlines</div>
                 </div>
               )}
 
-              <a href="#contact" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 24px', borderRadius: 12, textDecoration: 'none', fontSize: 14, fontWeight: 800, boxShadow: `0 4px 20px rgba(245,161,36,0.4)` }}>
+              <a href="#contact" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 24px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800, boxShadow: `0 4px 20px rgba(245,161,36,0.4)` }}>
                 Book a 485 Strategy Session — MARN 2619467
               </a>
             </div>
@@ -497,14 +497,14 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <SectionHeading kicker="Updated mid-2024" title="The Three 485 Streams" accent={PURPLE} />
-            <p style={{ color: '#6b7280', fontSize: 16, maxWidth: 520, margin: '0 auto' }}>The old stream names were replaced in mid-2024. Select your stream to see requirements and duration.</p>
+            <p style={{ color: '#6b7280', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>The old stream names were replaced in mid-2024. Select your stream to see requirements and duration.</p>
           </div>
 
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginBottom: 32, flexWrap: 'wrap' }}>
             {STREAMS.map((s, i) => (
               <button key={i} onClick={() => setSelectedStream(i)}
-                style={{ padding: '11px 20px', borderRadius: 10, border: `2px solid ${selectedStream === i ? s.color : '#e0e4ef'}`, background: selectedStream === i ? `${s.color}10` : '#fff', color: selectedStream === i ? s.color : '#374151', fontSize: 14, fontWeight: selectedStream === i ? 700 : 500, cursor: 'pointer', transition: 'all 0.15s', display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ fontSize: 12, background: selectedStream === i ? s.color : '#f0f2f8', color: selectedStream === i ? '#fff' : '#6b7280', padding: '2px 8px', borderRadius: 6, fontWeight: 700 }}>{s.code}</span>
+                style={{ padding: '11px 20px', borderRadius: 10, border: `2px solid ${selectedStream === i ? s.color : '#e0e4ef'}`, background: selectedStream === i ? `${s.color}10` : '#fff', color: selectedStream === i ? s.color : '#374151', fontSize: 15, fontWeight: selectedStream === i ? 700 : 500, cursor: 'pointer', transition: 'all 0.15s', display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span style={{ fontSize: 13, background: selectedStream === i ? s.color : '#f0f2f8', color: selectedStream === i ? '#fff' : '#6b7280', padding: '2px 8px', borderRadius: 6, fontWeight: 700 }}>{s.code}</span>
                 {s.name}
               </button>
             ))}
@@ -515,43 +515,43 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
             <div style={{ background: `linear-gradient(135deg, ${stream.color}15 0%, ${stream.color}06 100%)`, padding: '24px 32px', borderBottom: '1px solid #f0f2f8' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 16 }}>
                 <div>
-                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: stream.color }}>Previously: {stream.oldName}</span>
-                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 700, color: NAVY, margin: '4px 0' }}>{stream.name} ({stream.code})</h3>
+                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: stream.color }}>Previously: {stream.oldName}</span>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 27, fontWeight: 700, color: NAVY, margin: '4px 0' }}>{stream.name} ({stream.code})</h3>
                 </div>
                 <div style={{ display: 'flex', gap: 8 }}>
-                  <span style={{ background: `${stream.color}15`, color: stream.color, border: `1px solid ${stream.color}30`, padding: '5px 14px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>Age limit: {stream.ageLimit}</span>
+                  <span style={{ background: `${stream.color}15`, color: stream.color, border: `1px solid ${stream.color}30`, padding: '5px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700 }}>Age limit: {stream.ageLimit}</span>
                 </div>
               </div>
-              <p style={{ margin: '12px 0 0', fontSize: 14, color: '#4b5563', lineHeight: 1.65 }}>{stream.note}</p>
+              <p style={{ margin: '12px 0 0', fontSize: 15, color: '#4b5563', lineHeight: 1.65 }}>{stream.note}</p>
             </div>
             <div style={{ padding: '28px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Requirements</div>
+                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Requirements</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {stream.requirements.map((req, ri) => (
                     <div key={ri} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <div style={{ width: 20, height: 20, borderRadius: 5, background: `${stream.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                         <Icon name="check" size={10} color={stream.color} />
                       </div>
-                      <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{req}</span>
+                      <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{req}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Duration by Degree</div>
+                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Duration by Degree</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
                   {Object.entries(stream.duration).map(([key, yrs]) => (
                     <div key={key} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 14px', background: '#fff', borderRadius: 8, border: '1px solid #f0f2f8' }}>
-                      <span style={{ fontSize: 13, color: '#6b7280', textTransform: 'capitalize' }}>{key.replace(/([A-Z])/g, ' $1')}</span>
-                      <span style={{ fontSize: 14, fontWeight: 700, color: stream.color }}>{yrs} yr{yrs !== 1 ? 's' : ''}</span>
+                      <span style={{ fontSize: 14, color: '#6b7280', textTransform: 'capitalize' }}>{key.replace(/([A-Z])/g, ' $1')}</span>
+                      <span style={{ fontSize: 15, fontWeight: 700, color: stream.color }}>{yrs} yr{yrs !== 1 ? 's' : ''}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 10 }}>PR Pathways</div>
+                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 10 }}>PR Pathways</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 16 }}>
                   {stream.pathways.map(p => (
-                    <span key={p} style={{ background: `${stream.color}10`, color: stream.color, border: `1px solid ${stream.color}25`, fontSize: 12, fontWeight: 700, padding: '4px 12px', borderRadius: 20 }}>{p}</span>
+                    <span key={p} style={{ background: `${stream.color}10`, color: stream.color, border: `1px solid ${stream.color}25`, fontSize: 13, fontWeight: 700, padding: '4px 12px', borderRadius: 20 }}>{p}</span>
                   ))}
                 </div>
               </div>
@@ -567,7 +567,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
             <div>
               <SectionHeading kicker="From mid-2024" title="The 485 Age Limit: 35, With Exemptions" accent={PURPLE} />
 
-              <p style={{ color: '#6b7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 24px' }}>
+              <p style={{ color: '#6b7280', fontSize: 16, lineHeight: 1.7, margin: '0 0 24px' }}>
                 The age limit of 35 was introduced in mid-2024 for the PHEW and PVEW streams. It is tested at the time of application — not at grant. If you turn 35 on the day before you lodge, you are ineligible (subject to exemptions below).
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -580,11 +580,11 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                 ].map((row, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 18px', background: '#fff', border: '1px solid #e8edf6', borderRadius: 10 }}>
                     <div style={{ flex: 1 }}>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{row.label}</div>
-                      <div style={{ fontSize: 12, color: '#6b7280', marginTop: 1 }}>{row.note}</div>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: NAVY }}>{row.label}</div>
+                      <div style={{ fontSize: 13, color: '#6b7280', marginTop: 1 }}>{row.note}</div>
                     </div>
                     <span style={{
-                      fontSize: 14, fontWeight: 800, padding: '5px 14px', borderRadius: 20,
+                      fontSize: 15, fontWeight: 800, padding: '5px 14px', borderRadius: 20,
                       background: row.limit === null ? 'rgba(245,161,36,0.12)' : row.limit === 35 ? `${PURPLE}12` : `${GREEN}12`,
                       color: row.limit === null ? GREEN : row.limit === 35 ? PURPLE : GREEN,
                       border: `1px solid ${row.limit === null ? GREEN + '30' : row.limit === 35 ? PURPLE + '30' : GREEN + '30'}`,
@@ -598,7 +598,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
             </div>
             <div>
               <div style={{ background: NAVY, borderRadius: 20, padding: '28px 28px' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 8 }}>
                   <Icon name="alert" size={15} color={GOLD} /> Practitioner note — first-hand
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -621,8 +621,8 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                     },
                   ].map((note, i) => (
                     <div key={i} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '16px 18px' }}>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: GOLD, marginBottom: 6 }}>{note.title}</div>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>{note.body}</div>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: GOLD, marginBottom: 6 }}>{note.title}</div>
+                      <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>{note.body}</div>
                     </div>
                   ))}
                 </div>
@@ -637,7 +637,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <SectionHeading kicker="Using the 485 Well" title="Your 485 Runway — What to Do When" accent={PURPLE} />
-            <p style={{ color: '#6b7280', fontSize: 16, maxWidth: 520, margin: '0 auto' }}>The 485 is not a waiting room. It is your PR preparation window. Here is how to use every month of it.</p>
+            <p style={{ color: '#6b7280', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>The 485 is not a waiting room. It is your PR preparation window. Here is how to use every month of it.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {RUNWAY_ACTIONS.map((action, i) => {
@@ -650,13 +650,13 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                     <div style={{ width: 36, height: 36, borderRadius: 10, background: `${priorityColor}15`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Icon name={action.icon} size={16} color={priorityColor} />
                     </div>
-                    <span style={{ fontSize: 10, fontWeight: 700, color: priorityColor, background: `${priorityColor}12`, border: `1px solid ${priorityColor}25`, padding: '2px 10px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: priorityColor, background: `${priorityColor}12`, border: `1px solid ${priorityColor}25`, padding: '2px 10px', borderRadius: 20, textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                       {action.priority}
                     </span>
                   </div>
-                  <div style={{ fontSize: 11, color: priorityColor, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>{action.timing}</div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{action.title}</div>
-                  <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65 }}>{action.detail}</div>
+                  <div style={{ fontSize: 12, color: priorityColor, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>{action.timing}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{action.title}</div>
+                  <div style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65 }}>{action.detail}</div>
                 </div>
               )
             })}

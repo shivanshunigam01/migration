@@ -246,9 +246,9 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
       <div style={{ background: '#fff', padding: '48px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ background: NAVY, borderRadius: 16, padding: '22px 24px', border: `1px solid rgba(245,161,36,0.3)` }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Important — Name Change</div>
-            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.3 }}>The AAT is now the ART</div>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, margin: 0 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Important — Name Change</div>
+            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: '#fff', marginBottom: 10, lineHeight: 1.3 }}>The AAT is now the ART</div>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, margin: 0 }}>
               The Administrative Appeals Tribunal (AAT) was abolished on <strong style={{ color: '#fff' }}>14 October 2024</strong> and replaced by the Administrative Review Tribunal (ART). All new migration review lodgements go to the ART. If your refusal letter says "AAT", those deadlines still apply — but the body you appeal to is now the ART at <a href="https://www.art.gov.au" target="_blank" rel="noopener noreferrer" style={{ color: GOLD, textDecoration: 'none', fontWeight: 600 }}>art.gov.au</a>.
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
           {/* Key facts */}
           <div style={{ marginTop: 24, background: '#fff', borderRadius: 16, border: `2px solid ${RED}20`, overflow: 'hidden', boxShadow: '0 8px 40px rgba(27,43,94,0.1)' }}>
             <div style={{ background: NAVY, padding: '14px 22px' }}>
-              <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Critical Facts — Read Before Anything Else</div>
+              <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>Critical Facts — Read Before Anything Else</div>
             </div>
             {[
               { label: 'Standard review deadline', val: '28 days from deemed notification', icon: 'clock', urgent: true },
@@ -272,8 +272,8 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                 <span style={{ width: 26, height: 26, borderRadius: 6, background: row.urgent ? `${RED}12` : '#f0f2f8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Icon name={row.icon} size={13} color={row.urgent ? RED : '#6b7280'} />
                 </span>
-                <span style={{ fontSize: 12, color: '#6b7280', flex: '0 0 150px' }}>{row.label}</span>
-                <span style={{ fontSize: 13, fontWeight: 600, color: row.urgent ? RED : NAVY }}>{row.val}</span>
+                <span style={{ fontSize: 13, color: '#6b7280', flex: '0 0 150px' }}>{row.label}</span>
+                <span style={{ fontSize: 14, fontWeight: 600, color: row.urgent ? RED : NAVY }}>{row.val}</span>
               </div>
             ))}
           </div>
@@ -291,13 +291,13 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <div>
-                  <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Date on refusal / notification letter <span style={{ color: RED }}>*</span></label>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Date on refusal / notification letter <span style={{ color: RED }}>*</span></label>
                   <input type="date" value={notificationDate} onChange={e => setNotificationDate(e.target.value)}
-                    style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${notificationDate ? RED + '60' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
+                    style={{ width: '100%', padding: '11px 14px', borderRadius: 8, fontSize: 14, background: 'rgba(255,255,255,0.08)', border: `1.5px solid ${notificationDate ? RED + '60' : 'rgba(255,255,255,0.15)'}`, color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                 </div>
 
                 <div>
-                  <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Decision type</label>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Decision type</label>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     {[
                       { label: 'Most onshore refusals (student, partner, skilled)', days: 28 },
@@ -307,15 +307,15 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                       <button key={i} onClick={() => setDecisionTypeIdx(i === 1 ? 1 : i === 2 ? 5 : 0)}
                         style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${decisionTypeIdx === (i === 1 ? 1 : i === 2 ? 5 : 0) ? RED : 'rgba(255,255,255,0.12)'}`, background: decisionTypeIdx === (i === 1 ? 1 : i === 2 ? 5 : 0) ? `${RED}15` : 'rgba(255,255,255,0.04)', cursor: 'pointer', textAlign: 'left' }}>
                         <div style={{ width: 16, height: 16, borderRadius: '50%', border: `2px solid ${decisionTypeIdx === (i === 1 ? 1 : i === 2 ? 5 : 0) ? RED : 'rgba(255,255,255,0.3)'}`, background: decisionTypeIdx === (i === 1 ? 1 : i === 2 ? 5 : 0) ? RED : 'transparent', flexShrink: 0 }} />
-                        <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', flex: 1 }}>{opt.label}</span>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: RED }}>{opt.days} days</span>
+                        <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', flex: 1 }}>{opt.label}</span>
+                        <span style={{ fontSize: 13, fontWeight: 700, color: RED }}>{opt.days} days</span>
                       </button>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>
                     How did DHA notify you?
                   </label>
                   <div style={{ display: 'flex', gap: 8 }}>
@@ -324,9 +324,9 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                       { label: 'Post (regular mail)', days: 7 },
                     ].map(opt => (
                       <button key={opt.label} onClick={() => setDeemedDays(opt.days)}
-                        style={{ flex: 1, padding: '10px 12px', borderRadius: 8, border: `1.5px solid ${deemedDays === opt.days ? GOLD : 'rgba(255,255,255,0.12)'}`, background: deemedDays === opt.days ? `${GOLD}12` : 'rgba(255,255,255,0.04)', color: deemedDays === opt.days ? GOLD : 'rgba(255,255,255,0.65)', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+                        style={{ flex: 1, padding: '10px 12px', borderRadius: 8, border: `1.5px solid ${deemedDays === opt.days ? GOLD : 'rgba(255,255,255,0.12)'}`, background: deemedDays === opt.days ? `${GOLD}12` : 'rgba(255,255,255,0.04)', color: deemedDays === opt.days ? GOLD : 'rgba(255,255,255,0.65)', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                         {opt.label}<br />
-                        <span style={{ fontSize: 10, opacity: 0.7 }}>+{opt.days} days deemed receipt</span>
+                        <span style={{ fontSize: 11, opacity: 0.7 }}>+{opt.days} days deemed receipt</span>
                       </button>
                     ))}
                   </div>
@@ -334,8 +334,8 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
               </div>
 
               <div style={{ marginTop: 20, padding: '14px 18px', background: 'rgba(245,161,36,0.1)', border: '1px solid rgba(245,161,36,0.25)', borderRadius: 10 }}>
-                <div style={{ fontSize: 12, color: GOLD, fontWeight: 700, marginBottom: 4 }}>Always verify against your letter</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>This calculator is indicative. The refusal letter states your exact time limit and how it is calculated. If the letter and this tool differ, the letter governs.</div>
+                <div style={{ fontSize: 13, color: GOLD, fontWeight: 700, marginBottom: 4 }}>Always verify against your letter</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>This calculator is indicative. The refusal letter states your exact time limit and how it is calculated. If the letter and this tool differ, the letter governs.</div>
               </div>
             </div>
 
@@ -345,22 +345,22 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                   {/* Countdown */}
                   <div style={{ background: deadline.daysLeft <= 0 ? 'rgba(107,114,128,0.1)' : `${urgencyColor}12`, border: `2px solid ${deadline.daysLeft <= 0 ? 'rgba(107,114,128,0.2)' : urgencyColor + '35'}`, borderRadius: 20, padding: '32px 28px', textAlign: 'center' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: urgencyColor, marginBottom: 12 }}>
+                    <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: urgencyColor, marginBottom: 12 }}>
                       {deadline.daysLeft <= 0 ? 'Deadline Status' : 'Time Remaining'}
                     </div>
                     <div style={{ fontSize: 80, fontWeight: 900, color: urgencyColor, lineHeight: 1, fontFamily: "'Gilroy', sans-serif", marginBottom: 4 }}>
                       {deadline.daysLeft <= 0 ? '0' : deadline.daysLeft}
                     </div>
-                    <div style={{ fontSize: 16, color: urgencyColor, fontWeight: 700, marginBottom: 16 }}>
+                    <div style={{ fontSize: 17, color: urgencyColor, fontWeight: 700, marginBottom: 16 }}>
                       {urgencyLabel}
                     </div>
                     {deadline.daysLeft > 0 && deadline.daysLeft <= 7 && (
-                      <div style={{ background: `${RED}20`, border: `1px solid ${RED}40`, borderRadius: 10, padding: '12px 16px', fontSize: 13, color: 'rgba(220,38,38,0.4)', fontWeight: 600, marginBottom: 8 }}>
+                      <div style={{ background: `${RED}20`, border: `1px solid ${RED}40`, borderRadius: 10, padding: '12px 16px', fontSize: 14, color: 'rgba(220,38,38,0.4)', fontWeight: 600, marginBottom: 8 }}>
                         CRITICAL — contact a registered agent today
                       </div>
                     )}
                     {deadline.daysLeft <= 0 && (
-                      <div style={{ background: 'rgba(107,114,128,0.15)', borderRadius: 10, padding: '12px 16px', fontSize: 13, color: 'rgba(255,255,255,0.6)' }}>
+                      <div style={{ background: 'rgba(107,114,128,0.15)', borderRadius: 10, padding: '12px 16px', fontSize: 14, color: 'rgba(255,255,255,0.6)' }}>
                         The standard ART window has passed. Ministerial Intervention or re-application may still be available — seek advice today.
                       </div>
                     )}
@@ -374,26 +374,26 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                       { label: `ART lodgement deadline (${DECISION_TYPES[decisionTypeIdx].days} days)`, date: deadline.deadlineDate, color: urgencyColor },
                     ].map((row, i) => (
                       <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 22px', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none' }}>
-                        <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)' }}>{row.label}</span>
-                        <span style={{ fontSize: 14, fontWeight: 700, color: row.color }}>
+                        <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)' }}>{row.label}</span>
+                        <span style={{ fontSize: 15, fontWeight: 700, color: row.color }}>
                           {row.date.toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })}
                         </span>
                       </div>
                     ))}
                   </div>
 
-                  <a href="#contact" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: GOLD, color: NAVY_DARK, padding: '16px 24px', borderRadius: 12, textDecoration: 'none', fontSize: 15, fontWeight: 800, boxShadow: "0 6px 28px rgba(245,161,36,0.50)" }}>
+                  <a href="#contact" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, backgroundColor: GOLD, color: NAVY_DARK, padding: '16px 24px', borderRadius: 12, textDecoration: 'none', fontSize: 16, fontWeight: 800, boxShadow: "0 6px 28px rgba(245,161,36,0.50)" }}>
                     <Icon name="phone" size={16} color="#fff" /> Request Same-Day Triage
                   </a>
-                  <div style={{ textAlign: 'center', fontSize: 11, color: 'rgba(255,255,255,0.3)' }}>Navpreet Aulakh · MARN 2619467 · Registered Migration Agent</div>
+                  <div style={{ textAlign: 'center', fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>Navpreet Aulakh · MARN 2619467 · Registered Migration Agent</div>
                 </div>
               ) : (
                 <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.15)', borderRadius: 20, padding: '56px 32px', textAlign: 'center' }}>
                   <div style={{ width: 56, height: 56, borderRadius: '50%', background: `${RED}15`, border: `2px solid ${RED}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
                     <Icon name="clock" size={24} color={RED} />
                   </div>
-                  <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.4)', marginBottom: 8 }}>Enter the date on your refusal letter</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>Your deadline will appear here immediately</div>
+                  <div style={{ fontSize: 17, color: 'rgba(255,255,255,0.4)', marginBottom: 8 }}>Enter the date on your refusal letter</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.25)' }}>Your deadline will appear here immediately</div>
                 </div>
               )}
             </div>
@@ -409,26 +409,26 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
             {DECISION_TYPES.map((dt, i) => (
               <div key={i} style={{ background: dt.severity === 'amber' ? 'rgba(245,161,36,0.08)' : '#fff', border: `1.5px solid ${dt.severity === 'amber' ? 'rgba(245,161,36,0.3)' : '#e8edf6'}`, borderRadius: 14, padding: '18px 24px', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 2fr', gap: 16, alignItems: 'start' }}>
                 <div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{dt.visa}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{dt.visa}</div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                     {dt.examples.map(ex => (
-                      <span key={ex} style={{ fontSize: 11, color: '#6b7280', background: '#f0f2f8', padding: '2px 8px', borderRadius: 10 }}>{ex}</span>
+                      <span key={ex} style={{ fontSize: 12, color: '#6b7280', background: '#f0f2f8', padding: '2px 8px', borderRadius: 10 }}>{ex}</span>
                     ))}
                   </div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4, letterSpacing: '0.08em' }}>Time Limit</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: dt.days ? NAVY : '#9ca3af', fontFamily: "'Gilroy', sans-serif" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4, letterSpacing: '0.08em' }}>Time Limit</div>
+                  <div style={{ fontSize: 19, fontWeight: 800, color: dt.days ? NAVY : '#9ca3af', fontFamily: "'Gilroy', sans-serif" }}>
                     {dt.days ? `${dt.days} days` : 'N/A'}
                   </div>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontSize: 10, fontWeight: 700, textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4, letterSpacing: '0.08em' }}>ART Review</div>
-                  <span style={{ display: 'inline-block', fontSize: 12, fontWeight: 700, padding: '4px 12px', borderRadius: 20, background: dt.days ? 'rgba(245,161,36,0.12)' : 'rgba(220,38,38,0.12)', color: dt.days ? GOLD : RED }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: '#9ca3af', marginBottom: 4, letterSpacing: '0.08em' }}>ART Review</div>
+                  <span style={{ display: 'inline-block', fontSize: 13, fontWeight: 700, padding: '4px 12px', borderRadius: 20, background: dt.days ? 'rgba(245,161,36,0.12)' : 'rgba(220,38,38,0.12)', color: dt.days ? GOLD : RED }}>
                     {dt.days ? 'Available' : 'Generally No'}
                   </span>
                 </div>
-                <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>{dt.notes}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>{dt.notes}</div>
               </div>
             ))}
           </div>
@@ -444,14 +444,14 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
               <div key={i} style={{ background: s.urgent ? '#fff9f9' : '#fff', border: `1.5px solid ${s.urgent ? RED + '25' : '#e8edf6'}`, borderRadius: 16, padding: '22px 22px', position: 'relative', overflow: 'hidden' }}>
                 {s.urgent && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: RED }} />}
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 14 }}>
-                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 800, color: s.urgent ? `${RED}30` : '#e8edf6', lineHeight: 1 }}>{s.step}</span>
+                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 29, fontWeight: 800, color: s.urgent ? `${RED}30` : '#e8edf6', lineHeight: 1 }}>{s.step}</span>
                   <div style={{ width: 36, height: 36, borderRadius: 10, background: s.urgent ? `${RED}12` : '#f0f2f8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Icon name={s.icon} size={16} color={s.urgent ? RED : NAVY} />
                   </div>
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{s.title}</div>
-                <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65 }}>{s.body}</div>
-                {s.urgent && <div style={{ marginTop: 12, fontSize: 11, fontWeight: 700, color: RED, textTransform: 'uppercase', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: 5 }}><Icon name="zap" size={11} color={RED} /> Do this first</div>}
+                <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{s.title}</div>
+                <div style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65 }}>{s.body}</div>
+                {s.urgent && <div style={{ marginTop: 12, fontSize: 12, fontWeight: 700, color: RED, textTransform: 'uppercase', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: 5 }}><Icon name="zap" size={11} color={RED} /> Do this first</div>}
               </div>
             ))}
           </div>

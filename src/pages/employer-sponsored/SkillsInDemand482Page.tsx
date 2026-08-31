@@ -124,10 +124,10 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
       padding: 28,
       backdropFilter: 'blur(10px)',
     }}>
-      <div style={{ color: GOLD, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', marginBottom: 14 }}>
+      <div style={{ color: GOLD, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', marginBottom: 14 }}>
         STREAM SELECTOR
       </div>
-      <p style={{ color: '#6b7280', fontSize: 13, marginBottom: 18, lineHeight: 1.6 }}>
+      <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 18, lineHeight: 1.6 }}>
         Choose a stream to see its requirements at a glance.
       </p>
 
@@ -143,7 +143,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
               border: activeStream === s.key ? `2px solid ${s.color}` : '2px solid #e8edf6',
               background: activeStream === s.key ? `${s.color}12` : '#f8fafc',
               color: activeStream === s.key ? s.color : '#6b7280',
-              fontWeight: 700, fontSize: 12, cursor: 'pointer',
+              fontWeight: 700, fontSize: 13, cursor: 'pointer',
               fontFamily: 'inherit', transition: 'all 0.15s',
             }}
           >
@@ -166,12 +166,12 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
             background: '#f8fafc',
             borderRadius: 8,
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#6b7280', fontSize: 13 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#6b7280', fontSize: 14 }}>
               <Icon name={row.icon} size={14} color="#9ca3af" />
               {row.label}
             </div>
             <span style={{
-              fontSize: 13, fontWeight: 600,
+              fontSize: 14, fontWeight: 600,
               color: row.bool !== undefined
                 ? (row.boolVal ? '#f5a124' : '#dc2626')
                 : NAVY,
@@ -182,13 +182,13 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
         ))}
 
         <div style={{ marginTop: 6 }}>
-          <div style={{ color: '#9ca3af', fontSize: 11, fontWeight: 600, letterSpacing: '0.06em', marginBottom: 8 }}>
+          <div style={{ color: '#9ca3af', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', marginBottom: 8 }}>
             TYPICAL OCCUPATIONS
           </div>
           {currentStream.occupations.map((occ, i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
               <Icon name="check" size={14} color={GOLD} />
-              <span style={{ color: '#374151', fontSize: 13 }}>{occ}</span>
+              <span style={{ color: '#374151', fontSize: 14 }}>{occ}</span>
             </div>
           ))}
         </div>
@@ -197,7 +197,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
           background: `${currentStream.color}10`,
           border: `1px solid ${currentStream.color}30`,
           borderRadius: 8, padding: '10px 14px',
-          color: '#4b5563', fontSize: 12, lineHeight: 1.6,
+          color: '#4b5563', fontSize: 13, lineHeight: 1.6,
         }}>
           <Icon name="info" size={13} color={currentStream.color} className="inline mr-1.5 align-middle" />
           {currentStream.note}
@@ -261,7 +261,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
       <section style={{ background: '#ffffff', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Requirements" title="Eligibility Requirements" accent={CAT_EMPLOYER} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
             All three streams share a base set of eligibility criteria. Stream-specific salary and LMT requirements apply in addition.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -281,8 +281,8 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                 }}>
                   <Icon name={item.icon} size={22} color={NAVY} />
                 </div>
-                <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 15 }}>{item.title}</div>
-                <div style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</div>
+                <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 16 }}>{item.title}</div>
+                <div style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65 }}>{item.desc}</div>
               </div>
             ))}
           </div>
@@ -293,7 +293,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
       <section style={{ background: GREY_BAND, padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Application" title="Application Pathway" accent={CAT_EMPLOYER} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
             The 482 application involves three distinct approval stages — SBS, nomination, and the visa itself.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -311,14 +311,14 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                   borderRadius: 14,
                   background: NAVY_DARK,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: GOLD, fontWeight: 800, fontSize: 14,
+                  color: GOLD, fontWeight: 800, fontSize: 15,
                   fontFamily: "'Gilroy', sans-serif",
                 }}>
                   {step.num}
                 </div>
                 <div style={{ paddingTop: 10 }}>
-                  <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 16, marginBottom: 6 }}>{step.title}</div>
-                  <div style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65 }}>{step.desc}</div>
+                  <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 17, marginBottom: 6 }}>{step.title}</div>
+                  <div style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</div>
                 </div>
               </div>
             ))}
@@ -330,7 +330,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
       <section style={{ background: '#ffffff', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Streams" title="Stream Comparison" accent={CAT_EMPLOYER} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 32 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 32 }}>
             A side-by-side overview of all three 482 streams.
           </p>
           <div style={{
@@ -342,9 +342,9 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
                 <tr style={{ background: NAVY_DARK }}>
-                  <th style={{ padding: '14px 20px', textAlign: 'left', color: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 600, letterSpacing: '0.06em' }}>CRITERION</th>
+                  <th style={{ padding: '14px 20px', textAlign: 'left', color: 'rgba(255,255,255,0.6)', fontSize: 13, fontWeight: 600, letterSpacing: '0.06em' }}>CRITERION</th>
                   {streams.map(s => (
-                    <th key={s.key} style={{ padding: '14px 20px', textAlign: 'center', color: s.color, fontSize: 13, fontWeight: 700 }}>{s.label}</th>
+                    <th key={s.key} style={{ padding: '14px 20px', textAlign: 'center', color: s.color, fontSize: 14, fontWeight: 700 }}>{s.label}</th>
                   ))}
                 </tr>
               </thead>
@@ -358,13 +358,13 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                   { label: 'English requirement', vals: ['Competent', 'Competent', 'Competent*'] },
                 ].map((row, i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? '#f8fafc' : 'white', borderTop: '1px solid #e2e8f0' }}>
-                    <td style={{ padding: '13px 20px', color: '#475569', fontSize: 14, fontWeight: 600 }}>{row.label}</td>
+                    <td style={{ padding: '13px 20px', color: '#475569', fontSize: 15, fontWeight: 600 }}>{row.label}</td>
                     {row.vals.map((v, j) => {
                       const isGood = v === 'No' && row.label === 'LMT required'
                       const isBad = v === 'No' && row.label === 'PR pathway'
                       return (
                         <td key={j} style={{
-                          padding: '13px 20px', textAlign: 'center', fontSize: 14,
+                          padding: '13px 20px', textAlign: 'center', fontSize: 15,
                           color: isGood ? '#f5a124' : isBad ? '#dc2626' : '#1E1E2A',
                           fontWeight: isGood || isBad ? 600 : 400,
                         }}>{v}</td>
@@ -374,7 +374,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                 ))}
               </tbody>
             </table>
-            <div style={{ padding: '10px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', color: '#94a3b8', fontSize: 12 }}>
+            <div style={{ padding: '10px 20px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', color: '#94a3b8', fontSize: 13 }}>
               * Some Specialist high-earners may be exempt from English requirements. Seek advice for your specific situation.
             </div>
           </div>
@@ -385,7 +385,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
       <section style={{ background: GREY_BAND, padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="FAQ" title="Frequently Asked Questions" accent={CAT_EMPLOYER} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36 }}>
             Common questions about the subclass 482 Skills in Demand visa.
           </p>
           <FaqAccordion items={faqItems} accent={CAT_EMPLOYER} />

@@ -51,8 +51,8 @@ export function Callout({ variant, title, children, panel = false, borderWidth =
           <Icon name={v.iconName} size={18} color={v.iconColor} />
         </div>
         <div style={{ flex: 1 }}>
-          {title && <div style={{ fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 12 }}>{title}</div>}
-          <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{children}</div>
+          {title && <div style={{ fontSize: 19, fontWeight: 700, color: NAVY, marginBottom: 12 }}>{title}</div>}
+          <div style={{ fontSize: 15, color: '#374151', lineHeight: 1.75 }}>{children}</div>
         </div>
       </Reveal>
     )
@@ -61,7 +61,7 @@ export function Callout({ variant, title, children, panel = false, borderWidth =
   return (
     <Reveal preset="up" style={inlineStyle}>
       <Icon name={v.iconName} size={15} color={v.iconColor} />
-      <div style={{ fontSize: 13, color: v.labelColor, lineHeight: 1.65 }}>{children}</div>
+      <div style={{ fontSize: 14, color: v.labelColor, lineHeight: 1.65 }}>{children}</div>
     </Reveal>
   )
 }

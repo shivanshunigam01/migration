@@ -195,22 +195,22 @@ function TimelinePlanner() {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
       <div>
-        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: ROSE, marginBottom: 12 }}>Interactive Planner</div>
-        <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Your 309/100 Timeline</h2>
-        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.7, margin: '0 0 28px' }}>Enter your planned lodgement date. We map the key events, the two-year qualifying period, and the expected 100 decision window.</p>
+        <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: ROSE, marginBottom: 12 }}>Interactive Planner</div>
+        <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: '#fff', margin: '0 0 16px', lineHeight: 1.2 }}>Your 309/100 Timeline</h2>
+        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.7, margin: '0 0 28px' }}>Enter your planned lodgement date. We map the key events, the two-year qualifying period, and the expected 100 decision window.</p>
 
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <div>
-            <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Planned lodgement date</label>
+            <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 6 }}>Planned lodgement date</label>
             <input type="date" value={lodgementDate} onChange={e => setLodgementDate(e.target.value)}
-              style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' as const }} />
+              style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 14, background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' as const }} />
           </div>
           <div>
-            <label style={{ fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Relationship type</label>
+            <label style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.6)', display: 'block', marginBottom: 8 }}>Relationship type</label>
             <div style={{ display: 'flex', gap: 8 }}>
               {[{ val: 'married' as const, label: 'Married' }, { val: 'defacto' as const, label: 'De facto' }].map(opt => (
                 <button key={opt.val} onClick={() => setRelationshipType(opt.val)}
-                  style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.15)'}`, background: relationshipType === opt.val ? `${ROSE}20` : 'rgba(255,255,255,0.05)', color: relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.6)', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
+                  style={{ flex: 1, padding: '10px', borderRadius: 8, border: `1.5px solid ${relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.15)'}`, background: relationshipType === opt.val ? `${ROSE}20` : 'rgba(255,255,255,0.05)', color: relationshipType === opt.val ? ROSE : 'rgba(255,255,255,0.6)', fontSize: 14, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
                   {opt.label}
                 </button>
               ))}
@@ -221,12 +221,12 @@ function TimelinePlanner() {
             <div style={{ width: 20, height: 20, borderRadius: 5, border: `2px solid ${hasChildren ? ROSE : 'rgba(255,255,255,0.3)'}`, background: hasChildren ? ROSE : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               {hasChildren && <Icon name="check" size={11} color="#fff" />}
             </div>
-            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)' }}>Children to be included as secondary applicants</span>
+            <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)' }}>Children to be included as secondary applicants</span>
           </div>
           {relationshipType === 'defacto' && (
             <div style={{ background: `${GOLD}15`, border: `1px solid ${GOLD}30`, borderRadius: 10, padding: '14px 16px' }}>
-              <div style={{ fontSize: 12, color: GOLD, fontWeight: 700, marginBottom: 4 }}>De Facto Requirement</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>De facto relationships require a minimum of 12 months of cohabitation prior to application, unless registered with a state/territory authority. Evidence of this period is critical.</div>
+              <div style={{ fontSize: 13, color: GOLD, fontWeight: 700, marginBottom: 4 }}>De Facto Requirement</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>De facto relationships require a minimum of 12 months of cohabitation prior to application, unless registered with a state/territory authority. Evidence of this period is critical.</div>
             </div>
           )}
         </div>
@@ -252,12 +252,12 @@ function TimelinePlanner() {
                     </div>
                     <div style={{ flex: 1, background: ts.bg, border: `1px solid ${ts.border}`, borderRadius: 12, padding: '14px 18px', marginBottom: 6 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 4 }}>
-                        <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{ev.label}</div>
-                        <div style={{ fontSize: 12, fontWeight: 700, color: ts.dot, whiteSpace: 'nowrap' as const }}>
+                        <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.3 }}>{ev.label}</div>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: ts.dot, whiteSpace: 'nowrap' as const }}>
                           {ev.date.toLocaleDateString('en-AU', { month: 'short', year: 'numeric' })}
                         </div>
                       </div>
-                      <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', lineHeight: 1.5 }}>{ev.note}</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.5 }}>{ev.note}</div>
                     </div>
                   </div>
                 )
@@ -267,7 +267,7 @@ function TimelinePlanner() {
         ) : (
           <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px dashed rgba(255,255,255,0.15)', borderRadius: 16, padding: '56px 32px', textAlign: 'center' }}>
             <Icon name="calendar" size={36} color="rgba(255,255,255,0.2)" />
-            <div style={{ marginTop: 16, fontSize: 15, color: 'rgba(255,255,255,0.35)' }}>Enter your planned lodgement date to see your personalised timeline</div>
+            <div style={{ marginTop: 16, fontSize: 16, color: 'rgba(255,255,255,0.35)' }}>Enter your planned lodgement date to see your personalised timeline</div>
           </div>
         )}
       </div>
@@ -289,7 +289,7 @@ function PillarSelector() {
             <div style={{ width: 36, height: 36, borderRadius: 10, background: openPillar === i ? `${pillar.color}15` : '#e5e7eb', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <Icon name={pillar.icon} size={16} color={openPillar === i ? pillar.color : '#9ca3af'} />
             </div>
-            <span style={{ fontSize: 14, fontWeight: 700, color: openPillar === i ? pillar.color : '#6b7280' }}>{pillar.title}</span>
+            <span style={{ fontSize: 15, fontWeight: 700, color: openPillar === i ? pillar.color : '#6b7280' }}>{pillar.title}</span>
           </button>
         ))}
       </div>
@@ -300,8 +300,8 @@ function PillarSelector() {
             <Icon name={p.icon} size={20} color={p.color} />
           </div>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: p.color, marginBottom: 2 }}>Pillar {openPillar + 1} of 4</div>
-            <div style={{ fontSize: 18, fontWeight: 700, color: NAVY }}>{p.title} Evidence</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: p.color, marginBottom: 2 }}>Pillar {openPillar + 1} of 4</div>
+            <div style={{ fontSize: 19, fontWeight: 700, color: NAVY }}>{p.title} Evidence</div>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 10, marginBottom: 24 }}>
@@ -310,13 +310,13 @@ function PillarSelector() {
               <div style={{ width: 22, height: 22, borderRadius: 6, background: `${p.color}15`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                 <Icon name="check" size={11} color={p.color} />
               </div>
-              <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{ex}</span>
+              <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{ex}</span>
             </div>
           ))}
         </div>
         <div style={{ background: `${p.color}08`, border: `1px solid ${p.color}25`, borderRadius: 12, padding: '16px 18px' }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: p.color, marginBottom: 6 }}>For Couples Living Apart</div>
-          <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.65 }}>{p.apartNote}</div>
+          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: p.color, marginBottom: 6 }}>For Couples Living Apart</div>
+          <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.65 }}>{p.apartNote}</div>
         </div>
       </div>
     </div>
@@ -360,29 +360,29 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
             {/* Left */}
             <div style={{ flex: '0 0 580px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
-                <span style={{ background: `${ROSE}18`, color: ROSE, border: `1px solid ${ROSE}40`, fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>Subclass 309 / 100</span>
-                <span style={{ color: '#6b7280', fontSize: 12 }}>Offshore · One application · Two stages</span>
+                <span style={{ background: `${ROSE}18`, color: ROSE, border: `1px solid ${ROSE}40`, fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>Subclass 309 / 100</span>
+                <span style={{ color: '#6b7280', fontSize: 13 }}>Offshore · One application · Two stages</span>
               </div>
               <h1 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 50, fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px' }}>
                 Partner Visa<br />
                 <span style={{ color: ROSE }}>309 / 100</span><br />
                 <span style={{ fontSize: 38 }}>From Outside Australia</span>
               </h1>
-              <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 500 }}>
+              <p style={{ fontSize: 18, color: '#374151', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 500 }}>
                 One application, two stages. The temporary 309 first — then the permanent 100, which becomes assessable two years from the date of lodgement.
               </p>
               <div style={{ background: '#ffffff', border: '1px solid #e5e9f5', borderLeft: `4px solid ${ROSE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', marginBottom: 32, boxShadow: '0 2px 16px rgba(27,43,94,0.07)' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
                   <Icon name="info" size={16} color={ROSE} />
-                  <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: ROSE }}>The Short Answer</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: ROSE }}>The Short Answer</span>
                 </div>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
                   <strong style={{ color: NAVY }}>Yes — you can apply from outside Australia.</strong> The 309/100 is lodged offshore, one application with two stages. The permanent 100 becomes assessable two years from the lodgement date — so the waiting time doubles as the qualifying period. The applicant generally needs to be <em>outside Australia when the 309 is granted</em>, which makes travel timing around the decision a genuine part of the strategy.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 12 }}>
-                <a href="#timeline-planner" style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: "0 4px 20px rgba(245,161,36,0.40)" }}>Plan My Timeline</a>
-                <a href="#evidence" style={{ backgroundColor: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 600 }}>Evidence Guide →</a>
+                <a href="#timeline-planner" style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, boxShadow: "0 4px 20px rgba(245,161,36,0.40)" }}>Plan My Timeline</a>
+                <a href="#evidence" style={{ backgroundColor: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 600 }}>Evidence Guide →</a>
               </div>
             </div>
 
@@ -390,8 +390,8 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
             <div style={{ flex: 1, paddingBottom: 40 }}>
               <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 48px rgba(27,43,94,0.12)', border: '1px solid #e8edf6', overflow: 'hidden' }}>
                 <div style={{ background: NAVY, padding: '18px 24px' }}>
-                  <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: 3 }}>At a Glance</div>
-                  <div style={{ color: '#fff', fontSize: 16, fontWeight: 700 }}>Subclass 309 / 100 Key Facts</div>
+                  <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: 3 }}>At a Glance</div>
+                  <div style={{ color: '#fff', fontSize: 17, fontWeight: 700 }}>Subclass 309 / 100 Key Facts</div>
                 </div>
                 {[
                   { label: 'Application type', val: 'One application, two-stage grant', icon: 'file' },
@@ -410,8 +410,8 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
                     <span style={{ width: 26, height: 26, borderRadius: 6, background: `${ROSE}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon name={row.icon} size={13} color={ROSE} />
                     </span>
-                    <span style={{ fontSize: 12, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
-                    <span style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{row.val}</span>
+                    <span style={{ fontSize: 13, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
+                    <span style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{row.val}</span>
                   </div>
                 ))}
               </div>
@@ -437,7 +437,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
           <StepTimeline steps={STAGES} variant="cards" accent={ROSE} />
           <div style={{ maxWidth: 800, margin: '32px auto 0' }}>
             <Callout variant="danger" panel borderWidth={2}>
-              <strong style={{ display: 'block', fontSize: 14, color: NAVY, marginBottom: 4 }}>The Grant-Day Travel Rule</strong>
+              <strong style={{ display: 'block', fontSize: 15, color: NAVY, marginBottom: 4 }}>The Grant-Day Travel Rule</strong>
               The applicant must be <strong>outside Australia</strong> when the Subclass 309 is granted. If the expected decision window is approaching and the applicant is in Australia, they risk being in the wrong location at the moment of grant. Navpreet monitors cases as they approach decision stage and advises on travel positioning — this is active case management, not paperwork.
             </Callout>
           </div>

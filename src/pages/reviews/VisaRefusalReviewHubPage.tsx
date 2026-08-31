@@ -128,14 +128,14 @@ function TriageWidget({ navigate }: { navigate: (page: string) => void }) {
       <div style={{ background: `linear-gradient(135deg, ${NAVY_DARK} 0%, ${NAVY} 100%)`, padding: '18px 22px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
           <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'rgba(255,255,255,0.7)', display: 'inline-block', boxShadow: '0 0 0 3px rgba(255,255,255,0.2)', flexShrink: 0 }} />
-          <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', fontFamily: "'Gilroy', sans-serif" }}>Urgent triage</div>
+          <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.7)', fontFamily: "'Gilroy', sans-serif" }}>Urgent triage</div>
         </div>
-        <div style={{ fontSize: 14, fontWeight: 700, color: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}>"What happened?" — get your next step now</div>
+        <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff', fontFamily: "'Gilroy', sans-serif" }}>"What happened?" — get your next step now</div>
       </div>
 
       <div style={{ padding: '20px 22px 4px', flex: 1 }}>
         {history.length > 0 && (
-          <button onClick={back} style={{ display: 'flex', alignItems: 'center', gap: 5, background: 'none', border: 'none', cursor: 'pointer', fontSize: 11.5, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", padding: 0, marginBottom: 12 }}>
+          <button onClick={back} style={{ display: 'flex', alignItems: 'center', gap: 5, background: 'none', border: 'none', cursor: 'pointer', fontSize: 12.5, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", padding: 0, marginBottom: 12 }}>
             <Icon name="arrow-left" size={12} />
             Back
           </button>
@@ -143,11 +143,11 @@ function TriageWidget({ navigate }: { navigate: (page: string) => void }) {
 
         {!isResult && q && (
           <>
-            <p style={{ fontSize: 14, fontWeight: 600, color: NAVY_DARK, lineHeight: 1.45, margin: '0 0 14px', fontFamily: "'Gilroy', sans-serif" }}>{q.q}</p>
+            <p style={{ fontSize: 15, fontWeight: 600, color: NAVY_DARK, lineHeight: 1.45, margin: '0 0 14px', fontFamily: "'Gilroy', sans-serif" }}>{q.q}</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {q.opts.map(opt => (
                 <button key={opt.label} onClick={() => choose(opt.next)}
-                  style={{ padding: '11px 14px', background: 'rgba(220,38,38,0.08)', border: `1.5px solid ${RED}22`, borderRadius: 10, fontSize: 13, fontWeight: 500, color: NAVY_DARK, cursor: 'pointer', textAlign: 'left', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
+                  style={{ padding: '11px 14px', background: 'rgba(220,38,38,0.08)', border: `1.5px solid ${RED}22`, borderRadius: 10, fontSize: 14, fontWeight: 500, color: NAVY_DARK, cursor: 'pointer', textAlign: 'left', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
                   onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = RED; el.style.background = RED_LIGHT }}
                   onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.borderColor = `${RED}22`; el.style.background = 'rgba(220,38,38,0.08)' }}
                 >{opt.label}</button>
@@ -162,38 +162,38 @@ function TriageWidget({ navigate }: { navigate: (page: string) => void }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 14px', background: RED_LIGHT, border: `1.5px solid ${RED}`, borderRadius: 10, marginBottom: 14 }}>
                 <Icon name="alert" size={14} color={RED} />
                 <div>
-                  <div style={{ fontSize: 10, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', color: RED_DARK, fontFamily: "'Gilroy', sans-serif" }}>Deadline</div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: RED_DARK, fontFamily: "'Gilroy', sans-serif" }}>{result.deadline}</div>
+                  <div style={{ fontSize: 11, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.1em', color: RED_DARK, fontFamily: "'Gilroy', sans-serif" }}>Deadline</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: RED_DARK, fontFamily: "'Gilroy', sans-serif" }}>{result.deadline}</div>
                 </div>
               </div>
             )}
 
             <div style={{ padding: '14px 16px', borderRadius: 12, border: `1.5px solid ${result.color}22`, background: `${result.color}06`, marginBottom: 12 }}>
-              <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: result.color, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Next step</div>
-              <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.62, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{result.action}</p>
+              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', color: result.color, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Next step</div>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.62, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{result.action}</p>
               {result.route && (
                 <button onClick={() => navigate(result.route!)}
-                  style={{ marginTop: 10, background: 'none', border: 'none', cursor: 'pointer', fontSize: 12.5, fontWeight: 700, color: result.color, fontFamily: "'Gilroy', sans-serif", padding: 0, display: 'flex', alignItems: 'center', gap: 5 }}>
+                  style={{ marginTop: 10, background: 'none', border: 'none', cursor: 'pointer', fontSize: 13.5, fontWeight: 700, color: result.color, fontFamily: "'Gilroy', sans-serif", padding: 0, display: 'flex', alignItems: 'center', gap: 5 }}>
                   {result.routeLabel}
                   <Icon name="arrow-right" size={12} />
                 </button>
               )}
             </div>
 
-            <div style={{ fontSize: 11.5, color: '#6b7280', lineHeight: 1.55, fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic', marginBottom: 14 }}>{result.note}</div>
+            <div style={{ fontSize: 12.5, color: '#6b7280', lineHeight: 1.55, fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic', marginBottom: 14 }}>{result.note}</div>
 
             <div style={{ display: 'flex', gap: 8 }}>
-              <a href="#contact" style={{ flex: 1, padding: '12px 14px', background: RED, color: '#ffffff', border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif" }}>
+              <a href="#contact" style={{ flex: 1, padding: '12px 14px', background: RED, color: '#ffffff', border: 'none', borderRadius: 9, fontSize: 14, fontWeight: 700, cursor: 'pointer', textAlign: 'center', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif" }}>
                 Request same-day triage →
               </a>
-              <button onClick={restart} style={{ padding: '12px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
+              <button onClick={restart} style={{ padding: '12px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}>
                 Start over
               </button>
             </div>
           </div>
         )}
       </div>
-      <div style={{ padding: '14px 22px', fontSize: 10.5, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic' }}>
+      <div style={{ padding: '14px 22px', fontSize: 11.5, color: '#9ca3af', fontFamily: "'Gilroy', sans-serif", fontStyle: 'italic' }}>
         Preliminary guidance only — not migration advice. {DISCLAIMER}.
       </div>
     </div>
@@ -425,24 +425,24 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
               <span style={{ width: 22, height: 22, borderRadius: '50%', background: RED, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                 <Icon name="alert" size={11} color="#ffffff" />
               </span>
-              <span style={{ fontSize: 11, fontWeight: 700, color: RED_DARK, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>Time-critical — deadlines are strict</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: RED_DARK, letterSpacing: '0.08em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>Time-critical — deadlines are strict</span>
             </div>
 
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 44px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 3.5vw, 46px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
               Use the triage tool to find your next step
             </h2>
 
-            <p style={{ fontSize: 16, color: '#4b5563', lineHeight: 1.68, margin: '0 0 24px', fontFamily: "'Gilroy', sans-serif" }}>
+            <p style={{ fontSize: 17, color: '#4b5563', lineHeight: 1.68, margin: '0 0 24px', fontFamily: "'Gilroy', sans-serif" }}>
               A refusal is not necessarily the end — but every pathway has a hard deadline. The ART review window is typically 28 days, non-extendable. The day you receive the decision, the clock starts.
             </p>
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
               <a href="#contact"
-                style={{ background: RED, color: '#ffffff', padding: '14px 30px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: `0 4px 20px ${RED}44`, fontFamily: "'Gilroy', sans-serif" }}>
+                style={{ background: RED, color: '#ffffff', padding: '14px 30px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 8, boxShadow: `0 4px 20px ${RED}44`, fontFamily: "'Gilroy', sans-serif" }}>
                 Request same-day triage →
               </a>
               <button onClick={() => navigate('art-review')}
-                style={{ background: '#ffffff', color: NAVY, padding: '14px 30px', borderRadius: 8, fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", border: `1.5px solid ${NAVY}22`, cursor: 'pointer', boxShadow: '0 2px 8px rgba(27,43,94,0.08)' }}>
+                style={{ background: '#ffffff', color: NAVY, padding: '14px 30px', borderRadius: 8, fontSize: 15, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", border: `1.5px solid ${NAVY}22`, cursor: 'pointer', boxShadow: '0 2px 8px rgba(27,43,94,0.08)' }}>
                 ART Review guide →
               </button>
             </div>
@@ -462,12 +462,12 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
               { val: '0 days', label: 'Extension available', note: 'deadline is absolute' },
             ].map((s, i) => (
               <div key={i} style={{ padding: '16px 24px', borderRight: i < 3 ? '1px solid rgba(27,43,94,0.1)' : 'none' }}>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(20px, 2.2vw, 30px)', fontWeight: 800, color: i === 3 ? RED : NAVY, lineHeight: 1 }}>{s.val}</div>
-                <div style={{ fontSize: 12, color: '#6b7280', marginTop: 4, fontFamily: "'Gilroy', sans-serif", lineHeight: 1.4 }}>{s.label}<span style={{ fontSize: 10, display: 'block', color: '#9ca3af' }}>{s.note}</span></div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(22px, 2.2vw, 32px)', fontWeight: 800, color: i === 3 ? RED : NAVY, lineHeight: 1 }}>{s.val}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', marginTop: 4, fontFamily: "'Gilroy', sans-serif", lineHeight: 1.4 }}>{s.label}<span style={{ fontSize: 11, display: 'block', color: '#9ca3af' }}>{s.note}</span></div>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 10.5, color: '#9ca3af', fontStyle: 'italic', margin: '10px 0 0', fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 11.5, color: '#9ca3af', fontStyle: 'italic', margin: '10px 0 0', fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -491,11 +491,11 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                     <div style={{ position: 'absolute', top: 16, right: 16, width: 8, height: 8, borderRadius: '50%', background: RED, boxShadow: `0 0 0 3px ${RED}22` }} />
                   )}
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-                    <span style={{ fontSize: 11, fontWeight: 800, padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap' }}>{card.code}</span>
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${card.tagColor}14`, color: card.tagColor, border: `1px solid ${card.tagColor}28`, fontFamily: "'Gilroy', sans-serif" }}>{card.tag}</span>
+                    <span style={{ fontSize: 12, fontWeight: 800, padding: '4px 12px', borderRadius: 100, background: NAVY, color: GOLD, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap' }}>{card.code}</span>
+                    <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: `${card.tagColor}14`, color: card.tagColor, border: `1px solid ${card.tagColor}28`, fontFamily: "'Gilroy', sans-serif" }}>{card.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{card.name}</h3>
-                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: 0, fontFamily: "'Gilroy', sans-serif", flex: 1 }}>{card.body}</p>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.2 }}>{card.name}</h3>
+                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65, margin: 0, fontFamily: "'Gilroy', sans-serif", flex: 1 }}>{card.body}</p>
                   {clickable && (
                     <div style={{ position: 'absolute', bottom: 20, right: 20, opacity: isHovered ? 1 : 0, transition: 'opacity 0.2s' }}>
                       <Icon name="arrowright" size={15} color={card.tagColor} />
@@ -508,7 +508,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 20 }}>
             <div style={{ width: 8, height: 8, borderRadius: '50%', background: RED, boxShadow: `0 0 0 3px ${RED}22`, flexShrink: 0 }} />
-            <span style={{ fontSize: 12, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>Indicates a time-critical item — deadlines apply</span>
+            <span style={{ fontSize: 13, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>Indicates a time-critical item — deadlines apply</span>
           </div>
         </div>
       </section>
@@ -519,15 +519,15 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
           <div style={{ display: 'grid', gridTemplateColumns: '400px 1fr', gap: 56, alignItems: 'start' }} className="hero-grid">
             <div>
               <SectionHeading kicker="ART Review" title="How the ART review process works" accent={GOLD} marginBottom={18} />
-              <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.75, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
+              <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.75, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
                 When you receive a visa refusal, you may have the right to apply to the Administrative Review Tribunal (ART) for a merits review. The Tribunal is an independent body that examines the facts, law and policy afresh.
               </p>
-              <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.75, marginBottom: 20, fontFamily: "'Gilroy', sans-serif" }}>
+              <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.75, marginBottom: 20, fontFamily: "'Gilroy', sans-serif" }}>
                 The Tribunal can affirm the delegate's decision, vary it, set it aside and substitute its own decision, or remit the matter back to DHA with directions. A successful ART review leads to a visa grant in most cases.
               </p>
               <div style={{ background: `${GOLD}14`, border: `1.5px solid ${GOLD}44`, borderRadius: 12, padding: '14px 16px' }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: '#0d1632', marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>ART Processing Time 2025–26</div>
-                <div style={{ fontSize: 13, color: '#0d1632', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#0d1632', marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>ART Processing Time 2025–26</div>
+                <div style={{ fontSize: 14, color: '#0d1632', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>
                   Median ~9 months for migration cases. Lodge as early as possible — do not wait for the deadline. {DISCLAIMER}.
                 </div>
               </div>
@@ -543,11 +543,11 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                 <div key={step.num} style={{ display: 'flex', gap: 20, position: 'relative', paddingBottom: i < 3 ? 32 : 0 }}>
                   {i < 3 && <div style={{ position: 'absolute', left: 20, top: 44, width: 2, height: 'calc(100% - 12px)', background: 'linear-gradient(to bottom, rgba(27,43,94,0.15), rgba(27,43,94,0.04))' }} />}
                   <div style={{ width: 40, height: 40, borderRadius: '50%', background: NAVY, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, zIndex: 1 }}>
-                    <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 13, fontWeight: 800, color: '#fff' }}>{step.num}</span>
+                    <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 800, color: '#fff' }}>{step.num}</span>
                   </div>
                   <div style={{ paddingTop: 6, flex: 1 }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>{step.title}</div>
-                    <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, fontFamily: "'Gilroy', sans-serif" }}>{step.desc}</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>{step.title}</div>
+                    <div style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65, fontFamily: "'Gilroy', sans-serif" }}>{step.desc}</div>
                   </div>
                 </div>
               ))}
@@ -571,20 +571,20 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
             ].map(bar => (
               <div key={bar.title} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 18, padding: '24px 24px', backdropFilter: 'blur(12px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', lineHeight: 1.25, fontFamily: "'Gilroy', sans-serif" }}>{bar.title}</div>
-                  <span style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', borderRadius: 100, padding: '3px 9px', flexShrink: 0, color: bar.impactColor, background: `${bar.impactColor}22`, border: `1px solid ${bar.impactColor}44`, fontFamily: "'Gilroy', sans-serif", marginLeft: 10 }}>
+                  <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', lineHeight: 1.25, fontFamily: "'Gilroy', sans-serif" }}>{bar.title}</div>
+                  <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', borderRadius: 100, padding: '3px 9px', flexShrink: 0, color: bar.impactColor, background: `${bar.impactColor}22`, border: `1px solid ${bar.impactColor}44`, fontFamily: "'Gilroy', sans-serif", marginLeft: 10 }}>
                     {bar.impact}
                   </span>
                 </div>
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, margin: '0 0 12px', fontFamily: "'Gilroy', sans-serif" }}>{bar.desc}</p>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, margin: '0 0 12px', fontFamily: "'Gilroy', sans-serif" }}>{bar.desc}</p>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: `${RED}18`, border: `1px solid ${RED}30`, borderRadius: 100, padding: '3px 10px' }}>
                   <div style={{ width: 5, height: 5, borderRadius: '50%', background: RED, flexShrink: 0 }} />
-                  <span style={{ fontSize: 10, fontWeight: 700, color: 'rgba(220,38,38,0.4)', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>Time limits apply</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(220,38,38,0.4)', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>Time limits apply</span>
                 </div>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 10.5, color: 'rgba(255,255,255,0.35)', textAlign: 'center', marginTop: 20, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 11.5, color: 'rgba(255,255,255,0.35)', textAlign: 'center', marginTop: 20, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -594,15 +594,15 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
           <div style={{ display: 'grid', gridTemplateColumns: '400px 1fr', gap: 56, alignItems: 'start' }} className="hero-grid">
             <div>
               <SectionHeading kicker="Natural Justice" title="Received a natural justice letter?" accent={GOLD} marginBottom={18} />
-              <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.75, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
+              <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.75, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
                 A section 57 (s57) letter is DHA's formal invitation for you to comment on adverse information before a decision is made on your visa application. It is your last opportunity to address concerns before refusal.
               </p>
-              <p style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.75, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
+              <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.75, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
                 These letters typically allow 28 days for a written response. Deadlines are strict and extensions are not normally granted. If you do not respond, DHA will almost certainly refuse based on the adverse information without further notice.
               </p>
               <div style={{ background: 'rgba(220,38,38,0.08)', border: `1.5px solid ${RED}44`, borderRadius: 12, padding: '14px 16px' }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: RED, marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>Response deadlines are not extended.</div>
-                <div style={{ fontSize: 12, color: '#0d1632', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>Contact us the day you receive the letter.</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: RED, marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>Response deadlines are not extended.</div>
+                <div style={{ fontSize: 13, color: '#0d1632', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>Contact us the day you receive the letter.</div>
               </div>
             </div>
 
@@ -612,12 +612,12 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                   <div style={{ width: 26, height: 26, borderRadius: '50%', background: '#f5a124', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name="check" size={13} color="#fff" />
                   </div>
-                  <div style={{ fontSize: 12, fontWeight: 800, color: '#0d1632', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>Do</div>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#0d1632', letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>Do</div>
                 </div>
                 {['Respond within the timeframe stated in the letter', 'Address each specific adverse finding individually', 'Provide supporting documents and statutory declarations', 'Have a registered agent review your response before submission'].map(item => (
                   <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 9 }}>
                     <Icon name="check" size={13} color="#f5a124" />
-                    <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>{item}</span>
+                    <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -627,12 +627,12 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                   <div style={{ width: 26, height: 26, borderRadius: '50%', background: RED, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name="x" size={12} color="#fff" />
                   </div>
-                  <div style={{ fontSize: 12, fontWeight: 800, color: RED, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>{"Don't"}</div>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: RED, letterSpacing: '0.06em', textTransform: 'uppercase', fontFamily: "'Gilroy', sans-serif" }}>{"Don't"}</div>
                 </div>
                 {['Ignore the letter — refusal is almost certain if you do not respond', 'Provide information inconsistent with your original application', 'Submit a response without addressing the specific issues raised'].map(item => (
                   <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 9 }}>
                     <Icon name="x" size={12} color={RED} />
-                    <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>{item}</span>
+                    <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.6, fontFamily: "'Gilroy', sans-serif" }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -656,12 +656,12 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                 <div style={{ width: 42, height: 42, borderRadius: 11, background: 'rgba(27,43,94,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: NAVY, marginBottom: 14, flexShrink: 0 }}>
                   <Icon name={issue.icon} size={20} color={NAVY} />
                 </div>
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.3 }}>{issue.title}</h3>
-                <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{issue.desc}</p>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.3 }}>{issue.title}</h3>
+                <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{issue.desc}</p>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 10.5, color: '#9ca3af', textAlign: 'center', marginTop: 20, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
+          <p style={{ fontSize: 11.5, color: '#9ca3af', textAlign: 'center', marginTop: 20, fontFamily: "'Gilroy', sans-serif" }}>{DISCLAIMER}</p>
         </div>
       </section>
 
@@ -670,8 +670,8 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '28px 28px', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
           <div style={{ marginBottom: 40 }}>
-            <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: "'Gilroy', sans-serif" }}>Act immediately</div>
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 40px)', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
+            <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD, marginBottom: 12, fontFamily: "'Gilroy', sans-serif" }}>Act immediately</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3vw, 42px)', fontWeight: 700, color: '#ffffff', margin: 0, letterSpacing: '-0.02em', lineHeight: 1.15 }}>
               Your first <em style={{ fontStyle: 'italic', fontWeight: 300, color: GOLD_LIGHT }}>72 hours</em>
             </h2>
           </div>
@@ -681,7 +681,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
               <div key={step.num} style={{ display: 'grid', gridTemplateColumns: '72px 1fr', gap: 0 }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'rgba(255,255,255,0.15)', border: '2px solid rgba(255,255,255,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, zIndex: 1 }}>
-                    <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 800, color: '#ffffff' }}>{step.num}</span>
+                    <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 800, color: '#ffffff' }}>{step.num}</span>
                   </div>
                   {i < URGENT_STEPS.length - 1 && (
                     <div style={{ width: 2, flex: 1, minHeight: 24, background: 'rgba(255,255,255,0.15)', margin: '4px 0' }} />
@@ -689,10 +689,10 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                 </div>
                 <div style={{ paddingBottom: i < URGENT_STEPS.length - 1 ? 36 : 0, paddingLeft: 16 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 6, flexWrap: 'wrap' }}>
-                    <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.2 }}>{step.title}</h3>
-                    <span style={{ fontSize: 10, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: 'rgba(255,255,255,0.15)', color: GOLD, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', flexShrink: 0 }}>{step.timing}</span>
+                    <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: '#ffffff', margin: 0, lineHeight: 1.2 }}>{step.title}</h3>
+                    <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 9px', borderRadius: 100, background: 'rgba(255,255,255,0.15)', color: GOLD, fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', flexShrink: 0 }}>{step.timing}</span>
                   </div>
-                  <p style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{step.body}</p>
+                  <p style={{ fontSize: 14.5, color: 'rgba(255,255,255,0.72)', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>{step.body}</p>
                 </div>
               </div>
             ))}
@@ -700,7 +700,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
 
           <div style={{ marginTop: 44, display: 'flex', justifyContent: 'center' }}>
             <a href="#contact"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ffffff', color: NAVY_DARK, padding: '16px 40px', borderRadius: 9, fontSize: 15, fontWeight: 700, textDecoration: 'none', boxShadow: '0 6px 28px rgba(0,0,0,0.2)', fontFamily: "'Gilroy', sans-serif" }}>
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#ffffff', color: NAVY_DARK, padding: '16px 40px', borderRadius: 9, fontSize: 16, fontWeight: 700, textDecoration: 'none', boxShadow: '0 6px 28px rgba(0,0,0,0.2)', fontFamily: "'Gilroy', sans-serif" }}>
               Request same-day triage
               <Icon name="arrow-right" size={16} />
             </a>
@@ -716,25 +716,25 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
           <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr', background: NAVY, padding: '14px 20px', gap: 12 }}>
               {['Decision type', 'ART review', 'Federal Court', 'Ministerial'].map(h => (
-                <div key={h} style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "'Gilroy', sans-serif" }}>{h}</div>
+                <div key={h} style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: "'Gilroy', sans-serif" }}>{h}</div>
               ))}
             </div>
             {REVIEW_RIGHTS.map((row, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.8fr 1fr 1fr 1fr', padding: '13px 20px', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7', gap: 12, alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={{ width: 8, height: 8, borderRadius: '50%', background: row.color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 13, color: '#374151', fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{row.type}</span>
+                  <span style={{ fontSize: 14, color: '#374151', fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{row.type}</span>
                 </div>
-                <div style={{ fontSize: 12.5, color: row.art.startsWith('Yes') ? GREEN : row.art === 'No' || row.art === 'Generally no' ? '#dc2626' : AMBER, fontWeight: 600, fontFamily: "'Gilroy', sans-serif" }}>{row.art}</div>
-                <div style={{ fontSize: 12.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.federal}</div>
-                <div style={{ fontSize: 12.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.ministerial}</div>
+                <div style={{ fontSize: 13.5, color: row.art.startsWith('Yes') ? GREEN : row.art === 'No' || row.art === 'Generally no' ? '#dc2626' : AMBER, fontWeight: 600, fontFamily: "'Gilroy', sans-serif" }}>{row.art}</div>
+                <div style={{ fontSize: 13.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.federal}</div>
+                <div style={{ fontSize: 13.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.ministerial}</div>
               </div>
             ))}
           </div>
 
           <div style={{ marginTop: 16, padding: '14px 18px', background: `${RED}08`, border: `1px solid ${RED}22`, borderRadius: 10, display: 'flex', alignItems: 'flex-start', gap: 10 }}>
             <Icon name="alert" size={14} color={RED} />
-            <p style={{ fontSize: 12, color: RED_DARK, lineHeight: 1.6, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>
+            <p style={{ fontSize: 13, color: RED_DARK, lineHeight: 1.6, margin: 0, fontFamily: "'Gilroy', sans-serif" }}>
               <strong>This table is a general guide only.</strong> Review rights depend on the specific visa subclass, decision-maker, and jurisdiction. Always read your decision record. {DISCLAIMER}.
             </p>
           </div>

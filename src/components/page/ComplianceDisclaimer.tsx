@@ -8,7 +8,7 @@ export function ComplianceDisclaimer({
   pageNote,
 }: ComplianceDisclaimerProps) {
   const microHeading: React.CSSProperties = {
-    fontSize: 10,
+    fontSize: 11,
     fontWeight: 700,
     letterSpacing: '0.12em',
     textTransform: 'uppercase',
@@ -17,7 +17,7 @@ export function ComplianceDisclaimer({
     margin: '0 0 8px 0',
   }
   const bodyText: React.CSSProperties = {
-    fontSize: 12,
+    fontSize: 13,
     color: '#475569',
     lineHeight: 1.65,
     maxWidth: '75ch',
@@ -62,7 +62,7 @@ export function ComplianceDisclaimer({
             <circle cx="8" cy="11.5" r="0.75" fill="#f5a124" />
           </svg>
         </div>
-        <span style={{ fontSize: 14, fontWeight: 700, color: '#1B2B5E', letterSpacing: '0.01em' }}>
+        <span style={{ fontSize: 15, fontWeight: 700, color: '#1B2B5E', letterSpacing: '0.01em' }}>
           General information only — not immigration advice
         </span>
       </div>
@@ -103,7 +103,7 @@ export function ComplianceDisclaimer({
           borderTop: '1px solid #e2e8f0',
           paddingTop: 12,
           marginTop: pageNote ? 16 : 4,
-          fontSize: 11,
+          fontSize: 12,
           color: '#94a3b8',
           fontStyle: 'italic',
           margin: `${pageNote ? 16 : 4}px 0 0`,

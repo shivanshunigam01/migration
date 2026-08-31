@@ -51,7 +51,7 @@ export function FaqAccordion({ items, accent = NAVY, dark = false }: FaqAccordio
                 fontFamily: "'Gilroy', sans-serif",
               }}
             >
-              <span style={{ fontSize: 15, fontWeight: 600, color: dark ? '#ffffff' : NAVY, lineHeight: 1.4 }}>
+              <span style={{ fontSize: 16, fontWeight: 600, color: dark ? '#ffffff' : NAVY, lineHeight: 1.4 }}>
                 {item.question}
               </span>
               <motion.span
@@ -81,7 +81,7 @@ export function FaqAccordion({ items, accent = NAVY, dark = false }: FaqAccordio
                   style={{ overflow: 'hidden' }}
                 >
                   <div style={{ padding: '0 24px 20px', borderTop: `1px solid ${dark ? 'rgba(255,255,255,0.08)' : '#f0f2f8'}` }}>
-                    <div style={{ paddingTop: 16, fontSize: 14, color: dark ? 'rgba(255,255,255,0.7)' : '#4b5563', lineHeight: 1.75 }}>
+                    <div style={{ paddingTop: 16, fontSize: 15, color: dark ? 'rgba(255,255,255,0.7)' : '#4b5563', lineHeight: 1.75 }}>
                       {item.answer}
                     </div>
                   </div>

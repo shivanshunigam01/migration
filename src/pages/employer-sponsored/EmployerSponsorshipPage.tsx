@@ -233,11 +233,11 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                       <div style={{ width: 52, height: 52, borderRadius: 13, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', color: NAVY }}>
                         <Icon name={visa.icon} size={28} color={NAVY} />
                       </div>
-                      <span style={{ fontSize: 11, fontWeight: 700, color: visa.tagColor, background: `${visa.tagColor}18`, border: `1px solid ${visa.tagColor}44`, borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>{visa.tag}</span>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: visa.tagColor, background: `${visa.tagColor}18`, border: `1px solid ${visa.tagColor}44`, borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>{visa.tag}</span>
                     </div>
-                    <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass {visa.code}</div>
-                    <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 12px', lineHeight: 1.25 }}>{visa.name}</h3>
-                    <p style={{ fontSize: 13, color: '#6b7a8d', lineHeight: 1.7, margin: '0 0 20px' }}>{visa.summary}</p>
+                    <div style={{ fontSize: 12, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass {visa.code}</div>
+                    <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: '0 0 12px', lineHeight: 1.25 }}>{visa.name}</h3>
+                    <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, margin: '0 0 20px' }}>{visa.summary}</p>
 
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
                       {[
@@ -247,14 +247,14 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                         { label: 'Min Salary', val: visa.tsmit },
                       ].map(item => (
                         <div key={item.label} style={{ background: '#f8fafd', borderRadius: 8, padding: '10px 12px' }}>
-                          <div style={{ fontSize: 10, color: '#9ca3af', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 3 }}>{item.label}</div>
-                          <div style={{ fontSize: 12, color: NAVY, fontWeight: 600, lineHeight: 1.3 }}>{item.val}</div>
+                          <div style={{ fontSize: 11, color: '#9ca3af', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 3 }}>{item.label}</div>
+                          <div style={{ fontSize: 13, color: NAVY, fontWeight: 600, lineHeight: 1.3 }}>{item.val}</div>
                         </div>
                       ))}
                     </div>
 
                     <button onClick={() => setSelectedVisa(isOpen ? null : visa.code)}
-                      style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${isOpen ? GOLD : '#e5eaf4'}`, background: isOpen ? GOLD : 'transparent', color: isOpen ? NAVY_DARK : NAVY, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
+                      style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${isOpen ? GOLD : '#e5eaf4'}`, background: isOpen ? GOLD : 'transparent', color: isOpen ? NAVY_DARK : NAVY, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
                     >
                       {isOpen ? 'Hide details ↑' : 'See full details →'}
                     </button>
@@ -264,24 +264,24 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                   {isOpen && (
                     <div style={{ borderTop: `1px solid rgba(245,161,36,0.2)`, padding: '20px 28px 28px', background: 'rgba(245,161,36,0.08)' }}>
                       <div style={{ marginBottom: 20 }}>
-                        <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Best suited for</div>
+                        <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Best suited for</div>
                         {visa.bestFor.map(b => (
                           <div key={b} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 7 }}>
                             <Icon name="check" size={14} color={GOLD} />
-                            <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{b}</span>
+                            <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{b}</span>
                           </div>
                         ))}
                       </div>
                       <div>
-                        <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Key employer obligations</div>
+                        <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 10 }}>Key employer obligations</div>
                         {visa.obligations.map(o => (
                           <div key={o} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 7 }}>
                             <div style={{ width: 6, height: 6, borderRadius: '50%', background: NAVY, marginTop: 5, flexShrink: 0 }} />
-                            <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{o}</span>
+                            <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{o}</span>
                           </div>
                         ))}
                       </div>
-                      <a href="#contact-cta" style={{ display: 'block', marginTop: 20, textAlign: 'center', backgroundColor: NAVY, color: '#fff', padding: '12px', borderRadius: 8, textDecoration: 'none', fontSize: 13, fontWeight: 700 }}>
+                      <a href="#contact-cta" style={{ display: 'block', marginTop: 20, textAlign: 'center', backgroundColor: NAVY, color: '#fff', padding: '12px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>
                         Enquire about {visa.code} sponsorship →
                       </a>
                     </div>
@@ -300,21 +300,21 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
 
             {/* Left — controls */}
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Government Fee Estimator</div>
-              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Government Fee Estimator</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 14px', letterSpacing: '-0.02em' }}>
                 Know your costs before you commit
               </h2>
-              <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 32 }}>
+              <p style={{ fontSize: 15, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 32 }}>
                 Real 2024–25 DHA fee data. Adjust the inputs to estimate total government charges for your sponsorship. Agent fees are shown separately as a range.
               </p>
 
               {/* Visa type */}
               <div style={{ marginBottom: 20 }}>
-                <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Visa Subclass</label>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Visa Subclass</label>
                 <div style={{ display: 'flex', gap: 8 }}>
                   {(['482', '186', '494'] as const).map(v => (
                     <button key={v} onClick={() => setCalcVisa(v)}
-                      style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: `1.5px solid ${calcVisa === v ? NAVY : '#e5eaf4'}`, background: calcVisa === v ? NAVY : '#fff', color: calcVisa === v ? '#fff' : '#6b7a8d', fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
+                      style={{ flex: 1, padding: '10px 4px', borderRadius: 8, border: `1.5px solid ${calcVisa === v ? NAVY : '#e5eaf4'}`, background: calcVisa === v ? NAVY : '#fff', color: calcVisa === v ? '#fff' : '#6b7a8d', fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
                     >{v}</button>
                   ))}
                 </div>
@@ -323,11 +323,11 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Business size */}
               {FEE_DATA[calcVisa].safLevy && (
                 <div style={{ marginBottom: 20 }}>
-                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Business Size (SAF Levy)</label>
+                  <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Business Size (SAF Levy)</label>
                   <div style={{ display: 'flex', gap: 8 }}>
                     {[{ val: 'small', label: 'Small (&lt;$10M turnover)' }, { val: 'standard', label: 'Standard ($10M+)' }].map(opt => (
                       <button key={opt.val} onClick={() => setCalcBizSize(opt.val as 'small' | 'standard')}
-                        style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: `1.5px solid ${calcBizSize === opt.val ? NAVY : '#e5eaf4'}`, background: calcBizSize === opt.val ? NAVY : '#fff', color: calcBizSize === opt.val ? '#fff' : '#6b7a8d', fontSize: 12, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
+                        style={{ flex: 1, padding: '10px 8px', borderRadius: 8, border: `1.5px solid ${calcBizSize === opt.val ? NAVY : '#e5eaf4'}`, background: calcBizSize === opt.val ? NAVY : '#fff', color: calcBizSize === opt.val ? '#fff' : '#6b7a8d', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}
                         dangerouslySetInnerHTML={{ __html: opt.label }}
                       />
                     ))}
@@ -337,7 +337,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
 
               {/* Workers */}
               <div style={{ marginBottom: 20 }}>
-                <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Number of Workers: <span style={{ color: GOLD }}>{calcWorkers}</span></label>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Number of Workers: <span style={{ color: GOLD }}>{calcWorkers}</span></label>
                 <input type="range" min={1} max={10} value={calcWorkers} onChange={e => setCalcWorkers(Number(e.target.value))}
                   style={{ width: '100%', accentColor: GOLD }} />
               </div>
@@ -345,7 +345,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Visa years */}
               {FEE_DATA[calcVisa].safLevy && (
                 <div style={{ marginBottom: 20 }}>
-                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Visa Duration (years): <span style={{ color: GOLD }}>{calcYears}</span></label>
+                  <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Visa Duration (years): <span style={{ color: GOLD }}>{calcYears}</span></label>
                   <input type="range" min={1} max={4} value={calcYears} onChange={e => setCalcYears(Number(e.target.value))}
                     style={{ width: '100%', accentColor: GOLD }} />
                 </div>
@@ -353,12 +353,12 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
 
               {/* Family members */}
               <div style={{ marginBottom: 8 }}>
-                <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Secondary Adult Applicants: <span style={{ color: GOLD }}>{calcAdults}</span></label>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Secondary Adult Applicants: <span style={{ color: GOLD }}>{calcAdults}</span></label>
                 <input type="range" min={0} max={4} value={calcAdults} onChange={e => setCalcAdults(Number(e.target.value))}
                   style={{ width: '100%', accentColor: GOLD }} />
               </div>
               <div style={{ marginBottom: 0 }}>
-                <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Child Applicants: <span style={{ color: GOLD }}>{calcChildren}</span></label>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>Child Applicants: <span style={{ color: GOLD }}>{calcChildren}</span></label>
                 <input type="range" min={0} max={6} value={calcChildren} onChange={e => setCalcChildren(Number(e.target.value))}
                   style={{ width: '100%', accentColor: GOLD }} />
               </div>
@@ -368,11 +368,11 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
             <div>
               {/* Total banner */}
               <div style={{ background: `linear-gradient(135deg, ${NAVY_DARK} 0%, ${NAVY} 100%)`, borderRadius: 16, padding: '28px 32px', marginBottom: 20 }}>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>Estimated Government Charges</div>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(36px, 4vw, 52px)', fontWeight: 800, color: '#fff', letterSpacing: '-0.03em' }}>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 6 }}>Estimated Government Charges</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(38px, 4vw, 54px)', fontWeight: 800, color: '#fff', letterSpacing: '-0.03em' }}>
                   ${totalGov.toLocaleString()}
                 </div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginTop: 4 }}>
+                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', marginTop: 4 }}>
                   + agent fees est. ${(fees.agentLow * calcWorkers).toLocaleString()} – ${(fees.agentHigh * calcWorkers).toLocaleString()}
                 </div>
               </div>
@@ -380,8 +380,8 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Fee breakdown */}
               <div style={{ border: '1.5px solid #e5eaf4', borderRadius: 14, overflow: 'hidden' }}>
                 <div style={{ padding: '16px 24px', background: '#f8fafd', borderBottom: '1px solid #e5eaf4', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Fee Breakdown</span>
-                  <span style={{ fontSize: 11, color: '#9ca3af' }}>2024–25 DHA rates</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: NAVY, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Fee Breakdown</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af' }}>2024–25 DHA rates</span>
                 </div>
 
                 {[
@@ -413,11 +413,11 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                 ].filter(Boolean).map((row: any) => (
                   <div key={row.label} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 24px', borderBottom: '1px solid #f0f2f8', background: row.highlight ? 'rgba(245,161,36,0.04)' : '#fff' }}>
                     <div style={{ flex: 1, minWidth: 0, paddingRight: 16 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, marginBottom: 2 }}>{row.label}</div>
-                      <div style={{ fontSize: 11, color: '#9ca3af' }}>{row.note}</div>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: NAVY, marginBottom: 2 }}>{row.label}</div>
+                      <div style={{ fontSize: 12, color: '#9ca3af' }}>{row.note}</div>
                     </div>
                     <div style={{ flexShrink: 0, textAlign: 'right' }}>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: row.isAgent ? '#6b7a8d' : NAVY }}>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: row.isAgent ? '#6b7a8d' : NAVY }}>
                         {row.isAgent ? `~$${row.amount.toLocaleString()}` : `$${row.amount.toLocaleString()}`}
                       </div>
                     </div>
@@ -425,15 +425,15 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                 ))}
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px', background: NAVY }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.8)' }}>Total estimated cost</div>
-                  <div style={{ fontSize: 18, fontWeight: 800, color: GOLD }}>${(totalGov + agentMid).toLocaleString()}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.8)' }}>Total estimated cost</div>
+                  <div style={{ fontSize: 19, fontWeight: 800, color: GOLD }}>${(totalGov + agentMid).toLocaleString()}</div>
                 </div>
               </div>
 
-              <p style={{ fontSize: 11, color: '#9ca3af', marginTop: 12, lineHeight: 1.6, display: 'flex', alignItems: 'flex-start', gap: 4 }}>
+              <p style={{ fontSize: 12, color: '#9ca3af', marginTop: 12, lineHeight: 1.6, display: 'flex', alignItems: 'flex-start', gap: 4 }}>
                 <Icon name="alert" size={11} color="#9ca3af" /><span>Estimates only. Government fees change periodically. Health insurance (OVHC), skills assessment, English test, and medicals are not included. Contact us for a precise quote.</span>
               </p>
-              <p style={{ fontSize: 11, color: '#9ca3af', marginTop: 6, lineHeight: 1.6 }}>
+              <p style={{ fontSize: 12, color: '#9ca3af', marginTop: 6, lineHeight: 1.6 }}>
                 Figures current as at 1 July 2026 — verify with Home Affairs.
               </p>
             </div>
@@ -488,13 +488,13 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               {/* Phase label */}
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
                 <div style={{ width: 56, height: 56, borderRadius: '50%', background: phase.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: `0 4px 16px ${phase.color}44` }}>
-                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 800, color: '#fff' }}>{phase.phase}</span>
+                  <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 800, color: '#fff' }}>{phase.phase}</span>
                 </div>
                 <div style={{ paddingTop: 4 }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 4, lineHeight: 1.2 }}>{phase.name}</div>
+                  <div style={{ fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 4, lineHeight: 1.2 }}>{phase.name}</div>
                   <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
                     {[{ label: '482', val: phase.timing482 }, { label: '186', val: phase.timing186 }, { label: '494', val: phase.timing494 }].map(t => (
-                      <span key={t.label} style={{ fontSize: 10, fontWeight: 700, color: '#6b7a8d', background: '#f0f2f8', borderRadius: 100, padding: '2px 8px', whiteSpace: 'nowrap' }}>{t.label}: {t.val}</span>
+                      <span key={t.label} style={{ fontSize: 11, fontWeight: 700, color: '#6b7a8d', background: '#f0f2f8', borderRadius: 100, padding: '2px 8px', whiteSpace: 'nowrap' }}>{t.label}: {t.val}</span>
                     ))}
                   </div>
                 </div>
@@ -502,16 +502,16 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
 
               {/* Phase content */}
               <div style={{ background: '#fff', borderRadius: 14, border: '1.5px solid #e5eaf4', padding: '24px 28px' }}>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>{phase.desc}</p>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>{phase.desc}</p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 8, marginBottom: 14 }}>
                   {phase.steps.map(s => (
                     <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <Icon name="check" size={13} color={GOLD} />
-                      <span style={{ fontSize: 12, color: '#374151' }}>{s}</span>
+                      <span style={{ fontSize: 13, color: '#374151' }}>{s}</span>
                     </div>
                   ))}
                 </div>
-                <div style={{ fontSize: 12, color: '#9ca3af', background: '#f8fafd', borderRadius: 7, padding: '8px 12px', borderLeft: `3px solid ${GOLD}` }}>{phase.note}</div>
+                <div style={{ fontSize: 13, color: '#9ca3af', background: '#f8fafd', borderRadius: 7, padding: '8px 12px', borderLeft: `3px solid ${GOLD}` }}>{phase.note}</div>
               </div>
             </div>
           ))}
@@ -523,16 +523,16 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '320px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Compliance</div>
-              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Compliance</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3vw, 38px)', fontWeight: 700, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.02em' }}>
                 Employer obligations you must meet
               </h2>
-              <p style={{ fontSize: 14, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 24 }}>
+              <p style={{ fontSize: 15, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 24 }}>
                 Approved sponsors have ongoing legal obligations. Breaches can result in sanctions, cancellation, and bars on future sponsorship. We brief every client employer thoroughly before work commences.
               </p>
               <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.3)', borderRadius: 12, padding: '16px 18px' }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: '#0d1632', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 4 }}><Icon name="alert" size={12} color="#0d1632" /> DHA Compliance Checks</div>
-                <div style={{ fontSize: 12, color: '#0d1632', lineHeight: 1.6 }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#0d1632', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 4 }}><Icon name="alert" size={12} color="#0d1632" /> DHA Compliance Checks</div>
+                <div style={{ fontSize: 13, color: '#0d1632', lineHeight: 1.6 }}>
                   The Department of Home Affairs conducts unannounced workplace inspections of approved sponsors. Non-compliance penalties include fines up to $93,900 per breach.
                 </div>
               </div>
@@ -545,12 +545,12 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                     <span style={{ flexShrink: 0 }}><Icon name={ob.icon} size={22} color={NAVY} /></span>
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                        <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, lineHeight: 1.2 }}>{ob.title}</div>
-                        {ob.status === 'critical' && <span style={{ fontSize: 9, fontWeight: 800, color: '#dc2626', background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.35)', borderRadius: 100, padding: '1px 7px', letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Critical</span>}
+                        <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.2 }}>{ob.title}</div>
+                        {ob.status === 'critical' && <span style={{ fontSize: 10, fontWeight: 800, color: '#dc2626', background: 'rgba(220,38,38,0.08)', border: '1px solid rgba(220,38,38,0.35)', borderRadius: 100, padding: '1px 7px', letterSpacing: '0.06em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Critical</span>}
                       </div>
                     </div>
                   </div>
-                  <p style={{ fontSize: 12, color: '#6b7a8d', lineHeight: 1.65, margin: 0 }}>{ob.desc}</p>
+                  <p style={{ fontSize: 13, color: '#6b7a8d', lineHeight: 1.65, margin: 0 }}>{ob.desc}</p>
                 </div>
               ))}
             </div>
@@ -572,14 +572,14 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
             {CASE_STUDIES.map(cs => (
               <div key={cs.company} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 18, padding: '28px 28px', backdropFilter: 'blur(12px)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-                  <div style={{ width: 44, height: 44, borderRadius: 11, background: 'rgba(245,161,36,0.15)', border: '1px solid rgba(245,161,36,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>
+                  <div style={{ width: 44, height: 44, borderRadius: 11, background: 'rgba(245,161,36,0.15)', border: '1px solid rgba(245,161,36,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 19 }}>
                     <Icon name={cs.sector === 'Technology' ? 'briefcase' : 'heart'} size={20} color={NAVY} />
                   </div>
                   <div>
-                    <div style={{ fontSize: 12, fontWeight: 700, color: GOLD, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{cs.sector}</div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: '#fff' }}>{cs.company}</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: GOLD, letterSpacing: '0.06em', textTransform: 'uppercase' }}>{cs.sector}</div>
+                    <div style={{ fontSize: 15, fontWeight: 600, color: '#fff' }}>{cs.company}</div>
                   </div>
-                  <div style={{ marginLeft: 'auto', fontSize: 11, color: 'rgba(255,255,255,0.4)', textAlign: 'right' }}>{cs.headcount}</div>
+                  <div style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(255,255,255,0.4)', textAlign: 'right' }}>{cs.headcount}</div>
                 </div>
 
                 {[
@@ -588,16 +588,16 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                   { label: 'Outcome', text: cs.outcome, color: '#f5a124' },
                 ].map(block => (
                   <div key={block.label} style={{ marginBottom: 14 }}>
-                    <div style={{ fontSize: 10, fontWeight: 800, color: block.color, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 5 }}>{block.label}</div>
-                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>{block.text}</div>
+                    <div style={{ fontSize: 11, fontWeight: 800, color: block.color, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 5 }}>{block.label}</div>
+                    <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', lineHeight: 1.65 }}>{block.text}</div>
                   </div>
                 ))}
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 16, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>⏱ {cs.timeline}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)' }}>⏱ {cs.timeline}</div>
                   <div style={{ display: 'flex', gap: 6 }}>
                     {cs.visas.map(v => (
-                      <span key={v} style={{ fontSize: 10, fontWeight: 700, color: GOLD, background: 'rgba(245,161,36,0.12)', border: '1px solid rgba(245,161,36,0.3)', borderRadius: 100, padding: '3px 9px' }}>{v}</span>
+                      <span key={v} style={{ fontSize: 11, fontWeight: 700, color: GOLD, background: 'rgba(245,161,36,0.12)', border: '1px solid rgba(245,161,36,0.3)', borderRadius: 100, padding: '3px 9px' }}>{v}</span>
                     ))}
                   </div>
                 </div>

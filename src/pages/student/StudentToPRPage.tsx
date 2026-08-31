@@ -177,8 +177,8 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
   const visaChainWidget = (
     <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 48px rgba(27,43,94,0.12)', border: '1px solid #e8edf6', overflow: 'hidden' }}>
       <div style={{ background: NAVY, padding: '18px 24px' }}>
-        <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>The Typical Roadmap</div>
-        <div style={{ color: '#fff', fontSize: 16, fontWeight: 700 }}>Your visa chain at a glance</div>
+        <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 3 }}>The Typical Roadmap</div>
+        <div style={{ color: '#fff', fontSize: 17, fontWeight: 700 }}>Your visa chain at a glance</div>
       </div>
       <div style={{ padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: 0 }}>
         {[
@@ -190,14 +190,14 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
             <div style={{ display: 'flex', gap: 14, padding: '14px 0', alignItems: 'flex-start' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0 }}>
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: `${stage.color}18`, border: `2px solid ${stage.color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <span style={{ fontSize: 11, fontWeight: 800, color: stage.color }}>{stage.code}</span>
+                  <span style={{ fontSize: 12, fontWeight: 800, color: stage.color }}>{stage.code}</span>
                 </div>
                 {i < 2 && <div style={{ width: 2, height: 20, background: `${stage.color}30`, marginTop: 4 }} />}
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 2 }}>{stage.label}</div>
-                <div style={{ fontSize: 12, color: '#6b7280', marginBottom: 4 }}>{stage.duration}</div>
-                <div style={{ fontSize: 11, color: stage.color, fontWeight: 600, background: `${stage.color}10`, border: `1px solid ${stage.color}25`, padding: '3px 10px', borderRadius: 6, display: 'inline-block' }}>{stage.key}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 2 }}>{stage.label}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', marginBottom: 4 }}>{stage.duration}</div>
+                <div style={{ fontSize: 12, color: stage.color, fontWeight: 600, background: `${stage.color}10`, border: `1px solid ${stage.color}25`, padding: '3px 10px', borderRadius: 6, display: 'inline-block' }}>{stage.key}</div>
               </div>
             </div>
             {i < 2 && <div style={{ height: 1, background: '#f0f2f8', margin: '0 0 0 58px' }} />}
@@ -205,7 +205,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         ))}
       </div>
       <div style={{ background: '#f8f9fc', padding: '14px 24px', borderTop: '1px solid #f0f2f8' }}>
-        <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
+        <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>
           <strong style={{ color: NAVY }}>Key insight:</strong> Each stage has decisions that affect the next. Poor choices at stage 1 can close doors at stage 3 entirely.
         </div>
       </div>
@@ -266,9 +266,9 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       <div id="pathway-map" style={{ background: NAVY, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Decision Architecture</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Decision Architecture</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Every Fork in the Road</h2>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 16, maxWidth: 560, margin: '0 auto' }}>The decisions that shape your outcome — and when they're actually made.</p>
+            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 17, maxWidth: 560, margin: '0 auto' }}>The decisions that shape your outcome — and when they're actually made.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}>
@@ -319,7 +319,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                   <div style={{ width: 36, height: 36, borderRadius: 10, background: `${col.color}25`, border: `1px solid ${col.color}40`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Icon name={col.icon} size={16} color={col.color} />
                   </div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: '#fff' }}>{col.stage}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#fff' }}>{col.stage}</div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                   {col.decisions.map((dec, di) => (
@@ -333,8 +333,8 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                           <Icon name={dec.positive ? 'check' : 'x'} size={10} color={dec.positive ? col.color : '#dc2626'} />
                         </div>
                         <div>
-                          <div style={{ fontSize: 12, fontWeight: 600, color: dec.positive ? 'rgba(255,255,255,0.9)' : 'rgba(220,38,38,0.4)', lineHeight: 1.3, marginBottom: 3 }}>{dec.label}</div>
-                          <div style={{ fontSize: 11, color: dec.positive ? 'rgba(255,255,255,0.45)' : 'rgba(220,38,38,0.4)', lineHeight: 1.4 }}>{dec.impact}</div>
+                          <div style={{ fontSize: 13, fontWeight: 600, color: dec.positive ? 'rgba(255,255,255,0.9)' : 'rgba(220,38,38,0.4)', lineHeight: 1.3, marginBottom: 3 }}>{dec.label}</div>
+                          <div style={{ fontSize: 12, color: dec.positive ? 'rgba(255,255,255,0.45)' : 'rgba(220,38,38,0.4)', lineHeight: 1.4 }}>{dec.impact}</div>
                         </div>
                       </div>
                     </div>
@@ -350,9 +350,9 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       <div id="course-explorer" style={{ background: '#fafbfe', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Interactive Tool</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Interactive Tool</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Course → PR Explorer</h2>
-            <p style={{ fontSize: 16, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>Select a field of study to see your occupation mapping, assessing authority, occupation list status and realistic PR routes.</p>
+            <p style={{ fontSize: 17, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>Select a field of study to see your occupation mapping, assessing authority, occupation list status and realistic PR routes.</p>
           </div>
 
           {/* Field selector */}
@@ -364,7 +364,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                   border: `2px solid ${selectedOcc === i ? occ.color : '#e0e4ef'}`,
                   background: selectedOcc === i ? `${occ.color}12` : '#fff',
                   color: selectedOcc === i ? occ.color : '#374151',
-                  fontSize: 14, fontWeight: selectedOcc === i ? 700 : 500,
+                  fontSize: 15, fontWeight: selectedOcc === i ? 700 : 500,
                   cursor: 'pointer', transition: 'all 0.15s',
                   display: 'flex', alignItems: 'center', gap: 8,
                 }}>
@@ -382,19 +382,19 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                 <div style={{ background: `linear-gradient(135deg, ${occ.color}15 0%, ${occ.color}08 100%)`, padding: '24px 32px', borderBottom: '1px solid #f0f2f8' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
-                      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: occ.color, marginBottom: 6 }}>ANZSCO {occ.anzsco}</div>
-                      <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 4px' }}>{occ.field}</h3>
-                      <div style={{ fontSize: 14, color: '#6b7280' }}>Assessed by: <strong style={{ color: NAVY }}>{occ.authority}</strong></div>
+                      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: occ.color, marginBottom: 6 }}>ANZSCO {occ.anzsco}</div>
+                      <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 29, fontWeight: 700, color: NAVY, margin: '0 0 4px' }}>{occ.field}</h3>
+                      <div style={{ fontSize: 15, color: '#6b7280' }}>Assessed by: <strong style={{ color: NAVY }}>{occ.authority}</strong></div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-end' }}>
-                      <span style={{ background: occ.prSpeed.includes('Fast') ? 'rgba(245,161,36,0.12)' : occ.prSpeed === 'Moderate' ? 'rgba(245,161,36,0.15)' : 'rgba(220,38,38,0.12)', color: occ.prSpeed.includes('Fast') ? '#f5a124' : occ.prSpeed === 'Moderate' ? '#f5a124' : '#dc2626', padding: '5px 14px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>PR Speed: {occ.prSpeed}</span>
+                      <span style={{ background: occ.prSpeed.includes('Fast') ? 'rgba(245,161,36,0.12)' : occ.prSpeed === 'Moderate' ? 'rgba(245,161,36,0.15)' : 'rgba(220,38,38,0.12)', color: occ.prSpeed.includes('Fast') ? '#f5a124' : occ.prSpeed === 'Moderate' ? '#f5a124' : '#dc2626', padding: '5px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700 }}>PR Speed: {occ.prSpeed}</span>
                     </div>
                   </div>
                 </div>
 
                 <div style={{ padding: '28px 32px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
                   <div>
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Occupation List Status</div>
+                    <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Occupation List Status</div>
                     <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
                       {[
                         { label: 'MLTSSL (189 eligible)', active: occ.onCSML },
@@ -402,30 +402,30 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                       ].map(lst => (
                         <div key={lst.label} style={{ flex: 1, padding: '12px 14px', borderRadius: 10, border: `1.5px solid ${lst.active ? occ.color : '#e0e4ef'}`, background: lst.active ? `${occ.color}08` : '#f8f9fc', textAlign: 'center' }}>
                           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 4 }}><Icon name={lst.active ? 'check' : 'x'} size={11} color={lst.active ? occ.color : '#9ca3af'} /></div>
-                          <div style={{ fontSize: 11, color: lst.active ? NAVY : '#9ca3af', fontWeight: 600, lineHeight: 1.3 }}>{lst.label}</div>
+                          <div style={{ fontSize: 12, color: lst.active ? NAVY : '#9ca3af', fontWeight: 600, lineHeight: 1.3 }}>{lst.label}</div>
                         </div>
                       ))}
                     </div>
 
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 12 }}>PR Pathways Available</div>
+                    <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 12 }}>PR Pathways Available</div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                       {occ.visaOptions.map(v => (
-                        <span key={v} style={{ padding: '5px 14px', borderRadius: 20, fontSize: 12, fontWeight: 700, background: `${occ.color}12`, color: occ.color, border: `1px solid ${occ.color}30` }}>{v}</span>
+                        <span key={v} style={{ padding: '5px 14px', borderRadius: 20, fontSize: 13, fontWeight: 700, background: `${occ.color}12`, color: occ.color, border: `1px solid ${occ.color}30` }}>{v}</span>
                       ))}
                     </div>
                   </div>
 
                   <div>
-                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Typical Courses</div>
+                    <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Typical Courses</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
                       {occ.courses.map(c => (
-                        <div key={c} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13, color: '#374151' }}>
+                        <div key={c} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 14, color: '#374151' }}>
                           <Icon name="book" size={14} color={occ.color} /> {c}
                         </div>
                       ))}
                     </div>
                     <div style={{ background: `${occ.color}08`, border: `1px solid ${occ.color}25`, borderRadius: 10, padding: '14px 16px' }}>
-                      <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.65 }}>{occ.note}</div>
+                      <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.65 }}>{occ.note}</div>
                     </div>
                   </div>
                 </div>
@@ -434,7 +434,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
           })()}
 
           {selectedOcc === null && (
-            <div style={{ textAlign: 'center', padding: '32px', color: '#9ca3af', fontSize: 14 }}>← Select a field above to explore the PR pathway</div>
+            <div style={{ textAlign: 'center', padding: '32px', color: '#9ca3af', fontSize: 15 }}>← Select a field above to explore the PR pathway</div>
           )}
         </div>
       </div>
@@ -444,22 +444,22 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Interactive Planner</div>
-              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Your 485 Runway Planner</h2>
-              <p style={{ color: '#6b7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 28px' }}>Enter your graduation date. We map the key milestones to hit before your 485 expires — so you arrive at PR well before the deadline.</p>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>Interactive Planner</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Your 485 Runway Planner</h2>
+              <p style={{ color: '#6b7280', fontSize: 16, lineHeight: 1.7, margin: '0 0 28px' }}>Enter your graduation date. We map the key milestones to hit before your 485 expires — so you arrive at PR well before the deadline.</p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <div>
-                  <label style={{ fontSize: 12, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 6 }}>Graduation / completion date</label>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 6 }}>Graduation / completion date</label>
                   <input type="date" value={graduationDate} onChange={e => setGraduationDate(e.target.value)}
-                    style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, border: '1.5px solid #e0e4ef', color: NAVY, outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
+                    style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 14, border: '1.5px solid #e0e4ef', color: NAVY, outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                 </div>
                 <div>
-                  <label style={{ fontSize: 12, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 8 }}>Degree level (determines 485 length)</label>
+                  <label style={{ fontSize: 13, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 8 }}>Degree level (determines 485 length)</label>
                   <div style={{ display: 'flex', gap: 8 }}>
                     {[{ val: 'bachelor' as const, label: "Bachelor's (2 yrs)" }, { val: 'master' as const, label: "Master's (3 yrs)" }, { val: 'phd' as const, label: 'PhD (4 yrs)' }].map(opt => (
                       <button key={opt.val} onClick={() => setDegreeLevel(opt.val)}
-                        style={{ flex: 1, padding: '9px 8px', borderRadius: 8, border: `1.5px solid ${degreeLevel === opt.val ? NAVY : '#e0e4ef'}`, background: degreeLevel === opt.val ? NAVY : '#fff', color: degreeLevel === opt.val ? '#fff' : '#374151', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+                        style={{ flex: 1, padding: '9px 8px', borderRadius: 8, border: `1.5px solid ${degreeLevel === opt.val ? NAVY : '#e0e4ef'}`, background: degreeLevel === opt.val ? NAVY : '#fff', color: degreeLevel === opt.val ? '#fff' : '#374151', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                         {opt.label}
                       </button>
                     ))}
@@ -469,11 +469,11 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
 
               {visa485End && (
                 <div style={{ marginTop: 24, background: `${GOLD}10`, border: `1px solid ${GOLD}30`, borderRadius: 12, padding: '16px 20px' }}>
-                  <div style={{ fontSize: 12, color: '#6b7280', marginBottom: 4 }}>Your 485 visa will expire approximately</div>
-                  <div style={{ fontSize: 20, fontWeight: 800, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>
+                  <div style={{ fontSize: 13, color: '#6b7280', marginBottom: 4 }}>Your 485 visa will expire approximately</div>
+                  <div style={{ fontSize: 21, fontWeight: 800, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>
                     {visa485End.toLocaleDateString('en-AU', { month: 'long', year: 'numeric' })}
                   </div>
-                  <div style={{ fontSize: 12, color: GOLD, marginTop: 4, fontWeight: 600 }}>PR lodgement must occur before this date</div>
+                  <div style={{ fontSize: 13, color: GOLD, marginTop: 4, fontWeight: 600 }}>PR lodgement must occur before this date</div>
                 </div>
               )}
             </div>
@@ -498,12 +498,12 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                           </div>
                           <div style={{ flex: 1, background: isLast ? 'rgba(220,38,38,0.08)' : isPast ? '#f8f9fc' : '#fff', border: `1px solid ${isLast ? 'rgba(220,38,38,0.35)' : '#e8edf6'}`, borderRadius: 12, padding: '14px 18px', marginBottom: 8 }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                              <div style={{ fontSize: 13, fontWeight: 700, color: isLast ? '#dc2626' : isPast ? '#9ca3af' : NAVY, lineHeight: 1.3, marginBottom: 4 }}>{ev.label}</div>
-                              <div style={{ fontSize: 12, fontWeight: 700, color: isLast ? '#dc2626' : '#6b7280', whiteSpace: 'nowrap', marginLeft: 12 }}>
+                              <div style={{ fontSize: 14, fontWeight: 700, color: isLast ? '#dc2626' : isPast ? '#9ca3af' : NAVY, lineHeight: 1.3, marginBottom: 4 }}>{ev.label}</div>
+                              <div style={{ fontSize: 13, fontWeight: 700, color: isLast ? '#dc2626' : '#6b7280', whiteSpace: 'nowrap', marginLeft: 12 }}>
                                 {ev.date.toLocaleDateString('en-AU', { month: 'short', year: 'numeric' })}
                               </div>
                             </div>
-                            <div style={{ fontSize: 12, color: isPast ? '#9ca3af' : '#6b7280' }}>{ev.note}</div>
+                            <div style={{ fontSize: 13, color: isPast ? '#9ca3af' : '#6b7280' }}>{ev.note}</div>
                           </div>
                         </div>
                       )
@@ -513,7 +513,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
               ) : (
                 <div style={{ background: '#f8f9fc', border: '1px dashed #e0e4ef', borderRadius: 16, padding: '48px 32px', textAlign: 'center' }}>
                   <Icon name="calendar" size={32} color="#d1d5db" />
-                  <div style={{ marginTop: 16, fontSize: 15, color: '#9ca3af' }}>Enter your graduation date to see your personalised 485 milestone map</div>
+                  <div style={{ marginTop: 16, fontSize: 16, color: '#9ca3af' }}>Enter your graduation date to see your personalised 485 milestone map</div>
                 </div>
               )}
             </div>
@@ -525,9 +525,9 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       <div style={{ background: '#fafbfe', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 52 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Points Projection</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Points Projection</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>What Study Can Build for You</h2>
-            <p style={{ fontSize: 16, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>Toggle your study and work profile to see the indicative points total you can build through the student pathway.</p>
+            <p style={{ fontSize: 17, color: '#6b7280', maxWidth: 500, margin: '0 auto' }}>Toggle your study and work profile to see the indicative points total you can build through the student pathway.</p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: 40, alignItems: 'start' }}>
@@ -553,12 +553,12 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                   <div style={{ width: 24, height: 24, borderRadius: 6, border: `2px solid ${field.val ? GOLD : '#d1d5db'}`, background: field.val ? GOLD : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'all 0.15s' }}>
                     {field.val && <Icon name="check" size={12} color={NAVY_DARK} />}
                   </div>
-                  <span style={{ flex: 1, fontSize: 14, color: NAVY, fontWeight: 500 }}>{field.label}</span>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: field.val ? GOLD : '#9ca3af', background: field.val ? `${GOLD}18` : '#f0f2f8', padding: '3px 12px', borderRadius: 20, whiteSpace: 'nowrap' }}>{field.badge}</span>
+                  <span style={{ flex: 1, fontSize: 15, color: NAVY, fontWeight: 500 }}>{field.label}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: field.val ? GOLD : '#9ca3af', background: field.val ? `${GOLD}18` : '#f0f2f8', padding: '3px 12px', borderRadius: 20, whiteSpace: 'nowrap' }}>{field.badge}</span>
                 </div>
               ))}
 
-              <div style={{ padding: '14px 20px', background: 'rgba(27,43,94,0.04)', borderRadius: 12, fontSize: 13, color: '#6b7280', lineHeight: 1.6, marginTop: 4 }}>
+              <div style={{ padding: '14px 20px', background: 'rgba(27,43,94,0.04)', borderRadius: 12, fontSize: 14, color: '#6b7280', lineHeight: 1.6, marginTop: 4 }}>
                 <strong style={{ color: NAVY }}>Base included:</strong> Age 25–32 (+30 pts), Bachelor/Master qual (+15 pts), single/no-pts partner (+10 pts), Proficient English (+10 pts). Toggle the above to add study-phase gains.
               </div>
             </div>
@@ -568,8 +568,8 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
               <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 40px rgba(27,43,94,0.12)', border: `2px solid ${scoreColor}30`, overflow: 'hidden' }}>
                 <div style={{ background: `${scoreColor}12`, padding: '28px 24px', textAlign: 'center', borderBottom: '1px solid #f0f2f8' }}>
                   <div style={{ fontSize: 64, fontWeight: 800, color: scoreColor, lineHeight: 1, fontFamily: "'Gilroy', sans-serif" }}>{totalIndicative}</div>
-                  <div style={{ fontSize: 13, color: '#6b7280', marginTop: 4 }}>indicative points</div>
-                  <div style={{ display: 'inline-block', marginTop: 12, background: `${scoreColor}18`, color: scoreColor, border: `1px solid ${scoreColor}40`, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 14px', borderRadius: 20 }}>{scoreLabel}</div>
+                  <div style={{ fontSize: 14, color: '#6b7280', marginTop: 4 }}>indicative points</div>
+                  <div style={{ display: 'inline-block', marginTop: 12, background: `${scoreColor}18`, color: scoreColor, border: `1px solid ${scoreColor}40`, fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '4px 14px', borderRadius: 20 }}>{scoreLabel}</div>
                 </div>
                 <div style={{ padding: '16px 24px' }}>
                   {[
@@ -582,20 +582,20 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                     { label: 'Partner (base)', pts: 10 },
                   ].map((row, i) => (
                     <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid #f5f5f9' }}>
-                      <span style={{ fontSize: 12, color: '#6b7280' }}>{row.label}</span>
-                      <span style={{ fontSize: 13, fontWeight: 700, color: row.pts > 0 ? NAVY : '#d1d5db' }}>{row.pts > 0 ? `+${row.pts}` : '—'}</span>
+                      <span style={{ fontSize: 13, color: '#6b7280' }}>{row.label}</span>
+                      <span style={{ fontSize: 14, fontWeight: 700, color: row.pts > 0 ? NAVY : '#d1d5db' }}>{row.pts > 0 ? `+${row.pts}` : '—'}</span>
                     </div>
                   ))}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0 0', marginTop: 4 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: NAVY }}>Total (indicative)</span>
-                    <span style={{ fontSize: 18, fontWeight: 800, color: scoreColor }}>{totalIndicative}</span>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: NAVY }}>Total (indicative)</span>
+                    <span style={{ fontSize: 19, fontWeight: 800, color: scoreColor }}>{totalIndicative}</span>
                   </div>
                 </div>
                 <div style={{ padding: '0 24px 20px' }}>
-                  <a href="#contact" style={{ display: 'block', textAlign: 'center', backgroundColor: GOLD, color: NAVY_DARK, padding: '12px 20px', borderRadius: 10, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 4px 16px rgba(245,161,36,0.35)' }}>
+                  <a href="#contact" style={{ display: 'block', textAlign: 'center', backgroundColor: GOLD, color: NAVY_DARK, padding: '12px 20px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 16px rgba(245,161,36,0.35)' }}>
                     Get My Real Score Assessed
                   </a>
-                  <div style={{ textAlign: 'center', fontSize: 11, color: '#9ca3af', marginTop: 8 }}>Navpreet Aulakh · MARN 2619467</div>
+                  <div style={{ textAlign: 'center', fontSize: 12, color: '#9ca3af', marginTop: 8 }}>Navpreet Aulakh · MARN 2619467</div>
                 </div>
               </div>
             </div>
@@ -607,9 +607,9 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       <div style={{ background: NAVY, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Avoid These</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Avoid These</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Common Student-to-PR Drift Risks</h2>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 16, maxWidth: 520, margin: '0 auto' }}>The decisions students most often get wrong — and the cost of each.</p>
+            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 17, maxWidth: 520, margin: '0 auto' }}>The decisions students most often get wrong — and the cost of each.</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16 }}>
             {DRIFT_RISKS.map((risk, i) => {
@@ -622,10 +622,10 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                     <div style={{ width: 32, height: 32, borderRadius: 8, background: `${sev.dot}20`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Icon name="alert" size={15} color={sev.dot} />
                     </div>
-                    <span style={{ fontSize: 11, fontWeight: 700, color: sev.dot, background: `${sev.dot}15`, border: `1px solid ${sev.dot}30`, padding: '2px 10px', borderRadius: 20 }}>{sev.label}</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: sev.dot, background: `${sev.dot}15`, border: `1px solid ${sev.dot}30`, padding: '2px 10px', borderRadius: 20 }}>{sev.label}</span>
                   </div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', lineHeight: 1.4, marginBottom: 8 }}>{risk.title}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>{risk.detail}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', lineHeight: 1.4, marginBottom: 8 }}>{risk.title}</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', lineHeight: 1.65 }}>{risk.detail}</div>
                 </div>
               )
             })}
@@ -637,7 +637,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       <div style={{ background: '#fafbfe', padding: '80px 32px' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Questions</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Questions</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 38, fontWeight: 700, color: NAVY, margin: 0 }}>Student to PR — FAQ</h2>
           </div>
           <FaqAccordion items={STUDENT_PR_FAQS} accent={GOLD} />

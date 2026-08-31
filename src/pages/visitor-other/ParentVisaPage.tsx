@@ -65,8 +65,8 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f4f6fb', minHeight: '100vh', color: NAVY }}>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#9ca3af' }}>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 13, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span>Partner &amp; Family</span>
           <span>›</span>
@@ -90,7 +90,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 display: 'inline-flex', alignItems: 'center', gap: 6,
                 background: `${ACCENT}15`, border: `1px solid ${ACCENT}30`,
                 color: GOLD, borderRadius: 999, padding: '5px 14px',
-                fontSize: 12, fontWeight: 600, letterSpacing: '0.06em',
+                fontSize: 13, fontWeight: 600, letterSpacing: '0.06em',
                 textTransform: 'uppercase', marginBottom: 20,
               }}>
                 <Icon name="users" size={13} color={GOLD} />
@@ -113,7 +113,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 borderLeft: `4px solid ${GOLD}`,
                 borderRadius: 12, padding: '20px 24px', marginBottom: 36,
               }}>
-                <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.7, margin: 0 }}>
                   Parent visas allow Australian citizens and permanent residents to sponsor parents to live in Australia permanently.
                   The <strong style={{ color: NAVY }}>Contributory Parent (143/864)</strong> is significantly faster than the standard pathway —
                   processing in <strong style={{ color: GOLD }}>3–5 years</strong> versus <strong style={{ color: ROSE }}>20–30 years</strong> — but costs
@@ -125,7 +125,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <a href="#eligibility" style={{
                   background: GOLD, color: NAVY_DARK, borderRadius: 8,
-                  padding: '12px 24px', fontSize: 15, fontWeight: 700,
+                  padding: '12px 24px', fontSize: 16, fontWeight: 700,
                   textDecoration: 'none', fontFamily: 'inherit',
                 }}>
                   Check eligibility
@@ -133,7 +133,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 <a href="#contact" style={{
                   background: 'transparent', color: NAVY,
                   border: `2px solid ${NAVY}30`,
-                  borderRadius: 8, padding: '12px 24px', fontSize: 15, fontWeight: 600,
+                  borderRadius: 8, padding: '12px 24px', fontSize: 16, fontWeight: 600,
                   textDecoration: 'none', fontFamily: 'inherit',
                 }}>
                   Get advice
@@ -148,8 +148,8 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                     border: '1px solid rgba(27,43,94,0.1)', padding: '14px 16px',
                   }}>
                     <Icon name={st.icon} size={18} color={GOLD} />
-                    <div style={{ color: NAVY, fontSize: 22, fontWeight: 700, marginTop: 8, fontFamily: "'Gilroy', sans-serif" }}>{st.value}</div>
-                    <div style={{ color: '#6b7280', fontSize: 11, marginTop: 2, lineHeight: 1.4 }}>{st.desc}</div>
+                    <div style={{ color: NAVY, fontSize: 23, fontWeight: 700, marginTop: 8, fontFamily: "'Gilroy', sans-serif" }}>{st.value}</div>
+                    <div style={{ color: '#6b7280', fontSize: 12, marginTop: 2, lineHeight: 1.4 }}>{st.desc}</div>
                   </div>
                 ))}
               </div>
@@ -160,11 +160,11 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               background: '#fff',
               border: '1px solid #e8edf6', borderRadius: 16, padding: 28,
             }}>
-              <h3 style={{ fontFamily: "'Gilroy', sans-serif", color: NAVY, fontSize: 18, marginBottom: 20, margin: '0 0 20px' }}>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", color: NAVY, fontSize: 19, marginBottom: 20, margin: '0 0 20px' }}>
                 Standard vs Contributory
               </h3>
               <div style={{ overflowX: 'auto' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
                   <thead>
                     <tr>
                       <th style={{ textAlign: 'left', color: '#6b7280', fontWeight: 600, paddingBottom: 10, borderBottom: '1px solid rgba(27,43,94,0.1)', paddingRight: 12 }}>Feature</th>
@@ -175,9 +175,9 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                   <tbody>
                     {COMPARE_ROWS.map((row, i) => (
                       <tr key={i}>
-                        <td style={{ color: '#6b7280', padding: '10px 12px 10px 0', borderBottom: '1px solid rgba(27,43,94,0.06)', fontSize: 12, lineHeight: 1.4 }}>{row.label}</td>
-                        <td style={{ color: NAVY, padding: '10px 8px', borderBottom: '1px solid rgba(27,43,94,0.06)', textAlign: 'center', fontSize: 12, lineHeight: 1.4 }}>{row.standard}</td>
-                        <td style={{ color: GOLD, padding: '10px 0 10px 8px', borderBottom: '1px solid rgba(27,43,94,0.06)', textAlign: 'center', fontSize: 12, lineHeight: 1.4, fontWeight: 600 }}>{row.contributory}</td>
+                        <td style={{ color: '#6b7280', padding: '10px 12px 10px 0', borderBottom: '1px solid rgba(27,43,94,0.06)', fontSize: 13, lineHeight: 1.4 }}>{row.label}</td>
+                        <td style={{ color: NAVY, padding: '10px 8px', borderBottom: '1px solid rgba(27,43,94,0.06)', textAlign: 'center', fontSize: 13, lineHeight: 1.4 }}>{row.standard}</td>
+                        <td style={{ color: GOLD, padding: '10px 0 10px 8px', borderBottom: '1px solid rgba(27,43,94,0.06)', textAlign: 'center', fontSize: 13, lineHeight: 1.4, fontWeight: 600 }}>{row.contributory}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -185,7 +185,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               </div>
               <div style={{
                 marginTop: 20, background: `${GOLD}15`, border: `1px solid ${GOLD}30`,
-                borderRadius: 8, padding: '10px 14px', fontSize: 12,
+                borderRadius: 8, padding: '10px 14px', fontSize: 13,
                 color: '#374151', lineHeight: 1.5,
               }}>
                 <Icon name="info" size={14} color={GOLD} />
@@ -202,7 +202,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
           <div style={{ width: 4, height: 32, background: GOLD, borderRadius: 2 }} />
           <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Eligibility Requirements</h2>
         </div>
-        <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 40, paddingLeft: 16 }}>
+        <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 40, paddingLeft: 16 }}>
           All parent visa applicants must meet the following core requirements regardless of visa subclass.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
@@ -219,8 +219,8 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 <Icon name={item.icon} size={20} color={GOLD} />
               </div>
               <div>
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 6px' }}>{item.title}</h3>
-                <p style={{ color: '#6b7a99', fontSize: 14, margin: 0, lineHeight: 1.6 }}>{item.desc}</p>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 6px' }}>{item.title}</h3>
+                <p style={{ color: '#6b7a99', fontSize: 15, margin: 0, lineHeight: 1.6 }}>{item.desc}</p>
               </div>
             </div>
           ))}
@@ -233,7 +233,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
           <div style={{ width: 4, height: 32, background: GOLD, borderRadius: 2 }} />
           <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Parent Visa Options</h2>
         </div>
-        <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
+        <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
           Four main subclasses cover different circumstances. Offshore and onshore streams are available.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
@@ -267,34 +267,34 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
                     <span style={{
-                      fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 800, color: NAVY,
+                      fontFamily: "'Gilroy', sans-serif", fontSize: 29, fontWeight: 800, color: NAVY,
                     }}>
                       {v.code}
                     </span>
                     <span style={{
                       background: v.badgeColor === GOLD ? `${GOLD}22` : '#f1f5f9',
                       color: v.badgeColor, border: `1px solid ${v.badgeColor}44`,
-                      borderRadius: 999, padding: '3px 10px', fontSize: 11, fontWeight: 700,
+                      borderRadius: 999, padding: '3px 10px', fontSize: 12, fontWeight: 700,
                       letterSpacing: '0.05em', textTransform: 'uppercase',
                     }}>{v.badge}</span>
                   </div>
-                  <div style={{ color: NAVY, fontWeight: 600, fontSize: 15 }}>{v.name}</div>
-                  <div style={{ color: '#94a3b8', fontSize: 12, marginTop: 2 }}>{v.type} · Permanent</div>
+                  <div style={{ color: NAVY, fontWeight: 600, fontSize: 16 }}>{v.name}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 13, marginTop: 2 }}>{v.type} · Permanent</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: 16, marginBottom: 16 }}>
                 <div style={{ flex: 1, background: '#f8fafd', borderRadius: 8, padding: '10px 14px' }}>
-                  <div style={{ color: '#94a3b8', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost</div>
-                  <div style={{ color: NAVY, fontSize: 13, fontWeight: 600, marginTop: 3 }}>{v.cost}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Cost</div>
+                  <div style={{ color: NAVY, fontSize: 14, fontWeight: 600, marginTop: 3 }}>{v.cost}</div>
                 </div>
                 <div style={{ flex: 1, background: '#f8fafd', borderRadius: 8, padding: '10px 14px' }}>
-                  <div style={{ color: '#94a3b8', fontSize: 11, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Wait</div>
-                  <div style={{ color: NAVY, fontSize: 13, fontWeight: 600, marginTop: 3 }}>{v.wait}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 12, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Wait</div>
+                  <div style={{ color: NAVY, fontSize: 14, fontWeight: 600, marginTop: 3 }}>{v.wait}</div>
                 </div>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 {v.points.map((pt) => (
-                  <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 6, fontSize: 13, color: '#4b5578', lineHeight: 1.5 }}>
+                  <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 6, fontSize: 14, color: '#4b5578', lineHeight: 1.5 }}>
                     <Icon name="check" size={14} color={GOLD} />
                     {pt}
                   </li>
@@ -311,7 +311,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
           <div style={{ width: 4, height: 32, background: ROSE, borderRadius: 2 }} />
           <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Key Considerations</h2>
         </div>
-        <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
+        <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
           Important factors to understand before lodging a parent visa application.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -330,8 +330,8 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
               }}>
                 <Icon name={c.icon} size={20} color={c.color} />
               </div>
-              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, margin: '0 0 10px' }}>{c.title}</h3>
-              <p style={{ color: '#6b7a99', fontSize: 14, margin: 0, lineHeight: 1.65 }}>{c.body}</p>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 10px' }}>{c.title}</h3>
+              <p style={{ color: '#6b7a99', fontSize: 15, margin: 0, lineHeight: 1.65 }}>{c.body}</p>
             </div>
           ))}
         </div>
@@ -343,7 +343,7 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
           <div style={{ width: 4, height: 32, background: GOLD, borderRadius: 2 }} />
           <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 30, fontWeight: 700, color: NAVY, margin: 0 }}>Frequently Asked Questions</h2>
         </div>
-        <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
+        <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
           Common questions about Australian parent visas answered.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -362,14 +362,14 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16,
                 }}
               >
-                <span style={{ fontWeight: 600, color: NAVY, fontSize: 15 }}>{faq.q}</span>
+                <span style={{ fontWeight: 600, color: NAVY, fontSize: 16 }}>{faq.q}</span>
                 <span style={{ flexShrink: 0 }}>
                   <Icon name={openFaq === i ? 'minus' : 'plus'} size={18} color={GOLD} />
                 </span>
               </button>
               {openFaq === i && (
                 <div style={{ padding: '0 24px 20px', borderTop: `1px solid ${GOLD}33` }}>
-                  <p style={{ margin: 0, color: '#4b5578', fontSize: 14, lineHeight: 1.75 }}>{faq.a}</p>
+                  <p style={{ margin: 0, color: '#4b5578', fontSize: 15, lineHeight: 1.75 }}>{faq.a}</p>
                 </div>
               )}
             </div>
@@ -387,33 +387,33 @@ export default function ParentVisaPage({ navigate }: { navigate: (page: string) 
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: `${GOLD}22`, border: `1px solid ${GOLD}55`,
             color: GOLD, borderRadius: 999, padding: '5px 16px',
-            fontSize: 12, fontWeight: 600, letterSpacing: '0.06em',
+            fontSize: 13, fontWeight: 600, letterSpacing: '0.06em',
             textTransform: 'uppercase', marginBottom: 24,
           }}>
             <Icon name="star" size={13} color={GOLD} />
             Registered Migration Agents
           </div>
           <h2 style={{
-            fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700,
+            fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700,
             color: 'white', marginBottom: 16, lineHeight: 1.2,
           }}>
             Ready to sponsor your parents?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
+          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: 17, marginBottom: 36, lineHeight: 1.7 }}>
             Parent visa applications are complex and queue-sensitive. A registered migration agent can help you choose the right pathway,
             prepare a strong application, and avoid costly mistakes.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button style={{
               background: GOLD, color: NAVY_DARK, border: 'none', borderRadius: 8,
-              padding: '14px 32px', fontSize: 16, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit',
+              padding: '14px 32px', fontSize: 17, fontWeight: 700, cursor: 'pointer', fontFamily: 'inherit',
             }}>
               Book a free consultation
             </button>
             <button style={{
               background: 'transparent', color: 'white',
               border: '1.5px solid rgba(255,255,255,0.25)',
-              borderRadius: 8, padding: '14px 32px', fontSize: 16, fontWeight: 600,
+              borderRadius: 8, padding: '14px 32px', fontSize: 17, fontWeight: 600,
               cursor: 'pointer', fontFamily: 'inherit',
             }}>
               Call us now

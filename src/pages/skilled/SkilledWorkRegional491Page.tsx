@@ -154,19 +154,19 @@ function PRPathwaySection() {
                 <div style={{ width: 32, height: 32, borderRadius: 9, background: 'rgba(27,43,94,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Icon name={r.icon} size={15} color={NAVY} />
                 </div>
-                <div style={{ fontSize: 13.5, fontWeight: 600, color: NAVY, lineHeight: 1.4 }}>{r.label}</div>
+                <div style={{ fontSize: 14.5, fontWeight: 600, color: NAVY, lineHeight: 1.4 }}>{r.label}</div>
               </div>
               <div style={{ padding: '14px 16px', background: '#fff' }}>
-                <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>{r.body}</p>
+                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{r.body}</p>
               </div>
             </div>
           ))}
         </div>
         <Callout variant="note" panel title="The 191 is a separate visa application">
-          <p style={{ margin: '0 0 8px', fontSize: 14, lineHeight: 1.7, color: '#374151' }}>
+          <p style={{ margin: '0 0 8px', fontSize: 15, lineHeight: 1.7, color: '#374151' }}>
             Holding a 491 visa does not automatically lead to permanent residence. You must separately lodge a subclass 191 application and meet the requirements at the time of that application. Income thresholds and residence requirements may change between your 491 grant and your 191 application.
           </p>
-          <p style={{ margin: 0, fontSize: 13, color: '#1B2B5E', lineHeight: 1.7 }}>
+          <p style={{ margin: 0, fontSize: 14, color: '#1B2B5E', lineHeight: 1.7 }}>
             Begin keeping records of your regional residence, employment, and income from the date your 491 is granted — retrospectively gathering this evidence can be difficult.
           </p>
         </Callout>
@@ -198,13 +198,13 @@ function DesignatedRegionalSection() {
         />
         <div style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', marginBottom: 20 }}>
           <div style={{ background: NAVY, padding: '11px 18px', display: 'grid', gridTemplateColumns: '100px 1fr' }}>
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', color: '#fff', textTransform: 'uppercase' as const }}>State/Territory</span>
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', color: '#fff', textTransform: 'uppercase' as const }}>Areas generally included</span>
+            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', color: '#fff', textTransform: 'uppercase' as const }}>State/Territory</span>
+            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', color: '#fff', textTransform: 'uppercase' as const }}>Areas generally included</span>
           </div>
           {examples.map((r, i) => (
             <div key={r.state} style={{ display: 'grid', gridTemplateColumns: '100px 1fr', padding: '12px 18px', background: i % 2 === 0 ? '#fff' : GREY_BG, borderBottom: i < examples.length - 1 ? `1px solid ${BORDER}` : 'none' }}>
-              <span style={{ fontSize: 13, fontWeight: 700, color: GREEN }}>{r.state}</span>
-              <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{r.areas}</span>
+              <span style={{ fontSize: 14, fontWeight: 700, color: GREEN }}>{r.state}</span>
+              <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{r.areas}</span>
             </div>
           ))}
         </div>
@@ -257,9 +257,9 @@ function ObligationsSection() {
                 <div style={{ width: 30, height: 30, borderRadius: 8, background: 'rgba(27,43,94,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                   <Icon name={item.icon} size={14} color={NAVY} />
                 </div>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.3, paddingTop: 3 }}>{item.title}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, lineHeight: 1.3, paddingTop: 3 }}>{item.title}</div>
               </div>
-              <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>{item.body}</p>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{item.body}</p>
             </div>
           ))}
         </div>

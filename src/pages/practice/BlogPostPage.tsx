@@ -120,11 +120,11 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
       <article style={{ maxWidth: 760, margin: "0 auto", padding: "48px 24px 64px" }}>
         {post.body ? (
           <div
-            style={{ fontSize: 16, lineHeight: 1.75, color: "#374151" }}
+            style={{ fontSize: 17, lineHeight: 1.75, color: "#374151" }}
             dangerouslySetInnerHTML={{ __html: post.body }}
           />
         ) : (
-          <div style={{ fontSize: 16, lineHeight: 1.75, color: "#374151" }}>
+          <div style={{ fontSize: 17, lineHeight: 1.75, color: "#374151" }}>
             <p>{post.standfirst}</p>
             <p style={{ marginTop: 24, fontStyle: "italic", color: "#9ca3af" }}>
               Full article content is being prepared. In the meantime, explore our related visa guide.
@@ -156,7 +156,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
               <span
                 key={tag}
                 style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: 700,
                   padding: "4px 10px",
                   borderRadius: 100,
@@ -175,7 +175,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
           onClick={() => navigate(ROUTE.blog)}
           style={{
             marginTop: 48,
-            fontSize: 14,
+            fontSize: 15,
             fontWeight: 700,
             color: NAVY,
             background: "none",

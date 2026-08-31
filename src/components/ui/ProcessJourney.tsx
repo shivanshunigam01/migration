@@ -98,14 +98,14 @@ export default function ProcessJourney() {
 
         {/* ── Header (left-aligned) ─────────────────────────── */}
         <div className="pj-header" style={{ marginBottom: 72, maxWidth: 560 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: "'Gilroy', sans-serif" }}>
+          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: GOLD, marginBottom: 14, fontFamily: "'Gilroy', sans-serif" }}>
             HOW WE WORK
           </div>
-          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 700, lineHeight: 1.08, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.03em', maxWidth: 640 }}>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(34px, 4vw, 54px)', fontWeight: 700, lineHeight: 1.08, color: NAVY, margin: '0 0 16px', letterSpacing: '-0.03em', maxWidth: 640 }}>
             Four steps.{' '}
             <em style={{ fontStyle: 'italic', fontWeight: 300, color: GOLD }}>No surprises.</em>
           </h2>
-          <p style={{ fontSize: 15, color: '#6b7a8d', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif", maxWidth: 560 }}>
+          <p style={{ fontSize: 16, color: '#6b7a8d', lineHeight: 1.7, margin: 0, fontFamily: "'Gilroy', sans-serif", maxWidth: 560 }}>
             From first message to signed engagement — here is exactly what happens and when.
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function ProcessJourney() {
                         zIndex: 2,
                       }}
                     >
-                      <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: GOLD, lineHeight: 1 }}>
+                      <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: GOLD, lineHeight: 1 }}>
                         {step.num}
                       </span>
                     </div>
@@ -202,7 +202,7 @@ export default function ProcessJourney() {
                     {/* Timing tag */}
                     <div style={{
                       position: 'absolute', top: 16, right: 18,
-                      fontSize: 10, fontWeight: 700, letterSpacing: '0.12em',
+                      fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
                       textTransform: 'uppercase', color: '#9ca3af',
                       fontFamily: "'Gilroy', sans-serif",
                       whiteSpace: 'nowrap',
@@ -223,7 +223,7 @@ export default function ProcessJourney() {
                     {/* Title */}
                     <h3 style={{
                       fontFamily: "'Gilroy', sans-serif",
-                      fontSize: 20, fontWeight: 700,
+                      fontSize: 21, fontWeight: 700,
                       color: NAVY, margin: '0 0 10px', lineHeight: 1.25,
                     }}>
                       {step.title}
@@ -231,7 +231,7 @@ export default function ProcessJourney() {
 
                     {/* Body — flex:1 pushes YOU GET to bottom */}
                     <p style={{
-                      fontSize: 13.5, color: '#6b7a8d',
+                      fontSize: 14.5, color: '#6b7a8d',
                       lineHeight: 1.72, margin: 0,
                       fontFamily: "'Gilroy', sans-serif",
                       flex: 1,
@@ -242,7 +242,7 @@ export default function ProcessJourney() {
                     {/* YOU GET chip — pinned to bottom */}
                     <div style={{ marginTop: 'auto', paddingTop: 22 }}>
                       <div style={{
-                        fontSize: 10, fontWeight: 800, letterSpacing: '0.15em',
+                        fontSize: 11, fontWeight: 800, letterSpacing: '0.15em',
                         textTransform: 'uppercase', color: '#9ca3af', marginBottom: 7,
                         fontFamily: "'Gilroy', sans-serif",
                       }}>
@@ -256,7 +256,7 @@ export default function ProcessJourney() {
                       }}>
                         <Icon name="check" size={11} color={GOLD} />
                         <span style={{
-                          fontSize: 12, fontWeight: 600,
+                          fontSize: 13, fontWeight: 600,
                           color: '#0d1632',
                           fontFamily: "'Gilroy', sans-serif", lineHeight: 1,
                         }}>
@@ -284,7 +284,7 @@ export default function ProcessJourney() {
               <Icon name="shield" size={16} color={NAVY} />
             </div>
             <p style={{
-              fontSize: 13, color: '#4b5563', lineHeight: 1.65,
+              fontSize: 14, color: '#4b5563', lineHeight: 1.65,
               margin: 0, fontFamily: "'Gilroy', sans-serif", textAlign: 'left',
             }}>
               Every step is handled by a Registered Migration Agent (MARN&nbsp;2619467). Nothing is lodged without your written approval.
@@ -297,7 +297,7 @@ export default function ProcessJourney() {
               display: 'inline-flex', alignItems: 'center', gap: 9,
               padding: '15px 34px', borderRadius: 8,
               background: GOLD, color: NAVY_DARK,
-              textDecoration: 'none', fontSize: 14, fontWeight: 700,
+              textDecoration: 'none', fontSize: 15, fontWeight: 700,
               fontFamily: "'Gilroy', sans-serif",
               boxShadow: '0 4px 22px rgba(245,161,36,0.38)',
               transition: 'transform 0.18s ease, box-shadow 0.18s ease',

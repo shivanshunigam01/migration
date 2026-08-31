@@ -87,8 +87,8 @@ function RemovedFromListSection() {
           {steps.map((s, i) => (
             <div key={i} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderRadius: 14, padding: '22px 20px', display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               <div><Icon name={s.icon} size={26} color={BLUE} /></div>
-              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{s.heading}</div>
-              <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{s.body}</p>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{s.heading}</div>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{s.body}</p>
             </div>
           ))}
         </div>
@@ -112,20 +112,20 @@ function WhatIsCsol() {
         <SectionHeading kicker="About the CSOL" title="What Is the Core Skills Occupation List?" accent={BLUE} />
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
           <div>
-            <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
               The Core Skills Occupation List (CSOL) is the list of occupations eligible for the Core Skills stream of the Skills in Demand (SID) subclass 482 visa, introduced in December 2024. The CSOL replaced the former MLTSSL and STSOL as the primary occupation list for the employer-sponsored temporary work visa stream.
             </p>
-            <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.8, margin: 0 }}>
+            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: 0 }}>
               Occupations on the CSOL are generally at ANZSCO skill levels 1–3, encompassing managers, professionals, and technicians across a broad range of industries. The list is set by legislative instrument and is reviewed and updated periodically by the Department of Home Affairs.
             </p>
           </div>
           <div>
-            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Which visas use the CSOL?</div>
+            <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 14 }}>Which visas use the CSOL?</div>
             <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12 }}>
               {bullets.map((b, i) => (
                 <div key={i} style={{ background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 10, padding: '12px 14px' }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: NAVY, marginBottom: 3 }}>{b.label}</div>
-                  <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.55 }}>{b.note}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: NAVY, marginBottom: 3 }}>{b.label}</div>
+                  <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.55 }}>{b.note}</div>
                 </div>
               ))}
             </div>

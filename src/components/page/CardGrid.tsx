@@ -53,7 +53,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
           <>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
               {card.badge && (
-                <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color, opacity: 0.3, lineHeight: 1, flexShrink: 0 }}>
+                <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 29, fontWeight: 700, color, opacity: 0.3, lineHeight: 1, flexShrink: 0 }}>
                   {card.badge}
                 </span>
               )}
@@ -62,19 +62,19 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
                   <Icon name={card.icon} size={18} color={color} />
                 </div>
               )}
-              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: dark ? '#fff' : NAVY, margin: 0, lineHeight: 1.3 }}>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: dark ? '#fff' : NAVY, margin: 0, lineHeight: 1.3 }}>
                 {card.title}
               </h3>
             </div>
 
-            <p style={{ fontSize: 14, color: dark ? 'rgba(255,255,255,0.65)' : '#374151', lineHeight: 1.75, margin: card.note ? '0 0 14px' : 0 }}>
+            <p style={{ fontSize: 15, color: dark ? 'rgba(255,255,255,0.65)' : '#374151', lineHeight: 1.75, margin: card.note ? '0 0 14px' : 0 }}>
               {card.body}
             </p>
 
             {card.note && (
               <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', background: `${color}08`, border: `1px solid ${color}20`, borderRadius: 8, padding: '10px 12px' }}>
                 <Icon name="info" size={14} color={color} />
-                <span style={{ fontSize: 12, color: dark ? 'rgba(255,255,255,0.55)' : '#4b5563', lineHeight: 1.6 }}>{card.note}</span>
+                <span style={{ fontSize: 13, color: dark ? 'rgba(255,255,255,0.55)' : '#4b5563', lineHeight: 1.6 }}>{card.note}</span>
               </div>
             )}
           </>

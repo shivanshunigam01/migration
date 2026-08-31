@@ -102,16 +102,16 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
       <CompassDecor size={380} compassColor="#ffffff" compassOpacity={0.05} starColor={GOLD} starOpacity={0.15} />
       <Reveal preset="scale" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
         <div>
-          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(26px, 3.5vw, 38px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
             {title}
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
             {body}
           </p>
           {languages.length > 0 && (
             <div style={{ display: 'flex', gap: 16, marginTop: 20, flexWrap: 'wrap' as const }}>
               {languages.map(lang => (
-                <span key={lang} style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: 20 }}>
+                <span key={lang} style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: 20 }}>
                   Consultations in {lang}
                 </span>
               ))}
@@ -129,7 +129,7 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
             </GlowButton>
           )}
           {footnote && (
-            <div style={{ textAlign: 'center' as const, fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>{footnote}</div>
+            <div style={{ textAlign: 'center' as const, fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>{footnote}</div>
           )}
         </div>
       </Reveal>

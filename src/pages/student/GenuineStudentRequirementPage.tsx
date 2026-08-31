@@ -281,24 +281,24 @@ function GSAtAGlance() {
 
   return (
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '26px 24px' }}>
-      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: BLUE, marginBottom: 4 }}>GS assessment factors</div>
-      <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: NAVY, lineHeight: 1.2, marginBottom: 18 }}>
+      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: BLUE, marginBottom: 4 }}>GS assessment factors</div>
+      <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 23, fontWeight: 800, color: NAVY, lineHeight: 1.2, marginBottom: 18 }}>
         5 factors,<br />assessed holistically
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8, marginBottom: 20 }}>
         {factors.map((f, i) => (
           <div key={f.label} style={{ display: 'flex', gap: 10, alignItems: 'center', padding: '10px 12px', background: `rgba(27,43,94,0.05)`, border: `1px solid rgba(27,43,94,0.12)`, borderRadius: 10 }}>
-            <div style={{ width: 22, height: 22, borderRadius: '50%', background: f.color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 800, flexShrink: 0 }}>{i + 1}</div>
-            <span style={{ fontSize: 13, color: NAVY, fontWeight: 500 }}>{f.label}</span>
+            <div style={{ width: 22, height: 22, borderRadius: '50%', background: f.color, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>{i + 1}</div>
+            <span style={{ fontSize: 14, color: NAVY, fontWeight: 500 }}>{f.label}</span>
           </div>
         ))}
       </div>
       <div style={{ padding: '12px 14px', background: `${ROSE}08`, border: `1px solid ${ROSE}20`, borderRadius: 10, marginBottom: 12 }}>
-        <div style={{ fontSize: 11.5, color: '#374151', lineHeight: 1.65 }}>
+        <div style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.65 }}>
           <strong style={{ color: ROSE }}>Important:</strong> Answers must be your own and truthful. Template or copied answers raise serious concerns. Evidence matters more than wording.
         </div>
       </div>
-      <p style={{ fontSize: 11, color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>General information only. Obtain advice from MARN 2619467 before lodging.</p>
+      <p style={{ fontSize: 12, color: '#9ca3af', margin: 0, lineHeight: 1.6 }}>General information only. Obtain advice from MARN 2619467 before lodging.</p>
     </div>
   )
 }
@@ -372,10 +372,10 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
               <div key={c.was ?? c.is} style={{ borderRadius: 16, overflow: 'hidden', border: `1.5px solid ${BORDER}`, boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ padding: '12px 18px', background: c.was ? `${ROSE}08` : `${GREEN}08`, borderBottom: `1px solid ${c.was ? ROSE : GREEN}20`, display: 'flex', gap: 8, alignItems: 'center' }}>
                   <Icon name={c.icon} size={14} color={NAVY} />
-                  <span style={{ fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.04em' }}>{c.was ?? c.is}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: NAVY, letterSpacing: '0.04em' }}>{c.was ?? c.is}</span>
                 </div>
                 <div style={{ padding: '16px 18px', background: '#fff' }}>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{c.wasText ?? c.isText}</p>
+                  <p style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.75 }}>{c.wasText ?? c.isText}</p>
                 </div>
               </div>
             ))}
@@ -387,8 +387,8 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
                   <Icon name={d.icon} size={13} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 3 }}>{d.heading}</div>
-                  <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{d.body}</p>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 3 }}>{d.heading}</div>
+                  <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>{d.body}</p>
                 </div>
               </div>
             ))}
@@ -406,7 +406,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
             accent={BLUE}
           />
           <CardGrid cards={FACTOR_CARDS} columns={3} accent={BLUE} />
-          <p style={{ fontSize: 12, color: '#9ca3af', marginTop: 20, textAlign: 'center', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 13, color: '#9ca3af', marginTop: 20, textAlign: 'center', lineHeight: 1.7 }}>
             Assessment factors set by Schedule 8 of the Migration Act 1958 (as amended from 23 March 2024). Subject to legislative change.
           </p>
         </div>
@@ -428,8 +428,8 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
+                  <p style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
                 </div>
               </div>
             ))}
@@ -457,9 +457,9 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                     <Icon name={p.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{p.body}</p>
+                <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>{p.body}</p>
               </div>
             ))}
           </div>
@@ -479,14 +479,14 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
             {CONCERNS.map(c => (
               <div key={c.n} style={{ border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
                 <div style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '14px 18px', background: `rgba(27,43,94,0.04)`, borderBottom: `1px solid rgba(27,43,94,0.10)` }}>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: NAVY, width: 36, flexShrink: 0 }}>{c.n}</div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY }}>{c.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 23, fontWeight: 800, color: NAVY, width: 36, flexShrink: 0 }}>{c.n}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{c.heading}</div>
                 </div>
                 <div style={{ padding: '16px 18px', background: '#fff' }}>
-                  <p style={{ margin: '0 0 12px', fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{c.body}</p>
+                  <p style={{ margin: '0 0 12px', fontSize: 14.5, color: '#374151', lineHeight: 1.75 }}>{c.body}</p>
                   <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', background: `${GREEN}08`, border: `1px solid ${GREEN}20`, borderRadius: 9, padding: '9px 12px' }}>
                     <Icon name="check" size={13} color={GREEN} />
-                    <span style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.6 }}><strong style={{ color: GREEN }}>General approach:</strong> {c.what}</span>
+                    <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}><strong style={{ color: GREEN }}>General approach:</strong> {c.what}</span>
                   </div>
                 </div>
               </div>

@@ -18,12 +18,15 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Gilroy', sans-serif;
+  font-size: 17px;
 }
 
 body {
   font-family: 'Gilroy', sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 1rem;
+  line-height: 1.65;
   background-color: #ffffff;
   color: #1E1E2A;
   -webkit-font-smoothing: antialiased;
@@ -102,7 +105,7 @@ button, input, textarea, select {
 
 /* Minimum font size on phones */
 @media (max-width: 480px) {
-  body { font-size: 16px; }
+  body { font-size: 17px; }
 }
 
 /* KeyFactsStrip — 2-up at 768, 1-up at 480 */
@@ -157,10 +160,10 @@ button, input, textarea, select {
 
 /* PageHero heading — prevent overflow on small screens */
 @media (max-width: 480px) {
-  .page-hero-h1 { font-size: clamp(26px, 7vw, 38px) !important; }
+  .page-hero-h1 { font-size: clamp(30px, 7vw, 42px) !important; }
 }
 @media (max-width: 768px) {
-  .page-hero-h1-flagship { font-size: clamp(28px, 6vw, 44px) !important; }
+  .page-hero-h1-flagship { font-size: clamp(32px, 6vw, 48px) !important; }
 }
 
 /* Breadcrumbs — hide middle items on very small screens */

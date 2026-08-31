@@ -176,7 +176,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
     padding: '10px 32px 10px 12px',
     border: `1.5px solid ${BORDER}`,
     borderRadius: 8,
-    fontSize: 14,
+    fontSize: 15,
     color: NAVY,
     background: '#fff',
     cursor: 'pointer',
@@ -193,7 +193,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
     <div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
         <div>
-          <label style={{ fontSize: 12, fontWeight: 700, color: '#374151', marginBottom: 6, display: 'block', letterSpacing: '0.03em' }}>
+          <label style={{ fontSize: 13, fontWeight: 700, color: '#374151', marginBottom: 6, display: 'block', letterSpacing: '0.03em' }}>
             English test
           </label>
           <select
@@ -206,11 +206,11 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
               <option key={t.test} value={t.test}>{t.test}</option>
             ))}
           </select>
-          <p style={{ margin: '5px 0 0', fontSize: 11, color: '#9ca3af' }}>{testData.metric}</p>
+          <p style={{ margin: '5px 0 0', fontSize: 12, color: '#9ca3af' }}>{testData.metric}</p>
         </div>
 
         <div>
-          <label style={{ fontSize: 12, fontWeight: 700, color: '#374151', marginBottom: 6, display: 'block', letterSpacing: '0.03em' }}>
+          <label style={{ fontSize: 13, fontWeight: 700, color: '#374151', marginBottom: 6, display: 'block', letterSpacing: '0.03em' }}>
             {isOET ? 'Your grade (e.g. B, B+, A)' : 'Your score'}
           </label>
           <input
@@ -218,7 +218,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
             value={score}
             onChange={e => { setScore(e.target.value); setCalculated(false); setResult(null) }}
             placeholder={isOET ? 'e.g. B+' : 'e.g. 7.0'}
-            style={{ width: '100%', padding: '10px 14px', border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 14, color: NAVY, fontFamily: "'Gilroy', sans-serif", outline: 'none', boxSizing: 'border-box' }}
+            style={{ width: '100%', padding: '10px 14px', border: `1.5px solid ${BORDER}`, borderRadius: 8, fontSize: 15, color: NAVY, fontFamily: "'Gilroy', sans-serif", outline: 'none', boxSizing: 'border-box' }}
             aria-label="Enter your score or grade"
           />
         </div>
@@ -226,7 +226,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
 
       <button
         onClick={calculate}
-        style={{ padding: '11px 28px', background: NAVY, color: '#fff', border: 'none', borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", marginBottom: 24 }}
+        style={{ padding: '11px 28px', background: NAVY, color: '#fff', border: 'none', borderRadius: 8, fontSize: 15, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", marginBottom: 24 }}
       >
         Convert score
       </button>
@@ -234,25 +234,25 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
       {calculated && result && (
         <div style={{ border: `2px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', marginBottom: 20 }}>
           <div style={{ background: result.color, padding: '20px 24px', borderBottom: `1px solid ${BORDER}` }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#374151', marginBottom: 6 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: '#374151', marginBottom: 6 }}>
               Indicative English level
             </div>
-            <div style={{ fontSize: 28, fontWeight: 800, color: NAVY, marginBottom: 4 }}>{result.level}</div>
-            <div style={{ fontSize: 14, color: '#374151' }}>{result.description}</div>
+            <div style={{ fontSize: 29, fontWeight: 800, color: NAVY, marginBottom: 4 }}>{result.level}</div>
+            <div style={{ fontSize: 15, color: '#374151' }}>{result.description}</div>
           </div>
           <div style={{ background: '#fff', padding: '16px 24px' }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#9ca3af', marginBottom: 10 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#9ca3af', marginBottom: 10 }}>
               Generally accepted for
             </div>
             <ul style={{ margin: 0, paddingLeft: 20, display: 'flex', flexDirection: 'column' as const, gap: 4 }}>
               {result.visaUses.map(use => (
-                <li key={use} style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{use}</li>
+                <li key={use} style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{use}</li>
               ))}
             </ul>
             {navigate && (
               <button
                 onClick={() => navigate('english-requirements')}
-                style={{ marginTop: 16, padding: '9px 18px', background: 'transparent', border: `1.5px solid ${GOLD}`, color: GOLD, borderRadius: 8, fontSize: 13, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
+                style={{ marginTop: 16, padding: '9px 18px', background: 'transparent', border: `1.5px solid ${GOLD}`, color: GOLD, borderRadius: 8, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif" }}
               >
                 English requirements guide →
               </button>
@@ -263,7 +263,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
 
       {calculated && !result && (
         <div style={{ padding: '16px 20px', background: 'rgba(220,38,38,0.06)', border: '1px solid rgba(220,38,38,0.25)', borderRadius: 10, marginBottom: 20 }}>
-          <p style={{ margin: 0, fontSize: 13, color: '#dc2626', lineHeight: 1.6 }}>
+          <p style={{ margin: 0, fontSize: 14, color: '#dc2626', lineHeight: 1.6 }}>
             {isOET
               ? "Enter a valid OET grade (A, B+, B, C+, C). Grades below Competent (B) generally do not meet visa requirements."
               : "The score entered does not meet the minimum threshold for the visas listed above, or is not a valid number. Please check your score and try again."}
@@ -273,12 +273,12 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
 
       {/* Score reference table */}
       <div style={{ overflowX: 'auto', borderRadius: 12, border: `1.5px solid ${BORDER}`, marginBottom: 16 }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
           <thead>
             <tr style={{ background: NAVY }}>
-              <th style={{ padding: '10px 14px', textAlign: 'left', color: '#fff', fontWeight: 700, fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>Level</th>
+              <th style={{ padding: '10px 14px', textAlign: 'left', color: '#fff', fontWeight: 700, fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>Level</th>
               {TEST_DATA.map(t => (
-                <th key={t.test} style={{ padding: '10px 14px', textAlign: 'left', color: '#fff', fontWeight: 700, fontSize: 11, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>{t.test}</th>
+                <th key={t.test} style={{ padding: '10px 14px', textAlign: 'left', color: '#fff', fontWeight: 700, fontSize: 12, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>{t.test}</th>
               ))}
             </tr>
           </thead>
@@ -288,7 +288,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
               return (
                 <tr key={lvl} style={{ background: i % 2 === 0 ? GREY_BG : '#fff', borderBottom: `1px solid ${BORDER}` }}>
                   <td style={{ padding: '10px 14px', fontWeight: 700, color: NAVY }}>
-                    <span style={{ display: 'inline-block', padding: '2px 8px', borderRadius: 6, background: spec.color, fontSize: 11 }}>{lvl}</span>
+                    <span style={{ display: 'inline-block', padding: '2px 8px', borderRadius: 6, background: spec.color, fontSize: 12 }}>{lvl}</span>
                   </td>
                   {TEST_DATA.map(t => (
                     <td key={t.test} style={{ padding: '10px 14px', color: '#374151' }}>
@@ -302,7 +302,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
         </table>
       </div>
 
-      <p style={{ fontSize: 11, color: '#9ca3af', lineHeight: 1.7, margin: 0 }}>
+      <p style={{ fontSize: 12, color: '#9ca3af', lineHeight: 1.7, margin: 0 }}>
         Thresholds are general guidance only. The Department of Home Affairs publishes the authoritative benchmark requirements. Current as at July 2026.
       </p>
     </div>

@@ -285,23 +285,23 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
             {VISA_LEVELS.map(group => (
               <div key={group.level} style={{ border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden' }}>
                 <div style={{ background: `rgba(27,43,94,0.08)`, borderBottom: `1px solid rgba(27,43,94,0.12)`, padding: '12px 20px' }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, letterSpacing: '0.02em' }}>{group.level}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, letterSpacing: '0.02em' }}>{group.level}</div>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}>
                   {group.visas.map((v, i) => (
                     <div key={v.code} style={{ padding: '14px 18px', borderBottom: i < group.visas.length - (group.visas.length % 2 === 0 ? 2 : 1) ? `1px solid ${BORDER}` : 'none', borderRight: i % 2 === 0 ? `1px solid ${BORDER}` : 'none' }}>
                       <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 4 }}>
-                        <span style={{ fontSize: 11, fontWeight: 700, color: NAVY, background: `rgba(27,43,94,0.07)`, padding: '2px 8px', borderRadius: 100 }}>{v.code}</span>
-                        <span style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{v.name}</span>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: NAVY, background: `rgba(27,43,94,0.07)`, padding: '2px 8px', borderRadius: 100 }}>{v.code}</span>
+                        <span style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{v.name}</span>
                       </div>
-                      <p style={{ margin: 0, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>{v.note}</p>
+                      <p style={{ margin: 0, fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>{v.note}</p>
                     </div>
                   ))}
                 </div>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 12, color: '#9ca3af', marginTop: 16, textAlign: 'center', lineHeight: 1.7 }}>
+          <p style={{ fontSize: 13, color: '#9ca3af', marginTop: 16, textAlign: 'center', lineHeight: 1.7 }}>
             General guide only. Requirements are set by legislative instrument and subject to change. Confirm the current English requirement for your specific visa on the Department of Home Affairs website.
           </p>
         </div>
@@ -323,8 +323,8 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
                   <Icon name={e.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{e.heading}</div>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{e.body}</p>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{e.heading}</div>
+                  <p style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.75 }}>{e.body}</p>
                 </div>
               </div>
             ))}
@@ -352,9 +352,9 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={card.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{card.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{card.heading}</div>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{card.body}</p>
+                <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>{card.body}</p>
               </div>
             ))}
           </div>
@@ -377,13 +377,13 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
               { level: 'Superior English',   score: 'IELTS 8.0 in each band (generally)', points: 20, color: TEAL, note: 'Adds 20 points — the maximum for English.' },
             ].map(item => (
               <div key={item.level} style={{ background: `rgba(27,43,94,0.04)`, border: `1.5px solid rgba(27,43,94,0.12)`, borderRadius: 14, padding: '20px 16px', textAlign: 'center' }}>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 800, color: NAVY, lineHeight: 1, marginBottom: 4 }}>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 800, color: NAVY, lineHeight: 1, marginBottom: 4 }}>
                   {item.points > 0 ? `+${item.points}` : '0'}
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, marginBottom: 8 }}>points</div>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{item.level}</div>
-                <div style={{ fontSize: 11.5, color: '#6b7280', lineHeight: 1.6 }}>{item.score}</div>
-                <div style={{ fontSize: 11.5, color: '#374151', marginTop: 8, lineHeight: 1.6 }}>{item.note}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 8 }}>points</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{item.level}</div>
+                <div style={{ fontSize: 12.5, color: '#6b7280', lineHeight: 1.6 }}>{item.score}</div>
+                <div style={{ fontSize: 12.5, color: '#374151', marginTop: 8, lineHeight: 1.6 }}>{item.note}</div>
               </div>
             ))}
           </div>

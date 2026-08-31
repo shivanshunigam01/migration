@@ -77,10 +77,10 @@ function PointsBreakdownTable() {
                   <Icon name={cat.icon} size={15} color={NAVY} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{cat.heading}</div>
-                  <div style={{ fontSize: 12, color: '#6b7280', marginTop: 2 }}>{cat.description}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{cat.heading}</div>
+                  <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>{cat.description}</div>
                 </div>
-                <div style={{ fontSize: 11, fontWeight: 700, color: NAVY, background: 'rgba(27,43,94,0.06)', border: '1px solid rgba(27,43,94,0.20)', padding: '3px 10px', borderRadius: 100, whiteSpace: 'nowrap', flexShrink: 0 }}>
+                <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, background: 'rgba(27,43,94,0.06)', border: '1px solid rgba(27,43,94,0.20)', padding: '3px 10px', borderRadius: 100, whiteSpace: 'nowrap', flexShrink: 0 }}>
                   Up to {cat.maxPoints} pts
                 </div>
               </div>
@@ -88,17 +88,17 @@ function PointsBreakdownTable() {
                 {cat.options.filter(o => o.value !== 'none').map((opt, i, arr) => (
                   <div key={opt.value} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, padding: '10px 18px', background: i % 2 === 0 ? '#fff' : GREY_BG, borderBottom: i < arr.length - 1 ? `1px solid ${BORDER}` : 'none' }}>
                     <div>
-                      <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{opt.label}</div>
-                      {opt.note && <div style={{ fontSize: 11.5, color: '#9ca3af', marginTop: 2 }}>{opt.note}</div>}
+                      <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{opt.label}</div>
+                      {opt.note && <div style={{ fontSize: 12.5, color: '#9ca3af', marginTop: 2 }}>{opt.note}</div>}
                     </div>
-                    <div style={{ fontSize: 15, fontWeight: 800, color: NAVY, flexShrink: 0, minWidth: 52, textAlign: 'right' }}>+{opt.points}</div>
+                    <div style={{ fontSize: 16, fontWeight: 800, color: NAVY, flexShrink: 0, minWidth: 52, textAlign: 'right' }}>+{opt.points}</div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
         </div>
-        <p style={{ fontSize: 12, color: '#9ca3af', margin: '20px 0 0', lineHeight: 1.7, textAlign: 'center' }}>
+        <p style={{ fontSize: 13, color: '#9ca3af', margin: '20px 0 0', lineHeight: 1.7, textAlign: 'center' }}>
           Based on the points test set by the Migration (IMMI 23/102) Instrument 2023 and amendments. Subject to legislative change — verify current figures with the Department of Home Affairs.
         </p>
       </div>
@@ -133,9 +133,9 @@ function HowRoundsWork() {
                 <div style={{ width: 30, height: 30, borderRadius: 8, background: 'rgba(27,43,94,0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
               </div>
-              <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>{p.body}</p>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{p.body}</p>
             </div>
           ))}
         </div>
@@ -187,14 +187,14 @@ function CommonMistakesSection() {
           {MISTAKES.map(m => (
             <div key={m.n} style={{ border: `1.5px solid ${BORDER}`, borderRadius: 14, overflow: 'hidden', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ display: 'flex', gap: 14, alignItems: 'center', padding: '14px 18px', background: `${m.color}06`, borderBottom: `1px solid ${m.color}18` }}>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 22, fontWeight: 800, color: m.color, flexShrink: 0, width: 36 }}>{m.n}</div>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{m.heading}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 23, fontWeight: 800, color: m.color, flexShrink: 0, width: 36 }}>{m.n}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{m.heading}</div>
               </div>
               <div style={{ padding: '16px 18px', background: '#fff' }}>
-                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{m.body}</p>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{m.body}</p>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', background: `${GREEN}08`, border: `1px solid ${GREEN}20`, borderRadius: 9, padding: '9px 12px' }}>
                   <Icon name="check" size={13} color={GREEN} />
-                  <span style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.6 }}><strong style={{ color: GREEN }}>What to do:</strong> {m.tip}</span>
+                  <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}><strong style={{ color: GREEN }}>What to do:</strong> {m.tip}</span>
                 </div>
               </div>
             </div>
@@ -220,17 +220,17 @@ function PointsSummaryWidget() {
   ]
   return (
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '26px 24px' }}>
-      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: INDIGO, marginBottom: 4 }}>Points at a glance</div>
+      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: INDIGO, marginBottom: 4 }}>Points at a glance</div>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 18 }}>
         <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 48, fontWeight: 800, color: NAVY, lineHeight: 1 }}>{POINTS_MINIMUM}</span>
-        <span style={{ fontSize: 14, color: '#9ca3af', fontWeight: 500 }}>minimum (up to {total})</span>
+        <span style={{ fontSize: 15, color: '#9ca3af', fontWeight: 500 }}>minimum (up to {total})</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8, marginBottom: 18 }}>
         {categories.map(c => (
           <div key={c.label}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-              <span style={{ fontSize: 11.5, color: '#374151' }}>{c.label}</span>
-              <span style={{ fontSize: 11.5, fontWeight: 700, color: NAVY }}>up to {c.max} pts</span>
+              <span style={{ fontSize: 12.5, color: '#374151' }}>{c.label}</span>
+              <span style={{ fontSize: 12.5, fontWeight: 700, color: NAVY }}>up to {c.max} pts</span>
             </div>
             <div style={{ height: 4, background: GREY_BG, borderRadius: 100, overflow: 'hidden' }}>
               <div style={{ height: '100%', width: `${(c.max / total) * 100}%`, background: NAVY, borderRadius: 100 }} />
@@ -239,11 +239,11 @@ function PointsSummaryWidget() {
         ))}
       </div>
       <div style={{ padding: '12px 14px', background: `${INDIGO}08`, border: `1px solid ${INDIGO}20`, borderRadius: 10 }}>
-        <div style={{ fontSize: 11.5, color: '#374151', lineHeight: 1.65 }}>
+        <div style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.65 }}>
           <strong style={{ color: INDIGO }}>65 points minimum</strong> to submit an EOI — but invitation cutoffs are typically much higher. Use the interactive calculator below to estimate your total.
         </div>
       </div>
-      <p style={{ fontSize: 11, color: '#9ca3af', margin: '12px 0 0', lineHeight: 1.6 }}>General guide only. Figures subject to legislative change.</p>
+      <p style={{ fontSize: 12, color: '#9ca3af', margin: '12px 0 0', lineHeight: 1.6 }}>General guide only. Figures subject to legislative change.</p>
     </div>
   )
 }

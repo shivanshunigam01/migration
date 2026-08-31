@@ -128,7 +128,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
               style={{
                 width: '100%',
                 padding: '12px 16px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1.5px solid #e2e8f0',
                 borderRadius: 8,
                 outline: 'none',
@@ -186,7 +186,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                       style={{
                         background: '#f59e0b',
                         color: NAVY,
-                        fontSize: 10,
+                        fontSize: 11,
                         fontWeight: 800,
                         padding: '2px 8px',
                         borderRadius: 4,
@@ -198,7 +198,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   )}
                   <span
                     style={{
-                      fontSize: 9,
+                      fontSize: 10,
                       fontWeight: 700,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
@@ -210,7 +210,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   >
                     {post.category}
                   </span>
-                  <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.6)', marginLeft: 'auto' }}>
+                  <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginLeft: 'auto' }}>
                     {post.date}
                   </span>
                 </div>
@@ -219,7 +219,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   <h3
                     style={{
                       fontFamily: "'Gilroy', sans-serif",
-                      fontSize: 18,
+                      fontSize: 19,
                       fontWeight: 400,
                       color: NAVY,
                       margin: '0 0 12px',
@@ -231,7 +231,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   </h3>
                   <p
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: '#6b7280',
                       lineHeight: 1.65,
                       margin: '0 0 16px',
@@ -245,7 +245,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   </p>
                   <span
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 700,
                       color: NAVY,
                       borderBottom: `1.5px solid ${GOLD}`,
@@ -260,12 +260,12 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
           </div>
 
           {filtered.length === 0 && (
-            <p style={{ fontSize: 14, color: '#9ca3af', fontStyle: 'italic', marginTop: 24 }}>
+            <p style={{ fontSize: 15, color: '#9ca3af', fontStyle: 'italic', marginTop: 24 }}>
               No articles match your search. Try clearing the filter.
             </p>
           )}
 
-          <p style={{ fontSize: 12, fontStyle: 'italic', color: '#9ca3af', marginTop: 32 }}>
+          <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', marginTop: 32 }}>
             Draft updates shown for layout — verified articles will replace these before launch.
           </p>
         </div>
@@ -286,7 +286,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
           >
             <div
               style={{
-                fontSize: 12,
+                fontSize: 13,
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -320,7 +320,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                 >
                   <div
                     style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: 600,
                       color: '#ffffff',
                       lineHeight: 1.3,
@@ -333,10 +333,10 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                     {post.title.replace('[DRAFT] ', '')}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.5)' }}>{post.date}</span>
+                    <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>{post.date}</span>
                     <span
                       style={{
-                        fontSize: 9,
+                        fontSize: 10,
                         fontWeight: 700,
                         letterSpacing: '0.06em',
                         textTransform: 'uppercase',
@@ -364,7 +364,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
           >
             <div
               style={{
-                fontSize: 12,
+                fontSize: 13,
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -383,7 +383,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   border: `1.5px solid ${activeCategory === null ? NAVY : '#e2e8f0'}`,
                   background: activeCategory === null ? NAVY : '#fff',
                   color: activeCategory === null ? '#fff' : '#374151',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 600,
                   cursor: 'pointer',
                   textAlign: 'left',
@@ -402,7 +402,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                     border: `1.5px solid ${activeCategory === cat ? NAVY : '#e2e8f0'}`,
                     background: activeCategory === cat ? NAVY : '#fff',
                     color: activeCategory === cat ? '#fff' : '#374151',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 600,
                     cursor: 'pointer',
                     textAlign: 'left',

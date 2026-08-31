@@ -72,31 +72,31 @@ export function PageHero({
           <div style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: GOLD, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
             <Icon name="check" size={11} color="#fff" />
           </div>
-          <span style={{ color: NAVY, fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>MARA-Registered Agent · MARN 2619467</span>
+          <span style={{ color: NAVY, fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>MARA-Registered Agent · MARN 2619467</span>
         </motion.div>
       )}
 
       {(eyebrow || eyebrowSub) && (
         <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
           {eyebrow && (
-            <span style={{ background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>
+            <span style={{ background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>
               {eyebrow}
             </span>
           )}
-          {eyebrowSub && <span style={{ color: '#6b7280', fontSize: 12 }}>{eyebrowSub}</span>}
+          {eyebrowSub && <span style={{ color: '#6b7280', fontSize: 13 }}>{eyebrowSub}</span>}
         </motion.div>
       )}
 
-      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(32px, 5vw, 50px)' : 'clamp(26px, 5vw, 54px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
+      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(34px, 5vw, 52px)' : 'clamp(28px, 5vw, 56px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
         {title}
       </motion.h1>
 
-      <motion.p variants={fadeUp} style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, margin: '0 0 8px', maxWidth: variant === 'standard' ? 620 : 500 }}>
+      <motion.p variants={fadeUp} style={{ fontSize: 18, color: '#374151', lineHeight: 1.7, margin: '0 0 8px', maxWidth: variant === 'standard' ? 620 : 500 }}>
         {deck}
       </motion.p>
 
       {currentAsAt && (
-        <motion.p variants={fadeUp} style={{ fontSize: 12, color: '#9ca3af', margin: '0 0 28px', fontStyle: 'italic' }}>
+        <motion.p variants={fadeUp} style={{ fontSize: 13, color: '#9ca3af', margin: '0 0 28px', fontStyle: 'italic' }}>
           General information current as at {currentAsAt}. Requirements are subject to change — verify with the Department of Home Affairs before lodging.
         </motion.p>
       )}
@@ -110,10 +110,10 @@ export function PageHero({
         >
           <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', marginBottom: 10 }}>
             <Icon name="info" size={16} color={accent} />
-            <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: accent }}>The Short Answer</span>
+            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: accent }}>The Short Answer</span>
           </div>
-          <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{shortAnswer}</div>
-          {footnote && <p style={{ fontSize: 11.5, color: '#9ca3af', margin: '10px 0 0', fontStyle: 'italic' }}>{footnote}</p>}
+          <div style={{ fontSize: 15, color: '#374151', lineHeight: 1.75 }}>{shortAnswer}</div>
+          {footnote && <p style={{ fontSize: 12.5, color: '#9ca3af', margin: '10px 0 0', fontStyle: 'italic' }}>{footnote}</p>}
         </motion.div>
       )}
 

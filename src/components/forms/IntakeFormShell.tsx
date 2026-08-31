@@ -7,7 +7,7 @@ const BORDER = "#e8edf6"
 const inputStyle: React.CSSProperties = {
   width: "100%",
   padding: "12px 14px",
-  fontSize: 14,
+  fontSize: 15,
   border: `1.5px solid ${BORDER}`,
   borderRadius: 8,
   outline: "none",
@@ -19,7 +19,7 @@ const inputStyle: React.CSSProperties = {
 
 const labelStyle: React.CSSProperties = {
   display: "block",
-  fontSize: 12,
+  fontSize: 13,
   fontWeight: 600,
   color: NAVY,
   marginBottom: 6,
@@ -60,8 +60,8 @@ export function IntakeFormShell({
           padding: "24px 28px",
         }}
       >
-        <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{successTitle}</div>
-        <div style={{ fontSize: 14, color: "#6b7280", lineHeight: 1.6 }}>{successMessage}</div>
+        <div style={{ fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{successTitle}</div>
+        <div style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.6 }}>{successMessage}</div>
       </div>
     )
   }
@@ -92,7 +92,7 @@ export function IntakeFormShell({
             background: "rgba(220,38,38,0.08)",
             border: "1px solid rgba(220,38,38,0.35)",
             borderRadius: 8,
-            fontSize: 13,
+            fontSize: 14,
             color: "#dc2626",
             lineHeight: 1.5,
           }}

@@ -115,10 +115,10 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
       background: '#fff',
       border: '1px solid #e8edf6', borderRadius: 16, padding: 28,
     }}>
-      <h3 style={{ fontFamily: "'Gilroy', sans-serif", color: NAVY, fontSize: 18, margin: '0 0 6px' }}>
+      <h3 style={{ fontFamily: "'Gilroy', sans-serif", color: NAVY, fontSize: 19, margin: '0 0 6px' }}>
         GS Self-Assessment
       </h3>
-      <p style={{ color: '#6b7280', fontSize: 13, margin: '0 0 20px', lineHeight: 1.5 }}>
+      <p style={{ color: '#6b7280', fontSize: 14, margin: '0 0 20px', lineHeight: 1.5 }}>
         Answer honestly — this mirrors how a case officer assesses your application.
       </p>
 
@@ -128,13 +128,13 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
             background: '#f8fafc', borderRadius: 10,
             border: '1px solid #e8edf6', padding: '12px 14px',
           }}>
-            <p style={{ color: NAVY, fontSize: 13, margin: '0 0 10px', lineHeight: 1.5 }}>{item.q}</p>
+            <p style={{ color: NAVY, fontSize: 14, margin: '0 0 10px', lineHeight: 1.5 }}>{item.q}</p>
             <div style={{ display: 'flex', gap: 8 }}>
               <button
                 onClick={() => toggleAnswer(i, true)}
                 style={{
                   flex: 1, padding: '6px 0', borderRadius: 6, border: 'none', cursor: 'pointer',
-                  fontFamily: 'inherit', fontSize: 12, fontWeight: 600,
+                  fontFamily: 'inherit', fontSize: 13, fontWeight: 600,
                   background: gteAnswers[i] === true ? '#f5a124' : '#e8edf6',
                   color: gteAnswers[i] === true ? 'white' : '#6b7280',
                   transition: 'background 0.15s',
@@ -146,7 +146,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
                 onClick={() => toggleAnswer(i, false)}
                 style={{
                   flex: 1, padding: '6px 0', borderRadius: 6, border: 'none', cursor: 'pointer',
-                  fontFamily: 'inherit', fontSize: 12, fontWeight: 600,
+                  fontFamily: 'inherit', fontSize: 13, fontWeight: 600,
                   background: gteAnswers[i] === false ? '#dc2626' : '#e8edf6',
                   color: gteAnswers[i] === false ? 'white' : '#6b7280',
                   transition: 'background 0.15s',
@@ -166,7 +166,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
           display: 'flex', alignItems: 'flex-start', gap: 10,
         }}>
           <Icon name={gteResult.icon} size={18} color={gteResult.color} />
-          <span style={{ color: gteResult.color, fontSize: 14, fontWeight: 700, lineHeight: 1.4 }}>
+          <span style={{ color: gteResult.color, fontSize: 15, fontWeight: 700, lineHeight: 1.4 }}>
             {gteResult.label}
           </span>
         </div>
@@ -174,7 +174,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
         <div style={{
           background: '#f8fafc', border: '1px solid #e8edf6',
           borderRadius: 10, padding: '12px 16px', textAlign: 'center',
-          color: '#9ca3af', fontSize: 13,
+          color: '#9ca3af', fontSize: 14,
         }}>
           Answer all {GTE_QUESTIONS.length} questions to see your assessment
           {answeredCount > 0 && ` (${answeredCount}/${GTE_QUESTIONS.length})`}
@@ -240,7 +240,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
       <section style={{ background: '#ffffff', padding: '64px 32px 64px' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <SectionHeading kicker="Key Information" title="Key Visa Information" accent={ACCENT} />
-          <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 40, paddingLeft: 16 }}>
+          <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 40, paddingLeft: 16 }}>
             Core facts every student visa applicant should understand before applying.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -262,8 +262,8 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
                 }}>
                   <Icon name={item.icon} size={20} color={item.color} />
                 </div>
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, margin: '0 0 8px' }}>{item.title}</h3>
-                <p style={{ color: '#6b7a99', fontSize: 14, margin: 0, lineHeight: 1.65 }}>{item.body}</p>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 8px' }}>{item.title}</h3>
+                <p style={{ color: '#6b7a99', fontSize: 15, margin: 0, lineHeight: 1.65 }}>{item.body}</p>
               </div>
             ))}
           </div>
@@ -274,7 +274,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
       <section style={{ background: GREY_BAND, padding: '56px 32px 64px' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <SectionHeading kicker="Streams" title="Education Streams" accent={ACCENT} />
-          <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
+          <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
             The subclass 500 covers all levels of study at CRICOS-registered providers.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14 }}>
@@ -289,8 +289,8 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
                   marginTop: 6, flexShrink: 0,
                 }} />
                 <div>
-                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{stream.name}</div>
-                  <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.55 }}>{stream.desc}</div>
+                  <div style={{ color: NAVY, fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{stream.name}</div>
+                  <div style={{ color: '#94a3b8', fontSize: 14, lineHeight: 1.55 }}>{stream.desc}</div>
                 </div>
               </div>
             ))}
@@ -302,7 +302,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
       <section style={{ background: '#ffffff', padding: '56px 32px 64px' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <SectionHeading kicker="Refusals" title="Common Refusal Reasons" accent={ACCENT} />
-          <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
+          <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
             Understanding why applications fail helps you build a stronger case.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 14 }}>
@@ -318,8 +318,8 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
                 }}>
                   <Icon name={r.icon} size={18} color={r.color} />
                 </div>
-                <div style={{ color: NAVY, fontWeight: 700, fontSize: 13, marginBottom: 6 }}>{r.label}</div>
-                <div style={{ color: '#94a3b8', fontSize: 12, lineHeight: 1.5 }}>{r.desc}</div>
+                <div style={{ color: NAVY, fontWeight: 700, fontSize: 14, marginBottom: 6 }}>{r.label}</div>
+                <div style={{ color: '#94a3b8', fontSize: 13, lineHeight: 1.5 }}>{r.desc}</div>
               </div>
             ))}
           </div>
@@ -330,7 +330,7 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
       <section style={{ background: GREY_BAND, padding: '56px 32px 64px' }}>
         <div style={{ maxWidth: 1120, margin: '0 auto' }}>
           <SectionHeading kicker="FAQ" title="Frequently Asked Questions" accent={ACCENT} />
-          <p style={{ color: '#6b7a99', fontSize: 15, marginBottom: 36, paddingLeft: 16 }}>
+          <p style={{ color: '#6b7a99', fontSize: 16, marginBottom: 36, paddingLeft: 16 }}>
             Common questions about the student visa 500 answered.
           </p>
           <FaqAccordion items={faqItems} accent={ACCENT} />

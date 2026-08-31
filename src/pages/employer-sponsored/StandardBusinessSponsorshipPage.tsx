@@ -213,9 +213,9 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
       <div style={{ background: '#fff', padding: '72px 32px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: BLUE, marginBottom: 12 }}>Who Can Apply</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: BLUE, marginBottom: 12 }}>Who Can Apply</div>
             <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 34, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>SBS eligibility requirements</h2>
-            <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.8, margin: '0 0 24px' }}>
+            <p style={{ fontSize: 16, color: '#4b5563', lineHeight: 1.8, margin: '0 0 24px' }}>
               DHA assesses the business — not the size of it. The questions are about lawful operation, genuine need, and whether the business has an adverse migration history.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -224,18 +224,18 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
                   <div style={{ width: 24, height: 24, borderRadius: 7, background: `${BLUE}12`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                     <Icon name="check" size={12} color={BLUE} />
                   </div>
-                  <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.65 }}>{item}</div>
+                  <div style={{ fontSize: 15, color: '#374151', lineHeight: 1.65 }}>{item}</div>
                 </div>
               ))}
             </div>
           </div>
 
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#f5a124', marginBottom: 12 }}>Small Business &amp; Sole Traders</div>
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Can a small business sponsor a worker?</h2>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#f5a124', marginBottom: 12 }}>Small Business &amp; Sole Traders</div>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 29, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Can a small business sponsor a worker?</h2>
             <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.3)', borderRadius: 14, padding: '20px 20px', marginBottom: 20 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#0d1632', marginBottom: 8 }}>Yes — no minimum size required.</div>
-              <div style={{ fontSize: 14, color: '#0d1632', lineHeight: 1.7 }}>There is no employee count, turnover floor, or trading history minimum to become an SBS holder. A sole trader or business with a single employee can apply.</div>
+              <div style={{ fontSize: 16, fontWeight: 700, color: '#0d1632', marginBottom: 8 }}>Yes — no minimum size required.</div>
+              <div style={{ fontSize: 15, color: '#0d1632', lineHeight: 1.7 }}>There is no employee count, turnover floor, or trading history minimum to become an SBS holder. A sole trader or business with a single employee can apply.</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               {ELIGIBILITY_SMALL.map((item, i) => (
@@ -243,13 +243,13 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
                   <div style={{ width: 20, height: 20, borderRadius: 6, background: 'rgba(245,161,36,0.08)', border: '1px solid rgba(245,161,36,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 2 }}>
                     <Icon name="check" size={11} color="#f5a124" />
                   </div>
-                  <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.65 }}>{item}</div>
+                  <div style={{ fontSize: 15, color: '#374151', lineHeight: 1.65 }}>{item}</div>
                 </div>
               ))}
             </div>
             <div style={{ marginTop: 20, background: `${GOLD}08`, border: `1px solid ${GOLD}25`, borderRadius: 12, padding: '14px 16px', display: 'flex', gap: 10 }}>
               <Icon name="alert" size={14} color={GOLD} />
-              <div style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.65 }}>
+              <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.65 }}>
                 Businesses not yet trading will face additional evidence requirements. Early-stage startups and businesses with ABNs under 12 months typically require more documentation.
               </div>
             </div>
@@ -272,16 +272,16 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
                       <Icon name={step.icon} size={20} color={step.color} />
                     </div>
                     <div>
-                      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', color: step.color }}>{step.num} · {step.badge}</div>
-                      <div style={{ fontSize: 16, fontWeight: 800, color: NAVY }}>{step.label}</div>
+                      <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', color: step.color }}>{step.num} · {step.badge}</div>
+                      <div style={{ fontSize: 17, fontWeight: 800, color: NAVY }}>{step.label}</div>
                     </div>
                   </div>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: '#374151', marginBottom: 10 }}>{step.sub}</div>
-                  <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.75, margin: 0 }}>{step.detail}</p>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: '#374151', marginBottom: 10 }}>{step.sub}</div>
+                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.75, margin: 0 }}>{step.detail}</p>
                   {i === 0 && (
                     <div style={{ marginTop: 18, display: 'inline-flex', alignItems: 'center', gap: 6, background: `${BLUE}10`, border: `1px solid ${BLUE}25`, borderRadius: 7, padding: '5px 12px' }}>
                       <Icon name="zap" size={11} color={BLUE} />
-                      <span style={{ fontSize: 11, fontWeight: 700, color: BLUE }}>This page covers SBS in detail</span>
+                      <span style={{ fontSize: 12, fontWeight: 700, color: BLUE }}>This page covers SBS in detail</span>
                     </div>
                   )}
                 </div>
@@ -306,7 +306,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
                   <div style={{ width: 30, height: 30, borderRadius: 8, background: activeObligation.title === ob.title ? ob.color : `${ob.color}25`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={ob.icon} size={14} color={activeObligation.title === ob.title ? '#fff' : ob.color} />
                   </div>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: activeObligation.title === ob.title ? '#fff' : 'rgba(255,255,255,0.6)', lineHeight: 1.35 }}>{ob.title}</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: activeObligation.title === ob.title ? '#fff' : 'rgba(255,255,255,0.6)', lineHeight: 1.35 }}>{ob.title}</span>
                 </button>
               ))}
             </div>
@@ -316,11 +316,11 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
               <div style={{ width: 52, height: 52, borderRadius: 14, background: `${activeObligation.color}20`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
                 <Icon name={activeObligation.icon} size={24} color={activeObligation.color} />
               </div>
-              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 28, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>{activeObligation.title}</h3>
-              <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, margin: '0 0 24px' }}>{activeObligation.detail}</p>
+              <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 29, fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>{activeObligation.title}</h3>
+              <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.7)', lineHeight: 1.85, margin: '0 0 24px' }}>{activeObligation.detail}</p>
               <div style={{ display: 'flex', gap: 10, padding: '14px 18px', background: 'rgba(255,255,255,0.05)', borderRadius: 10, alignItems: 'flex-start' }}>
                 <Icon name="alert" size={15} color={GOLD} />
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>
+                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>
                   Breaching a sponsorship obligation may result in an infringement notice ($9,400 for a company), a bar on further nominations, or cancellation of the SBS altogether.
                 </div>
               </div>
@@ -336,26 +336,26 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
 
           <div style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 16, overflow: 'hidden' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: 0, background: NAVY, padding: '12px 20px' }}>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>Item</div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', minWidth: 120, textAlign: 'right' }}>Amount</div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', minWidth: 200, textAlign: 'right' }}>Note</div>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)' }}>Item</div>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', minWidth: 120, textAlign: 'right' }}>Amount</div>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', minWidth: 200, textAlign: 'right' }}>Note</div>
             </div>
             {COSTS.map((row, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: 0, padding: '16px 20px', borderBottom: i < COSTS.length - 1 ? '1px solid #e8edf6' : 'none', background: i % 2 === 0 ? '#fff' : '#fafbfe', alignItems: 'center' }}>
-                <div style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{row.item}</div>
-                <div style={{ fontSize: 15, fontWeight: 800, color: BLUE, minWidth: 120, textAlign: 'right' }}>{row.amount}</div>
-                <div style={{ fontSize: 12, color: '#6b7280', minWidth: 200, textAlign: 'right', paddingLeft: 20 }}>{row.note}</div>
+                <div style={{ fontSize: 15, fontWeight: 600, color: NAVY }}>{row.item}</div>
+                <div style={{ fontSize: 16, fontWeight: 800, color: BLUE, minWidth: 120, textAlign: 'right' }}>{row.amount}</div>
+                <div style={{ fontSize: 13, color: '#6b7280', minWidth: 200, textAlign: 'right', paddingLeft: 20 }}>{row.note}</div>
               </div>
             ))}
           </div>
 
           <div style={{ marginTop: 16, display: 'flex', gap: 10, padding: '14px 18px', background: 'rgba(245,161,36,0.08)', border: `1px solid ${GOLD}30`, borderRadius: 12, alignItems: 'flex-start' }}>
             <Icon name="alert" size={15} color={GOLD} />
-            <div style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.7 }}>
+            <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>
               <strong>SAF levy cannot be passed to the worker</strong> — it is unlawful to deduct or recoup the SAF levy from a sponsored employee's wages at any time. The $1,200/$1,800 per year per worker is an employer cost.
             </div>
           </div>
-          <p style={{ fontSize: 11, color: '#9ca3af', marginTop: 10, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 12, color: '#9ca3af', marginTop: 10, lineHeight: 1.6 }}>
             Figures current as at 1 July 2026 — verify with Home Affairs.
           </p>
         </div>
@@ -387,10 +387,10 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
                 {/* Right — content */}
                 <div style={{ flex: 1, paddingBottom: 24 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16, marginBottom: 6 }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: NAVY }}>{item.step}</div>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: item.color, background: `${item.color}10`, border: `1px solid ${item.color}25`, borderRadius: 6, padding: '3px 10px', whiteSpace: 'nowrap' }}>{item.time}</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY }}>{item.step}</div>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: item.color, background: `${item.color}10`, border: `1px solid ${item.color}25`, borderRadius: 6, padding: '3px 10px', whiteSpace: 'nowrap' }}>{item.time}</div>
                   </div>
-                  <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65 }}>{item.note}</div>
+                  <div style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65 }}>{item.note}</div>
                 </div>
               </div>
             ))}

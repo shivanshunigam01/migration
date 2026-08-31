@@ -146,18 +146,18 @@ export default function SiteHeader({
       <div style={{ background: 'linear-gradient(90deg, #e8f0fa 0%, #f4f8ff 35%, #ffffff 60%, #eef3fb 100%)', padding: '0 24px', borderBottom: '1px solid #dde6f5' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', height: 42, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
-            <span style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 100, background: GOLD, color: NAVY_DARK }}>EMPLOYERS</span>
+            <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 100, background: GOLD, color: NAVY_DARK }}>EMPLOYERS</span>
             {['482','186'].map(code => (
-              <span key={code} style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 100, background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)' }}>{code}</span>
+              <span key={code} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 100, background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)' }}>{code}</span>
             ))}
           </div>
           <span style={{ width: 1, height: 18, background: 'rgba(27,43,94,0.12)', flexShrink: 0 }} />
-          <span style={{ fontSize: 13, color: '#374151', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
+          <span style={{ fontSize: 14, color: '#374151', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
             <strong style={{ fontWeight: 700, color: NAVY }}>Sponsoring staff?</strong>{' '}Employer readiness discussion — no charge.
           </span>
           <a href="mailto:visa@nanakmigration.com.au?subject=Employer%20sponsorship%20readiness%20discussion"
             className="announcement-cta"
-            style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, padding: '7px 16px', borderRadius: 100, background: GOLD, boxShadow: '0 2px 12px rgba(245,161,36,0.4)', transition: 'all 0.15s', whiteSpace: 'nowrap' }}
+            style={{ flexShrink: 0, fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, padding: '7px 16px', borderRadius: 100, background: GOLD, boxShadow: '0 2px 12px rgba(245,161,36,0.4)', transition: 'all 0.15s', whiteSpace: 'nowrap' }}
             onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD_LIGHT; el.style.boxShadow = '0 4px 18px rgba(245,161,36,0.55)' }}
             onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.boxShadow = '0 2px 12px rgba(245,161,36,0.4)' }}
           >
@@ -193,7 +193,7 @@ export default function SiteHeader({
                       color: isOpen ? GOLD : 'rgba(255,255,255,0.82)',
                       background: isOpen ? 'rgba(245,161,36,0.1)' : 'transparent',
                       border: isPinned ? '1px solid rgba(245,161,36,0.35)' : 'none',
-                      cursor: 'pointer', fontSize: 13, fontWeight: 500,
+                      cursor: 'pointer', fontSize: 14, fontWeight: 500,
                       letterSpacing: '0.01em', borderRadius: 8, transition: 'color 0.15s, background 0.15s',
                       whiteSpace: 'nowrap', fontFamily: "'Gilroy', sans-serif",
                     }}
@@ -220,7 +220,7 @@ export default function SiteHeader({
                   color: openNav === '__practice__' ? GOLD : 'rgba(255,255,255,0.75)',
                   background: openNav === '__practice__' ? 'rgba(245,161,36,0.1)' : 'transparent',
                   border: '1px solid', borderColor: openNav === '__practice__' ? 'rgba(245,161,36,0.4)' : pinnedNav === '__practice__' ? 'rgba(245,161,36,0.6)' : 'rgba(255,255,255,0.2)',
-                  cursor: 'pointer', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', borderRadius: 8,
+                  cursor: 'pointer', fontSize: 13, fontWeight: 700, letterSpacing: '0.1em', borderRadius: 8,
                   transition: 'color 0.15s, background 0.15s, border-color 0.15s', whiteSpace: 'nowrap',
                   fontFamily: "'Gilroy', sans-serif", textTransform: 'uppercase', marginLeft: 6,
                 }}>
@@ -244,7 +244,7 @@ export default function SiteHeader({
 
                     {/* Column 1: The Practice */}
                     <div style={{ padding: '24px 20px 20px', borderRight: '1px solid #f0f2f7' }}>
-                      <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>The Practice</div>
+                      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>The Practice</div>
                       <div style={{ height: 1, background: '#f0f2f7', marginBottom: 12 }} />
                       {[
                         { label: 'About the Practice', desc: 'Who we are and how we work', icon: 'user', action: () => { closeNav(); navigate('about') }, emph: false },
@@ -260,8 +260,8 @@ export default function SiteHeader({
                             <Icon name={l.icon} size={13} color={l.emph ? NAVY : NAVY} />
                           </span>
                           <div>
-                            <div style={{ fontSize: 13, fontWeight: l.emph ? 700 : 600, color: l.emph ? NAVY : '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
-                            <div style={{ fontSize: 11, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
+                            <div style={{ fontSize: 14, fontWeight: l.emph ? 700 : 600, color: l.emph ? NAVY : '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
+                            <div style={{ fontSize: 12, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
                           </div>
                         </a>
                       ))}
@@ -269,7 +269,7 @@ export default function SiteHeader({
 
                     {/* Column 2: Free Tools */}
                     <div style={{ padding: '24px 20px 20px', borderRight: '1px solid #f0f2f7' }}>
-                      <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
+                      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
                       <div style={{ height: 1, background: '#f0f2f7', marginBottom: 12 }} />
                       {[
                         { label: 'Points Calculator', desc: 'Estimate your SkillSelect score', icon: 'hash', anchor: 'points-calculator' },
@@ -286,8 +286,8 @@ export default function SiteHeader({
                             <Icon name={l.icon} size={13} color={NAVY} />
                           </span>
                           <div>
-                            <div style={{ fontSize: 13, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
-                            <div style={{ fontSize: 11, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
+                            <div style={{ fontSize: 14, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
+                            <div style={{ fontSize: 12, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
                           </div>
                         </a>
                       ))}
@@ -296,14 +296,14 @@ export default function SiteHeader({
                         style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 8, padding: '8px 10px', backgroundColor: `${NAVY}0d`, borderRadius: 8, border: `1px solid ${NAVY}18`, textDecoration: 'none', transition: 'background 0.12s' }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}18` }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}0d` }}>
-                        <span style={{ fontSize: 12, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>All tools</span>
-                        <span style={{ fontSize: 14, color: NAVY, fontWeight: 700 }}>›</span>
+                        <span style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>All tools</span>
+                        <span style={{ fontSize: 15, color: NAVY, fontWeight: 700 }}>›</span>
                       </a>
                     </div>
 
                     {/* Column 3: Resources */}
                     <div style={{ padding: '24px 20px 20px' }}>
-                      <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
+                      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
                       <div style={{ height: 1, background: '#f0f2f7', marginBottom: 12 }} />
                       {[
                         { label: 'Visa Guides', desc: 'All 30 visa topics explained', icon: 'bookopen', route: 'guides' },
@@ -320,8 +320,8 @@ export default function SiteHeader({
                             <Icon name={l.icon} size={13} color={NAVY} />
                           </span>
                           <div>
-                            <div style={{ fontSize: 13, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
-                            <div style={{ fontSize: 11, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
+                            <div style={{ fontSize: 14, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
+                            <div style={{ fontSize: 12, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
                           </div>
                         </a>
                       ))}
@@ -330,19 +330,19 @@ export default function SiteHeader({
 
                   {/* Footer strip */}
                   <div style={{ borderTop: '1px solid #f0f2f7', padding: '10px 20px', display: 'flex', alignItems: 'center', gap: 16, background: '#fafbfe', borderRadius: '0 0 14px 14px' }}>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '3px 10px', borderRadius: 100, background: `${NAVY}0e`, border: `1px solid ${NAVY}18`, fontSize: 10, fontWeight: 700, color: NAVY, fontFamily: "'Gilroy', sans-serif", letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: 5, padding: '3px 10px', borderRadius: 100, background: `${NAVY}0e`, border: `1px solid ${NAVY}18`, fontSize: 11, fontWeight: 700, color: NAVY, fontFamily: "'Gilroy', sans-serif", letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
                       <Icon name="shield" size={9} color={GOLD} />
                       MARA REGISTERED · MARN 2619467
                     </span>
                     <a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noopener noreferrer"
-                      style={{ fontSize: 11, color: '#9ca3af', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', transition: 'color 0.12s' }}
+                      style={{ fontSize: 12, color: '#9ca3af', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', transition: 'color 0.12s' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#9ca3af' }}>
                       Verify on OMARA register ↗
                     </a>
                     <span style={{ flex: 1 }} />
                     <a href="tel:1300644728"
-                      style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 11, fontWeight: 600, color: NAVY, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', transition: 'color 0.12s' }}
+                      style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 12, fontWeight: 600, color: NAVY, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", whiteSpace: 'nowrap', transition: 'color 0.12s' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = NAVY }}>
                       <Icon name="phone" size={11} color="currentColor" />
@@ -400,13 +400,13 @@ export default function SiteHeader({
                           <Icon name="shield" size={15} color={NAVY} />
                         </div>
                         <div>
-                          <div style={{ fontSize: 11, fontWeight: 800, color: GOLD, fontFamily: "'Gilroy', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}>MARA REGISTERED</div>
-                          <div style={{ fontSize: 10, color: '#64748b', fontFamily: "'Gilroy', sans-serif", marginTop: 1 }}>MARN 2619467</div>
+                          <div style={{ fontSize: 12, fontWeight: 800, color: GOLD, fontFamily: "'Gilroy', sans-serif", letterSpacing: '0.08em', textTransform: 'uppercase' }}>MARA REGISTERED</div>
+                          <div style={{ fontSize: 11, color: '#64748b', fontFamily: "'Gilroy', sans-serif", marginTop: 1 }}>MARN 2619467</div>
                         </div>
                       </div>
                       {/* Heading + subline */}
-                      <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3, marginBottom: 4 }}>MARA-Registered Migration Agent</div>
-                      <div style={{ fontSize: 12, color: '#475569', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.55, marginBottom: 16 }}>Navpreet Aulakh — helping skilled workers, students and families move to Australia.</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: NAVY, fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3, marginBottom: 4 }}>MARA-Registered Migration Agent</div>
+                      <div style={{ fontSize: 13, color: '#475569', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.55, marginBottom: 16 }}>Navpreet Aulakh — helping skilled workers, students and families move to Australia.</div>
                       {/* Contact rows */}
                       {[
                         { icon: 'phone', label: 'Call 1300 644 728', href: 'tel:1300644728' },
@@ -418,7 +418,7 @@ export default function SiteHeader({
                           <div style={{ width: 26, height: 26, borderRadius: 7, backgroundColor: `${NAVY}10`, border: `1px solid ${NAVY}1a`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                             <Icon name={c.icon} size={11} color={NAVY} />
                           </div>
-                          <span style={{ fontSize: 12, color: NAVY, fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{c.label}</span>
+                          <span style={{ fontSize: 13, color: NAVY, fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{c.label}</span>
                         </a>
                       ))}
                       {/* Divider + link groups */}
@@ -426,7 +426,7 @@ export default function SiteHeader({
                         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 10px' }}>
                           {/* Free Tools */}
                           <div>
-                            <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
+                            <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
                             {[
                               { label: 'Points Calculator', anchor: 'points-calculator', icon: 'hash' },
                               { label: 'Occupation Search', anchor: 'occupation-search', icon: 'layers' },
@@ -435,7 +435,7 @@ export default function SiteHeader({
                             ].map(l => (
                               <a key={l.label} href="#"
                                 onClick={(e) => { e.preventDefault(); navigate('tools'); setTimeout(() => { if (l.anchor) { const el = document.getElementById(l.anchor); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) } }, 80); closeNav() }}
-                                style={{ display: 'flex', alignItems: 'center', gap: 5, minHeight: 28, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", fontSize: 12, color: NAVY, fontWeight: 500, transition: 'color 0.12s' }}
+                                style={{ display: 'flex', alignItems: 'center', gap: 5, minHeight: 28, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", fontSize: 13, color: NAVY, fontWeight: 500, transition: 'color 0.12s' }}
                                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = NAVY }}>
                                 <Icon name={l.icon} size={10} color="#94a3b8" />
@@ -445,7 +445,7 @@ export default function SiteHeader({
                           </div>
                           {/* Resources */}
                           <div>
-                            <div style={{ fontSize: 9, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
+                            <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
                             {[
                               { label: 'Visa Guides', route: 'guides', icon: 'bookopen' },
                               { label: 'Checklists', route: 'checklists', icon: 'clipboard' },
@@ -453,7 +453,7 @@ export default function SiteHeader({
                             ].map(l => (
                               <a key={l.label} href="#"
                                 onClick={(e) => { e.preventDefault(); navigate(l.route); closeNav() }}
-                                style={{ display: 'flex', alignItems: 'center', gap: 5, minHeight: 28, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", fontSize: 12, color: NAVY, fontWeight: 500, transition: 'color 0.12s' }}
+                                style={{ display: 'flex', alignItems: 'center', gap: 5, minHeight: 28, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", fontSize: 13, color: NAVY, fontWeight: 500, transition: 'color 0.12s' }}
                                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = NAVY }}>
                                 <Icon name={l.icon} size={10} color="#94a3b8" />
@@ -464,7 +464,7 @@ export default function SiteHeader({
                         </div>
                         {/* MARA Verification micro-link */}
                         <a href="https://portal.mara.gov.au/search-the-register-of-migration-agents/" target="_blank" rel="noopener noreferrer"
-                          style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 10, fontSize: 10, color: '#94a3b8', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", transition: 'color 0.12s' }}
+                          style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 10, fontSize: 11, color: '#94a3b8', textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", transition: 'color 0.12s' }}
                           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#94a3b8' }}>
                           <Icon name="shield" size={9} color="#94a3b8" />
@@ -472,7 +472,7 @@ export default function SiteHeader({
                         </a>
                       </div>
                       {/* Gold button — unchanged */}
-                      <a href="/book-consultation" onClick={(e) => { e.preventDefault(); navigate('book-consultation') }} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 13, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
+                      <a href="/book-consultation" onClick={(e) => { e.preventDefault(); navigate('book-consultation') }} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD_LIGHT }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD }}>
                         Book Free Consultation
@@ -488,7 +488,7 @@ export default function SiteHeader({
                       <div style={{ width: 40, height: 40, borderRadius: 10, backgroundColor: iconColor, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                         <Icon name={cat.icon} size={20} color="#ffffff" />
                       </div>
-                      <span style={{ fontSize: 15, fontWeight: 700, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.2 }}>{cat.heading}</span>
+                      <span style={{ fontSize: 16, fontWeight: 700, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.2 }}>{cat.heading}</span>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                       {cat.items.map(navItem => {
@@ -508,13 +508,13 @@ export default function SiteHeader({
                               <Icon name={navItem.icon} size={14} color={iconColor} />
                             </div>
                             <div style={{ flex: 1, minWidth: 0 }}>
-                              <div style={{ fontSize: 13.5, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3, marginBottom: 2 }}>
+                              <div style={{ fontSize: 14.5, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3, marginBottom: 2 }}>
                                 {navItem.label}
                                 {navItem.code && (
-                                  <span style={{ display: 'inline-block', marginLeft: 6, fontSize: 9.5, fontWeight: 700, color: iconColor, backgroundColor: `${iconColor}12`, border: `1px solid ${iconColor}28`, padding: '1px 5px', borderRadius: 4, verticalAlign: 'middle', letterSpacing: '0.04em', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.6 }}>{navItem.code}</span>
+                                  <span style={{ display: 'inline-block', marginLeft: 6, fontSize: 10.5, fontWeight: 700, color: iconColor, backgroundColor: `${iconColor}12`, border: `1px solid ${iconColor}28`, padding: '1px 5px', borderRadius: 4, verticalAlign: 'middle', letterSpacing: '0.04em', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.6 }}>{navItem.code}</span>
                                 )}
                               </div>
-                              <div style={{ fontSize: 11.5, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.4, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical' as const }}>{navItem.desc}</div>
+                              <div style={{ fontSize: 12.5, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.4, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical' as const }}>{navItem.desc}</div>
                             </div>
                           </a>
                         )
@@ -523,8 +523,8 @@ export default function SiteHeader({
                     <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12, padding: '10px 12px', backgroundColor: `${iconColor}0d`, borderRadius: 8, border: `1px solid ${iconColor}18`, textDecoration: 'none', transition: 'background 0.12s' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}18` }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}0d` }}>
-                      <span style={{ fontSize: 12.5, fontWeight: 600, color: iconColor, fontFamily: "'Gilroy', sans-serif" }}>View All {cat.heading}</span>
-                      <span style={{ fontSize: 14, color: iconColor, fontWeight: 700 }}>›</span>
+                      <span style={{ fontSize: 13.5, fontWeight: 600, color: iconColor, fontFamily: "'Gilroy', sans-serif" }}>View All {cat.heading}</span>
+                      <span style={{ fontSize: 15, color: iconColor, fontWeight: 700 }}>›</span>
                     </a>
                     <div style={{ height: 28 }} />
                   </div>
@@ -547,7 +547,7 @@ export default function SiteHeader({
               <div key={item.label} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                 <button
                   onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
-                  style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 0', background: 'none', border: 'none', cursor: 'pointer', color: '#ffffff', fontSize: 16, fontWeight: 600, fontFamily: "'Gilroy', sans-serif" }}
+                  style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 0', background: 'none', border: 'none', cursor: 'pointer', color: '#ffffff', fontSize: 17, fontWeight: 600, fontFamily: "'Gilroy', sans-serif" }}
                 >
                   {item.label}
                   <svg width="16" height="10" viewBox="0 0 10 6" fill="none" style={{ transition: 'transform 0.2s', transform: mobileExpanded === item.label ? 'rotate(180deg)' : 'none', opacity: 0.6 }}>
@@ -558,13 +558,13 @@ export default function SiteHeader({
                   <div style={{ paddingBottom: 12, maxHeight: '60vh', overflowY: 'auto' }}>
                     {item.categories.filter(c => !c.isContact).map(cat => (
                       <div key={cat.heading} style={{ marginBottom: 16 }}>
-                        <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 8, paddingLeft: 4 }}>{cat.heading}</div>
+                        <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 8, paddingLeft: 4 }}>{cat.heading}</div>
                         {cat.items.map(navItem => {
                           const clickHandler = resolveNavClick(item.label, navItem, navigate, () => { closeNav(); setMobileOpen(false) })
                           return (
                             <button key={navItem.label}
                               onClick={clickHandler ? (e) => { clickHandler(e); setMobileOpen(false) } : undefined}
-                              style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}
+                              style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 17, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}
                             >
                               {navItem.label}
                             </button>
@@ -580,7 +580,7 @@ export default function SiteHeader({
             <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
               <button
                 onClick={() => setMobileExpanded(mobileExpanded === '__practice__' ? null : '__practice__')}
-                style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 0', background: 'none', border: 'none', cursor: 'pointer', color: '#ffffff', fontSize: 16, fontWeight: 600, fontFamily: "'Gilroy', sans-serif" }}>
+                style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 0', background: 'none', border: 'none', cursor: 'pointer', color: '#ffffff', fontSize: 17, fontWeight: 600, fontFamily: "'Gilroy', sans-serif" }}>
                 Practice
                 <svg width="16" height="10" viewBox="0 0 10 6" fill="none" style={{ transition: 'transform 0.2s', transform: mobileExpanded === '__practice__' ? 'rotate(180deg)' : 'none', opacity: 0.6 }}>
                   <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -589,18 +589,18 @@ export default function SiteHeader({
               {mobileExpanded === '__practice__' && (
                 <div style={{ paddingBottom: 16 }}>
                   {/* Group: The Practice */}
-                  <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>The Practice</div>
+                  <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>The Practice</div>
                   {[
                     { label: 'About the Practice', route: 'about' },
                     { label: 'Contact', route: 'contact' },
                   ].map(l => (
                     <button key={l.label} onClick={() => { navigate(l.route); setMobileOpen(false) }}
-                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 15, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
                       {l.label}
                     </button>
                   ))}
                   {/* Group: Free Tools */}
-                  <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
+                  <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
                   {[
                     { label: 'Points Calculator', anchor: 'points-calculator' },
                     { label: 'Occupation Search', anchor: 'occupation-search' },
@@ -609,12 +609,12 @@ export default function SiteHeader({
                     { label: 'All Tools', anchor: '' },
                   ].map(l => (
                     <button key={l.label} onClick={() => { navigate('tools'); setTimeout(() => { if (l.anchor) { const el = document.getElementById(l.anchor); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) } }, 80); setMobileOpen(false) }}
-                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 15, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
                       {l.label}
                     </button>
                   ))}
                   {/* Group: Resources */}
-                  <div style={{ fontSize: 10, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
+                  <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
                   {[
                     { label: 'Visa Guides', route: 'guides' },
                     { label: 'Blog', route: 'blog' },
@@ -622,7 +622,7 @@ export default function SiteHeader({
                     { label: 'Resources Hub', route: 'resources' },
                   ].map(l => (
                     <button key={l.label} onClick={() => { navigate(l.route); setMobileOpen(false) }}
-                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 15, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
                       {l.label}
                     </button>
                   ))}

@@ -13,7 +13,7 @@ const DEFAULT_MSG =
 export function CostNote({ message = DEFAULT_MSG, inline = false }: CostNoteProps) {
   if (inline) {
     return (
-      <p style={{ fontSize: 11.5, color: '#9ca3af', fontStyle: 'italic', margin: 0, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 12.5, color: '#9ca3af', fontStyle: 'italic', margin: 0, lineHeight: 1.6 }}>
         {message}
       </p>
     )
@@ -22,7 +22,7 @@ export function CostNote({ message = DEFAULT_MSG, inline = false }: CostNoteProp
   return (
     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start', background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 10, padding: '14px 16px' }}>
       <Icon name="info" size={15} color="#6b7280" />
-      <p style={{ fontSize: 13, color: '#6b7280', margin: 0, lineHeight: 1.65 }}>{message}</p>
+      <p style={{ fontSize: 14, color: '#6b7280', margin: 0, lineHeight: 1.65 }}>{message}</p>
     </div>
   )
 }

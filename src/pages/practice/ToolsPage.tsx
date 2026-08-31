@@ -273,15 +273,15 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
               <div>{card.icon}</div>
 
               {/* Name */}
-              <div style={{ fontSize: 18, fontWeight: 700, color: NAVY }}>{card.name}</div>
+              <div style={{ fontSize: 19, fontWeight: 700, color: NAVY }}>{card.name}</div>
 
               {/* Benefit */}
-              <div style={{ fontSize: 14, color: '#6b7280', fontStyle: 'italic', lineHeight: 1.5 }}>{card.benefit}</div>
+              <div style={{ fontSize: 15, color: '#6b7280', fontStyle: 'italic', lineHeight: 1.5 }}>{card.benefit}</div>
 
               {/* Bullets */}
               <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
                 {card.bullets.map(b => (
-                  <li key={b} style={{ fontSize: 13, color: NAVY, lineHeight: 1.5 }}>
+                  <li key={b} style={{ fontSize: 14, color: NAVY, lineHeight: 1.5 }}>
                     <span style={{ color: GOLD, fontWeight: 700, marginRight: 6 }}>·</span>{b}
                   </li>
                 ))}
@@ -298,7 +298,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
                   color: GOLD,
                   borderRadius: 8,
                   padding: '10px 20px',
-                  fontSize: 13,
+                  fontSize: 14,
                   fontWeight: 700,
                   cursor: 'pointer',
                   fontFamily: "'Gilroy', sans-serif",
@@ -334,7 +334,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
                     alignItems: 'center',
                     border: 'none',
                     fontFamily: "'Gilroy', sans-serif",
-                    fontSize: 16,
+                    fontSize: 17,
                     fontWeight: 700,
                     textAlign: 'left' as const,
                     transition: 'border-radius 0.2s',

@@ -17,13 +17,13 @@ export function SectionHeading({ kicker, title, intro, accent = NAVY, light = fa
     <Reveal preset="up" style={{ textAlign: 'center', marginBottom: mb }}>
       {kicker && (
         <div style={{
-          fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
+          fontSize: 12, fontWeight: 700, letterSpacing: '0.12em',
           textTransform: 'uppercase' as const, color: accent, marginBottom: 10,
         }}>{kicker}</div>
       )}
       <h2 style={{
         fontFamily: "'Gilroy', sans-serif",
-        fontSize: 'clamp(26px, 3.5vw, 38px)',
+        fontSize: 'clamp(28px, 3.5vw, 40px)',
         fontWeight: 700,
         color: light ? '#ffffff' : NAVY,
         margin: intro ? '0 0 12px' : 0,
@@ -33,7 +33,7 @@ export function SectionHeading({ kicker, title, intro, accent = NAVY, light = fa
       {intro && (
         <p style={{
           color: light ? 'rgba(255,255,255,0.55)' : '#6b7280',
-          fontSize: 16, maxWidth: 540, margin: '0 auto', lineHeight: 1.6,
+          fontSize: 17, maxWidth: 540, margin: '0 auto', lineHeight: 1.6,
         }}>{intro}</p>
       )}
     </Reveal>

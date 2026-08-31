@@ -16,7 +16,7 @@ export function AnswerBox({ children }: AnswerBoxProps) {
       margin: '0 0 0 0',
     }}>
       <div style={{
-        fontSize: 11,
+        fontSize: 12,
         fontWeight: 800,
         letterSpacing: '0.12em',
         textTransform: 'uppercase' as const,
@@ -24,7 +24,7 @@ export function AnswerBox({ children }: AnswerBoxProps) {
         marginBottom: 10,
       }}>Quick Answer</div>
       <div style={{
-        fontSize: 16,
+        fontSize: 17,
         lineHeight: 1.7,
         color: NAVY,
         fontWeight: 400,

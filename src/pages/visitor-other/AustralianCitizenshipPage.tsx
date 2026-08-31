@@ -293,25 +293,25 @@ function CitizenshipAtAGlance() {
 
   return (
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '26px 24px' }}>
-      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: ROYAL, marginBottom: 4 }}>Conferral pathway at a glance</div>
+      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: ROYAL, marginBottom: 4 }}>Conferral pathway at a glance</div>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 16 }}>
         <span style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 48, fontWeight: 800, color: NAVY, lineHeight: 1 }}>4</span>
-        <span style={{ fontSize: 14, color: '#9ca3af', fontWeight: 500 }}>years generally required</span>
+        <span style={{ fontSize: 15, color: '#9ca3af', fontWeight: 500 }}>years generally required</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8, marginBottom: 18 }}>
         {steps.map((s, i) => (
           <div key={s.label} style={{ display: 'flex', gap: 10, alignItems: 'center', padding: '8px 10px', background: `rgba(27,43,94,0.05)`, border: `1px solid rgba(27,43,94,0.10)`, borderRadius: 9 }}>
-            <div style={{ width: 22, height: 22, borderRadius: '50%', background: NAVY, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 800, flexShrink: 0 }}>{i + 1}</div>
-            <span style={{ fontSize: 12.5, color: NAVY, fontWeight: 500 }}>{s.label}</span>
+            <div style={{ width: 22, height: 22, borderRadius: '50%', background: NAVY, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 800, flexShrink: 0 }}>{i + 1}</div>
+            <span style={{ fontSize: 13.5, color: NAVY, fontWeight: 500 }}>{s.label}</span>
           </div>
         ))}
       </div>
       <div style={{ padding: '10px 12px', background: `${AMBER}08`, border: `1px solid ${AMBER}20`, borderRadius: 9 }}>
-        <div style={{ fontSize: 11.5, color: '#374151', lineHeight: 1.65 }}>
+        <div style={{ fontSize: 12.5, color: '#374151', lineHeight: 1.65 }}>
           <strong style={{ color: AMBER }}>Not automatic at PR:</strong> Citizenship requires a separate application after meeting all requirements. Use the indicative calculator below to estimate your eligibility date.
         </div>
       </div>
-      <p style={{ fontSize: 11, color: '#9ca3af', margin: '12px 0 0', lineHeight: 1.6 }}>General guide only. Obtain advice from MARN 2619467.</p>
+      <p style={{ fontSize: 12, color: '#9ca3af', margin: '12px 0 0', lineHeight: 1.6 }}>General guide only. Obtain advice from MARN 2619467.</p>
     </div>
   )
 }
@@ -403,8 +403,8 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
+                  <p style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
                 </div>
               </div>
             ))}
@@ -454,9 +454,9 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={p.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
+                <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
               </div>
             ))}
           </div>
@@ -479,8 +479,8 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
                   <Icon name={p.icon} size={14} color={NAVY} />
                 </div>
                 <div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
-                  <p style={{ margin: 0, fontSize: 13.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 4 }}>{p.heading}</div>
+                  <p style={{ margin: 0, fontSize: 14.5, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
                 </div>
               </div>
             ))}
@@ -504,9 +504,9 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: `rgba(27,43,94,0.07)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={p.icon} size={13} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
+                <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
               </div>
             ))}
           </div>

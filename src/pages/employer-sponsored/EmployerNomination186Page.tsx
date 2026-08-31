@@ -139,10 +139,10 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
       borderRadius: 16,
       padding: 28,
     }}>
-      <div style={{ color: GOLD, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', marginBottom: 6 }}>
+      <div style={{ color: GOLD, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', marginBottom: 6 }}>
         TRT ELIGIBILITY CHECKLIST
       </div>
-      <p style={{ color: '#6b7280', fontSize: 13, marginBottom: 20, lineHeight: 1.6 }}>
+      <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 20, lineHeight: 1.6 }}>
         Tick each item that applies to you to see whether you are likely eligible for the TRT stream.
       </p>
 
@@ -176,7 +176,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                 {checked && <Icon name="check" size={13} color="white" />}
               </div>
               <span style={{
-                fontSize: 13, lineHeight: 1.5,
+                fontSize: 14, lineHeight: 1.5,
                 color: checked ? NAVY : '#6b7280',
               }}>
                 {item.label}
@@ -215,7 +215,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
         </div>
         <div>
           <div style={{
-            fontWeight: 700, fontSize: 14,
+            fontWeight: 700, fontSize: 15,
             color: allChecked ? GREEN : totalChecked === 0 ? '#9ca3af' : GOLD,
           }}>
             {allChecked
@@ -224,7 +224,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                 ? 'Tick items above to check'
                 : `${remaining} item${remaining !== 1 ? 's' : ''} remaining`}
           </div>
-          <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 2 }}>
+          <div style={{ fontSize: 13, color: '#9ca3af', marginTop: 2 }}>
             {allChecked
               ? 'Seek confirmation from a registered migration agent.'
               : totalChecked === 0
@@ -293,7 +293,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
       <section style={{ background: '#ffffff', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Requirements" title="Eligibility Requirements" accent={GREEN} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
             Core requirements across all three 186 streams. Additional stream-specific criteria apply.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -313,8 +313,8 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                 }}>
                   <Icon name={item.icon} size={22} color={NAVY} />
                 </div>
-                <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 15 }}>{item.title}</div>
-                <div style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65 }}>{item.desc}</div>
+                <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 16 }}>{item.title}</div>
+                <div style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65 }}>{item.desc}</div>
               </div>
             ))}
           </div>
@@ -325,7 +325,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
       <section style={{ background: GREY_BAND, padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Application" title="Application Pathway" accent={GREEN} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, lineHeight: 1.7 }}>
             From confirming your stream to receiving permanent residence.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
@@ -343,14 +343,14 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                   borderRadius: 14,
                   background: NAVY_DARK,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: GOLD, fontWeight: 800, fontSize: 14,
+                  color: GOLD, fontWeight: 800, fontSize: 15,
                   fontFamily: "'Gilroy', sans-serif",
                 }}>
                   {step.num}
                 </div>
                 <div style={{ paddingTop: 10 }}>
-                  <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 16, marginBottom: 6 }}>{step.title}</div>
-                  <div style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65 }}>{step.desc}</div>
+                  <div style={{ fontWeight: 700, color: NAVY_DARK, fontSize: 17, marginBottom: 6 }}>{step.title}</div>
+                  <div style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65 }}>{step.desc}</div>
                 </div>
               </div>
             ))}
@@ -362,7 +362,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
       <section style={{ background: '#ffffff', padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="Streams" title="Stream Comparison" accent={GREEN} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 32 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 32 }}>
             Select a stream to explore its specific requirements and typical processing time.
           </p>
 
@@ -378,7 +378,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                   border: activeStream === s.key ? `2px solid ${s.color}` : '2px solid #e2e8f0',
                   background: activeStream === s.key ? `${s.color}12` : 'white',
                   color: activeStream === s.key ? s.color : '#64748b',
-                  fontWeight: 700, fontSize: 13, cursor: 'pointer',
+                  fontWeight: 700, fontSize: 14, cursor: 'pointer',
                   fontFamily: 'inherit', transition: 'all 0.15s',
                 }}
               >
@@ -400,7 +400,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                   border: `1px solid ${currentStream.color}40`,
                   borderRadius: 8, padding: '4px 12px', marginBottom: 14,
                 }}>
-                  <span style={{ color: currentStream.color, fontSize: 12, fontWeight: 700 }}>{currentStream.fullLabel}</span>
+                  <span style={{ color: currentStream.color, fontSize: 13, fontWeight: 700 }}>{currentStream.fullLabel}</span>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                   {[
@@ -414,17 +414,17 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                       background: '#f8fafc',
                       borderRadius: 8,
                     }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: 13 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#64748b', fontSize: 14 }}>
                         <Icon name={row.icon} size={14} color="#94a3b8" />
                         {row.label}
                       </div>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: NAVY_DARK }}>{row.value}</span>
+                      <span style={{ fontSize: 14, fontWeight: 600, color: NAVY_DARK }}>{row.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <div style={{ color: '#94a3b8', fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', marginBottom: 12 }}>
+                <div style={{ color: '#94a3b8', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', marginBottom: 12 }}>
                   KEY REQUIREMENTS
                 </div>
                 {currentStream.requirements.map((req, i) => (
@@ -436,7 +436,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
                     }}>
                       <Icon name="check" size={12} color={currentStream.color} />
                     </div>
-                    <span style={{ color: '#475569', fontSize: 14, lineHeight: 1.55 }}>{req}</span>
+                    <span style={{ color: '#475569', fontSize: 15, lineHeight: 1.55 }}>{req}</span>
                   </div>
                 ))}
               </div>
@@ -449,7 +449,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
       <section style={{ background: GREY_BAND, padding: '64px 24px' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <SectionHeading kicker="FAQ" title="Frequently Asked Questions" accent={GREEN} />
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36 }}>
             Common questions about the subclass 186 Employer Nomination Scheme.
           </p>
           <FaqAccordion items={faqItems} accent={GREEN} />

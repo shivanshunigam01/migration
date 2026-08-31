@@ -23,10 +23,10 @@ export default function ReviewedBy({ lastReviewed = 'July 2026' }: ReviewedByPro
         style={{ width: 32, height: 32, objectFit: 'cover', objectPosition: 'top center', borderRadius: '50%', flexShrink: 0 }}
       />
       <div>
-        <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.4 }}>
+        <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.4 }}>
           Reviewed by <strong style={{ fontWeight: 700 }}>Navpreet Aulakh</strong>, Registered Migration Agent (MARN 2619467)
         </div>
-        <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 2 }}>
+        <div style={{ fontSize: 12, color: '#9ca3af', marginTop: 2 }}>
           Last reviewed: {lastReviewed}
         </div>
       </div>

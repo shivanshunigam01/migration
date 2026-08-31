@@ -80,10 +80,10 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
           </svg>
         </div>
         <div>
-          <div style={{ fontSize: 14, fontWeight: 700, color: '#ffffff' }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff' }}>
             You're subscribed — thank you!
           </div>
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)', marginTop: 2 }}>
             We'll be in touch with the latest updates.
           </div>
         </div>
@@ -118,7 +118,7 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
         placeholder="your@email.com"
         style={{
           padding: '14px 20px',
-          fontSize: 14,
+          fontSize: 15,
           border: 'none',
           borderRadius: '10px 0 0 10px',
           outline: 'none',
@@ -137,7 +137,7 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
           color: '#fff',
           border: 'none',
           borderRadius: '0 10px 10px 0',
-          fontSize: 14,
+          fontSize: 15,
           fontWeight: 700,
           cursor: loading ? 'not-allowed' : 'pointer',
           whiteSpace: 'nowrap',
@@ -160,7 +160,7 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
         style={{ position: 'absolute', left: -9999, opacity: 0, height: 0, width: 0 }}
       />
       {error && (
-        <div style={{ fontSize: 12, color: '#fecaca', marginTop: 8, paddingLeft: 4 }}>{error}</div>
+        <div style={{ fontSize: 13, color: '#fecaca', marginTop: 8, paddingLeft: 4 }}>{error}</div>
       )}
     </form>
   )
@@ -221,7 +221,7 @@ function ColLink({
   target?: string
 }) {
   const base: React.CSSProperties = {
-    fontSize: 14,
+    fontSize: 15,
     color: 'rgba(255,255,255,0.75)',
     textDecoration: 'none',
     display: 'block',
@@ -267,7 +267,7 @@ function ColHeading({ children }: { children: React.ReactNode }) {
     <>
       <div
         style={{
-          fontSize: 10,
+          fontSize: 11,
           fontWeight: 800,
           letterSpacing: '0.14em',
           textTransform: 'uppercase',
@@ -324,7 +324,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
         >
           <span
             style={{
-              fontSize: 10,
+              fontSize: 11,
               fontWeight: 800,
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
@@ -333,7 +333,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
           >
             {heading}
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 14 }}>{isOpen ? '▲' : '▼'}</span>
+          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 15 }}>{isOpen ? '▲' : '▼'}</span>
         </button>
         {/* Desktop heading always visible */}
         <div className="footer-col-desktop-heading">
@@ -438,7 +438,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               />
               <span
                 style={{
-                  fontSize: 11,
+                  fontSize: 12,
                   fontWeight: 600,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
@@ -450,7 +450,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             </div>
             <div
               style={{
-                fontSize: 22,
+                fontSize: 23,
                 fontWeight: 700,
                 color: '#ffffff',
                 letterSpacing: '-0.02em',
@@ -460,7 +460,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             >
               {newsletter.title || 'Australia immigration news straight to your inbox'}
             </div>
-            <div style={{ fontSize: 13.5, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
+            <div style={{ fontSize: 14.5, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
               {newsletter.subtext || 'Policy updates, visa changes, occupation list alerts — no spam, unsubscribe any time.'}
             </div>
           </div>
@@ -500,7 +500,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 5,
-                  fontSize: 12,
+                  fontSize: 13,
                   color: 'rgba(255,255,255,0.7)',
                   letterSpacing: '0.04em',
                   whiteSpace: 'nowrap',
@@ -510,7 +510,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                 {item}
               </span>
               {i < arr.length - 1 && (
-                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', padding: '0 4px' }}>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.3)', padding: '0 4px' }}>
                   ·
                 </span>
               )}
@@ -542,7 +542,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             {/* Positioning statement */}
             <p
               style={{
-                fontSize: 13,
+                fontSize: 14,
                 color: 'rgba(255,255,255,0.75)',
                 lineHeight: 1.6,
                 margin: '0 0 20px',
@@ -565,7 +565,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                 <div
                   key={line}
                   style={{
-                    fontSize: 13,
+                    fontSize: 14,
                     color: 'rgba(255,255,255,0.65)',
                     lineHeight: 1.7,
                   }}
@@ -596,7 +596,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                 <ShieldIcon size={16} color={GOLD} />
                 <span
                   style={{
-                    fontSize: 12,
+                    fontSize: 13,
                     fontWeight: 700,
                     color: GOLD,
                   }}
@@ -604,7 +604,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   Registered Migration Agent
                 </span>
               </div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.7)' }}>MARN 2619467</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>MARN 2619467</div>
             </div>
 
             {/* Social icons */}
@@ -790,7 +790,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
         <div style={{ maxWidth: 1300, margin: '0 auto' }}>
           <div
             style={{
-              fontSize: 10,
+              fontSize: 11,
               fontWeight: 700,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
@@ -821,7 +821,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                         background: 'none',
                         border: 'none',
                         cursor: 'pointer',
-                        fontSize: 12,
+                        fontSize: 13,
                         color: 'rgba(255,255,255,0.45)',
                         fontFamily: "'Gilroy', sans-serif",
                         padding: 0,
@@ -840,7 +840,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   </li>
                   {i < locations.length - 1 && (
                     <li aria-hidden="true">
-                      <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)', padding: '0 10px' }}>
+                      <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.2)', padding: '0 10px' }}>
                         ·
                       </span>
                     </li>
@@ -866,20 +866,20 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               marginBottom: 8,
             }}
           >
-            <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
               © 2026 Nanak Migration Group Pty Ltd. All rights reserved.
             </span>
-            <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.2)' }}>|</span>
-            <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>|</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
               ABN 54 674 937 476 · ACN 674 937 476
             </span>
             {['Privacy Policy', 'Terms of Use', 'Accessibility', 'Sitemap'].map((lbl) => (
               <Fragment key={lbl}>
-                <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.2)' }}>|</span>
+                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>|</span>
                 <a
                   href="#"
                   style={{
-                    fontSize: 11,
+                    fontSize: 12,
                     color: 'rgba(255,255,255,0.5)',
                     textDecoration: 'none',
                     whiteSpace: 'nowrap',
@@ -897,7 +897,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             ))}
           </div>
           {/* Row 2 */}
-          <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>
             General information only. Not legal or migration advice. Consult a registered migration
             agent before acting. Content current as at July 2026.
           </div>

@@ -59,8 +59,8 @@ export function EvidenceChecklist({ groups, dark = false, accent = NAVY, default
                   <Icon name={grp.icon} size={15} color={color} />
                 </div>
               )}
-              <span style={{ flex: 1, fontSize: 14, fontWeight: 700, color: dark ? '#fff' : NAVY }}>{grp.title}</span>
-              <span style={{ fontSize: 11, color: dark ? 'rgba(255,255,255,0.4)' : '#9ca3af', marginRight: 8 }}>{grp.items.length} items</span>
+              <span style={{ flex: 1, fontSize: 15, fontWeight: 700, color: dark ? '#fff' : NAVY }}>{grp.title}</span>
+              <span style={{ fontSize: 12, color: dark ? 'rgba(255,255,255,0.4)' : '#9ca3af', marginRight: 8 }}>{grp.items.length} items</span>
               <div style={{
                 width: 24, height: 24, borderRadius: '50%',
                 background: isOpen ? color : (dark ? 'rgba(255,255,255,0.1)' : '#f0f2f8'),
@@ -79,7 +79,7 @@ export function EvidenceChecklist({ groups, dark = false, accent = NAVY, default
                       <div style={{ width: 20, height: 20, borderRadius: 5, border: `1.5px solid ${color}50`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                         <Icon name="check" size={10} color={color} />
                       </div>
-                      <span style={{ fontSize: 13, color: dark ? 'rgba(255,255,255,0.75)' : '#374151', lineHeight: 1.5 }}>{item}</span>
+                      <span style={{ fontSize: 14, color: dark ? 'rgba(255,255,255,0.75)' : '#374151', lineHeight: 1.5 }}>{item}</span>
                     </div>
                   ))}
                 </div>

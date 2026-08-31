@@ -109,8 +109,8 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         `}</style>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 12, color: '#9ca3af' }}>
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#9ca3af' }}>
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 13, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
           <span>Employer Sponsored</span>
           <span>›</span>
@@ -134,7 +134,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 display: 'inline-flex', alignItems: 'center', gap: 6,
                 background: `${ACCENT}15`, border: `1px solid ${ACCENT}30`,
                 color: GOLD, borderRadius: 100, padding: '4px 14px',
-                fontSize: 13, fontWeight: 600, marginBottom: 20,
+                fontSize: 14, fontWeight: 600, marginBottom: 20,
               }}>
                 <Icon name="mappin" size={14} color={GOLD} /> Regional Provisional Visa
               </span>
@@ -142,7 +142,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
               {/* H1 */}
               <h1 style={{
                 fontFamily: "'Gilroy', sans-serif",
-                fontSize: 'clamp(32px, 5vw, 52px)',
+                fontSize: 'clamp(34px, 5vw, 54px)',
                 fontWeight: 800, color: NAVY,
                 lineHeight: 1.15, marginBottom: 24,
               }}>
@@ -157,13 +157,13 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 padding: '20px 24px',
                 marginBottom: 24,
               }}>
-                <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.7, margin: 0 }}>
+                <p style={{ color: '#374151', fontSize: 17, lineHeight: 1.7, margin: 0 }}>
                   The subclass 494 is a <strong style={{ color: NAVY }}>5-year provisional employer-sponsored visa</strong> for regional Australia. After three years of living and working in a designated regional area with an approved sponsor, holders can apply for the <strong style={{ color: NAVY }}>subclass 191 permanent visa</strong>.
                 </p>
               </div>
 
               {/* Body copy */}
-              <p style={{ color: '#4b5563', fontSize: 15, lineHeight: 1.75, marginBottom: 32 }}>
+              <p style={{ color: '#4b5563', fontSize: 16, lineHeight: 1.75, marginBottom: 32 }}>
                 Designed to address labour shortages outside major cities, the 494 offers a direct and reliable pathway to permanent residence for skilled workers willing to commit to regional Australia.
               </p>
 
@@ -171,7 +171,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <button style={{
                   background: GOLD, color: NAVY_DARK, border: 'none',
-                  borderRadius: 10, padding: '14px 28px', fontSize: 15,
+                  borderRadius: 10, padding: '14px 28px', fontSize: 16,
                   fontWeight: 700, cursor: 'pointer',
                   display: 'flex', alignItems: 'center', gap: 8,
                 }}>
@@ -181,7 +181,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                   background: 'transparent',
                   border: `2px solid ${NAVY}30`,
                   color: NAVY, borderRadius: 10, padding: '14px 28px',
-                  fontSize: 15, fontWeight: 600, cursor: 'pointer',
+                  fontSize: 16, fontWeight: 600, cursor: 'pointer',
                   display: 'flex', alignItems: 'center', gap: 8,
                 }}>
                   <Icon name="file" size={16} color={NAVY} /> Download Guide
@@ -197,11 +197,11 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
                 <Icon name="mappin" size={20} color={GOLD} />
-                <h3 style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, margin: 0 }}>
+                <h3 style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, margin: 0 }}>
                   Regional Area Quick Guide
                 </h3>
               </div>
-              <p style={{ color: '#6b7280', fontSize: 13, marginBottom: 18 }}>
+              <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 18 }}>
                 Most of Australia outside major CBDs qualifies. Check your state below.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -215,9 +215,9 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                       padding: '10px 14px',
                       border: `1px solid #e8edf6`,
                     }}>
-                      <span style={{ color: NAVY, fontWeight: 600, fontSize: 14 }}>{r.state}</span>
+                      <span style={{ color: NAVY, fontWeight: 600, fontSize: 15 }}>{r.state}</span>
                       <span style={{
-                        fontSize: 12, fontWeight: 600, padding: '3px 10px', borderRadius: 100,
+                        fontSize: 13, fontWeight: 600, padding: '3px 10px', borderRadius: 100,
                         background: isFullRegional || isIncluded
                           ? 'rgba(3,105,161,0.2)' : 'rgba(245,161,36,0.15)',
                         color: isFullRegional || isIncluded ? TEAL : GOLD,
@@ -229,7 +229,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                   )
                 })}
               </div>
-              <p style={{ color: '#9ca3af', fontSize: 11, marginTop: 14, marginBottom: 0 }}>
+              <p style={{ color: '#9ca3af', fontSize: 12, marginTop: 14, marginBottom: 0 }}>
                 Always verify your specific postcode via the Department of Home Affairs postcode checker.
               </p>
             </div>
@@ -250,8 +250,8 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 background: '#fff',
               }}>
                 <Icon name={s.icon} size={22} color={GOLD} />
-                <span style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 26, fontWeight: 700 }}>{s.value}</span>
-                <span style={{ color: '#6b7280', fontSize: 13 }}>{s.label}</span>
+                <span style={{ color: NAVY, fontFamily: "'Gilroy', sans-serif", fontSize: 27, fontWeight: 700 }}>{s.value}</span>
+                <span style={{ color: '#6b7280', fontSize: 14 }}>{s.label}</span>
               </div>
             ))}
           </div>
@@ -265,11 +265,11 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="shield" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>
               Eligibility Requirements
             </h2>
           </div>
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, marginLeft: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             All criteria must be satisfied at time of application.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
@@ -287,8 +287,8 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 }}>
                   <Icon name={e.icon} size={22} color={TEAL} />
                 </div>
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: 0 }}>{e.title}</h3>
-                <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{e.body}</p>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: NAVY, margin: 0 }}>{e.title}</h3>
+                <p style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65, margin: 0 }}>{e.body}</p>
               </div>
             ))}
           </div>
@@ -298,11 +298,11 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="layers" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>
               Visa Streams
             </h2>
           </div>
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, marginLeft: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             The 494 operates through two distinct streams.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -315,9 +315,9 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
                   <Icon name={stream.icon} size={22} color={TEAL} />
-                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: 0 }}>{stream.title}</h3>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: 0 }}>{stream.title}</h3>
                 </div>
-                <p style={{ color: '#475569', fontSize: 15, lineHeight: 1.7, margin: 0 }}>{stream.body}</p>
+                <p style={{ color: '#475569', fontSize: 16, lineHeight: 1.7, margin: 0 }}>{stream.body}</p>
               </div>
             ))}
           </div>
@@ -327,11 +327,11 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="trending" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>
               Pathway to Permanent Residence
             </h2>
           </div>
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 40, marginLeft: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 40, marginLeft: 36 }}>
             The 494 is a stepping stone to the Subclass 191 permanent visa.
           </p>
           <div style={{ position: 'relative' }}>
@@ -343,7 +343,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                     background: step.num === 5 ? GOLD : TEAL,
                     color: step.num === 5 ? NAVY_DARK : '#fff',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontWeight: 800, fontSize: 18, flexShrink: 0,
+                    fontWeight: 800, fontSize: 19, flexShrink: 0,
                     fontFamily: "'Gilroy', sans-serif",
                   }}>
                     {step.num}
@@ -353,10 +353,10 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                   )}
                 </div>
                 <div style={{ paddingBottom: i < STEPS.length - 1 ? 32 : 0, paddingTop: 10 }}>
-                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 6 }}>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 700, color: NAVY, marginBottom: 6 }}>
                     {step.num === 5 && <><Icon name="star" size={14} color={GOLD} />{' '}</>}{step.title}
                   </h3>
-                  <p style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
+                  <p style={{ color: '#64748b', fontSize: 16, lineHeight: 1.65, margin: 0 }}>{step.body}</p>
                 </div>
               </div>
             ))}
@@ -367,11 +367,11 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="alert" size={24} color={GOLD} />
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>
               Key Considerations
             </h2>
           </div>
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, marginLeft: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             Important factors to keep in mind throughout your 494 journey.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
@@ -389,8 +389,8 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                   <Icon name={c.icon} size={20} color={GOLD} />
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{c.title}</h3>
-                  <p style={{ color: '#64748b', fontSize: 14, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
+                  <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, marginBottom: 6 }}>{c.title}</h3>
+                  <p style={{ color: '#64748b', fontSize: 15, lineHeight: 1.65, margin: 0 }}>{c.body}</p>
                 </div>
               </div>
             ))}
@@ -401,11 +401,11 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
         <section style={{ marginBottom: 72 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
             <Icon name="info" size={24} color={TEAL} />
-            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 32, fontWeight: 700, color: NAVY, margin: 0 }}>
+            <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>
               Frequently Asked Questions
             </h2>
           </div>
-          <p style={{ color: '#64748b', fontSize: 15, marginBottom: 36, marginLeft: 36 }}>
+          <p style={{ color: '#64748b', fontSize: 16, marginBottom: 36, marginLeft: 36 }}>
             Common questions about the Subclass 494 visa.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
@@ -424,7 +424,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                     gap: 16,
                   }}
                 >
-                  <span style={{ fontWeight: 600, fontSize: 15, color: NAVY, lineHeight: 1.5 }}>{faq.q}</span>
+                  <span style={{ fontWeight: 600, fontSize: 16, color: NAVY, lineHeight: 1.5 }}>{faq.q}</span>
                   <div style={{
                     width: 28, height: 28, borderRadius: '50%', flexShrink: 0,
                     background: openFaq === i ? TEAL : '#f1f5f9',
@@ -436,7 +436,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 </button>
                 {openFaq === i && (
                   <div style={{ padding: '0 24px 20px', borderTop: '1px solid #f1f5f9' }}>
-                    <p style={{ color: '#475569', fontSize: 15, lineHeight: 1.75, margin: '16px 0 0' }}>{faq.a}</p>
+                    <p style={{ color: '#475569', fontSize: 16, lineHeight: 1.75, margin: '16px 0 0' }}>{faq.a}</p>
                   </div>
                 )}
               </div>
@@ -456,23 +456,23 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
             display: 'inline-flex', alignItems: 'center', gap: 6,
             background: 'rgba(245,161,36,0.15)', border: `1px solid rgba(245,161,36,0.3)`,
             color: GOLD, borderRadius: 100, padding: '4px 14px',
-            fontSize: 13, fontWeight: 600, marginBottom: 20,
+            fontSize: 14, fontWeight: 600, marginBottom: 20,
           }}>
             <Icon name="zap" size={14} color={GOLD} /> Free Initial Assessment
           </span>
           <h2 style={{
-            fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 800,
+            fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 800,
             color: '#fff', marginBottom: 16,
           }}>
             Ready to Start Your Regional Journey?
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.7, marginBottom: 36 }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 36 }}>
             Our registered migration agents can assess your eligibility for the Subclass 494 and map out your pathway to permanent residence.
           </p>
           <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <button style={{
               background: GOLD, color: NAVY_DARK, border: 'none',
-              borderRadius: 10, padding: '16px 36px', fontSize: 16,
+              borderRadius: 10, padding: '16px 36px', fontSize: 17,
               fontWeight: 700, cursor: 'pointer',
               display: 'flex', alignItems: 'center', gap: 8,
             }}>
@@ -481,7 +481,7 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
             <button style={{
               background: 'transparent', border: '2px solid rgba(255,255,255,0.25)',
               color: '#fff', borderRadius: 10, padding: '16px 36px',
-              fontSize: 16, fontWeight: 600, cursor: 'pointer',
+              fontSize: 17, fontWeight: 600, cursor: 'pointer',
               display: 'flex', alignItems: 'center', gap: 8,
             }}>
               <Icon name="phone" size={18} color="#fff" /> Call Us Now

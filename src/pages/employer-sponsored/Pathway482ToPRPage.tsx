@@ -364,15 +364,15 @@ function StreamsSection() {
             <div key={s.name} style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderLeft: `5px solid ${NAVY}`, borderRadius: 14, padding: '24px 26px', display: 'grid', gridTemplateColumns: '180px 1fr', gap: 24, alignItems: 'start', boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div>
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '4px 10px', borderRadius: 100, background: 'rgba(27,43,94,0.07)', border: '1.5px solid rgba(27,43,94,0.16)', marginBottom: 8 }}>
-                  <span style={{ fontSize: 10, fontWeight: 700, color: NAVY, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>{s.code}</span>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: NAVY, letterSpacing: '0.05em', textTransform: 'uppercase' as const }}>{s.code}</span>
                 </div>
-                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{s.name}</div>
+                <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{s.name}</div>
               </div>
               <div>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: '0 0 10px' }}>{s.body}</p>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 10px' }}>{s.body}</p>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', background: 'rgba(27,43,94,0.05)', border: '1px solid rgba(27,43,94,0.12)', borderRadius: 8, padding: '9px 12px' }}>
                   <Icon name="alert" size={13} color={NAVY} />
-                  <span style={{ fontSize: 12, color: '#374151', lineHeight: 1.6 }}>{s.note}</span>
+                  <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.6 }}>{s.note}</span>
                 </div>
               </div>
             </div>
@@ -405,14 +405,14 @@ function PathwayRisksSection() {
                     <Icon name={r.icon} size={16} color={color} />
                   </div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY }}>{r.title}</div>
+                    <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: NAVY }}>{r.title}</div>
                   </div>
-                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: color, background: `${color}14`, border: `1px solid ${color}30`, padding: '3px 10px', borderRadius: 100 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const, color: color, background: `${color}14`, border: `1px solid ${color}30`, padding: '3px 10px', borderRadius: 100 }}>
                     {severityLabel[r.severity]}
                   </div>
                 </div>
                 <div style={{ padding: '16px 20px', background: '#fff' }}>
-                  <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>{r.body}</p>
+                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>{r.body}</p>
                 </div>
               </div>
             )
@@ -434,7 +434,7 @@ function PathwaySummaryWidget() {
   ]
   return (
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '28px 26px' }}>
-      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: TEAL, marginBottom: 18 }}>TRT Pathway at a Glance</div>
+      <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: TEAL, marginBottom: 18 }}>TRT Pathway at a Glance</div>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 0 }}>
         {steps.map((s, i) => (
           <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', position: 'relative' as const, paddingBottom: i < steps.length - 1 ? 20 : 0 }}>
@@ -446,14 +446,14 @@ function PathwaySummaryWidget() {
               <Icon name={s.icon} size={15} color={NAVY} />
             </div>
             <div style={{ paddingTop: 6 }}>
-              <div style={{ fontSize: 13.5, fontWeight: 600, color: NAVY_DARK, lineHeight: 1.3 }}>{s.label}</div>
-              <div style={{ fontSize: 11.5, color: '#9ca3af', marginTop: 2 }}>{s.sub}</div>
+              <div style={{ fontSize: 14.5, fontWeight: 600, color: NAVY_DARK, lineHeight: 1.3 }}>{s.label}</div>
+              <div style={{ fontSize: 12.5, color: '#9ca3af', marginTop: 2 }}>{s.sub}</div>
             </div>
           </div>
         ))}
       </div>
       <div style={{ marginTop: 20, padding: '12px 14px', background: `${TEAL}08`, border: `1px solid ${TEAL}20`, borderRadius: 10 }}>
-        <div style={{ fontSize: 11, fontWeight: 600, color: TEAL, marginBottom: 4 }}>Key eligibility figures</div>
+        <div style={{ fontSize: 12, fontWeight: 600, color: TEAL, marginBottom: 4 }}>Key eligibility figures</div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px 12px' }}>
           {[
             { val: '2 yrs', lbl: 'Qualifying period' },
@@ -462,13 +462,13 @@ function PathwaySummaryWidget() {
             { val: 'Competent', lbl: 'English' },
           ].map(f => (
             <div key={f.lbl}>
-              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: TEAL }}>{f.val}</div>
-              <div style={{ fontSize: 10, color: '#9ca3af' }}>{f.lbl}</div>
+              <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 17, fontWeight: 700, color: TEAL }}>{f.val}</div>
+              <div style={{ fontSize: 11, color: '#9ca3af' }}>{f.lbl}</div>
             </div>
           ))}
         </div>
       </div>
-      <div style={{ marginTop: 14, fontSize: 11, color: '#9ca3af', fontStyle: 'italic', lineHeight: 1.6 }}>
+      <div style={{ marginTop: 14, fontSize: 12, color: '#9ca3af', fontStyle: 'italic', lineHeight: 1.6 }}>
         General guide only. Requirements may vary — obtain advice for your circumstances.
       </div>
     </div>
@@ -597,18 +597,18 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
           />
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <Callout variant="note" panel title="Former TSS (482) visa holders">
-              <p style={{ margin: '0 0 10px', fontSize: 14, lineHeight: 1.7, color: '#374151' }}>
+              <p style={{ margin: '0 0 10px', fontSize: 15, lineHeight: 1.7, color: '#374151' }}>
                 The Skills in Demand (SID) visa replaced the Temporary Skill Shortage (TSS) visa in December 2024. In most cases, former TSS holders continue to be eligible for the TRT pathway under the 186 visa, subject to meeting the two-year qualifying employment period and other standard TRT conditions. TSS holders whose visas were granted in the short-term stream should seek specific advice, as not all short-term stream TSS holders have a TRT pathway to 186 permanent residence.
               </p>
-              <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.7 }}>
+              <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>
                 The specific transitional provisions that apply depend on the visa subclass, grant date, and stream. Obtain advice from a registered migration agent for your specific circumstances.
               </p>
             </Callout>
             <Callout variant="note" panel title="Legacy subclass 457 holders">
-              <p style={{ margin: '0 0 10px', fontSize: 14, lineHeight: 1.7, color: '#374151' }}>
+              <p style={{ margin: '0 0 10px', fontSize: 15, lineHeight: 1.7, color: '#374151' }}>
                 Legacy subclass 457 holders who have not yet transitioned to the 186 TRT stream may have specific transitional provisions available to them depending on their grant date and the terms of any applicable legislative instrument. In general, 457 holders who were employed in the same occupation with the same employer for the required period may have been eligible for TRT — those who did not lodge before their 457 ceased may now need to explore alternative pathways.
               </p>
-              <p style={{ margin: 0, fontSize: 13, color: '#1B2B5E', lineHeight: 1.7, background: 'rgba(14,116,144,0.08)', padding: '8px 12px', borderRadius: 8 }}>
+              <p style={{ margin: 0, fontSize: 14, color: '#1B2B5E', lineHeight: 1.7, background: 'rgba(14,116,144,0.08)', padding: '8px 12px', borderRadius: 8 }}>
                 If you hold or previously held a 457 and are uncertain about your current options, obtain specialist advice from a registered migration agent (MARN 2619467) as soon as possible.
               </p>
             </Callout>

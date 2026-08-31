@@ -59,7 +59,7 @@ export default function ContactForm() {
       <h3
         style={{
           fontFamily: "'Gilroy', sans-serif",
-          fontSize: 22,
+          fontSize: 23,
           fontWeight: 600,
           color: NAVY_DARK,
           margin: "0 0 6px",
@@ -67,7 +67,7 @@ export default function ContactForm() {
       >
         Send us a message
       </h3>
-      <p style={{ fontSize: 13, color: "#6b7280", margin: "0 0 24px", lineHeight: 1.6 }}>
+      <p style={{ fontSize: 14, color: "#6b7280", margin: "0 0 24px", lineHeight: 1.6 }}>
         Tell us about your situation and a registered migration agent will respond.
       </p>
 
@@ -136,7 +136,7 @@ export default function ContactForm() {
             onChange={(e) => setConsent(e.target.checked)}
             style={{ marginTop: 3, flexShrink: 0 }}
           />
-          <span style={{ fontSize: 12, color: "#6b7280", lineHeight: 1.55 }}>
+          <span style={{ fontSize: 13, color: "#6b7280", lineHeight: 1.55 }}>
             I consent to Nanak Migration Group contacting me by email about my enquiry. General information only — not legal or migration advice.
           </span>
         </label>

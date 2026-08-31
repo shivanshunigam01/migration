@@ -97,7 +97,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
               style={{
                 width: '100%',
                 padding: '12px 16px',
-                fontSize: 14,
+                fontSize: 15,
                 border: '1.5px solid #e2e8f0',
                 borderRadius: 8,
                 outline: 'none',
@@ -120,7 +120,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                 border: `1.5px solid ${activeCategory === null ? NAVY : '#e2e8f0'}`,
                 background: activeCategory === null ? NAVY : '#fff',
                 color: activeCategory === null ? '#fff' : '#374151',
-                fontSize: 13,
+                fontSize: 14,
                 fontWeight: 600,
                 cursor: 'pointer',
                 fontFamily: "'Gilroy', sans-serif",
@@ -141,7 +141,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                     border: `1.5px solid ${isActive ? cfg.accent : '#e2e8f0'}`,
                     background: isActive ? cfg.accent : '#fff',
                     color: isActive ? '#fff' : '#374151',
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 600,
                     cursor: 'pointer',
                     fontFamily: "'Gilroy', sans-serif",
@@ -172,7 +172,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
               <div key={category} style={{ marginBottom: 48 }}>
                 <h3
                   style={{
-                    fontSize: 16,
+                    fontSize: 17,
                     fontWeight: 800,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
@@ -238,14 +238,14 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                         }}
                       >
                         <span
-                          style={{ fontSize: 14, fontWeight: 600, color: NAVY, lineHeight: 1.3 }}
+                          style={{ fontSize: 15, fontWeight: 600, color: NAVY, lineHeight: 1.3 }}
                         >
                           {g.title}
                         </span>
                         <span
                           style={{
                             flexShrink: 0,
-                            fontSize: 9,
+                            fontSize: 10,
                             fontWeight: 700,
                             letterSpacing: '0.08em',
                             textTransform: 'uppercase',
@@ -259,11 +259,11 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
                           {cfg.label}
                         </span>
                       </div>
-                      <span style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.55 }}>
+                      <span style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.55 }}>
                         {g.description}
                       </span>
                       <span
-                        style={{ fontSize: 12, fontWeight: 700, color: cfg.accent, marginTop: 4 }}
+                        style={{ fontSize: 13, fontWeight: 700, color: cfg.accent, marginTop: 4 }}
                       >
                         Read guide →
                       </span>

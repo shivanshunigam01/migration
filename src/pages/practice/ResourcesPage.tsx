@@ -127,8 +127,8 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>30 Guides</div>
-              <h2 style={{ fontSize: 26, fontWeight: 700, color: NAVY, margin: 0 }}>Visa Guides</h2>
+              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>30 Guides</div>
+              <h2 style={{ fontSize: 27, fontWeight: 700, color: NAVY, margin: 0 }}>Visa Guides</h2>
             </div>
             <button
               onClick={() => navigate(ROUTE.guides)}
@@ -138,7 +138,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                 border: `2px solid ${NAVY}`,
                 borderRadius: 8,
                 padding: '10px 24px',
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 700,
                 cursor: 'pointer',
                 fontFamily: "'Gilroy', sans-serif",
@@ -192,13 +192,13 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 8 }}>
-                    <span style={{ fontSize: 14, fontWeight: 600, color: NAVY, lineHeight: 1.3 }}>{g.title}</span>
-                    <span style={{ flexShrink: 0, fontSize: 9, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: cfg.accent, background: `${cfg.accent}12`, border: `1px solid ${cfg.accent}25`, padding: '3px 8px', borderRadius: 100 }}>
+                    <span style={{ fontSize: 15, fontWeight: 600, color: NAVY, lineHeight: 1.3 }}>{g.title}</span>
+                    <span style={{ flexShrink: 0, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: cfg.accent, background: `${cfg.accent}12`, border: `1px solid ${cfg.accent}25`, padding: '3px 8px', borderRadius: 100 }}>
                       {cfg.label}
                     </span>
                   </div>
-                  <span style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.55 }}>{g.description}</span>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: cfg.accent, marginTop: 4 }}>Read guide →</span>
+                  <span style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.55 }}>{g.description}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: cfg.accent, marginTop: 4 }}>Read guide →</span>
                 </button>
               )
             })}
@@ -211,8 +211,8 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Latest Articles</div>
-              <h2 style={{ fontSize: 26, fontWeight: 700, color: NAVY, margin: 0 }}>Migration Blog</h2>
+              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Latest Articles</div>
+              <h2 style={{ fontSize: 27, fontWeight: 700, color: NAVY, margin: 0 }}>Migration Blog</h2>
             </div>
             <button
               onClick={() => navigate(ROUTE.blog)}
@@ -222,7 +222,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                 border: `2px solid ${NAVY}`,
                 borderRadius: 8,
                 padding: '10px 24px',
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 700,
                 cursor: 'pointer',
                 fontFamily: "'Gilroy', sans-serif",
@@ -260,24 +260,24 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   {post.title.startsWith('[DRAFT]') && (
-                    <span style={{ background: '#f59e0b', color: NAVY, fontSize: 10, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em' }}>DRAFT</span>
+                    <span style={{ background: '#f59e0b', color: NAVY, fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em' }}>DRAFT</span>
                   )}
-                  <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, background: 'rgba(245,161,36,0.10)', border: '1px solid rgba(245,161,36,0.28)', padding: '3px 10px', borderRadius: 100 }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, background: 'rgba(245,161,36,0.10)', border: '1px solid rgba(245,161,36,0.28)', padding: '3px 10px', borderRadius: 100 }}>
                     {post.category}
                   </span>
-                  <span style={{ fontSize: 11, color: '#9ca3af' }}>{post.date}</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af' }}>{post.date}</span>
                 </div>
-                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 20, fontWeight: 400, color: NAVY, margin: 0, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 400, color: NAVY, margin: 0, lineHeight: 1.3, letterSpacing: '-0.01em' }}>
                   {post.title.startsWith('[DRAFT]') ? post.title.replace('[DRAFT] ', '') : post.title}
                 </h3>
-                <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.7, margin: 0 }}>{post.standfirst}</p>
-                <span style={{ fontSize: 13, fontWeight: 700, color: NAVY, borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, alignSelf: 'flex-start' }}>
+                <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.7, margin: 0 }}>{post.standfirst}</p>
+                <span style={{ fontSize: 14, fontWeight: 700, color: NAVY, borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, alignSelf: 'flex-start' }}>
                   Read more →
                 </span>
               </article>
             ))}
           </div>
-          <p style={{ fontSize: 12, fontStyle: 'italic', color: '#9ca3af', marginTop: 32 }}>
+          <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', marginTop: 32 }}>
             Draft updates shown for layout — verified articles will replace these before launch.
           </p>
         </div>
@@ -288,8 +288,8 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>6 Checklists</div>
-              <h2 style={{ fontSize: 26, fontWeight: 700, color: NAVY, margin: 0 }}>Visa Checklists</h2>
+              <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>6 Checklists</div>
+              <h2 style={{ fontSize: 27, fontWeight: 700, color: NAVY, margin: 0 }}>Visa Checklists</h2>
             </div>
             <button
               onClick={() => navigate(ROUTE.checklists)}
@@ -299,7 +299,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                 border: `2px solid ${NAVY}`,
                 borderRadius: 8,
                 padding: '10px 24px',
-                fontSize: 14,
+                fontSize: 15,
                 fontWeight: 700,
                 cursor: 'pointer',
                 fontFamily: "'Gilroy', sans-serif",
@@ -349,8 +349,8 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
                   ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
                 }}
               >
-                <span style={{ fontSize: 14, fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{c.title}</span>
-                <span style={{ fontSize: 12, fontWeight: 700, color: c.accent, marginTop: 4 }}>View checklist →</span>
+                <span style={{ fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.3 }}>{c.title}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: c.accent, marginTop: 4 }}>View checklist →</span>
               </button>
             ))}
           </div>
@@ -360,7 +360,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
       {/* ── FAQ ─────────────────────────────────────────── */}
       <section style={{ background: '#fff', padding: '64px 24px' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <h2 style={{ fontSize: 24, fontWeight: 700, color: NAVY, marginBottom: 24 }}>
+          <h2 style={{ fontSize: 25, fontWeight: 700, color: NAVY, marginBottom: 24 }}>
             Frequently Asked Questions
           </h2>
           <FaqAccordion items={FAQS} accent={NAVY} />

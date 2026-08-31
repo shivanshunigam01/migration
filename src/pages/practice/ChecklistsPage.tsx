@@ -171,7 +171,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
                 {/* Category chip */}
                 <span
                   style={{
-                    fontSize: 9,
+                    fontSize: 10,
                     fontWeight: 700,
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
@@ -189,7 +189,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
                 {/* Title */}
                 <h3
                   style={{
-                    fontSize: 18,
+                    fontSize: 19,
                     fontWeight: 700,
                     color: NAVY,
                     margin: 0,
@@ -200,7 +200,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
                 </h3>
 
                 {/* Description */}
-                <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.6, margin: 0 }}>
                   {c.desc}
                 </p>
 
@@ -209,11 +209,11 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
                   {c.items.slice(0, 3).map((item, i) => (
                     <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                       <Icon name="check" size={14} color={c.accent} />
-                      <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{item}</span>
+                      <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{item}</span>
                     </li>
                   ))}
                   {c.items.length > 3 && (
-                    <li style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic', paddingLeft: 22 }}>
+                    <li style={{ fontSize: 13, color: '#9ca3af', fontStyle: 'italic', paddingLeft: 22 }}>
                       + {c.items.length - 3} more items
                     </li>
                   )}
@@ -226,7 +226,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 6,
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: 700,
                     color: c.accent,
                     background: 'none',

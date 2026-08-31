@@ -291,9 +291,9 @@ export default function StateNominationPage({ navigate }: { navigate: (page: str
                   <div style={{ width: 30, height: 30, borderRadius: 8, background: `rgba(27,43,94,0.08)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={p.icon} size={14} color={NAVY} />
                   </div>
-                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
+                  <div style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 16, fontWeight: 700, color: NAVY, lineHeight: 1.35 }}>{p.heading}</div>
                 </div>
-                <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
+                <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.75 }}>{p.body}</p>
               </div>
             ))}
           </div>

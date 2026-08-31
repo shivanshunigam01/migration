@@ -51,9 +51,9 @@ export function RelatedPages({ pages, navigate, columns = 4 }: RelatedPagesProps
                   <Icon name={r.icon} size={18} color={color} />
                 </div>
               )}
-              <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{r.title}</div>
-              <div style={{ fontSize: 12.5, color: '#6b7280', lineHeight: 1.6 }}>{r.desc}</div>
-              <div style={{ marginTop: 14, fontSize: 12, fontWeight: 700, color }}>Read more →</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{r.title}</div>
+              <div style={{ fontSize: 13.5, color: '#6b7280', lineHeight: 1.6 }}>{r.desc}</div>
+              <div style={{ marginTop: 14, fontSize: 13, fontWeight: 700, color }}>Read more →</div>
             </motion.button>
           </StaggerItem>
         )

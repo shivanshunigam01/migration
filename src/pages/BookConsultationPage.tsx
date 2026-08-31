@@ -46,10 +46,10 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <div style={{ background: "#f8f9fc", borderBottom: "1px solid #e8eaf0", padding: "10px 32px" }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", gap: 8, fontSize: 12, color: "#9ca3af" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#9ca3af" }}>
           <button
             onClick={() => navigate("home")}
-            style={{ background: "none", border: "none", cursor: "pointer", color: "#6b7280", fontSize: 12, padding: 0, fontFamily: "'Gilroy', sans-serif" }}
+            style={{ background: "none", border: "none", cursor: "pointer", color: "#6b7280", fontSize: 13, padding: 0, fontFamily: "'Gilroy', sans-serif" }}
           >
             Home
           </button>
@@ -64,13 +64,13 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
 
         <div style={{ maxWidth: 720, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div ref={headingRef} style={{ textAlign: "center", marginBottom: 40, opacity: 0 }}>
-            <div style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: GOLD, marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: GOLD, marginBottom: 12 }}>
               Registered Migration Agents
             </div>
             <h1
               style={{
                 fontFamily: "'Gilroy', sans-serif",
-                fontSize: "clamp(28px, 4vw, 42px)",
+                fontSize: "clamp(30px, 4vw, 44px)",
                 fontWeight: 700,
                 color: NAVY_DARK,
                 margin: "0 0 16px",
@@ -80,7 +80,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
             >
               Book a consultation
             </h1>
-            <p style={{ fontSize: 15, color: "#6b7280", lineHeight: 1.65, maxWidth: 520, margin: "0 auto 22px" }}>
+            <p style={{ fontSize: 16, color: "#6b7280", lineHeight: 1.65, maxWidth: 520, margin: "0 auto 22px" }}>
               Speak with a registered migration agent (MARN 2619467) about your visa pathway. Submit your details and our team will confirm a time.
             </p>
             <GlowButton
@@ -112,7 +112,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
             <BookConsultationForm />
           </div>
 
-          <p style={{ fontSize: 12, color: "#9ca3af", textAlign: "center", marginTop: 24, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 13, color: "#9ca3af", textAlign: "center", marginTop: 24, lineHeight: 1.6 }}>
             General information only. Not legal or migration advice. Consult a registered migration agent before acting.
           </p>
         </div>

@@ -243,8 +243,8 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 48px rgba(27,43,94,0.12)', border: '1px solid #e8edf6', overflow: 'hidden' }}>
             <div style={{ background: NAVY, padding: '20px 24px' }}>
-              <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 4 }}>At a Glance</div>
-              <div style={{ color: '#fff', fontSize: 18, fontWeight: 700 }}>Subclass 189 — Key Facts</div>
+              <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 4 }}>At a Glance</div>
+              <div style={{ color: '#fff', fontSize: 19, fontWeight: 700 }}>Subclass 189 — Key Facts</div>
             </div>
             <div style={{ padding: '4px 0' }}>
               {[
@@ -263,8 +263,8 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                   <span style={{ width: 24, height: 24, borderRadius: 6, background: `${NAVY}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Icon name={row.icon} size={13} color={NAVY} />
                   </span>
-                  <span style={{ fontSize: 13, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{row.val}</span>
+                  <span style={{ fontSize: 14, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{row.val}</span>
                 </div>
               ))}
             </div>
@@ -282,7 +282,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
             <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
               {BUILDER_FIELDS.map(field => (
                 <div key={field.id} style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 12, padding: '16px 20px', boxShadow: '0 1px 6px rgba(27,43,94,0.04)' }}>
-                  <div style={{ fontSize: 12, fontWeight: 600, color: '#6b7280', letterSpacing: '0.03em', marginBottom: 10 }}>{field.label}</div>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: '#6b7280', letterSpacing: '0.03em', marginBottom: 10 }}>{field.label}</div>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                     {field.options.map(opt => {
                       const isSelected = builderVals[field.id] === opt.val && field.options.indexOf(opt) === field.options.findIndex(o => o.val === builderVals[field.id])
@@ -290,7 +290,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                         <button key={opt.label}
                           onClick={() => setBuilderVals(v => ({ ...v, [field.id]: opt.val }))}
                           style={{
-                            padding: '7px 14px', borderRadius: 8, fontSize: 13, fontWeight: 500,
+                            padding: '7px 14px', borderRadius: 8, fontSize: 14, fontWeight: 500,
                             border: `1.5px solid ${isSelected ? NAVY : '#e0e4ef'}`,
                             background: isSelected ? NAVY : '#f8f9fc',
                             color: isSelected ? '#fff' : '#374151',
@@ -298,7 +298,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                             display: 'flex', alignItems: 'center', gap: 7,
                           }}>
                           {opt.label}
-                          <span style={{ fontSize: 11, fontWeight: 700, color: isSelected ? GOLD : '#9ca3af', background: isSelected ? 'rgba(245,161,36,0.2)' : '#eef0f6', padding: '1px 7px', borderRadius: 10 }}>{opt.val > 0 ? `+${opt.val}` : '0'}</span>
+                          <span style={{ fontSize: 12, fontWeight: 700, color: isSelected ? GOLD : '#9ca3af', background: isSelected ? 'rgba(245,161,36,0.2)' : '#eef0f6', padding: '1px 7px', borderRadius: 10 }}>{opt.val > 0 ? `+${opt.val}` : '0'}</span>
                         </button>
                       )
                     })}
@@ -313,31 +313,31 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 {/* Score display */}
                 <div style={{ background: `linear-gradient(135deg, ${scoreColor}15 0%, ${scoreColor}08 100%)`, padding: '32px 28px', textAlign: 'center', borderBottom: '1px solid #f0f2f8' }}>
                   <div style={{ fontSize: 72, fontWeight: 800, color: scoreColor, lineHeight: 1, fontFamily: "'Gilroy', sans-serif" }}>{totalPoints}</div>
-                  <div style={{ fontSize: 14, color: '#6b7280', marginTop: 6 }}>points</div>
-                  <div style={{ display: 'inline-block', marginTop: 14, background: `${scoreColor}18`, color: scoreColor, border: `1px solid ${scoreColor}40`, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '5px 16px', borderRadius: 20 }}>{scoreLabel}</div>
+                  <div style={{ fontSize: 15, color: '#6b7280', marginTop: 6 }}>points</div>
+                  <div style={{ display: 'inline-block', marginTop: 14, background: `${scoreColor}18`, color: scoreColor, border: `1px solid ${scoreColor}40`, fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '5px 16px', borderRadius: 20 }}>{scoreLabel}</div>
                 </div>
 
                 {/* Breakdown */}
                 <div style={{ padding: '16px 24px' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 12 }}>Breakdown</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 12 }}>Breakdown</div>
                   {BUILDER_FIELDS.map(f => {
                     const pts = builderVals[f.id] ?? 0
                     return (
                       <div key={f.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '5px 0', borderBottom: '1px solid #f5f5f9' }}>
-                        <span style={{ fontSize: 12, color: '#6b7280', flex: 1 }}>{f.label.split(' ')[0]}</span>
-                        <span style={{ fontSize: 13, fontWeight: 700, color: pts > 0 ? NAVY : '#d1d5db', minWidth: 36, textAlign: 'right' }}>{pts > 0 ? `+${pts}` : '—'}</span>
+                        <span style={{ fontSize: 13, color: '#6b7280', flex: 1 }}>{f.label.split(' ')[0]}</span>
+                        <span style={{ fontSize: 14, fontWeight: 700, color: pts > 0 ? NAVY : '#d1d5db', minWidth: 36, textAlign: 'right' }}>{pts > 0 ? `+${pts}` : '—'}</span>
                       </div>
                     )
                   })}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0 0', marginTop: 4 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: NAVY }}>Total</span>
-                    <span style={{ fontSize: 18, fontWeight: 800, color: scoreColor }}>{totalPoints}</span>
+                    <span style={{ fontSize: 14, fontWeight: 700, color: NAVY }}>Total</span>
+                    <span style={{ fontSize: 19, fontWeight: 800, color: scoreColor }}>{totalPoints}</span>
                   </div>
                 </div>
 
                 {/* Benchmarks */}
                 <div style={{ background: '#f8f9fc', padding: '16px 24px', borderTop: '1px solid #f0f2f8' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 10 }}>2025 Benchmarks</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 10 }}>2025 Benchmarks</div>
                   {[
                     { label: 'Pool entry minimum', score: 65, color: '#2563eb' },
                     { label: 'Recent round avg.', score: 80, color: GOLD },
@@ -345,8 +345,8 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                   ].map(b => (
                     <div key={b.label} style={{ marginBottom: 8 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
-                        <span style={{ fontSize: 11, color: '#6b7280' }}>{b.label}</span>
-                        <span style={{ fontSize: 11, fontWeight: 700, color: b.color }}>{b.score} pts</span>
+                        <span style={{ fontSize: 12, color: '#6b7280' }}>{b.label}</span>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: b.color }}>{b.score} pts</span>
                       </div>
                       <div style={{ height: 5, background: '#e8eaf2', borderRadius: 3, overflow: 'hidden' }}>
                         <div style={{ height: '100%', borderRadius: 3, background: b.color, width: `${Math.min((totalPoints / b.score) * 100, 100)}%`, transition: 'width 0.4s ease' }} />
@@ -356,8 +356,8 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 </div>
 
                 <div style={{ padding: '16px 24px' }}>
-                  <a href="#contact" style={{ display: 'block', textAlign: 'center', backgroundColor: GOLD, color: NAVY_DARK, padding: '13px 20px', borderRadius: 10, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 4px 16px rgba(245,161,36,0.35)' }}>Book a Strategy Session</a>
-                  <div style={{ textAlign: 'center', fontSize: 11, color: '#9ca3af', marginTop: 10 }}>Registered Agent · MARN 2619467</div>
+                  <a href="#contact" style={{ display: 'block', textAlign: 'center', backgroundColor: GOLD, color: NAVY_DARK, padding: '13px 20px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: '0 4px 16px rgba(245,161,36,0.35)' }}>Book a Strategy Session</a>
+                  <div style={{ textAlign: 'center', fontSize: 12, color: '#9ca3af', marginTop: 10 }}>Registered Agent · MARN 2619467</div>
                 </div>
               </div>
             </div>
@@ -382,7 +382,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                     <span style={{ width: 32, height: 32, borderRadius: 8, background: `${GOLD}22`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                       <Icon name={pt.icon} size={15} color={GOLD} />
                     </span>
-                    <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: 14 }}>{pt.label}</span>
+                    <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: 15 }}>{pt.label}</span>
                   </div>
                 ))}
               </div>
@@ -390,7 +390,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
 
             <div>
               <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 20, padding: 28, border: '1px solid rgba(255,255,255,0.1)' }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 20 }}>Enter your dates</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 20 }}>Enter your dates</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
                   {[
                     { label: 'Date of birth', val: dob, set: setDob, required: true },
@@ -399,11 +399,11 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                     { label: 'Professional Year completion', val: profYearDate, set: setProfYearDate, required: false },
                   ].map(field => (
                     <div key={field.label}>
-                      <label style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', display: 'block', marginBottom: 6, fontWeight: 500 }}>
+                      <label style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', display: 'block', marginBottom: 6, fontWeight: 500 }}>
                         {field.label} {field.required && <span style={{ color: GOLD }}>*</span>}
                       </label>
                       <input type="date" value={field.val} onChange={e => field.set(e.target.value)}
-                        style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 13, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
+                        style={{ width: '100%', padding: '10px 14px', borderRadius: 8, fontSize: 14, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', outline: 'none', fontFamily: "'Gilroy', sans-serif", boxSizing: 'border-box' }} />
                     </div>
                   ))}
                 </div>
@@ -411,7 +411,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 {/* Results */}
                 {expiryEvents.length > 0 && (
                   <div style={{ marginTop: 24 }}>
-                    <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 12 }}>Your Points Timeline</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 12 }}>Your Points Timeline</div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                       {expiryEvents.map((ev, i) => {
                         const mo = monthsUntil(ev.date)
@@ -420,8 +420,8 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                           <div key={i} style={{ background: past ? 'rgba(255,255,255,0.04)' : urgencyBg(ev.urgency) + 'dd', border: `1px solid ${past ? 'rgba(255,255,255,0.08)' : urgencyColor(ev.urgency) + '44'}`, borderRadius: 10, padding: '12px 14px', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                             <span style={{ width: 8, height: 8, borderRadius: '50%', background: past ? '#6b7280' : urgencyColor(ev.urgency), flexShrink: 0, marginTop: 4 }} />
                             <div style={{ flex: 1 }}>
-                              <div style={{ fontSize: 12, fontWeight: 600, color: past ? '#9ca3af' : NAVY, lineHeight: 1.3 }}>{ev.label}</div>
-                              <div style={{ fontSize: 11, color: past ? '#9ca3af' : '#6b7280', marginTop: 3 }}>
+                              <div style={{ fontSize: 13, fontWeight: 600, color: past ? '#9ca3af' : NAVY, lineHeight: 1.3 }}>{ev.label}</div>
+                              <div style={{ fontSize: 12, color: past ? '#9ca3af' : '#6b7280', marginTop: 3 }}>
                                 {formatDate(ev.date)} {past ? '(passed)' : `· ${mo} months away`}
                               </div>
                             </div>
@@ -432,12 +432,12 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                   </div>
                 )}
                 {expiryEvents.length === 0 && dob && (
-                  <div style={{ marginTop: 20, textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: 13 }}>Enter your dates above to see your timeline</div>
+                  <div style={{ marginTop: 20, textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>Enter your dates above to see your timeline</div>
                 )}
                 {!dob && (
                   <div style={{ marginTop: 20, padding: '14px', background: 'rgba(245,161,36,0.08)', borderRadius: 10, border: '1px solid rgba(245,161,36,0.2)' }}>
-                    <div style={{ fontSize: 12, color: GOLD, fontWeight: 600, marginBottom: 4 }}>Start with date of birth</div>
-                    <div style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>Age is the most volatile component of your 189 score — it drops exactly on your birthday.</div>
+                    <div style={{ fontSize: 13, color: GOLD, fontWeight: 600, marginBottom: 4 }}>Start with date of birth</div>
+                    <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>Age is the most volatile component of your 189 score — it drops exactly on your birthday.</div>
                   </div>
                 )}
               </div>
@@ -454,13 +454,13 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
             {POINTS_CATEGORIES.map(cat => (
               <div key={cat.heading} style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 16, overflow: 'hidden' }}>
                 <div style={{ background: NAVY, padding: '14px 20px' }}>
-                  <div style={{ color: '#fff', fontSize: 14, fontWeight: 700 }}>{cat.heading}</div>
+                  <div style={{ color: '#fff', fontSize: 15, fontWeight: 700 }}>{cat.heading}</div>
                 </div>
                 <div>
                   {cat.items.map((item, i) => (
                     <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '11px 20px', borderBottom: i < cat.items.length - 1 ? '1px solid #f0f2f8' : 'none', background: item.highlight ? `${GOLD}0a` : 'transparent' }}>
-                      <span style={{ fontSize: 13, color: (item as any).dim ? '#9ca3af' : '#374151' }}>{item.label}</span>
-                      <span style={{ fontSize: 14, fontWeight: 800, color: item.highlight ? GOLD : (item as any).dim ? '#d1d5db' : NAVY, background: item.highlight ? `${GOLD}18` : 'transparent', padding: item.highlight ? '2px 10px' : '2px 10px', borderRadius: 20, minWidth: 48, textAlign: 'center' }}>
+                      <span style={{ fontSize: 14, color: (item as any).dim ? '#9ca3af' : '#374151' }}>{item.label}</span>
+                      <span style={{ fontSize: 15, fontWeight: 800, color: item.highlight ? GOLD : (item as any).dim ? '#d1d5db' : NAVY, background: item.highlight ? `${GOLD}18` : 'transparent', padding: item.highlight ? '2px 10px' : '2px 10px', borderRadius: 20, minWidth: 48, textAlign: 'center' }}>
                         {item.pts > 0 ? `+${item.pts}` : '0'}
                       </span>
                     </div>
@@ -477,15 +477,15 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '380px 1fr', gap: 64, alignItems: 'start' }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>SkillSelect</div>
-              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 36, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Recent Invitation Rounds</h2>
-              <p style={{ color: '#6b7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 24px' }}>
+              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>SkillSelect</div>
+              <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Recent Invitation Rounds</h2>
+              <p style={{ color: '#6b7280', fontSize: 16, lineHeight: 1.7, margin: '0 0 24px' }}>
                 DHA runs monthly invitation rounds. The lowest score invited each round gives you the real floor — not the 65-point legislative minimum. Rounds vary by occupation group.
               </p>
               <div style={{ background: `${GOLD}12`, border: `1px solid ${GOLD}30`, borderRadius: 12, padding: '16px 20px' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                   <Icon name="alert" size={15} color={GOLD} />
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6 }}>
+                  <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.6 }}>
                     <strong>Tie-breaking rule:</strong> When candidates share the same score, DHA invites those whose EOI was submitted earliest. Submit as soon as you reach a competitive score.
                   </div>
                 </div>
@@ -495,18 +495,18 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
               <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 16, overflow: 'hidden', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', background: NAVY, padding: '12px 24px' }}>
                   {['Month', 'Lowest Score', 'Invitations Issued'].map(h => (
-                    <div key={h} style={{ color: 'rgba(255,255,255,0.6)', fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{h}</div>
+                    <div key={h} style={{ color: 'rgba(255,255,255,0.6)', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>{h}</div>
                   ))}
                 </div>
                 {RECENT_ROUNDS.map((row, i) => (
                   <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '13px 24px', borderBottom: i < RECENT_ROUNDS.length - 1 ? '1px solid #f0f2f8' : 'none', background: i === 0 ? `${GOLD}08` : 'transparent' }}>
-                    <span style={{ fontSize: 13, fontWeight: i === 0 ? 700 : 400, color: NAVY }}>{row.month}{i === 0 && <span style={{ marginLeft: 6, fontSize: 10, background: GOLD, color: NAVY_DARK, padding: '1px 7px', borderRadius: 10, fontWeight: 700 }}>Latest</span>}</span>
-                    <span style={{ fontSize: 14, fontWeight: 800, color: i === 0 ? GOLD : NAVY }}>{row.lowest} pts</span>
-                    <span style={{ fontSize: 13, color: '#6b7280' }}>{row.invited.toLocaleString()}</span>
+                    <span style={{ fontSize: 14, fontWeight: i === 0 ? 700 : 400, color: NAVY }}>{row.month}{i === 0 && <span style={{ marginLeft: 6, fontSize: 11, background: GOLD, color: NAVY_DARK, padding: '1px 7px', borderRadius: 10, fontWeight: 700 }}>Latest</span>}</span>
+                    <span style={{ fontSize: 15, fontWeight: 800, color: i === 0 ? GOLD : NAVY }}>{row.lowest} pts</span>
+                    <span style={{ fontSize: 14, color: '#6b7280' }}>{row.invited.toLocaleString()}</span>
                   </div>
                 ))}
                 <div style={{ padding: '12px 24px', background: '#f8f9fc', borderTop: '1px solid #f0f2f8' }}>
-                  <span style={{ fontSize: 11, color: '#9ca3af' }}>* Indicative figures. Actual scores vary by ANZSCO code. Source: DHA SkillSelect.</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af' }}>* Indicative figures. Actual scores vary by ANZSCO code. Source: DHA SkillSelect.</span>
                 </div>
               </div>
             </div>
@@ -530,10 +530,10 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 { step: '05', title: 'Invitation → Apply', body: 'Receive an invitation from DHA. You have 60 days to lodge a full visa application with documents.', time: '12–36 months' },
               ].map((s, i) => (
                 <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
-                  <div style={{ width: 56, height: 56, borderRadius: '50%', background: i === 0 ? GOLD : '#fff', border: `2px solid ${i === 0 ? GOLD : '#e0e4ef'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, fontSize: 15, fontWeight: 800, color: i === 0 ? NAVY_DARK : NAVY, boxShadow: i === 0 ? '0 4px 16px rgba(245,161,36,0.4)' : '0 2px 8px rgba(27,43,94,0.08)', fontFamily: "'Gilroy', sans-serif" }}>{s.step}</div>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{s.title}</div>
-                  <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6, marginBottom: 10 }}>{s.body}</div>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: GOLD, background: `${GOLD}12`, border: `1px solid ${GOLD}30`, padding: '3px 10px', borderRadius: 20 }}>{s.time}</div>
+                  <div style={{ width: 56, height: 56, borderRadius: '50%', background: i === 0 ? GOLD : '#fff', border: `2px solid ${i === 0 ? GOLD : '#e0e4ef'}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, fontSize: 16, fontWeight: 800, color: i === 0 ? NAVY_DARK : NAVY, boxShadow: i === 0 ? '0 4px 16px rgba(245,161,36,0.4)' : '0 2px 8px rgba(27,43,94,0.08)', fontFamily: "'Gilroy', sans-serif" }}>{s.step}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 8 }}>{s.title}</div>
+                  <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6, marginBottom: 10 }}>{s.body}</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: GOLD, background: `${GOLD}12`, border: `1px solid ${GOLD}30`, padding: '3px 10px', borderRadius: 20 }}>{s.time}</div>
                 </div>
               ))}
             </div>
