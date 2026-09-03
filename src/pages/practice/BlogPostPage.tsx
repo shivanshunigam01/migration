@@ -130,7 +130,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
         title={displayTitle}
         deck={post.standfirst}
         currentAsAt={post.date}
-        primaryCta={{ label: "Book Free Consultation", page: "home" }}
+        primaryCta={{ label: "Book Free Consultation", page: "book-consultation" }}
         accent={NAVY}
       />
 

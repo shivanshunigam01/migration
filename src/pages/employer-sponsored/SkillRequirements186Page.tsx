@@ -257,7 +257,7 @@ export default function SkillRequirements186Page({ navigate }: { navigate: (page
         shortAnswer={<>For the <strong style={{ color: NAVY }}>Temporary Residence Transition (TRT) stream</strong>, skills are generally demonstrated through at least two years of employment with the nominating employer in the same occupation — in most cases no separate skills assessment is required. For the <strong style={{ color: NAVY }}>Direct Entry stream</strong>, applicants generally need a positive skills assessment from the relevant assessing authority and at least three years of relevant full-time equivalent skilled work experience. Requirements may vary; the Department of Home Affairs is the authoritative source.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Book a 186 eligibility consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a 186 eligibility consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View the 186 occupations list →', page: 'employer-nomination-scheme' }}
         accent={GREEN}
         navigate={navigate}
@@ -337,7 +337,7 @@ export default function SkillRequirements186Page({ navigate }: { navigate: (page
       <CtaBand
         title={<>Not sure your experience meets<br /><em style={{ fontStyle: 'italic', color: GOLD }}>the 186 skill test?</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your employment history, skills assessment, and nominated occupation against current Department of Home Affairs requirements — in most cases identifying issues before the nomination is lodged."
-        primaryCta={{ label: 'Book a 186 eligibility consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a 186 eligibility consultation', page: 'book-consultation' }}
         accent={GREEN}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"
         navigate={navigate}

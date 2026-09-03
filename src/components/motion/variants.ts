@@ -10,11 +10,11 @@ export const springSoft: Transition = {
 }
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 36 },
+  hidden: { opacity: 1, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: easeOutExpo },
+    transition: { duration: 0.45, ease: easeOutExpo },
   },
 }
 
@@ -46,11 +46,12 @@ export const slideLeft: Variants = {
 }
 
 export const slideRight: Variants = {
-  hidden: { opacity: 0, x: 40 },
+  // Keep opacity at 1 so above-the-fold heroes are never blank on first paint
+  hidden: { opacity: 1, x: 28 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.65, ease: easeOutExpo },
+    transition: { duration: 0.55, ease: easeOutExpo },
   },
 }
 

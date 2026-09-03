@@ -2,6 +2,7 @@ import React from 'react'
 import { NAVY, NAVY_DARK, NAVY_GRAD, GOLD } from '@/theme'
 import { Reveal } from '@/components/motion'
 import { GlowButton } from '@/components/ui/GlowButton'
+import { resolveRoute } from '@/lib/navigation'
 
 /* Shared decorative SVG — compass rose + Southern Cross arc */
 export function CompassDecor({
@@ -91,8 +92,10 @@ export interface CtaBandProps {
 }
 
 export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, footnote, languages = ['Hindi', 'Punjabi', 'English'], navigate }: CtaBandProps) {
-  function handleCta(cta: CtaBandCta) {
-    if (cta.page) navigate(cta.page)
+  function ctaHref(cta: CtaBandCta): string | undefined {
+    if (cta.href) return cta.href
+    if (cta.page) return resolveRoute(cta.page)
+    return undefined
   }
 
   return (
@@ -119,14 +122,59 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 14, flexShrink: 0, alignItems: 'stretch' }}>
-          <GlowButton size="lg" variant="gold" onClick={() => handleCta(primaryCta)} style={{ ['--glow-ring' as string]: accent }}>
-            {primaryCta.label}
-          </GlowButton>
-          {secondaryCta && (
-            <GlowButton size="md" variant="outline" onClick={() => handleCta(secondaryCta)}>
-              {secondaryCta.label}
-            </GlowButton>
-          )}
+          {(() => {
+            const href = ctaHref(primaryCta)
+            if (!href) return null
+            const external = href.startsWith('http')
+            return (
+              <GlowButton
+                as="a"
+                href={href}
+                size="lg"
+                variant="gold"
+                style={{ ['--glow-ring' as string]: accent }}
+                onClick={(e) => {
+                  if (external || href.startsWith('#')) {
+                    if (href.startsWith('#')) {
+                      e.preventDefault()
+                      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                    return
+                  }
+                  e.preventDefault()
+                  navigate(primaryCta.page ?? (href.replace(/^\//, '') || 'home'))
+                }}
+              >
+                {primaryCta.label}
+              </GlowButton>
+            )
+          })()}
+          {secondaryCta && (() => {
+            const href = ctaHref(secondaryCta)
+            if (!href) return null
+            const external = href.startsWith('http')
+            return (
+              <GlowButton
+                as="a"
+                href={href}
+                size="md"
+                variant="outline"
+                onClick={(e) => {
+                  if (external || href.startsWith('#')) {
+                    if (href.startsWith('#')) {
+                      e.preventDefault()
+                      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                    return
+                  }
+                  e.preventDefault()
+                  navigate(secondaryCta.page ?? (href.replace(/^\//, '') || 'home'))
+                }}
+              >
+                {secondaryCta.label}
+              </GlowButton>
+            )
+          })()}
           {footnote && (
             <div style={{ textAlign: 'center' as const, fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>{footnote}</div>
           )}

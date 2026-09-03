@@ -329,7 +329,7 @@ export default function PointsTestPage({ navigate }: { navigate: (page: string) 
         shortAnswer={<>The points test ranks skilled visa applicants in order of their score. A <strong style={{ color: NAVY }}>minimum of 65 points</strong> is generally needed to submit an EOI in SkillSelect, but invitation cutoffs in competitive rounds are typically much higher. Points come from age, English proficiency, skilled work experience, qualifications, and various bonuses. The <strong>interactive calculator below</strong> gives an indicative estimate — it is not an eligibility assessment.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Have your points reviewed by a registered agent', page: 'home' }}
+        primaryCta={{ label: 'Have your points reviewed by a registered agent', page: 'book-consultation' }}
         secondaryCta={{ label: 'View the full points breakdown →', page: '' }}
         accent={INDIGO}
         rightColumn={<PointsSummaryWidget />}
@@ -391,7 +391,7 @@ export default function PointsTestPage({ navigate }: { navigate: (page: string) 
       <CtaBand
         title={<>Have your points reviewed by a<br /><em style={{ fontStyle: 'italic', color: GOLD }}>registered migration agent</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your points score against current legislative requirements, identify any overclaims or missed categories, and advise on which visa pathway — 189, 190, or 491 — is most realistic for your circumstances."
-        primaryCta={{ label: 'Book a points review consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a points review consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View skilled visa options →', page: 'skilled-migration' }}
         accent={INDIGO}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"

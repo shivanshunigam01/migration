@@ -333,7 +333,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
         shortAnswer={<>The GS requirement asks whether you are <strong>genuinely seeking to study</strong> at your nominated education provider. It replaced the GTE test on <strong>23 March 2024</strong> and is assessed through structured questions in ImmiAccount — not a free-text statement. Decision-makers look at <strong>five legislated factors</strong> holistically, and evidence generally matters more than how answers are worded. Answers must be your own and must truthfully reflect your actual circumstances.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Have your GS response reviewed before you lodge', page: 'home' }}
+        primaryCta={{ label: 'Have your GS response reviewed before you lodge', page: 'book-consultation' }}
         secondaryCta={{ label: 'View the assessment factors →', page: '' }}
         accent={BLUE}
         rightColumn={<GSAtAGlance />}
@@ -527,7 +527,7 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
       <CtaBand
         title={<>Have your GS response reviewed<br /><em style={{ fontStyle: 'italic', color: GOLD }}>before you lodge</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your GS answers and supporting evidence before you lodge — identifying gaps in evidence, inconsistencies that may raise concerns, and anything that needs to be addressed. A review before lodgement is far less costly than a refusal."
-        primaryCta={{ label: 'Book a GS review consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a GS review consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'Learn about the student visa →', page: 'student-visa-500' }}
         accent={BLUE}
         footnote="MARA-registered · MARN 2619467 · General information only · Not immigration advice for individual circumstances"

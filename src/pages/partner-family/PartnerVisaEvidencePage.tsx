@@ -333,7 +333,7 @@ export default function PartnerVisaEvidencePage({ navigate }: { navigate: (page:
         deck="The four pillars of relationship evidence for Australian partner visa applications — and how to build a file that tells one clear, consistent, and verifiable story across all of them."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Have your evidence file reviewed before lodging', page: 'home' }}
+        primaryCta={{ label: 'Have your evidence file reviewed before lodging', page: 'book-consultation' }}
         accent={PURPLE}
         navigate={navigate}
         footnote="General information only. All evidence must be genuine. This page does not provide template statutory declaration wording. Obtain advice from MARN 2619467 before lodging."
@@ -500,7 +500,7 @@ export default function PartnerVisaEvidencePage({ navigate }: { navigate: (page:
       <CtaBand
         title={<>Have your evidence file reviewed<br /><em style={{ fontStyle: 'italic', color: GOLD }}>before you lodge</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your partner visa evidence file before lodgement — identifying gaps in the four pillars, inconsistencies between documents, and anything that is likely to draw scrutiny from a decision-maker. A review before lodgement costs far less than a refusal."
-        primaryCta={{ label: 'Book an evidence review consultation', page: 'home' }}
+        primaryCta={{ label: 'Book an evidence review consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View partner visa options →', page: 'partner-family-visas' }}
         accent={PURPLE}
         footnote="MARA-registered · MARN 2619467 · General information only · Evidence must be genuine"

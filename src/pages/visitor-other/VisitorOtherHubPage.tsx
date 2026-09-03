@@ -157,7 +157,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
         eyebrow="Visitor & Short-Stay Visas"
         title={<>Visit Australia.<br /><em style={{ fontStyle: 'italic', color: TEAL }}>The right way.</em></>}
         deck="Whether you're visiting family, attending a business event, or holidaying, choosing the wrong visa or missing a condition can lead to refusal or future bans. We get it right the first time."
-        primaryCta={{ label: 'Get visa advice', page: 'home' }}
+        primaryCta={{ label: 'Get visa advice', page: 'book-consultation' }}
         accent={TEAL}
         currentAsAt={CURRENT_AS_AT}
         rightColumn={visaFinderWidget}
@@ -566,7 +566,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
       <CtaBand
         title="Getting the right visa matters more than it looks."
         body="A visitor visa refusal or a condition breach can affect every future application to Australia. Our agents make sure your application is right from the start."
-        primaryCta={{ label: 'Talk to a registered agent', page: 'home' }}
+        primaryCta={{ label: 'Talk to a registered agent', page: 'book-consultation' }}
         secondaryCta={{ label: '← Back to Home', page: 'home' }}
         accent={TEAL}
         navigate={navigate}

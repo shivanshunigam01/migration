@@ -514,7 +514,7 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
         shortAnswer={<>The TRT stream is generally the <strong style={{ color: NAVY }}>most straightforward permanent residence pathway</strong> for 482 holders: <strong>no separate skills assessment</strong> is required in most cases, and the qualifying period is <strong>two years</strong> rather than the three years of relevant experience required for Direct Entry. However, the pathway depends on the employer remaining a willing and eligible sponsor — changes to employer, occupation, or visa status can disrupt or permanently end TRT eligibility.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Plan your 482 to PR transition', page: 'home' }}
+        primaryCta={{ label: 'Plan your 482 to PR transition', page: 'book-consultation' }}
         secondaryCta={{ label: 'See the full 186 overview →', page: 'employer-nomination-scheme' }}
         accent={TEAL}
         rightColumn={<PathwaySummaryWidget />}
@@ -635,7 +635,7 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
       <CtaBand
         title={<>Plan your 482 to PR<br /><em style={{ fontStyle: 'italic', color: GOLD }}>transition</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your 482 grant date, qualifying employment period, employer sponsorship status, and occupation against current 186 TRT requirements — and identify any risks to your pathway before the nomination is lodged."
-        primaryCta={{ label: 'Book a 482 to PR consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a 482 to PR consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'See 186 skill requirements →', page: '186-skill-requirements' }}
         accent={TEAL}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"

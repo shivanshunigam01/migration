@@ -107,7 +107,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
         }
         deck="Guides, articles and checklists to help you understand Australian visas — written by our MARA-registered team."
         currentAsAt="July 2026"
-        primaryCta={{ label: 'Book Free Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book Free Consultation', page: 'book-consultation' }}
         accent={NAVY}
       />
 
@@ -370,7 +370,7 @@ export default function ResourcesPage({ navigate }: { navigate: (page: string) =
       <CtaBand
         title="Need personal advice?"
         body="Our registered migration agents can review your circumstances and confirm your visa pathway."
-        primaryCta={{ label: 'Book a Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
         accent={GOLD}
         navigate={navigate}
       />

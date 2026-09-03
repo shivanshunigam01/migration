@@ -1,9 +1,11 @@
 import React, { useState, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import { GOLD, NAVY, NAVY_DARK } from '@/theme'
 import NanakLogo from '@/components/layout/NanakLogo'
 import { ROUTE } from '@/data/routes'
 import { useIntakeSubmit } from '@/lib/api'
 import { useSiteContent } from '@/hooks/useSiteContent'
+import { resolveRoute } from '@/lib/navigation'
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────
 const jsonLd = {
@@ -32,7 +34,7 @@ const jsonLd = {
         { '@type': 'PropertyValue', name: 'MARN', value: '2619467' },
         { '@type': 'PropertyValue', name: 'ABN', value: '54 674 937 476' },
       ],
-      sameAs: ['[TBC-LINKEDIN]', '[TBC-FACEBOOK]', '[TBC-INSTAGRAM]'],
+      sameAs: [],
     },
   ],
 }
@@ -213,12 +215,12 @@ function InstagramIcon({ size = 20 }: { size?: number }) {
 // ── Column link list ───────────────────────────────────────────────────────
 function ColLink({
   label,
-  onClick,
+  route,
   href,
   target,
 }: {
   label: string
-  onClick?: () => void
+  route?: string
   href?: string
   target?: string
 }) {
@@ -243,24 +245,28 @@ function ColLink({
     ;(e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)'
   }
 
-  if (onClick) {
+  const to = route ? resolveRoute(route) : href
+  if (!to || to === '#') {
+    return <span style={{ ...base, cursor: 'default', opacity: 0.5 }}>{label}</span>
+  }
+  if (to.startsWith('http') || target === '_blank') {
     return (
-      <button style={base} onClick={onClick} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+      <a
+        href={to}
+        target={target || '_blank'}
+        rel="noopener noreferrer"
+        style={base}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
         {label}
-      </button>
+      </a>
     )
   }
   return (
-    <a
-      href={href || '#'}
-      target={target}
-      rel={target === '_blank' ? 'noopener noreferrer' : undefined}
-      style={base}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
+    <Link to={to} style={base} onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
       {label}
-    </a>
+    </Link>
   )
 }
 
@@ -607,29 +613,12 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>MARN 2619467</div>
             </div>
 
-            {/* Social icons */}
-            <div style={{ display: 'flex', gap: 14 }}>
-              {[
-                { href: '[TBC-LINKEDIN]', label: 'LinkedIn', Icon: LinkedInIcon },
-                { href: '[TBC-FACEBOOK]', label: 'Facebook', Icon: FacebookIcon },
-                { href: '[TBC-INSTAGRAM]', label: 'Instagram', Icon: InstagramIcon },
-              ].map(({ href, label, Icon: SocialIcon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  style={{ color: 'rgba(255,255,255,0.5)', display: 'flex', transition: 'color 0.15s' }}
-                  onMouseEnter={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,1)'
-                  }}
-                  onMouseLeave={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.5)'
-                  }}
-                >
-                  <SocialIcon size={20} />
-                </a>
-              ))}
-            </div>
+            {/* Social icons — omit until real profile URLs are confirmed */}
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, margin: 0 }}>
+              Follow updates via our{' '}
+              <Link to="/blog" style={{ color: GOLD, fontWeight: 600, textDecoration: 'none' }}>migration blog</Link>
+              {' '}or newsletter above.
+            </p>
           </div>
 
           {/* Column 2: Employer Sponsored */}
@@ -647,7 +636,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   { label: 'Core Skills Occupation List', route: ROUTE.coreSkillsOccupationList },
                 ].map((lk) => (
                   <li key={lk.label}>
-                    <ColLink label={lk.label} onClick={() => navigate(lk.route)} />
+                    <ColLink label={lk.label} route={lk.route} />
                   </li>
                 ))}
               </ul>
@@ -670,7 +659,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   { label: 'English Requirements', route: ROUTE.englishRequirements },
                 ].map((lk) => (
                   <li key={lk.label}>
-                    <ColLink label={lk.label} onClick={() => navigate(lk.route)} />
+                    <ColLink label={lk.label} route={lk.route} />
                   </li>
                 ))}
               </ul>
@@ -688,7 +677,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   { label: 'Student to PR Pathway', route: ROUTE.studentToPRPathway },
                 ].map((lk) => (
                   <li key={lk.label}>
-                    <ColLink label={lk.label} onClick={() => navigate(lk.route)} />
+                    <ColLink label={lk.label} route={lk.route} />
                   </li>
                 ))}
               </ul>
@@ -707,7 +696,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                     { label: 'Partner Visa Evidence Guide', route: ROUTE.partnerVisaEvidence },
                   ].map((lk) => (
                     <li key={lk.label}>
-                      <ColLink label={lk.label} onClick={() => navigate(lk.route)} />
+                      <ColLink label={lk.label} route={lk.route} />
                     </li>
                   ))}
                 </ul>
@@ -724,7 +713,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   { label: 'Australian Citizenship', route: ROUTE.australianCitizenship },
                 ].map((lk) => (
                   <li key={lk.label}>
-                    <ColLink label={lk.label} onClick={() => navigate(lk.route)} />
+                    <ColLink label={lk.label} route={lk.route} />
                   </li>
                 ))}
               </ul>
@@ -739,7 +728,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                     { label: 'ART Review', route: ROUTE.artReview },
                   ].map((lk) => (
                     <li key={lk.label}>
-                      <ColLink label={lk.label} onClick={() => navigate(lk.route)} />
+                      <ColLink label={lk.label} route={lk.route} />
                     </li>
                   ))}
                 </ul>
@@ -751,25 +740,25 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               <nav aria-label="Practice navigation">
                 <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
                   <li>
-                    <ColLink label="About the Practice" href="#" />
+                    <ColLink label="About the Practice" route="about" />
                   </li>
                   <li>
-                    <ColLink label="Resources" onClick={() => navigate('resources')} />
+                    <ColLink label="Resources" route="resources" />
                   </li>
                   <li>
-                    <ColLink label="Guides" onClick={() => navigate('guides')} />
+                    <ColLink label="Guides" route="guides" />
                   </li>
                   <li>
-                    <ColLink label="Blog" onClick={() => navigate('blog')} />
+                    <ColLink label="Blog" route="blog" />
                   </li>
                   <li>
-                    <ColLink label="Checklists" onClick={() => navigate('checklists')} />
+                    <ColLink label="Checklists" route="checklists" />
                   </li>
                   <li>
-                    <ColLink label="Tools" onClick={() => navigate('tools')} />
+                    <ColLink label="Tools" route="tools" />
                   </li>
                   <li>
-                    <ColLink label="Contact" href="#" />
+                    <ColLink label="Contact" route="contact" />
                   </li>
                   <li>
                     <ColLink
@@ -814,8 +803,8 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               {locations.map((loc, i) => (
                 <Fragment key={loc.label}>
                   <li>
-                    <button
-                      onClick={() => navigate(loc.route)}
+                    <Link
+                      to={resolveRoute(loc.route)}
                       style={{
                         background: 'none',
                         border: 'none',
@@ -826,6 +815,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                         padding: 0,
                         transition: 'color 0.15s',
                         whiteSpace: 'nowrap',
+                        textDecoration: 'none',
                       }}
                       onMouseEnter={(e) => {
                         ;(e.currentTarget as HTMLElement).style.color = '#ffffff'
@@ -835,7 +825,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                       }}
                     >
                       {loc.label}
-                    </button>
+                    </Link>
                   </li>
                   {i < locations.length - 1 && (
                     <li aria-hidden="true">
@@ -872,26 +862,39 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
               ABN 54 674 937 476 · ACN 674 937 476
             </span>
-            {['Privacy Policy', 'Terms of Use', 'Accessibility', 'Sitemap'].map((lbl) => (
-              <Fragment key={lbl}>
+            {[
+              { label: 'Privacy Policy', to: '/privacy' },
+              { label: 'Terms of Use', to: '/terms' },
+              { label: 'Accessibility', to: '/accessibility' },
+              { label: 'Sitemap', to: '/sitemap.xml', external: true },
+            ].map((item) => (
+              <Fragment key={item.label}>
                 <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>|</span>
-                <a
-                  href="#"
-                  style={{
-                    fontSize: 12,
-                    color: 'rgba(255,255,255,0.5)',
-                    textDecoration: 'none',
-                    whiteSpace: 'nowrap',
-                  }}
-                  onMouseEnter={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.color = '#ffffff'
-                  }}
-                  onMouseLeave={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.5)'
-                  }}
-                >
-                  {lbl}
-                </a>
+                {item.external ? (
+                  <a
+                    href={item.to}
+                    style={{
+                      fontSize: 12,
+                      color: 'rgba(255,255,255,0.5)',
+                      textDecoration: 'none',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.to}
+                    style={{
+                      fontSize: 12,
+                      color: 'rgba(255,255,255,0.5)',
+                      textDecoration: 'none',
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </Fragment>
             ))}
           </div>

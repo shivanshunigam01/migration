@@ -149,9 +149,8 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
           tags.push({ tag: 'meta', attrs: { property: 'og:description', content: description }, injectTo: 'head' })
         }
         if (siteUrl) {
+          // Homepage-only defaults for the SPA shell; RouteSeoSync sets self-canonicals per route after load.
           tags.push(
-            { tag: 'link', attrs: { rel: 'canonical', href: `${siteUrl}/` }, injectTo: 'head' },
-            { tag: 'meta', attrs: { property: 'og:url', content: `${siteUrl}/` }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:type', content: 'website' }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:site_name', content: title }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:locale', content: 'en_AU' }, injectTo: 'head' },

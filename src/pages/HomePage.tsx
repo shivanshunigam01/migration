@@ -52,23 +52,7 @@ const TESTIMONIALS = [
   { name: 'Client name (placeholder)', origin: 'City, Country', flag: '🌐', visa: 'Subclass TBC', quote: 'Placeholder — replace with a consented client review.', initials: 'CP' },
 ]
 
-const NEWS = [
-  {
-    date: '28 Jul 2026', category: 'Policy Update',
-    title: "[DRAFT] Australia raises Skills in Demand visa salary threshold for 2026–27",
-    standfirst: "The Department of Home Affairs has confirmed a revised income threshold for the Skills in Demand (subclass 482) Core Skills stream, taking effect from 1 July 2026. Employers nominating workers in most occupations will need to meet the updated Temporary Skilled Migration Income Threshold (TSMIT) to remain compliant.",
-  },
-  {
-    date: '14 Jul 2026', category: 'State Nomination',
-    title: '[DRAFT] Victoria opens new round of 190 nominations for healthcare workers',
-    standfirst: "Victoria's state nomination program has reopened for a targeted cohort of registered nurses, midwives and allied health professionals under the subclass 190 (Skilled Nominated) visa. Eligible candidates must hold a current skills assessment and meet the state's work-in-Victoria requirement.",
-  },
-  {
-    date: '02 Jul 2026', category: 'Student Visas',
-    title: '[DRAFT] Changes to post-study work rights for 2026 graduates explained',
-    standfirst: "Graduates completing Australian qualifications from 1 January 2026 onward are subject to revised Temporary Graduate (subclass 485) visa conditions, including updated stream eligibility and extended stay periods for regional and STEM graduates.",
-  },
-]
+const NEWS: Array<{ date: string; category: string; title: string; standfirst: string; slug?: string }> = []
 
 /* Practice navigation — rendered separately in header as utility links */
 const PRACTICE_LINKS = [
@@ -558,30 +542,6 @@ export default function HomePage() {
         '@context': 'https://schema.org',
         '@graph': [
           {
-            '@type': ['Organization', 'LegalService'],
-            '@id': 'https://www.nanakmigration.com.au/#organization',
-            name: 'Nanak Migration Group',
-            url: 'https://www.nanakmigration.com.au',
-            logo: 'https://www.nanakmigration.com.au/logo.png',
-            description: 'MARA-registered migration agents helping individuals, families and employers navigate Australian immigration.',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Level 8, 350 Collins Street',
-              addressLocality: 'Melbourne',
-              addressRegion: 'VIC',
-              postalCode: '3000',
-              addressCountry: 'AU',
-            },
-            telephone: '+61 1300 644 728',
-            email: 'visa@nanakmigration.com.au',
-            areaServed: 'AU',
-            identifier: [
-              { '@type': 'PropertyValue', name: 'MARN', value: '2619467' },
-              { '@type': 'PropertyValue', name: 'ABN', value: '54 674 937 476' },
-            ],
-            sameAs: ['[TBC-LINKEDIN]', '[TBC-FACEBOOK]', '[TBC-INSTAGRAM]'],
-          },
-          {
             '@type': 'WebSite',
             '@id': 'https://www.nanakmigration.com.au/#website',
             url: 'https://www.nanakmigration.com.au',
@@ -648,8 +608,8 @@ export default function HomePage() {
               </motion.div>
 
               <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(46px, 6.4vw, 78px)', fontWeight: 300, lineHeight: 1.02, color: NAVY, margin: '0 0 8px', letterSpacing: '-0.04em' }}>
-                Your pathway
-                <br /><span style={{ fontWeight: 700, color: GOLD }}>to Australia</span>
+                Your pathway{' '}
+                <br /><span style={{ fontWeight: 700, color: GOLD }}>to Australia</span>{' '}
                 <br /><span style={{ fontWeight: 500 }}>starts here.</span>
               </motion.h1>
 
@@ -658,7 +618,8 @@ export default function HomePage() {
               </motion.p>
 
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 40 }}>
-                <GlowButton as="a" href="#contact" size="lg" variant="navy">
+                <GlowButton as="a" href="/book-consultation" size="lg" variant="navy"
+                  onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}>
                   Book Free Consultation →
                 </GlowButton>
                 <GlowButton as="a" href="#visas" size="lg" variant="gold">
@@ -1274,6 +1235,7 @@ export default function HomePage() {
           See PAGE_STANDARD.md pre-launch checklist. */}
 
       {/* ── NEWS ──────────────────────────────────────────── */}
+      {news.length > 0 && (
       <section id="news" style={{ background: GREY_BAND, padding: '96px 24px', borderTop: '1px solid #e8edf5', position: 'relative', overflow: 'hidden' }}>
         <ShieldGlow tone="navy" size={520} top="-10%" right="-15%" opacity={0.15} />
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
@@ -1283,10 +1245,12 @@ export default function HomePage() {
             <div>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Latest Updates</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(30px, 3.5vw, 48px)', fontWeight: 300, lineHeight: 1.08, color: NAVY, margin: 0, letterSpacing: '-0.03em' }}>
-                Migration news &amp; <em style={{ fontStyle: 'italic', color: GOLD }}>policy changes</em>
+                Migration news &amp; <span style={{ fontWeight: 600, color: GOLD }}>policy changes</span>
               </h2>
             </div>
-            <a href="#"
+            <a
+              href={`/${ROUTE.blog}`}
+              onClick={(e) => { e.preventDefault(); navigate(ROUTE.blog) }}
               style={{ fontSize: 14, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, whiteSpace: 'nowrap', flexShrink: 0, transition: 'color 0.15s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
@@ -1301,7 +1265,11 @@ export default function HomePage() {
               <StaggerItem preset="scale" style={{ gridRow: '1 / 3' }}>
               <motion.article
                 style={{ height: '100%', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
-                onClick={() => navigate(`${ROUTE.blog}/${(news[0] as { slug?: string }).slug || ''}`)}
+                onClick={() => {
+                  const slug = (news[0] as { slug?: string }).slug
+                  if (slug) navigate(`${ROUTE.blog}/${slug}`)
+                  else navigate(ROUTE.blog)
+                }}
                 whileHover={reduceMotion ? undefined : { y: -4, boxShadow: '0 16px 48px rgba(13,22,50,0.35)' }}
                 transition={{ duration: 0.22 }}
               >
@@ -1312,17 +1280,23 @@ export default function HomePage() {
                 </div>
                 {/* Headline */}
                 <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(24px, 2.2vw, 32px)', fontWeight: 400, color: '#ffffff', margin: '0 0 20px', lineHeight: 1.2, letterSpacing: '-0.01em', flex: 1 }}>
-                  {news[0].title.startsWith('[DRAFT]') && (
-                    <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 4 }}>DRAFT</span>
-                  )}
-                  {news[0].title.startsWith('[DRAFT]') ? news[0].title.replace('[DRAFT] ', '') : news[0].title}
+                  {news[0].title.replace(/^\[DRAFT\]\s*/i, '')}
                 </h3>
                 {/* Standfirst */}
                 <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, margin: '0 0 32px', WebkitLineClamp: 3, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
                   {news[0].standfirst}
                 </p>
                 {/* Read more */}
-                <a href="#" style={{ fontSize: 14, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
+                <a
+                  href={(news[0] as { slug?: string }).slug ? `/${ROUTE.blog}/${(news[0] as { slug?: string }).slug}` : `/${ROUTE.blog}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    const slug = (news[0] as { slug?: string }).slug
+                    if (slug) navigate(`${ROUTE.blog}/${slug}`)
+                    else navigate(ROUTE.blog)
+                  }}
+                  style={{ fontSize: 14, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GOLD}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(245,161,36,0.4)'}
                 >Read more →</a>
@@ -1334,7 +1308,11 @@ export default function HomePage() {
             {news.slice(1).map((n, i) => (
               <StaggerItem key={i} preset="scale">
               <motion.article
-                onClick={() => navigate(`${ROUTE.blog}/${(n as { slug?: string }).slug || ''}`)}
+                onClick={() => {
+                  const slug = (n as { slug?: string }).slug
+                  if (slug) navigate(`${ROUTE.blog}/${slug}`)
+                  else navigate(ROUTE.blog)
+                }}
                 whileHover={reduceMotion ? undefined : { y: -3, boxShadow: '0 8px 32px rgba(27,43,94,0.1)' }}
                 transition={{ duration: 0.22 }}
                 style={{ height: '100%', background: '#ffffff', borderRadius: 16, borderTop: `3px solid ${GOLD}`, padding: '28px 28px 28px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
@@ -1346,17 +1324,23 @@ export default function HomePage() {
                 </div>
                 {/* Headline */}
                 <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 19, fontWeight: 400, color: NAVY, margin: '0 0 12px', lineHeight: 1.3, letterSpacing: '-0.01em' }}>
-                  {n.title.startsWith('[DRAFT]') && (
-                    <span style={{ display: 'inline-block', background: '#f59e0b', color: NAVY, fontSize: 11, fontWeight: 800, padding: '2px 8px', borderRadius: 4, letterSpacing: '0.08em', marginRight: 8, verticalAlign: 'middle', marginBottom: 3 }}>DRAFT</span>
-                  )}
-                  {n.title.startsWith('[DRAFT]') ? n.title.replace('[DRAFT] ', '') : n.title}
+                  {n.title.replace(/^\[DRAFT\]\s*/i, '')}
                 </h3>
                 {/* One-line standfirst — clamped to 2 lines */}
                 <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65, margin: '0 0 20px', flex: 1, WebkitLineClamp: 2, overflow: 'hidden', display: '-webkit-box', WebkitBoxOrient: 'vertical' as const }}>
                   {n.standfirst}
                 </p>
                 {/* Read more */}
-                <a href="#" style={{ fontSize: 13, fontWeight: 700, color: NAVY, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, transition: 'color 0.15s' }}
+                <a
+                  href={(n as { slug?: string }).slug ? `/${ROUTE.blog}/${(n as { slug?: string }).slug}` : `/${ROUTE.blog}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    const slug = (n as { slug?: string }).slug
+                    if (slug) navigate(`${ROUTE.blog}/${slug}`)
+                    else navigate(ROUTE.blog)
+                  }}
+                  style={{ fontSize: 13, fontWeight: 700, color: NAVY, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, transition: 'color 0.15s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
                   onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY}
                 >Read more →</a>
@@ -1366,13 +1350,9 @@ export default function HomePage() {
 
           </Stagger>
 
-          {/* Editorial footnote */}
-          <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', marginTop: 24, textAlign: 'right' }}>
-            Draft updates shown for layout — verified articles will replace these before launch.
-          </p>
-
         </div>
       </section>
+      )}
 
       {/* ── CONTACT ───────────────────────────────────────── */}
       <section id="contact" style={{ background: HERO_GRAD, position: 'relative', overflow: 'hidden' }}>

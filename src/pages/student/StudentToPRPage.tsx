@@ -653,7 +653,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       <CtaBand
         title={<>The right course.<br /><span style={{ color: GOLD }}>The right moves on your 485.</span><br />The outcome you planned.</>}
         body="Navpreet Aulakh (MARN 2619467) maps your full student-to-PR sequence before you enrol — and walks alongside you at every stage of the journey."
-        primaryCta={{ label: 'Book a Pathway Assessment', page: 'home' }}
+        primaryCta={{ label: 'Book a Pathway Assessment', page: 'book-consultation' }}
         footnote="Free initial consultation · No obligation"
         navigate={navigate}
       />

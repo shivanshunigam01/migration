@@ -336,7 +336,7 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <Breadcrumbs navigate={navigate} items={[
         { label: 'Home', page: 'home' },
-        { label: 'Visitor & Other', page: 'home' },
+        { label: 'Visitor & Other', page: 'visitor-hub' },
         { label: 'Australian Citizenship' },
       ]} />
 
@@ -349,7 +349,7 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
         shortAnswer={<>Most permanent residents apply for citizenship by <strong>conferral</strong> after meeting a general <strong>4-year residence requirement</strong> — with the last 12 months as a PR. A citizenship test, good character assessment, and attendance at a ceremony are all part of the process. Citizenship is <strong>not automatic</strong> at permanent residence — a separate application is required.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Have your citizenship eligibility assessed', page: 'home' }}
+        primaryCta={{ label: 'Have your citizenship eligibility assessed', page: 'book-consultation' }}
         secondaryCta={{ label: 'Use the residence calculator →', page: '' }}
         accent={ROYAL}
         rightColumn={<CitizenshipAtAGlance />}
@@ -548,7 +548,7 @@ export default function AustralianCitizenshipPage({ navigate }: { navigate: (pag
       <CtaBand
         title={<>Have your citizenship eligibility<br /><em style={{ fontStyle: 'italic', color: GOLD }}>accurately assessed</em></>}
         body="Navpreet Aulakh (MARN 2619467) can calculate your residence period accurately — accounting for absences, unlawful periods, and other factors the online calculator cannot — and advise whether you are ready to lodge a citizenship application."
-        primaryCta={{ label: 'Book a citizenship eligibility consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a citizenship eligibility consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'Understand your PR pathway →', page: 'skilled-migration' }}
         accent={ROYAL}
         footnote="MARA-registered · MARN 2619467 · General information only"

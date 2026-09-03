@@ -169,7 +169,7 @@ export default function CoreSkillsOccupationListPage({ navigate }: { navigate: (
         deck="The Core Skills Occupation List sets out the occupations eligible for the Core Skills stream of the Skills in Demand (482) visa and the 186 Employer Nomination Scheme Direct Entry stream. Understanding which list your occupation is on is essential before commencing an employer-sponsored application."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Check your occupation eligibility', page: 'home' }}
+        primaryCta={{ label: 'Check your occupation eligibility', page: 'book-consultation' }}
         secondaryCta={{ label: 'View 186 occupations list →', page: '186-occupations-list' }}
         accent={BLUE}
         navigate={navigate}
@@ -228,7 +228,7 @@ export default function CoreSkillsOccupationListPage({ navigate }: { navigate: (
       <CtaBand
         title={<>Is your occupation on the CSOL<br /><em style={{ fontStyle: 'italic', color: GOLD }}>and eligible for sponsorship?</em></>}
         body="Navpreet Aulakh (MARN 2619467) can confirm whether your occupation qualifies for employer-sponsored pathways under the current list, and advise on alternative streams if it does not."
-        primaryCta={{ label: 'Book an occupation eligibility check', page: 'home' }}
+        primaryCta={{ label: 'Book an occupation eligibility check', page: 'book-consultation' }}
         secondaryCta={{ label: 'Read about the 482 visa →', page: 'skills-in-demand-visa' }}
         accent={BLUE}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"

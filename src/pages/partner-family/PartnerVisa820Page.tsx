@@ -419,7 +419,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
       <CtaBand
         title={<>Your relationship is real.<br /><span style={{ color: ROSE }}>Your evidence should prove it.</span></>}
         body="Navpreet Aulakh (MARN 2619467) reviews onshore partner visa cases from evidence structuring through to the 801 grant — including Schedule 3 waiver submissions and complex onshore histories."
-        primaryCta={{ label: 'Book a Relationship Evidence Review', page: 'home' }}
+        primaryCta={{ label: 'Book a Relationship Evidence Review', page: 'book-consultation' }}
         accent={ROSE}
         footnote="Free initial assessment · MARN 2619467"
         navigate={navigate}

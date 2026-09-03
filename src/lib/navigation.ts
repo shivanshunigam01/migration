@@ -19,8 +19,12 @@ export const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
 
 export function resolveRoute(page: string): string {
   if (page === "home" || page === "") return "/"
-  if (page === "contact") return "/#contact"
+  if (page === "contact") return "/contact"
   if (page === "book-consultation") return "/book-consultation"
+  if (page === "privacy") return "/privacy"
+  if (page === "terms") return "/terms"
+  if (page === "accessibility") return "/accessibility"
+  if (page === "sitemap") return "/sitemap.xml"
   if (page.startsWith("#") || page.startsWith("http")) return page
   const canonical = LEGACY_ROUTE_REDIRECTS[page] ?? page
   return `/${canonical}`
@@ -41,16 +45,18 @@ export function useAppNavigate(): NavigateFn {
       }
 
       if (page === "contact") {
-        if (window.location.pathname !== "/") {
-          navigate("/#contact")
-          return
-        }
-        document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })
+        navigate("/contact")
+        window.scrollTo({ top: 0, behavior: "smooth" })
         return
       }
 
       const path = resolveRoute(page)
       if (path.startsWith("http")) {
+        window.location.href = path
+        return
+      }
+
+      if (path.endsWith(".xml")) {
         window.location.href = path
         return
       }

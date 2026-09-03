@@ -273,7 +273,7 @@ export default function ProspectiveMarriage300Page({ navigate }: { navigate: (pa
         deck="A temporary visa for a person engaged to an Australian citizen, permanent resident, or eligible New Zealand citizen — allowing them to travel to Australia and marry their sponsor within the visa validity period."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Book a prospective marriage visa consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a prospective marriage visa consultation', page: 'book-consultation' }}
         accent={ROSE}
         navigate={navigate}
         footnote="General information only. Requirements are set by legislation and subject to change — obtain advice from MARN 2619467 before applying."
@@ -444,7 +444,7 @@ export default function ProspectiveMarriage300Page({ navigate }: { navigate: (pa
       <CtaBand
         title={<>Start your prospective marriage<br /><em style={{ fontStyle: 'italic', color: GOLD }}>visa journey</em></>}
         body="Navpreet Aulakh (MARN 2619467) can advise on whether the subclass 300 is the right pathway for your circumstances, prepare your application, and help you manage the timing from lodgement through to the partner visa after your marriage."
-        primaryCta={{ label: 'Book a prospective marriage visa consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a prospective marriage visa consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View partner visa options →', page: 'partner-family-visas' }}
         accent={ROSE}
         footnote="MARA-registered · MARN 2619467 · General information only"

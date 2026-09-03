@@ -338,7 +338,7 @@ export default function SkilledWorkRegional491Page({ navigate }: { navigate: (pa
         shortAnswer={<>The 491 suits applicants who need the <strong style={{ color: NAVY }}>15-point regional bonus</strong> to receive an invitation and are willing to live, work, and study in a <strong>designated regional area</strong> for at least five years. It is a provisional visa — permanent residence requires a separate 191 application after at least three years of regional residence and meeting income requirements. The conditions are binding: breaching the regional living requirement can affect current and future visa applications.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Assess your 491 eligibility', page: 'home' }}
+        primaryCta={{ label: 'Assess your 491 eligibility', page: 'book-consultation' }}
         secondaryCta={{ label: 'Compare skilled visas →', page: 'skilled-migration' }}
         accent={GREEN}
         navigate={navigate}
@@ -401,7 +401,7 @@ export default function SkilledWorkRegional491Page({ navigate }: { navigate: (pa
       <CtaBand
         title={<>Is the 491 the right pathway<br /><em style={{ fontStyle: 'italic', color: GOLD }}>for your situation?</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your points score, occupation, regional intentions, and whether an eligible relative sponsor or state nomination is the more realistic route for you."
-        primaryCta={{ label: 'Book a skilled migration consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a skilled migration consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'Compare the 190 alternative →', page: 'skilled-nominated-190' }}
         accent={GREEN}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"

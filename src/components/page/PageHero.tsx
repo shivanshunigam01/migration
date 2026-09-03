@@ -4,12 +4,19 @@ import Icon from '@/components/ui/Icon'
 import { NAVY, GOLD, HERO_GRAD } from '@/theme'
 import { GlowButton } from '@/components/ui/GlowButton'
 import { fadeUp, slideRight, staggerContainer, easeOutExpo } from '@/components/motion/variants'
+import { resolveRoute } from '@/lib/navigation'
 
 export interface PageHeroCtaButton {
   label: string
   page?: string
   href?: string
   variant?: 'primary' | 'secondary'
+}
+
+function ctaHref(cta: PageHeroCtaButton): string | undefined {
+  if (cta.href) return cta.href
+  if (cta.page) return resolveRoute(cta.page)
+  return undefined
 }
 
 export interface PageHeroProps {
@@ -55,10 +62,6 @@ export function PageHero({
   navigate,
 }: PageHeroProps) {
   const reduce = useReducedMotion()
-
-  function handleCta(cta: PageHeroCtaButton) {
-    if (cta.page) navigate(cta.page)
-  }
 
   const leftContent = (
     <motion.div
@@ -123,16 +126,47 @@ export function PageHero({
 
       {(primaryCta || secondaryCta) && (
         <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-          {primaryCta && (
-            <GlowButton size="lg" variant="gold" onClick={() => handleCta(primaryCta)}>
-              {primaryCta.label}
-            </GlowButton>
-          )}
-          {secondaryCta && (
-            <GlowButton size="lg" variant="navy" glow={false} onClick={() => handleCta(secondaryCta)}>
-              {secondaryCta.label}
-            </GlowButton>
-          )}
+          {primaryCta && (() => {
+            const href = ctaHref(primaryCta)
+            if (!href) return null
+            const external = href.startsWith('http') || href.endsWith('.pdf')
+            return (
+              <GlowButton
+                as="a"
+                href={href}
+                size="lg"
+                variant="gold"
+                onClick={(e) => {
+                  if (external) return
+                  e.preventDefault()
+                  navigate(primaryCta.page ?? (href.replace(/^\//, '') || 'home'))
+                }}
+              >
+                {primaryCta.label}
+              </GlowButton>
+            )
+          })()}
+          {secondaryCta && (() => {
+            const href = ctaHref(secondaryCta)
+            if (!href) return null
+            const external = href.startsWith('http') || href.endsWith('.pdf')
+            return (
+              <GlowButton
+                as="a"
+                href={href}
+                size="lg"
+                variant="navy"
+                glow={false}
+                onClick={(e) => {
+                  if (external) return
+                  e.preventDefault()
+                  navigate(secondaryCta.page ?? (href.replace(/^\//, '') || 'home'))
+                }}
+              >
+                {secondaryCta.label}
+              </GlowButton>
+            )
+          })()}
         </motion.div>
       )}
     </motion.div>

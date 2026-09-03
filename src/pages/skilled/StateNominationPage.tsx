@@ -210,7 +210,7 @@ export default function StateNominationPage({ navigate }: { navigate: (page: str
         deck="How state and territory nomination generally works for the Skilled Nominated (190) and Skilled Work Regional (491) visas, and what each jurisdiction tends to look for."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Get advice on state nomination', page: 'home' }}
+        primaryCta={{ label: 'Get advice on state nomination', page: 'book-consultation' }}
         accent={VIOLET}
         navigate={navigate}
         footnote="General information only. State nomination criteria change frequently — always check each state's current published requirements and obtain advice from MARN 2619467."
@@ -322,7 +322,7 @@ export default function StateNominationPage({ navigate }: { navigate: (page: str
       <CtaBand
         title={<>Get advice on state nomination<br /><em style={{ fontStyle: 'italic', color: GOLD }}>before you apply</em></>}
         body="Navpreet Aulakh (MARN 2619467) can advise which state or territory nomination pathway is most accessible for your occupation, points score, and personal circumstances — and what you need to do to maximise your chances of a nomination."
-        primaryCta={{ label: 'Book a state nomination consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a state nomination consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View the points test →', page: 'points-test' }}
         accent={VIOLET}
         footnote="MARA-registered · MARN 2619467 · General information only"

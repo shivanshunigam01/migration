@@ -73,13 +73,12 @@ export function GlowButton(props: GlowButtonProps) {
     const el = ref.current
     if (!el || reduce) return
 
-    // Mount pop — Anime.js
+    // Mount pop — never hide CTA text (hurts LCP / first paint)
     animate(el, {
-      scale: [0.92, 1],
-      opacity: [0, 1],
-      translateY: [10, 0],
+      scale: [0.96, 1],
+      translateY: [6, 0],
       ease: "out(3)",
-      duration: 520,
+      duration: 420,
     })
   }, [reduce])
 

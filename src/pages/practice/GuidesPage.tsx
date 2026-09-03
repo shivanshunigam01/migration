@@ -71,7 +71,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
         title="Visa Guides"
         deck="All 30 Australian visa guides written by MARA-registered agents — filterable by category."
         currentAsAt="July 2026"
-        primaryCta={{ label: 'Book Free Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book Free Consultation', page: 'book-consultation' }}
         accent={NAVY}
       />
 
@@ -279,7 +279,7 @@ export default function GuidesPage({ navigate }: { navigate: (page: string) => v
       <CtaBand
         title="Need personal advice on your visa pathway?"
         body="Our registered migration agents can review your circumstances and confirm your visa pathway."
-        primaryCta={{ label: 'Book a Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
         accent={GOLD}
         navigate={navigate}
       />

@@ -159,6 +159,13 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
     }, 50)
   }
 
+  useEffect(() => {
+    const hash = window.location.hash.replace(/^#/, '')
+    if (hash && TOOL_CARDS.some(c => c.id === hash)) {
+      openPanel(hash)
+    }
+  }, [])
+
   const DISCLAIMER_TEXT = "These results are indicative only — not an assessment, not migration advice. Contact a registered migration agent (MARN 2619467) for advice tailored to your circumstances."
 
   const PANELS: AccordionPanel[] = [
@@ -166,12 +173,9 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
       id: 'points-calculator',
       title: 'Points Calculator',
       content: (
-        <>
-          <Callout variant="warning">{DISCLAIMER_TEXT}</Callout>
-          <div style={{ marginTop: 24 }}>
-            <PointsCalculator accent={NAVY} />
-          </div>
-        </>
+        <div style={{ marginTop: 8 }}>
+          <PointsCalculator accent={NAVY} navigate={navigate} />
+        </div>
       ),
     },
     {

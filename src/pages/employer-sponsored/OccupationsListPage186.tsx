@@ -139,7 +139,7 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
         shortAnswer={<>Most 186 Direct Entry nominations require the occupation to appear on the <strong>Core Skills Occupation List (CSOL)</strong> or <strong>MLTSSL</strong>. For the Temporary Residence Transition (TRT) stream, the requirement is generally employment with the same sponsoring employer in the same occupation for at least two years on a qualifying 482 visa — the occupation list requirement may differ. Eligibility is subject to the legislative instrument current at the time the nomination is lodged; lists change without notice.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Check your 186 eligibility', page: 'home' }}
+        primaryCta={{ label: 'Check your 186 eligibility', page: 'book-consultation' }}
         secondaryCta={{ label: 'See 186 skill requirements →', page: '186-skill-requirements' }}
         accent={GREEN}
         navigate={navigate}
@@ -216,7 +216,7 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
       <CtaBand
         title={<>Not sure your occupation qualifies<br /><em style={{ fontStyle: 'italic', color: GOLD }}>for the 186 visa?</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your ANZSCO code, occupation list status, and stream eligibility against current Department of Home Affairs requirements before the nomination is lodged."
-        primaryCta={{ label: 'Book a 186 eligibility consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a 186 eligibility consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'Read 186 skill requirements →', page: '186-skill-requirements' }}
         accent={GREEN}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"

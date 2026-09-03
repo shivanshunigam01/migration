@@ -1,9 +1,11 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, GRADIENT_CARD_LIGHT } from '@/theme'
 import { CompassDecor } from '@/components/page/CtaBand'
 import NanakLogo from '@/components/layout/NanakLogo'
 import Icon from '@/components/ui/Icon'
 import { GlowButton } from '@/components/ui/GlowButton'
+import { resolveRoute } from '@/lib/navigation'
 
 /* ── Types ──────────────────────────────────────────────── */
 type NavSubItem = { label: string; desc: string; icon: string; code?: string; href?: string; route?: string }
@@ -21,21 +23,38 @@ const PRACTICE_LINKS = [
 ]
 
 /* ── Routing helper ─────────────────────────────────────── */
+function resolveNavHref(topLabel: string, item: NavSubItem): string | undefined {
+  if (item.route) return resolveRoute(item.route)
+  if (item.href && item.href !== '#') return item.href
+  if (topLabel === 'Employer Sponsored') {
+    if (['Skills in Demand', '482 Core Skills Stream', '482 Specialist Skills Stream'].includes(item.label)) {
+      return resolveRoute('skills-in-demand-visa')
+    }
+    return resolveRoute('employer-sponsored-visas')
+  }
+  return undefined
+}
+
 function resolveNavClick(
   topLabel: string,
   item: NavSubItem,
   navigate: (page: string) => void,
   closeNav: () => void,
 ): ((e: React.MouseEvent) => void) | undefined {
-  const go = (page: string) => (e: React.MouseEvent) => { e.preventDefault(); closeNav(); navigate(page) }
-  // Items with an explicit route property (set from routes.ts) resolve directly.
-  if (item.route) return go(item.route)
-  // Fallback label-matching for items that fan-in to a shared page or have no route set.
-  if (topLabel === 'Employer Sponsored') {
-    if (['Skills in Demand','482 Core Skills Stream','482 Specialist Skills Stream'].includes(item.label)) return go('skills-in-demand-visa')
-    return go('employer-sponsored-visas')
+  const href = resolveNavHref(topLabel, item)
+  if (!href) return undefined
+  return (e: React.MouseEvent) => {
+    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return
+    e.preventDefault()
+    closeNav()
+    const page = item.route
+      ?? (topLabel === 'Employer Sponsored'
+        ? (['Skills in Demand', '482 Core Skills Stream', '482 Specialist Skills Stream'].includes(item.label)
+          ? 'skills-in-demand-visa'
+          : 'employer-sponsored-visas')
+        : href.replace(/^\//, '') || 'home')
+    navigate(page)
   }
-  return undefined
 }
 
 /* ── SiteHeader ─────────────────────────────────────────── */
@@ -249,12 +268,12 @@ export default function SiteHeader({
                       <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>The Practice</div>
                       <div style={{ height: 1, background: '#f0f2f7', marginBottom: 12 }} />
                       {[
-                        { label: 'About the Practice', desc: 'Who we are and how we work', icon: 'user', action: () => { closeNav(); navigate('about') }, emph: false },
-                        { label: 'Contact', desc: 'Melbourne, Sydney, Brisbane and Perth', icon: 'phone', action: () => { closeNav(); navigate('contact') }, emph: false },
-                        { label: 'Book Free Consultation', desc: 'Free 30-minute consultation', icon: 'calendar', action: () => { closeNav(); navigate('book-consultation') }, emph: true },
+                        { label: 'About the Practice', desc: 'Who we are and how we work', icon: 'user', route: 'about', emph: false },
+                        { label: 'Contact', desc: 'Melbourne, Sydney, Brisbane and Perth', icon: 'phone', route: 'contact', emph: false },
+                        { label: 'Book Free Consultation', desc: 'Free 30-minute consultation', icon: 'calendar', route: 'book-consultation', emph: true },
                       ].map(l => (
-                        <a key={l.label} href={l.href ?? '#'}
-                          onClick={e => { e.preventDefault(); l.action() }}
+                        <Link key={l.label} to={resolveRoute(l.route)}
+                          onClick={() => closeNav()}
                           style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', background: l.emph ? `${GOLD}12` : 'transparent', marginBottom: l.emph ? 0 : 2 }}
                           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = l.emph ? `${GOLD}22` : `${NAVY}08` }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = l.emph ? `${GOLD}12` : 'transparent' }}>
@@ -265,7 +284,7 @@ export default function SiteHeader({
                             <div style={{ fontSize: 14, fontWeight: l.emph ? 700 : 600, color: l.emph ? NAVY : '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
                             <div style={{ fontSize: 12, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
                           </div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
 
@@ -279,8 +298,15 @@ export default function SiteHeader({
                         { label: 'English Converter', desc: 'Map IELTS / PTE to visa levels', icon: 'bookopen', anchor: 'english-score-converter' },
                         { label: 'Visa Comparison', desc: 'Compare two visa subclasses', icon: 'arrowright', anchor: 'visa-pathway-comparison' },
                       ].map(l => (
-                        <a key={l.label} href="#"
-                          onClick={e => { e.preventDefault(); navigate('tools'); setTimeout(() => { const el = document.getElementById(l.anchor); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) }, 80); closeNav() }}
+                        <Link key={l.label} to={`/tools#${l.anchor}`}
+                          onClick={() => {
+                            closeNav()
+                            navigate('tools')
+                            setTimeout(() => {
+                              const el = document.getElementById(l.anchor)
+                              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                            }, 80)
+                          }}
                           style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', marginBottom: 2 }}
                           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}08` }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent' }}>
@@ -291,16 +317,16 @@ export default function SiteHeader({
                             <div style={{ fontSize: 14, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
                             <div style={{ fontSize: 12, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
                           </div>
-                        </a>
+                        </Link>
                       ))}
                       {/* View all tools quiet row */}
-                      <a href="#" onClick={e => { e.preventDefault(); navigate('tools'); closeNav() }}
+                      <Link to="/tools" onClick={() => closeNav()}
                         style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 8, padding: '8px 10px', backgroundColor: `${NAVY}0d`, borderRadius: 8, border: `1px solid ${NAVY}18`, textDecoration: 'none', transition: 'background 0.12s' }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}18` }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}0d` }}>
                         <span style={{ fontSize: 13, fontWeight: 600, color: NAVY, fontFamily: "'Gilroy', sans-serif" }}>All tools</span>
                         <span style={{ fontSize: 15, color: NAVY, fontWeight: 700 }}>›</span>
-                      </a>
+                      </Link>
                     </div>
 
                     {/* Column 3: Resources */}
@@ -313,8 +339,8 @@ export default function SiteHeader({
                         { label: 'Checklists', desc: 'Document checklists for key visas', icon: 'clipboard', route: 'checklists' },
                         { label: 'Resources Hub', desc: 'Guides, blog and checklists', icon: 'star', route: 'resources' },
                       ].map(l => (
-                        <a key={l.label} href="#"
-                          onClick={e => { e.preventDefault(); navigate(l.route); closeNav() }}
+                        <Link key={l.label} to={resolveRoute(l.route)}
+                          onClick={() => closeNav()}
                           style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', marginBottom: 2 }}
                           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}08` }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent' }}>
@@ -325,7 +351,7 @@ export default function SiteHeader({
                             <div style={{ fontSize: 14, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
                             <div style={{ fontSize: 12, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", marginTop: 2, lineHeight: 1.4 }}>{l.desc}</div>
                           </div>
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -434,14 +460,23 @@ export default function SiteHeader({
                               { label: 'English Converter', anchor: 'english-score-converter', icon: 'bookopen' },
                               { label: 'All Tools', anchor: '', icon: 'arrowright' },
                             ].map(l => (
-                              <a key={l.label} href="#"
-                                onClick={(e) => { e.preventDefault(); navigate('tools'); setTimeout(() => { if (l.anchor) { const el = document.getElementById(l.anchor); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) } }, 80); closeNav() }}
+                              <Link key={l.label} to={l.anchor ? `/tools#${l.anchor}` : '/tools'}
+                                onClick={() => {
+                                  closeNav()
+                                  navigate('tools')
+                                  setTimeout(() => {
+                                    if (l.anchor) {
+                                      const el = document.getElementById(l.anchor)
+                                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                                    }
+                                  }, 80)
+                                }}
                                 style={{ display: 'flex', alignItems: 'center', gap: 5, minHeight: 28, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", fontSize: 13, color: NAVY, fontWeight: 500, transition: 'color 0.12s' }}
                                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = NAVY }}>
                                 <Icon name={l.icon} size={10} color="#94a3b8" />
                                 {l.label}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                           {/* Resources */}
@@ -452,14 +487,14 @@ export default function SiteHeader({
                               { label: 'Checklists', route: 'checklists', icon: 'clipboard' },
                               { label: 'Blog', route: 'blog', icon: 'layers' },
                             ].map(l => (
-                              <a key={l.label} href="#"
-                                onClick={(e) => { e.preventDefault(); navigate(l.route); closeNav() }}
+                              <Link key={l.label} to={resolveRoute(l.route)}
+                                onClick={() => closeNav()}
                                 style={{ display: 'flex', alignItems: 'center', gap: 5, minHeight: 28, textDecoration: 'none', fontFamily: "'Gilroy', sans-serif", fontSize: 13, color: NAVY, fontWeight: 500, transition: 'color 0.12s' }}
                                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = GOLD }}
                                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = NAVY }}>
                                 <Icon name={l.icon} size={10} color="#94a3b8" />
                                 {l.label}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -493,10 +528,24 @@ export default function SiteHeader({
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                       {cat.items.map(navItem => {
+                        const href = resolveNavHref(activeNavItem.label, navItem)
                         const clickHandler = resolveNavClick(activeNavItem.label, navItem, navigate, closeNav)
+                        if (!href) {
+                          return (
+                            <span key={navItem.label} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '10px 8px', opacity: 0.5 }}>
+                              <div style={{ flexShrink: 0, width: 32, height: 32, borderRadius: 7, border: `1.5px solid ${iconColor}22`, backgroundColor: `${iconColor}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 1 }}>
+                                <Icon name={navItem.icon} size={14} color={iconColor} />
+                              </div>
+                              <div style={{ flex: 1, minWidth: 0 }}>
+                                <div style={{ fontSize: 14.5, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif" }}>{navItem.label}</div>
+                                <div style={{ fontSize: 12.5, color: '#9890b0' }}>{navItem.desc}</div>
+                              </div>
+                            </span>
+                          )
+                        }
                         return (
-                          <a key={navItem.label} href="#"
-                            onClick={clickHandler ?? ((e) => e.preventDefault())}
+                          <Link key={navItem.label} to={href}
+                            onClick={clickHandler}
                             style={{
                               display: 'flex', alignItems: 'flex-start', gap: 12,
                               padding: '10px 8px', borderRadius: 8, textDecoration: 'none',
@@ -517,16 +566,25 @@ export default function SiteHeader({
                               </div>
                               <div style={{ fontSize: 12.5, color: '#9890b0', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.4, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical' as const }}>{navItem.desc}</div>
                             </div>
-                          </a>
+                          </Link>
                         )
                       })}
                     </div>
-                    <a href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12, padding: '10px 12px', backgroundColor: `${iconColor}0d`, borderRadius: 8, border: `1px solid ${iconColor}18`, textDecoration: 'none', transition: 'background 0.12s' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}18` }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}0d` }}>
-                      <span style={{ fontSize: 13.5, fontWeight: 600, color: iconColor, fontFamily: "'Gilroy', sans-serif" }}>View All {cat.heading}</span>
-                      <span style={{ fontSize: 15, color: iconColor, fontWeight: 700 }}>›</span>
-                    </a>
+                    {(() => {
+                      const hubItem = cat.items.find(i => i.code === 'Hub') ?? cat.items[0]
+                      const hubHref = hubItem ? resolveNavHref(activeNavItem.label, hubItem) : undefined
+                      if (!hubHref) return null
+                      return (
+                        <Link to={hubHref}
+                          onClick={() => { closeNav(); if (hubItem?.route) navigate(hubItem.route) }}
+                          style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12, padding: '10px 12px', backgroundColor: `${iconColor}0d`, borderRadius: 8, border: `1px solid ${iconColor}18`, textDecoration: 'none', transition: 'background 0.12s' }}
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}18` }}
+                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}0d` }}>
+                          <span style={{ fontSize: 13.5, fontWeight: 600, color: iconColor, fontFamily: "'Gilroy', sans-serif" }}>View All {cat.heading}</span>
+                          <span style={{ fontSize: 15, color: iconColor, fontWeight: 700 }}>›</span>
+                        </Link>
+                      )
+                    })()}
                     <div style={{ height: 28 }} />
                   </div>
                 )

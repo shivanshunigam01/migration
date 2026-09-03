@@ -295,7 +295,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
-        secondaryCta={{ label: 'Check your stream', page: 'home' }}
+        secondaryCta={{ label: 'Check your stream', page: 'temporary-graduate-485' }}
         accent={PURPLE}
         rightColumn={
           <div style={{ background: '#fff', borderRadius: 20, boxShadow: '0 8px 48px rgba(27,43,94,0.12)', border: '1px solid #e8edf6', overflow: 'hidden' }}>

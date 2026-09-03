@@ -197,7 +197,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <Breadcrumbs navigate={navigate} items={[
         { label: 'Home', page: 'home' },
-        { label: 'Visitor & Other', page: 'home' },
+        { label: 'Visitor & Other', page: 'visitor-hub' },
         { label: 'Bridging Visas Explained' },
       ]} />
 
@@ -208,7 +208,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
         deck="What bridging visas are, when they are generally granted, what each type allows — and what you need to know to maintain your lawful status in Australia while a visa matter is pending."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Get bridging visa advice', page: 'home' }}
+        primaryCta={{ label: 'Get bridging visa advice', page: 'book-consultation' }}
         accent={STEEL}
         navigate={navigate}
         footnote="General information only. Bridging visa conditions are set individually at grant — your visa grant notice prevails. Obtain advice from MARN 2619467."
@@ -374,7 +374,7 @@ export default function BridgingVisasPage({ navigate }: { navigate: (page: strin
       <CtaBand
         title={<>Get expert advice on your<br /><em style={{ fontStyle: 'italic', color: GOLD }}>bridging visa situation</em></>}
         body="Navpreet Aulakh (MARN 2619467) can advise on your current bridging visa conditions, whether a Bridging Visa B is available for travel, how to apply for work rights, and what your options are if your substantive visa application is refused."
-        primaryCta={{ label: 'Book a bridging visa consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a bridging visa consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View visa refusal options →', page: 'visa-refusal-review' }}
         accent={STEEL}
         footnote="MARA-registered · MARN 2619467 · General information only"

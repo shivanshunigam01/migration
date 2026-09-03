@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom"
+import React from "react"
 import { withNavigate } from "@/lib/withNavigate"
 import { LEGACY_ROUTE_REDIRECTS } from "@/lib/navigation"
 import { ROUTE } from "@/data/routes"
@@ -52,6 +53,9 @@ import BlogPage from "@/pages/practice/BlogPage"
 import BlogPostPage from "@/pages/practice/BlogPostPage"
 import ChecklistsPage from "@/pages/practice/ChecklistsPage"
 import ToolsPage from "@/pages/practice/ToolsPage"
+import ContactPage from "@/pages/ContactPage"
+import LegalPage from "@/pages/LegalPage"
+import NotFoundPage from "@/pages/NotFoundPage"
 
 const Pages = {
   Home: HomePage,
@@ -97,6 +101,17 @@ const Pages = {
   Checklists: withNavigate(ChecklistsPage),
   Tools: withNavigate(ToolsPage),
   BookConsultation: withNavigate(BookConsultationPage),
+  Contact: withNavigate(ContactPage),
+  Privacy: withNavigate(function PrivacyPage(p: { navigate: (page: string) => void }) {
+    return <LegalPage kind="privacy" navigate={p.navigate} />
+  }),
+  Terms: withNavigate(function TermsPage(p: { navigate: (page: string) => void }) {
+    return <LegalPage kind="terms" navigate={p.navigate} />
+  }),
+  Accessibility: withNavigate(function AccessibilityPage(p: { navigate: (page: string) => void }) {
+    return <LegalPage kind="accessibility" navigate={p.navigate} />
+  }),
+  NotFound: withNavigate(NotFoundPage),
 } as const
 
 const legacyRedirects = Object.entries(LEGACY_ROUTE_REDIRECTS).map(([from, to]) => (
@@ -150,6 +165,10 @@ export default function AppRouter() {
       <Route path={`/${ROUTE.artReview}`} element={<Pages.ARTReview />} />
 
       <Route path="/about" element={<Pages.About />} />
+      <Route path="/contact" element={<Pages.Contact />} />
+      <Route path="/privacy" element={<Pages.Privacy />} />
+      <Route path="/terms" element={<Pages.Terms />} />
+      <Route path="/accessibility" element={<Pages.Accessibility />} />
       <Route path={`/${ROUTE.resources}`} element={<Pages.Resources />} />
       <Route path={`/${ROUTE.guides}`} element={<Pages.Guides />} />
       <Route path={`/${ROUTE.blog}`} element={<Pages.Blog />} />
@@ -159,7 +178,7 @@ export default function AppRouter() {
 
       {legacyRedirects}
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Pages.NotFound />} />
     </Routes>
   )
 }

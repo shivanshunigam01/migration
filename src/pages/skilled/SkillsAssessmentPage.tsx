@@ -257,7 +257,7 @@ export default function SkillsAssessmentPage({ navigate }: { navigate: (page: st
         deck="What a skills assessment is, who the designated assessing authorities are, and how the process generally works for Australian visa applications."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Book a skills assessment review', page: 'home' }}
+        primaryCta={{ label: 'Book a skills assessment review', page: 'book-consultation' }}
         accent={TEAL}
         navigate={navigate}
         footnote="General information only. Assessing authority requirements and processing times change — always verify with the authority and obtain advice from MARN 2619467."
@@ -374,7 +374,7 @@ export default function SkillsAssessmentPage({ navigate }: { navigate: (page: st
       <CtaBand
         title={<>Have your skills assessment<br /><em style={{ fontStyle: 'italic', color: GOLD }}>reviewed before lodging</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your qualifications and employment history against the requirements of your assessing authority, identify gaps before they result in an adverse outcome, and advise on the right occupation and visa pathway for your circumstances."
-        primaryCta={{ label: 'Book a skills assessment consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a skills assessment consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'View skilled visa options →', page: 'skilled-migration' }}
         accent={TEAL}
         footnote="MARA-registered · MARN 2619467 · General information only"

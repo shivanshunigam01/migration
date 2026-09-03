@@ -225,7 +225,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
         deck="The English proficiency levels used across Australian visas, the approved test scores that generally meet each level, and how English affects your points score for skilled migration."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Get advice on English requirements', page: 'home' }}
+        primaryCta={{ label: 'Get advice on English requirements', page: 'book-consultation' }}
         accent={AMBER}
         navigate={navigate}
         footnote="General information only. English thresholds are set by legislative instrument and subject to change — verify current scores with the Department of Home Affairs or MARN 2619467."
@@ -416,7 +416,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
       <CtaBand
         title={<>Unsure which English level<br /><em style={{ fontStyle: 'italic', color: GOLD }}>applies to your visa?</em></>}
         body="Navpreet Aulakh (MARN 2619467) can confirm the English requirement that applies to your specific visa and stream, advise on whether an exemption may apply, and review your test results against current legislative thresholds."
-        primaryCta={{ label: 'Book an English requirements consultation', page: 'home' }}
+        primaryCta={{ label: 'Book an English requirements consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'Understand your points score →', page: 'points-test' }}
         accent={AMBER}
         footnote="MARA-registered · MARN 2619467 · General information only"

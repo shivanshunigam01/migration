@@ -242,7 +242,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
-        secondaryCta={{ label: 'Download Guide', page: 'home' }}
+        secondaryCta={{ label: 'Book Free Consultation', page: 'book-consultation' }}
         accent={CAT_EMPLOYER}
         rightColumn={streamSelectorWidget}
         navigate={navigate}

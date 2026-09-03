@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY } from '@/theme'
 import { Stagger, StaggerItem } from '@/components/motion'
+import { resolveRoute } from '@/lib/navigation'
 
 export interface PageCard {
   icon?: string
@@ -81,17 +83,22 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
         )
 
         if (isButton) {
+          const to = resolveRoute(card.page!)
           return (
             <StaggerItem key={i} preset="scale">
-              <motion.button
-                onClick={() => navigate!(card.page!)}
-                style={cardStyle}
+              <motion.div
+                style={{ ...cardStyle, padding: 0, overflow: 'hidden' }}
                 whileHover={reduce ? undefined : { y: -3, boxShadow: '0 18px 40px rgba(21,36,72,0.08)' }}
                 whileTap={reduce ? undefined : { scale: 0.985 }}
                 transition={{ duration: 0.22 }}
               >
-                {inner}
-              </motion.button>
+                <Link
+                  to={to}
+                  style={{ display: 'block', padding: '30px 26px 26px', textDecoration: 'none', color: 'inherit', height: '100%' }}
+                >
+                  {inner}
+                </Link>
+              </motion.div>
             </StaggerItem>
           )
         }

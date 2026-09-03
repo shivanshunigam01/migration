@@ -331,7 +331,7 @@ export default function SkilledNominated190Page({ navigate }: { navigate: (page:
         shortAnswer={<>The 190 is generally suited to applicants whose points score is <strong style={{ color: NAVY }}>competitive but benefits from the 5-point nomination bonus</strong>, or who have a genuine connection to a particular state or territory. State nomination is required before the Department of Home Affairs issues an invitation to apply. Each state runs its own program with its own criteria — meeting the state requirements is separate from, and in addition to, meeting the federal visa requirements.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
-        primaryCta={{ label: 'Assess your 190 eligibility', page: 'home' }}
+        primaryCta={{ label: 'Assess your 190 eligibility', page: 'book-consultation' }}
         secondaryCta={{ label: 'Compare skilled visas →', page: 'skilled-migration' }}
         accent={INDIGO}
         navigate={navigate}
@@ -399,7 +399,7 @@ export default function SkilledNominated190Page({ navigate }: { navigate: (page:
       <CtaBand
         title={<>Ready to assess your<br /><em style={{ fontStyle: 'italic', color: GOLD }}>190 pathway?</em></>}
         body="Navpreet Aulakh (MARN 2619467) can review your points score, occupation, English level, and skills assessment status against current state nomination criteria — and identify which state or territory is most likely to nominate you."
-        primaryCta={{ label: 'Book a skilled migration consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a skilled migration consultation', page: 'book-consultation' }}
         secondaryCta={{ label: 'Compare all skilled visa options →', page: 'skilled-migration' }}
         accent={INDIGO}
         footnote="Free initial assessment · MARA-registered · MARN 2619467"

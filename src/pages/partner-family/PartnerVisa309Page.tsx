@@ -487,7 +487,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
       <CtaBand
         title={<>Separated by borders.<br /><span style={{ color: ROSE }}>United by process.</span></>}
         body="Navpreet Aulakh (MARN 2619467) manages partner visa cases from lodgement through the 100 grant — including evidence structuring, the grant-day travel rule, and keeping cases moving through DHA's queue."
-        primaryCta={{ label: 'Book a Partner Visa Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a Partner Visa Consultation', page: 'book-consultation' }}
         accent={ROSE}
         footnote="Free initial assessment · MARN 2619467"
         navigate={navigate}

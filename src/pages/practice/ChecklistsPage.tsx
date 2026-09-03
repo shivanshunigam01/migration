@@ -131,7 +131,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
         title="Visa Document Checklists"
         deck="Free Australian visa document checklists for common visa applications — written by our MARA-registered team. General guidance only."
         currentAsAt="July 2026"
-        primaryCta={{ label: 'Book Free Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book Free Consultation', page: 'book-consultation' }}
         accent={NAVY}
       />
 
@@ -254,7 +254,7 @@ export default function ChecklistsPage({ navigate }: { navigate: (page: string) 
       <CtaBand
         title="Not sure what documents you need?"
         body="Our registered migration agents can review your specific circumstances and advise on the exact evidence required for your visa application."
-        primaryCta={{ label: 'Book a Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
         accent={GOLD}
         navigate={navigate}
       />

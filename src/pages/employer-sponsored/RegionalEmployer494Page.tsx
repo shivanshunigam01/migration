@@ -169,7 +169,10 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
 
               {/* CTAs */}
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-                <button style={{
+                <button
+                  type="button"
+                  onClick={() => navigate('book-consultation')}
+                  style={{
                   background: GOLD, color: NAVY_DARK, border: 'none',
                   borderRadius: 10, padding: '14px 28px', fontSize: 16,
                   fontWeight: 700, cursor: 'pointer',
@@ -177,14 +180,17 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 }}>
                   <Icon name="zap" size={16} color={NAVY_DARK} /> Check My Eligibility
                 </button>
-                <button style={{
+                <button
+                  type="button"
+                  onClick={() => navigate('book-consultation')}
+                  style={{
                   background: 'transparent',
                   border: `2px solid ${NAVY}30`,
                   color: NAVY, borderRadius: 10, padding: '14px 28px',
                   fontSize: 16, fontWeight: 600, cursor: 'pointer',
                   display: 'flex', alignItems: 'center', gap: 8,
                 }}>
-                  <Icon name="file" size={16} color={NAVY} /> Download Guide
+                  <Icon name="file" size={16} color={NAVY} /> Book Free Consultation
                 </button>
               </div>
             </div>

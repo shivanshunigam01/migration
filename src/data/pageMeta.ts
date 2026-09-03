@@ -220,4 +220,25 @@ export const PAGE_META: Record<string, PageMeta> = {
     metaDescription: 'Free migration tools: points calculator, occupation search, residence calculator, English score converter and visa pathway comparison. Indicative only.',
     primaryKeyword: 'australian visa calculator',
   },
+  contact: {
+    title: 'Contact Nanak Migration Group | Melbourne, Sydney, Brisbane, Perth',
+    metaDescription:
+      'Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Melbourne, Sydney, Brisbane and Perth. MARN 2619467.',
+    primaryKeyword: 'contact migration agent Australia',
+  },
+  privacy: {
+    title: 'Privacy Policy | Nanak Migration Group',
+    metaDescription: 'Privacy Policy for Nanak Migration Group Pty Ltd — how we collect, use and protect personal information. MARN 2619467.',
+    primaryKeyword: 'Nanak Migration privacy policy',
+  },
+  terms: {
+    title: 'Terms of Use | Nanak Migration Group',
+    metaDescription: 'Terms of use for the Nanak Migration Group website. General information only — not immigration advice.',
+    primaryKeyword: 'Nanak Migration terms of use',
+  },
+  accessibility: {
+    title: 'Accessibility | Nanak Migration Group',
+    metaDescription: 'Accessibility information for nanakmigration.com.au and how to request assistance. Nanak Migration Group MARN 2619467.',
+    primaryKeyword: 'Nanak Migration accessibility',
+  },
 }

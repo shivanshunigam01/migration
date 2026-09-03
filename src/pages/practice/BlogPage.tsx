@@ -52,7 +52,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
         )
       } else {
         setPosts(
-          BLOG_POSTS.map((p) => ({
+          BLOG_POSTS.filter((p) => !p.title.startsWith('[DRAFT]')).map((p) => ({
             id: p.id,
             slug: p.id,
             date: p.date,
@@ -98,7 +98,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
         title="Migration Blog"
         deck="Australian immigration news, policy updates and visa guidance from MARA-registered migration agents."
         currentAsAt="July 2026"
-        primaryCta={{ label: 'Book Free Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book Free Consultation', page: 'book-consultation' }}
         accent={NAVY}
       />
 
@@ -106,7 +106,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
       <div style={{ background: '#fff', padding: '32px 24px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <AnswerBox>
-            The Nanak Migration Group blog publishes policy updates, visa news and guidance articles written by registered migration agents (MARN 2619467). All articles marked DRAFT are stubs and will be replaced with verified content before launch.
+            The Nanak Migration Group blog publishes policy updates, visa news and guidance articles written by registered migration agents (MARN 2619467). Content is general information only and is not immigration assistance.
           </AnswerBox>
         </div>
       </div>
@@ -180,21 +180,6 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                     flexWrap: 'wrap',
                   }}
                 >
-                  {post.title.startsWith('[DRAFT]') && (
-                    <span
-                      style={{
-                        background: '#f59e0b',
-                        color: NAVY,
-                        fontSize: 11,
-                        fontWeight: 800,
-                        padding: '2px 8px',
-                        borderRadius: 4,
-                        letterSpacing: '0.08em',
-                      }}
-                    >
-                      DRAFT
-                    </span>
-                  )}
                   <span
                     style={{
                       fontSize: 10,
@@ -418,7 +403,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
       <CtaBand
         title="Want personal visa advice?"
         body="Our registered migration agents can review your circumstances and confirm your visa pathway."
-        primaryCta={{ label: 'Book a Consultation', page: 'home' }}
+        primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
         accent={GOLD}
         navigate={navigate}
       />
