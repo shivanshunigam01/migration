@@ -1,8 +1,7 @@
 import React from 'react'
 import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
-import { NAVY, NAVY_DARK, GOLD, HERO_GRAD } from '@/theme'
-import { ShieldGlow } from '@/components/motion'
+import { NAVY, GOLD, HERO_GRAD } from '@/theme'
 import { GlowButton } from '@/components/ui/GlowButton'
 import { fadeUp, slideRight, staggerContainer, easeOutExpo } from '@/components/motion/variants'
 
@@ -68,18 +67,23 @@ export function PageHero({
       animate="visible"
     >
       {maraBadge && (
-        <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '5px 14px 5px 8px', background: 'rgba(27,43,94,0.08)', border: '1px solid rgba(27,43,94,0.20)', borderRadius: 100 }}>
-          <div style={{ width: 20, height: 20, borderRadius: '50%', backgroundColor: GOLD, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <Icon name="check" size={11} color="#fff" />
+        <motion.div variants={fadeUp} style={{ marginBottom: 22 }}>
+          <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase' as const, color: NAVY, marginBottom: 6 }}>
+            Nanak Migration Group
           </div>
-          <span style={{ color: NAVY, fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>MARA-Registered Agent · MARN 2619467</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ width: 24, height: 1.5, background: accent, display: 'inline-block' }} />
+            <span style={{ color: '#64748b', fontSize: 12, fontWeight: 600, letterSpacing: '0.04em' }}>
+              MARA-registered · MARN 2619467
+            </span>
+          </div>
         </motion.div>
       )}
 
       {(eyebrow || eyebrowSub) && (
-        <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+        <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
           {eyebrow && (
-            <span style={{ background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, padding: '4px 12px', borderRadius: 20 }}>
+            <span style={{ color: NAVY, borderBottom: `2px solid ${accent}`, fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, paddingBottom: 4 }}>
               {eyebrow}
             </span>
           )}
@@ -87,7 +91,7 @@ export function PageHero({
         </motion.div>
       )}
 
-      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(34px, 5vw, 52px)' : 'clamp(28px, 5vw, 56px)', fontWeight: 700, color: NAVY, lineHeight: 1.1, margin: '0 0 22px', letterSpacing: '-0.02em' }}>
+      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(34px, 5vw, 52px)' : 'clamp(28px, 5vw, 56px)', fontWeight: 700, color: NAVY, lineHeight: 1.08, margin: '0 0 22px', letterSpacing: '-0.03em' }}>
         {title}
       </motion.h1>
 
@@ -136,9 +140,8 @@ export function PageHero({
 
   if (variant === 'flagship') {
     return (
-      <header className="page-hero-section page-hero-section-flagship" style={{ background: HERO_GRAD, padding: '64px 32px 0', overflow: 'hidden', position: 'relative' }}>
-        <ShieldGlow tone="soft" size={640} top="-18%" right="-8%" opacity={0.9} />
-        <ShieldGlow tone="gold" size={420} bottom="-20%" left="-6%" opacity={0.55} />
+      <header className="page-hero-section page-hero-section-flagship" style={{ background: HERO_GRAD, padding: '72px 32px 0', overflow: 'hidden', position: 'relative' }}>
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 55% 45% at 90% 10%, rgba(232,160,23,0.1) 0%, transparent 55%), radial-gradient(ellipse 45% 50% at 0% 100%, rgba(21,36,72,0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div className="hero-flagship-inner" style={{ display: 'flex', gap: 64, alignItems: 'flex-start' }}>
             <div className="hero-flagship-left" style={{ flex: '0 0 580px', minWidth: 0 }}>{leftContent}</div>
@@ -162,9 +165,8 @@ export function PageHero({
 
   // standard / hub / support
   return (
-    <header className="page-hero-section" style={{ background: HERO_GRAD, padding: '64px 32px 56px', overflow: 'hidden', position: 'relative' }}>
-      <ShieldGlow tone="soft" size={560} top="-20%" right="-10%" opacity={0.85} />
-      <ShieldGlow tone="navy" size={380} bottom="-30%" left="-8%" opacity={0.5} />
+    <header className="page-hero-section" style={{ background: HERO_GRAD, padding: '72px 32px 60px', overflow: 'hidden', position: 'relative' }}>
+      <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 40% at 85% 0%, rgba(232,160,23,0.09) 0%, transparent 55%), radial-gradient(ellipse 40% 45% at 5% 100%, rgba(21,36,72,0.05) 0%, transparent 50%)', pointerEvents: 'none' }} />
       <div style={{ maxWidth: variant === 'hub' ? 1000 : 800, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {leftContent}
       </div>

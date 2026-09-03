@@ -9,7 +9,6 @@ import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, NAVY_MID, NAVY_GRAD, NAVY_GRAD_V, HE
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
 import NanakLogo from '@/components/layout/NanakLogo'
-import Icon from '@/components/ui/Icon'
 import { NAV_ITEMS } from '@/data/navItems'
 import ProcessJourney from '@/components/ui/ProcessJourney'
 import { CardGrid } from '@/components/page/CardGrid'
@@ -289,17 +288,17 @@ function PathwayAssessment() {
   }
 
   return (
-    <div className="pathway-widget newsletter-row" style={{ background: '#ffffff', borderRadius: 16, boxShadow: '0 24px 64px rgba(13,22,50,0.22), 0 2px 8px rgba(13,22,50,0.08)', border: '1px solid #e8eaf0', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: 520 }}>
+    <div className="pathway-widget newsletter-row" style={{ background: 'rgba(255,255,255,0.92)', backdropFilter: 'blur(12px)', borderRadius: 6, boxShadow: '0 28px 64px rgba(10,16,36,0.14)', border: '1px solid rgba(21,36,72,0.1)', overflow: 'hidden', display: 'flex', flexDirection: 'column', height: 520 }}>
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid #f0f0f5', flexShrink: 0 }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ width: 9, height: 9, borderRadius: '50%', backgroundColor: '#f5a124', display: 'inline-block', boxShadow: '0 0 0 3px rgba(245,161,36,0.2)' }} />
-          <span style={{ fontSize: 15, fontWeight: 700, color: NAVY_DARK }}>Pathway Assessment</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 18px', borderBottom: '1px solid rgba(21,36,72,0.08)', flexShrink: 0, background: 'linear-gradient(180deg, #fbfcfe 0%, #ffffff 100%)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: GOLD, display: 'inline-block' }} />
+          <span style={{ fontSize: 15, fontWeight: 700, color: NAVY_DARK, letterSpacing: '-0.01em' }}>Pathway Assessment</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', color: '#9ca3af', textTransform: 'uppercase' }}>Preliminary</span>
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#94a3b8', textTransform: 'uppercase' }}>Preliminary</span>
           <span style={{ fontSize: 11, color: '#d1d5db' }}>·</span>
-          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.1em', color: '#9ca3af', textTransform: 'uppercase' }}>Not Advice</span>
+          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#94a3b8', textTransform: 'uppercase' }}>Not Advice</span>
         </div>
       </div>
 
@@ -602,9 +601,9 @@ export default function HomePage() {
 
       {/* ── HERO ──────────────────────────────────────────── */}
       <section style={{ position: 'relative', minHeight: '92vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: HERO_GRAD }}>
-        <ShieldGlow tone="soft" size={700} top="-10%" left="55%" opacity={0.95} />
-        <ShieldGlow tone="navy" size={500} bottom="0" left="-5%" opacity={0.7} />
-        <ShieldGlow tone="gold" size={360} top="20%" right="8%" opacity={0.35} />
+        {/* Atmospheric depth — soft washes, not neon blobs */}
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 55% at 78% 18%, rgba(232,160,23,0.12) 0%, transparent 58%), radial-gradient(ellipse 55% 50% at 8% 88%, rgba(21,36,72,0.08) 0%, transparent 55%)', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(21,36,72,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(21,36,72,0.03) 1px, transparent 1px)', backgroundSize: '72px 72px', maskImage: 'linear-gradient(180deg, rgba(0,0,0,0.35), transparent 85%)', WebkitMaskImage: 'linear-gradient(180deg, rgba(0,0,0,0.35), transparent 85%)', pointerEvents: 'none' }} />
 
         {/* Australian skyline — flush to bottom edge */}
         <AustralianSkyline />
@@ -615,7 +614,7 @@ export default function HomePage() {
           alt=""
           aria-hidden="true"
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 0.18, y: 0 }}
+          animate={{ opacity: 0.14, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           style={{
             position: 'absolute',
@@ -628,43 +627,35 @@ export default function HomePage() {
           }}
         />
 
-        <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '80px 24px', width: '100%', zIndex: 1 }}>
+        <div style={{ position: 'relative', maxWidth: 1200, margin: '0 auto', padding: '88px 24px 96px', width: '100%', zIndex: 1 }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: 56, alignItems: 'center' }}>
             <motion.div
               variants={staggerContainer}
               initial={reduceMotion ? false : 'hidden'}
               animate="visible"
             >
-              {/* MARA badge */}
-              <motion.div variants={fadeUp} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 28, padding: '6px 14px 6px 8px', background: 'rgba(27,43,94,0.08)', border: '1px solid rgba(27,43,94,0.15)', borderRadius: 100 }}>
-                <div style={{ width: 22, height: 22, borderRadius: '50%', backgroundColor: NAVY, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="check" size={10} color={GOLD} />
+              {/* Brand-first signal */}
+              <motion.div variants={fadeUp} style={{ marginBottom: 22 }}>
+                <div style={{ fontSize: 'clamp(13px, 1.4vw, 14px)', fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: NAVY, marginBottom: 6 }}>
+                  Nanak Migration Group
                 </div>
-                <span style={{ color: NAVY, fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>MARA-Registered · MARN 2619467</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+                  <span style={{ width: 28, height: 1.5, background: GOLD, display: 'inline-block' }} />
+                  <span style={{ color: '#64748b', fontSize: 13, fontWeight: 600, letterSpacing: '0.04em' }}>
+                    MARA-registered · MARN 2619467
+                  </span>
+                </div>
               </motion.div>
 
-              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(42px, 6vw, 74px)', fontWeight: 300, lineHeight: 1.08, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.03em' }}>
+              <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(44px, 6.2vw, 76px)', fontWeight: 300, lineHeight: 1.05, color: NAVY_MID, margin: '0 0 8px', letterSpacing: '-0.035em' }}>
                 Your pathway
-                <br /><em style={{ fontStyle: 'italic', color: GOLD }}>to Australia</em>
+                <br /><em style={{ fontStyle: 'italic', fontWeight: 500, color: GOLD }}>to Australia</em>
                 <br />starts here.
               </motion.h1>
 
-              <motion.p variants={fadeUp} style={{ color: '#4a4560', fontSize: 18, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 520 }}>
-                Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia's visa system.
+              <motion.p variants={fadeUp} style={{ color: '#4b5568', fontSize: 18, lineHeight: 1.7, margin: '28px 0 0', maxWidth: 520 }}>
+                Skilled workers, students and families — guided through Australia’s visa system by registered migration agents in Melbourne, Sydney, Brisbane and Perth.
               </motion.p>
-
-              <motion.div variants={fadeUp} style={{
-                background: 'rgba(27,43,94,0.04)',
-                borderLeft: '4px solid #f5a124',
-                borderRadius: '0 8px 8px 0',
-                padding: '14px 20px',
-                marginTop: 24,
-                maxWidth: 640,
-              }}>
-                <span style={{ fontSize: 15, lineHeight: 1.6, color: '#1B2B5E' }}>
-                  <strong>Nanak Migration Group</strong> is a MARA-registered migration agency (MARN 2619467) helping individuals, families and employers navigate Australian immigration from offices in Melbourne, Sydney, Brisbane and Perth.
-                </span>
-              </motion.div>
 
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 36 }}>
                 <GlowButton as="a" href="#contact" size="lg" variant="navy">
@@ -677,7 +668,7 @@ export default function HomePage() {
 
             </motion.div>
 
-            {/* AI Pathway Assessment — faded into hero */}
+            {/* Pathway Assessment — right column */}
             <motion.div
               style={{ position: 'relative' }}
               variants={slideRight}
@@ -686,21 +677,17 @@ export default function HomePage() {
               transition={{ delay: 0.2 }}
             >
               <PathwayAssessment />
-              {/* fade overlay — blends widget edges into hero gradient */}
-              <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(to bottom, ${HERO_GRAD.split(',')[0].replace('linear-gradient(160deg,', '').trim()} 0%, transparent 18%, transparent 72%, rgba(27,43,94,0.05) 100%)`, pointerEvents: 'none', borderRadius: 16 }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(232,240,250,0.7) 0%, transparent 20%, transparent 80%, rgba(232,240,250,0.7) 100%)', pointerEvents: 'none', borderRadius: 16 }} />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* ── SEGMENTATION TILES ────────────────────────────── */}
-      <section style={{ background: '#ffffff', padding: '64px 24px', position: 'relative', overflow: 'hidden' }}>
-        <ShieldGlow tone="gold" size={420} top="-30%" right="-8%" opacity={0.25} />
+      <section style={{ background: 'linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%)', padding: '88px 24px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <Reveal preset="up" style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 14, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Where are you starting from?</div>
-            <h2 style={{ fontSize: 29, fontWeight: 700, color: NAVY, margin: '0 0 40px 0' }}>Choose your starting point</h2>
+            <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Where are you starting from?</div>
+            <h2 style={{ fontSize: 'clamp(26px, 3.5vw, 34px)', fontWeight: 700, color: NAVY, margin: '0 0 48px 0', letterSpacing: '-0.025em' }}>Choose your starting point</h2>
           </Reveal>
           <Stagger className="segmentation-grid">
             {([
@@ -794,24 +781,25 @@ export default function HomePage() {
                     onMouseEnter={() => setHoveredTile(tile.id)}
                     onMouseLeave={() => setHoveredTile(null)}
                     onClick={() => navigate(tile.route)}
-                    whileHover={reduceMotion ? undefined : { y: -5 }}
+                    whileHover={reduceMotion ? undefined : { y: -4 }}
                     style={{
-                      background: '#ffffff',
-                      border: '1.5px solid #e8edf5',
-                      borderRadius: 12,
-                      borderTop: hovered ? '3px solid #f5a124' : '3px solid transparent',
-                      padding: '24px',
-                      boxShadow: hovered ? '0 8px 24px rgba(27,43,94,0.10)' : '0 2px 8px rgba(27,43,94,0.05)',
+                      background: hovered ? '#ffffff' : 'rgba(255,255,255,0.72)',
+                      border: hovered ? '1px solid rgba(21,36,72,0.14)' : '1px solid transparent',
+                      borderBottom: hovered ? `2px solid ${GOLD}` : '2px solid rgba(21,36,72,0.06)',
+                      borderRadius: 4,
+                      padding: '28px 24px',
+                      boxShadow: hovered ? '0 16px 40px rgba(21,36,72,0.08)' : 'none',
                       cursor: 'pointer',
                       height: '100%',
+                      transition: 'background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
                     }}
                   >
                     {tile.icon}
-                    <div style={{ fontSize: 17, fontWeight: 700, color: NAVY, marginTop: 12 }}>{tile.label}</div>
-                    <div style={{ fontSize: 14, color: '#64748b', marginTop: 4 }}>{tile.desc}</div>
+                    <div style={{ fontSize: 17, fontWeight: 700, color: NAVY, marginTop: 14, letterSpacing: '-0.015em' }}>{tile.label}</div>
+                    <div style={{ fontSize: 14, color: '#64748b', marginTop: 6, lineHeight: 1.55 }}>{tile.desc}</div>
                     <span
                       onClick={e => { e.stopPropagation(); navigate(tile.route) }}
-                      style={{ display: 'block', color: '#f5a124', fontSize: 14, fontWeight: 600, marginTop: 14, cursor: 'pointer' }}
+                      style={{ display: 'block', color: GOLD, fontSize: 14, fontWeight: 700, marginTop: 16, cursor: 'pointer' }}
                     >{tile.cta} →</span>
                   </motion.div>
                 </StaggerItem>
@@ -863,29 +851,28 @@ export default function HomePage() {
         ]
         return (
           <>
-            <section style={{ background: GREY_BAND, padding: '80px 24px', position: 'relative', overflow: 'hidden' }}>
-              <ShieldGlow tone="navy" size={480} bottom="-40%" left="30%" opacity={0.2} />
+            <section style={{ background: GREY_BAND, padding: '96px 24px', position: 'relative', overflow: 'hidden' }}>
+              <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232,160,23,0.06) 0%, transparent 60%)', pointerEvents: 'none' }} />
               <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-                <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 48 }}>
-                  <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>Visa Pathways</div>
-                  <h2 style={{ fontSize: 33, fontWeight: 700, color: NAVY, margin: 0 }}>Browse all visa categories</h2>
+                <Reveal preset="up" style={{ textAlign: 'center', marginBottom: 52 }}>
+                  <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.16em', textTransform: 'uppercase', color: GOLD, marginBottom: 10 }}>Visa Pathways</div>
+                  <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 36px)', fontWeight: 700, color: NAVY, margin: 0, letterSpacing: '-0.025em' }}>Browse all visa categories</h2>
                 </Reveal>
                 <CardGrid cards={HUB_CARDS} columns={3} accent={NAVY} navigate={navigate} />
               </div>
             </section>
 
             {/* ── TRUST BAND ────────────────────────────────────── */}
-            <section style={{ background: NAVY, padding: '40px 24px', position: 'relative', overflow: 'hidden' }}>
-              <ShieldGlow tone="gold" size={380} top="-60%" right="10%" opacity={0.25} />
-              <Stagger style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '32px 64px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+            <section style={{ background: `linear-gradient(120deg, ${NAVY_DARK} 0%, ${NAVY} 55%, #1a2f5c 100%)`, padding: '48px 24px', position: 'relative', overflow: 'hidden' }}>
+              <Stagger style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '36px 72px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
                 {[
                   { label: 'MARN 2619467', sub: 'MARA Registered Agent' },
                   { label: '4 Offices', sub: 'Melbourne · Sydney · Brisbane · Perth' },
                   { label: 'OMARA', sub: 'Code of Conduct Compliant' },
                 ].map(item => (
                   <StaggerItem key={item.label} style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: 23, fontWeight: 800, color: GOLD, letterSpacing: '-0.01em' }}>{item.label}</div>
-                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginTop: 4, letterSpacing: '0.04em' }}>{item.sub}</div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: GOLD, letterSpacing: '-0.01em' }}>{item.label}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.62)', marginTop: 6, letterSpacing: '0.04em' }}>{item.sub}</div>
                   </StaggerItem>
                 ))}
               </Stagger>

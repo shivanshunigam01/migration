@@ -1,6 +1,6 @@
 import React from 'react'
 import { NAVY, NAVY_DARK, GOLD } from '@/theme'
-import { Reveal, ShieldGlow } from '@/components/motion'
+import { Reveal } from '@/components/motion'
 import { GlowButton } from '@/components/ui/GlowButton'
 
 /* Shared decorative SVG — compass rose + Southern Cross arc */
@@ -96,22 +96,21 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
   }
 
   return (
-    <section style={{ background: `linear-gradient(135deg, ${NAVY} 0%, ${NAVY_DARK} 100%)`, padding: '72px 32px', position: 'relative', overflow: 'hidden' }}>
-      <ShieldGlow tone="gold" size={480} top="-30%" left="-10%" opacity={0.35} />
-      <ShieldGlow tone="soft" size={360} bottom="-20%" right="10%" opacity={0.12} pulse={false} />
-      <CompassDecor size={380} compassColor="#ffffff" compassOpacity={0.05} starColor={GOLD} starOpacity={0.15} />
+    <section style={{ background: `linear-gradient(145deg, ${NAVY} 0%, ${NAVY_DARK} 55%, #0f1a38 100%)`, padding: '80px 32px', position: 'relative', overflow: 'hidden' }}>
+      <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 60% at 0% 0%, rgba(232,160,23,0.18) 0%, transparent 55%), radial-gradient(ellipse 40% 50% at 100% 100%, rgba(255,255,255,0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
+      <CompassDecor size={380} compassColor="#ffffff" compassOpacity={0.04} starColor={GOLD} starOpacity={0.12} />
       <Reveal preset="scale" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
         <div>
-          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
+          <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.15, letterSpacing: '-0.025em' }}>
             {title}
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 17, lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
+          <p style={{ color: 'rgba(255,255,255,0.62)', fontSize: 17, lineHeight: 1.7, margin: 0, maxWidth: 480 }}>
             {body}
           </p>
           {languages.length > 0 && (
-            <div style={{ display: 'flex', gap: 16, marginTop: 20, flexWrap: 'wrap' as const }}>
+            <div style={{ display: 'flex', gap: 18, marginTop: 22, flexWrap: 'wrap' as const }}>
               {languages.map(lang => (
-                <span key={lang} style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', padding: '4px 12px', borderRadius: 20 }}>
+                <span key={lang} style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em' }}>
                   Consultations in {lang}
                 </span>
               ))}

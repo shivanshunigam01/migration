@@ -35,14 +35,14 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
         const color = accent
         const isButton = !!card.page && !!navigate
         const cardStyle: React.CSSProperties = {
-          background: dark ? 'rgba(255,255,255,0.05)' : '#fff',
+          background: dark ? 'rgba(255,255,255,0.04)' : '#fff',
           border: dark
             ? `1px solid rgba(255,255,255,0.1)`
-            : `1px solid #e8edf6`,
-          borderTop: `4px solid ${color}`,
-          borderRadius: '0 0 14px 14px',
-          padding: '28px 28px 24px',
-          boxShadow: dark ? 'none' : '0 2px 12px rgba(27,43,94,0.05)',
+            : `1px solid rgba(21,36,72,0.08)`,
+          borderBottom: dark ? `2px solid rgba(255,255,255,0.18)` : `2px solid ${color}`,
+          borderRadius: 4,
+          padding: '28px 26px 24px',
+          boxShadow: 'none',
           cursor: isButton ? 'pointer' : 'default',
           textAlign: 'left' as const,
           fontFamily: "'Gilroy', sans-serif",
@@ -86,7 +86,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
               <motion.button
                 onClick={() => navigate!(card.page!)}
                 style={cardStyle}
-                whileHover={reduce ? undefined : { y: -4, boxShadow: '0 12px 32px rgba(27,43,94,0.12)' }}
+                whileHover={reduce ? undefined : { y: -3, boxShadow: '0 18px 40px rgba(21,36,72,0.08)' }}
                 whileTap={reduce ? undefined : { scale: 0.985 }}
                 transition={{ duration: 0.22 }}
               >

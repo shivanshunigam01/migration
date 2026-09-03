@@ -2,10 +2,10 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-navy: #1B2B5E;
-  --color-navy-dark: #0d1632;
-  --color-gold: #f5a124;
-  --color-gold-light: #f7b84b;
+  --color-navy: #152448;
+  --color-navy-dark: #0A1024;
+  --color-gold: #E8A017;
+  --color-gold-light: #F0B53A;
   --color-cream: #ffffff;
   --font-display: 'Gilroy', sans-serif;
   --font-body: 'Gilroy', sans-serif;
@@ -28,15 +28,23 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   background-color: #ffffff;
-  color: #1E1E2A;
+  color: #16181F;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Gilroy', sans-serif;
   font-weight: 600;
   font-style: normal;
+  letter-spacing: -0.02em;
+  color: #152448;
+}
+
+::selection {
+  background: rgba(232, 160, 23, 0.22);
+  color: #0A1024;
 }
 
 button, input, textarea, select {
