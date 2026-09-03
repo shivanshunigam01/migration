@@ -39,10 +39,10 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
           border: dark
             ? `1px solid rgba(255,255,255,0.1)`
             : `1px solid rgba(21,36,72,0.08)`,
-          borderBottom: dark ? `2px solid rgba(255,255,255,0.18)` : `2px solid ${color}`,
-          borderRadius: 4,
-          padding: '28px 26px 24px',
-          boxShadow: 'none',
+          borderBottom: dark ? `3px solid rgba(232,160,23,0.55)` : `3px solid ${color}`,
+          borderRadius: 12,
+          padding: '30px 26px 26px',
+          boxShadow: dark ? 'none' : '0 8px 28px rgba(21,36,72,0.05)',
           cursor: isButton ? 'pointer' : 'default',
           textAlign: 'left' as const,
           fontFamily: "'Gilroy', sans-serif",

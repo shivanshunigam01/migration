@@ -149,22 +149,19 @@ export default function SiteHeader({
   return (
     <>
       {/* ── ANNOUNCEMENT BAR ─────────────────────────────── */}
-      <div className="announcement-bar" style={{ background: 'linear-gradient(90deg, #e8f0fa 0%, #f4f8ff 35%, #ffffff 60%, #eef3fb 100%)', padding: '0 24px', borderBottom: '1px solid #dde6f5' }}>
-        <div className="announcement-bar-inner" style={{ maxWidth: 1200, margin: '0 auto', height: 42, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 14 }}>
-          <div className="announcement-badges" style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
-            <span style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 100, background: GOLD, color: NAVY_DARK }}>EMPLOYERS</span>
-            {['482','186'].map(code => (
-              <span key={code} style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', padding: '3px 9px', borderRadius: 100, background: 'rgba(27,43,94,0.08)', color: NAVY, border: '1px solid rgba(27,43,94,0.18)' }}>{code}</span>
-            ))}
-          </div>
-          <span className="announcement-divider" style={{ width: 1, height: 18, background: 'rgba(27,43,94,0.12)', flexShrink: 0 }} />
-          <span className="announcement-text" style={{ fontSize: 14, color: '#374151', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
+      <div className="announcement-bar" style={{ background: 'linear-gradient(90deg, #e6eef8 0%, #f3f7fc 40%, #ffffff 70%, #eef3fb 100%)', padding: '0 24px', borderBottom: '1px solid #d8e2f0' }}>
+        <div className="announcement-bar-inner" style={{ maxWidth: 1200, margin: '0 auto', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+          <span className="announcement-badges" style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: NAVY_DARK, flexShrink: 0 }}>
+            Employers · 482 / 186
+          </span>
+          <span className="announcement-divider" style={{ width: 1, height: 16, background: 'rgba(21,36,72,0.14)', flexShrink: 0 }} />
+          <span className="announcement-text" style={{ fontSize: 14, color: '#3f4b5f', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
             <strong style={{ fontWeight: 700, color: NAVY }}>Sponsoring staff?</strong>{' '}Employer readiness discussion — no charge.
           </span>
           <a href="mailto:visa@nanakmigration.com.au?subject=Employer%20sponsorship%20readiness%20discussion" className="announcement-cta"
-            style={{ flexShrink: 0, fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, padding: '7px 16px', borderRadius: 100, background: GOLD, boxShadow: '0 2px 12px rgba(245,161,36,0.4)', transition: 'all 0.15s', whiteSpace: 'nowrap' }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD_LIGHT; el.style.boxShadow = '0 4px 18px rgba(245,161,36,0.55)' }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.boxShadow = '0 2px 12px rgba(245,161,36,0.4)' }}
+            style={{ flexShrink: 0, fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, background: GOLD, boxShadow: '0 2px 10px rgba(232,160,23,0.28)', transition: 'all 0.15s', whiteSpace: 'nowrap' }}
+            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD_LIGHT }}
+            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD }}
           >
             Request a discussion
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M7 3l3 3-3 3" stroke={NAVY_DARK} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -173,7 +170,7 @@ export default function SiteHeader({
       </div>
 
       {/* ── STICKY NAV ───────────────────────────────────── */}
-      <header id="site-header-root" className="site-header-pad" style={{ position: 'sticky', top: 0, zIndex: 50, padding: '0 32px', overflow: 'visible', background: NAVY, borderBottom: '1px solid rgba(245,161,36,0.18)', boxShadow: '0 2px 24px rgba(13,22,50,0.35)' }}
+      <header id="site-header-root" className="site-header-pad" style={{ position: 'sticky', top: 0, zIndex: 50, padding: '0 32px', overflow: 'visible', background: 'linear-gradient(180deg, #152448 0%, #101C3A 100%)', borderBottom: '1px solid rgba(232,160,23,0.2)', boxShadow: '0 8px 28px rgba(10,16,36,0.28)' }}
         onMouseLeave={scheduleClose}
         onMouseEnter={cancelClose}>
         <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 32, height: 64 }}>

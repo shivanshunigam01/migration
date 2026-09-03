@@ -1,5 +1,5 @@
 import React from 'react'
-import { NAVY, NAVY_DARK, GOLD } from '@/theme'
+import { NAVY, NAVY_DARK, NAVY_GRAD, GOLD } from '@/theme'
 import { Reveal } from '@/components/motion'
 import { GlowButton } from '@/components/ui/GlowButton'
 
@@ -96,8 +96,8 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
   }
 
   return (
-    <section style={{ background: `linear-gradient(145deg, ${NAVY} 0%, ${NAVY_DARK} 55%, #0f1a38 100%)`, padding: '80px 32px', position: 'relative', overflow: 'hidden' }}>
-      <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 60% at 0% 0%, rgba(232,160,23,0.18) 0%, transparent 55%), radial-gradient(ellipse 40% 50% at 100% 100%, rgba(255,255,255,0.06) 0%, transparent 50%)', pointerEvents: 'none' }} />
+    <section style={{ background: NAVY_GRAD, padding: '88px 32px', position: 'relative', overflow: 'hidden' }}>
+      <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 60% at 0% 0%, rgba(232,160,23,0.2) 0%, transparent 55%), radial-gradient(ellipse 40% 50% at 100% 100%, rgba(255,255,255,0.07) 0%, transparent 50%)', pointerEvents: 'none' }} />
       <CompassDecor size={380} compassColor="#ffffff" compassOpacity={0.04} starColor={GOLD} starOpacity={0.12} />
       <Reveal preset="scale" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
         <div>
