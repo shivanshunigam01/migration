@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useParams } from "react-router-dom"
 import { GOLD, NAVY, TEXT } from "@/theme"
 import SiteHeader from "@/components/layout/SiteHeader"
@@ -17,8 +17,21 @@ function formatDate(iso?: string) {
   return new Date(iso).toLocaleDateString("en-AU", { day: "numeric", month: "short", year: "numeric" })
 }
 
+/** Wrap CMS tables so wide comparison grids scroll instead of collapsing. */
+function wrapTablesForScroll(root: HTMLElement | null) {
+  if (!root) return
+  root.querySelectorAll("table").forEach((table) => {
+    if (table.parentElement?.classList.contains("table-scroll-wrap")) return
+    const wrap = document.createElement("div")
+    wrap.className = "table-scroll-wrap"
+    table.parentNode?.insertBefore(wrap, table)
+    wrap.appendChild(table)
+  })
+}
+
 export default function BlogPostPage({ navigate }: { navigate: (page: string) => void }) {
   const { slug = "" } = useParams()
+  const bodyRef = useRef<HTMLDivElement>(null)
   const [post, setPost] = useState<{
     title: string
     standfirst: string
@@ -67,6 +80,10 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
       cancelled = true
     }
   }, [slug])
+
+  useEffect(() => {
+    wrapTablesForScroll(bodyRef.current)
+  }, [post?.body])
 
   useArticleSeo({
     title: post ? `${post.title.replace("[DRAFT] ", "")} | Nanak Migration Group` : "Blog | Nanak Migration Group",
@@ -117,14 +134,21 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
         accent={NAVY}
       />
 
-      <article style={{ maxWidth: 760, margin: "0 auto", padding: "48px 24px 64px" }}>
+      <article
+        style={{
+          maxWidth: 880,
+          margin: "0 auto",
+          padding: "48px 24px 64px",
+        }}
+      >
         {post.body ? (
           <div
-            style={{ fontSize: 17, lineHeight: 1.75, color: "#374151" }}
+            ref={bodyRef}
+            className="blog-post-body"
             dangerouslySetInnerHTML={{ __html: post.body }}
           />
         ) : (
-          <div style={{ fontSize: 17, lineHeight: 1.75, color: "#374151" }}>
+          <div className="blog-post-body">
             <p>{post.standfirst}</p>
             <p style={{ marginTop: 24, fontStyle: "italic", color: "#9ca3af" }}>
               Full article content is being prepared. In the meantime, explore our related visa guide.
