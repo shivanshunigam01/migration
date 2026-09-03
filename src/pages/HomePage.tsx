@@ -1372,10 +1372,10 @@ export default function HomePage() {
             <div style={{ marginBottom: 28 }}>
               <GlowButton
                 as="a"
-                href="#contact form"
+                href="/book-consultation"
                 size="lg"
                 variant="navy"
-                onClick={(e) => { e.preventDefault(); document.querySelector('#contact form')?.scrollIntoView({ behavior: 'smooth' }) }}
+                onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}
               >
                 Book Free Consultation
               </GlowButton>
