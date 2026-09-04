@@ -15,6 +15,12 @@ export const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
   "partner-family": "partner-family-visas",
   "partner-820": "partner-visa-820-801",
   "partner-309": "partner-visa-309-100",
+  "regional-494": "494-visa",
+  "visitor-visa": "visitor-visa-600",
+  "visitor-hub": "visitor-visas",
+  "parent-visa": "parent-visas",
+  "skilling-australians-fund": "saf-levy",
+  "employer-obligations": "sponsorship-obligations",
 }
 
 export function resolveRoute(page: string): string {

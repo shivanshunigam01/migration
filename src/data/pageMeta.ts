@@ -10,41 +10,6 @@ export interface PageMeta {
 }
 
 export const PAGE_META: Record<string, PageMeta> = {
-  home: {
-    title: 'Nanak Migration Group | Australian Migration Experts',
-    metaDescription: 'Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia\'s visa system.',
-    primaryKeyword: 'Australian migration agents',
-  },
-  about: {
-    title: 'About Nanak Migration Group | Registered Migration Agents',
-    metaDescription: 'Meet Navpreet Aulakh (MARN 2619467) and the Nanak Migration Group team — regulated migration advice in English, Hindi and Punjabi across Australia.',
-    primaryKeyword: 'Nanak Migration Group about',
-  },
-  'book-consultation': {
-    title: 'Book a Consultation | Nanak Migration Group',
-    metaDescription: 'Book a free consultation with a MARA-registered migration agent (MARN 2619467) about your Australian visa pathway.',
-    primaryKeyword: 'book migration consultation Australia',
-  },
-  'regional-494': {
-    title: 'Regional Employer Sponsored Visa (494) | Nanak Migration Group',
-    metaDescription: 'The subclass 494 Regional Employer Sponsored visa helps regional employers nominate skilled workers. Registered agent MARN 2619467.',
-    primaryKeyword: 'subclass 494 regional employer sponsored visa',
-  },
-  'visitor-hub': {
-    title: 'Visitor & Other Visas | Nanak Migration Group',
-    metaDescription: 'Visitor, parent, bridging and citizenship visa guidance from MARA-registered migration agents at Nanak Migration Group.',
-    primaryKeyword: 'visitor visas Australia',
-  },
-  'visitor-visa': {
-    title: 'Visitor Visa (600) | Nanak Migration Group',
-    metaDescription: 'Subclass 600 Visitor visa guidance for tourism, family visits and short business trips to Australia. Registered agent MARN 2619467.',
-    primaryKeyword: 'visitor visa subclass 600 Australia',
-  },
-  'parent-visa': {
-    title: 'Parent Visa Australia | Nanak Migration Group',
-    metaDescription: 'Parent visa options for joining children in Australia — contributory and non-contributory pathways explained by MARN 2619467.',
-    primaryKeyword: 'parent visa Australia',
-  },
   'employer-sponsored-visas': {
     title: 'Employer Sponsored Visas | Nanak Migration Group',
     metaDescription: 'Australian employer-sponsored visas — subclass 482 Skills in Demand, subclass 186 permanent residence, subclass 494 regional. Agent MARN 2619467.',
@@ -70,6 +35,16 @@ export const PAGE_META: Record<string, PageMeta> = {
     metaDescription: 'The subclass 482 Skills in Demand visa lets employers sponsor skilled workers for up to 4 years. Streams: Core Skills, Specialist, Essential. MARN 2619467.',
     primaryKeyword: 'skills in demand visa 482',
   },
+  '482-core-skills-stream': {
+    title: '482 Core Skills Stream — Skills in Demand Visa | Nanak Migration Group',
+    metaDescription: 'The Core Skills stream of the subclass 482 Skills in Demand visa requires a CSOL occupation and CSIT salary of $79,499 p.a. from 1 July 2026. Agent MARN 2619467.',
+    primaryKeyword: '482 core skills stream CSOL CSIT',
+  },
+  '482-specialist-skills-stream': {
+    title: '482 Specialist Skills Stream — Skills in Demand Visa | Nanak Migration Group',
+    metaDescription: 'The Specialist Skills stream of the subclass 482 visa requires earnings of $146,717 p.a. (SSIT from 1 July 2026) and is exempt from Labour Market Testing. MARN 2619467.',
+    primaryKeyword: '482 specialist skills stream SSIT no LMT',
+  },
   '482-to-pr-pathway': {
     title: '482 to PR Pathway — 186 TRT Stream | Nanak Migration Group',
     metaDescription: 'Transition from the subclass 482 to permanent residence via the subclass 186 TRT stream. Generally requires 2 years with the same employer. MARN 2619467.',
@@ -84,6 +59,61 @@ export const PAGE_META: Record<string, PageMeta> = {
     title: 'Core Skills Occupation List (CSOL) | Nanak Migration Group',
     metaDescription: 'The Core Skills Occupation List (CSOL) determines occupations eligible for the subclass 482 Core Skills stream. Search by ANZSCO code. MARN 2619467.',
     primaryKeyword: 'core skills occupation list CSOL 482',
+  },
+  'labour-market-testing': {
+    title: 'Labour Market Testing (LMT) Requirements | Nanak Migration Group',
+    metaDescription: 'Labour Market Testing for subclass 482 Core Skills nominations — 28-day advertising, required platforms, exemptions and record-keeping. Agent MARN 2619467.',
+    primaryKeyword: 'labour market testing 482 visa requirements',
+  },
+  'saf-levy': {
+    title: 'Skilling Australians Fund (SAF) Levy | Nanak Migration Group',
+    metaDescription: 'SAF Levy rates for 482 and 186/494 nominations — $1,200 or $1,800 per year for 482; $3,000 or $5,000 for 186/494. Refund rules, employer obligations. MARN 2619467.',
+    primaryKeyword: 'SAF levy skilling australians fund 482 186',
+  },
+  'sponsorship-obligations': {
+    title: 'Sponsorship Obligations for Approved Sponsors | Nanak Migration Group',
+    metaDescription: 'Ongoing obligations for Standard Business Sponsors — equivalent terms, no cost recovery, record-keeping, notifiable events, sanctions. MARN 2619467.',
+    primaryKeyword: 'employer sponsor obligations Australia 482',
+  },
+  '494-visa': {
+    title: 'Regional Employer Sponsored Visa (Subclass 494) | Nanak Migration Group',
+    metaDescription: 'The subclass 494 Employer Sponsored Regional visa is a 5-year provisional visa for workers in designated regional areas. Pathway to 191 permanent residence. MARN 2619467.',
+    primaryKeyword: 'subclass 494 regional employer sponsored visa',
+  },
+  'skilling-australians-fund': {
+    title: 'Skilling Australians Fund (SAF) Levy Guide | Nanak Migration Group',
+    metaDescription: 'SAF Levy rates, payment process, exemptions and refund rules for subclass 482 and 186 employer nominations in Australia. Agent MARN 2619467.',
+    primaryKeyword: 'skilling australians fund levy 482 186',
+  },
+  'employer-obligations': {
+    title: 'Employer Obligations for Approved Sponsors | Nanak Migration Group',
+    metaDescription: 'Ongoing sponsor obligations for Standard Business Sponsors — equivalent terms, record-keeping, notification requirements and breach sanctions. MARN 2619467.',
+    primaryKeyword: 'employer sponsor obligations Australia 482',
+  },
+  'visa-conditions-482': {
+    title: '482 Visa Conditions — Condition 8107 Explained | Nanak Migration Group',
+    metaDescription: 'Subclass 482 visa conditions — what condition 8107 means, work rights, travel entitlements, and family member rights. Registered agent MARN 2619467.',
+    primaryKeyword: '482 visa conditions condition 8107',
+  },
+  'change-of-employer': {
+    title: 'Change of Employer on a Subclass 482 Visa | Nanak Migration Group',
+    metaDescription: 'How to transfer your subclass 482 sponsorship to a new employer — the 60-day rule, new nomination requirements, and risks to avoid. MARN 2619467.',
+    primaryKeyword: 'change employer 482 visa sponsor transfer',
+  },
+  'genuine-position-test': {
+    title: 'Genuine Position Test for 482 Nominations | Nanak Migration Group',
+    metaDescription: 'How the Department of Home Affairs assesses whether a nominated position is genuine for a subclass 482 visa. Evidence guide. Agent MARN 2619467.',
+    primaryKeyword: 'genuine position test 482 nomination',
+  },
+  'labour-agreement': {
+    title: 'Labour Agreements — Employer Sponsorship | Nanak Migration Group',
+    metaDescription: 'Labour Agreements allow employers to sponsor overseas workers in occupations not available under standard 482 or 186 pathways. Types, eligibility, process. MARN 2619467.',
+    primaryKeyword: 'labour agreement employer sponsorship Australia',
+  },
+  'labour-agreements': {
+    title: 'Labour Agreements — Employer Sponsorship | Nanak Migration Group',
+    metaDescription: 'Labour Agreements allow employers to sponsor overseas workers in occupations not available under standard 482 or 186 pathways. Types, eligibility, process. MARN 2619467.',
+    primaryKeyword: 'labour agreement employer sponsorship Australia',
   },
   'skilled-migration': {
     title: 'Skilled Migration to Australia | Nanak Migration Group',
@@ -150,10 +180,50 @@ export const PAGE_META: Record<string, PageMeta> = {
     metaDescription: 'How international students can transition to permanent residence via subclass 485, 189, 190 or employer-sponsored pathways. Registered agent MARN 2619467.',
     primaryKeyword: 'student visa to permanent residence Australia',
   },
+  'courses-pr-prospects': {
+    title: 'Courses with PR Prospects | Nanak Migration Group',
+    metaDescription: 'How course choice affects your pathway to Australian permanent residence. Occupation lists, skills assessments, and the Australian Study Requirement explained. MARN 2619467.',
+    primaryKeyword: 'courses with PR prospects Australia international student',
+  },
+  'student-financial-capacity': {
+    title: 'Financial Capacity for Student Visas | Nanak Migration Group',
+    metaDescription: 'Funds evidence required for the subclass 500 student visa — living costs, course fees, travel, and acceptable evidence types. Registered agent MARN 2619467.',
+    primaryKeyword: 'student visa financial capacity evidence Australia',
+  },
+  'student-guardian-590': {
+    title: 'Student Guardian Visa (Subclass 590) | Nanak Migration Group',
+    metaDescription: 'The subclass 590 Student Guardian visa allows a parent or relative to live in Australia to care for an international student under 18. No work rights. Requirements and process explained. MARN 2619467.',
+    primaryKeyword: 'student guardian visa subclass 590 Australia',
+  },
   'partner-family-visas': {
     title: 'Partner & Family Visas Australia | Nanak Migration Group',
     metaDescription: 'Australian partner and family visas — onshore subclass 820/801, offshore 309/100, and prospective marriage subclass 300. Registered agent MARN 2619467.',
     primaryKeyword: 'partner visa Australia',
+  },
+  'parent-visas': {
+    title: 'Parent Visas Australia — All Pathways | Nanak Migration Group',
+    metaDescription: 'Parent visa pathways to Australia — subclass 143, 173, 103, 804, 864 and 870 explained. Costs, queues and Balance of Family test. Registered agent MARN 2619467.',
+    primaryKeyword: 'parent visa Australia',
+  },
+  'contributory-parent-143': {
+    title: 'Contributory Parent Visa (Subclass 143) | Nanak Migration Group',
+    metaDescription: 'The subclass 143 Contributory Parent visa grants permanent residence to parents of settled Australians. Charges ~AUD 95,000 for a couple. Registered agent MARN 2619467.',
+    primaryKeyword: 'contributory parent visa subclass 143',
+  },
+  'contributory-parent-173': {
+    title: 'Contributory Parent (Temporary) Visa Subclass 173 | Nanak Migration Group',
+    metaDescription: 'The subclass 173 Contributory Parent visa is a 2-year temporary visa — the first stage of the two-step path to the permanent subclass 143. Split the large contributory charges over two applications. MARN 2619467.',
+    primaryKeyword: 'contributory parent visa 173 temporary Australia two stage',
+  },
+  'aged-parent-804': {
+    title: 'Aged Parent Visa (Subclass 804) | Nanak Migration Group',
+    metaDescription: 'The subclass 804 Aged Parent visa is an onshore, non-contributory permanent parent visa for pension-age parents. Very long queue (decades). Low charge. Honest guide. MARN 2619467.',
+    primaryKeyword: 'aged parent visa 804 onshore Australia permanent non-contributory',
+  },
+  'contributory-aged-parent-864': {
+    title: 'Contributory Aged Parent Visa (Subclass 864) | Nanak Migration Group',
+    metaDescription: 'The subclass 864 Contributory Aged Parent visa is for pension-age parents already in Australia — permanent residence with a large contributory charge and a 12-15 year wait for new applications. MARN 2619467.',
+    primaryKeyword: 'contributory aged parent visa 864 Australia onshore permanent',
   },
   'partner-visa-820-801': {
     title: 'Partner Visa Onshore (820/801) | Nanak Migration Group',
@@ -195,6 +265,16 @@ export const PAGE_META: Record<string, PageMeta> = {
     metaDescription: 'The Administrative Review Tribunal (ART) reviews visa refusal and cancellation decisions. A 21-day lodgement deadline generally applies. MARN 2619467.',
     primaryKeyword: 'Administrative Review Tribunal ART visa review Australia',
   },
+  '191-visa': {
+    title: 'Permanent Residence (Skilled Regional) Subclass 191 | Nanak Migration Group',
+    metaDescription: 'The subclass 191 Permanent Residence (Skilled Regional) visa is for holders of a 491 or 494 visa who have lived, worked and met income requirements in a regional area for 3 years. MARN 2619467.',
+    primaryKeyword: 'subclass 191 permanent residence skilled regional',
+  },
+  'occupation-caveats': {
+    title: 'CSOL Occupation Caveats — 482 Nomination | Nanak Migration Group',
+    metaDescription: 'Occupation caveats in the Core Skills Occupation List (CSOL) restrict which employers and positions can use a listed ANZSCO code for a subclass 482 nomination. Agent MARN 2619467.',
+    primaryKeyword: 'CSOL occupation caveats 482 nomination',
+  },
   'resources': {
     title: 'Visa Guides, Blogs & Checklists | Nanak Migration Group',
     metaDescription: 'Free Australian visa guides, articles and checklists written by MARA-registered agents. Browse all 30 visa guides, blog updates and evidence checklists.',
@@ -220,25 +300,229 @@ export const PAGE_META: Record<string, PageMeta> = {
     metaDescription: 'Free migration tools: points calculator, occupation search, residence calculator, English score converter and visa pathway comparison. Indicative only.',
     primaryKeyword: 'australian visa calculator',
   },
-  contact: {
-    title: 'Contact Nanak Migration Group | Melbourne, Sydney, Brisbane, Perth',
-    metaDescription:
-      'Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Melbourne, Sydney, Brisbane and Perth. MARN 2619467.',
-    primaryKeyword: 'contact migration agent Australia',
+  'national-innovation-visa': {
+    title: 'National Innovation Visa (Subclass 858) | Nanak Migration Group',
+    metaDescription: 'The National Innovation Visa (subclass 858) is a permanent residence visa for individuals with an internationally recognised record of exceptional and outstanding achievement in academia, research, sport, the arts, or innovative technology. MARN 2619467.',
+    primaryKeyword: 'national innovation visa subclass 858',
   },
-  privacy: {
-    title: 'Privacy Policy | Nanak Migration Group',
-    metaDescription: 'Privacy Policy for Nanak Migration Group Pty Ltd — how we collect, use and protect personal information. MARN 2619467.',
-    primaryKeyword: 'Nanak Migration privacy policy',
+  'skillselect-eoi': {
+    title: 'SkillSelect and Expressions of Interest (EOI) | Nanak Migration Group',
+    metaDescription: 'SkillSelect EOI explained — how expressions of interest work for subclass 189, 190 and 491 visas, invitation rounds, points ranking, and PIC 4020 risks. Registered migration agent MARN 2619467.',
+    primaryKeyword: 'SkillSelect expression of interest EOI Australia',
   },
-  terms: {
-    title: 'Terms of Use | Nanak Migration Group',
-    metaDescription: 'Terms of use for the Nanak Migration Group website. General information only — not immigration advice.',
-    primaryKeyword: 'Nanak Migration terms of use',
+  'regional-areas': {
+    title: 'Designated Regional Areas for Australian Visas | Nanak Migration Group',
+    metaDescription: 'Which Australian postcodes qualify as designated regional areas for 491, 494 and 191 visas — definitions, exclusions, living requirements, and DAMA access. Registered migration agent MARN 2619467.',
+    primaryKeyword: 'designated regional area Australian immigration visa',
   },
-  accessibility: {
-    title: 'Accessibility | Nanak Migration Group',
-    metaDescription: 'Accessibility information for nanakmigration.com.au and how to request assistance. Nanak Migration Group MARN 2619467.',
-    primaryKeyword: 'Nanak Migration accessibility',
+  'sponsored-parent-870': {
+    title: 'Sponsored Parent (Temporary) Visa — Subclass 870 | Nanak Migration Group',
+    metaDescription: 'The subclass 870 Sponsored Parent (Temporary) visa allows a parent to live in Australia for up to 10 years — no Balance of Family test required. Registered agent MARN 2619467.',
+    primaryKeyword: 'sponsored parent visa subclass 870 Australia',
+  },
+  'balance-of-family-test': {
+    title: 'Balance of Family Test Explained | Nanak Migration Group',
+    metaDescription: 'How the Balance of Family test works for Australian parent visas — who counts, two ways to pass, which visa subclasses require it, and what to do if you fail. Registered agent MARN 2619467.',
+    primaryKeyword: 'balance of family test parent visa Australia',
+  },
+  'visitor-visas': {
+    title: 'Visitor Visas Hub — eVisitor, ETA & Subclass 600 | Nanak Migration Group',
+    metaDescription: 'Australian visitor visas compared — eVisitor (651), ETA (601) and Visitor visa (subclass 600). Choose the right option for your passport and stay. Registered migration agent MARN 2619467.',
+    primaryKeyword: 'visitor visa Australia',
+  },
+  'visitor-visa-600': {
+    title: "Visitor Visa (Subclass 600) | Nanak Migration Group",
+    metaDescription: "The subclass 600 Visitor visa is available to all nationalities — tourist, sponsored family, business visitor and frequent traveller streams. Stays of 3, 6 or 12 months. Registered agent MARN 2619467.",
+    primaryKeyword: 'visitor visa subclass 600 Australia',
+  },
+  'resident-return-visa': {
+    title: 'Resident Return Visa (Subclass 155 & 157) | Nanak Migration Group',
+    metaDescription: 'The Resident Return Visa (subclass 155 or 157) lets Australian permanent residents re-enter Australia after their 5-year travel facility expires. Registered agent MARN 2619467.',
+    primaryKeyword: 'resident return visa Australia subclass 155 157',
+  },
+  'visa-cancellation': {
+    title: 'Visa Cancellation Australia — NOICC Response | Nanak Migration Group',
+    metaDescription: 'Australian visa cancellation under s116, s109 and s501 — NOICC response guide, ART review rights and consequences including the section 48 bar. Registered agent MARN 2619467.',
+    primaryKeyword: 'visa cancellation Australia NOICC response',
+  },
+  'section-48-bar': {
+    title: 'Section 48 Bar — Exempt Visas & Options | Nanak Migration Group',
+    metaDescription: 'The section 48 bar prevents most onshore visa applications after a refusal or cancellation. Exempt visas, offshore options and ART review explained. MARN 2619467.',
+    primaryKeyword: 'section 48 bar Australia exempt visas',
+  },
+  'pic-4020': {
+    title: 'PIC 4020 — False Information & Bogus Documents | Nanak Migration Group',
+    metaDescription: 'PIC 4020 is the integrity criterion that triggers a 3-year or 10-year visa ban for false information or bogus documents. Waiver guide and response advice. MARN 2619467.',
+    primaryKeyword: 'PIC 4020 false information bogus document visa refusal',
+  },
+  'reviews': {
+    title: 'Client Reviews | Nanak Migration Group — MARN 2619467',
+    metaDescription: 'Verified Google reviews from clients of Nanak Migration Group (MARN 2619467) — MARA-registered migration agents serving Australia in English, Punjabi and Hindi.',
+    primaryKeyword: 'nanak migration group reviews',
+  },
+  'news': {
+    title: 'Immigration News | Nanak Migration Group — MARN 2619467',
+    metaDescription: 'Australian immigration news, policy updates, occupation list changes and fee indexation from MARA-registered agents at Nanak Migration Group (MARN 2619467).',
+    primaryKeyword: 'australian immigration news 2026',
+  },
+  'training-visa-407': {
+    title: 'Training Visa (Subclass 407) | Nanak Migration Group',
+    metaDescription: 'The subclass 407 Training visa allows eligible people to undertake occupational training in Australia to improve skills. Sponsor required. MARN 2619467.',
+    primaryKeyword: 'training visa subclass 407 Australia',
+  },
+  'short-stay-specialist-400': {
+    title: 'Short Stay Specialist Visa (Subclass 400) | Nanak Migration Group',
+    metaDescription: 'The subclass 400 Temporary Work (Short Stay Specialist) visa is for highly specialised non-ongoing work in Australia — typically up to 3 months. No sponsorship required. MARN 2619467.',
+    primaryKeyword: 'short stay specialist visa subclass 400 Australia',
+  },
+  'temporary-activity-408': {
+    title: 'Temporary Activity Visa (Subclass 408) | Nanak Migration Group',
+    metaDescription: 'The subclass 408 Temporary Activity visa covers entertainment, sport, research, religious work, exchange and government-endorsed events in Australia. MARN 2619467.',
+    primaryKeyword: 'temporary activity visa subclass 408 Australia',
+  },
+  'dama': {
+    title: 'Designated Area Migration Agreements (DAMA) | Nanak Migration Group',
+    metaDescription: 'DAMAs give regional employers access to concessions on salary, age and English unavailable under standard 482 pathways. Two-stage endorsement and visa process explained. MARN 2619467.',
+    primaryKeyword: 'designated area migration agreement DAMA Australia',
+  },
+  'skilled-regional-887': {
+    title: 'Skilled Regional (Permanent) Visa Subclass 887 | Nanak Migration Group',
+    metaDescription: 'The subclass 887 Skilled Regional visa grants permanent residence to holders of eligible provisional regional visas (489, 475, 487). Requirements: 2 years regional residence and 1 year full-time regional work. MARN 2619467.',
+    primaryKeyword: 'skilled regional 887 visa permanent residence Australia',
+  },
+  'invitation-rounds': {
+    title: 'SkillSelect Invitation Rounds Explained | Nanak Migration Group',
+    metaDescription: 'How SkillSelect invitation rounds work for the 189 and family-sponsored 491 visa — points cutoffs, round results, state nomination timelines, and common myths. MARN 2619467.',
+    primaryKeyword: 'SkillSelect invitation rounds Australia 189 visa cutoff',
+  },
+  'child-visa-101': {
+    title: 'Child Visa (Subclass 101) Offshore | Nanak Migration Group',
+    metaDescription: 'The subclass 101 Child visa grants permanent residence to a dependent child applying from outside Australia whose parent is an Australian citizen, PR or eligible NZ citizen. MARN 2619467.',
+    primaryKeyword: 'child visa subclass 101 offshore Australia permanent',
+  },
+  'child-visa-802': {
+    title: 'Child Visa (Subclass 802) Onshore | Nanak Migration Group',
+    metaDescription: 'The subclass 802 Child visa grants permanent residence to a dependent child already in Australia whose parent is an Australian citizen, PR or eligible NZ citizen. Bridging visa during processing. MARN 2619467.',
+    primaryKeyword: 'child visa subclass 802 onshore Australia permanent',
+  },
+  'parent-visa-103': {
+    title: 'Parent Visa (Subclass 103) | Nanak Migration Group',
+    metaDescription: 'The subclass 103 Parent visa is a non-contributory offshore permanent parent visa. Much lower government charges than the 143 but a realistic processing wait of around 30 years for new applications. MARN 2619467.',
+    primaryKeyword: 'parent visa subclass 103 Australia non-contributory',
+  },
+  'assurance-of-support': {
+    title: 'Assurance of Support (AoS) for Australian Parent Visas | Nanak Migration Group',
+    metaDescription: 'Assurance of Support explained — who must provide it, the income test, the refundable bank bond, and how the AoS period and bond amounts differ between contributory and non-contributory parent visas. MARN 2619467.',
+    primaryKeyword: 'assurance of support Australia parent visa AoS',
+  },
+  'carer-visa': {
+    title: 'Carer Visa (Subclass 116 & 836) | Nanak Migration Group',
+    metaDescription: 'The Carer visa (subclass 116 offshore, 836 onshore) grants permanent residence to a person who provides substantial care to an Australian relative with a long-term medical condition. MARN 2619467.',
+    primaryKeyword: 'carer visa subclass 116 836 Australia permanent',
+  },
+  'remaining-relative-visa': {
+    title: 'Remaining Relative Visa (Subclass 115 & 835) | Nanak Migration Group',
+    metaDescription: 'The Remaining Relative visa (subclass 115 offshore, 835 onshore) is for people whose only near relatives all live in Australia. Strict eligibility, capped and queued — new applications face a multi-decade wait. MARN 2619467.',
+    primaryKeyword: 'remaining relative visa subclass 115 835 Australia',
+  },
+  'working-holiday-417': {
+    title: 'Working Holiday Visa (Subclass 417) | Nanak Migration Group',
+    metaDescription: 'The Working Holiday visa (subclass 417) lets eligible young people from partner countries holiday and work in Australia for 12 months. Second and third year grants available via regional work. MARN 2619467.',
+    primaryKeyword: 'working holiday visa subclass 417 Australia',
+  },
+  'work-and-holiday-462': {
+    title: 'Work and Holiday Visa (Subclass 462) | Nanak Migration Group',
+    metaDescription: 'The Work and Holiday visa (subclass 462) is for nationals from countries including the USA, China, India, Vietnam and Indonesia. Country-specific requirements and ballot system explained. MARN 2619467.',
+    primaryKeyword: 'work and holiday visa subclass 462 Australia',
+  },
+  'protection-visa-866': {
+    title: 'Protection Visa (Subclass 866) | Nanak Migration Group',
+    metaDescription: "The Protection visa (subclass 866) is Australia's onshore permanent protection visa for refugees and people in need of complementary protection. Process, bridging visa, ART review rights explained. MARN 2619467.",
+    primaryKeyword: 'protection visa subclass 866 Australia refugee',
+  },
+  'schedule-3': {
+    title: 'Schedule 3 Criteria for Partner Visas | Nanak Migration Group',
+    metaDescription: "Schedule 3 imposes additional criteria on unlawful non-citizens and some bridging visa holders applying for a partner visa onshore. Criteria 3001, 3003 and 3004, compelling reasons waiver, and the Waensila decision explained. MARN 2619467.",
+    primaryKeyword: 'schedule 3 partner visa Australia compelling reasons waiver',
+  },
+  'no-further-stay-8503': {
+    title: 'No Further Stay Condition 8503 — Waiver Guide | Nanak Migration Group',
+    metaDescription: "Condition 8503 prevents most onshore visa applications. Which visas carry it, VEVO check process, the two-part waiver test (compelling and compassionate, unforeseeable), and the protection visa exception. MARN 2619467.",
+    primaryKeyword: 'condition 8503 no further stay waiver Australia',
+  },
+  'health-waiver': {
+    title: 'Health Requirement Waivers — PIC 4005 & PIC 4007 | Nanak Migration Group',
+    metaDescription: "PIC 4005 (no waiver) versus PIC 4007 (waiver available) health criteria explained. Medical Officer of the Commonwealth opinion, undue cost and prejudice test, process and evidence guide. MARN 2619467.",
+    primaryKeyword: 'health requirement waiver PIC 4007 Australia visa',
+  },
+  're-entry-bans': {
+    title: 'Re-entry Bans and Exclusion Periods — PIC 4013 & PIC 4014 | Nanak Migration Group',
+    metaDescription: "PIC 4013 (cancellation) and PIC 4014 (departing unlawful) exclusion periods explained. The 28-day departure window, section 501 character bans, waiver for partner visas, and planning a lawful return. MARN 2619467.",
+    primaryKeyword: 're-entry ban exclusion period PIC 4013 4014 Australia',
+  },
+  'temporary-work-403': {
+    title: 'Temporary Work (International Relations) Visa (Subclass 403) | Nanak Migration Group',
+    metaDescription: 'The subclass 403 Temporary Work (International Relations) visa covers five streams: Government Agreement, Foreign Government Agency, Domestic Worker (Diplomatic), Privileges and Immunities, and the Pacific Australia Labour Mobility (PALM) scheme. Registered agent MARN 2619467.',
+    primaryKeyword: 'temporary work international relations visa subclass 403 PALM scheme Australia',
+  },
+  'adoption-visa-102': {
+    title: 'Adoption Visa (Subclass 102) | Nanak Migration Group',
+    metaDescription: 'The Adoption visa (subclass 102) is a permanent visa for a child adopted outside Australia by an Australian citizen, PR or eligible NZ citizen. Intercountry and expatriate adoption pathways explained. Registered agent MARN 2619467.',
+    primaryKeyword: 'adoption visa subclass 102 Australia intercountry adoption',
+  },
+  'dependent-child-445': {
+    title: 'Dependent Child Visa (Subclass 445) | Nanak Migration Group',
+    metaDescription: "The Dependent Child visa (subclass 445) lets a child join a parent who holds a temporary partner visa (309 or 820) in Australia. Temporary visa — child must be included in the parent's permanent partner visa (100 or 801) for permanent residence. MARN 2619467.",
+    primaryKeyword: 'dependent child visa subclass 445 temporary partner visa Australia',
+  },
+  'contributory-aged-parent-884': {
+    title: 'Contributory Aged Parent (Temporary) Visa Subclass 884 | Nanak Migration Group',
+    metaDescription: 'The subclass 884 Contributory Aged Parent (Temporary) visa is a 2-year onshore visa for pension-age parents, splitting contributory charges before transitioning to the permanent subclass 864. Balance of Family test applies. MARN 2619467.',
+    primaryKeyword: 'contributory aged parent visa subclass 884 temporary Australia',
+  },
+  'natural-justice-s57': {
+    title: 'Natural Justice and Section 57 Letters | Nanak Migration Group',
+    metaDescription: "Section 57 of the Migration Act requires the Department to put adverse information to an applicant before refusing. What counts, strict response timeframes, how to respond well, PIC 4020 risk, and getting urgent help. MARN 2619467.",
+    primaryKeyword: 'section 57 natural justice letter adverse information visa Australia',
+  },
+  'eta-601': {
+    title: 'Electronic Travel Authority (ETA) Subclass 601 | Nanak Migration Group',
+    metaDescription: 'ETA subclass 601: digital entry authority for eligible passport holders (USA, Canada, Japan, South Korea, Singapore, and others) via the Australian ETA app. Small service charge, multiple 3-month visits in 12 months, tourism and business visitor only. MARN 2619467.',
+    primaryKeyword: 'electronic travel authority ETA subclass 601 Australia',
+  },
+  'evisitor-651': {
+    title: 'eVisitor Subclass 651 | Nanak Migration Group',
+    metaDescription: 'eVisitor subclass 651: free entry authority for eligible European passport holders — EU member states and other eligible European nations. Multiple 3-month visits in 12 months, tourism and business visitor purposes only, applied via ImmiAccount. MARN 2619467.',
+    primaryKeyword: 'eVisitor subclass 651 Australia European passport',
+  },
+  'medical-treatment-602': {
+    title: 'Medical Treatment Visa Subclass 602 | Nanak Migration Group',
+    metaDescription: 'Medical Treatment visa subclass 602: for patients seeking medical treatment in Australia, supporting carers, and organ donors. Confirmed treatment arrangements required; no work rights; cannot be used for surrogacy. MARN 2619467.',
+    primaryKeyword: 'medical treatment visa subclass 602 Australia',
+  },
+  'special-category-444': {
+    title: 'Special Category Visa Subclass 444 for New Zealand Citizens | Nanak Migration Group',
+    metaDescription: 'Special Category visa subclass 444: granted automatically to New Zealand citizens on arrival in Australia. Full work and study rights, Medicare access, indefinite stay while in Australia. Direct citizenship pathway available since July 2023. MARN 2619467.',
+    primaryKeyword: 'special category visa 444 New Zealand citizens Australia',
+  },
+  'ministerial-intervention': {
+    title: 'Ministerial Intervention Sections 351 and 417 | Nanak Migration Group',
+    metaDescription: "Ministerial intervention under sections 351 and 417 of the Migration Act: a last-resort discretionary power, not a review right. The Minister cannot be compelled to intervene. Only a small fraction of requests succeed. Lodging a request does not give bridging visa status. MARN 2619467.",
+    primaryKeyword: 'ministerial intervention section 351 417 visa Australia',
+  },
+  'aged-dependent-relative': {
+    title: 'Aged Dependent Relative Visa Subclass 114 and 838 | Nanak Migration Group',
+    metaDescription: "Aged Dependent Relative visa subclass 114 (offshore) and 838 (onshore): permanent residence for a single, pension-age relative who has been financially dependent on an Australian relative for at least 3 years. Capped and queued — long wait. MARN 2619467.",
+    primaryKeyword: 'aged dependent relative visa subclass 114 838 Australia',
+  },
+  'orphan-relative-visa': {
+    title: 'Orphan Relative Visa Subclass 117 and 837 | Nanak Migration Group',
+    metaDescription: "Orphan Relative visa subclass 117 (offshore) and 837 (onshore): permanent visa for a child under 18 whose parents are deceased, permanently incapacitated, or of unknown whereabouts — sponsored by an eligible Australian relative. MARN 2619467.",
+    primaryKeyword: 'orphan relative visa subclass 117 837 Australia child',
+  },
+  'nz-family-relationship-461': {
+    title: 'New Zealand Citizen Family Relationship Visa Subclass 461 | Nanak Migration Group',
+    metaDescription: "Subclass 461 NZ Citizen Family Relationship visa: 5-year temporary visa for family members (not NZ citizens) of a New Zealand citizen on a subclass 444 Special Category visa in Australia. Full work and study rights. Renewable onshore. MARN 2619467.",
+    primaryKeyword: 'NZ citizen family relationship visa subclass 461 Australia',
   },
 }

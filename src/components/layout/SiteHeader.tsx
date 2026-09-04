@@ -9,51 +9,38 @@ import { resolveRoute } from '@/lib/navigation'
 
 /* ── Types ──────────────────────────────────────────────── */
 type NavSubItem = { label: string; desc: string; icon: string; code?: string; href?: string; route?: string }
-type NavCategory = { heading: string; icon: string; isContact?: boolean; items: NavSubItem[] }
+type NavCategory = { heading: string; icon: string; isContact?: boolean; viewAllRoute?: string; items: NavSubItem[] }
 export type NavItem = { label: string; href?: string; categories?: NavCategory[] }
 
 const PRACTICE_LINKS = [
-  { label: 'About the Practice', icon: 'user', desc: 'Registered agent, credentials and our story.' },
-  { label: 'Resources', icon: 'bookopen', desc: 'Guides, checklists and policy articles.' },
-  { label: 'Our Fees', icon: 'dollar', desc: 'Transparent fee schedules for all services.' },
-  { label: 'Immigration News', icon: 'bell', desc: 'Policy updates, visa changes and DHA announcements.' },
-  { label: 'Tools Hub', icon: 'tool', desc: 'Points calculator, fee estimator and document checklists.' },
-  { label: 'Tools', icon: 'tool', desc: 'Free interactive calculators and comparison tools.' },
-  { label: 'Contact', icon: 'phone', desc: 'Get in touch with our team.' },
+  { label: 'About the Practice', icon: 'user', desc: 'Registered agent, credentials and our story.', route: 'about' },
+  { label: 'Resources', icon: 'bookopen', desc: 'Guides, checklists and policy articles.', route: 'resources' },
+  { label: 'Client Reviews', icon: 'star', desc: 'Verified client feedback.', route: 'reviews' },
+  { label: 'Immigration News', icon: 'bell', desc: 'Policy updates, visa changes and DHA announcements.', route: 'news' },
+  { label: 'Tools', icon: 'tool', desc: 'Free interactive calculators and comparison tools.', route: 'tools' },
+  { label: 'Contact', icon: 'phone', desc: 'Get in touch with our team.', route: 'contact' },
 ]
 
 /* ── Routing helper ─────────────────────────────────────── */
 function resolveNavHref(topLabel: string, item: NavSubItem): string | undefined {
   if (item.route) return resolveRoute(item.route)
   if (item.href && item.href !== '#') return item.href
-  if (topLabel === 'Employer Sponsored') {
-    if (['Skills in Demand', '482 Core Skills Stream', '482 Specialist Skills Stream'].includes(item.label)) {
-      return resolveRoute('skills-in-demand-visa')
-    }
-    return resolveRoute('employer-sponsored-visas')
-  }
   return undefined
 }
 
 function resolveNavClick(
-  topLabel: string,
+  _topLabel: string,
   item: NavSubItem,
   navigate: (page: string) => void,
   closeNav: () => void,
 ): ((e: React.MouseEvent) => void) | undefined {
-  const href = resolveNavHref(topLabel, item)
-  if (!href) return undefined
+  const href = resolveNavHref(_topLabel, item)
+  if (!href || !item.route) return undefined
   return (e: React.MouseEvent) => {
     if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return
     e.preventDefault()
     closeNav()
-    const page = item.route
-      ?? (topLabel === 'Employer Sponsored'
-        ? (['Skills in Demand', '482 Core Skills Stream', '482 Specialist Skills Stream'].includes(item.label)
-          ? 'skills-in-demand-visa'
-          : 'employer-sponsored-visas')
-        : href.replace(/^\//, '') || 'home')
-    navigate(page)
+    navigate(item.route!)
   }
 }
 
@@ -571,12 +558,14 @@ export default function SiteHeader({
                       })}
                     </div>
                     {(() => {
-                      const hubItem = cat.items.find(i => i.code === 'Hub') ?? cat.items[0]
-                      const hubHref = hubItem ? resolveNavHref(activeNavItem.label, hubItem) : undefined
-                      if (!hubHref) return null
+                      const viewAll = cat.viewAllRoute
+                        || cat.items.find(i => i.code === 'Hub')?.route
+                        || cat.items[0]?.route
+                      if (!viewAll) return null
+                      const hubHref = resolveRoute(viewAll)
                       return (
                         <Link to={hubHref}
-                          onClick={() => { closeNav(); if (hubItem?.route) navigate(hubItem.route) }}
+                          onClick={() => { closeNav(); navigate(viewAll) }}
                           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12, padding: '10px 12px', backgroundColor: `${iconColor}0d`, borderRadius: 8, border: `1px solid ${iconColor}18`, textDecoration: 'none', transition: 'background 0.12s' }}
                           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}18` }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}0d` }}>

@@ -1,0 +1,418 @@
+[
+  {
+    "slug": "employer-sponsored-visas",
+    "component": "EmployerSponsorshipPage"
+  },
+  {
+    "slug": "skilled-independent-189",
+    "component": "SkilledIndependent189Page"
+  },
+  {
+    "slug": "student-to-pr-pathway",
+    "component": "StudentToPRPage"
+  },
+  {
+    "slug": "partner-visa-309-100",
+    "component": "PartnerVisa309Page"
+  },
+  {
+    "slug": "partner-visa-820-801",
+    "component": "PartnerVisa820Page"
+  },
+  {
+    "slug": "186-skill-requirements",
+    "component": "SkillRequirements186Page"
+  },
+  {
+    "slug": "186-occupations-list",
+    "component": "OccupationsListPage186"
+  },
+  {
+    "slug": "482-to-pr-pathway",
+    "component": "Pathway482ToPRPage"
+  },
+  {
+    "slug": "skilled-nominated-190",
+    "component": "SkilledNominated190Page"
+  },
+  {
+    "slug": "skilled-work-regional-491",
+    "component": "SkilledWorkRegional491Page"
+  },
+  {
+    "slug": "points-test",
+    "component": "PointsTestPage"
+  },
+  {
+    "slug": "skills-assessment",
+    "component": "SkillsAssessmentPage"
+  },
+  {
+    "slug": "state-nomination",
+    "component": "StateNominationPage"
+  },
+  {
+    "slug": "english-requirements",
+    "component": "EnglishRequirementsPage"
+  },
+  {
+    "slug": "genuine-student-requirement",
+    "component": "GenuineStudentRequirementPage"
+  },
+  {
+    "slug": "prospective-marriage-300",
+    "component": "ProspectiveMarriage300Page"
+  },
+  {
+    "slug": "partner-visa-evidence",
+    "component": "PartnerVisaEvidencePage"
+  },
+  {
+    "slug": "bridging-visas",
+    "component": "BridgingVisasPage"
+  },
+  {
+    "slug": "australian-citizenship",
+    "component": "AustralianCitizenshipPage"
+  },
+  {
+    "slug": "core-skills-occupation-list",
+    "component": "CoreSkillsOccupationListPage"
+  },
+  {
+    "slug": "art-review",
+    "component": "ARTReviewPage"
+  },
+  {
+    "slug": "temporary-graduate-485",
+    "component": "TemporaryGraduate485Page"
+  },
+  {
+    "slug": "about",
+    "component": "AboutPage"
+  },
+  {
+    "slug": "standard-business-sponsorship",
+    "component": "StandardBusinessSponsorshipPage"
+  },
+  {
+    "slug": "skills-in-demand-visa",
+    "component": "SkillsInDemand482Page"
+  },
+  {
+    "slug": "employer-nomination-scheme",
+    "component": "EmployerNomination186Page"
+  },
+  {
+    "slug": "494-visa",
+    "component": "RegionalEmployer494Page"
+  },
+  {
+    "slug": "labour-market-testing",
+    "component": "LabourMarketTestingPage"
+  },
+  {
+    "slug": "saf-levy",
+    "component": "SkillingAustraliansFundPage"
+  },
+  {
+    "slug": "sponsorship-obligations",
+    "component": "EmployerObligationsPage"
+  },
+  {
+    "slug": "482-core-skills-stream",
+    "component": "CoreSkillsStreamPage"
+  },
+  {
+    "slug": "482-specialist-skills-stream",
+    "component": "SpecialistSkillsStreamPage"
+  },
+  {
+    "slug": "191-visa",
+    "component": "PermanentResidenceSkillsRegionalPage"
+  },
+  {
+    "slug": "occupation-caveats",
+    "component": "OccupationCaveatsPage"
+  },
+  {
+    "slug": "visa-conditions-482",
+    "component": "Visa482ConditionsPage"
+  },
+  {
+    "slug": "change-of-employer",
+    "component": "ChangeOfEmployerPage"
+  },
+  {
+    "slug": "genuine-position-test",
+    "component": "GenuinePositionPage"
+  },
+  {
+    "slug": "labour-agreements",
+    "component": "LabourAgreementPage"
+  },
+  {
+    "slug": "training-visa-407",
+    "component": "TrainingVisa407Page"
+  },
+  {
+    "slug": "short-stay-specialist-400",
+    "component": "ShortStaySpecialist400Page"
+  },
+  {
+    "slug": "temporary-activity-408",
+    "component": "TemporaryActivity408Page"
+  },
+  {
+    "slug": "dama",
+    "component": "DAMAPage"
+  },
+  {
+    "slug": "visitor-visa",
+    "component": "VisitorVisaPage"
+  },
+  {
+    "slug": "parent-visa",
+    "component": "ParentVisaPage"
+  },
+  {
+    "slug": "student-visa-500",
+    "component": "StudentVisa500Page"
+  },
+  {
+    "slug": "national-innovation-visa",
+    "component": "NationalInnovationVisaPage"
+  },
+  {
+    "slug": "skillselect-eoi",
+    "component": "SkillSelectEOIPage"
+  },
+  {
+    "slug": "regional-areas",
+    "component": "RegionalAreasPage"
+  },
+  {
+    "slug": "skilled-regional-887",
+    "component": "SkilledRegional887Page"
+  },
+  {
+    "slug": "invitation-rounds",
+    "component": "InvitationRoundsPage"
+  },
+  {
+    "slug": "courses-pr-prospects",
+    "component": "CoursesPRProspectsPage"
+  },
+  {
+    "slug": "student-financial-capacity",
+    "component": "StudentFinancialCapacityPage"
+  },
+  {
+    "slug": "student-guardian-590",
+    "component": "StudentGuardian590Page"
+  },
+  {
+    "slug": "parent-visas",
+    "component": "ParentVisasHubPage"
+  },
+  {
+    "slug": "contributory-parent-143",
+    "component": "ContributoryParent143Page"
+  },
+  {
+    "slug": "sponsored-parent-870",
+    "component": "SponsoredParent870Page"
+  },
+  {
+    "slug": "balance-of-family-test",
+    "component": "BalanceOfFamilyTestPage"
+  },
+  {
+    "slug": "child-visa-101",
+    "component": "ChildVisa101Page"
+  },
+  {
+    "slug": "child-visa-802",
+    "component": "ChildVisa802Page"
+  },
+  {
+    "slug": "contributory-parent-173",
+    "component": "ContributoryParent173Page"
+  },
+  {
+    "slug": "aged-parent-804",
+    "component": "AgedParent804Page"
+  },
+  {
+    "slug": "contributory-aged-parent-864",
+    "component": "ContributoryAgedParent864Page"
+  },
+  {
+    "slug": "parent-visa-103",
+    "component": "ParentVisa103Page"
+  },
+  {
+    "slug": "assurance-of-support",
+    "component": "AssuranceOfSupportPage"
+  },
+  {
+    "slug": "carer-visa",
+    "component": "CarerVisaPage"
+  },
+  {
+    "slug": "remaining-relative-visa",
+    "component": "RemainingRelativeVisaPage"
+  },
+  {
+    "slug": "working-holiday-417",
+    "component": "WorkingHoliday417Page"
+  },
+  {
+    "slug": "work-and-holiday-462",
+    "component": "WorkAndHoliday462Page"
+  },
+  {
+    "slug": "protection-visa-866",
+    "component": "ProtectionVisa866Page"
+  },
+  {
+    "slug": "schedule-3",
+    "component": "Schedule3Page"
+  },
+  {
+    "slug": "no-further-stay-8503",
+    "component": "NoFurtherStay8503Page"
+  },
+  {
+    "slug": "health-waiver",
+    "component": "HealthWaiverPage"
+  },
+  {
+    "slug": "re-entry-bans",
+    "component": "ReEntryBansPage"
+  },
+  {
+    "slug": "natural-justice-s57",
+    "component": "NaturalJusticeS57Page"
+  },
+  {
+    "slug": "temporary-work-403",
+    "component": "TemporaryWork403Page"
+  },
+  {
+    "slug": "adoption-visa-102",
+    "component": "AdoptionVisa102Page"
+  },
+  {
+    "slug": "dependent-child-445",
+    "component": "DependentChild445Page"
+  },
+  {
+    "slug": "contributory-aged-parent-884",
+    "component": "ContributoryAgedParent884Page"
+  },
+  {
+    "slug": "eta-601",
+    "component": "Eta601Page"
+  },
+  {
+    "slug": "evisitor-651",
+    "component": "Evisitor651Page"
+  },
+  {
+    "slug": "medical-treatment-602",
+    "component": "MedicalTreatment602Page"
+  },
+  {
+    "slug": "special-category-444",
+    "component": "SpecialCategory444Page"
+  },
+  {
+    "slug": "ministerial-intervention",
+    "component": "MinisterialInterventionPage"
+  },
+  {
+    "slug": "aged-dependent-relative",
+    "component": "AgedDependentRelativePage"
+  },
+  {
+    "slug": "orphan-relative-visa",
+    "component": "OrphanRelativeVisaPage"
+  },
+  {
+    "slug": "nz-family-relationship-461",
+    "component": "NzFamilyRelationship461Page"
+  },
+  {
+    "slug": "visitor-visas",
+    "component": "VisitorVisasHubPage"
+  },
+  {
+    "slug": "visitor-visa-600",
+    "component": "VisitorVisa600Page"
+  },
+  {
+    "slug": "resident-return-visa",
+    "component": "ResidentReturnVisaPage"
+  },
+  {
+    "slug": "skilled-migration",
+    "component": "SkilledMigrationHubPage"
+  },
+  {
+    "slug": "student-visas",
+    "component": "StudentVisasHubPage"
+  },
+  {
+    "slug": "partner-family-visas",
+    "component": "PartnerFamilyHubPage"
+  },
+  {
+    "slug": "visitor-hub",
+    "component": "VisitorOtherHubPage"
+  },
+  {
+    "slug": "visa-refusal-review",
+    "component": "VisaRefusalReviewHubPage"
+  },
+  {
+    "slug": "visa-cancellation",
+    "component": "VisaCancellationPage"
+  },
+  {
+    "slug": "section-48-bar",
+    "component": "Section48BarPage"
+  },
+  {
+    "slug": "pic-4020",
+    "component": "Pic4020Page"
+  },
+  {
+    "slug": "reviews",
+    "component": "ReviewsPage"
+  },
+  {
+    "slug": "news",
+    "component": "NewsPage"
+  },
+  {
+    "slug": "resources",
+    "component": "ResourcesPage"
+  },
+  {
+    "slug": "guides",
+    "component": "GuidesPage"
+  },
+  {
+    "slug": "blog",
+    "component": "BlogPage"
+  },
+  {
+    "slug": "checklists",
+    "component": "ChecklistsPage"
+  },
+  {
+    "slug": "tools",
+    "component": "ToolsPage"
+  }
+]
