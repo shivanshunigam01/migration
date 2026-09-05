@@ -148,7 +148,9 @@ body.menu-open {
   }
 
   /* Two-column grids → single column */
-  .grid-2 {
+  .grid-2,
+  .form-grid-2,
+  .stack-2 {
     grid-template-columns: 1fr !important;
   }
 
@@ -190,9 +192,71 @@ body.menu-open {
   }
 }
 
+/* Mid-width tablets: switch to hamburger before nav overflows */
+@media (max-width: 1100px) {
+  .nav-desktop {
+    display: none !important;
+  }
+  .nav-hamburger {
+    display: flex !important;
+  }
+  .nav-cta-desktop {
+    display: none !important;
+  }
+}
+
 @media (max-width: 600px) {
   /* Footer fully stacks */
   .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Universal mobile safety ───────────────────────────── */
+@media (max-width: 768px) {
+  .section-pad-mobile,
+  .page-chrome-pad {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .footer-edge-pad {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .footer-credentials-strip {
+    height: auto !important;
+    min-height: 48px;
+    padding: 12px 0 !important;
+    gap: 8px 10px !important;
+  }
+
+  .about-hero-photo {
+    height: auto !important;
+    min-height: 360px !important;
+    max-height: 460px !important;
+  }
+
+  .about-hero-badge {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 32px);
+  }
+
+  .about-hero-photo .img-cover {
+    max-width: 100% !important;
+    width: auto !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-2,
+  .form-grid-2 {
     grid-template-columns: 1fr !important;
   }
 }
@@ -213,9 +277,32 @@ body.menu-open {
   .key-facts-article { border-right: none !important; border-bottom: 1px solid #eef0f8 !important; }
 }
 
-/* CardGrid — 1-up on phones */
+/* CardGrid — 2-up on tablets, 1-up on phones */
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr 1fr !important; }
+}
 @media (max-width: 480px) {
   .card-grid { grid-template-columns: 1fr !important; }
+}
+
+/* KeyFactsStrip — tighter side padding on small screens */
+@media (max-width: 768px) {
+  .key-facts-grid {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* Processing / data row grids that use 1fr 1fr auto */
+.proc-snapshot-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+}
+
+.proc-snapshot-scroll > * {
+  min-width: 520px;
 }
 
 /* RelatedPages — 2-up at 768, 1-up at 480 */
@@ -584,12 +671,25 @@ body.menu-open {
   }
 }
 
-/* ── Form field grids ────────────────────────────────── */
-@media (max-width: 480px) {
-  .form-grid-2 {
+@media (max-width: 768px) {
+  .cta-band-inner {
     grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    text-align: left;
   }
 }
+
+/* Tables: allow horizontal scroll without page-wide overflow */
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll > * {
+  min-width: 0;
+}
+
 
 /* ── Home pathway & contact sections ─────────────────── */
 @media (max-width: 900px) {
@@ -878,5 +978,24 @@ body.menu-open {
   .blog-post-body th,
   .blog-post-body td {
     padding: 10px 12px;
+  }
+}
+
+/* Visa pathway comparison controls */
+@media (max-width: 640px) {
+  .visa-compare-controls {
+    grid-template-columns: 1fr !important;
+  }
+  .visa-compare-controls > button {
+    width: 100%;
+  }
+}
+
+/* Soften large section horizontal padding used across visa pages */
+@media (max-width: 768px) {
+  .page-anchor-nav,
+  .page-section-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 }

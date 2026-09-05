@@ -57,7 +57,7 @@ export function VisaPathwayComparison() {
 
   return (
     <div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: 12, alignItems: 'flex-end', marginBottom: 24 }}>
+      <div className="visa-compare-controls" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', gap: 12, alignItems: 'flex-end', marginBottom: 24 }}>
         <div>
           <label style={{ fontSize: 13, fontWeight: 700, color: '#374151', marginBottom: 6, display: 'block', letterSpacing: '0.03em' }}>
             Visa A

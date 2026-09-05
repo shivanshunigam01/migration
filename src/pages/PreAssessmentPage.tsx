@@ -235,7 +235,7 @@ export default function PreAssessmentPage({ navigate }: { navigate: (page: strin
                 <input className="nm-book-input" value={form.occ} onChange={(e) => setForm({ ...form, occ: e.target.value })} />
               </label>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div className="nm-book-form-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <label style={{ fontSize: 12, fontWeight: 700, color: '#6b7280' }}>
                   English test
                   <select className="nm-book-select" value={form.eng} onChange={(e) => setForm({ ...form, eng: e.target.value })}>

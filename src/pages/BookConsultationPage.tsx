@@ -46,7 +46,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
-      <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
+      <div className="breadcrumb-bar" style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#9ca3af' }}>
           <button
             onClick={() => navigate('home')}
@@ -59,7 +59,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
         </div>
       </div>
 
-      <section style={{ background: HERO_GRAD, padding: '48px 24px 80px', position: 'relative', overflow: 'hidden' }}>
+      <section className="section-pad-mobile" style={{ background: HERO_GRAD, padding: '48px 24px 80px', position: 'relative', overflow: 'hidden' }}>
         <ShieldGlow tone="gold" size={520} top="-15%" left="55%" opacity={0.45} />
         <ShieldGlow tone="navy" size={420} bottom="-20%" left="-8%" opacity={0.35} />
 

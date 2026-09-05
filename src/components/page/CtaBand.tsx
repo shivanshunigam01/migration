@@ -99,10 +99,10 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
   }
 
   return (
-    <section style={{ background: NAVY_GRAD, padding: '88px 32px', position: 'relative', overflow: 'hidden' }}>
+    <section className="section-pad-mobile cta-band" style={{ background: NAVY_GRAD, padding: '88px 32px', position: 'relative', overflow: 'hidden' }}>
       <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 60% at 0% 0%, rgba(232,160,23,0.2) 0%, transparent 55%), radial-gradient(ellipse 40% 50% at 100% 100%, rgba(255,255,255,0.07) 0%, transparent 50%)', pointerEvents: 'none' }} />
       <CompassDecor size={380} compassColor="#ffffff" compassOpacity={0.04} starColor={GOLD} starOpacity={0.12} />
-      <Reveal preset="scale" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <Reveal preset="scale" className="cta-band-inner" style={{ maxWidth: 900, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center', position: 'relative', zIndex: 1 }}>
         <div>
           <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 700, color: '#fff', margin: '0 0 14px', lineHeight: 1.15, letterSpacing: '-0.025em' }}>
             {title}

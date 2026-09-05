@@ -476,13 +476,9 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 2: Credentials strip ────────────────────────────────── */}
-      <div
-        style={{
-          background: NAVY_DARK,
-          padding: '0 24px',
-        }}
-      >
+      <div style={{ background: NAVY_DARK, padding: '0 24px' }} className="footer-edge-pad">
         <div
+          className="footer-credentials-strip"
           style={{
             maxWidth: 1300,
             margin: '0 auto',
@@ -781,7 +777,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 4: Australia keyword / location row ─────────────────── */}
-      <div style={{ background: NAVY, borderTop: '1px solid rgba(255,255,255,0.07)', padding: '20px 48px' }}>
+      <div className="footer-edge-pad" style={{ background: NAVY, borderTop: '1px solid rgba(255,255,255,0.07)', padding: '20px 48px' }}>
         <div style={{ maxWidth: 1300, margin: '0 auto' }}>
           <div
             style={{
@@ -848,7 +844,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 5: Legal bar ────────────────────────────────────────── */}
-      <div style={{ background: NAVY_DARK, padding: '20px 48px' }}>
+      <div className="footer-edge-pad" style={{ background: NAVY_DARK, padding: '20px 48px' }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', textAlign: 'center' }}>
           {/* Row 1 */}
           <div

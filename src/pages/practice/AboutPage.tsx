@@ -88,7 +88,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       {/* ── Breadcrumb ── */}
-      <div style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
+      <div className="breadcrumb-bar" style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#9ca3af' }}>
           <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', fontSize: 13, padding: 0, fontFamily: "'Gilroy', sans-serif" }}>Home</button>
           <span>›</span>
@@ -97,7 +97,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
       </div>
 
       {/* ── HERO ── */}
-      <div style={{ background: HERO_GRAD, padding: '72px 32px 0', overflow: 'hidden' }}>
+      <div className="section-pad-mobile" style={{ background: HERO_GRAD, padding: '72px 32px 0', overflow: 'hidden' }}>
         <div className="hero-grid" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 420px', gap: 72, alignItems: 'end' }}>
 
           <div style={{ paddingBottom: 60 }}>
@@ -173,7 +173,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             </div>
           </div>
 
-          <div style={{ position: 'relative', alignSelf: 'end', height: 520 }}>
+          <div style={{ position: 'relative', alignSelf: 'end', height: 520 }} className="about-hero-photo">
             <div style={{
               position: 'absolute', inset: 0,
               background: `linear-gradient(135deg, ${NAVY}08 0%, ${GOLD}12 100%)`,
@@ -185,7 +185,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
               style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)', height: '110%', maxWidth: 'none', objectFit: 'cover', objectPosition: 'top center' }}
             />
-            <div style={{ position: 'absolute', bottom: 32, left: -28, background: '#fff', borderRadius: 14, padding: '14px 18px', boxShadow: '0 8px 32px rgba(27,43,94,0.18)', border: `1px solid ${GOLD}30`, minWidth: 200 }}>
+            <div className="about-hero-badge" style={{ position: 'absolute', bottom: 32, left: -28, background: '#fff', borderRadius: 14, padding: '14px 18px', boxShadow: '0 8px 32px rgba(27,43,94,0.18)', border: `1px solid ${GOLD}30`, minWidth: 200 }}>
               <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 5 }}>Registered · OMARA</div>
               <div style={{ fontSize: 16, fontWeight: 800, color: NAVY }}>MARN 2619467</div>
               <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>Navpreet Aulakh</div>

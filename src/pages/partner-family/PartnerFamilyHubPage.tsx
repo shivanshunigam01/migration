@@ -278,22 +278,24 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Processing Reality" title="Processing time snapshot" intro="Family visa queues are among the longest in Australia's migration system. Plan ahead." accent={CAT_PARTNER} />
 
-          <div style={{ borderRadius: 16, overflow: 'hidden', border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', background: NAVY, padding: '14px 24px', gap: 16 }}>
-              {['Visa', 'Stage', 'Est. time'].map((h, i) => (
-                <div key={h} style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif", textAlign: i === 2 ? 'right' : 'left' }}>{h}</div>
+          <div className="proc-snapshot-scroll" style={{ borderRadius: 16, border: '1.5px solid #e2e8f0', boxShadow: '0 4px 24px rgba(27,43,94,0.07)' }}>
+            <div style={{ borderRadius: 16, overflow: 'hidden' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', background: NAVY, padding: '14px 24px', gap: 16 }}>
+                {['Visa', 'Stage', 'Est. time'].map((h, i) => (
+                  <div key={h} style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: "'Gilroy', sans-serif", textAlign: i === 2 ? 'right' : 'left' }}>{h}</div>
+                ))}
+              </div>
+              {PROCESSING.map((row, i) => (
+                <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', padding: '13px 24px', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7', gap: 16, alignItems: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ width: 8, height: 8, borderRadius: '50%', background: row.color, flexShrink: 0 }} />
+                    <span style={{ fontSize: 14, color: '#374151', fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{row.visa}</span>
+                  </div>
+                  <div style={{ fontSize: 13.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.stage}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: row.color === '#9ca3af' ? '#9ca3af' : NAVY, fontFamily: "'Gilroy', sans-serif", textAlign: 'right', whiteSpace: 'nowrap' }}>{row.time}</div>
+                </div>
               ))}
             </div>
-            {PROCESSING.map((row, i) => (
-              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr auto', padding: '13px 24px', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7', gap: 16, alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: '50%', background: row.color, flexShrink: 0 }} />
-                  <span style={{ fontSize: 14, color: '#374151', fontFamily: "'Gilroy', sans-serif", fontWeight: 500 }}>{row.visa}</span>
-                </div>
-                <div style={{ fontSize: 13.5, color: '#6b7280', fontFamily: "'Gilroy', sans-serif" }}>{row.stage}</div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: row.color === '#9ca3af' ? '#9ca3af' : NAVY, fontFamily: "'Gilroy', sans-serif", textAlign: 'right', whiteSpace: 'nowrap' }}>{row.time}</div>
-              </div>
-            ))}
           </div>
 
           <div style={{ marginTop: 16, padding: '14px 18px', background: `${GOLD}0e`, border: `1px solid ${GOLD}33`, borderRadius: 10, display: 'flex', alignItems: 'flex-start', gap: 10 }}>

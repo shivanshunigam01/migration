@@ -259,7 +259,7 @@ export default function PublicBookingWizard({ className }: Props) {
                     }}>
                       {step > Number(n) ? '✓' : n}
                     </span>
-                    {label}
+                    <span className="nm-book-steps-label">{label}</span>
                   </span>
                   {i < 2 && <span style={{ margin: '0 8px', height: 1, flex: 1, background: '#e8eaf0' }} />}
                 </div>
@@ -370,7 +370,7 @@ export default function PublicBookingWizard({ className }: Props) {
             </button>
             <div style={{ marginBottom: 14, fontSize: 17, fontWeight: 700, color: NAVY }}>Your details</div>
             <input type="text" name="company_website" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: -9999, height: 0, width: 0, opacity: 0 }} />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+            <div className="nm-cw-details-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6b7280' }}>
                 Full name *
                 <input className="nm-book-input" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />
@@ -384,7 +384,7 @@ export default function PublicBookingWizard({ className }: Props) {
               Email *
               <input type="email" className="nm-book-input" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" />
             </label>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
+            <div className="nm-cw-details-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginTop: 10 }}>
               <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6b7280' }}>
                 Phone or video?
                 <select className="nm-book-select" value={mode} onChange={(e) => setMode(e.target.value as 'Video' | 'Phone')}>

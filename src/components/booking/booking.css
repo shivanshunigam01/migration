@@ -295,4 +295,51 @@
   .nm-cw {
     grid-template-columns: 1fr;
   }
+
+  .nm-cw-left {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  .nm-book-main {
+    padding: 28px 16px 48px;
+  }
+
+  .nm-cw-details-grid,
+  .nm-book-form-2,
+  .nm-book-time-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .nm-book-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .nm-cw-right,
+  .nm-cw-left {
+    padding: 16px !important;
+  }
+
+  .nm-book-main {
+    padding: 24px 14px 40px;
+  }
+
+  .nm-book-steps-label {
+    display: none;
+  }
+
+  .nm-book-footer {
+    padding: 16px 14px 32px;
+  }
+
+  .nm-book-main form,
+  .nm-book-main > div {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
 }
