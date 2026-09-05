@@ -1435,15 +1435,15 @@ export default function HomePage() {
           </Reveal>
 
           {/* 5 office cards */}
-          <Stagger className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+          <Stagger className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16, alignItems: 'stretch' }}>
             {[
-              { city: 'Truganina', label: 'Head Office', address: '8 Tallis Cct', suburb: 'Truganina VIC 3029', maps: 'https://maps.google.com/?q=8+Tallis+Cct+Truganina+VIC+3029' },
+              { city: 'Truganina', label: 'VIC Office', address: '8 Tallis Cct', suburb: 'Truganina VIC 3029', maps: 'https://maps.google.com/?q=8+Tallis+Cct+Truganina+VIC+3029' },
               { city: 'Geelong', label: 'Regional VIC', address: 'Suite 1, 41 Malop St', suburb: 'Geelong VIC 3220', maps: 'https://maps.google.com/?q=41+Malop+St+Geelong+VIC+3220' },
               { city: 'Cranbourne', label: 'VIC Office', address: 'Unit 2/207 S Gippsland Hwy', suburb: 'Cranbourne VIC 3977', maps: 'https://maps.google.com/?q=Unit+2%2F207+S+Gippsland+Hwy+Cranbourne+VIC+3977' },
               { city: 'Canning Vale', label: 'WA Office', address: '150 Canna Dr', suburb: 'Canning Vale WA 6155', maps: 'https://maps.google.com/?q=150+Canna+Dr+Canning+Vale+WA+6155' },
               { city: 'Craigieburn', label: 'VIC Office', address: '21 Ravenwoods Way', suburb: 'Craigieburn VIC 3064', maps: 'https://maps.google.com/?q=21+Ravenwoods+Way+Craigieburn+VIC+3064' },
-            ].map((office, i) => (
-              <StaggerItem key={office.city} preset="scale">
+            ].map((office) => (
+              <StaggerItem key={office.city} preset="scale" style={{ height: '100%' }}>
               <motion.div
                 whileHover={reduceMotion ? undefined : { y: -4, boxShadow: '0 12px 36px rgba(27,43,94,0.13)' }}
                 transition={{ duration: 0.22 }}
@@ -1458,13 +1458,6 @@ export default function HomePage() {
                 height: '100%',
               }}
               >
-                {/* Head office badge */}
-                {i === 0 && (
-                  <div style={{ position: 'absolute', top: -11, left: 18, fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', background: GOLD, color: NAVY_DARK, padding: '3px 10px', borderRadius: 100 }}>
-                    Head Office
-                  </div>
-                )}
-
                 {/* Pin icon */}
                 <div style={{ marginBottom: 16 }}>
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none">

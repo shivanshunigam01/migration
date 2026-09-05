@@ -49,6 +49,9 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
           textAlign: 'left' as const,
           fontFamily: "'Gilroy', sans-serif",
           width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
         }
 
         const inner = (
@@ -69,7 +72,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
               </h3>
             </div>
 
-            <p style={{ fontSize: 15, color: dark ? 'rgba(255,255,255,0.65)' : '#374151', lineHeight: 1.75, margin: card.note ? '0 0 14px' : 0 }}>
+            <p style={{ fontSize: 15, color: dark ? 'rgba(255,255,255,0.65)' : '#374151', lineHeight: 1.75, margin: card.note ? '0 0 14px' : 0, flexGrow: 1 }}>
               {card.body}
             </p>
 
@@ -85,7 +88,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
         if (isButton) {
           const to = resolveRoute(card.page!)
           return (
-            <StaggerItem key={i} preset="scale">
+            <StaggerItem key={i} preset="scale" style={{ height: '100%' }}>
               <motion.div
                 style={{ ...cardStyle, padding: 0, overflow: 'hidden' }}
                 whileHover={reduce ? undefined : { y: -3, boxShadow: '0 18px 40px rgba(21,36,72,0.08)' }}
@@ -94,7 +97,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
               >
                 <Link
                   to={to}
-                  style={{ display: 'block', padding: '30px 26px 26px', textDecoration: 'none', color: 'inherit', height: '100%' }}
+                  style={{ display: 'flex', flexDirection: 'column', padding: '30px 26px 26px', textDecoration: 'none', color: 'inherit', height: '100%', boxSizing: 'border-box' }}
                 >
                   {inner}
                 </Link>
@@ -104,7 +107,7 @@ export function CardGrid({ cards, columns = 2, accent = NAVY, dark = false, navi
         }
 
         return (
-          <StaggerItem key={i} preset="scale">
+          <StaggerItem key={i} preset="scale" style={{ height: '100%' }}>
             <motion.div
               style={cardStyle}
               whileHover={reduce ? undefined : { y: -4, boxShadow: dark ? '0 12px 32px rgba(0,0,0,0.2)' : '0 12px 32px rgba(27,43,94,0.1)' }}
