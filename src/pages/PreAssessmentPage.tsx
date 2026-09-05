@@ -58,8 +58,7 @@ export default function PreAssessmentPage({ navigate }: { navigate: (page: strin
   })
 
   useEffect(() => {
-    document.title = meta.title
-    let el = document.querySelector('meta[name="description"]')
+let el = document.querySelector('meta[name="description"]')
     if (el) el.setAttribute('content', meta.metaDescription)
     else {
       el = document.createElement('meta')

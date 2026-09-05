@@ -100,10 +100,6 @@ function HowToRead() {
 }
 
 export default function OccupationsListPage186({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['186-occupations-list'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

@@ -158,8 +158,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function DAMAPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['dama'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

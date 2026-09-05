@@ -140,10 +140,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function Eta601Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['eta-601'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

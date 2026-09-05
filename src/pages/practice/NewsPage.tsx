@@ -55,12 +55,7 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
   const { submit, loading, error, success } = useIntakeSubmit('newsletter')
   const [email, setEmail] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
-
-  useEffect(() => {
-    document.title = meta.title
-  }, [meta.title])
-
-  const featuredArticle = ARTICLES.find((a) => a.featured)
+const featuredArticle = ARTICLES.find((a) => a.featured)
   const nonFeaturedArticles = ARTICLES.filter((a) => !a.featured)
   const filteredArticles =
     activeCategory === 'All'

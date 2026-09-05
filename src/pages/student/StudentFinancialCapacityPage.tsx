@@ -155,9 +155,7 @@ const FEE_ROWS = [
 ]
 
 export default function StudentFinancialCapacityPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['student-financial-capacity'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

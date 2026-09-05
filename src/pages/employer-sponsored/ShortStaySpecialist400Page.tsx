@@ -147,8 +147,7 @@ const CONDITION_CARDS = [
 ]
 
 export default function ShortStaySpecialist400Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['short-stay-specialist-400'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

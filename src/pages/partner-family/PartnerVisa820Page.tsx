@@ -229,10 +229,6 @@ const FAQ_ITEMS: FaqItem[] = [
 
 /* ─── Page ─── */
 export default function PartnerVisa820Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['partner-visa-820-801'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

@@ -184,11 +184,6 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
   )
 
   const faqItems: FaqItem[] = FAQS.map(f => ({ question: f.q, answer: f.a }))
-
-  React.useEffect(() => {
-    document.title = PAGE_META['student-visa-500'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f4f6fb', minHeight: '100vh', color: NAVY }}>
       <StructuredData

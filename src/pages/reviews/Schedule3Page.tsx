@@ -88,9 +88,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function Schedule3Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['schedule-3'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

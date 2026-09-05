@@ -121,8 +121,7 @@ const WORK_EVIDENCE = [
 ]
 
 export default function SkilledRegional887Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['skilled-regional-887'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

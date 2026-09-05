@@ -144,10 +144,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function MedicalTreatment602Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['medical-treatment-602'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

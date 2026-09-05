@@ -108,10 +108,6 @@ const CHECKLISTS = [
 ]
 
 export default function ChecklistsPage({ navigate }: { navigate: (page: string) => void }) {
-  useEffect(() => {
-    document.title = PAGE_META['checklists'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData

@@ -65,9 +65,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function Pic4020Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['pic-4020'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

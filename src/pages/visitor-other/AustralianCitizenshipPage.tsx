@@ -317,10 +317,6 @@ function CitizenshipAtAGlance() {
 }
 
 export default function AustralianCitizenshipPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['australian-citizenship'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

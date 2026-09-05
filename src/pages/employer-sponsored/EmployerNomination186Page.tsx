@@ -237,11 +237,6 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
   )
 
   const faqItems: FaqItem[] = faqs.map(f => ({ question: f.q, answer: f.a }))
-
-  React.useEffect(() => {
-    document.title = PAGE_META['employer-nomination-scheme'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f8fafc', minHeight: '100vh' }}>
       <StructuredData

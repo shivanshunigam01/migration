@@ -145,9 +145,7 @@ const CHECKLIST_ITEMS = [
 ]
 
 export default function CoursesPRProspectsPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['courses-pr-prospects'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

@@ -8,6 +8,7 @@ import AustralianSkyline from '@/components/ui/AustralianSkyline'
 import { GOLD, GOLD_LIGHT, NAVY, NAVY_DARK, NAVY_MID, NAVY_GRAD, NAVY_GRAD_V, HERO_GRAD, CREAM, GREY_BAND, TEXT } from '@/theme'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
+import { CmsContentBand } from '@/components/page/CmsContentBand'
 import NanakLogo from '@/components/layout/NanakLogo'
 import { NAV_ITEMS } from '@/data/navItems'
 import ProcessJourney from '@/components/ui/ProcessJourney'
@@ -558,6 +559,7 @@ export default function HomePage() {
 
       {/* ── SITE HEADER ───────────────────────────────────── */}
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
+      <CmsContentBand compact />
 
       {/* ── HERO ──────────────────────────────────────────── */}
       <section style={{ position: 'relative', minHeight: '94vh', display: 'flex', alignItems: 'center', overflow: 'hidden', background: HERO_GRAD }}>

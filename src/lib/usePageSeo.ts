@@ -1,44 +1,22 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useCmsPage } from "@/components/page/CmsPageProvider"
 import { PAGE_META, type PageMeta } from "@/data/pageMeta"
-import { absoluteUrl, routeKeyToPath } from "@/data/site"
-import { fetchSeoByRouteKey } from "@/lib/contentApi"
 import { applySeoTags } from "@/lib/seoMeta"
 
-/** Apply SEO meta from CMS with static fallback. */
+/**
+ * Back-compat SEO hook. Prefers live CMS content from CmsPageProvider,
+ * falls back to static PAGE_META.
+ */
 export function usePageSeo(routeKey: string, fallback?: PageMeta) {
-  const staticMeta = fallback ?? PAGE_META[routeKey]
-  const [meta, setMeta] = useState<PageMeta | null>(staticMeta ?? null)
-
-  useEffect(() => {
-    let cancelled = false
-    fetchSeoByRouteKey(routeKey).then((remote) => {
-      if (cancelled) return
-      if (remote?.title) {
-        setMeta({
-          title: remote.title,
-          metaDescription: remote.metaDescription,
-          primaryKeyword: remote.primaryKeyword,
-        })
-      } else if (staticMeta) {
-        setMeta(staticMeta)
-      }
-    })
-    return () => {
-      cancelled = true
+  const cms = useCmsPage()
+  if (cms && cms.routeKey === routeKey) {
+    return {
+      title: cms.title,
+      metaDescription: cms.metaDescription,
+      primaryKeyword: cms.primaryKeyword,
     }
-  }, [routeKey])
-
-  useEffect(() => {
-    if (!meta) return
-    applySeoTags({
-      title: meta.title,
-      description: meta.metaDescription,
-      keywords: meta.primaryKeyword,
-      canonicalUrl: absoluteUrl(routeKeyToPath(routeKey)),
-    })
-  }, [meta, routeKey])
-
-  return meta
+  }
+  return fallback ?? PAGE_META[routeKey] ?? null
 }
 
 /** Blog/article SEO with post-level overrides. */

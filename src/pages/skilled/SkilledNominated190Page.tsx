@@ -298,9 +298,6 @@ function WhoSuitsSection() {
 
 /* ─── Page ─── */
 export default function SkilledNominated190Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['skilled-nominated-190'].title
-  }, [])
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

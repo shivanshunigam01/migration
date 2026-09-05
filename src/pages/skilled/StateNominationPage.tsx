@@ -179,10 +179,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function StateNominationPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['state-nomination'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

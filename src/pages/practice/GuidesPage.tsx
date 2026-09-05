@@ -47,11 +47,6 @@ const groupedGuides = CANONICAL_ROUTES
 export default function GuidesPage({ navigate }: { navigate: (page: string) => void }) {
   const [query, setQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
-
-  useEffect(() => {
-    document.title = PAGE_META['guides'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData

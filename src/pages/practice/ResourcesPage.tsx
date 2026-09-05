@@ -75,10 +75,6 @@ const FAQS: FaqItem[] = [
 
 /* ── Component ─────────────────────────────────────────── */
 export default function ResourcesPage({ navigate }: { navigate: (page: string) => void }) {
-  useEffect(() => {
-    document.title = PAGE_META['resources'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
       <StructuredData

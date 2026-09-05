@@ -123,8 +123,7 @@ const COMMON_SCENARIOS = [
 ]
 
 export default function ChildVisa802Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['child-visa-802'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

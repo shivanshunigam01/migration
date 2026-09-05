@@ -31,6 +31,10 @@ export interface SeoMeta {
   title: string
   metaDescription: string
   primaryKeyword: string
+  keywords?: string
+  h1?: string
+  body?: string
+  heroImage?: string
   canonicalUrl?: string
   ogTitle?: string
   ogDescription?: string

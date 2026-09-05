@@ -164,8 +164,7 @@ const ABSENCE_CONSIDERATIONS = [
 ]
 
 export default function StudentGuardian590Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['student-guardian-590'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

@@ -88,9 +88,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function NoFurtherStay8503Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['no-further-stay-8503'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

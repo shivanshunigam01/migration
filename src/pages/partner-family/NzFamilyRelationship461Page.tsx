@@ -156,10 +156,6 @@ const COMPARISON_ROWS = [
 ]
 
 export default function NzFamilyRelationship461Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['nz-family-relationship-461'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

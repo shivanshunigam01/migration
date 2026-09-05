@@ -226,10 +226,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function SkillsAssessmentPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['skills-assessment'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

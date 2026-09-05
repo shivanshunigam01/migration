@@ -5,6 +5,7 @@ import { NAVY, GOLD, HERO_GRAD } from '@/theme'
 import { GlowButton } from '@/components/ui/GlowButton'
 import { fadeUp, slideRight, staggerContainer, easeOutExpo } from '@/components/motion/variants'
 import { resolveRoute } from '@/lib/navigation'
+import { useCmsPage } from '@/components/page/CmsPageProvider'
 
 export interface PageHeroCtaButton {
   label: string
@@ -62,6 +63,10 @@ export function PageHero({
   navigate,
 }: PageHeroProps) {
   const reduce = useReducedMotion()
+  const cms = useCmsPage()
+  const resolvedTitle = cms?.h1?.trim() ? cms.h1.trim() : title
+  const resolvedDeck = cms?.body?.trim() ? cms.body.trim() : deck
+  const heroImage = cms?.heroImage?.trim() || ''
 
   const leftContent = (
     <motion.div
@@ -95,12 +100,24 @@ export function PageHero({
       )}
 
       <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(36px, 5vw, 54px)' : 'clamp(30px, 5vw, 56px)', fontWeight: 700, color: NAVY, lineHeight: 1.06, margin: '0 0 24px', letterSpacing: '-0.035em' }}>
-        {title}
+        {resolvedTitle}
       </motion.h1>
 
-      <motion.p variants={fadeUp} style={{ fontSize: 18.5, color: '#3f4b5f', lineHeight: 1.72, margin: '0 0 8px', maxWidth: variant === 'standard' ? 640 : 520 }}>
-        {deck}
+      <motion.p variants={fadeUp} style={{ fontSize: 18.5, color: '#3f4b5f', lineHeight: 1.72, margin: '0 0 8px', maxWidth: variant === 'standard' ? 640 : 520, whiteSpace: 'pre-wrap' as const }}>
+        {resolvedDeck}
       </motion.p>
+
+      {heroImage ? (
+        <motion.div variants={fadeUp} style={{ margin: '18px 0 28px' }}>
+          <img
+            src={heroImage}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            style={{ width: '100%', maxWidth: 560, borderRadius: 14, border: '1px solid rgba(21,36,72,0.08)', display: 'block' }}
+          />
+        </motion.div>
+      ) : null}
 
       {currentAsAt && (
         <motion.p variants={fadeUp} style={{ fontSize: 13, color: '#8b93a7', margin: '0 0 30px', fontStyle: 'italic' }}>

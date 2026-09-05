@@ -151,10 +151,6 @@ const COMPARE_ROWS = [
 ]
 
 export default function Evisitor651Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['evisitor-651'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

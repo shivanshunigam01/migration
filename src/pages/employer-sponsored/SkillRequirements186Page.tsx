@@ -217,11 +217,6 @@ function WorkExperience() {
 /* ─── Page ─── */
 export default function SkillRequirements186Page({ navigate }: { navigate: (page: string) => void }) {
   const [activeSection] = useState('key-facts')
-
-  React.useEffect(() => {
-    document.title = PAGE_META['186-skill-requirements'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

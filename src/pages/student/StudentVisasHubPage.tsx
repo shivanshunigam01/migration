@@ -207,11 +207,6 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
   function toggle(i: number) {
     setChecked(prev => { const next = [...prev]; next[i] = !next[i]; return next })
   }
-
-  React.useEffect(() => {
-    document.title = PAGE_META['student-visas'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData

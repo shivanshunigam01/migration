@@ -13,8 +13,7 @@ export default function BookPage({ navigate: _navigate }: { navigate: (page: str
   const meta = PAGE_META['book'] || PAGE_META['book-consultation']
 
   useEffect(() => {
-    document.title = meta.title
-    const content = meta.metaDescription
+const content = meta.metaDescription
     let el = document.querySelector('meta[name="description"]')
     if (el) el.setAttribute('content', content)
     else {

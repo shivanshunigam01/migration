@@ -325,10 +325,6 @@ function PillarSelector() {
 
 /* ─── Page ─── */
 export default function PartnerVisa309Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['partner-visa-309-100'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

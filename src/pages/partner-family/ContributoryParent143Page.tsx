@@ -132,10 +132,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function ContributoryParent143Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['contributory-parent-143'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

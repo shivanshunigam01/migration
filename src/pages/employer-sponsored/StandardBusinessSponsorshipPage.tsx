@@ -161,11 +161,6 @@ type Obligation = typeof OBLIGATIONS[0]
 
 export default function StandardBusinessSponsorshipPage({ navigate }: { navigate: (page: string) => void }) {
   const [activeObligation, setActiveObligation] = useState<Obligation>(OBLIGATIONS[0])
-
-  React.useEffect(() => {
-    document.title = PAGE_META['standard-business-sponsorship'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

@@ -112,10 +112,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['assurance-of-support'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

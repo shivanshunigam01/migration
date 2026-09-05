@@ -108,8 +108,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function TemporaryActivity408Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['temporary-activity-408'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

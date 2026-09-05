@@ -83,12 +83,7 @@ const WHY_FEATURES = [
 export default function ReviewsPage({ navigate }: { navigate: (page: string) => void }) {
   const meta = PAGE_META['reviews']
   const hasReviews = REVIEWS.length > 0
-
-  useEffect(() => {
-    document.title = meta.title
-  }, [meta.title])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', color: '#1E1E2A', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <StructuredData
         breadcrumbs={[

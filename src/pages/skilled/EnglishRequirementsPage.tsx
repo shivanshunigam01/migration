@@ -194,10 +194,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function EnglishRequirementsPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['english-requirements'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

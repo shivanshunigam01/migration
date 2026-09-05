@@ -147,11 +147,7 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
   const [activePanel, setActivePanel] = useState<string | null>(null)
 
   const meta = PAGE_META['tools']
-  useEffect(() => {
-    document.title = meta.title
-  }, [meta.title])
-
-  function openPanel(id: string) {
+function openPanel(id: string) {
     setActivePanel(id)
     setTimeout(() => {
       const el = document.getElementById(id)

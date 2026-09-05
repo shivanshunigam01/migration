@@ -49,9 +49,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function BalanceOfFamilyTestPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['balance-of-family-test'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

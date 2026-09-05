@@ -477,10 +477,6 @@ function PathwaySummaryWidget() {
 
 /* ─── Page ─── */
 export default function Pathway482ToPRPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['482-to-pr-pathway'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

@@ -190,11 +190,6 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
 
   const urgencyColor = (u: string) => u === 'red' ? '#dc2626' : u === 'amber' ? '#f5a124' : '#f5a124'
   const urgencyBg = (u: string) => u === 'red' ? 'rgba(220,38,38,0.08)' : u === 'amber' ? 'rgba(245,161,36,0.08)' : 'rgba(245,161,36,0.08)'
-
-  React.useEffect(() => {
-    document.title = PAGE_META['skilled-independent-189'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

@@ -70,10 +70,6 @@ function RemovedFromListSection() {
     { icon: 'compass', heading: 'Explore alternative pathways', body: 'A Labour Agreement may cover occupations not on the standard list. The Specialist Skills stream of the 482 does not require the occupation to be on the CSOL. A registered migration agent can advise on alternatives specific to your circumstances.' },
     { icon: 'phone', heading: 'Seek specialist advice promptly', body: 'The consequences of a list change depend on the specific circumstances — including which visa is held, which applications are pending, and the timing of the change. Advice should be sought from a registered migration agent without delay.' },
   ]
-  React.useEffect(() => {
-    document.title = PAGE_META['core-skills-occupation-list'].title
-  }, [])
-
   return (
     <section style={{ background: GREY_BG, padding: '80px 32px' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>

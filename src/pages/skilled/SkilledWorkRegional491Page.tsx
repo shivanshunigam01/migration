@@ -305,9 +305,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function SkilledWorkRegional491Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['skilled-work-regional-491'].title
-  }, [])
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

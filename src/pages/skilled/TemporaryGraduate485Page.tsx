@@ -254,10 +254,6 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
   }
 
   const stream = STREAMS[selectedStream]
-
-  React.useEffect(() => {
-    document.title = PAGE_META['temporary-graduate-485'].title
-  }, [])
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

@@ -146,10 +146,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function MinisterialInterventionPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['ministerial-intervention'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

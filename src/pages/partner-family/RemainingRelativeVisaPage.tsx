@@ -138,10 +138,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function RemainingRelativeVisaPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['remaining-relative-visa'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

@@ -205,11 +205,6 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
       </div>
     </div>
   )
-
-  React.useEffect(() => {
-    document.title = PAGE_META['skills-in-demand-visa'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f8fafc', minHeight: '100vh' }}>
       <StructuredData

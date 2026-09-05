@@ -166,9 +166,7 @@ const ELIGIBILITY_CARDS = [
 ]
 
 export default function SpecialistSkillsStreamPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['482-specialist-skills-stream'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

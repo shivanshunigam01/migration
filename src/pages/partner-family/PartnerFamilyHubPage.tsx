@@ -147,11 +147,6 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
     activeTab === 'parent' ? PARENT_CARDS :
     OTHER_CARDS
   const accentColor = activeTab === 'partner' ? ROSE : activeTab === 'parent' ? PURPLE : GREEN
-
-  React.useEffect(() => {
-    document.title = PAGE_META['partner-family-visas'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData

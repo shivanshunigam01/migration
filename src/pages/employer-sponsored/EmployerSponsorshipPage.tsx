@@ -163,11 +163,6 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
   const visaTotal = (fees.visaFee.primary + fees.visaFee.secondary_adult * calcAdults + fees.visaFee.secondary_child * calcChildren) * calcWorkers
   const totalGov = safTotal + nomTotal + visaTotal
   const agentMid = Math.round((fees.agentLow + fees.agentHigh) / 2) * calcWorkers
-
-  React.useEffect(() => {
-    document.title = PAGE_META['employer-sponsored-visas'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: '#1a1a2e' }}>
       <StructuredData

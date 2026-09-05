@@ -6,7 +6,10 @@ export interface SeoTagsInput {
   keywords?: string
   canonicalUrl?: string
   ogImage?: string
+  ogTitle?: string
+  ogDescription?: string
   ogType?: "website" | "article"
+  robotsIndex?: boolean
 }
 
 function setMetaTag(name: string, content: string, attr: "name" | "property" = "name") {
@@ -36,6 +39,8 @@ export function applySeoTags(input: SeoTagsInput) {
   const canonicalUrl = input.canonicalUrl ?? SITE_URL
   const ogImage = input.ogImage ?? DEFAULT_OG_IMAGE
   const ogType = input.ogType ?? "website"
+  const ogTitle = input.ogTitle || input.title
+  const ogDescription = input.ogDescription || input.description
 
   document.title = input.title
   setMetaTag("description", input.description)
@@ -43,8 +48,8 @@ export function applySeoTags(input: SeoTagsInput) {
 
   setLinkTag("canonical", canonicalUrl)
 
-  setMetaTag("og:title", input.title, "property")
-  setMetaTag("og:description", input.description, "property")
+  setMetaTag("og:title", ogTitle, "property")
+  setMetaTag("og:description", ogDescription, "property")
   setMetaTag("og:url", canonicalUrl, "property")
   setMetaTag("og:type", ogType, "property")
   setMetaTag("og:site_name", SITE_NAME, "property")
@@ -52,7 +57,13 @@ export function applySeoTags(input: SeoTagsInput) {
   setMetaTag("og:locale", "en_AU", "property")
 
   setMetaTag("twitter:card", "summary_large_image")
-  setMetaTag("twitter:title", input.title)
-  setMetaTag("twitter:description", input.description)
+  setMetaTag("twitter:title", ogTitle)
+  setMetaTag("twitter:description", ogDescription)
   setMetaTag("twitter:image", ogImage)
+
+  if (input.robotsIndex === false) {
+    setMetaTag("robots", "noindex,nofollow")
+  } else {
+    setMetaTag("robots", "index,follow")
+  }
 }

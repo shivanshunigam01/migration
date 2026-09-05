@@ -366,11 +366,6 @@ const RELATED: RelatedPage[] = [
 /* ── Page ────────────────────────────────────────────────── */
 export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page: string) => void }) {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-
-  React.useEffect(() => {
-    document.title = PAGE_META['visa-refusal-review'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData

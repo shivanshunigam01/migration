@@ -138,8 +138,7 @@ const SPONSOR_SCENARIOS = [
 ]
 
 export default function TrainingVisa407Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['training-visa-407'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

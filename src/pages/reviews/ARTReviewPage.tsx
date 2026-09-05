@@ -193,11 +193,6 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
       : deadline.daysLeft === 1 ? '1 DAY LEFT'
       : `${deadline.daysLeft} DAYS LEFT`
     : ''
-
-  React.useEffect(() => {
-    document.title = PAGE_META['art-review'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
 

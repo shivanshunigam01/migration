@@ -175,8 +175,7 @@ const FEE_ROWS = [
 ]
 
 export default function PermanentResidenceSkillsRegionalPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['191-visa'].title }, [])
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

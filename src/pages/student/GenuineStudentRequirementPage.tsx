@@ -275,10 +275,6 @@ function GSAtAGlance() {
     { label: 'Immigration history', color: VIOLET },
     { label: 'Any other relevant matter', color: AMBER },
   ]
-  React.useEffect(() => {
-    document.title = PAGE_META['genuine-student-requirement'].title
-  }, [])
-
   return (
     <div style={{ background: '#fff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.18), 0 2px 8px rgba(13,22,50,0.06)', border: '1px solid #e8eaf0', padding: '26px 24px' }}>
       <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: BLUE, marginBottom: 4 }}>GS assessment factors</div>

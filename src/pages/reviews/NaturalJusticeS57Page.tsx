@@ -89,9 +89,7 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function NaturalJusticeS57Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => { document.title = PAGE_META['natural-justice-s57'].title }, [])
-
-  return (
+return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData
         breadcrumbs={[

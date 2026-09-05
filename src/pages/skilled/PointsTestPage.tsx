@@ -296,9 +296,6 @@ const RELATED: RelatedPage[] = [
 
 /* ─── Page ─── */
 export default function PointsTestPage({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['points-test'].title
-  }, [])
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

@@ -268,11 +268,6 @@ const COMPARISON_ROWS = [
 
 export default function ParentVisasHubPage({ navigate }: { navigate: (page: string) => void }) {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-
-  React.useEffect(() => {
-    document.title = PAGE_META['parent-visas'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: 'Inter, system-ui, sans-serif', backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

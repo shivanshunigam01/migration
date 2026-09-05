@@ -211,11 +211,6 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
       </div>
     </div>
   )
-
-  React.useEffect(() => {
-    document.title = PAGE_META['student-to-pr-pathway'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
       <StructuredData

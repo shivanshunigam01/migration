@@ -242,10 +242,6 @@ const RELATED: RelatedPage[] = [
 ]
 
 export default function ProspectiveMarriage300Page({ navigate }: { navigate: (page: string) => void }) {
-  React.useEffect(() => {
-    document.title = PAGE_META['prospective-marriage-300'].title
-  }, [])
-
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#fff', color: NAVY }}>
       <StructuredData

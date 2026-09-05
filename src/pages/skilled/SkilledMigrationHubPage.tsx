@@ -254,11 +254,6 @@ function VisaFinder({ navigate }: { navigate: (page: string) => void }) {
   }
 
   function restart() { setStep('sponsor'); setHistory([]) }
-
-  React.useEffect(() => {
-    document.title = PAGE_META['skilled-migration'].title
-  }, [])
-
   return (
     <div style={{ background: '#ffffff', borderRadius: 18, boxShadow: '0 24px 64px rgba(13,22,50,0.22)', border: '1px solid #e8eaf0', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
