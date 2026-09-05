@@ -333,8 +333,8 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
       {/* ── ANSWER BOX ── */}
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Temporary Graduate visa (subclass 485) allows international graduates of Australian institutions to live and work in Australia after completing their studies, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It has two streams: the Post-Higher Education Work (PHEW) stream for bachelor degree and above graduates, and the Graduate Work stream for vocational graduates in specific occupations. In most cases, applicants must apply within six months of completing their course and must have held a student visa in Australia.
+          <AnswerBox routeKey="temporary-graduate-485">
+            The Temporary Graduate (subclass 485) visa lets eligible graduates who held a student visa (subclass 500) live and work in Australia after study, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Many graduates later seek a skills assessment and skilled migration options such as Skilled Independent (subclass 189), or follow a planned student to PR pathway.
           </AnswerBox>
           <ReviewedBy />
         </div>

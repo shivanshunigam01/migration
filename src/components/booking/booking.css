@@ -1,0 +1,298 @@
+/* Public booking wizard — Nanak Migration theme */
+
+.nm-book-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  max-width: min(92vw, 420px);
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #111E3E;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(17, 30, 62, 0.28);
+  animation: nm-book-toast-in 0.2s ease;
+}
+
+@keyframes nm-book-toast-in {
+  from { opacity: 0; transform: translate(-50%, 12px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.nm-cw {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  min-height: 500px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 28, 85, 0.06), 0 8px 24px rgba(16, 28, 85, 0.1), 0 24px 64px rgba(16, 28, 85, 0.12);
+  font-family: 'Gilroy', Inter, system-ui, sans-serif;
+}
+
+.nm-cw::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 20px;
+  padding: 1.5px;
+  background: linear-gradient(140deg, #f5a124 0%, rgba(245, 161, 36, 0.15) 30%, rgba(16, 28, 85, 0.15) 70%, #101c55 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.nm-cw-left {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 24px 22px;
+  color: #fff;
+  background: linear-gradient(160deg, #16245f 0%, #101c55 45%, #0b1440 100%);
+}
+
+.nm-cw-left::before {
+  content: '';
+  position: absolute;
+  top: -170px;
+  right: -170px;
+  width: 340px;
+  height: 340px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 161, 36, 0.28) 0%, rgba(245, 161, 36, 0) 62%);
+}
+
+.nm-cw-right {
+  position: relative;
+  padding: 24px 26px;
+  z-index: 1;
+}
+
+.nm-cw-go {
+  width: 100%;
+  margin-top: 16px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  color: #101c55;
+  background: linear-gradient(135deg, #ffb63b 0%, #f5a124 55%, #e8920c 100%);
+  box-shadow: 0 4px 14px rgba(245, 166, 35, 0.4);
+  font-family: inherit;
+}
+
+.nm-cw-go:hover:not(:disabled) {
+  transform: translateY(-1.5px);
+  box-shadow: 0 7px 20px rgba(245, 166, 35, 0.5);
+}
+
+.nm-cw-go:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.nm-cw-go.secondary {
+  background: #eeeeef;
+  box-shadow: none;
+}
+
+.nm-book-type {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1.5px solid #e8eaf0;
+  background: #fff;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.nm-book-type:hover {
+  transform: translateY(-2px);
+  border-color: #1B2B5E;
+  box-shadow: 0 8px 20px rgba(27, 43, 94, 0.08);
+}
+
+.nm-book-type::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3.5px;
+  background: #f5a124;
+  transform: scaleY(0);
+  transition: transform 0.15s;
+}
+
+.nm-book-type:hover::before {
+  transform: scaleY(1);
+}
+
+.nm-book-cal-day {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-family: ui-monospace, monospace;
+  font-size: 12.5px;
+  border: none;
+  cursor: pointer;
+  background: #eaeefb;
+  color: #1B2B5E;
+  font-weight: 600;
+}
+
+.nm-book-cal-day:disabled {
+  background: transparent;
+  color: #e4e6f0;
+  cursor: default;
+}
+
+.nm-book-cal-day.sel {
+  background: #f5a124;
+  font-weight: 800;
+  box-shadow: 0 0 0 3.5px #fdf3df;
+}
+
+.nm-book-slot {
+  border-radius: 8px;
+  border: 1.5px solid #1B2B5E;
+  padding: 8px 0;
+  font-family: ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  background: #fff;
+  color: #1B2B5E;
+  cursor: pointer;
+}
+
+.nm-book-slot:hover:not(:disabled) {
+  background: #1B2B5E;
+  color: #fff;
+}
+
+.nm-book-slot.sel {
+  border-color: #f5a124;
+  background: #f5a124;
+  color: #1B2B5E;
+  box-shadow: 0 0 0 3px #fdf3df;
+}
+
+.nm-book-slot:disabled {
+  border-color: #e8eaf0;
+  color: #9ca3af;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.nm-book-input,
+.nm-book-select {
+  margin-top: 6px;
+  width: 100%;
+  border-radius: 9px;
+  border: 1.5px solid #e8eaf0;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: #1E1E2A;
+  font-family: inherit;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.nm-book-input:focus,
+.nm-book-select:focus {
+  outline: none;
+  border-color: #1B2B5E;
+  box-shadow: 0 0 0 4px rgba(27, 43, 94, 0.1);
+}
+
+.nm-book-page {
+  min-height: 100vh;
+  background: linear-gradient(155deg, #f8fafc 0%, #eef3f9 32%, #e2ecf6 62%, #d0e0f0 100%);
+  color: #16181f;
+  font-family: 'Gilroy', Inter, system-ui, sans-serif;
+}
+
+.nm-book-header {
+  background: linear-gradient(135deg, #0a1024 0%, #152448 38%, #1e3a6e 72%, #2a4a82 100%);
+  color: #fff;
+  border-bottom: 1px solid rgba(232, 160, 23, 0.35);
+}
+
+.nm-book-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.nm-book-brand {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nm-book-marn {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nm-book-site-link {
+  color: #e8a017;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(232, 160, 23, 0.45);
+  padding-bottom: 2px;
+}
+
+.nm-book-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.nm-book-footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 24px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.nm-book-footer a {
+  color: #152448;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .nm-cw {
+    grid-template-columns: 1fr;
+  }
+}

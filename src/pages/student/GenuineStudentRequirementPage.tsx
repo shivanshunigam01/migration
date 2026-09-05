@@ -342,8 +342,8 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Genuine Student (GS) requirement, introduced on 23 March 2024, requires student visa (subclass 500) applicants to demonstrate that their primary intention in coming to Australia is to study, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It replaced the former Genuine Temporary Entrant (GTE) criterion and is assessed through a personal statement and supporting documents. The Department of Home Affairs considers factors including your study history, ties to your home country, and how your course fits your stated career or educational goals.
+          <AnswerBox routeKey="genuine-student-requirement">
+            The Genuine Student requirement asks student visa (subclass 500) applicants to show study is their primary purpose in Australia, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It sits within student visas policy and connects to English requirements, Temporary Graduate (subclass 485) and any longer student to PR pathway.
           </AnswerBox>
           <ReviewedBy />
         </div>

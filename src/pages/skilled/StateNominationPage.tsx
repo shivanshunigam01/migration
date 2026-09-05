@@ -217,8 +217,8 @@ export default function StateNominationPage({ navigate }: { navigate: (page: str
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            State and territory nomination allows a state or territory government to invite a skilled worker to apply for a state-nominated visa — the Skilled Nominated (subclass 190) for permanent residence, or the Skilled Work Regional (subclass 491) for provisional residence, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Each state runs its own nomination program with specific occupation lists, requirements, and application portals.
+          <AnswerBox routeKey="state-nomination">
+            State nomination lets a state or territory invite you for Skilled Nominated (subclass 190) or Skilled Work Regional (subclass 491), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Most programs still expect a skills assessment and a competitive points test score within the skilled migration framework.
           </AnswerBox>
           <ReviewedBy />
         </div>

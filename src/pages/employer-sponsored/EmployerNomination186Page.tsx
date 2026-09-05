@@ -282,8 +282,8 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Employer Nomination Scheme (subclass 186) visa is a permanent residence visa for skilled workers nominated by an approved Australian employer, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It has three streams: Temporary Residence Transition (TRT), Direct Entry, and Labour Agreement. In most cases, applicants must be under 45 years of age and meet competent English requirements, though limited exemptions apply.
+          <AnswerBox routeKey="employer-nomination-scheme">
+            The Employer Nomination Scheme (subclass 186) visa is a permanent residence visa for skilled workers nominated by an approved Australian employer, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It has three streams: Temporary Residence Transition (often after a subclass 482), Direct Entry (usually needing a skills assessment), and Labour Agreement. Employers generally need Standard Business Sponsorship, and applicants must usually meet competent English and age rules, though limited exemptions apply.
           </AnswerBox>
           <ReviewedBy />
         </div>

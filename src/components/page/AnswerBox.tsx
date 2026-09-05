@@ -1,12 +1,29 @@
 import React from 'react'
 import { NAVY, GOLD } from '@/theme'
 import { Reveal } from '@/components/motion'
+import { LinkedProse } from '@/components/page/LinkedProse'
 
 export interface AnswerBoxProps {
   children: React.ReactNode
+  /** When set, string children are linkified from internal-linking-spec.md §2 */
+  routeKey?: string
 }
 
-export function AnswerBox({ children }: AnswerBoxProps) {
+export function AnswerBox({ children, routeKey }: AnswerBoxProps) {
+  const textChild =
+    typeof children === "string"
+      ? children
+      : Array.isArray(children) && children.length === 1 && typeof children[0] === "string"
+        ? children[0]
+        : null
+
+  const content =
+    routeKey && textChild != null ? (
+      <LinkedProse routeKey={routeKey}>{textChild.trim()}</LinkedProse>
+    ) : (
+      children
+    )
+
   return (
     <Reveal preset="shield" style={{
       background: 'rgba(27,43,94,0.04)',
@@ -29,7 +46,7 @@ export function AnswerBox({ children }: AnswerBoxProps) {
         color: NAVY,
         fontWeight: 400,
       }}>
-        {children}
+        {content}
       </div>
     </Reveal>
   )

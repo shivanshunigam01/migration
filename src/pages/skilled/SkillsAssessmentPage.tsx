@@ -264,8 +264,8 @@ export default function SkillsAssessmentPage({ navigate }: { navigate: (page: st
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            A skills assessment is a formal evaluation of your qualifications and work experience against Australian standards for your nominated occupation, conducted by the assessing authority designated for that occupation, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. A positive skills assessment is generally required before you can submit an Expression of Interest for a points-tested skilled visa, and is also required for most employer-sponsored visa subclasses. Each assessing authority has its own evidence requirements, fees and processing times.
+          <AnswerBox routeKey="skills-assessment">
+            A skills assessment confirms your qualifications and experience meet Australian standards for your occupation, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It is usually required before a points test EOI for Skilled Independent (subclass 189) and for many employer-sponsored visas, including Skills in Demand (subclass 482) and 186 skill requirements.
           </AnswerBox>
           <ReviewedBy />
         </div>

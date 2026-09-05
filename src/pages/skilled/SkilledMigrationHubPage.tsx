@@ -425,8 +425,8 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            Skilled migration to Australia is primarily managed through the SkillSelect system, which uses a points test to rank candidates for the subclass 189 (Skilled Independent), subclass 190 (Skilled Nominated) and subclass 491 (Skilled Work Regional) visas, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. To enter the pool you generally need a valid skills assessment, a nominated occupation on an eligible occupation list, and a minimum score of 65 points. Invitation cut-off scores vary by occupation and visa type, and the Department of Home Affairs draws from the pool periodically.
+          <AnswerBox routeKey="skilled-migration">
+            Skilled migration to Australia is usually points-tested and starts with a skills assessment, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Core options include the Skilled Independent (subclass 189), Skilled Nominated (subclass 190) and Skilled Work Regional (subclass 491) visas — each scored under the points test.
           </AnswerBox>
           <ReviewedBy />
         </div>

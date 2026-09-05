@@ -345,8 +345,8 @@ export default function SkilledWorkRegional491Page({ navigate }: { navigate: (pa
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Skilled Work Regional (Provisional) visa (subclass 491) is a five-year temporary visa for skilled workers who are nominated by a state or territory government or sponsored by an eligible family member, and who commit to living and working in a designated regional area of Australia, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It is a points-tested visa and nomination or sponsorship is worth 15 additional points. After three years of living and working regionally and meeting income thresholds, holders may be eligible to apply for the Permanent Residence (Skilled Regional) visa (subclass 191).
+          <AnswerBox routeKey="skilled-work-regional-491">
+            The Skilled Work Regional (subclass 491) visa is a points-tested provisional visa usually tied to state nomination or eligible family sponsorship, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Applicants need a skills assessment and a competitive points test score. Compare with Skilled Nominated (subclass 190) and the wider skilled migration program.
           </AnswerBox>
           <ReviewedBy />
         </div>

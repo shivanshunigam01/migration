@@ -523,8 +523,8 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The primary pathway from a Skills in Demand (subclass 482) temporary visa to permanent residence is the Employer Nomination Scheme (subclass 186) visa via the Temporary Residence Transition (TRT) stream, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. To be eligible, you generally need to have held a subclass 482 (or its predecessor TSS) visa and worked for your sponsoring employer in the nominated occupation for at least two years. Your employer must nominate you for the subclass 186, and you must meet the relevant health, character and age requirements.
+          <AnswerBox routeKey="482-to-pr-pathway">
+            The usual 482 to PR pathway is Temporary Residence Transition to the Employer Nomination Scheme (subclass 186) after holding a Skills in Demand (subclass 482) visa with the same employer, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The employer must keep Standard Business Sponsorship current and meet nomination rules. Direct Entry 186 applicants should review 186 skill requirements instead.
           </AnswerBox>
           <ReviewedBy />
         </div>

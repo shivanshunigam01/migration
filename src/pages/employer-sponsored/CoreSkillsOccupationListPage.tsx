@@ -176,8 +176,8 @@ export default function CoreSkillsOccupationListPage({ navigate }: { navigate: (
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Core Skills Occupation List (CSOL) sets out the occupations eligible for nomination under the Core Skills stream of the Skills in Demand (subclass 482) visa, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Each occupation on the list may be subject to caveats that restrict the type of role, industry or salary band that qualifies. Employers must nominate an occupation that appears on the CSOL, and the nominated worker must hold the skills and qualifications required for that occupation.
+          <AnswerBox routeKey="core-skills-occupation-list">
+            The Core Skills Occupation List sets which occupations can be nominated under the Core Skills stream of the Skills in Demand (subclass 482) visa, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Many workers later move to the Employer Nomination Scheme (subclass 186). Compare with the 186 occupations list, the 482 to PR pathway, and other employer-sponsored visas.
           </AnswerBox>
           <ReviewedBy />
         </div>

@@ -250,8 +250,8 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Skills in Demand (subclass 482) visa is a temporary work visa that allows Australian employers to sponsor skilled overseas workers for up to four years, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It replaced the Temporary Skills Shortage (TSS) visa in November 2024 and operates across three streams: Core Skills, Specialist Skills, and Essential Skills. In most cases, sponsored workers in the Core stream can transition to permanent residence via the subclass 186 Employer Nomination Scheme after meeting the two-year work requirement.
+          <AnswerBox routeKey="skills-in-demand-visa">
+            The Skills in Demand (subclass 482) visa lets an approved sponsor employ a skilled worker in Australia for up to four years, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Employers need Standard Business Sponsorship and a role that fits the Core Skills Occupation List or another eligible stream. Many holders later pursue the Employer Nomination Scheme (subclass 186) via the 482 to PR pathway. See all employer-sponsored visas for the wider landscape.
           </AnswerBox>
           <ReviewedBy />
         </div>

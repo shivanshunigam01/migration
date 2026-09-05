@@ -202,8 +202,8 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            Standard Business Sponsorship (SBS) is the approval an Australian business must obtain from the Department of Home Affairs before it can nominate overseas workers for a Skills in Demand (subclass 482) temporary visa, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Approval is generally valid for five years and carries ongoing sponsorship obligations, including paying at least the market salary rate, not recovering sponsorship costs from the worker, and cooperating with inspections. Businesses must meet lawful operation, financial viability and training benchmarks to be approved.
+          <AnswerBox routeKey="standard-business-sponsorship">
+            Standard Business Sponsorship is the employer approval needed before nominating workers on Skills in Demand (subclass 482) or the Employer Nomination Scheme (subclass 186), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It underpins most employer-sponsored visas, including the 482 to PR pathway and roles drawn from the Core Skills Occupation List.
           </AnswerBox>
           <ReviewedBy />
         </div>

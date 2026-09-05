@@ -94,7 +94,9 @@ export const ROUTE = {
   blog:                        'blog',
   checklists:                  'checklists',
   tools:                       'tools',
+  book:                        'book',
   bookConsultation:            'book-consultation',
+  preAssessment:               'pre-assessment',
   reviewsPage:                 'reviews',
   newsPage:                    'news',
   // Phase 3 — Partner & Family

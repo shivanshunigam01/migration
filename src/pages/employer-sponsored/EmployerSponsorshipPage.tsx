@@ -204,8 +204,8 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            Employer-sponsored visas allow Australian businesses to nominate skilled overseas workers to fill positions they cannot fill from the local labour market, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The two main pathways are the Skills in Demand (subclass 482) temporary visa and the Employer Nomination Scheme (subclass 186) permanent visa. To sponsor workers, a business must first be approved as a Standard Business Sponsor (SBS) and meet ongoing sponsorship obligations.
+          <AnswerBox routeKey="employer-sponsored-visas">
+            Australian employer-sponsored visas include the Skills in Demand (subclass 482) temporary visa and the Employer Nomination Scheme (subclass 186) permanent visa, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Most pathways start with Standard Business Sponsorship, then nomination. Related guides cover the 482 to PR pathway and the 186 occupations list.
           </AnswerBox>
           <ReviewedBy />
         </div>

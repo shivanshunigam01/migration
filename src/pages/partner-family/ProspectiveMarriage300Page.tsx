@@ -280,8 +280,8 @@ export default function ProspectiveMarriage300Page({ navigate }: { navigate: (pa
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Prospective Marriage visa (subclass 300) allows you to travel to Australia to marry your Australian citizen, permanent resident or eligible New Zealand citizen partner within nine months of the visa being granted, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. After marrying, you can generally apply for a partner visa (subclass 820/801) to remain in Australia permanently. To be eligible, you and your intended spouse must be free to marry, have met in person, and intend to live together as a married couple.
+          <AnswerBox routeKey="prospective-marriage-300">
+            Prospective Marriage (subclass 300) lets an engaged partner enter Australia to marry an eligible sponsor, then usually apply for partner visa onshore (subclass 820/801), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Couples already married may prefer partner visa offshore (subclass 309/100). See partner and family visas and the partner visa evidence guide when gathering partner visa evidence.
           </AnswerBox>
           <ReviewedBy />
         </div>

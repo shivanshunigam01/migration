@@ -232,8 +232,8 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            Most skilled and employer-sponsored visas require applicants to demonstrate English language proficiency through an approved test such as IELTS, PTE Academic, TOEFL iBT, Cambridge C1 Advanced, or OET, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The minimum score required varies by visa subclass — the subclass 482 Skills in Demand visa generally requires a minimum IELTS overall of 5.0, while the subclass 186 permanent visa typically requires 6.0 overall with no band below 5.0. Certain exemptions apply, including for passport holders from specified English-speaking countries.
+          <AnswerBox routeKey="english-requirements">
+            English requirements apply across skilled migration and many employer pathways, including Skills in Demand (subclass 482) and the Employer Nomination Scheme (subclass 186), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Higher scores can lift your points test result and sit alongside a skills assessment.
           </AnswerBox>
           <ReviewedBy />
         </div>

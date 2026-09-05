@@ -5,6 +5,7 @@ import path from 'node:path'
 
 import siteConfiguration from './.figma/make/site.json'
 import { seoAssetsPlugin } from './vite-plugin-seo-assets'
+import { prerenderSeoPlugin } from './vite-plugin-prerender-seo'
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -22,6 +23,7 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       figmaSiteConfiguration(siteConfiguration),
       seoAssetsPlugin(),
+      prerenderSeoPlugin(),
       figmaErrorOverlayReplay(),
       figmaReactRefreshBoundaryFallback(),
       figmaMakeKitPlugin({ storiesGlob: '/src/**/*.stories.{ts,tsx,js,jsx}' }),
@@ -149,10 +151,12 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
           tags.push({ tag: 'meta', attrs: { property: 'og:description', content: description }, injectTo: 'head' })
         }
         if (siteUrl) {
-          // Homepage-only defaults for the SPA shell; RouteSeoSync sets self-canonicals per route after load.
+          // Homepage defaults for the SPA shell; prerenderSeoPlugin rewrites these per route at build time.
           tags.push(
+            { tag: 'link', attrs: { rel: 'canonical', href: `${siteUrl}/` }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:url', content: `${siteUrl}/` }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:type', content: 'website' }, injectTo: 'head' },
-            { tag: 'meta', attrs: { property: 'og:site_name', content: title }, injectTo: 'head' },
+            { tag: 'meta', attrs: { property: 'og:site_name', content: 'Nanak Migration Group' }, injectTo: 'head' },
             { tag: 'meta', attrs: { property: 'og:locale', content: 'en_AU' }, injectTo: 'head' },
           )
         }

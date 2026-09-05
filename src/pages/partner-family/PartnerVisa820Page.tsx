@@ -298,8 +298,8 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Partner Visa Onshore (subclass 820/801) is a two-stage visa for applicants already in Australia who are in a genuine relationship with an Australian citizen, permanent resident, or eligible New Zealand citizen, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. You lodge one application and pay one government fee — the temporary subclass 820 is granted first, and the permanent subclass 801 is assessed automatically approximately two years from the lodgement date. You must generally be in Australia at both lodgement and at the time the 820 is granted.
+          <AnswerBox routeKey="partner-visa-820-801">
+            The partner visa onshore (subclass 820/801) is for applicants already in Australia in a genuine relationship with an eligible sponsor, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Compare partner visa offshore (subclass 309/100) and Prospective Marriage (subclass 300) under partner and family visas, prepare partner visa evidence carefully, and understand bridging visas while you wait.
           </AnswerBox>
           <ReviewedBy />
         </div>

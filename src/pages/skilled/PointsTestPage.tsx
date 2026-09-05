@@ -338,8 +338,8 @@ export default function PointsTestPage({ navigate }: { navigate: (page: string) 
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The points test is used to rank and select candidates for points-tested skilled visas, including the subclass 189 (Skilled Independent), subclass 190 (Skilled Nominated) and subclass 491 (Skilled Work Regional), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Points are awarded for factors including age, English language ability, skilled employment, educational qualifications, Australian study, and state or territory nomination. In most cases you need a minimum score of 65 points to be eligible, but the score required to receive an invitation will generally be higher and varies by occupation and visa type.
+          <AnswerBox routeKey="points-test">
+            Australia's points test ranks Expressions of Interest for Skilled Independent (subclass 189), Skilled Nominated (subclass 190) and Skilled Work Regional (subclass 491) visas, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Age, English requirements, skilled employment, education and state nomination can all add points.
           </AnswerBox>
           <ReviewedBy />
         </div>

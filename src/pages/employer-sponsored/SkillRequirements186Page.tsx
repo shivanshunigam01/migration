@@ -264,8 +264,8 @@ export default function SkillRequirements186Page({ navigate }: { navigate: (page
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            To be eligible for the Employer Nomination Scheme (subclass 186) visa, applicants must generally hold a relevant skills assessment from the assessing authority for their nominated occupation, unless an exemption applies, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Under the Direct Entry stream, you typically need at least three years of relevant work experience, while under the Temporary Residence Transition stream the skills assessment requirement is often waived if you have been working in the nominated occupation. Your qualifications and experience must be assessed against Australian standards by the relevant assessing body.
+          <AnswerBox routeKey="186-skill-requirements">
+            Skill requirements for the Employer Nomination Scheme (subclass 186) depend on the stream, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Direct Entry usually needs a positive skills assessment and relevant skilled work, while Temporary Residence Transition builds on a qualifying subclass 482. Check the 186 occupations list for eligible roles and confirm English and age criteria before lodging.
           </AnswerBox>
           <ReviewedBy />
         </div>

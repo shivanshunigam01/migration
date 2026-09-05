@@ -146,8 +146,8 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Employer Nomination Scheme (subclass 186) visa Direct Entry stream requires the nominated occupation to appear on the list of eligible skilled occupations published by the Department of Home Affairs, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The list is updated periodically and different occupations may carry additional requirements, such as a relevant skills assessment from the applicable assessing authority. If your occupation does not appear on the list, you may be able to apply through the Temporary Residence Transition stream if you have held a subclass 482 visa with the same employer.
+          <AnswerBox routeKey="186-occupations-list">
+            The 186 occupations list identifies roles that can be nominated under the Employer Nomination Scheme (subclass 186), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Temporary Residence Transition applicants often arrive via a subclass 482 nomination, while Direct Entry commonly needs a skills assessment. For temporary Core Skills nominations, also review the Core Skills Occupation List.
           </AnswerBox>
           <ReviewedBy />
         </div>

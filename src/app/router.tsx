@@ -5,6 +5,8 @@ import { LEGACY_ROUTE_REDIRECTS } from "@/lib/navigation"
 import { ROUTE } from "@/data/routes"
 import HomePage from "@/pages/HomePage"
 import BookConsultationPage from "@/pages/BookConsultationPage"
+import BookPage from "@/pages/BookPage"
+import PreAssessmentPage from "@/pages/PreAssessmentPage"
 import ContactPage from "@/pages/ContactPage"
 import LegalPage from "@/pages/LegalPage"
 import NotFoundPage from "@/pages/NotFoundPage"
@@ -223,6 +225,8 @@ const Pages = {
   Tools: withNavigate(ToolsPage),
   BlogPost: withNavigate(BlogPostPage),
   BookConsultation: withNavigate(BookConsultationPage),
+  Book: withNavigate(BookPage),
+  PreAssessment: withNavigate(PreAssessmentPage),
   Contact: withNavigate(ContactPage),
   Privacy: withNavigate(function PrivacyPage(p: { navigate: (page: string) => void }) {
     return <LegalPage kind="privacy" navigate={p.navigate} />
@@ -244,7 +248,9 @@ export default function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Pages.Home />} />
+      <Route path={`/${ROUTE.book}`} element={<Pages.Book />} />
       <Route path={`/${ROUTE.bookConsultation}`} element={<Pages.BookConsultation />} />
+      <Route path={`/${ROUTE.preAssessment}`} element={<Pages.PreAssessment />} />
       <Route path="/contact" element={<Pages.Contact />} />
       <Route path="/privacy" element={<Pages.Privacy />} />
       <Route path="/terms" element={<Pages.Terms />} />

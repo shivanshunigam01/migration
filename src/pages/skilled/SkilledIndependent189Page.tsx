@@ -231,8 +231,8 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Skilled Independent visa (subclass 189) is a permanent residence visa for skilled workers who are not sponsored by an employer, state or territory, or family member, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It is a points-tested visa — you must submit an Expression of Interest (EOI) through SkillSelect and receive an invitation to apply before you can lodge a visa application. In most cases you need a minimum points score of 65, a relevant skills assessment, and occupation on the Medium and Long-term Strategic Skills List (MLTSSL).
+          <AnswerBox routeKey="skilled-independent-189">
+            The Skilled Independent (subclass 189) visa is a points-tested permanent visa that does not need employer or state sponsorship, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Applicants need a positive skills assessment and a competitive points test score. Compare with Skilled Nominated (subclass 190) and Skilled Work Regional (subclass 491) under skilled migration.
           </AnswerBox>
           <ReviewedBy />
         </div>

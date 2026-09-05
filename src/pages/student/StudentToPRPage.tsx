@@ -255,8 +255,8 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            International students who complete an Australian qualification may be eligible to transition to permanent residence through a combination of graduate, skilled migration and employer-sponsored pathways, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. A common route is to apply for a Temporary Graduate visa (subclass 485) after graduation, use that time to gain skilled work experience, obtain a skills assessment, and then apply for a points-tested visa such as the subclass 189 or 190. The pathway available to you will depend on your occupation, qualification level, state of study, and English language ability.
+          <AnswerBox routeKey="student-to-pr-pathway">
+            A common student to PR pathway is Temporary Graduate (subclass 485), then a skills assessment, then Skilled Independent (subclass 189) or Skilled Nominated (subclass 190) — or employer-sponsored visas where a business will nominate you, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains.
           </AnswerBox>
           <ReviewedBy />
         </div>

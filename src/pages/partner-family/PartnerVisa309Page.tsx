@@ -423,8 +423,8 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Partner Visa Offshore (subclass 309/100) is a two-stage visa for applicants outside Australia who are in a genuine relationship with an Australian citizen, permanent resident, or eligible New Zealand citizen, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The temporary subclass 309 is lodged and granted offshore; the permanent subclass 100 is assessed automatically two years from the original lodgement date. The applicant must generally be outside Australia at the time the 309 is granted, which requires careful travel planning as the decision window approaches.
+          <AnswerBox routeKey="partner-visa-309-100">
+            The partner visa offshore (subclass 309/100) is for applicants outside Australia sponsored by an eligible partner, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The onshore alternative is partner visa onshore (subclass 820/801); some couples start with Prospective Marriage (subclass 300). Use the partner visa evidence guide and other partner and family visas resources when preparing partner visa evidence.
           </AnswerBox>
           <ReviewedBy />
         </div>

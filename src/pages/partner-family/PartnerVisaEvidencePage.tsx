@@ -340,8 +340,8 @@ export default function PartnerVisaEvidencePage({ navigate }: { navigate: (page:
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            A successful partner visa application requires comprehensive evidence that your relationship with your sponsoring partner is genuine, ongoing and meets the criteria for a spouse or de facto relationship, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The Department of Home Affairs assesses evidence across four categories: financial aspects of the relationship, the nature of the household, social aspects of the relationship, and commitment to each other. In most cases, the more varied and detailed your evidence across all four categories, the stronger your application.
+          <AnswerBox routeKey="partner-visa-evidence">
+            Partner visa evidence must show a genuine and continuing relationship for any partner visa application — including partner visa onshore (subclass 820/801), partner visa offshore (subclass 309/100) and Prospective Marriage (subclass 300) — as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Start from partner and family visas for pathway choice.
           </AnswerBox>
           <ReviewedBy />
         </div>

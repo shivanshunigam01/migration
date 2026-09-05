@@ -191,8 +191,8 @@ export default function PartnerFamilyHubPage({ navigate }: { navigate: (page: st
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            Partner visas allow Australian citizens, permanent residents and eligible New Zealand citizens to sponsor their spouse or de facto partner to live in Australia, with offshore (subclass 309/100) and onshore (subclass 820/801) options available, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. The prospective marriage visa (subclass 300) is available if you intend to marry your Australian partner before applying for a partner visa. Evidence of a genuine and ongoing relationship is central to every partner visa application.
+          <AnswerBox routeKey="partner-family-visas">
+            Partner and family visas include partner visa offshore (subclass 309/100), partner visa onshore (subclass 820/801) and Prospective Marriage (subclass 300), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Strong partner visa evidence is essential, and parent visas cover separate family pathways.
           </AnswerBox>
           <ReviewedBy />
         </div>

@@ -154,15 +154,15 @@ export default function SiteHeader({
 
   return (
     <>
-      {/* ── ANNOUNCEMENT BAR ─────────────────────────────── */}
-      <div className="announcement-bar" style={{ background: 'linear-gradient(90deg, #e6eef8 0%, #f3f7fc 40%, #ffffff 70%, #eef3fb 100%)', padding: '0 24px', borderBottom: '1px solid #d8e2f0' }}>
+      {/* ── ANNOUNCEMENT BAR (above navbar) ──────────────── */}
+      <div className="announcement-bar" style={{ background: '#111E3E', padding: '0 24px', borderBottom: '1px solid rgba(232,160,23,0.22)' }}>
         <div className="announcement-bar-inner" style={{ maxWidth: 1200, margin: '0 auto', height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
-          <span className="announcement-badges" style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: NAVY_DARK, flexShrink: 0 }}>
+          <span className="announcement-badges" style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, flexShrink: 0 }}>
             Employers · 482 / 186
           </span>
-          <span className="announcement-divider" style={{ width: 1, height: 16, background: 'rgba(21,36,72,0.14)', flexShrink: 0 }} />
-          <span className="announcement-text" style={{ fontSize: 14, color: '#3f4b5f', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
-            <strong style={{ fontWeight: 700, color: NAVY }}>Sponsoring staff?</strong>{' '}Employer readiness discussion — no charge.
+          <span className="announcement-divider" style={{ width: 1, height: 16, background: 'rgba(255,255,255,0.18)', flexShrink: 0 }} />
+          <span className="announcement-text" style={{ fontSize: 14, color: 'rgba(255,255,255,0.82)', whiteSpace: 'nowrap', letterSpacing: '0.01em' }}>
+            <strong style={{ fontWeight: 700, color: '#ffffff' }}>Sponsoring staff?</strong>{' '}Employer readiness discussion — no charge.
           </span>
           <a href="mailto:visa@nanakmigration.com.au?subject=Employer%20sponsorship%20readiness%20discussion" className="announcement-cta"
             style={{ flexShrink: 0, fontSize: 13, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6, padding: '8px 16px', borderRadius: 8, background: GOLD, boxShadow: '0 2px 10px rgba(232,160,23,0.28)', transition: 'all 0.15s', whiteSpace: 'nowrap' }}
@@ -176,14 +176,14 @@ export default function SiteHeader({
       </div>
 
       {/* ── STICKY NAV ───────────────────────────────────── */}
-      <header id="site-header-root" className="site-header-pad" style={{ position: 'sticky', top: 0, zIndex: 50, padding: '0 32px', overflow: 'visible', background: 'linear-gradient(180deg, #152448 0%, #101C3A 100%)', borderBottom: '1px solid rgba(232,160,23,0.2)', boxShadow: '0 8px 28px rgba(10,16,36,0.28)' }}
+      <header id="site-header-root" className="site-header-pad" style={{ position: 'sticky', top: 0, zIndex: 50, padding: '0 32px', overflow: 'visible', background: '#EBEDE9', borderBottom: '1px solid rgba(17,30,62,0.1)', boxShadow: '0 4px 18px rgba(17,30,62,0.06)' }}
         onMouseLeave={scheduleClose}
         onMouseEnter={cancelClose}>
-        <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 32, height: 64 }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 32, height: 72 }}>
 
           {/* Logo */}
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, flexShrink: 0 }}>
-            <NanakLogo size={34} light />
+          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, flexShrink: 0 }} aria-label="Nanak Migration Group home">
+            <NanakLogo size={42} />
           </button>
 
           {/* Desktop nav */}
@@ -198,15 +198,15 @@ export default function SiteHeader({
                     aria-expanded={isOpen}
                     style={{
                       display: 'flex', alignItems: 'center', gap: 5, padding: '10px 14px',
-                      color: isOpen ? GOLD : 'rgba(255,255,255,0.82)',
-                      background: isOpen ? 'rgba(245,161,36,0.1)' : 'transparent',
-                      border: isPinned ? '1px solid rgba(245,161,36,0.35)' : 'none',
+                      color: isOpen ? '#111E3E' : 'rgba(17,30,62,0.78)',
+                      background: isOpen ? 'rgba(17,30,62,0.06)' : 'transparent',
+                      border: isPinned ? '1px solid rgba(232,160,23,0.55)' : 'none',
                       cursor: 'pointer', fontSize: 14, fontWeight: 500,
                       letterSpacing: '0.01em', borderRadius: 8, transition: 'color 0.15s, background 0.15s',
                       whiteSpace: 'nowrap', fontFamily: "'Gilroy', sans-serif",
                     }}
-                    onMouseEnter={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.color = '#ffffff' }}
-                    onMouseLeave={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.82)' }}
+                    onMouseEnter={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.color = '#111E3E' }}
+                    onMouseLeave={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.color = 'rgba(17,30,62,0.78)' }}
                   >
                     {item.label}
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -225,9 +225,9 @@ export default function SiteHeader({
                 aria-expanded={openNav === '__practice__'}
                 style={{
                   display: 'flex', alignItems: 'center', gap: 6, padding: '9px 15px',
-                  color: openNav === '__practice__' ? GOLD : 'rgba(255,255,255,0.75)',
-                  background: openNav === '__practice__' ? 'rgba(245,161,36,0.1)' : 'transparent',
-                  border: '1px solid', borderColor: openNav === '__practice__' ? 'rgba(245,161,36,0.4)' : pinnedNav === '__practice__' ? 'rgba(245,161,36,0.6)' : 'rgba(255,255,255,0.2)',
+                  color: openNav === '__practice__' ? '#111E3E' : 'rgba(17,30,62,0.72)',
+                  background: openNav === '__practice__' ? 'rgba(232,160,23,0.14)' : 'transparent',
+                  border: '1px solid', borderColor: openNav === '__practice__' ? 'rgba(232,160,23,0.55)' : pinnedNav === '__practice__' ? 'rgba(232,160,23,0.7)' : 'rgba(17,30,62,0.18)',
                   cursor: 'pointer', fontSize: 13, fontWeight: 700, letterSpacing: '0.1em', borderRadius: 8,
                   transition: 'color 0.15s, background 0.15s, border-color 0.15s', whiteSpace: 'nowrap',
                   fontFamily: "'Gilroy', sans-serif", textTransform: 'uppercase', marginLeft: 6,
@@ -324,7 +324,9 @@ export default function SiteHeader({
                         { label: 'Visa Guides', desc: 'All 30 visa topics explained', icon: 'bookopen', route: 'guides' },
                         { label: 'Blog', desc: 'Policy updates and migration news', icon: 'layers', route: 'blog' },
                         { label: 'Checklists', desc: 'Document checklists for key visas', icon: 'clipboard', route: 'checklists' },
-                        { label: 'Resources Hub', desc: 'Guides, blog and checklists', icon: 'star', route: 'resources' },
+                        { label: 'Resources Hub', desc: 'Guides, blog and checklists', icon: 'bookopen', route: 'resources' },
+                        { label: 'Client Reviews', desc: 'Verified Google reviews from our clients', icon: 'star', route: 'reviews' },
+                        { label: 'Immigration News', desc: 'Policy updates, occupation list changes', icon: 'bell', route: 'news' },
                       ].map(l => (
                         <Link key={l.label} to={resolveRoute(l.route)}
                           onClick={() => closeNav()}
@@ -383,9 +385,9 @@ export default function SiteHeader({
 
           {/* Hamburger (mobile) */}
           <button className="nav-hamburger" onClick={() => setMobileOpen(v => !v)}
-            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 8, color: '#ffffff', marginLeft: 'auto' }}
+            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', padding: 8, color: '#111E3E', marginLeft: 'auto' }}
             aria-label="Toggle menu">
-            <Icon name={mobileOpen ? 'x' : 'menu'} size={24} color="#ffffff" />
+            <Icon name={mobileOpen ? 'x' : 'menu'} size={24} color="#111E3E" />
           </button>
         </div>
 
@@ -585,7 +587,7 @@ export default function SiteHeader({
 
       {/* ── MOBILE MENU ──────────────────────────────────── */}
       {mobileOpen && (
-        <div className="mobile-menu" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: NAVY, zIndex: 200, overflowY: 'auto', paddingTop: 80 }}>
+        <div className="mobile-menu" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: '#111E3E', zIndex: 200, overflowY: 'auto', paddingTop: 80 }}>
           <button onClick={() => setMobileOpen(false)}
             style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', cursor: 'pointer', color: '#ffffff' }}>
             <Icon name="x" size={28} color="#ffffff" />
@@ -640,6 +642,8 @@ export default function SiteHeader({
                   <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 6, paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>The Practice</div>
                   {[
                     { label: 'About the Practice', route: 'about' },
+                    { label: 'Client Reviews', route: 'reviews' },
+                    { label: 'Immigration News', route: 'news' },
                     { label: 'Contact', route: 'contact' },
                   ].map(l => (
                     <button key={l.label} onClick={() => { navigate(l.route); setMobileOpen(false) }}

@@ -46,6 +46,8 @@ export type { ComplianceDisclaimerProps } from './ComplianceDisclaimer'
 export { AnswerBox } from './AnswerBox'
 export type { AnswerBoxProps } from './AnswerBox'
 
+export { LinkedProse, linkifyText } from './LinkedProse'
+
 export { default as StructuredData } from './StructuredData'
 export type { StructuredDataProps, BreadcrumbItem as StructuredDataBreadcrumb, FaqSchemaItem, ServiceSchema } from './StructuredData'
 

@@ -249,8 +249,8 @@ export default function StudentVisasHubPage({ navigate }: { navigate: (page: str
 
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Student visa (subclass 500) allows international students to study full-time in a registered course at an Australian education provider that holds CRICOS registration, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. To be eligible, you generally need an enrolment confirmation from your education provider, evidence of financial capacity to support yourself and dependants, health insurance (OSHC), and must satisfy the Genuine Student requirement. Work rights are included with most student visas, currently allowing up to 48 hours of work per fortnight during study.
+          <AnswerBox routeKey="student-visas">
+            Student visas centre on the Student visa (subclass 500) and the Genuine Student requirement, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. After study, many graduates use Temporary Graduate (subclass 485) and plan a student to PR pathway. Check English requirements early.
           </AnswerBox>
           <ReviewedBy />
         </div>

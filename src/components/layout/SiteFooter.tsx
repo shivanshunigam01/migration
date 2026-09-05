@@ -743,6 +743,12 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                     <ColLink label="About the Practice" route="about" />
                   </li>
                   <li>
+                    <ColLink label="Client Reviews" route="reviews" />
+                  </li>
+                  <li>
+                    <ColLink label="Immigration News" route="news" />
+                  </li>
+                  <li>
                     <ColLink label="Resources" route="resources" />
                   </li>
                   <li>

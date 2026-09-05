@@ -8,7 +8,29 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import Icon from '@/components/ui/Icon'
 
-/* ── Star SVG ─────────────────────────────────────────────────────────────── */
+/** Replace with the live Google Business Profile review URL when confirmed. */
+const GOOGLE_REVIEWS_URL =
+  'https://www.google.com/search?q=Nanak+Migration+Group+Melbourne+reviews'
+
+/**
+ * COMPLIANCE: OMARA Code of Conduct — do not display fabricated, paraphrased, or
+ * selectively edited testimonials. Only paste consented, verifiable Google reviews
+ * into REVIEWS below (first name / consented display name, star rating, verbatim text,
+ * service tag). Until then this page links out to Google and shows practice strengths.
+ */
+type Review = {
+  id: number
+  name: string
+  stars: number
+  serviceTag: string
+  text: string
+  googleUrl?: string
+}
+
+const REVIEWS: Review[] = [
+  // Paste real consented Google reviews here before quoting clients on-site.
+]
+
 function StarFilled({ size = 16, color = GOLD }: { size?: number; color?: string }) {
   return (
     <svg
@@ -35,59 +57,6 @@ function StarRow({ count = 5, size = 16 }: { count?: number; size?: number }) {
   )
 }
 
-/* ── Review data ──────────────────────────────────────────────────────────── */
-
-// COMPLIANCE NOTE: All reviews displayed on this page must be genuine, verified client reviews.
-// Under OMARA's Code of Conduct, testimonials must not be fabricated, misleading, or selectively
-// edited in a way that misrepresents outcomes. Replace each placeholder below with a real
-// Google review (first name only, star rating, review text, service type) before publishing.
-// Obtain written consent from each client before displaying their review.
-const REVIEWS = [
-  {
-    id: 1,
-    name: 'Client A',
-    stars: 5,
-    serviceTag: 'Employer Sponsored (482)',
-    text: '[Sample review — replace with verified Google review before launch. Nanak Migration Group helped us with the subclass 482 application for our key employee. The process was smooth and the agent kept us informed at every step.]',
-  },
-  {
-    id: 2,
-    name: 'Client B',
-    stars: 5,
-    serviceTag: 'Skilled Independent (189)',
-    text: '[Sample review — replace with verified Google review before launch. Professional, thorough, and responsive. Our 189 visa was granted without any complications.]',
-  },
-  {
-    id: 3,
-    name: 'Client C',
-    stars: 5,
-    serviceTag: 'Partner Visa (820/801)',
-    text: "[Sample review — replace with verified Google review before launch. I was anxious about the partner visa process but the team at Nanak Migration Group made everything straightforward. Highly recommended.]",
-  },
-  {
-    id: 4,
-    name: 'Client D',
-    stars: 5,
-    serviceTag: 'Student Visa (500)',
-    text: '[Sample review — replace with verified Google review before launch. Clear explanations, prompt responses, and excellent guidance throughout our student visa application.]',
-  },
-  {
-    id: 5,
-    name: 'Client E',
-    stars: 5,
-    serviceTag: 'Contributory Parent (143)',
-    text: '[Sample review — replace with verified Google review before launch. We had a complex family situation and the agent took the time to understand our case before advising us. Very professional.]',
-  },
-  {
-    id: 6,
-    name: 'Client F',
-    stars: 5,
-    serviceTag: 'Visa Cancellation / ART',
-    text: '[Sample review — replace with verified Google review before launch. Received a NOICC and panicked. Nanak Migration Group responded immediately and prepared a strong response. Cannot thank them enough.]',
-  },
-]
-
-/* ── Feature cards ────────────────────────────────────────────────────────── */
 const WHY_FEATURES = [
   {
     icon: 'check',
@@ -107,13 +76,13 @@ const WHY_FEATURES = [
   {
     icon: 'shield',
     heading: 'OMARA code of conduct compliant',
-    body: 'We operate under OMARA\'s Code of Conduct — which governs how we advise clients, handle fees, manage conflicts of interest, and represent clients to the Department. No hidden charges, no guaranteed outcomes.',
+    body: "We operate under OMARA's Code of Conduct — which governs how we advise clients, handle fees, manage conflicts of interest, and represent clients to the Department. No hidden charges, no guaranteed outcomes.",
   },
 ]
 
-/* ── Page component ───────────────────────────────────────────────────────── */
 export default function ReviewsPage({ navigate }: { navigate: (page: string) => void }) {
   const meta = PAGE_META['reviews']
+  const hasReviews = REVIEWS.length > 0
 
   useEffect(() => {
     document.title = meta.title
@@ -138,7 +107,6 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
         navigate={navigate}
       />
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
       <section
         style={{
           background: 'linear-gradient(160deg, #0d1632 0%, #1B2B5E 60%, #243570 100%)',
@@ -149,12 +117,11 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
         }}
       >
         <div style={{ maxWidth: 760, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          {/* Eyebrow pill */}
           <div style={{ display: 'inline-block', marginBottom: 28 }}>
             <span
               style={{
                 background: 'rgba(245,161,36,0.12)',
-                border: `1px solid rgba(245,161,36,0.35)`,
+                border: '1px solid rgba(245,161,36,0.35)',
                 color: GOLD,
                 fontSize: 11,
                 fontWeight: 700,
@@ -162,14 +129,12 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
                 textTransform: 'uppercase',
                 padding: '6px 16px',
                 borderRadius: 20,
-                fontVariant: 'small-caps',
               }}
             >
               Client Reviews
             </span>
           </div>
 
-          {/* Aggregate rating */}
           <div
             style={{
               display: 'flex',
@@ -179,30 +144,17 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
               marginBottom: 32,
             }}
           >
-            <div
-              style={{
-                fontSize: 72,
-                fontWeight: 800,
-                color: GOLD,
-                lineHeight: 1,
-                fontFamily: 'Fraunces, Georgia, serif',
-                letterSpacing: '-0.03em',
-              }}
-            >
-              5.0
-            </div>
             <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
               <StarRow count={5} size={24} />
             </div>
             <div style={{ fontSize: 15, fontWeight: 600, color: 'rgba(255,255,255,0.85)', marginTop: 4 }}>
-              Google Rating
+              Google Reviews
             </div>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)' }}>
-              (Reviews verified on Google)
+              Independently verifiable on our Google Business profile
             </div>
           </div>
 
-          {/* Headline */}
           <h1
             style={{
               fontFamily: 'Fraunces, Georgia, serif',
@@ -218,14 +170,13 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
             <em style={{ color: GOLD, fontStyle: 'italic' }}>about working with us</em>
           </h1>
 
-          {/* Subtext */}
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: 600, margin: '0 auto 32px' }}>
-            Nanak Migration Group (MARN 2619467) serves clients across Australia and internationally. All reviews below are genuine verified client reviews from Google.
+            Nanak Migration Group (MARN 2619467) serves clients across Australia and internationally.
+            We only republish consented, verifiable Google reviews on this page — open Google to read the full set.
           </p>
 
-          {/* Google Reviews button */}
           <a
-            href="https://g.page/r/nanak-migration-group/review"
+            href={GOOGLE_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -241,100 +192,112 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
               letterSpacing: '-0.01em',
             }}
           >
-            Read all reviews on Google &rarr;
+            Read reviews on Google &rarr;
           </a>
         </div>
       </section>
 
-      {/* ── Reviews grid ──────────────────────────────────────────────────── */}
       <section style={{ background: '#ffffff', padding: '80px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeading kicker="Verified Google Reviews" title="Client Experiences" accent={GOLD} />
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: 24,
-            }}
-          >
-            {REVIEWS.map((review) => (
-              <div
-                key={review.id}
-                style={{
-                  background: '#ffffff',
-                  border: '1.5px solid #e8edf6',
-                  borderRadius: 16,
-                  padding: 28,
-                  boxShadow: '0 2px 12px rgba(27,43,94,0.06)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: 12,
-                }}
-              >
-                {/* Top row: name + stars + service tag */}
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
-                  <div>
-                    <div style={{ fontWeight: 700, fontSize: 15, color: NAVY, marginBottom: 4 }}>
-                      {review.name}
-                    </div>
-                    <StarRow count={review.stars} size={14} />
-                  </div>
-                  <span
-                    style={{
-                      background: NAVY,
-                      color: GOLD,
-                      fontSize: 11,
-                      fontWeight: 600,
-                      padding: '4px 10px',
-                      borderRadius: 20,
-                      letterSpacing: '0.02em',
-                      whiteSpace: 'nowrap',
-                      flexShrink: 0,
-                    }}
-                  >
-                    {review.serviceTag}
-                  </span>
-                </div>
-
-                {/* Divider */}
-                <div style={{ borderTop: '1px solid #e8edf6' }} />
-
-                {/* Review text */}
-                <p
+          {hasReviews ? (
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                gap: 24,
+              }}
+              className="reviews-grid"
+            >
+              {REVIEWS.map((review) => (
+                <div
+                  key={review.id}
                   style={{
-                    fontStyle: 'italic',
-                    color: '#6b7280',
-                    fontSize: 14,
-                    lineHeight: 1.65,
-                    margin: 0,
-                    flexGrow: 1,
+                    background: '#ffffff',
+                    border: '1.5px solid #e8edf6',
+                    borderRadius: 16,
+                    padding: 28,
+                    boxShadow: '0 2px 12px rgba(27,43,94,0.06)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: 12,
                   }}
                 >
-                  {review.text}
-                </p>
-
-                {/* Verified badge */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span
-                    style={{
-                      display: 'inline-block',
-                      width: 8,
-                      height: 8,
-                      borderRadius: '50%',
-                      background: '#16a34a',
-                      flexShrink: 0,
-                    }}
-                  />
-                  <span style={{ fontSize: 11, color: '#6b7280', fontWeight: 500 }}>
-                    Verified Google Review
-                  </span>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 8 }}>
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: 15, color: NAVY, marginBottom: 4 }}>
+                        {review.name}
+                      </div>
+                      <StarRow count={review.stars} size={14} />
+                    </div>
+                    <span
+                      style={{
+                        background: NAVY,
+                        color: GOLD,
+                        fontSize: 11,
+                        fontWeight: 600,
+                        padding: '4px 10px',
+                        borderRadius: 20,
+                        whiteSpace: 'nowrap',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {review.serviceTag}
+                    </span>
+                  </div>
+                  <div style={{ borderTop: '1px solid #e8edf6' }} />
+                  <p style={{ fontStyle: 'italic', color: '#6b7280', fontSize: 14, lineHeight: 1.65, margin: 0, flexGrow: 1 }}>
+                    {review.text}
+                  </p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: '#16a34a', flexShrink: 0 }} />
+                    <span style={{ fontSize: 11, color: '#6b7280', fontWeight: 500 }}>Verified Google Review</span>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div
+              style={{
+                maxWidth: 720,
+                margin: '0 auto',
+                textAlign: 'center',
+                background: '#f8faff',
+                border: '1.5px solid #e8edf6',
+                borderRadius: 16,
+                padding: '48px 36px',
+              }}
+            >
+              <Icon name="star" size={32} color={GOLD} />
+              <h2 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 28, color: NAVY, margin: '16px 0 12px' }}>
+                Reviews live on Google
+              </h2>
+              <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.7, margin: '0 0 28px' }}>
+                We only republish client feedback that is verifiable on our Google Business profile and
+                shared with written consent. Open Google to read current reviews, or leave feedback after
+                working with our team.
+              </p>
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  background: NAVY,
+                  color: '#fff',
+                  fontWeight: 700,
+                  fontSize: 14,
+                  padding: '12px 24px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                }}
+              >
+                View on Google &rarr;
+              </a>
+            </div>
+          )}
 
-          {/* All reviews banner */}
           <div
             style={{
               marginTop: 48,
@@ -346,10 +309,10 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: 24,
+              flexWrap: 'wrap',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-              {/* Google icon placeholder */}
               <div
                 style={{
                   width: 40,
@@ -370,16 +333,14 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
                 G
               </div>
               <div>
-                <div style={{ fontWeight: 700, color: NAVY, fontSize: 16 }}>
-                  Read all our reviews on Google
-                </div>
+                <div style={{ fontWeight: 700, color: NAVY, fontSize: 16 }}>Read all our reviews on Google</div>
                 <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>
-                  All reviews are posted publicly on our Google Business profile.
+                  Public reviews on our Google Business profile — independently verifiable.
                 </div>
               </div>
             </div>
             <a
-              href="https://g.page/r/nanak-migration-group/review"
+              href={GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -400,7 +361,6 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
         </div>
       </section>
 
-      {/* ── Why clients choose us ─────────────────────────────────────────── */}
       <section style={{ background: GREY_BAND, padding: '80px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <SectionHeading
@@ -409,13 +369,7 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
             accent={GOLD}
           />
 
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gap: 24,
-            }}
-          >
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }} className="why-grid">
             {WHY_FEATURES.map((feat) => (
               <div
                 key={feat.icon}
@@ -444,12 +398,8 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
                   <Icon name={feat.icon} size={20} color={GOLD} aria-hidden="true" />
                 </div>
                 <div>
-                  <div style={{ fontWeight: 700, color: NAVY, fontSize: 16, marginBottom: 6 }}>
-                    {feat.heading}
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65, margin: 0 }}>
-                    {feat.body}
-                  </p>
+                  <div style={{ fontWeight: 700, color: NAVY, fontSize: 16, marginBottom: 6 }}>{feat.heading}</div>
+                  <p style={{ fontSize: 14, color: '#6b7280', lineHeight: 1.65, margin: 0 }}>{feat.body}</p>
                 </div>
               </div>
             ))}
@@ -457,16 +407,21 @@ export default function ReviewsPage({ navigate }: { navigate: (page: string) => 
         </div>
       </section>
 
-      {/* ── CTA Band ──────────────────────────────────────────────────────── */}
       <CtaBand
         title="Ready to work with us?"
         body="Nanak Migration Group (MARN 2619467) — MARA-registered agents serving clients across Australia in English, Hindi, Punjabi and Nepali."
-        primaryCta={{ label: 'Request a free discussion', page: 'home' }}
+        primaryCta={{ label: 'Request a free discussion', page: 'book-consultation' }}
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="September 2026" />
       <SiteFooter navigate={navigate} />
+
+      <style>{`
+        @media (max-width: 900px) {
+          .reviews-grid, .why-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </div>
   )
 }

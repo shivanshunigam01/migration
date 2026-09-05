@@ -1,0 +1,20 @@
+// Legacy route redirects — serve these as permanent 301s in production.
+export const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
+  "employer-sponsorship": "employer-sponsored-visas",
+  "enomination-186": "employer-nomination-scheme",
+  "skills-482": "skills-in-demand-visa",
+  sbs: "standard-business-sponsorship",
+  "skilled-189": "skilled-independent-189",
+  "graduate-485": "temporary-graduate-485",
+  "student-500": "student-visa-500",
+  "student-to-pr": "student-to-pr-pathway",
+  "partner-family": "partner-family-visas",
+  "partner-820": "partner-visa-820-801",
+  "partner-309": "partner-visa-309-100",
+  "regional-494": "494-visa",
+  "visitor-visa": "visitor-visa-600",
+  "visitor-hub": "visitor-visas",
+  "parent-visa": "parent-visas",
+  "skilling-australians-fund": "saf-levy",
+  "employer-obligations": "sponsorship-obligations",
+}

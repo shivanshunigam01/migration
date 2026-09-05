@@ -10,6 +10,51 @@ export interface PageMeta {
 }
 
 export const PAGE_META: Record<string, PageMeta> = {
+  home: {
+    title: 'Nanak Migration Group | Australian Migration Experts',
+    metaDescription: "Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia's visa system.",
+    primaryKeyword: 'Australian migration agents',
+  },
+  about: {
+    title: 'About Nanak Migration Group | Registered Migration Agents',
+    metaDescription: 'Meet Navpreet Aulakh (MARN 2619467) and the Nanak Migration Group team — regulated migration advice in English, Hindi and Punjabi across Australia.',
+    primaryKeyword: 'Nanak Migration Group about',
+  },
+  book: {
+    title: 'Book a Consultation | Nanak Migration Group',
+    metaDescription: 'Book a consultation with a MARA-registered migration agent (MARN 2619467). Choose a time online — confirmation by email. No login required.',
+    primaryKeyword: 'book migration consultation Australia',
+  },
+  'book-consultation': {
+    title: 'Book a Consultation | Nanak Migration Group',
+    metaDescription: 'Book a consultation with a MARA-registered migration agent (MARN 2619467) about your Australian visa pathway. Skilled, employer, student and family visas.',
+    primaryKeyword: 'book migration consultation Australia',
+  },
+  'pre-assessment': {
+    title: 'Pre-consult Assessment | Nanak Migration Group',
+    metaDescription: 'Complete your pre-consultation assessment before your appointment with Nanak Migration Group (MARN 2619467). Takes about 2 minutes.',
+    primaryKeyword: 'migration pre assessment form',
+  },
+  contact: {
+    title: 'Contact Nanak Migration Group | Melbourne, Sydney, Brisbane, Perth',
+    metaDescription: 'Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Melbourne, Sydney, Brisbane and Perth. MARN 2619467.',
+    primaryKeyword: 'contact migration agent Australia',
+  },
+  privacy: {
+    title: 'Privacy Policy | Nanak Migration Group',
+    metaDescription: 'How Nanak Migration Group Pty Ltd collects, uses and protects personal information.',
+    primaryKeyword: 'privacy policy',
+  },
+  terms: {
+    title: 'Terms of Use | Nanak Migration Group',
+    metaDescription: 'Terms governing use of the Nanak Migration Group website.',
+    primaryKeyword: 'terms of use',
+  },
+  accessibility: {
+    title: 'Accessibility | Nanak Migration Group',
+    metaDescription: 'Accessibility information for the Nanak Migration Group website.',
+    primaryKeyword: 'accessibility',
+  },
   'employer-sponsored-visas': {
     title: 'Employer Sponsored Visas | Nanak Migration Group',
     metaDescription: 'Australian employer-sponsored visas — subclass 482 Skills in Demand, subclass 186 permanent residence, subclass 494 regional. Agent MARN 2619467.',

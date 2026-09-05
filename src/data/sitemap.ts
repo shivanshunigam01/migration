@@ -7,7 +7,9 @@ export function getPublicSitemapPaths(): string[] {
   const paths = new Set<string>([
     "",
     "about",
+    ROUTE.book,
     ROUTE.bookConsultation,
+    ROUTE.preAssessment,
     "regional-494",
     "visitor-hub",
     "visitor-visa",

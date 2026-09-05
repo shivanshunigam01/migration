@@ -338,8 +338,8 @@ export default function SkilledNominated190Page({ navigate }: { navigate: (page:
       />
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <AnswerBox>
-            The Skilled Nominated visa (subclass 190) is a permanent residence visa for skilled workers nominated by an Australian state or territory government, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It is a points-tested visa and nomination is worth five additional points toward your points score. Each state and territory sets its own eligibility criteria, occupation lists and application procedures, so requirements vary significantly depending on which jurisdiction you apply through.
+          <AnswerBox routeKey="skilled-nominated-190">
+            The Skilled Nominated (subclass 190) visa is a permanent points-tested visa that requires state nomination, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. You still need a skills assessment and enough points test score. Alternatives include Skilled Independent (subclass 189) and Skilled Work Regional (subclass 491).
           </AnswerBox>
           <ReviewedBy />
         </div>
