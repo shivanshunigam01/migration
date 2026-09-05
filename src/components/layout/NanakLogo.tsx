@@ -1,10 +1,10 @@
 import React from 'react'
 
-const LOGO_SRC = '/nanak-migration-logo.png?v=3'
+const LOGO_SRC = '/nanak-migration-logo.png?v=4'
 
 /**
  * Brand mark — full lockup (icon + wordmark) for light surfaces (navbar / footer #EBEDE9).
- * The `light` prop is kept for call-site compatibility but always uses the dark lockup.
+ * The `light` prop is kept for call-site compatibility but always uses this lockup.
  */
 export default function NanakLogo({
   size = 36,
@@ -14,7 +14,7 @@ export default function NanakLogo({
   light?: boolean
 }) {
   const height = Math.max(28, size)
-  const width = Math.round(height * (520 / 123))
+  const width = Math.round(height * (1024 / 240))
 
   return (
     <img
@@ -28,7 +28,7 @@ export default function NanakLogo({
         display: 'block',
         height,
         width: 'auto',
-        maxWidth: Math.min(width, 220),
+        maxWidth: Math.min(width, 260),
         objectFit: 'contain',
         objectPosition: 'left center',
       }}

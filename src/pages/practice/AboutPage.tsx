@@ -11,7 +11,7 @@ const GOLD = '#f5a124'
 const NAVY = '#1B2B5E'
 const NAVY_DARK = '#0d1632'
 const HERO_GRAD = 'linear-gradient(160deg, #f5f8fd 0%, #edf2f9 30%, #e2ecf7 60%, #d8e6f4 100%)'
-const NANAK_LOGO = '/nanak-migration-logo.png'
+const NANAK_LOGO = '/nanak-migration-logo.png?v=4'
 
 /* ── Founder journey steps ─────────────────────────────────────────── */
 const JOURNEY_STEPS = [
