@@ -999,3 +999,47 @@ body.menu-open {
     padding-right: 16px !important;
   }
 }
+
+/* Skip link + a11y touch/contrast helpers */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  padding: 12px 16px;
+  background: #111E3E;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.skip-to-content:focus {
+  left: 16px;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .announcement-cta,
+  .nav-cta-desktop,
+  .footer-col-content a,
+  .footer-location-row button,
+  .newsletter-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .footer-col-content a {
+    display: inline-flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Improve muted-on-navy contrast for common footer/stats copy */
+.footer-main-grid p,
+.footer-main-grid address div,
+.footer-credentials-strip span {
+  color: rgba(255, 255, 255, 0.78) !important;
+}

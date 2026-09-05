@@ -1,12 +1,4 @@
-/* Gilroy — unified family (ClearTax-style geometric sans) */
-@font-face {
-  font-family: 'Gilroy';
-  src: url('https://fonts.cdnfonts.com/s/16219/Gilroy-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
+/* Gilroy — only weights used on the site (fewer render-blocking font requests) */
 @font-face {
   font-family: 'Gilroy';
   src: url('https://fonts.cdnfonts.com/s/16219/Gilroy-Regular.woff') format('woff');
@@ -41,7 +33,7 @@
 
 @font-face {
   font-family: 'Gilroy';
-  src: url('https://fonts.cdnfonts.com/s/16219/Gilroy-Heavy.woff') format('woff');
+  src: url('https://fonts.cdnfonts.com/s/16219/Gilroy-Bold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
   font-display: swap;

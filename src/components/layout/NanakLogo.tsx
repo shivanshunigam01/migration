@@ -23,6 +23,8 @@ export default function NanakLogo({
       alt="Nanak Migration Group"
       width={width}
       height={height}
+      decoding="async"
+      fetchPriority={light ? 'low' : 'high'}
       style={{
         display: 'block',
         height,

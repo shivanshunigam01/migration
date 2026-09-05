@@ -1,243 +1,500 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import React from "react"
+import React, { Suspense, lazy } from "react"
 import { withNavigate } from "@/lib/withNavigate"
 import { LEGACY_ROUTE_REDIRECTS } from "@/lib/navigation"
 import { ROUTE } from "@/data/routes"
 import HomePage from "@/pages/HomePage"
-import BookConsultationPage from "@/pages/BookConsultationPage"
-import BookPage from "@/pages/BookPage"
-import PreAssessmentPage from "@/pages/PreAssessmentPage"
-import ContactPage from "@/pages/ContactPage"
-import LegalPage from "@/pages/LegalPage"
-import NotFoundPage from "@/pages/NotFoundPage"
-import BlogPostPage from "@/pages/practice/BlogPostPage"
 
-import EmployerSponsorshipPage from "@/pages/employer-sponsored/EmployerSponsorshipPage"
-import SkilledIndependent189Page from "@/pages/skilled/SkilledIndependent189Page"
-import StudentToPRPage from "@/pages/student/StudentToPRPage"
-import PartnerVisa309Page from "@/pages/partner-family/PartnerVisa309Page"
-import PartnerVisa820Page from "@/pages/partner-family/PartnerVisa820Page"
-import SkillRequirements186Page from "@/pages/employer-sponsored/SkillRequirements186Page"
-import OccupationsListPage186 from "@/pages/employer-sponsored/OccupationsListPage186"
-import Pathway482ToPRPage from "@/pages/employer-sponsored/Pathway482ToPRPage"
-import SkilledNominated190Page from "@/pages/skilled/SkilledNominated190Page"
-import SkilledWorkRegional491Page from "@/pages/skilled/SkilledWorkRegional491Page"
-import PointsTestPage from "@/pages/skilled/PointsTestPage"
-import SkillsAssessmentPage from "@/pages/skilled/SkillsAssessmentPage"
-import StateNominationPage from "@/pages/skilled/StateNominationPage"
-import EnglishRequirementsPage from "@/pages/skilled/EnglishRequirementsPage"
-import GenuineStudentRequirementPage from "@/pages/student/GenuineStudentRequirementPage"
-import ProspectiveMarriage300Page from "@/pages/partner-family/ProspectiveMarriage300Page"
-import PartnerVisaEvidencePage from "@/pages/partner-family/PartnerVisaEvidencePage"
-import BridgingVisasPage from "@/pages/visitor-other/BridgingVisasPage"
-import AustralianCitizenshipPage from "@/pages/visitor-other/AustralianCitizenshipPage"
-import CoreSkillsOccupationListPage from "@/pages/employer-sponsored/CoreSkillsOccupationListPage"
-import ARTReviewPage from "@/pages/reviews/ARTReviewPage"
-import TemporaryGraduate485Page from "@/pages/skilled/TemporaryGraduate485Page"
-import AboutPage from "@/pages/practice/AboutPage"
-import StandardBusinessSponsorshipPage from "@/pages/employer-sponsored/StandardBusinessSponsorshipPage"
-import SkillsInDemand482Page from "@/pages/employer-sponsored/SkillsInDemand482Page"
-import EmployerNomination186Page from "@/pages/employer-sponsored/EmployerNomination186Page"
-import RegionalEmployer494Page from "@/pages/employer-sponsored/RegionalEmployer494Page"
-import LabourMarketTestingPage from "@/pages/employer-sponsored/LabourMarketTestingPage"
-import SkillingAustraliansFundPage from "@/pages/employer-sponsored/SkillingAustraliansFundPage"
-import EmployerObligationsPage from "@/pages/employer-sponsored/EmployerObligationsPage"
-import CoreSkillsStreamPage from "@/pages/employer-sponsored/CoreSkillsStreamPage"
-import SpecialistSkillsStreamPage from "@/pages/employer-sponsored/SpecialistSkillsStreamPage"
-import PermanentResidenceSkillsRegionalPage from "@/pages/employer-sponsored/PermanentResidenceSkillsRegionalPage"
-import OccupationCaveatsPage from "@/pages/employer-sponsored/OccupationCaveatsPage"
-import Visa482ConditionsPage from "@/pages/employer-sponsored/Visa482ConditionsPage"
-import ChangeOfEmployerPage from "@/pages/employer-sponsored/ChangeOfEmployerPage"
-import GenuinePositionPage from "@/pages/employer-sponsored/GenuinePositionPage"
-import LabourAgreementPage from "@/pages/employer-sponsored/LabourAgreementPage"
-import TrainingVisa407Page from "@/pages/employer-sponsored/TrainingVisa407Page"
-import ShortStaySpecialist400Page from "@/pages/employer-sponsored/ShortStaySpecialist400Page"
-import TemporaryActivity408Page from "@/pages/employer-sponsored/TemporaryActivity408Page"
-import DAMAPage from "@/pages/employer-sponsored/DAMAPage"
-import VisitorVisaPage from "@/pages/visitor-other/VisitorVisaPage"
-import ParentVisaPage from "@/pages/visitor-other/ParentVisaPage"
-import StudentVisa500Page from "@/pages/student/StudentVisa500Page"
-import NationalInnovationVisaPage from "@/pages/skilled/NationalInnovationVisaPage"
-import SkillSelectEOIPage from "@/pages/skilled/SkillSelectEOIPage"
-import RegionalAreasPage from "@/pages/skilled/RegionalAreasPage"
-import SkilledRegional887Page from "@/pages/skilled/SkilledRegional887Page"
-import InvitationRoundsPage from "@/pages/skilled/InvitationRoundsPage"
-import CoursesPRProspectsPage from "@/pages/student/CoursesPRProspectsPage"
-import StudentFinancialCapacityPage from "@/pages/student/StudentFinancialCapacityPage"
-import StudentGuardian590Page from "@/pages/student/StudentGuardian590Page"
-import ParentVisasHubPage from "@/pages/partner-family/ParentVisasHubPage"
-import ContributoryParent143Page from "@/pages/partner-family/ContributoryParent143Page"
-import SponsoredParent870Page from "@/pages/partner-family/SponsoredParent870Page"
-import BalanceOfFamilyTestPage from "@/pages/partner-family/BalanceOfFamilyTestPage"
-import ChildVisa101Page from "@/pages/partner-family/ChildVisa101Page"
-import ChildVisa802Page from "@/pages/partner-family/ChildVisa802Page"
-import ContributoryParent173Page from "@/pages/partner-family/ContributoryParent173Page"
-import AgedParent804Page from "@/pages/partner-family/AgedParent804Page"
-import ContributoryAgedParent864Page from "@/pages/partner-family/ContributoryAgedParent864Page"
-import ParentVisa103Page from "@/pages/partner-family/ParentVisa103Page"
-import AssuranceOfSupportPage from "@/pages/partner-family/AssuranceOfSupportPage"
-import CarerVisaPage from "@/pages/partner-family/CarerVisaPage"
-import RemainingRelativeVisaPage from "@/pages/partner-family/RemainingRelativeVisaPage"
-import WorkingHoliday417Page from "@/pages/visitor-other/WorkingHoliday417Page"
-import WorkAndHoliday462Page from "@/pages/visitor-other/WorkAndHoliday462Page"
-import ProtectionVisa866Page from "@/pages/visitor-other/ProtectionVisa866Page"
-import Schedule3Page from "@/pages/reviews/Schedule3Page"
-import NoFurtherStay8503Page from "@/pages/reviews/NoFurtherStay8503Page"
-import HealthWaiverPage from "@/pages/reviews/HealthWaiverPage"
-import ReEntryBansPage from "@/pages/reviews/ReEntryBansPage"
-import NaturalJusticeS57Page from "@/pages/reviews/NaturalJusticeS57Page"
-import TemporaryWork403Page from "@/pages/employer-sponsored/TemporaryWork403Page"
-import AdoptionVisa102Page from "@/pages/partner-family/AdoptionVisa102Page"
-import DependentChild445Page from "@/pages/partner-family/DependentChild445Page"
-import ContributoryAgedParent884Page from "@/pages/partner-family/ContributoryAgedParent884Page"
-import Eta601Page from "@/pages/visitor-other/Eta601Page"
-import Evisitor651Page from "@/pages/visitor-other/Evisitor651Page"
-import MedicalTreatment602Page from "@/pages/visitor-other/MedicalTreatment602Page"
-import SpecialCategory444Page from "@/pages/visitor-other/SpecialCategory444Page"
-import MinisterialInterventionPage from "@/pages/reviews/MinisterialInterventionPage"
-import AgedDependentRelativePage from "@/pages/partner-family/AgedDependentRelativePage"
-import OrphanRelativeVisaPage from "@/pages/partner-family/OrphanRelativeVisaPage"
-import NzFamilyRelationship461Page from "@/pages/partner-family/NzFamilyRelationship461Page"
-import VisitorVisasHubPage from "@/pages/visitor-other/VisitorVisasHubPage"
-import VisitorVisa600Page from "@/pages/visitor-other/VisitorVisa600Page"
-import ResidentReturnVisaPage from "@/pages/visitor-other/ResidentReturnVisaPage"
-import SkilledMigrationHubPage from "@/pages/skilled/SkilledMigrationHubPage"
-import StudentVisasHubPage from "@/pages/student/StudentVisasHubPage"
-import PartnerFamilyHubPage from "@/pages/partner-family/PartnerFamilyHubPage"
-import VisitorOtherHubPage from "@/pages/visitor-other/VisitorOtherHubPage"
-import VisaRefusalReviewHubPage from "@/pages/reviews/VisaRefusalReviewHubPage"
-import VisaCancellationPage from "@/pages/reviews/VisaCancellationPage"
-import Section48BarPage from "@/pages/reviews/Section48BarPage"
-import Pic4020Page from "@/pages/reviews/Pic4020Page"
-import ReviewsPage from "@/pages/practice/ReviewsPage"
-import NewsPage from "@/pages/practice/NewsPage"
-import ResourcesPage from "@/pages/practice/ResourcesPage"
-import GuidesPage from "@/pages/practice/GuidesPage"
-import BlogPage from "@/pages/practice/BlogPage"
-import ChecklistsPage from "@/pages/practice/ChecklistsPage"
-import ToolsPage from "@/pages/practice/ToolsPage"
+function RouteFallback() {
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      style={{
+        minHeight: "40vh",
+        display: "grid",
+        placeItems: "center",
+        color: "#64748b",
+        fontFamily: "'Gilroy', sans-serif",
+        fontSize: 14,
+      }}
+    >
+      Loading...
+    </div>
+  )
+}
+const EmployerSponsorshipPageLazy = lazy(() => import("@/pages/employer-sponsored/EmployerSponsorshipPage"))
+const EmployerSponsorshipPage = withNavigate(EmployerSponsorshipPageLazy as never)
+
+const SkilledIndependent189PageLazy = lazy(() => import("@/pages/skilled/SkilledIndependent189Page"))
+const SkilledIndependent189Page = withNavigate(SkilledIndependent189PageLazy as never)
+
+const StudentToPRPageLazy = lazy(() => import("@/pages/student/StudentToPRPage"))
+const StudentToPRPage = withNavigate(StudentToPRPageLazy as never)
+
+const PartnerVisa309PageLazy = lazy(() => import("@/pages/partner-family/PartnerVisa309Page"))
+const PartnerVisa309Page = withNavigate(PartnerVisa309PageLazy as never)
+
+const PartnerVisa820PageLazy = lazy(() => import("@/pages/partner-family/PartnerVisa820Page"))
+const PartnerVisa820Page = withNavigate(PartnerVisa820PageLazy as never)
+
+const SkillRequirements186PageLazy = lazy(() => import("@/pages/employer-sponsored/SkillRequirements186Page"))
+const SkillRequirements186Page = withNavigate(SkillRequirements186PageLazy as never)
+
+const OccupationsListPage186Lazy = lazy(() => import("@/pages/employer-sponsored/OccupationsListPage186"))
+const OccupationsListPage186 = withNavigate(OccupationsListPage186Lazy as never)
+
+const Pathway482ToPRPageLazy = lazy(() => import("@/pages/employer-sponsored/Pathway482ToPRPage"))
+const Pathway482ToPRPage = withNavigate(Pathway482ToPRPageLazy as never)
+
+const SkilledNominated190PageLazy = lazy(() => import("@/pages/skilled/SkilledNominated190Page"))
+const SkilledNominated190Page = withNavigate(SkilledNominated190PageLazy as never)
+
+const SkilledWorkRegional491PageLazy = lazy(() => import("@/pages/skilled/SkilledWorkRegional491Page"))
+const SkilledWorkRegional491Page = withNavigate(SkilledWorkRegional491PageLazy as never)
+
+const PointsTestPageLazy = lazy(() => import("@/pages/skilled/PointsTestPage"))
+const PointsTestPage = withNavigate(PointsTestPageLazy as never)
+
+const SkillsAssessmentPageLazy = lazy(() => import("@/pages/skilled/SkillsAssessmentPage"))
+const SkillsAssessmentPage = withNavigate(SkillsAssessmentPageLazy as never)
+
+const StateNominationPageLazy = lazy(() => import("@/pages/skilled/StateNominationPage"))
+const StateNominationPage = withNavigate(StateNominationPageLazy as never)
+
+const EnglishRequirementsPageLazy = lazy(() => import("@/pages/skilled/EnglishRequirementsPage"))
+const EnglishRequirementsPage = withNavigate(EnglishRequirementsPageLazy as never)
+
+const GenuineStudentRequirementPageLazy = lazy(() => import("@/pages/student/GenuineStudentRequirementPage"))
+const GenuineStudentRequirementPage = withNavigate(GenuineStudentRequirementPageLazy as never)
+
+const ProspectiveMarriage300PageLazy = lazy(() => import("@/pages/partner-family/ProspectiveMarriage300Page"))
+const ProspectiveMarriage300Page = withNavigate(ProspectiveMarriage300PageLazy as never)
+
+const PartnerVisaEvidencePageLazy = lazy(() => import("@/pages/partner-family/PartnerVisaEvidencePage"))
+const PartnerVisaEvidencePage = withNavigate(PartnerVisaEvidencePageLazy as never)
+
+const BridgingVisasPageLazy = lazy(() => import("@/pages/visitor-other/BridgingVisasPage"))
+const BridgingVisasPage = withNavigate(BridgingVisasPageLazy as never)
+
+const AustralianCitizenshipPageLazy = lazy(() => import("@/pages/visitor-other/AustralianCitizenshipPage"))
+const AustralianCitizenshipPage = withNavigate(AustralianCitizenshipPageLazy as never)
+
+const CoreSkillsOccupationListPageLazy = lazy(() => import("@/pages/employer-sponsored/CoreSkillsOccupationListPage"))
+const CoreSkillsOccupationListPage = withNavigate(CoreSkillsOccupationListPageLazy as never)
+
+const ARTReviewPageLazy = lazy(() => import("@/pages/reviews/ARTReviewPage"))
+const ARTReviewPage = withNavigate(ARTReviewPageLazy as never)
+
+const TemporaryGraduate485PageLazy = lazy(() => import("@/pages/skilled/TemporaryGraduate485Page"))
+const TemporaryGraduate485Page = withNavigate(TemporaryGraduate485PageLazy as never)
+
+const AboutPageLazy = lazy(() => import("@/pages/practice/AboutPage"))
+const AboutPage = withNavigate(AboutPageLazy as never)
+
+const StandardBusinessSponsorshipPageLazy = lazy(() => import("@/pages/employer-sponsored/StandardBusinessSponsorshipPage"))
+const StandardBusinessSponsorshipPage = withNavigate(StandardBusinessSponsorshipPageLazy as never)
+
+const SkillsInDemand482PageLazy = lazy(() => import("@/pages/employer-sponsored/SkillsInDemand482Page"))
+const SkillsInDemand482Page = withNavigate(SkillsInDemand482PageLazy as never)
+
+const EmployerNomination186PageLazy = lazy(() => import("@/pages/employer-sponsored/EmployerNomination186Page"))
+const EmployerNomination186Page = withNavigate(EmployerNomination186PageLazy as never)
+
+const RegionalEmployer494PageLazy = lazy(() => import("@/pages/employer-sponsored/RegionalEmployer494Page"))
+const RegionalEmployer494Page = withNavigate(RegionalEmployer494PageLazy as never)
+
+const LabourMarketTestingPageLazy = lazy(() => import("@/pages/employer-sponsored/LabourMarketTestingPage"))
+const LabourMarketTestingPage = withNavigate(LabourMarketTestingPageLazy as never)
+
+const SkillingAustraliansFundPageLazy = lazy(() => import("@/pages/employer-sponsored/SkillingAustraliansFundPage"))
+const SkillingAustraliansFundPage = withNavigate(SkillingAustraliansFundPageLazy as never)
+
+const EmployerObligationsPageLazy = lazy(() => import("@/pages/employer-sponsored/EmployerObligationsPage"))
+const EmployerObligationsPage = withNavigate(EmployerObligationsPageLazy as never)
+
+const CoreSkillsStreamPageLazy = lazy(() => import("@/pages/employer-sponsored/CoreSkillsStreamPage"))
+const CoreSkillsStreamPage = withNavigate(CoreSkillsStreamPageLazy as never)
+
+const SpecialistSkillsStreamPageLazy = lazy(() => import("@/pages/employer-sponsored/SpecialistSkillsStreamPage"))
+const SpecialistSkillsStreamPage = withNavigate(SpecialistSkillsStreamPageLazy as never)
+
+const PermanentResidenceSkillsRegionalPageLazy = lazy(() => import("@/pages/employer-sponsored/PermanentResidenceSkillsRegionalPage"))
+const PermanentResidenceSkillsRegionalPage = withNavigate(PermanentResidenceSkillsRegionalPageLazy as never)
+
+const OccupationCaveatsPageLazy = lazy(() => import("@/pages/employer-sponsored/OccupationCaveatsPage"))
+const OccupationCaveatsPage = withNavigate(OccupationCaveatsPageLazy as never)
+
+const Visa482ConditionsPageLazy = lazy(() => import("@/pages/employer-sponsored/Visa482ConditionsPage"))
+const Visa482ConditionsPage = withNavigate(Visa482ConditionsPageLazy as never)
+
+const ChangeOfEmployerPageLazy = lazy(() => import("@/pages/employer-sponsored/ChangeOfEmployerPage"))
+const ChangeOfEmployerPage = withNavigate(ChangeOfEmployerPageLazy as never)
+
+const GenuinePositionPageLazy = lazy(() => import("@/pages/employer-sponsored/GenuinePositionPage"))
+const GenuinePositionPage = withNavigate(GenuinePositionPageLazy as never)
+
+const LabourAgreementPageLazy = lazy(() => import("@/pages/employer-sponsored/LabourAgreementPage"))
+const LabourAgreementPage = withNavigate(LabourAgreementPageLazy as never)
+
+const TrainingVisa407PageLazy = lazy(() => import("@/pages/employer-sponsored/TrainingVisa407Page"))
+const TrainingVisa407Page = withNavigate(TrainingVisa407PageLazy as never)
+
+const ShortStaySpecialist400PageLazy = lazy(() => import("@/pages/employer-sponsored/ShortStaySpecialist400Page"))
+const ShortStaySpecialist400Page = withNavigate(ShortStaySpecialist400PageLazy as never)
+
+const TemporaryActivity408PageLazy = lazy(() => import("@/pages/employer-sponsored/TemporaryActivity408Page"))
+const TemporaryActivity408Page = withNavigate(TemporaryActivity408PageLazy as never)
+
+const DAMAPageLazy = lazy(() => import("@/pages/employer-sponsored/DAMAPage"))
+const DAMAPage = withNavigate(DAMAPageLazy as never)
+
+const VisitorVisaPageLazy = lazy(() => import("@/pages/visitor-other/VisitorVisaPage"))
+const VisitorVisaPage = withNavigate(VisitorVisaPageLazy as never)
+
+const ParentVisaPageLazy = lazy(() => import("@/pages/visitor-other/ParentVisaPage"))
+const ParentVisaPage = withNavigate(ParentVisaPageLazy as never)
+
+const StudentVisa500PageLazy = lazy(() => import("@/pages/student/StudentVisa500Page"))
+const StudentVisa500Page = withNavigate(StudentVisa500PageLazy as never)
+
+const NationalInnovationVisaPageLazy = lazy(() => import("@/pages/skilled/NationalInnovationVisaPage"))
+const NationalInnovationVisaPage = withNavigate(NationalInnovationVisaPageLazy as never)
+
+const SkillSelectEOIPageLazy = lazy(() => import("@/pages/skilled/SkillSelectEOIPage"))
+const SkillSelectEOIPage = withNavigate(SkillSelectEOIPageLazy as never)
+
+const RegionalAreasPageLazy = lazy(() => import("@/pages/skilled/RegionalAreasPage"))
+const RegionalAreasPage = withNavigate(RegionalAreasPageLazy as never)
+
+const SkilledRegional887PageLazy = lazy(() => import("@/pages/skilled/SkilledRegional887Page"))
+const SkilledRegional887Page = withNavigate(SkilledRegional887PageLazy as never)
+
+const InvitationRoundsPageLazy = lazy(() => import("@/pages/skilled/InvitationRoundsPage"))
+const InvitationRoundsPage = withNavigate(InvitationRoundsPageLazy as never)
+
+const CoursesPRProspectsPageLazy = lazy(() => import("@/pages/student/CoursesPRProspectsPage"))
+const CoursesPRProspectsPage = withNavigate(CoursesPRProspectsPageLazy as never)
+
+const StudentFinancialCapacityPageLazy = lazy(() => import("@/pages/student/StudentFinancialCapacityPage"))
+const StudentFinancialCapacityPage = withNavigate(StudentFinancialCapacityPageLazy as never)
+
+const StudentGuardian590PageLazy = lazy(() => import("@/pages/student/StudentGuardian590Page"))
+const StudentGuardian590Page = withNavigate(StudentGuardian590PageLazy as never)
+
+const ParentVisasHubPageLazy = lazy(() => import("@/pages/partner-family/ParentVisasHubPage"))
+const ParentVisasHubPage = withNavigate(ParentVisasHubPageLazy as never)
+
+const ContributoryParent143PageLazy = lazy(() => import("@/pages/partner-family/ContributoryParent143Page"))
+const ContributoryParent143Page = withNavigate(ContributoryParent143PageLazy as never)
+
+const SponsoredParent870PageLazy = lazy(() => import("@/pages/partner-family/SponsoredParent870Page"))
+const SponsoredParent870Page = withNavigate(SponsoredParent870PageLazy as never)
+
+const BalanceOfFamilyTestPageLazy = lazy(() => import("@/pages/partner-family/BalanceOfFamilyTestPage"))
+const BalanceOfFamilyTestPage = withNavigate(BalanceOfFamilyTestPageLazy as never)
+
+const ChildVisa101PageLazy = lazy(() => import("@/pages/partner-family/ChildVisa101Page"))
+const ChildVisa101Page = withNavigate(ChildVisa101PageLazy as never)
+
+const ChildVisa802PageLazy = lazy(() => import("@/pages/partner-family/ChildVisa802Page"))
+const ChildVisa802Page = withNavigate(ChildVisa802PageLazy as never)
+
+const ContributoryParent173PageLazy = lazy(() => import("@/pages/partner-family/ContributoryParent173Page"))
+const ContributoryParent173Page = withNavigate(ContributoryParent173PageLazy as never)
+
+const AgedParent804PageLazy = lazy(() => import("@/pages/partner-family/AgedParent804Page"))
+const AgedParent804Page = withNavigate(AgedParent804PageLazy as never)
+
+const ContributoryAgedParent864PageLazy = lazy(() => import("@/pages/partner-family/ContributoryAgedParent864Page"))
+const ContributoryAgedParent864Page = withNavigate(ContributoryAgedParent864PageLazy as never)
+
+const ParentVisa103PageLazy = lazy(() => import("@/pages/partner-family/ParentVisa103Page"))
+const ParentVisa103Page = withNavigate(ParentVisa103PageLazy as never)
+
+const AssuranceOfSupportPageLazy = lazy(() => import("@/pages/partner-family/AssuranceOfSupportPage"))
+const AssuranceOfSupportPage = withNavigate(AssuranceOfSupportPageLazy as never)
+
+const CarerVisaPageLazy = lazy(() => import("@/pages/partner-family/CarerVisaPage"))
+const CarerVisaPage = withNavigate(CarerVisaPageLazy as never)
+
+const RemainingRelativeVisaPageLazy = lazy(() => import("@/pages/partner-family/RemainingRelativeVisaPage"))
+const RemainingRelativeVisaPage = withNavigate(RemainingRelativeVisaPageLazy as never)
+
+const WorkingHoliday417PageLazy = lazy(() => import("@/pages/visitor-other/WorkingHoliday417Page"))
+const WorkingHoliday417Page = withNavigate(WorkingHoliday417PageLazy as never)
+
+const WorkAndHoliday462PageLazy = lazy(() => import("@/pages/visitor-other/WorkAndHoliday462Page"))
+const WorkAndHoliday462Page = withNavigate(WorkAndHoliday462PageLazy as never)
+
+const ProtectionVisa866PageLazy = lazy(() => import("@/pages/visitor-other/ProtectionVisa866Page"))
+const ProtectionVisa866Page = withNavigate(ProtectionVisa866PageLazy as never)
+
+const Schedule3PageLazy = lazy(() => import("@/pages/reviews/Schedule3Page"))
+const Schedule3Page = withNavigate(Schedule3PageLazy as never)
+
+const NoFurtherStay8503PageLazy = lazy(() => import("@/pages/reviews/NoFurtherStay8503Page"))
+const NoFurtherStay8503Page = withNavigate(NoFurtherStay8503PageLazy as never)
+
+const HealthWaiverPageLazy = lazy(() => import("@/pages/reviews/HealthWaiverPage"))
+const HealthWaiverPage = withNavigate(HealthWaiverPageLazy as never)
+
+const ReEntryBansPageLazy = lazy(() => import("@/pages/reviews/ReEntryBansPage"))
+const ReEntryBansPage = withNavigate(ReEntryBansPageLazy as never)
+
+const NaturalJusticeS57PageLazy = lazy(() => import("@/pages/reviews/NaturalJusticeS57Page"))
+const NaturalJusticeS57Page = withNavigate(NaturalJusticeS57PageLazy as never)
+
+const TemporaryWork403PageLazy = lazy(() => import("@/pages/employer-sponsored/TemporaryWork403Page"))
+const TemporaryWork403Page = withNavigate(TemporaryWork403PageLazy as never)
+
+const AdoptionVisa102PageLazy = lazy(() => import("@/pages/partner-family/AdoptionVisa102Page"))
+const AdoptionVisa102Page = withNavigate(AdoptionVisa102PageLazy as never)
+
+const DependentChild445PageLazy = lazy(() => import("@/pages/partner-family/DependentChild445Page"))
+const DependentChild445Page = withNavigate(DependentChild445PageLazy as never)
+
+const ContributoryAgedParent884PageLazy = lazy(() => import("@/pages/partner-family/ContributoryAgedParent884Page"))
+const ContributoryAgedParent884Page = withNavigate(ContributoryAgedParent884PageLazy as never)
+
+const Eta601PageLazy = lazy(() => import("@/pages/visitor-other/Eta601Page"))
+const Eta601Page = withNavigate(Eta601PageLazy as never)
+
+const Evisitor651PageLazy = lazy(() => import("@/pages/visitor-other/Evisitor651Page"))
+const Evisitor651Page = withNavigate(Evisitor651PageLazy as never)
+
+const MedicalTreatment602PageLazy = lazy(() => import("@/pages/visitor-other/MedicalTreatment602Page"))
+const MedicalTreatment602Page = withNavigate(MedicalTreatment602PageLazy as never)
+
+const SpecialCategory444PageLazy = lazy(() => import("@/pages/visitor-other/SpecialCategory444Page"))
+const SpecialCategory444Page = withNavigate(SpecialCategory444PageLazy as never)
+
+const MinisterialInterventionPageLazy = lazy(() => import("@/pages/reviews/MinisterialInterventionPage"))
+const MinisterialInterventionPage = withNavigate(MinisterialInterventionPageLazy as never)
+
+const AgedDependentRelativePageLazy = lazy(() => import("@/pages/partner-family/AgedDependentRelativePage"))
+const AgedDependentRelativePage = withNavigate(AgedDependentRelativePageLazy as never)
+
+const OrphanRelativeVisaPageLazy = lazy(() => import("@/pages/partner-family/OrphanRelativeVisaPage"))
+const OrphanRelativeVisaPage = withNavigate(OrphanRelativeVisaPageLazy as never)
+
+const NzFamilyRelationship461PageLazy = lazy(() => import("@/pages/partner-family/NzFamilyRelationship461Page"))
+const NzFamilyRelationship461Page = withNavigate(NzFamilyRelationship461PageLazy as never)
+
+const VisitorVisasHubPageLazy = lazy(() => import("@/pages/visitor-other/VisitorVisasHubPage"))
+const VisitorVisasHubPage = withNavigate(VisitorVisasHubPageLazy as never)
+
+const VisitorVisa600PageLazy = lazy(() => import("@/pages/visitor-other/VisitorVisa600Page"))
+const VisitorVisa600Page = withNavigate(VisitorVisa600PageLazy as never)
+
+const ResidentReturnVisaPageLazy = lazy(() => import("@/pages/visitor-other/ResidentReturnVisaPage"))
+const ResidentReturnVisaPage = withNavigate(ResidentReturnVisaPageLazy as never)
+
+const SkilledMigrationHubPageLazy = lazy(() => import("@/pages/skilled/SkilledMigrationHubPage"))
+const SkilledMigrationHubPage = withNavigate(SkilledMigrationHubPageLazy as never)
+
+const StudentVisasHubPageLazy = lazy(() => import("@/pages/student/StudentVisasHubPage"))
+const StudentVisasHubPage = withNavigate(StudentVisasHubPageLazy as never)
+
+const PartnerFamilyHubPageLazy = lazy(() => import("@/pages/partner-family/PartnerFamilyHubPage"))
+const PartnerFamilyHubPage = withNavigate(PartnerFamilyHubPageLazy as never)
+
+const VisitorOtherHubPageLazy = lazy(() => import("@/pages/visitor-other/VisitorOtherHubPage"))
+const VisitorOtherHubPage = withNavigate(VisitorOtherHubPageLazy as never)
+
+const VisaRefusalReviewHubPageLazy = lazy(() => import("@/pages/reviews/VisaRefusalReviewHubPage"))
+const VisaRefusalReviewHubPage = withNavigate(VisaRefusalReviewHubPageLazy as never)
+
+const VisaCancellationPageLazy = lazy(() => import("@/pages/reviews/VisaCancellationPage"))
+const VisaCancellationPage = withNavigate(VisaCancellationPageLazy as never)
+
+const Section48BarPageLazy = lazy(() => import("@/pages/reviews/Section48BarPage"))
+const Section48BarPage = withNavigate(Section48BarPageLazy as never)
+
+const Pic4020PageLazy = lazy(() => import("@/pages/reviews/Pic4020Page"))
+const Pic4020Page = withNavigate(Pic4020PageLazy as never)
+
+const ReviewsPageLazy = lazy(() => import("@/pages/practice/ReviewsPage"))
+const ReviewsPage = withNavigate(ReviewsPageLazy as never)
+
+const NewsPageLazy = lazy(() => import("@/pages/practice/NewsPage"))
+const NewsPage = withNavigate(NewsPageLazy as never)
+
+const ResourcesPageLazy = lazy(() => import("@/pages/practice/ResourcesPage"))
+const ResourcesPage = withNavigate(ResourcesPageLazy as never)
+
+const GuidesPageLazy = lazy(() => import("@/pages/practice/GuidesPage"))
+const GuidesPage = withNavigate(GuidesPageLazy as never)
+
+const BlogPageLazy = lazy(() => import("@/pages/practice/BlogPage"))
+const BlogPage = withNavigate(BlogPageLazy as never)
+
+const ChecklistsPageLazy = lazy(() => import("@/pages/practice/ChecklistsPage"))
+const ChecklistsPage = withNavigate(ChecklistsPageLazy as never)
+
+const ToolsPageLazy = lazy(() => import("@/pages/practice/ToolsPage"))
+const ToolsPage = withNavigate(ToolsPageLazy as never)
+
+const BlogPostPageLazy = lazy(() => import("@/pages/practice/BlogPostPage"))
+const BlogPostPage = withNavigate(BlogPostPageLazy as never)
+
+const BookConsultationPageLazy = lazy(() => import("@/pages/BookConsultationPage"))
+const BookConsultationPage = withNavigate(BookConsultationPageLazy as never)
+
+const BookPageLazy = lazy(() => import("@/pages/BookPage"))
+const BookPage = withNavigate(BookPageLazy as never)
+
+const PreAssessmentPageLazy = lazy(() => import("@/pages/PreAssessmentPage"))
+const PreAssessmentPage = withNavigate(PreAssessmentPageLazy as never)
+
+const ContactPageLazy = lazy(() => import("@/pages/ContactPage"))
+const ContactPage = withNavigate(ContactPageLazy as never)
+
+const PrivacyPageLazy = lazy(() =>
+  import("@/pages/LegalPage").then((m) => ({
+    default: function PrivacyPage(p: { navigate: (page: string) => void }) {
+      return <m.default kind="privacy" navigate={p.navigate} />
+    },
+  })),
+)
+const PrivacyPage = withNavigate(PrivacyPageLazy as never)
+
+const TermsPageLazy = lazy(() =>
+  import("@/pages/LegalPage").then((m) => ({
+    default: function TermsPage(p: { navigate: (page: string) => void }) {
+      return <m.default kind="terms" navigate={p.navigate} />
+    },
+  })),
+)
+const TermsPage = withNavigate(TermsPageLazy as never)
+
+const AccessibilityPageLazy = lazy(() =>
+  import("@/pages/LegalPage").then((m) => ({
+    default: function AccessibilityPage(p: { navigate: (page: string) => void }) {
+      return <m.default kind="accessibility" navigate={p.navigate} />
+    },
+  })),
+)
+const AccessibilityPage = withNavigate(AccessibilityPageLazy as never)
+
+const NotFoundPageLazy = lazy(() => import("@/pages/NotFoundPage"))
+const NotFoundPage = withNavigate(NotFoundPageLazy as never)
 
 const Pages = {
   Home: HomePage,
-  EmployerSponsorship: withNavigate(EmployerSponsorshipPage),
-  SkilledIndependent189: withNavigate(SkilledIndependent189Page),
-  StudentToPR: withNavigate(StudentToPRPage),
-  PartnerVisa309: withNavigate(PartnerVisa309Page),
-  PartnerVisa820: withNavigate(PartnerVisa820Page),
-  SkillRequirements186: withNavigate(SkillRequirements186Page),
-  OccupationsList186: withNavigate(OccupationsListPage186),
-  Pathway482ToPR: withNavigate(Pathway482ToPRPage),
-  SkilledNominated190: withNavigate(SkilledNominated190Page),
-  SkilledWorkRegional491: withNavigate(SkilledWorkRegional491Page),
-  PointsTest: withNavigate(PointsTestPage),
-  SkillsAssessment: withNavigate(SkillsAssessmentPage),
-  StateNomination: withNavigate(StateNominationPage),
-  EnglishRequirements: withNavigate(EnglishRequirementsPage),
-  GenuineStudentRequirement: withNavigate(GenuineStudentRequirementPage),
-  ProspectiveMarriage300: withNavigate(ProspectiveMarriage300Page),
-  PartnerVisaEvidence: withNavigate(PartnerVisaEvidencePage),
-  BridgingVisas: withNavigate(BridgingVisasPage),
-  AustralianCitizenship: withNavigate(AustralianCitizenshipPage),
-  CoreSkillsOccupationList: withNavigate(CoreSkillsOccupationListPage),
-  ARTReview: withNavigate(ARTReviewPage),
-  TemporaryGraduate485: withNavigate(TemporaryGraduate485Page),
-  About: withNavigate(AboutPage),
-  StandardBusinessSponsorship: withNavigate(StandardBusinessSponsorshipPage),
-  SkillsInDemand482: withNavigate(SkillsInDemand482Page),
-  EmployerNomination186: withNavigate(EmployerNomination186Page),
-  RegionalEmployer494: withNavigate(RegionalEmployer494Page),
-  LabourMarketTesting: withNavigate(LabourMarketTestingPage),
-  SkillingAustraliansFund: withNavigate(SkillingAustraliansFundPage),
-  EmployerObligations: withNavigate(EmployerObligationsPage),
-  CoreSkillsStream: withNavigate(CoreSkillsStreamPage),
-  SpecialistSkillsStream: withNavigate(SpecialistSkillsStreamPage),
-  PermanentResidenceSkillsRegional: withNavigate(PermanentResidenceSkillsRegionalPage),
-  OccupationCaveats: withNavigate(OccupationCaveatsPage),
-  Visa482Conditions: withNavigate(Visa482ConditionsPage),
-  ChangeOfEmployer: withNavigate(ChangeOfEmployerPage),
-  GenuinePosition: withNavigate(GenuinePositionPage),
-  LabourAgreement: withNavigate(LabourAgreementPage),
-  TrainingVisa407: withNavigate(TrainingVisa407Page),
-  ShortStaySpecialist400: withNavigate(ShortStaySpecialist400Page),
-  TemporaryActivity408: withNavigate(TemporaryActivity408Page),
-  DAMA: withNavigate(DAMAPage),
-  VisitorVisa: withNavigate(VisitorVisaPage),
-  ParentVisa: withNavigate(ParentVisaPage),
-  StudentVisa500: withNavigate(StudentVisa500Page),
-  NationalInnovationVisa: withNavigate(NationalInnovationVisaPage),
-  SkillSelectEOI: withNavigate(SkillSelectEOIPage),
-  RegionalAreas: withNavigate(RegionalAreasPage),
-  SkilledRegional887: withNavigate(SkilledRegional887Page),
-  InvitationRounds: withNavigate(InvitationRoundsPage),
-  CoursesPRProspects: withNavigate(CoursesPRProspectsPage),
-  StudentFinancialCapacity: withNavigate(StudentFinancialCapacityPage),
-  StudentGuardian590: withNavigate(StudentGuardian590Page),
-  ParentVisasHub: withNavigate(ParentVisasHubPage),
-  ContributoryParent143: withNavigate(ContributoryParent143Page),
-  SponsoredParent870: withNavigate(SponsoredParent870Page),
-  BalanceOfFamilyTest: withNavigate(BalanceOfFamilyTestPage),
-  ChildVisa101: withNavigate(ChildVisa101Page),
-  ChildVisa802: withNavigate(ChildVisa802Page),
-  ContributoryParent173: withNavigate(ContributoryParent173Page),
-  AgedParent804: withNavigate(AgedParent804Page),
-  ContributoryAgedParent864: withNavigate(ContributoryAgedParent864Page),
-  ParentVisa103: withNavigate(ParentVisa103Page),
-  AssuranceOfSupport: withNavigate(AssuranceOfSupportPage),
-  CarerVisa: withNavigate(CarerVisaPage),
-  RemainingRelativeVisa: withNavigate(RemainingRelativeVisaPage),
-  WorkingHoliday417: withNavigate(WorkingHoliday417Page),
-  WorkAndHoliday462: withNavigate(WorkAndHoliday462Page),
-  ProtectionVisa866: withNavigate(ProtectionVisa866Page),
-  Schedule3: withNavigate(Schedule3Page),
-  NoFurtherStay8503: withNavigate(NoFurtherStay8503Page),
-  HealthWaiver: withNavigate(HealthWaiverPage),
-  ReEntryBans: withNavigate(ReEntryBansPage),
-  NaturalJusticeS57: withNavigate(NaturalJusticeS57Page),
-  TemporaryWork403: withNavigate(TemporaryWork403Page),
-  AdoptionVisa102: withNavigate(AdoptionVisa102Page),
-  DependentChild445: withNavigate(DependentChild445Page),
-  ContributoryAgedParent884: withNavigate(ContributoryAgedParent884Page),
-  Eta601: withNavigate(Eta601Page),
-  Evisitor651: withNavigate(Evisitor651Page),
-  MedicalTreatment602: withNavigate(MedicalTreatment602Page),
-  SpecialCategory444: withNavigate(SpecialCategory444Page),
-  MinisterialIntervention: withNavigate(MinisterialInterventionPage),
-  AgedDependentRelative: withNavigate(AgedDependentRelativePage),
-  OrphanRelativeVisa: withNavigate(OrphanRelativeVisaPage),
-  NzFamilyRelationship461: withNavigate(NzFamilyRelationship461Page),
-  VisitorVisasHub: withNavigate(VisitorVisasHubPage),
-  VisitorVisa600: withNavigate(VisitorVisa600Page),
-  ResidentReturnVisa: withNavigate(ResidentReturnVisaPage),
-  SkilledMigrationHub: withNavigate(SkilledMigrationHubPage),
-  StudentVisasHub: withNavigate(StudentVisasHubPage),
-  PartnerFamilyHub: withNavigate(PartnerFamilyHubPage),
-  VisitorOtherHub: withNavigate(VisitorOtherHubPage),
-  VisaRefusalReviewHub: withNavigate(VisaRefusalReviewHubPage),
-  VisaCancellation: withNavigate(VisaCancellationPage),
-  Section48Bar: withNavigate(Section48BarPage),
-  Pic4020: withNavigate(Pic4020Page),
-  Reviews: withNavigate(ReviewsPage),
-  News: withNavigate(NewsPage),
-  Resources: withNavigate(ResourcesPage),
-  Guides: withNavigate(GuidesPage),
-  Blog: withNavigate(BlogPage),
-  Checklists: withNavigate(ChecklistsPage),
-  Tools: withNavigate(ToolsPage),
-  BlogPost: withNavigate(BlogPostPage),
-  BookConsultation: withNavigate(BookConsultationPage),
-  Book: withNavigate(BookPage),
-  PreAssessment: withNavigate(PreAssessmentPage),
-  Contact: withNavigate(ContactPage),
-  Privacy: withNavigate(function PrivacyPage(p: { navigate: (page: string) => void }) {
-    return <LegalPage kind="privacy" navigate={p.navigate} />
-  }),
-  Terms: withNavigate(function TermsPage(p: { navigate: (page: string) => void }) {
-    return <LegalPage kind="terms" navigate={p.navigate} />
-  }),
-  Accessibility: withNavigate(function AccessibilityPage(p: { navigate: (page: string) => void }) {
-    return <LegalPage kind="accessibility" navigate={p.navigate} />
-  }),
-  NotFound: withNavigate(NotFoundPage),
+  EmployerSponsorship: EmployerSponsorshipPage,
+  SkilledIndependent189: SkilledIndependent189Page,
+  StudentToPR: StudentToPRPage,
+  PartnerVisa309: PartnerVisa309Page,
+  PartnerVisa820: PartnerVisa820Page,
+  SkillRequirements186: SkillRequirements186Page,
+  OccupationsList186: OccupationsListPage186,
+  Pathway482ToPR: Pathway482ToPRPage,
+  SkilledNominated190: SkilledNominated190Page,
+  SkilledWorkRegional491: SkilledWorkRegional491Page,
+  PointsTest: PointsTestPage,
+  SkillsAssessment: SkillsAssessmentPage,
+  StateNomination: StateNominationPage,
+  EnglishRequirements: EnglishRequirementsPage,
+  GenuineStudentRequirement: GenuineStudentRequirementPage,
+  ProspectiveMarriage300: ProspectiveMarriage300Page,
+  PartnerVisaEvidence: PartnerVisaEvidencePage,
+  BridgingVisas: BridgingVisasPage,
+  AustralianCitizenship: AustralianCitizenshipPage,
+  CoreSkillsOccupationList: CoreSkillsOccupationListPage,
+  ARTReview: ARTReviewPage,
+  TemporaryGraduate485: TemporaryGraduate485Page,
+  About: AboutPage,
+  StandardBusinessSponsorship: StandardBusinessSponsorshipPage,
+  SkillsInDemand482: SkillsInDemand482Page,
+  EmployerNomination186: EmployerNomination186Page,
+  RegionalEmployer494: RegionalEmployer494Page,
+  LabourMarketTesting: LabourMarketTestingPage,
+  SkillingAustraliansFund: SkillingAustraliansFundPage,
+  EmployerObligations: EmployerObligationsPage,
+  CoreSkillsStream: CoreSkillsStreamPage,
+  SpecialistSkillsStream: SpecialistSkillsStreamPage,
+  PermanentResidenceSkillsRegional: PermanentResidenceSkillsRegionalPage,
+  OccupationCaveats: OccupationCaveatsPage,
+  Visa482Conditions: Visa482ConditionsPage,
+  ChangeOfEmployer: ChangeOfEmployerPage,
+  GenuinePosition: GenuinePositionPage,
+  LabourAgreement: LabourAgreementPage,
+  TrainingVisa407: TrainingVisa407Page,
+  ShortStaySpecialist400: ShortStaySpecialist400Page,
+  TemporaryActivity408: TemporaryActivity408Page,
+  DAMA: DAMAPage,
+  VisitorVisa: VisitorVisaPage,
+  ParentVisa: ParentVisaPage,
+  StudentVisa500: StudentVisa500Page,
+  NationalInnovationVisa: NationalInnovationVisaPage,
+  SkillSelectEOI: SkillSelectEOIPage,
+  RegionalAreas: RegionalAreasPage,
+  SkilledRegional887: SkilledRegional887Page,
+  InvitationRounds: InvitationRoundsPage,
+  CoursesPRProspects: CoursesPRProspectsPage,
+  StudentFinancialCapacity: StudentFinancialCapacityPage,
+  StudentGuardian590: StudentGuardian590Page,
+  ParentVisasHub: ParentVisasHubPage,
+  ContributoryParent143: ContributoryParent143Page,
+  SponsoredParent870: SponsoredParent870Page,
+  BalanceOfFamilyTest: BalanceOfFamilyTestPage,
+  ChildVisa101: ChildVisa101Page,
+  ChildVisa802: ChildVisa802Page,
+  ContributoryParent173: ContributoryParent173Page,
+  AgedParent804: AgedParent804Page,
+  ContributoryAgedParent864: ContributoryAgedParent864Page,
+  ParentVisa103: ParentVisa103Page,
+  AssuranceOfSupport: AssuranceOfSupportPage,
+  CarerVisa: CarerVisaPage,
+  RemainingRelativeVisa: RemainingRelativeVisaPage,
+  WorkingHoliday417: WorkingHoliday417Page,
+  WorkAndHoliday462: WorkAndHoliday462Page,
+  ProtectionVisa866: ProtectionVisa866Page,
+  Schedule3: Schedule3Page,
+  NoFurtherStay8503: NoFurtherStay8503Page,
+  HealthWaiver: HealthWaiverPage,
+  ReEntryBans: ReEntryBansPage,
+  NaturalJusticeS57: NaturalJusticeS57Page,
+  TemporaryWork403: TemporaryWork403Page,
+  AdoptionVisa102: AdoptionVisa102Page,
+  DependentChild445: DependentChild445Page,
+  ContributoryAgedParent884: ContributoryAgedParent884Page,
+  Eta601: Eta601Page,
+  Evisitor651: Evisitor651Page,
+  MedicalTreatment602: MedicalTreatment602Page,
+  SpecialCategory444: SpecialCategory444Page,
+  MinisterialIntervention: MinisterialInterventionPage,
+  AgedDependentRelative: AgedDependentRelativePage,
+  OrphanRelativeVisa: OrphanRelativeVisaPage,
+  NzFamilyRelationship461: NzFamilyRelationship461Page,
+  VisitorVisasHub: VisitorVisasHubPage,
+  VisitorVisa600: VisitorVisa600Page,
+  ResidentReturnVisa: ResidentReturnVisaPage,
+  SkilledMigrationHub: SkilledMigrationHubPage,
+  StudentVisasHub: StudentVisasHubPage,
+  PartnerFamilyHub: PartnerFamilyHubPage,
+  VisitorOtherHub: VisitorOtherHubPage,
+  VisaRefusalReviewHub: VisaRefusalReviewHubPage,
+  VisaCancellation: VisaCancellationPage,
+  Section48Bar: Section48BarPage,
+  Pic4020: Pic4020Page,
+  Reviews: ReviewsPage,
+  News: NewsPage,
+  Resources: ResourcesPage,
+  Guides: GuidesPage,
+  Blog: BlogPage,
+  Checklists: ChecklistsPage,
+  Tools: ToolsPage,
+  BlogPost: BlogPostPage,
+  BookConsultation: BookConsultationPage,
+  Book: BookPage,
+  PreAssessment: PreAssessmentPage,
+  Contact: ContactPage,
+  Privacy: PrivacyPage,
+  Terms: TermsPage,
+  Accessibility: AccessibilityPage,
+  NotFound: NotFoundPage,
 } as const
 
 const legacyRedirects = Object.entries(LEGACY_ROUTE_REDIRECTS).map(([from, to]) => (
@@ -246,6 +503,7 @@ const legacyRedirects = Object.entries(LEGACY_ROUTE_REDIRECTS).map(([from, to]) 
 
 export default function AppRouter() {
   return (
+    <Suspense fallback={<RouteFallback />}>
     <Routes>
       <Route path="/" element={<Pages.Home />} />
       <Route path={`/${ROUTE.book}`} element={<Pages.Book />} />
@@ -367,5 +625,6 @@ export default function AppRouter() {
 
       <Route path="*" element={<Pages.NotFound />} />
     </Routes>
+    </Suspense>
   )
 }

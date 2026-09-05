@@ -10,7 +10,9 @@ export default function App() {
       <ScrollToTop />
       <RouteSeoSync />
       <PageTransition>
-        <AppRouter />
+        <main id="main-content">
+          <AppRouter />
+        </main>
       </PageTransition>
     </BrowserRouter>
   )

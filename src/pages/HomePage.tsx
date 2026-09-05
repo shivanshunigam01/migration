@@ -573,6 +573,10 @@ export default function HomePage() {
           src={CARD_KANGAROO}
           alt=""
           aria-hidden="true"
+          width={160}
+          height={160}
+          decoding="async"
+          loading="lazy"
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 0.12, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -1174,7 +1178,7 @@ export default function HomePage() {
             <StaggerItem preset="scale">
             <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img className="img-contain" src={MARA_BADGE} alt="MARA Registration Badge — 2619467" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
+                <img className="img-contain" src={MARA_BADGE} alt="MARA Registration Badge — 2619467" width={160} height={110} decoding="async" loading="lazy" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>MARA Registered Agent</div>
@@ -1188,7 +1192,7 @@ export default function HomePage() {
             <StaggerItem preset="scale">
             <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <img className="img-contain" src={QEAC_LOGO} alt="QEAC — Qualified Education Agent Counsellors logo" style={{ maxHeight: 110, maxWidth: 180, objectFit: 'contain' }} />
+                <img className="img-contain" src={QEAC_LOGO} alt="QEAC — Qualified Education Agent Counsellors logo" width={180} height={110} decoding="async" loading="lazy" style={{ maxHeight: 110, maxWidth: 180, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>QEAC Certified</div>
@@ -1390,15 +1394,19 @@ export default function HomePage() {
               className="img-cover"
               src={NAVPREET_PHOTO}
               alt="Navpreet Aulakh — Registered Migration Agent, Nanak Migration Group"
+              width={800}
+              height={1000}
+              decoding="async"
+              loading="lazy"
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(13,22,50,0.92) 0%, rgba(13,22,50,0.35) 45%, rgba(13,22,50,0.08) 100%)' }} />
             {/* credential card */}
             <div style={{ position: 'absolute', bottom: '12%', left: 24, zIndex: 2, display: 'flex', alignItems: 'center', gap: 12, background: 'rgba(255,255,255,0.12)', backdropFilter: 'blur(14px)', border: '1px solid rgba(255,255,255,0.2)', borderLeft: `3px solid ${GOLD}`, borderRadius: 8, padding: '12px 18px' }}>
-              <img src={NAVPREET_PHOTO} alt="Navpreet Aulakh" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }} />
+              <img src={NAVPREET_PHOTO} alt="Navpreet Aulakh" width={36} height={36} decoding="async" loading="lazy" style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top center', flexShrink: 0 }} />
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: '#ffffff', lineHeight: 1.2 }}>Navpreet Aulakh</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.65)', marginTop: 1 }}>Founder, Registered Migration Agent</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.75)', marginTop: 1 }}>Founder, Registered Migration Agent</div>
                 <div style={{ fontSize: 12, color: GOLD, fontWeight: 600, marginTop: 2, letterSpacing: '0.02em' }}>MARN 2619467</div>
               </div>
             </div>
