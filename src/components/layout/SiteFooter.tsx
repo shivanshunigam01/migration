@@ -2,6 +2,13 @@ import React, { useState, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { GOLD, NAVY, NAVY_DARK } from '@/theme'
 import NanakLogo from '@/components/layout/NanakLogo'
+
+/** Matches navbar chrome */
+const FOOTER_BG = '#EBEDE9'
+const FOOTER_INK = '#111E3E'
+const FOOTER_MUTED = 'rgba(17,30,62,0.72)'
+const FOOTER_SOFT = 'rgba(17,30,62,0.55)'
+const FOOTER_LINE = 'rgba(17,30,62,0.12)'
 import { ROUTE } from '@/data/routes'
 import { useIntakeSubmit } from '@/lib/api'
 import { useSiteContent } from '@/hooks/useSiteContent'
@@ -226,7 +233,7 @@ function ColLink({
 }) {
   const base: React.CSSProperties = {
     fontSize: 15,
-    color: 'rgba(255,255,255,0.75)',
+    color: FOOTER_MUTED,
     textDecoration: 'none',
     display: 'block',
     padding: '5px 0',
@@ -239,10 +246,10 @@ function ColLink({
     width: '100%',
   }
   const handleEnter = (e: React.MouseEvent<HTMLElement>) => {
-    ;(e.currentTarget as HTMLElement).style.color = '#ffffff'
+    ;(e.currentTarget as HTMLElement).style.color = FOOTER_INK
   }
   const handleLeave = (e: React.MouseEvent<HTMLElement>) => {
-    ;(e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)'
+    ;(e.currentTarget as HTMLElement).style.color = FOOTER_MUTED
   }
 
   const to = route ? resolveRoute(route) : href
@@ -340,7 +347,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
           >
             {heading}
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: 15 }}>{isOpen ? '▲' : '▼'}</span>
+          <span style={{ color: FOOTER_SOFT, fontSize: 15 }}>{isOpen ? '▲' : '▼'}</span>
         </button>
         {/* Desktop heading always visible */}
         <div className="footer-col-desktop-heading">
@@ -476,7 +483,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 2: Credentials strip ────────────────────────────────── */}
-      <div style={{ background: NAVY_DARK, padding: '0 24px' }} className="footer-edge-pad">
+      <div style={{ background: FOOTER_BG, padding: '0 24px', borderTop: `1px solid ${FOOTER_LINE}` }} className="footer-edge-pad">
         <div
           className="footer-credentials-strip"
           style={{
@@ -504,7 +511,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   alignItems: 'center',
                   gap: 5,
                   fontSize: 13,
-                  color: 'rgba(255,255,255,0.7)',
+                  color: FOOTER_MUTED,
                   letterSpacing: '0.04em',
                   whiteSpace: 'nowrap',
                 }}
@@ -513,7 +520,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                 {item}
               </span>
               {i < arr.length - 1 && (
-                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.3)', padding: '0 4px' }}>
+                <span style={{ fontSize: 13, color: FOOTER_SOFT, padding: '0 4px' }}>
                   ·
                 </span>
               )}
@@ -523,7 +530,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 3: Main footer grid ─────────────────────────────────── */}
-      <div style={{ background: NAVY }}>
+      <div style={{ background: FOOTER_BG, borderTop: `1px solid ${FOOTER_LINE}` }}>
         <div className="footer-main-grid"
           style={{
             display: 'grid',
@@ -538,14 +545,14 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
           <div>
             {/* Logo lockup */}
             <div style={{ marginBottom: 16 }}>
-              <NanakLogo size={36} light />
+              <NanakLogo size={36} />
             </div>
 
             {/* Positioning statement */}
             <p
               style={{
                 fontSize: 14,
-                color: 'rgba(255,255,255,0.75)',
+                color: FOOTER_MUTED,
                 lineHeight: 1.6,
                 margin: '0 0 20px',
                 maxWidth: 280,
@@ -568,7 +575,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   key={line}
                   style={{
                     fontSize: 14,
-                    color: 'rgba(255,255,255,0.65)',
+                    color: FOOTER_MUTED,
                     lineHeight: 1.7,
                   }}
                 >
@@ -580,8 +587,8 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             {/* MARA card */}
             <div
               style={{
-                background: 'rgba(255,255,255,0.06)',
-                border: '1px solid rgba(255,255,255,0.12)',
+                background: 'rgba(17,30,62,0.05)',
+                border: `1px solid ${FOOTER_LINE}`,
                 borderRadius: 8,
                 padding: '10px 14px',
                 marginBottom: 16,
@@ -606,13 +613,13 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   Registered Migration Agent
                 </span>
               </div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.7)' }}>MARN 2619467</div>
+              <div style={{ fontSize: 12, color: FOOTER_MUTED }}>MARN 2619467</div>
             </div>
 
             {/* Social icons — omit until real profile URLs are confirmed */}
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', lineHeight: 1.5, margin: 0 }}>
+            <p style={{ fontSize: 13, color: FOOTER_SOFT, lineHeight: 1.5, margin: 0 }}>
               Follow updates via our{' '}
-              <Link to="/blog" style={{ color: GOLD, fontWeight: 600, textDecoration: 'none' }}>migration blog</Link>
+              <Link to="/blog" style={{ color: NAVY, fontWeight: 600, textDecoration: 'none' }}>migration blog</Link>
               {' '}or newsletter above.
             </p>
           </div>
@@ -777,7 +784,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 4: Australia keyword / location row ─────────────────── */}
-      <div className="footer-edge-pad" style={{ background: NAVY, borderTop: '1px solid rgba(255,255,255,0.07)', padding: '20px 48px' }}>
+      <div className="footer-edge-pad" style={{ background: FOOTER_BG, borderTop: `1px solid ${FOOTER_LINE}`, padding: '20px 48px' }}>
         <div style={{ maxWidth: 1300, margin: '0 auto' }}>
           <div
             style={{
@@ -785,7 +792,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               fontWeight: 700,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: 'rgba(255,255,255,0.35)',
+              color: FOOTER_SOFT,
               marginBottom: 10,
             }}
           >
@@ -812,7 +819,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                         border: 'none',
                         cursor: 'pointer',
                         fontSize: 13,
-                        color: 'rgba(255,255,255,0.45)',
+                        color: FOOTER_MUTED,
                         fontFamily: "'Gilroy', sans-serif",
                         padding: 0,
                         transition: 'color 0.15s',
@@ -820,10 +827,10 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                         textDecoration: 'none',
                       }}
                       onMouseEnter={(e) => {
-                        ;(e.currentTarget as HTMLElement).style.color = '#ffffff'
+                        ;(e.currentTarget as HTMLElement).style.color = FOOTER_INK
                       }}
                       onMouseLeave={(e) => {
-                        ;(e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.45)'
+                        ;(e.currentTarget as HTMLElement).style.color = FOOTER_MUTED
                       }}
                     >
                       {loc.label}
@@ -831,7 +838,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   </li>
                   {i < locations.length - 1 && (
                     <li aria-hidden="true">
-                      <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.2)', padding: '0 10px' }}>
+                      <span style={{ fontSize: 13, color: FOOTER_SOFT, padding: '0 10px' }}>
                         ·
                       </span>
                     </li>
@@ -844,7 +851,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
       </div>
 
       {/* ── Band 5: Legal bar ────────────────────────────────────────── */}
-      <div className="footer-edge-pad" style={{ background: NAVY_DARK, padding: '20px 48px' }}>
+      <div className="footer-edge-pad" style={{ background: FOOTER_BG, borderTop: `1px solid ${FOOTER_LINE}`, padding: '20px 48px' }}>
         <div style={{ maxWidth: 1300, margin: '0 auto', textAlign: 'center' }}>
           {/* Row 1 */}
           <div
@@ -857,11 +864,11 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               marginBottom: 8,
             }}
           >
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 12, color: FOOTER_SOFT, whiteSpace: 'nowrap' }}>
               © 2026 Nanak Migration Group Pty Ltd. All rights reserved.
             </span>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>|</span>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 12, color: FOOTER_LINE }}>|</span>
+            <span style={{ fontSize: 12, color: FOOTER_SOFT, whiteSpace: 'nowrap' }}>
               ABN 54 674 937 476 · ACN 674 937 476
             </span>
             {[
@@ -871,13 +878,13 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               { label: 'Sitemap', to: '/sitemap.xml', external: true },
             ].map((item) => (
               <Fragment key={item.label}>
-                <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.2)' }}>|</span>
+                <span style={{ fontSize: 12, color: FOOTER_LINE }}>|</span>
                 {item.external ? (
                   <a
                     href={item.to}
                     style={{
                       fontSize: 12,
-                      color: 'rgba(255,255,255,0.5)',
+                      color: FOOTER_MUTED,
                       textDecoration: 'none',
                       whiteSpace: 'nowrap',
                     }}
@@ -889,7 +896,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                     to={item.to}
                     style={{
                       fontSize: 12,
-                      color: 'rgba(255,255,255,0.5)',
+                      color: FOOTER_MUTED,
                       textDecoration: 'none',
                       whiteSpace: 'nowrap',
                     }}
@@ -901,7 +908,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             ))}
           </div>
           {/* Row 2 */}
-          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>
+          <div style={{ fontSize: 12, color: FOOTER_SOFT }}>
             General information only. Not legal or migration advice. Consult a registered migration
             agent before acting. Content current as at July 2026.
           </div>

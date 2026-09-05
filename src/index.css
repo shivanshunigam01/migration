@@ -416,7 +416,7 @@ body.menu-open {
 
   /* Accordion columns */
   .footer-col {
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(17,30,62,0.12);
   }
 
   /* Show the toggle button on mobile, hide desktop heading */
@@ -1037,9 +1037,9 @@ body.menu-open {
   }
 }
 
-/* Improve muted-on-navy contrast for common footer/stats copy */
+/* Footer muted text on light chrome (#EBEDE9) */
 .footer-main-grid p,
 .footer-main-grid address div,
 .footer-credentials-strip span {
-  color: rgba(255, 255, 255, 0.78) !important;
+  color: rgba(17, 30, 62, 0.72) !important;
 }
