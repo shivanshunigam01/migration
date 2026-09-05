@@ -1,7 +1,7 @@
 import React from 'react'
 
-const LOGO_SRC = '/nanak-migration-logo.png'
-const LOGO_LIGHT_SRC = '/nanak-migration-logo-light.png'
+const LOGO_SRC = '/nanak-migration-logo.png?v=2'
+const LOGO_LIGHT_SRC = '/nanak-migration-logo-light.png?v=2'
 
 /**
  * Brand mark — full lockup (icon + wordmark) from the official Nanak Migration Group logo.

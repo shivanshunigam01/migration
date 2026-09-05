@@ -152,3 +152,9 @@ public/mia-logo.png -filter -diff -merge
 public/qeac-logo.png -filter -diff -merge
 public/card-kangaroo.png -filter -diff -merge
 public/og-image.jpg -filter -diff -merge
+# Brand marks / icons — Vercel does not fetch Git LFS, so these must be real blobs
+public/nanak-migration-logo.png -filter -diff -merge
+public/nanak-migration-logo-light.png -filter -diff -merge
+public/favicon.png -filter -diff -merge
+public/apple-touch-icon.png -filter -diff -merge
+public/icons.svg -filter -diff -merge
