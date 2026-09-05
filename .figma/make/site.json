@@ -7,8 +7,8 @@
     "index": true
   },
   "icons": {
-    "icon": "/logo.png",
-    "appleTouchIcon": "/logo.png"
+    "icon": "/favicon.png",
+    "appleTouchIcon": "/apple-touch-icon.png"
   },
   "openGraph": {
     "url": "https://www.nanakmigration.com.au/",
