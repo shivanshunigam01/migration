@@ -196,17 +196,34 @@ export default function SiteHeader({
                   <button
                     onClick={() => togglePin(item.label)}
                     aria-expanded={isOpen}
+                    className="nav-top-link"
                     style={{
                       display: 'flex', alignItems: 'center', gap: 5, padding: '10px 14px',
                       color: isOpen ? '#111E3E' : 'rgba(17,30,62,0.78)',
-                      background: isOpen ? 'rgba(17,30,62,0.06)' : 'transparent',
-                      border: isPinned ? '1px solid rgba(232,160,23,0.55)' : 'none',
-                      cursor: 'pointer', fontSize: 14, fontWeight: 500,
-                      letterSpacing: '0.01em', borderRadius: 8, transition: 'color 0.15s, background 0.15s',
+                      background: isOpen ? 'rgba(17,30,62,0.14)' : 'transparent',
+                      border: isPinned ? '1px solid rgba(232,160,23,0.55)' : '1px solid transparent',
+                      cursor: 'pointer', fontSize: 14, fontWeight: isOpen ? 600 : 500,
+                      letterSpacing: '0.01em', borderRadius: 8,
+                      transition: 'color 0.15s, background 0.15s, box-shadow 0.15s, border-color 0.15s',
                       whiteSpace: 'nowrap', fontFamily: "'Gilroy', sans-serif",
+                      boxShadow: isOpen ? 'inset 0 -2.5px 0 #8F968E' : 'inset 0 -2.5px 0 transparent',
                     }}
-                    onMouseEnter={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.color = '#111E3E' }}
-                    onMouseLeave={e => { if (!isOpen) (e.currentTarget as HTMLElement).style.color = 'rgba(17,30,62,0.78)' }}
+                    onMouseEnter={e => {
+                      const el = e.currentTarget as HTMLElement
+                      if (!isOpen) {
+                        el.style.color = '#111E3E'
+                        el.style.background = 'rgba(17,30,62,0.10)'
+                        el.style.boxShadow = 'inset 0 -2.5px 0 #A3A9A1'
+                      }
+                    }}
+                    onMouseLeave={e => {
+                      const el = e.currentTarget as HTMLElement
+                      if (!isOpen) {
+                        el.style.color = 'rgba(17,30,62,0.78)'
+                        el.style.background = 'transparent'
+                        el.style.boxShadow = 'inset 0 -2.5px 0 transparent'
+                      }
+                    }}
                   >
                     {item.label}
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
