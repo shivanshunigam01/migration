@@ -199,15 +199,14 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
 
       {/* ── STATS BAND ── */}
       <div style={{ background: NAVY, padding: '32px' }}>
-        <div className="grid-5" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 0, borderRadius: 16, overflow: 'hidden' }}>
+        <div className="grid-4" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, borderRadius: 16, overflow: 'hidden' }}>
           {[
             { num: '4', label: 'Consultation languages — EN, HI, PA, NE', icon: 'globe' },
             { num: '3', label: 'State offices — VIC, WA, NSW', icon: 'mappin' },
             { num: 'QEAC', label: 'Qualified Education Agent Counsellor', icon: 'graduationcap' },
             { num: 'MARN', label: '2619467 — OMARA registered', icon: 'shield' },
-            { num: 'ABN', label: '47 648 226 804 · Nanak Accountants', icon: 'hash' },
           ].map((stat, i) => (
-            <div key={stat.label} style={{ padding: '24px 20px', borderRight: i < 4 ? '1px solid rgba(255,255,255,0.08)' : 'none', textAlign: 'center' }}>
+            <div key={stat.label} style={{ padding: '24px 20px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none', textAlign: 'center' }}>
               <div style={{ width: 36, height: 36, borderRadius: 10, background: `${GOLD}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 12px' }}>
                 <Icon name={stat.icon} size={16} color={GOLD} />
               </div>
