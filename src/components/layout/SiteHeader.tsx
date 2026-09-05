@@ -279,7 +279,7 @@ export default function SiteHeader({
                         <Link key={l.label} to={resolveRoute(l.route)}
                           onClick={() => closeNav()}
                           style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', background: l.emph ? `${GOLD}12` : 'transparent', marginBottom: l.emph ? 0 : 2 }}
-                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = l.emph ? `${GOLD}22` : `${NAVY}08` }}
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = l.emph ? `${GOLD}28` : 'rgba(17,30,62,0.10)' }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = l.emph ? `${GOLD}12` : 'transparent' }}>
                           <span style={{ width: 30, height: 30, borderRadius: 7, background: l.emph ? `${GOLD}22` : `${NAVY}0e`, border: l.emph ? `1.5px solid ${GOLD}44` : `1.5px solid ${NAVY}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                             <Icon name={l.icon} size={13} color={l.emph ? NAVY : NAVY} />
@@ -312,7 +312,7 @@ export default function SiteHeader({
                             }, 80)
                           }}
                           style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', marginBottom: 2 }}
-                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}08` }}
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(17,30,62,0.10)' }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent' }}>
                           <span style={{ width: 30, height: 30, borderRadius: 7, background: `${NAVY}0e`, border: `1.5px solid ${NAVY}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                             <Icon name={l.icon} size={13} color={NAVY} />
@@ -348,7 +348,7 @@ export default function SiteHeader({
                         <Link key={l.label} to={resolveRoute(l.route)}
                           onClick={() => closeNav()}
                           style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', marginBottom: 2 }}
-                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = `${NAVY}08` }}
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(17,30,62,0.10)' }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent' }}>
                           <span style={{ width: 30, height: 30, borderRadius: 7, background: `${NAVY}0e`, border: `1.5px solid ${NAVY}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                             <Icon name={l.icon} size={13} color={NAVY} />
@@ -557,7 +557,7 @@ export default function SiteHeader({
                               padding: '10px 8px', borderRadius: 8, textDecoration: 'none',
                               transition: 'background 0.12s', cursor: 'pointer',
                             }}
-                            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}08` }}
+                            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = 'rgba(17,30,62,0.10)' }}
                             onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = 'transparent' }}
                           >
                             <div style={{ flexShrink: 0, width: 32, height: 32, borderRadius: 7, border: `1.5px solid ${iconColor}22`, backgroundColor: `${iconColor}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 1 }}>
