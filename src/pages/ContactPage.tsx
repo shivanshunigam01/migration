@@ -10,17 +10,18 @@ import { NAV_ITEMS } from "@/data/navItems"
 import { usePageSeo } from "@/lib/usePageSeo"
 
 const OFFICES = [
-  { city: "Melbourne", detail: "Level 8, 350 Collins Street, Melbourne VIC 3000" },
-  { city: "Sydney", detail: "By appointment — Greater Sydney" },
-  { city: "Brisbane", detail: "By appointment — Greater Brisbane" },
-  { city: "Perth", detail: "By appointment — Greater Perth" },
+  { city: "Truganina", detail: "8 Tallis Cct, Truganina VIC 3029" },
+  { city: "Geelong", detail: "Suite 1, 41 Malop St, Geelong VIC 3220" },
+  { city: "Cranbourne", detail: "Unit 2/207 S Gippsland Hwy, Cranbourne VIC 3977" },
+  { city: "Canning Vale", detail: "150 Canna Dr, Canning Vale WA 6155" },
+  { city: "Craigieburn", detail: "21 Ravenwoods Way, Craigieburn VIC 3064" },
 ]
 
 export default function ContactPage({ navigate }: { navigate: (page: string) => void }) {
   usePageSeo("contact", {
-    title: "Contact Nanak Migration Group | Melbourne, Sydney, Brisbane, Perth",
+    title: "Contact Nanak Migration Group | Truganina, Geelong, Cranbourne, Canning Vale, Craigieburn",
     metaDescription:
-      "Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Melbourne, Sydney, Brisbane and Perth. MARN 2619467.",
+      "Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Truganina, Geelong, Cranbourne, Canning Vale and Craigieburn. MARN 2619467.",
     primaryKeyword: "contact migration agent Australia",
   })
 

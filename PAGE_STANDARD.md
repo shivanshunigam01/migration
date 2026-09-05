@@ -347,7 +347,7 @@ The following TBC placeholders in `src/components/SiteFooter.tsx` (and the JSON-
 | Wire Google rating | Not wired | Wire Google rating widget to real Google Business Profile before displaying any star rating or review count |
 | Navpreet Aulakh photo | Navy monogram placeholder in hero CTA section | Replace with a real professional photograph of Navpreet Aulakh — the AI-generated placeholder (`ChatGPT_Image_Aug_9__2026__08_28_55_PM.png`) has been removed |
 
-_Resolved: ABN 54 674 937 476, ACN 674 937 476, phone 1300 644 728, email visa@nanakmigration.com.au, office address Level 8 350 Collins Street Melbourne VIC 3000._
+_Resolved: ABN 54 674 937 476, ACN 674 937 476, phone 1300 644 728, email visa@nanakmigration.com.au, office address 8 Tallis Cct Truganina VIC 3029._
 
 ## §9 SEO and AI-Visibility Layer
 

@@ -273,7 +273,7 @@ export default function SiteHeader({
                       <div style={{ height: 1, background: '#f0f2f7', marginBottom: 12 }} />
                       {[
                         { label: 'About the Practice', desc: 'Who we are and how we work', icon: 'user', route: 'about', emph: false },
-                        { label: 'Contact', desc: 'Melbourne, Sydney, Brisbane and Perth', icon: 'phone', route: 'contact', emph: false },
+                        { label: 'Contact', desc: 'Truganina, Geelong, Cranbourne, Canning Vale, Craigieburn', icon: 'phone', route: 'contact', emph: false },
                         { label: 'Book Free Consultation', desc: 'Free 30-minute consultation', icon: 'calendar', route: 'book-consultation', emph: true },
                       ].map(l => (
                         <Link key={l.label} to={resolveRoute(l.route)}

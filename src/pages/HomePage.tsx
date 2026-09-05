@@ -618,7 +618,7 @@ export default function HomePage() {
               </motion.h1>
 
               <motion.p variants={fadeUp} style={{ color: '#455066', fontSize: 19, lineHeight: 1.72, margin: '30px 0 0', maxWidth: 540 }}>
-                Skilled workers, students and families — guided through Australia’s visa system by registered migration agents in Melbourne, Sydney, Brisbane and Perth.
+                Skilled workers, students and families — guided through Australia’s visa system by registered migration agents in Truganina, Geelong, Cranbourne, Canning Vale and Craigieburn.
               </motion.p>
 
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 40 }}>
@@ -835,7 +835,7 @@ export default function HomePage() {
               <Stagger style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px 80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
                 {[
                   { label: 'MARN 2619467', sub: 'MARA Registered Agent' },
-                  { label: '4 Offices', sub: 'Melbourne · Sydney · Brisbane · Perth' },
+                  { label: '5 Offices', sub: 'Truganina · Geelong · Cranbourne · Canning Vale · Craigieburn' },
                   { label: 'OMARA', sub: 'Code of Conduct Compliant' },
                 ].map(item => (
                   <StaggerItem key={item.label} style={{ textAlign: 'center' }}>
@@ -1435,16 +1435,13 @@ export default function HomePage() {
           </Reveal>
 
           {/* 5 office cards */}
-          <p style={{ textAlign: 'center', fontSize: 14, color: '#9ca3af', marginBottom: 20, lineHeight: 1.6 }}>
-            Office addresses to be confirmed before launch.
-          </p>
           <Stagger className="grid-5" style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
             {[
-              { city: 'Melbourne', label: 'Head Office', address: 'Level 8, 350 Collins St', suburb: 'Melbourne VIC 3000', maps: 'https://maps.google.com/?q=350+Collins+St+Melbourne+VIC+3000' },
-              { city: 'Sydney', label: 'NSW Office', address: '81–83 Campbell St', suburb: 'Surry Hills NSW 2010', maps: 'https://maps.google.com/?q=81+Campbell+St+Surry+Hills+NSW+2010' },
-              { city: 'Brisbane', label: 'QLD Office', address: 'Suite 1681, 17 Gould Rd', suburb: 'Herston QLD 4006', maps: 'https://maps.google.com/?q=17+Gould+Road+Herston+QLD+4006' },
-              { city: 'Perth', label: 'WA Office', address: 'Level 2, 1 Altona St', suburb: 'West Perth WA 6005', maps: 'https://maps.google.com/?q=1+Altona+St+West+Perth+WA+6005' },
+              { city: 'Truganina', label: 'Head Office', address: '8 Tallis Cct', suburb: 'Truganina VIC 3029', maps: 'https://maps.google.com/?q=8+Tallis+Cct+Truganina+VIC+3029' },
               { city: 'Geelong', label: 'Regional VIC', address: 'Suite 1, 41 Malop St', suburb: 'Geelong VIC 3220', maps: 'https://maps.google.com/?q=41+Malop+St+Geelong+VIC+3220' },
+              { city: 'Cranbourne', label: 'VIC Office', address: 'Unit 2/207 S Gippsland Hwy', suburb: 'Cranbourne VIC 3977', maps: 'https://maps.google.com/?q=Unit+2%2F207+S+Gippsland+Hwy+Cranbourne+VIC+3977' },
+              { city: 'Canning Vale', label: 'WA Office', address: '150 Canna Dr', suburb: 'Canning Vale WA 6155', maps: 'https://maps.google.com/?q=150+Canna+Dr+Canning+Vale+WA+6155' },
+              { city: 'Craigieburn', label: 'VIC Office', address: '21 Ravenwoods Way', suburb: 'Craigieburn VIC 3064', maps: 'https://maps.google.com/?q=21+Ravenwoods+Way+Craigieburn+VIC+3064' },
             ].map((office, i) => (
               <StaggerItem key={office.city} preset="scale">
               <motion.div

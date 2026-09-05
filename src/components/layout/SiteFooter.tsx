@@ -28,10 +28,10 @@ const jsonLd = {
         'Registered migration agents helping individuals and employers navigate Australian immigration.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Level 8, 350 Collins Street',
-        addressLocality: 'Melbourne',
+        streetAddress: '8 Tallis Cct',
+        addressLocality: 'Truganina',
         addressRegion: 'VIC',
-        postalCode: '3000',
+        postalCode: '3029',
         addressCountry: 'AU',
       },
       telephone: '+61 1300 644 728',
@@ -565,8 +565,8 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             {/* Address */}
             <address style={{ fontStyle: 'normal', marginBottom: 16 }}>
               {[
-                'Level 8, 350 Collins Street',
-                'Melbourne VIC 3000',
+                '8 Tallis Cct',
+                'Truganina VIC 3029',
                 'Australia',
                 'Ph: 1300 644 728',
                 'visa@nanakmigration.com.au',

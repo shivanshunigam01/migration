@@ -36,8 +36,8 @@ export const PAGE_META: Record<string, PageMeta> = {
     primaryKeyword: 'migration pre assessment form',
   },
   contact: {
-    title: 'Contact Nanak Migration Group | Melbourne, Sydney, Brisbane, Perth',
-    metaDescription: 'Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Melbourne, Sydney, Brisbane and Perth. MARN 2619467.',
+    title: 'Contact Nanak Migration Group | Truganina, Geelong, Cranbourne, Canning Vale, Craigieburn',
+    metaDescription: 'Contact Nanak Migration Group — phone 1300 644 728 or email visa@nanakmigration.com.au. Offices in Truganina, Geelong, Cranbourne, Canning Vale and Craigieburn. MARN 2619467.',
     primaryKeyword: 'contact migration agent Australia',
   },
   privacy: {

@@ -21,7 +21,7 @@ const FALLBACK_TYPES: PublicConsultType[] = [
   { id: 'other', name: 'Other Migration Services', dur: 30, fee: 75, who: 'Navpreet Aulakh (RMA)', desc: 'Anything not listed — tell us the situation in the notes.' },
 ]
 
-const FALLBACK_OFFICES = ['Mickleham', 'Truganina', 'Cranbourne', 'Geelong', 'Canning Vale (WA)']
+const FALLBACK_OFFICES = ['Truganina', 'Geelong', 'Cranbourne', 'Canning Vale (WA)', 'Craigieburn']
 const FALLBACK_HEARD = ['Google', 'TikTok', 'Instagram', 'Facebook', 'YouTube', 'Friend / family', 'Existing client', 'Other']
 
 function fmtTime(ts: number) {
