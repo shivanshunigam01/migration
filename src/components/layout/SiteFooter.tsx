@@ -875,7 +875,8 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
               { label: 'Privacy Policy', to: '/privacy' },
               { label: 'Terms of Use', to: '/terms' },
               { label: 'Accessibility', to: '/accessibility' },
-              { label: 'Sitemap', to: '/sitemap.xml', external: true },
+              { label: 'Sitemap', to: '/site-map' },
+              { label: 'XML Sitemap', to: '/sitemap.xml', external: true },
             ].map((item) => (
               <Fragment key={item.label}>
                 <span style={{ fontSize: 12, color: FOOTER_LINE }}>|</span>

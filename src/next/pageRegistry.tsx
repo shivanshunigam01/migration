@@ -114,6 +114,7 @@ import VisitorVisaPageRaw from "@/views/visitor-other/VisitorVisaPage"
 import VisitorVisasHubPageRaw from "@/views/visitor-other/VisitorVisasHubPage"
 import WorkAndHoliday462PageRaw from "@/views/visitor-other/WorkAndHoliday462Page"
 import WorkingHoliday417PageRaw from "@/views/visitor-other/WorkingHoliday417Page"
+import HtmlSitemapPageRaw from "@/views/practice/HtmlSitemapPage"
 
 const ARTReviewPage = withNavigate(ARTReviewPageRaw as never)
 const AboutPage = withNavigate(AboutPageRaw as never)
@@ -223,6 +224,7 @@ const VisitorVisaPage = withNavigate(VisitorVisaPageRaw as never)
 const VisitorVisasHubPage = withNavigate(VisitorVisasHubPageRaw as never)
 const WorkAndHoliday462Page = withNavigate(WorkAndHoliday462PageRaw as never)
 const WorkingHoliday417Page = withNavigate(WorkingHoliday417PageRaw as never)
+const HtmlSitemapPage = withNavigate(HtmlSitemapPageRaw as never)
 const Home = withNavigate(HomePage as never)
 const Privacy = withNavigate(function Privacy(p: { navigate: (page: string) => void }) { return <LegalPage kind="privacy" navigate={p.navigate} /> } as never)
 const Terms = withNavigate(function Terms(p: { navigate: (page: string) => void }) { return <LegalPage kind="terms" navigate={p.navigate} /> } as never)
@@ -317,6 +319,7 @@ export const PAGE_REGISTRY: Record<string, AppPageComponent> = {
   "skilled-work-regional-491": SkilledWorkRegional491Page,
   "skills-assessment": SkillsAssessmentPage,
   "skills-in-demand-visa": SkillsInDemand482Page,
+  "site-map": HtmlSitemapPage,
   "skillselect-eoi": SkillSelectEOIPage,
   "special-category-444": SpecialCategory444Page,
   "sponsored-parent-870": SponsoredParent870Page,

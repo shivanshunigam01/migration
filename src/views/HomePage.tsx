@@ -988,7 +988,7 @@ export default function HomePage() {
               { label: 'Standard Business Sponsorship', href: '/employer-sponsored-visas' },
               { label: '482 Nomination', href: '/skills-in-demand' },
               { label: '186 Direct Entry', href: '/employer-nomination' },
-              { label: 'Labour Agreement', href: '/labour-agreement' },
+              { label: 'Labour Agreement', href: '/labour-agreements' },
             ],
             cta: 'Talk to our employer team →',
             href: '/employer-sponsored-visas',

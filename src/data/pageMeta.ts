@@ -570,4 +570,10 @@ export const PAGE_META: Record<string, PageMeta> = {
     metaDescription: "Subclass 461 NZ Citizen Family Relationship visa: 5-year temporary visa for family members (not NZ citizens) of a New Zealand citizen on a subclass 444 Special Category visa in Australia. Full work and study rights. Renewable onshore. MARN 2619467.",
     primaryKeyword: 'NZ citizen family relationship visa subclass 461 Australia',
   },
+  'site-map': {
+    title: 'Sitemap | All Nanak Migration Pages',
+    metaDescription:
+      'Complete HTML sitemap of Nanak Migration Group visa guides, hubs, tools, blog and news — every public page linked for visitors and search engines.',
+    primaryKeyword: 'Nanak Migration sitemap',
+  },
 }

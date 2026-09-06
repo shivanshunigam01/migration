@@ -76,17 +76,21 @@ export function useNavigate() {
 
 export function useLocation() {
   const pathname = usePathname() || "/"
-  const searchParams = useSearchParamsNext()
-  const search = searchParams?.toString() ? `?${searchParams.toString()}` : ""
+  // Do NOT call useSearchParams() here — it forces a CSR bailout for the whole route
+  // (empty HTML body for crawlers). Read search/hash only on the client after mount.
+  const search =
+    typeof window !== "undefined" && window.location.search ? window.location.search : ""
+  const hash =
+    typeof window !== "undefined" && window.location.hash ? window.location.hash : ""
   return useMemo(
     () => ({
       pathname,
       search,
-      hash: typeof window !== "undefined" ? window.location.hash : "",
+      hash,
       state: null,
       key: pathname,
     }),
-    [pathname, search],
+    [pathname, search, hash],
   )
 }
 
