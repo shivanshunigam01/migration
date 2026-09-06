@@ -1,23 +1,17 @@
-# Nanak Migration — Public Website
+# Nanak Migration — public website
 
-This is the public-facing Nanak Migration Group website (React + Vite + Tailwind CSS v4).
+Next.js App Router (SSR). Marketing pages render full HTML on the server — not an empty `#root` SPA shell.
 
-## Development
+## Scripts
 
-```bash
-pnpm install
-pnpm dev
+- `pnpm dev` — local dev on port 5173
+- `pnpm build` — production build
+- `pnpm start` — serve production build
+
+## Env
+
+```
+NEXT_PUBLIC_API_BASE_URL=https://api.nanakmigration.com.au/api
 ```
 
-Open http://localhost:5173
-
-## Environment
-
-Copy `.env.example` to `.env` and set API URLs if connecting to the backend.
-
-## Build
-
-```bash
-pnpm build
-pnpm preview
-```
+Local default: `http://localhost:5001/api`

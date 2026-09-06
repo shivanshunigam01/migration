@@ -104,7 +104,7 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
   async function handleSubscribe(e: React.FormEvent) {
     e.preventDefault()
     if (!email.trim()) return
-    await submit({ email: email.trim(), source: 'news-page' })
+    await submit({ lead: { email: email.trim(), source: 'news-page' }, page: '/news' })
   }
 
   function openArticle(slug: string) {

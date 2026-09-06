@@ -18,7 +18,8 @@ function useGlow(obj: typeof glowA) {
   }))
 
   useEffect(() => {
-    return onChange(obj, () => {
+    // Theatre typings for onChange pointer differ across versions.
+    return onChange(obj as never, () => {
       setValues({
         opacity: val(obj.props.opacity),
         scale: val(obj.props.scale),

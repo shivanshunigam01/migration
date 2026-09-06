@@ -122,7 +122,7 @@ if (missing.length) {
 }
 
 const importLines = components
-  .map((c) => `import ${c} from "@/pages/${IMPORT_PATH[c]}"`)
+  .map((c) => `import ${c} from "@/views/${IMPORT_PATH[c]}"`)
   .join("\n")
 
 const pagesEntries = components
@@ -147,12 +147,12 @@ import React from "react"
 import { withNavigate } from "@/lib/withNavigate"
 import { LEGACY_ROUTE_REDIRECTS } from "@/lib/navigation"
 import { ROUTE } from "@/data/routes"
-import HomePage from "@/pages/HomePage"
-import BookConsultationPage from "@/pages/BookConsultationPage"
-import ContactPage from "@/pages/ContactPage"
-import LegalPage from "@/pages/LegalPage"
-import NotFoundPage from "@/pages/NotFoundPage"
-import BlogPostPage from "@/pages/practice/BlogPostPage"
+import HomePage from "@/views/HomePage"
+import BookConsultationPage from "@/views/BookConsultationPage"
+import ContactPage from "@/views/ContactPage"
+import LegalPage from "@/views/LegalPage"
+import NotFoundPage from "@/views/NotFoundPage"
+import BlogPostPage from "@/views/practice/BlogPostPage"
 
 ${importLines}
 

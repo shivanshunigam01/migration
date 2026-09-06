@@ -3,7 +3,7 @@ import React, { Suspense, lazy } from "react"
 import { withNavigate } from "@/lib/withNavigate"
 import { LEGACY_ROUTE_REDIRECTS } from "@/lib/navigation"
 import { ROUTE } from "@/data/routes"
-import HomePage from "@/pages/HomePage"
+import HomePage from "@/views/HomePage"
 
 function RouteFallback() {
   return (
@@ -23,338 +23,338 @@ function RouteFallback() {
     </div>
   )
 }
-const EmployerSponsorshipPageLazy = lazy(() => import("@/pages/employer-sponsored/EmployerSponsorshipPage"))
+const EmployerSponsorshipPageLazy = lazy(() => import("@/views/employer-sponsored/EmployerSponsorshipPage"))
 const EmployerSponsorshipPage = withNavigate(EmployerSponsorshipPageLazy as never)
 
-const SkilledIndependent189PageLazy = lazy(() => import("@/pages/skilled/SkilledIndependent189Page"))
+const SkilledIndependent189PageLazy = lazy(() => import("@/views/skilled/SkilledIndependent189Page"))
 const SkilledIndependent189Page = withNavigate(SkilledIndependent189PageLazy as never)
 
-const StudentToPRPageLazy = lazy(() => import("@/pages/student/StudentToPRPage"))
+const StudentToPRPageLazy = lazy(() => import("@/views/student/StudentToPRPage"))
 const StudentToPRPage = withNavigate(StudentToPRPageLazy as never)
 
-const PartnerVisa309PageLazy = lazy(() => import("@/pages/partner-family/PartnerVisa309Page"))
+const PartnerVisa309PageLazy = lazy(() => import("@/views/partner-family/PartnerVisa309Page"))
 const PartnerVisa309Page = withNavigate(PartnerVisa309PageLazy as never)
 
-const PartnerVisa820PageLazy = lazy(() => import("@/pages/partner-family/PartnerVisa820Page"))
+const PartnerVisa820PageLazy = lazy(() => import("@/views/partner-family/PartnerVisa820Page"))
 const PartnerVisa820Page = withNavigate(PartnerVisa820PageLazy as never)
 
-const SkillRequirements186PageLazy = lazy(() => import("@/pages/employer-sponsored/SkillRequirements186Page"))
+const SkillRequirements186PageLazy = lazy(() => import("@/views/employer-sponsored/SkillRequirements186Page"))
 const SkillRequirements186Page = withNavigate(SkillRequirements186PageLazy as never)
 
-const OccupationsListPage186Lazy = lazy(() => import("@/pages/employer-sponsored/OccupationsListPage186"))
+const OccupationsListPage186Lazy = lazy(() => import("@/views/employer-sponsored/OccupationsListPage186"))
 const OccupationsListPage186 = withNavigate(OccupationsListPage186Lazy as never)
 
-const Pathway482ToPRPageLazy = lazy(() => import("@/pages/employer-sponsored/Pathway482ToPRPage"))
+const Pathway482ToPRPageLazy = lazy(() => import("@/views/employer-sponsored/Pathway482ToPRPage"))
 const Pathway482ToPRPage = withNavigate(Pathway482ToPRPageLazy as never)
 
-const SkilledNominated190PageLazy = lazy(() => import("@/pages/skilled/SkilledNominated190Page"))
+const SkilledNominated190PageLazy = lazy(() => import("@/views/skilled/SkilledNominated190Page"))
 const SkilledNominated190Page = withNavigate(SkilledNominated190PageLazy as never)
 
-const SkilledWorkRegional491PageLazy = lazy(() => import("@/pages/skilled/SkilledWorkRegional491Page"))
+const SkilledWorkRegional491PageLazy = lazy(() => import("@/views/skilled/SkilledWorkRegional491Page"))
 const SkilledWorkRegional491Page = withNavigate(SkilledWorkRegional491PageLazy as never)
 
-const PointsTestPageLazy = lazy(() => import("@/pages/skilled/PointsTestPage"))
+const PointsTestPageLazy = lazy(() => import("@/views/skilled/PointsTestPage"))
 const PointsTestPage = withNavigate(PointsTestPageLazy as never)
 
-const SkillsAssessmentPageLazy = lazy(() => import("@/pages/skilled/SkillsAssessmentPage"))
+const SkillsAssessmentPageLazy = lazy(() => import("@/views/skilled/SkillsAssessmentPage"))
 const SkillsAssessmentPage = withNavigate(SkillsAssessmentPageLazy as never)
 
-const StateNominationPageLazy = lazy(() => import("@/pages/skilled/StateNominationPage"))
+const StateNominationPageLazy = lazy(() => import("@/views/skilled/StateNominationPage"))
 const StateNominationPage = withNavigate(StateNominationPageLazy as never)
 
-const EnglishRequirementsPageLazy = lazy(() => import("@/pages/skilled/EnglishRequirementsPage"))
+const EnglishRequirementsPageLazy = lazy(() => import("@/views/skilled/EnglishRequirementsPage"))
 const EnglishRequirementsPage = withNavigate(EnglishRequirementsPageLazy as never)
 
-const GenuineStudentRequirementPageLazy = lazy(() => import("@/pages/student/GenuineStudentRequirementPage"))
+const GenuineStudentRequirementPageLazy = lazy(() => import("@/views/student/GenuineStudentRequirementPage"))
 const GenuineStudentRequirementPage = withNavigate(GenuineStudentRequirementPageLazy as never)
 
-const ProspectiveMarriage300PageLazy = lazy(() => import("@/pages/partner-family/ProspectiveMarriage300Page"))
+const ProspectiveMarriage300PageLazy = lazy(() => import("@/views/partner-family/ProspectiveMarriage300Page"))
 const ProspectiveMarriage300Page = withNavigate(ProspectiveMarriage300PageLazy as never)
 
-const PartnerVisaEvidencePageLazy = lazy(() => import("@/pages/partner-family/PartnerVisaEvidencePage"))
+const PartnerVisaEvidencePageLazy = lazy(() => import("@/views/partner-family/PartnerVisaEvidencePage"))
 const PartnerVisaEvidencePage = withNavigate(PartnerVisaEvidencePageLazy as never)
 
-const BridgingVisasPageLazy = lazy(() => import("@/pages/visitor-other/BridgingVisasPage"))
+const BridgingVisasPageLazy = lazy(() => import("@/views/visitor-other/BridgingVisasPage"))
 const BridgingVisasPage = withNavigate(BridgingVisasPageLazy as never)
 
-const AustralianCitizenshipPageLazy = lazy(() => import("@/pages/visitor-other/AustralianCitizenshipPage"))
+const AustralianCitizenshipPageLazy = lazy(() => import("@/views/visitor-other/AustralianCitizenshipPage"))
 const AustralianCitizenshipPage = withNavigate(AustralianCitizenshipPageLazy as never)
 
-const CoreSkillsOccupationListPageLazy = lazy(() => import("@/pages/employer-sponsored/CoreSkillsOccupationListPage"))
+const CoreSkillsOccupationListPageLazy = lazy(() => import("@/views/employer-sponsored/CoreSkillsOccupationListPage"))
 const CoreSkillsOccupationListPage = withNavigate(CoreSkillsOccupationListPageLazy as never)
 
-const ARTReviewPageLazy = lazy(() => import("@/pages/reviews/ARTReviewPage"))
+const ARTReviewPageLazy = lazy(() => import("@/views/reviews/ARTReviewPage"))
 const ARTReviewPage = withNavigate(ARTReviewPageLazy as never)
 
-const TemporaryGraduate485PageLazy = lazy(() => import("@/pages/skilled/TemporaryGraduate485Page"))
+const TemporaryGraduate485PageLazy = lazy(() => import("@/views/skilled/TemporaryGraduate485Page"))
 const TemporaryGraduate485Page = withNavigate(TemporaryGraduate485PageLazy as never)
 
-const AboutPageLazy = lazy(() => import("@/pages/practice/AboutPage"))
+const AboutPageLazy = lazy(() => import("@/views/practice/AboutPage"))
 const AboutPage = withNavigate(AboutPageLazy as never)
 
-const StandardBusinessSponsorshipPageLazy = lazy(() => import("@/pages/employer-sponsored/StandardBusinessSponsorshipPage"))
+const StandardBusinessSponsorshipPageLazy = lazy(() => import("@/views/employer-sponsored/StandardBusinessSponsorshipPage"))
 const StandardBusinessSponsorshipPage = withNavigate(StandardBusinessSponsorshipPageLazy as never)
 
-const SkillsInDemand482PageLazy = lazy(() => import("@/pages/employer-sponsored/SkillsInDemand482Page"))
+const SkillsInDemand482PageLazy = lazy(() => import("@/views/employer-sponsored/SkillsInDemand482Page"))
 const SkillsInDemand482Page = withNavigate(SkillsInDemand482PageLazy as never)
 
-const EmployerNomination186PageLazy = lazy(() => import("@/pages/employer-sponsored/EmployerNomination186Page"))
+const EmployerNomination186PageLazy = lazy(() => import("@/views/employer-sponsored/EmployerNomination186Page"))
 const EmployerNomination186Page = withNavigate(EmployerNomination186PageLazy as never)
 
-const RegionalEmployer494PageLazy = lazy(() => import("@/pages/employer-sponsored/RegionalEmployer494Page"))
+const RegionalEmployer494PageLazy = lazy(() => import("@/views/employer-sponsored/RegionalEmployer494Page"))
 const RegionalEmployer494Page = withNavigate(RegionalEmployer494PageLazy as never)
 
-const LabourMarketTestingPageLazy = lazy(() => import("@/pages/employer-sponsored/LabourMarketTestingPage"))
+const LabourMarketTestingPageLazy = lazy(() => import("@/views/employer-sponsored/LabourMarketTestingPage"))
 const LabourMarketTestingPage = withNavigate(LabourMarketTestingPageLazy as never)
 
-const SkillingAustraliansFundPageLazy = lazy(() => import("@/pages/employer-sponsored/SkillingAustraliansFundPage"))
+const SkillingAustraliansFundPageLazy = lazy(() => import("@/views/employer-sponsored/SkillingAustraliansFundPage"))
 const SkillingAustraliansFundPage = withNavigate(SkillingAustraliansFundPageLazy as never)
 
-const EmployerObligationsPageLazy = lazy(() => import("@/pages/employer-sponsored/EmployerObligationsPage"))
+const EmployerObligationsPageLazy = lazy(() => import("@/views/employer-sponsored/EmployerObligationsPage"))
 const EmployerObligationsPage = withNavigate(EmployerObligationsPageLazy as never)
 
-const CoreSkillsStreamPageLazy = lazy(() => import("@/pages/employer-sponsored/CoreSkillsStreamPage"))
+const CoreSkillsStreamPageLazy = lazy(() => import("@/views/employer-sponsored/CoreSkillsStreamPage"))
 const CoreSkillsStreamPage = withNavigate(CoreSkillsStreamPageLazy as never)
 
-const SpecialistSkillsStreamPageLazy = lazy(() => import("@/pages/employer-sponsored/SpecialistSkillsStreamPage"))
+const SpecialistSkillsStreamPageLazy = lazy(() => import("@/views/employer-sponsored/SpecialistSkillsStreamPage"))
 const SpecialistSkillsStreamPage = withNavigate(SpecialistSkillsStreamPageLazy as never)
 
-const PermanentResidenceSkillsRegionalPageLazy = lazy(() => import("@/pages/employer-sponsored/PermanentResidenceSkillsRegionalPage"))
+const PermanentResidenceSkillsRegionalPageLazy = lazy(() => import("@/views/employer-sponsored/PermanentResidenceSkillsRegionalPage"))
 const PermanentResidenceSkillsRegionalPage = withNavigate(PermanentResidenceSkillsRegionalPageLazy as never)
 
-const OccupationCaveatsPageLazy = lazy(() => import("@/pages/employer-sponsored/OccupationCaveatsPage"))
+const OccupationCaveatsPageLazy = lazy(() => import("@/views/employer-sponsored/OccupationCaveatsPage"))
 const OccupationCaveatsPage = withNavigate(OccupationCaveatsPageLazy as never)
 
-const Visa482ConditionsPageLazy = lazy(() => import("@/pages/employer-sponsored/Visa482ConditionsPage"))
+const Visa482ConditionsPageLazy = lazy(() => import("@/views/employer-sponsored/Visa482ConditionsPage"))
 const Visa482ConditionsPage = withNavigate(Visa482ConditionsPageLazy as never)
 
-const ChangeOfEmployerPageLazy = lazy(() => import("@/pages/employer-sponsored/ChangeOfEmployerPage"))
+const ChangeOfEmployerPageLazy = lazy(() => import("@/views/employer-sponsored/ChangeOfEmployerPage"))
 const ChangeOfEmployerPage = withNavigate(ChangeOfEmployerPageLazy as never)
 
-const GenuinePositionPageLazy = lazy(() => import("@/pages/employer-sponsored/GenuinePositionPage"))
+const GenuinePositionPageLazy = lazy(() => import("@/views/employer-sponsored/GenuinePositionPage"))
 const GenuinePositionPage = withNavigate(GenuinePositionPageLazy as never)
 
-const LabourAgreementPageLazy = lazy(() => import("@/pages/employer-sponsored/LabourAgreementPage"))
+const LabourAgreementPageLazy = lazy(() => import("@/views/employer-sponsored/LabourAgreementPage"))
 const LabourAgreementPage = withNavigate(LabourAgreementPageLazy as never)
 
-const TrainingVisa407PageLazy = lazy(() => import("@/pages/employer-sponsored/TrainingVisa407Page"))
+const TrainingVisa407PageLazy = lazy(() => import("@/views/employer-sponsored/TrainingVisa407Page"))
 const TrainingVisa407Page = withNavigate(TrainingVisa407PageLazy as never)
 
-const ShortStaySpecialist400PageLazy = lazy(() => import("@/pages/employer-sponsored/ShortStaySpecialist400Page"))
+const ShortStaySpecialist400PageLazy = lazy(() => import("@/views/employer-sponsored/ShortStaySpecialist400Page"))
 const ShortStaySpecialist400Page = withNavigate(ShortStaySpecialist400PageLazy as never)
 
-const TemporaryActivity408PageLazy = lazy(() => import("@/pages/employer-sponsored/TemporaryActivity408Page"))
+const TemporaryActivity408PageLazy = lazy(() => import("@/views/employer-sponsored/TemporaryActivity408Page"))
 const TemporaryActivity408Page = withNavigate(TemporaryActivity408PageLazy as never)
 
-const DAMAPageLazy = lazy(() => import("@/pages/employer-sponsored/DAMAPage"))
+const DAMAPageLazy = lazy(() => import("@/views/employer-sponsored/DAMAPage"))
 const DAMAPage = withNavigate(DAMAPageLazy as never)
 
-const VisitorVisaPageLazy = lazy(() => import("@/pages/visitor-other/VisitorVisaPage"))
+const VisitorVisaPageLazy = lazy(() => import("@/views/visitor-other/VisitorVisaPage"))
 const VisitorVisaPage = withNavigate(VisitorVisaPageLazy as never)
 
-const ParentVisaPageLazy = lazy(() => import("@/pages/visitor-other/ParentVisaPage"))
+const ParentVisaPageLazy = lazy(() => import("@/views/visitor-other/ParentVisaPage"))
 const ParentVisaPage = withNavigate(ParentVisaPageLazy as never)
 
-const StudentVisa500PageLazy = lazy(() => import("@/pages/student/StudentVisa500Page"))
+const StudentVisa500PageLazy = lazy(() => import("@/views/student/StudentVisa500Page"))
 const StudentVisa500Page = withNavigate(StudentVisa500PageLazy as never)
 
-const NationalInnovationVisaPageLazy = lazy(() => import("@/pages/skilled/NationalInnovationVisaPage"))
+const NationalInnovationVisaPageLazy = lazy(() => import("@/views/skilled/NationalInnovationVisaPage"))
 const NationalInnovationVisaPage = withNavigate(NationalInnovationVisaPageLazy as never)
 
-const SkillSelectEOIPageLazy = lazy(() => import("@/pages/skilled/SkillSelectEOIPage"))
+const SkillSelectEOIPageLazy = lazy(() => import("@/views/skilled/SkillSelectEOIPage"))
 const SkillSelectEOIPage = withNavigate(SkillSelectEOIPageLazy as never)
 
-const RegionalAreasPageLazy = lazy(() => import("@/pages/skilled/RegionalAreasPage"))
+const RegionalAreasPageLazy = lazy(() => import("@/views/skilled/RegionalAreasPage"))
 const RegionalAreasPage = withNavigate(RegionalAreasPageLazy as never)
 
-const SkilledRegional887PageLazy = lazy(() => import("@/pages/skilled/SkilledRegional887Page"))
+const SkilledRegional887PageLazy = lazy(() => import("@/views/skilled/SkilledRegional887Page"))
 const SkilledRegional887Page = withNavigate(SkilledRegional887PageLazy as never)
 
-const InvitationRoundsPageLazy = lazy(() => import("@/pages/skilled/InvitationRoundsPage"))
+const InvitationRoundsPageLazy = lazy(() => import("@/views/skilled/InvitationRoundsPage"))
 const InvitationRoundsPage = withNavigate(InvitationRoundsPageLazy as never)
 
-const CoursesPRProspectsPageLazy = lazy(() => import("@/pages/student/CoursesPRProspectsPage"))
+const CoursesPRProspectsPageLazy = lazy(() => import("@/views/student/CoursesPRProspectsPage"))
 const CoursesPRProspectsPage = withNavigate(CoursesPRProspectsPageLazy as never)
 
-const StudentFinancialCapacityPageLazy = lazy(() => import("@/pages/student/StudentFinancialCapacityPage"))
+const StudentFinancialCapacityPageLazy = lazy(() => import("@/views/student/StudentFinancialCapacityPage"))
 const StudentFinancialCapacityPage = withNavigate(StudentFinancialCapacityPageLazy as never)
 
-const StudentGuardian590PageLazy = lazy(() => import("@/pages/student/StudentGuardian590Page"))
+const StudentGuardian590PageLazy = lazy(() => import("@/views/student/StudentGuardian590Page"))
 const StudentGuardian590Page = withNavigate(StudentGuardian590PageLazy as never)
 
-const ParentVisasHubPageLazy = lazy(() => import("@/pages/partner-family/ParentVisasHubPage"))
+const ParentVisasHubPageLazy = lazy(() => import("@/views/partner-family/ParentVisasHubPage"))
 const ParentVisasHubPage = withNavigate(ParentVisasHubPageLazy as never)
 
-const ContributoryParent143PageLazy = lazy(() => import("@/pages/partner-family/ContributoryParent143Page"))
+const ContributoryParent143PageLazy = lazy(() => import("@/views/partner-family/ContributoryParent143Page"))
 const ContributoryParent143Page = withNavigate(ContributoryParent143PageLazy as never)
 
-const SponsoredParent870PageLazy = lazy(() => import("@/pages/partner-family/SponsoredParent870Page"))
+const SponsoredParent870PageLazy = lazy(() => import("@/views/partner-family/SponsoredParent870Page"))
 const SponsoredParent870Page = withNavigate(SponsoredParent870PageLazy as never)
 
-const BalanceOfFamilyTestPageLazy = lazy(() => import("@/pages/partner-family/BalanceOfFamilyTestPage"))
+const BalanceOfFamilyTestPageLazy = lazy(() => import("@/views/partner-family/BalanceOfFamilyTestPage"))
 const BalanceOfFamilyTestPage = withNavigate(BalanceOfFamilyTestPageLazy as never)
 
-const ChildVisa101PageLazy = lazy(() => import("@/pages/partner-family/ChildVisa101Page"))
+const ChildVisa101PageLazy = lazy(() => import("@/views/partner-family/ChildVisa101Page"))
 const ChildVisa101Page = withNavigate(ChildVisa101PageLazy as never)
 
-const ChildVisa802PageLazy = lazy(() => import("@/pages/partner-family/ChildVisa802Page"))
+const ChildVisa802PageLazy = lazy(() => import("@/views/partner-family/ChildVisa802Page"))
 const ChildVisa802Page = withNavigate(ChildVisa802PageLazy as never)
 
-const ContributoryParent173PageLazy = lazy(() => import("@/pages/partner-family/ContributoryParent173Page"))
+const ContributoryParent173PageLazy = lazy(() => import("@/views/partner-family/ContributoryParent173Page"))
 const ContributoryParent173Page = withNavigate(ContributoryParent173PageLazy as never)
 
-const AgedParent804PageLazy = lazy(() => import("@/pages/partner-family/AgedParent804Page"))
+const AgedParent804PageLazy = lazy(() => import("@/views/partner-family/AgedParent804Page"))
 const AgedParent804Page = withNavigate(AgedParent804PageLazy as never)
 
-const ContributoryAgedParent864PageLazy = lazy(() => import("@/pages/partner-family/ContributoryAgedParent864Page"))
+const ContributoryAgedParent864PageLazy = lazy(() => import("@/views/partner-family/ContributoryAgedParent864Page"))
 const ContributoryAgedParent864Page = withNavigate(ContributoryAgedParent864PageLazy as never)
 
-const ParentVisa103PageLazy = lazy(() => import("@/pages/partner-family/ParentVisa103Page"))
+const ParentVisa103PageLazy = lazy(() => import("@/views/partner-family/ParentVisa103Page"))
 const ParentVisa103Page = withNavigate(ParentVisa103PageLazy as never)
 
-const AssuranceOfSupportPageLazy = lazy(() => import("@/pages/partner-family/AssuranceOfSupportPage"))
+const AssuranceOfSupportPageLazy = lazy(() => import("@/views/partner-family/AssuranceOfSupportPage"))
 const AssuranceOfSupportPage = withNavigate(AssuranceOfSupportPageLazy as never)
 
-const CarerVisaPageLazy = lazy(() => import("@/pages/partner-family/CarerVisaPage"))
+const CarerVisaPageLazy = lazy(() => import("@/views/partner-family/CarerVisaPage"))
 const CarerVisaPage = withNavigate(CarerVisaPageLazy as never)
 
-const RemainingRelativeVisaPageLazy = lazy(() => import("@/pages/partner-family/RemainingRelativeVisaPage"))
+const RemainingRelativeVisaPageLazy = lazy(() => import("@/views/partner-family/RemainingRelativeVisaPage"))
 const RemainingRelativeVisaPage = withNavigate(RemainingRelativeVisaPageLazy as never)
 
-const WorkingHoliday417PageLazy = lazy(() => import("@/pages/visitor-other/WorkingHoliday417Page"))
+const WorkingHoliday417PageLazy = lazy(() => import("@/views/visitor-other/WorkingHoliday417Page"))
 const WorkingHoliday417Page = withNavigate(WorkingHoliday417PageLazy as never)
 
-const WorkAndHoliday462PageLazy = lazy(() => import("@/pages/visitor-other/WorkAndHoliday462Page"))
+const WorkAndHoliday462PageLazy = lazy(() => import("@/views/visitor-other/WorkAndHoliday462Page"))
 const WorkAndHoliday462Page = withNavigate(WorkAndHoliday462PageLazy as never)
 
-const ProtectionVisa866PageLazy = lazy(() => import("@/pages/visitor-other/ProtectionVisa866Page"))
+const ProtectionVisa866PageLazy = lazy(() => import("@/views/visitor-other/ProtectionVisa866Page"))
 const ProtectionVisa866Page = withNavigate(ProtectionVisa866PageLazy as never)
 
-const Schedule3PageLazy = lazy(() => import("@/pages/reviews/Schedule3Page"))
+const Schedule3PageLazy = lazy(() => import("@/views/reviews/Schedule3Page"))
 const Schedule3Page = withNavigate(Schedule3PageLazy as never)
 
-const NoFurtherStay8503PageLazy = lazy(() => import("@/pages/reviews/NoFurtherStay8503Page"))
+const NoFurtherStay8503PageLazy = lazy(() => import("@/views/reviews/NoFurtherStay8503Page"))
 const NoFurtherStay8503Page = withNavigate(NoFurtherStay8503PageLazy as never)
 
-const HealthWaiverPageLazy = lazy(() => import("@/pages/reviews/HealthWaiverPage"))
+const HealthWaiverPageLazy = lazy(() => import("@/views/reviews/HealthWaiverPage"))
 const HealthWaiverPage = withNavigate(HealthWaiverPageLazy as never)
 
-const ReEntryBansPageLazy = lazy(() => import("@/pages/reviews/ReEntryBansPage"))
+const ReEntryBansPageLazy = lazy(() => import("@/views/reviews/ReEntryBansPage"))
 const ReEntryBansPage = withNavigate(ReEntryBansPageLazy as never)
 
-const NaturalJusticeS57PageLazy = lazy(() => import("@/pages/reviews/NaturalJusticeS57Page"))
+const NaturalJusticeS57PageLazy = lazy(() => import("@/views/reviews/NaturalJusticeS57Page"))
 const NaturalJusticeS57Page = withNavigate(NaturalJusticeS57PageLazy as never)
 
-const TemporaryWork403PageLazy = lazy(() => import("@/pages/employer-sponsored/TemporaryWork403Page"))
+const TemporaryWork403PageLazy = lazy(() => import("@/views/employer-sponsored/TemporaryWork403Page"))
 const TemporaryWork403Page = withNavigate(TemporaryWork403PageLazy as never)
 
-const AdoptionVisa102PageLazy = lazy(() => import("@/pages/partner-family/AdoptionVisa102Page"))
+const AdoptionVisa102PageLazy = lazy(() => import("@/views/partner-family/AdoptionVisa102Page"))
 const AdoptionVisa102Page = withNavigate(AdoptionVisa102PageLazy as never)
 
-const DependentChild445PageLazy = lazy(() => import("@/pages/partner-family/DependentChild445Page"))
+const DependentChild445PageLazy = lazy(() => import("@/views/partner-family/DependentChild445Page"))
 const DependentChild445Page = withNavigate(DependentChild445PageLazy as never)
 
-const ContributoryAgedParent884PageLazy = lazy(() => import("@/pages/partner-family/ContributoryAgedParent884Page"))
+const ContributoryAgedParent884PageLazy = lazy(() => import("@/views/partner-family/ContributoryAgedParent884Page"))
 const ContributoryAgedParent884Page = withNavigate(ContributoryAgedParent884PageLazy as never)
 
-const Eta601PageLazy = lazy(() => import("@/pages/visitor-other/Eta601Page"))
+const Eta601PageLazy = lazy(() => import("@/views/visitor-other/Eta601Page"))
 const Eta601Page = withNavigate(Eta601PageLazy as never)
 
-const Evisitor651PageLazy = lazy(() => import("@/pages/visitor-other/Evisitor651Page"))
+const Evisitor651PageLazy = lazy(() => import("@/views/visitor-other/Evisitor651Page"))
 const Evisitor651Page = withNavigate(Evisitor651PageLazy as never)
 
-const MedicalTreatment602PageLazy = lazy(() => import("@/pages/visitor-other/MedicalTreatment602Page"))
+const MedicalTreatment602PageLazy = lazy(() => import("@/views/visitor-other/MedicalTreatment602Page"))
 const MedicalTreatment602Page = withNavigate(MedicalTreatment602PageLazy as never)
 
-const SpecialCategory444PageLazy = lazy(() => import("@/pages/visitor-other/SpecialCategory444Page"))
+const SpecialCategory444PageLazy = lazy(() => import("@/views/visitor-other/SpecialCategory444Page"))
 const SpecialCategory444Page = withNavigate(SpecialCategory444PageLazy as never)
 
-const MinisterialInterventionPageLazy = lazy(() => import("@/pages/reviews/MinisterialInterventionPage"))
+const MinisterialInterventionPageLazy = lazy(() => import("@/views/reviews/MinisterialInterventionPage"))
 const MinisterialInterventionPage = withNavigate(MinisterialInterventionPageLazy as never)
 
-const AgedDependentRelativePageLazy = lazy(() => import("@/pages/partner-family/AgedDependentRelativePage"))
+const AgedDependentRelativePageLazy = lazy(() => import("@/views/partner-family/AgedDependentRelativePage"))
 const AgedDependentRelativePage = withNavigate(AgedDependentRelativePageLazy as never)
 
-const OrphanRelativeVisaPageLazy = lazy(() => import("@/pages/partner-family/OrphanRelativeVisaPage"))
+const OrphanRelativeVisaPageLazy = lazy(() => import("@/views/partner-family/OrphanRelativeVisaPage"))
 const OrphanRelativeVisaPage = withNavigate(OrphanRelativeVisaPageLazy as never)
 
-const NzFamilyRelationship461PageLazy = lazy(() => import("@/pages/partner-family/NzFamilyRelationship461Page"))
+const NzFamilyRelationship461PageLazy = lazy(() => import("@/views/partner-family/NzFamilyRelationship461Page"))
 const NzFamilyRelationship461Page = withNavigate(NzFamilyRelationship461PageLazy as never)
 
-const VisitorVisasHubPageLazy = lazy(() => import("@/pages/visitor-other/VisitorVisasHubPage"))
+const VisitorVisasHubPageLazy = lazy(() => import("@/views/visitor-other/VisitorVisasHubPage"))
 const VisitorVisasHubPage = withNavigate(VisitorVisasHubPageLazy as never)
 
-const VisitorVisa600PageLazy = lazy(() => import("@/pages/visitor-other/VisitorVisa600Page"))
+const VisitorVisa600PageLazy = lazy(() => import("@/views/visitor-other/VisitorVisa600Page"))
 const VisitorVisa600Page = withNavigate(VisitorVisa600PageLazy as never)
 
-const ResidentReturnVisaPageLazy = lazy(() => import("@/pages/visitor-other/ResidentReturnVisaPage"))
+const ResidentReturnVisaPageLazy = lazy(() => import("@/views/visitor-other/ResidentReturnVisaPage"))
 const ResidentReturnVisaPage = withNavigate(ResidentReturnVisaPageLazy as never)
 
-const SkilledMigrationHubPageLazy = lazy(() => import("@/pages/skilled/SkilledMigrationHubPage"))
+const SkilledMigrationHubPageLazy = lazy(() => import("@/views/skilled/SkilledMigrationHubPage"))
 const SkilledMigrationHubPage = withNavigate(SkilledMigrationHubPageLazy as never)
 
-const StudentVisasHubPageLazy = lazy(() => import("@/pages/student/StudentVisasHubPage"))
+const StudentVisasHubPageLazy = lazy(() => import("@/views/student/StudentVisasHubPage"))
 const StudentVisasHubPage = withNavigate(StudentVisasHubPageLazy as never)
 
-const PartnerFamilyHubPageLazy = lazy(() => import("@/pages/partner-family/PartnerFamilyHubPage"))
+const PartnerFamilyHubPageLazy = lazy(() => import("@/views/partner-family/PartnerFamilyHubPage"))
 const PartnerFamilyHubPage = withNavigate(PartnerFamilyHubPageLazy as never)
 
-const VisitorOtherHubPageLazy = lazy(() => import("@/pages/visitor-other/VisitorOtherHubPage"))
+const VisitorOtherHubPageLazy = lazy(() => import("@/views/visitor-other/VisitorOtherHubPage"))
 const VisitorOtherHubPage = withNavigate(VisitorOtherHubPageLazy as never)
 
-const VisaRefusalReviewHubPageLazy = lazy(() => import("@/pages/reviews/VisaRefusalReviewHubPage"))
+const VisaRefusalReviewHubPageLazy = lazy(() => import("@/views/reviews/VisaRefusalReviewHubPage"))
 const VisaRefusalReviewHubPage = withNavigate(VisaRefusalReviewHubPageLazy as never)
 
-const VisaCancellationPageLazy = lazy(() => import("@/pages/reviews/VisaCancellationPage"))
+const VisaCancellationPageLazy = lazy(() => import("@/views/reviews/VisaCancellationPage"))
 const VisaCancellationPage = withNavigate(VisaCancellationPageLazy as never)
 
-const Section48BarPageLazy = lazy(() => import("@/pages/reviews/Section48BarPage"))
+const Section48BarPageLazy = lazy(() => import("@/views/reviews/Section48BarPage"))
 const Section48BarPage = withNavigate(Section48BarPageLazy as never)
 
-const Pic4020PageLazy = lazy(() => import("@/pages/reviews/Pic4020Page"))
+const Pic4020PageLazy = lazy(() => import("@/views/reviews/Pic4020Page"))
 const Pic4020Page = withNavigate(Pic4020PageLazy as never)
 
-const ReviewsPageLazy = lazy(() => import("@/pages/practice/ReviewsPage"))
+const ReviewsPageLazy = lazy(() => import("@/views/practice/ReviewsPage"))
 const ReviewsPage = withNavigate(ReviewsPageLazy as never)
 
-const NewsPageLazy = lazy(() => import("@/pages/practice/NewsPage"))
+const NewsPageLazy = lazy(() => import("@/views/practice/NewsPage"))
 const NewsPage = withNavigate(NewsPageLazy as never)
 
-const NewsPostPageLazy = lazy(() => import("@/pages/practice/NewsPostPage"))
+const NewsPostPageLazy = lazy(() => import("@/views/practice/NewsPostPage"))
 const NewsPostPage = withNavigate(NewsPostPageLazy as never)
 
-const ResourcesPageLazy = lazy(() => import("@/pages/practice/ResourcesPage"))
+const ResourcesPageLazy = lazy(() => import("@/views/practice/ResourcesPage"))
 const ResourcesPage = withNavigate(ResourcesPageLazy as never)
 
-const GuidesPageLazy = lazy(() => import("@/pages/practice/GuidesPage"))
+const GuidesPageLazy = lazy(() => import("@/views/practice/GuidesPage"))
 const GuidesPage = withNavigate(GuidesPageLazy as never)
 
-const BlogPageLazy = lazy(() => import("@/pages/practice/BlogPage"))
+const BlogPageLazy = lazy(() => import("@/views/practice/BlogPage"))
 const BlogPage = withNavigate(BlogPageLazy as never)
 
-const ChecklistsPageLazy = lazy(() => import("@/pages/practice/ChecklistsPage"))
+const ChecklistsPageLazy = lazy(() => import("@/views/practice/ChecklistsPage"))
 const ChecklistsPage = withNavigate(ChecklistsPageLazy as never)
 
-const ToolsPageLazy = lazy(() => import("@/pages/practice/ToolsPage"))
+const ToolsPageLazy = lazy(() => import("@/views/practice/ToolsPage"))
 const ToolsPage = withNavigate(ToolsPageLazy as never)
 
-const BlogPostPageLazy = lazy(() => import("@/pages/practice/BlogPostPage"))
+const BlogPostPageLazy = lazy(() => import("@/views/practice/BlogPostPage"))
 const BlogPostPage = withNavigate(BlogPostPageLazy as never)
 
-const BookConsultationPageLazy = lazy(() => import("@/pages/BookConsultationPage"))
+const BookConsultationPageLazy = lazy(() => import("@/views/BookConsultationPage"))
 const BookConsultationPage = withNavigate(BookConsultationPageLazy as never)
 
-const BookPageLazy = lazy(() => import("@/pages/BookPage"))
+const BookPageLazy = lazy(() => import("@/views/BookPage"))
 const BookPage = withNavigate(BookPageLazy as never)
 
-const PreAssessmentPageLazy = lazy(() => import("@/pages/PreAssessmentPage"))
+const PreAssessmentPageLazy = lazy(() => import("@/views/PreAssessmentPage"))
 const PreAssessmentPage = withNavigate(PreAssessmentPageLazy as never)
 
-const ContactPageLazy = lazy(() => import("@/pages/ContactPage"))
+const ContactPageLazy = lazy(() => import("@/views/ContactPage"))
 const ContactPage = withNavigate(ContactPageLazy as never)
 
 const PrivacyPageLazy = lazy(() =>
-  import("@/pages/LegalPage").then((m) => ({
+  import("@/views/LegalPage").then((m) => ({
     default: function PrivacyPage(p: { navigate: (page: string) => void }) {
       return <m.default kind="privacy" navigate={p.navigate} />
     },
@@ -363,7 +363,7 @@ const PrivacyPageLazy = lazy(() =>
 const PrivacyPage = withNavigate(PrivacyPageLazy as never)
 
 const TermsPageLazy = lazy(() =>
-  import("@/pages/LegalPage").then((m) => ({
+  import("@/views/LegalPage").then((m) => ({
     default: function TermsPage(p: { navigate: (page: string) => void }) {
       return <m.default kind="terms" navigate={p.navigate} />
     },
@@ -372,7 +372,7 @@ const TermsPageLazy = lazy(() =>
 const TermsPage = withNavigate(TermsPageLazy as never)
 
 const AccessibilityPageLazy = lazy(() =>
-  import("@/pages/LegalPage").then((m) => ({
+  import("@/views/LegalPage").then((m) => ({
     default: function AccessibilityPage(p: { navigate: (page: string) => void }) {
       return <m.default kind="accessibility" navigate={p.navigate} />
     },
@@ -380,7 +380,7 @@ const AccessibilityPageLazy = lazy(() =>
 )
 const AccessibilityPage = withNavigate(AccessibilityPageLazy as never)
 
-const NotFoundPageLazy = lazy(() => import("@/pages/NotFoundPage"))
+const NotFoundPageLazy = lazy(() => import("@/views/NotFoundPage"))
 const NotFoundPage = withNavigate(NotFoundPageLazy as never)
 
 const Pages = {
