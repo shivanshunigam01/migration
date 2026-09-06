@@ -78,11 +78,15 @@ export async function fetchPublishedBlogs(params: { category?: string; search?: 
   if (params.search) q.set("search", params.search)
   const suffix = q.toString() ? `?${q}` : ""
   const data = await publicGet<{ blogs: PublicBlogPost[] }>(`/blogs${suffix}`)
-  return data?.blogs ?? null
+  const blogs = data?.blogs ?? null
+  if (!blogs) return null
+  return blogs.filter((b) => b.status === "published" && !b.title?.startsWith("[DRAFT]"))
 }
 
 export async function fetchBlogBySlug(slug: string) {
-  return publicGet<PublicBlogPost>(`/blogs/${encodeURIComponent(slug)}`)
+  const post = await publicGet<PublicBlogPost>(`/blogs/${encodeURIComponent(slug)}`)
+  if (!post || post.status !== "published" || post.title?.startsWith("[DRAFT]")) return null
+  return post
 }
 
 export async function fetchPublishedNews(params: { category?: string; search?: string; featured?: boolean } = {}) {
@@ -92,11 +96,15 @@ export async function fetchPublishedNews(params: { category?: string; search?: s
   if (params.featured) q.set("featured", "true")
   const suffix = q.toString() ? `?${q}` : ""
   const data = await publicGet<{ news: PublicNewsArticle[] }>(`/news${suffix}`)
-  return data?.news ?? null
+  const news = data?.news ?? null
+  if (!news) return null
+  return news.filter((n) => n.status === "published")
 }
 
 export async function fetchNewsBySlug(slug: string) {
-  return publicGet<PublicNewsArticle>(`/news/${encodeURIComponent(slug)}`)
+  const post = await publicGet<PublicNewsArticle>(`/news/${encodeURIComponent(slug)}`)
+  if (!post || post.status !== "published") return null
+  return post
 }
 
 export async function fetchFaqByPageKey(pageKey: string) {

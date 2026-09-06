@@ -10,9 +10,9 @@ import StructuredData from '@/components/page/StructuredData'
 import { NAV_ITEMS } from '@/data/navItems'
 import { ROUTE } from '@/data/routes'
 import { PAGE_META } from '@/data/pageMeta'
-import { BLOG_POSTS } from '@/data/blogPosts'
 import { fetchPublishedBlogs } from '@/lib/contentApi'
 import { usePageSeo } from '@/lib/usePageSeo'
+import { Link } from 'react-router-dom'
 
 type DisplayPost = {
   id: string
@@ -38,31 +38,18 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
 
   useEffect(() => {
     fetchPublishedBlogs().then((remote) => {
-      if (remote && remote.length > 0) {
-        setPosts(
-          remote.map((p) => ({
-            id: p.id,
-            slug: p.slug,
-            date: formatDate(p.publishedAt),
-            category: p.category,
-            title: p.title,
-            standfirst: p.standfirst,
-            relatedRoute: p.relatedRoute,
-          }))
-        )
-      } else {
-        setPosts(
-          BLOG_POSTS.filter((p) => !p.title.startsWith('[DRAFT]')).map((p) => ({
-            id: p.id,
-            slug: p.id,
-            date: p.date,
-            category: p.category,
-            title: p.title,
-            standfirst: p.standfirst,
-            relatedRoute: p.relatedRoute,
-          }))
-        )
-      }
+      // Published CMS posts only — never surface [DRAFT] static stubs.
+      setPosts(
+        (remote || []).map((p) => ({
+          id: p.id,
+          slug: p.slug,
+          date: formatDate(p.publishedAt),
+          category: p.category,
+          title: p.title,
+          standfirst: p.standfirst,
+          relatedRoute: p.relatedRoute,
+        })),
+      )
     })
   }, [])
 
@@ -76,8 +63,6 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
     const matchesCategory = !activeCategory || post.category === activeCategory
     return matchesQuery && matchesCategory
   })
-
-  const openPost = (post: DisplayPost) => navigate(`${ROUTE.blog}/${post.slug}`)
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#fff', color: TEXT }}>
@@ -150,8 +135,12 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
             }}
           >
             {filtered.map(post => (
-              <article
+              <Link
                 key={post.id}
+                to={`/${ROUTE.blog}/${post.slug}`}
+                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+              >
+              <article
                 style={{
                   background: '#fff',
                   borderRadius: 12,
@@ -159,8 +148,8 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   overflow: 'hidden',
                   cursor: 'pointer',
                   transition: 'box-shadow 0.15s',
+                  height: '100%',
                 }}
-                onClick={() => openPost(post)}
                 onMouseEnter={e => {
                   ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(27,43,94,0.12)'
                 }}
@@ -240,18 +229,17 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                   </span>
                 </div>
               </article>
+              </Link>
             ))}
           </div>
 
           {filtered.length === 0 && (
             <p style={{ fontSize: 15, color: '#9ca3af', fontStyle: 'italic', marginTop: 24 }}>
-              No articles match your search. Try clearing the filter.
+              {posts.length === 0
+                ? 'No published articles yet. Check back soon, or browse our visa guides.'
+                : 'No articles match your search. Try clearing the filter.'}
             </p>
           )}
-
-          <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', marginTop: 32 }}>
-            Draft updates shown for layout — verified articles will replace these before launch.
-          </p>
         </div>
 
         {/* Sidebar */}
@@ -281,9 +269,9 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {posts.slice(0, 6).map(post => (
-                <button
+                <Link
                   key={post.id}
-                  onClick={() => openPost(post)}
+                  to={`/${ROUTE.blog}/${post.slug}`}
                   style={{
                     background: 'none',
                     border: 'none',
@@ -293,6 +281,8 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                     borderRadius: 8,
                     transition: 'background 0.12s',
                     fontFamily: "'Gilroy', sans-serif",
+                    textDecoration: 'none',
+                    display: 'block',
                   }}
                   onMouseEnter={e => {
                     ;(e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,0.08)'
@@ -313,7 +303,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                       whiteSpace: 'nowrap',
                     }}
                   >
-                    {post.title.replace('[DRAFT] ', '')}
+                    {post.title}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>{post.date}</span>
@@ -332,7 +322,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
                       {post.category}
                     </span>
                   </div>
-                </button>
+                </Link>
               ))}
             </div>
           </div>

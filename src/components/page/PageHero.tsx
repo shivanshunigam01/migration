@@ -95,12 +95,15 @@ export function PageHero({
 
       {heroImage ? (
         <motion.div variants={fadeUp} style={{ margin: '18px 0 28px' }}>
+          {/* CMS URLs may be remote — keep <img> with explicit dimensions for CLS */}
           <img
             src={heroImage}
             alt=""
+            width={1120}
+            height={630}
             loading="lazy"
             decoding="async"
-            style={{ width: '100%', maxWidth: 560, borderRadius: 14, border: '1px solid rgba(21,36,72,0.08)', display: 'block' }}
+            style={{ width: '100%', maxWidth: 560, height: 'auto', borderRadius: 14, border: '1px solid rgba(21,36,72,0.08)', display: 'block' }}
           />
         </motion.div>
       ) : null}

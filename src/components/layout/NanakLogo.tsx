@@ -1,10 +1,12 @@
-import React from 'react'
+"use client"
 
-const LOGO_SRC = '/nanak-migration-logo.png?v=4'
+import Image from "next/image"
+
+const LOGO_SRC = "/nanak-migration-logo.png"
 
 /**
- * Brand mark — full lockup (icon + wordmark) for light surfaces (navbar / footer #EBEDE9).
- * The `light` prop is kept for call-site compatibility but always uses this lockup.
+ * Brand mark — full lockup for light surfaces (navbar / footer).
+ * Uses next/image with explicit dimensions for CLS / LCP.
  */
 export default function NanakLogo({
   size = 36,
@@ -17,20 +19,19 @@ export default function NanakLogo({
   const width = Math.round(height * (1024 / 240))
 
   return (
-    <img
+    <Image
       src={LOGO_SRC}
       alt="Nanak Migration Group"
       width={width}
       height={height}
-      decoding="async"
-      fetchPriority="high"
+      priority
       style={{
-        display: 'block',
+        display: "block",
         height,
-        width: 'auto',
+        width: "auto",
         maxWidth: Math.min(width, 260),
-        objectFit: 'contain',
-        objectPosition: 'left center',
+        objectFit: "contain",
+        objectPosition: "left center",
       }}
     />
   )

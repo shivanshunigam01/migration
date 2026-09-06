@@ -1,6 +1,7 @@
 import { BLOG_POSTS } from "./blogPosts"
 import { CANONICAL_ROUTES, ROUTE, type RouteCategory } from "./routes"
 import { PAGE_META } from "./pageMeta"
+import { REDIRECT_SOURCES, getSitemapPathsFromRegistry } from "@/lib/routeRegistry"
 
 export type PublicPathEntry = {
   path: string
@@ -8,51 +9,31 @@ export type PublicPathEntry = {
   category: RouteCategory | "Legal" | "Blog" | "News" | "Other"
 }
 
-const LEGAL_PAGES: PublicPathEntry[] = [
-  { path: "about", title: "About Nanak Migration Group", category: "Other" },
-  { path: "contact", title: "Contact", category: "Other" },
-  { path: "privacy", title: "Privacy Policy", category: "Legal" },
-  { path: "terms", title: "Terms of Use", category: "Legal" },
-  { path: "accessibility", title: "Accessibility", category: "Legal" },
-  { path: "book", title: "Book", category: "Other" },
-  { path: ROUTE.bookConsultation, title: "Book a Consultation", category: "Other" },
-  { path: ROUTE.preAssessment, title: "Pre-Assessment", category: "Other" },
-  { path: "site-map", title: "HTML Sitemap", category: "Other" },
-]
-
-/** Legacy aliases that still resolve to live pages (keep crawlable). */
-const LEGACY_LIVE: PublicPathEntry[] = [
-  { path: "visitor-visa", title: "Visitor Visa (legacy URL)", category: "Visitor & Other" },
-  { path: "parent-visa", title: "Parent Visa (legacy URL)", category: "Partner & Family" },
-  { path: "visitor-hub", title: "Visitor Hub (legacy URL)", category: "Visitor & Other" },
-  { path: "regional-494", title: "494 Visa (legacy URL)", category: "Employer Sponsored" },
-]
-
 /**
- * Complete indexable public path catalogue for XML sitemap + HTML sitemap.
- * Source of truth: PAGE_META ∪ CANONICAL_ROUTES ∪ practice/legal extras ∪ blog stubs.
+ * Indexable public paths for XML + HTML sitemaps.
+ * Never includes redirect sources or draft blog stubs.
  */
 export function getAllPublicPathEntries(): PublicPathEntry[] {
   const byPath = new Map<string, PublicPathEntry>()
 
   const upsert = (entry: PublicPathEntry) => {
     const path = entry.path.replace(/^\/+|\/+$/g, "")
-    if (!byPath.has(path)) {
-      byPath.set(path, { ...entry, path })
-    }
+    if (REDIRECT_SOURCES.has(path)) return
+    if (path === "book") return
+    if (!byPath.has(path)) byPath.set(path, { ...entry, path })
   }
 
   upsert({ path: "", title: "Home", category: "Other" })
 
   for (const route of CANONICAL_ROUTES) {
+    if (REDIRECT_SOURCES.has(route.path)) continue
     upsert({ path: route.path, title: route.title, category: route.category })
   }
 
   for (const [key, meta] of Object.entries(PAGE_META)) {
-    if (key === "home") continue
-    // Prefer canonical title when present
-    const existing = byPath.get(key)
-    if (existing) continue
+    if (key === "home" || key === "book" || key === "labour-agreement") continue
+    if (REDIRECT_SOURCES.has(key)) continue
+    if (byPath.has(key)) continue
     upsert({
       path: key,
       title: meta.title.replace(/\s*\|\s*Nanak Migration.*$/i, "").trim() || key,
@@ -60,8 +41,19 @@ export function getAllPublicPathEntries(): PublicPathEntry[] {
     })
   }
 
-  for (const page of LEGAL_PAGES) upsert(page)
-  for (const page of LEGACY_LIVE) upsert(page)
+  const extras: PublicPathEntry[] = [
+    { path: "about", title: "About Nanak Migration Group", category: "Other" },
+    { path: "contact", title: "Contact", category: "Other" },
+    { path: "privacy", title: "Privacy Policy", category: "Legal" },
+    { path: "terms", title: "Terms of Use", category: "Legal" },
+    { path: "accessibility", title: "Accessibility", category: "Legal" },
+    { path: ROUTE.bookConsultation, title: "Book a Consultation", category: "Other" },
+    { path: ROUTE.preAssessment, title: "Pre-Assessment", category: "Other" },
+    { path: "site-map", title: "HTML Sitemap", category: "Other" },
+    { path: ROUTE.blog, title: "Migration Blog", category: "Practice" },
+    { path: ROUTE.newsPage, title: "Immigration News", category: "Practice" },
+  ]
+  for (const page of extras) upsert(page)
 
   for (const post of BLOG_POSTS) {
     if (post.title.startsWith("[DRAFT]")) continue
@@ -72,10 +64,6 @@ export function getAllPublicPathEntries(): PublicPathEntry[] {
     })
   }
 
-  // Always include blog + news hubs
-  upsert({ path: ROUTE.blog, title: "Migration Blog", category: "Practice" })
-  upsert({ path: ROUTE.newsPage, title: "Immigration News", category: "Practice" })
-
   return [...byPath.values()].sort((a, b) => {
     if (a.path === "") return -1
     if (b.path === "") return 1
@@ -83,8 +71,14 @@ export function getAllPublicPathEntries(): PublicPathEntry[] {
   })
 }
 
-/** Paths only (no leading slash), for XML sitemap / static generation. */
 export function getPublicSitemapPaths(): string[] {
+  // Prefer registry when available; fall back to local catalogue
+  try {
+    const fromRegistry = getSitemapPathsFromRegistry()
+    if (fromRegistry.length > 0) return fromRegistry
+  } catch {
+    /* ignore */
+  }
   return getAllPublicPathEntries().map((e) => e.path)
 }
 

@@ -8,9 +8,9 @@ import { ComplianceDisclaimer } from "@/components/page/ComplianceDisclaimer"
 import StructuredData from "@/components/page/StructuredData"
 import { NAV_ITEMS } from "@/data/navItems"
 import { ROUTE } from "@/data/routes"
-import { BLOG_POSTS } from "@/data/blogPosts"
 import { fetchBlogBySlug } from "@/lib/contentApi"
 import { useArticleSeo } from "@/lib/usePageSeo"
+import { notFound } from "next/navigation"
 
 function formatDate(iso?: string) {
   if (!iso) return ""
@@ -48,7 +48,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
     setLoading(true)
     fetchBlogBySlug(slug).then((remote) => {
       if (cancelled) return
-      if (remote) {
+      if (remote && remote.status === "published") {
         setPost({
           title: remote.title,
           standfirst: remote.standfirst,
@@ -59,20 +59,8 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
           relatedRoute: remote.relatedRoute,
         })
       } else {
-        const fallback = BLOG_POSTS.find((p) => p.id === slug)
-        if (fallback) {
-          setPost({
-            title: fallback.title,
-            standfirst: fallback.standfirst,
-            body: "",
-            category: fallback.category,
-            date: fallback.date,
-            tags: fallback.tags,
-            relatedRoute: fallback.relatedRoute,
-          })
-        } else {
-          setPost(null)
-        }
+        // Never fall back to [DRAFT] static stubs — drafts are not public.
+        setPost(null)
       }
       setLoading(false)
     })
@@ -100,17 +88,11 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
   }
 
   if (!post) {
-    return (
-      <div style={{ fontFamily: "'Gilroy', sans-serif", padding: 48, textAlign: "center", color: TEXT }}>
-        Article not found.{" "}
-        <button type="button" onClick={() => navigate(ROUTE.blog)} style={{ color: NAVY, fontWeight: 700 }}>
-          Back to blog
-        </button>
-      </div>
-    )
+    notFound()
+    return null
   }
 
-  const displayTitle = post.title.startsWith("[DRAFT]") ? post.title.replace("[DRAFT] ", "") : post.title
+  const displayTitle = post.title.replace(/^\[DRAFT\]\s*/i, "")
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: "#fff", color: TEXT }}>

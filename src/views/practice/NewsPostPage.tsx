@@ -10,6 +10,7 @@ import { NAV_ITEMS } from "@/data/navItems"
 import { ROUTE } from "@/data/routes"
 import { fetchNewsBySlug } from "@/lib/contentApi"
 import { useArticleSeo } from "@/lib/usePageSeo"
+import { notFound } from "next/navigation"
 
 function formatDate(iso?: string) {
   if (!iso) return ""
@@ -96,14 +97,8 @@ export default function NewsPostPage({ navigate }: { navigate: (page: string) =>
   }
 
   if (!post) {
-    return (
-      <div style={{ fontFamily: "'Gilroy', sans-serif", padding: 48, textAlign: "center", color: TEXT }}>
-        Article not found.{" "}
-        <button type="button" onClick={() => navigate(ROUTE.newsPage)} style={{ color: NAVY, fontWeight: 700 }}>
-          Back to Immigration News
-        </button>
-      </div>
-    )
+    notFound()
+    return null
   }
 
   return (

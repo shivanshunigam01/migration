@@ -18,4 +18,5 @@ export const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
   "skilling-australians-fund": "saf-levy",
   "employer-obligations": "sponsorship-obligations",
   "labour-agreement": "labour-agreements",
+  book: "book-consultation",
 }

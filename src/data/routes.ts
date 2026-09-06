@@ -167,8 +167,6 @@ export const CANONICAL_ROUTES: readonly CanonicalRoute[] = [
   { path: ROUTE.safLevy,                     title: 'SAF Levy',                           category: 'Employer Sponsored', archetype: 'Support'  },
   { path: ROUTE.sponsorshipObligations,      title: 'Sponsorship Obligations',            category: 'Employer Sponsored', archetype: 'Support'  },
   { path: ROUTE.labourMarketTesting,         title: 'Labour Market Testing (LMT)',        category: 'Employer Sponsored', archetype: 'Support'  },
-  { path: ROUTE.skillingAustraliansFund,     title: 'Skilling Australians Fund Levy',     category: 'Employer Sponsored', archetype: 'Support'  },
-  { path: ROUTE.employerObligations,         title: 'Employer Obligations',               category: 'Employer Sponsored', archetype: 'Support'  },
   { path: ROUTE.visa482Conditions,           title: '482 Visa Conditions',                category: 'Employer Sponsored', archetype: 'Support'  },
   { path: ROUTE.changeOfEmployer,            title: 'Change of Employer (482)',           category: 'Employer Sponsored', archetype: 'Support'  },
   { path: ROUTE.genuinePositionTest,         title: 'Genuine Position Test',              category: 'Employer Sponsored', archetype: 'Support'  },
