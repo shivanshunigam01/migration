@@ -320,6 +320,9 @@ const ReviewsPage = withNavigate(ReviewsPageLazy as never)
 const NewsPageLazy = lazy(() => import("@/pages/practice/NewsPage"))
 const NewsPage = withNavigate(NewsPageLazy as never)
 
+const NewsPostPageLazy = lazy(() => import("@/pages/practice/NewsPostPage"))
+const NewsPostPage = withNavigate(NewsPostPageLazy as never)
+
 const ResourcesPageLazy = lazy(() => import("@/pages/practice/ResourcesPage"))
 const ResourcesPage = withNavigate(ResourcesPageLazy as never)
 
@@ -481,6 +484,7 @@ const Pages = {
   Pic4020: Pic4020Page,
   Reviews: ReviewsPage,
   News: NewsPage,
+  NewsPost: NewsPostPage,
   Resources: ResourcesPage,
   Guides: GuidesPage,
   Blog: BlogPage,
@@ -515,6 +519,7 @@ export default function AppRouter() {
       <Route path="/accessibility" element={<Pages.Accessibility />} />
       <Route path="/about" element={<Pages.About />} />
       <Route path={`/${ROUTE.blog}/:slug`} element={<Pages.BlogPost />} />
+      <Route path={`/${ROUTE.newsPage}/:slug`} element={<Pages.NewsPost />} />
 
       <Route path="/employer-sponsored-visas" element={<Pages.EmployerSponsorship />} />
       <Route path="/skilled-independent-189" element={<Pages.SkilledIndependent189 />} />

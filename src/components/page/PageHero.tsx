@@ -35,7 +35,7 @@ export interface PageHeroProps {
   primaryCta?: PageHeroCtaButton
   secondaryCta?: PageHeroCtaButton
   accent?: string
-  /** Show MARA-registered badge at top */
+  /** @deprecated Unused — kept so existing page props remain valid */
   maraBadge?: boolean
   /** "Current as at …" tagline below the deck */
   currentAsAt?: string
@@ -56,7 +56,7 @@ export function PageHero({
   primaryCta,
   secondaryCta,
   accent = GOLD,
-  maraBadge = false,
+  maraBadge: _maraBadge = false,
   currentAsAt,
   rightColumn,
   footnote,
@@ -74,20 +74,6 @@ export function PageHero({
       initial={reduce ? false : 'hidden'}
       animate="visible"
     >
-      {maraBadge && (
-        <motion.div variants={fadeUp} style={{ marginBottom: 26 }}>
-          <div style={{ fontSize: 13, fontWeight: 800, letterSpacing: '0.18em', textTransform: 'uppercase' as const, color: NAVY, marginBottom: 8 }}>
-            Nanak Migration Group
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ width: 32, height: 2, background: accent, display: 'inline-block', borderRadius: 1 }} />
-            <span style={{ color: '#64748b', fontSize: 12.5, fontWeight: 600, letterSpacing: '0.05em' }}>
-              MARA-registered · MARN 2619467
-            </span>
-          </div>
-        </motion.div>
-      )}
-
       {(eyebrow || eyebrowSub) && (
         <motion.div variants={fadeUp} style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }}>
           {eyebrow && (

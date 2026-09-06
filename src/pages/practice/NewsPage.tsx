@@ -5,29 +5,23 @@ import SiteFooter from '@/components/layout/SiteFooter'
 import { NAV_ITEMS } from '@/data/navItems'
 import { Breadcrumbs, ComplianceDisclaimer, CtaBand } from '@/components/page'
 import { PAGE_META } from '@/data/pageMeta'
+import { ROUTE } from '@/data/routes'
 import StructuredData from '@/components/page/StructuredData'
 import { useIntakeSubmit } from '@/lib/api'
+import { fetchPublishedNews } from '@/lib/contentApi'
+import { useCmsPage } from '@/components/page/CmsPageProvider'
+import { usePageSeo } from '@/lib/usePageSeo'
 
-/**
- * Immigration News hub.
- * OWNERSHIP: Only publish articles reviewed and approved by the registered migration agent.
- * Do not ship SAMPLE / DRAFT headlines as live news. Paste approved articles into ARTICLES
- * (or wire a CMS) when an owner is assigned.
- */
 type Article = {
-  id: number
+  id: string
+  slug: string
   date: string
   category: string
   featured: boolean
   headline: string
   summary: string
   readTime: string
-  href?: string
 }
-
-const ARTICLES: Article[] = [
-  // Approved articles only — leave empty until a content owner publishes here.
-]
 
 const CATEGORIES = ['All', 'Policy changes', 'Occupation lists', 'Fees & thresholds', 'Case outcomes', 'Firm news']
 
@@ -50,23 +44,71 @@ const OFFICIAL_SOURCES = [
   },
 ]
 
+function formatDate(iso?: string) {
+  if (!iso) return ''
+  return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+}
+
 export default function NewsPage({ navigate }: { navigate: (page: string) => void }) {
-  const meta = PAGE_META['news']
+  usePageSeo('news', PAGE_META['news'])
+  const cms = useCmsPage()
   const { submit, loading, error, success } = useIntakeSubmit('newsletter')
   const [email, setEmail] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
-const featuredArticle = ARTICLES.find((a) => a.featured)
-  const nonFeaturedArticles = ARTICLES.filter((a) => !a.featured)
+  const [articles, setArticles] = useState<Article[]>([])
+  const [loadingArticles, setLoadingArticles] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false
+    setLoadingArticles(true)
+    fetchPublishedNews().then((remote) => {
+      if (cancelled) return
+      setArticles(
+        (remote || []).map((n) => ({
+          id: n.id,
+          slug: n.slug,
+          date: formatDate(n.publishedAt),
+          category: n.category,
+          featured: Boolean(n.featured),
+          headline: n.title,
+          summary: n.standfirst,
+          readTime: n.readTime || '3 min read',
+        }))
+      )
+      setLoadingArticles(false)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const featuredArticle = articles.find((a) => a.featured) || articles[0]
+  const nonFeaturedArticles = articles.filter((a) => a.id !== featuredArticle?.id)
   const filteredArticles =
     activeCategory === 'All'
       ? nonFeaturedArticles
       : nonFeaturedArticles.filter((a) => a.category === activeCategory)
-  const hasArticles = ARTICLES.length > 0
+  const hasArticles = articles.length > 0
+
+  const heroTitle = cms?.h1?.trim() || (
+    <>
+      Latest from
+      <br />
+      <em style={{ color: GOLD, fontStyle: 'italic' }}>Nanak Migration Group</em>
+    </>
+  )
+  const heroDeck =
+    cms?.body?.trim() ||
+    'Policy updates, occupation list changes, fees and thresholds — published when news warrants it, and only after review by our MARA-registered agents.'
 
   async function handleSubscribe(e: React.FormEvent) {
     e.preventDefault()
     if (!email.trim()) return
     await submit({ email: email.trim(), source: 'news-page' })
+  }
+
+  function openArticle(slug: string) {
+    navigate(`${ROUTE.newsPage}/${slug}`)
   }
 
   return (
@@ -113,13 +155,10 @@ const featuredArticle = ARTICLES.find((a) => a.featured)
               letterSpacing: '-0.02em',
             }}
           >
-            Latest from
-            <br />
-            <em style={{ color: GOLD, fontStyle: 'italic' }}>Nanak Migration Group</em>
+            {heroTitle}
           </h1>
-          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: 560, margin: '0 auto' }}>
-            Policy updates, occupation list changes, fees and thresholds — published when news warrants it,
-            and only after review by our MARA-registered agents.
+          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, maxWidth: 560, margin: '0 auto', whiteSpace: 'pre-wrap' }}>
+            {heroDeck}
           </p>
         </div>
       </section>
@@ -164,10 +203,18 @@ const featuredArticle = ARTICLES.find((a) => a.featured)
             })}
           </div>
 
-          {hasArticles ? (
+          {loadingArticles ? (
+            <div style={{ textAlign: 'center', padding: '48px 24px', color: '#9ca3af', fontSize: 15 }}>Loading news…</div>
+          ) : hasArticles ? (
             <>
               {featuredArticle && (activeCategory === 'All' || featuredArticle.category === activeCategory) && (
                 <article
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => openArticle(featuredArticle.slug)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') openArticle(featuredArticle.slug)
+                  }}
                   style={{
                     background: '#ffffff',
                     border: '1.5px solid #e8edf6',
@@ -179,6 +226,7 @@ const featuredArticle = ARTICLES.find((a) => a.featured)
                     marginBottom: 48,
                     boxShadow: '0 2px 16px rgba(27,43,94,0.07)',
                     flexWrap: 'wrap',
+                    cursor: 'pointer',
                   }}
                 >
                   <div
@@ -256,6 +304,12 @@ const featuredArticle = ARTICLES.find((a) => a.featured)
                   {filteredArticles.map((article) => (
                     <article
                       key={article.id}
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => openArticle(article.slug)}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') openArticle(article.slug)
+                      }}
                       style={{
                         background: '#ffffff',
                         border: '1.5px solid #e8edf6',
@@ -264,6 +318,7 @@ const featuredArticle = ARTICLES.find((a) => a.featured)
                         display: 'flex',
                         flexDirection: 'column',
                         gap: 12,
+                        cursor: 'pointer',
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>

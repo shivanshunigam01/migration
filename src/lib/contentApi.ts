@@ -18,6 +18,25 @@ export interface PublicBlogPost {
   seoDescription?: string
 }
 
+export interface PublicNewsArticle {
+  id: string
+  slug: string
+  title: string
+  standfirst: string
+  body: string
+  category: string
+  tags: string[]
+  relatedRoute: string
+  status: "draft" | "published"
+  publishedAt?: string
+  author?: string
+  seoTitle?: string
+  seoDescription?: string
+  ogImage?: string
+  featured?: boolean
+  readTime?: string
+}
+
 export interface FaqCollection {
   id: string
   pageKey: string
@@ -64,6 +83,20 @@ export async function fetchPublishedBlogs(params: { category?: string; search?: 
 
 export async function fetchBlogBySlug(slug: string) {
   return publicGet<PublicBlogPost>(`/blogs/${encodeURIComponent(slug)}`)
+}
+
+export async function fetchPublishedNews(params: { category?: string; search?: string; featured?: boolean } = {}) {
+  const q = new URLSearchParams()
+  if (params.category) q.set("category", params.category)
+  if (params.search) q.set("search", params.search)
+  if (params.featured) q.set("featured", "true")
+  const suffix = q.toString() ? `?${q}` : ""
+  const data = await publicGet<{ news: PublicNewsArticle[] }>(`/news${suffix}`)
+  return data?.news ?? null
+}
+
+export async function fetchNewsBySlug(slug: string) {
+  return publicGet<PublicNewsArticle>(`/news/${encodeURIComponent(slug)}`)
 }
 
 export async function fetchFaqByPageKey(pageKey: string) {

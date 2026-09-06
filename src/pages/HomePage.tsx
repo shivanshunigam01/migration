@@ -17,7 +17,7 @@ import { CtaBand } from '@/components/page/CtaBand'
 import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import { ROUTE } from '@/data/routes'
 import { usePageSeo } from '@/lib/usePageSeo'
-import { fetchPublishedBlogs } from '@/lib/contentApi'
+import { fetchPublishedBlogs, fetchPublishedNews } from '@/lib/contentApi'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Reveal, Stagger, StaggerItem, ShieldGlow } from '@/components/motion'
 import { fadeUp, slideRight, staggerContainer } from '@/components/motion/variants'
@@ -53,7 +53,7 @@ const TESTIMONIALS = [
   { name: 'Client name (placeholder)', origin: 'City, Country', flag: '🌐', visa: 'Subclass TBC', quote: 'Placeholder — replace with a consented client review.', initials: 'CP' },
 ]
 
-const NEWS: Array<{ date: string; category: string; title: string; standfirst: string; slug?: string }> = []
+const NEWS: Array<{ date: string; category: string; title: string; standfirst: string; slug?: string; hrefBase?: string }> = []
 
 /* Practice navigation — rendered separately in header as utility links */
 const PRACTICE_LINKS = [
@@ -502,10 +502,29 @@ export default function HomePage() {
   usePageSeo('home')
 
   React.useEffect(() => {
-    fetchPublishedBlogs().then((posts) => {
-      if (!posts?.length) return
+    let cancelled = false
+    async function loadNews() {
+      const newsPosts = await fetchPublishedNews()
+      if (cancelled) return
+      if (newsPosts?.length) {
+        setNews(
+          newsPosts.slice(0, 3).map((p) => ({
+            date: p.publishedAt
+              ? new Date(p.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+              : '',
+            category: p.category,
+            title: p.title,
+            standfirst: p.standfirst,
+            slug: p.slug,
+            hrefBase: ROUTE.newsPage,
+          }))
+        )
+        return
+      }
+      const blogs = await fetchPublishedBlogs()
+      if (cancelled || !blogs?.length) return
       setNews(
-        posts.slice(0, 3).map((p) => ({
+        blogs.slice(0, 3).map((p) => ({
           date: p.publishedAt
             ? new Date(p.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
             : '',
@@ -513,9 +532,14 @@ export default function HomePage() {
           title: p.title,
           standfirst: p.standfirst,
           slug: p.slug,
+          hrefBase: ROUTE.blog,
         }))
       )
-    })
+    }
+    loadNews()
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   React.useEffect(() => {
@@ -600,19 +624,6 @@ export default function HomePage() {
               initial={reduceMotion ? false : 'hidden'}
               animate="visible"
             >
-              {/* Brand-first signal */}
-              <motion.div variants={fadeUp} style={{ marginBottom: 28 }}>
-                <div style={{ fontSize: 'clamp(14px, 1.5vw, 15px)', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase', color: NAVY, marginBottom: 10 }}>
-                  Nanak Migration Group
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-                  <span style={{ width: 36, height: 2, background: GOLD, display: 'inline-block', borderRadius: 1 }} />
-                  <span style={{ color: '#64748b', fontSize: 13.5, fontWeight: 600, letterSpacing: '0.05em' }}>
-                    MARA-registered · MARN 2619467
-                  </span>
-                </div>
-              </motion.div>
-
               <motion.h1 variants={fadeUp} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 'clamp(46px, 6.4vw, 78px)', fontWeight: 300, lineHeight: 1.02, color: NAVY, margin: '0 0 8px', letterSpacing: '-0.04em' }}>
                 Your pathway{' '}
                 <br /><span style={{ fontWeight: 700, color: GOLD }}>to Australia</span>{' '}
@@ -1255,8 +1266,8 @@ export default function HomePage() {
               </h2>
             </div>
             <a
-              href={`/${ROUTE.blog}`}
-              onClick={(e) => { e.preventDefault(); navigate(ROUTE.blog) }}
+              href={`/${ROUTE.newsPage}`}
+              onClick={(e) => { e.preventDefault(); navigate(ROUTE.newsPage) }}
               style={{ fontSize: 14, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, whiteSpace: 'nowrap', flexShrink: 0, transition: 'color 0.15s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
@@ -1272,9 +1283,10 @@ export default function HomePage() {
               <motion.article
                 style={{ height: '100%', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
                 onClick={() => {
-                  const slug = (news[0] as { slug?: string }).slug
-                  if (slug) navigate(`${ROUTE.blog}/${slug}`)
-                  else navigate(ROUTE.blog)
+                  const item = news[0] as { slug?: string; hrefBase?: string }
+                  const base = item.hrefBase || ROUTE.newsPage
+                  if (item.slug) navigate(`${base}/${item.slug}`)
+                  else navigate(base)
                 }}
                 whileHover={reduceMotion ? undefined : { y: -4, boxShadow: '0 16px 48px rgba(13,22,50,0.35)' }}
                 transition={{ duration: 0.22 }}
@@ -1294,13 +1306,18 @@ export default function HomePage() {
                 </p>
                 {/* Read more */}
                 <a
-                  href={(news[0] as { slug?: string }).slug ? `/${ROUTE.blog}/${(news[0] as { slug?: string }).slug}` : `/${ROUTE.blog}`}
+                  href={(() => {
+                    const item = news[0] as { slug?: string; hrefBase?: string }
+                    const base = item.hrefBase || ROUTE.newsPage
+                    return item.slug ? `/${base}/${item.slug}` : `/${base}`
+                  })()}
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
-                    const slug = (news[0] as { slug?: string }).slug
-                    if (slug) navigate(`${ROUTE.blog}/${slug}`)
-                    else navigate(ROUTE.blog)
+                    const item = news[0] as { slug?: string; hrefBase?: string }
+                    const base = item.hrefBase || ROUTE.newsPage
+                    if (item.slug) navigate(`${base}/${item.slug}`)
+                    else navigate(base)
                   }}
                   style={{ fontSize: 14, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GOLD}
@@ -1315,9 +1332,10 @@ export default function HomePage() {
               <StaggerItem key={i} preset="scale">
               <motion.article
                 onClick={() => {
-                  const slug = (n as { slug?: string }).slug
-                  if (slug) navigate(`${ROUTE.blog}/${slug}`)
-                  else navigate(ROUTE.blog)
+                  const item = n as { slug?: string; hrefBase?: string }
+                  const base = item.hrefBase || ROUTE.newsPage
+                  if (item.slug) navigate(`${base}/${item.slug}`)
+                  else navigate(base)
                 }}
                 whileHover={reduceMotion ? undefined : { y: -3, boxShadow: '0 8px 32px rgba(27,43,94,0.1)' }}
                 transition={{ duration: 0.22 }}
@@ -1338,13 +1356,18 @@ export default function HomePage() {
                 </p>
                 {/* Read more */}
                 <a
-                  href={(n as { slug?: string }).slug ? `/${ROUTE.blog}/${(n as { slug?: string }).slug}` : `/${ROUTE.blog}`}
+                  href={(() => {
+                    const item = n as { slug?: string; hrefBase?: string }
+                    const base = item.hrefBase || ROUTE.newsPage
+                    return item.slug ? `/${base}/${item.slug}` : `/${base}`
+                  })()}
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
-                    const slug = (n as { slug?: string }).slug
-                    if (slug) navigate(`${ROUTE.blog}/${slug}`)
-                    else navigate(ROUTE.blog)
+                    const item = n as { slug?: string; hrefBase?: string }
+                    const base = item.hrefBase || ROUTE.newsPage
+                    if (item.slug) navigate(`${base}/${item.slug}`)
+                    else navigate(base)
                   }}
                   style={{ fontSize: 13, fontWeight: 700, color: NAVY, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, transition: 'color 0.15s' }}
                   onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
