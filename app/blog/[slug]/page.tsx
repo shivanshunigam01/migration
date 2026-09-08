@@ -15,8 +15,9 @@ async function fetchPublishedBlog(slug: string) {
     if (!res.ok) return null
     const json = await res.json()
     const post = json?.data
-    if (!post || post.status !== "published") return null
-    if (typeof post.title === "string" && post.title.startsWith("[DRAFT]")) return null
+    // Public endpoint is published-only; do not reject titles that still contain a seed "[DRAFT]" prefix.
+    if (!post) return null
+    if (post.status && post.status !== "published") return null
     return post
   } catch {
     return null

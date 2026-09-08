@@ -10,7 +10,7 @@ import StructuredData from '@/components/page/StructuredData'
 import { NAV_ITEMS } from '@/data/navItems'
 import { ROUTE } from '@/data/routes'
 import { PAGE_META } from '@/data/pageMeta'
-import { fetchPublishedBlogs } from '@/lib/contentApi'
+import { fetchPublishedBlogs, cleanBlogTitle } from '@/lib/contentApi'
 import { usePageSeo } from '@/lib/usePageSeo'
 import { Link } from 'react-router-dom'
 
@@ -45,7 +45,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
           slug: p.slug,
           date: formatDate(p.publishedAt),
           category: p.category,
-          title: p.title,
+          title: cleanBlogTitle(p.title),
           standfirst: p.standfirst,
           relatedRoute: p.relatedRoute,
         })),

@@ -1,7 +1,5 @@
 import { getApiBaseUrl } from "@/lib/apiBase"
 
-const API_BASE = getApiBaseUrl()
-
 export interface PublicBlogPost {
   id: string
   slug: string
@@ -61,9 +59,14 @@ export interface SeoMeta {
   robotsIndex?: boolean
 }
 
+/** Strip leftover seed prefix for display — never use this to hide published posts. */
+export function cleanBlogTitle(title: string): string {
+  return String(title || "").replace(/^\[DRAFT\]\s*/i, "").trim()
+}
+
 async function publicGet<T>(path: string): Promise<T | null> {
   try {
-    const res = await fetch(`${API_BASE}/public${path}`)
+    const res = await fetch(`${getApiBaseUrl()}/public${path}`)
     const json = await res.json().catch(() => ({}))
     if (!res.ok || json.success === false) return null
     return json.data as T
@@ -78,14 +81,16 @@ export async function fetchPublishedBlogs(params: { category?: string; search?: 
   if (params.search) q.set("search", params.search)
   const suffix = q.toString() ? `?${q}` : ""
   const data = await publicGet<{ blogs: PublicBlogPost[] }>(`/blogs${suffix}`)
+  // Public API already returns published-only — trust status, do not hide by title prefix.
   const blogs = data?.blogs ?? null
   if (!blogs) return null
-  return blogs.filter((b) => b.status === "published" && !b.title?.startsWith("[DRAFT]"))
+  return blogs.filter((b) => !b.status || b.status === "published")
 }
 
 export async function fetchBlogBySlug(slug: string) {
   const post = await publicGet<PublicBlogPost>(`/blogs/${encodeURIComponent(slug)}`)
-  if (!post || post.status !== "published" || post.title?.startsWith("[DRAFT]")) return null
+  if (!post) return null
+  if (post.status && post.status !== "published") return null
   return post
 }
 

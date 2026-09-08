@@ -17,7 +17,7 @@ import { CtaBand } from '@/components/page/CtaBand'
 import { ComplianceDisclaimer } from '@/components/page/ComplianceDisclaimer'
 import { ROUTE } from '@/data/routes'
 import { usePageSeo } from '@/lib/usePageSeo'
-import { fetchPublishedBlogs, fetchPublishedNews } from '@/lib/contentApi'
+import { fetchPublishedBlogs, fetchPublishedNews, cleanBlogTitle } from '@/lib/contentApi'
 import { motion, useReducedMotion } from 'framer-motion'
 import { Reveal, Stagger, StaggerItem, ShieldGlow } from '@/components/motion'
 import { fadeUp, slideRight, staggerContainer } from '@/components/motion/variants'
@@ -529,7 +529,7 @@ export default function HomePage() {
             ? new Date(p.publishedAt).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
             : '',
           category: p.category,
-          title: p.title,
+          title: cleanBlogTitle(p.title),
           standfirst: p.standfirst,
           slug: p.slug,
           hrefBase: ROUTE.blog,
