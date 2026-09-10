@@ -350,6 +350,7 @@ export const PAGE_REGISTRY: Record<string, AppPageComponent> = {
 
 export function getRegistryPage(slugPath: string): AppPageComponent | null {
   const key = slugPath.replace(/^\/+|\/+$/g, "")
+  if (key.startsWith("tools/")) return PAGE_REGISTRY["tools"] ?? null
   return PAGE_REGISTRY[key] ?? null
 }
 

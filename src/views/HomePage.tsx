@@ -65,8 +65,8 @@ const PRACTICE_LINKS = [
 ]
 
 const TRUST_LOGOS = [
-  { name: 'MARA Registered', label: 'MARN 2619467' },
-  { name: 'OMARA Code of Conduct', label: 'Compliant member' },
+  { name: 'Registered Migration Agent', label: 'MARN 2619467' },
+  { name: 'Registered with OMARA', label: 'Code of Conduct Compliant' },
   { name: 'Graduate Diploma in Migration Law and Practice', label: 'Qualified' },
 ]
 
@@ -163,25 +163,25 @@ const ASSESSMENT_STEPS: Step[] = [
   { key: 'result_600', question: '', options: [] },
 ]
 const RESULTS: Record<string, { visa: string; desc: string; code?: string }> = {
-  result_482: { visa: 'Skills in Demand (SID)', code: '482', desc: 'Your employer can sponsor you for a 482 Skills in Demand (SID) visa — the most common work pathway for sponsored workers. SID replaced the TSS visa in Dec 2024. Usually 2–4 years with a pathway to permanent residence.' },
-  result_skilled: { visa: 'Points-Tested Skilled Migration', code: '189 / 190 / 491', desc: 'With a positive skills assessment, you can submit an Expression of Interest via SkillSelect. Options include the independent 189, state-nominated 190, or regional 491 visa.' },
-  result_assess_first: { visa: 'Skills Assessment Required', desc: 'Before lodging a skilled visa, you\'ll need a positive skills assessment from the relevant assessing authority for your occupation. Our agents can guide you through this step.' },
-  result_500: { visa: 'Student Visa', code: '500', desc: 'The Subclass 500 allows full-time study at a registered Australian institution. You can include eligible family members and work up to 48 hours per fortnight.' },
-  result_485_study: { visa: 'Temporary Graduate Visa', code: '485', desc: 'After completing studies you may be eligible for a 485 Graduate visa to work in Australia while you explore permanent residency pathways.' },
-  result_extend_500: { visa: 'Student Visa Extension', code: '500', desc: 'If you\'re extending or changing your course, you may need to lodge a new 500 application. Our agents can review your current COE and advise on next steps.' },
-  result_partner: { visa: 'Partner Visa', code: '820 / 801', desc: 'A two-stage partner visa for genuine couples. Stage 1 (820) grants temporary residence; Stage 2 (801) grants permanent residence, usually after 2 years.' },
-  result_parent: { visa: 'Contributory Parent Visa', code: '143', desc: 'The Contributory Parent visa is the fastest parent pathway. It requires a significant government levy but processes within 5–8 years compared to 30+ for the standard parent visa.' },
-  result_child: { visa: 'Child Visa', code: '101 / 802', desc: 'Dependent children of Australian citizens or permanent residents may be eligible for a child visa. Requirements vary by age and relationship.' },
-  result_888: { visa: 'Business Innovation & Investment', code: '888', desc: 'For established business owners and investors with significant assets. State nomination is usually required. Our team can assess your eligibility against the criteria.' },
-  result_innovator: { visa: 'Global Talent / Innovator', desc: 'High-achievers in tech, science, finance or creative sectors may qualify for the Global Talent visa program — no employer sponsor needed.' },
-  result_600: { visa: 'Visitor Visa', code: '600', desc: 'The Subclass 600 allows stays of 3, 6 or 12 months depending on your circumstances. Multiple-entry options are available for frequent travellers.' },
+  result_482: { visa: 'Skills in Demand (SID)', code: '482', desc: 'Based on your answers, the employer-sponsored Skills in Demand (482) pages are a useful next read. This is not an eligibility finding — book a free eligibility call with a registered agent for advice.' },
+  result_skilled: { visa: 'Points-Tested Skilled Migration', code: '189 / 190 / 491', desc: 'Your answers point toward our skilled migration guides (189 / 190 / 491) and the points calculator. Nothing here confirms eligibility — speak with a registered agent before acting.' },
+  result_assess_first: { visa: 'Skills Assessment', desc: 'A skills assessment is often the first research step for skilled pathways. Read our skills assessment guide, then book a consult for advice tailored to your occupation.' },
+  result_500: { visa: 'Student Visa', code: '500', desc: 'Explore our Student Visa (500) guide for study pathways. This chat does not assess Genuine Student or other criteria — book a free eligibility call for personal advice.' },
+  result_485_study: { visa: 'Temporary Graduate Visa', code: '485', desc: 'After study, many readers look at the Temporary Graduate (485) guide. We cannot say whether you qualify — book a consult for a formal review.' },
+  result_extend_500: { visa: 'Student Visa Extension', code: '500', desc: 'Course changes often involve a new or varied student visa. Read the Student Visa guide and book a registered agent review before lodging.' },
+  result_partner: { visa: 'Partner Visa', code: '820 / 801', desc: 'Our Partner Visa guides explain the usual two-stage process. Relationship evidence is assessed case-by-case — book a free eligibility call for advice.' },
+  result_parent: { visa: 'Parent Visas', code: '143', desc: 'Compare parent pathways on our Parent Visas hub. Queues and charges vary — this is general information only, not an eligibility outcome.' },
+  result_child: { visa: 'Child Visa', code: '101 / 802', desc: 'See our Child Visa pages for overview information. Requirements depend on age and relationship — book a consult for advice.' },
+  result_888: { visa: 'Business Innovation & Investment', code: '888', desc: 'Business and investment pathways are complex. Browse our guides, then book a registered agent consultation — we do not confirm eligibility in this chat.' },
+  result_innovator: { visa: 'National Innovation / Talent pathways', desc: 'High-achievement pathways are invitation-based and highly selective. Read the National Innovation Visa guide and book a consult for next steps.' },
+  result_600: { visa: 'Visitor Visa', code: '600', desc: 'See our Visitor Visa (600), ETA and eVisitor guides. Stay length and conditions depend on your passport and purpose — book a call for advice.' },
 }
 function PathwayAssessment() {
   const navigate = useAppNavigate()
   const { submit, loading, error, success } = useIntakeSubmit('pathway-assessment')
   const chatRef = React.useRef<HTMLDivElement>(null)
   const [messages, setMessages] = useState<ChatMsg[]>([
-    { from: 'bot', text: "Hello — I'll ask a few quick questions and give you preliminary pathway guidance. Nothing here is migration advice." },
+    { from: 'bot', text: "Hello — I'll ask a few quick questions and point you to helpful pages. Nothing here is migration advice or an eligibility decision." },
     { from: 'bot', text: ASSESSMENT_STEPS[0].question },
   ])
   const [step, setStep] = useState<string>('goal')
@@ -257,7 +257,7 @@ function PathwayAssessment() {
 
   function restart() {
     setMessages([
-      { from: 'bot', text: "Hello — I'll ask a few quick questions and give you preliminary pathway guidance. Nothing here is migration advice." },
+      { from: 'bot', text: "Hello — I'll ask a few quick questions and point you to helpful pages. Nothing here is migration advice or an eligibility decision." },
       { from: 'bot', text: ASSESSMENT_STEPS[0].question },
     ])
     setStep('goal')
@@ -371,7 +371,7 @@ function PathwayAssessment() {
                 style={{ flex: 1 }}
                 onClick={() => navigate('book-consultation')}
               >
-                Book Free Consultation →
+                Book a free eligibility call →
               </GlowButton>
               <button type="button" onClick={restart} style={{ padding: '11px 14px', background: '#f3f4f8', color: '#6b7280', border: 'none', borderRadius: 9, fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 Start over
@@ -569,7 +569,7 @@ export default function HomePage() {
           {
             '@type': 'WebSite',
             '@id': 'https://www.nanakmigration.com.au/#website',
-            url: 'https://www.nanakmigration.com.au',
+            url: 'https://www.nanakmigration.com.au/',
             name: 'Nanak Migration Group',
             publisher: { '@id': 'https://www.nanakmigration.com.au/#organization' },
             potentialAction: {
@@ -597,8 +597,7 @@ export default function HomePage() {
         {/* Kangaroo — bottom-right accent */}
         <motion.img
           src={CARD_KANGAROO}
-          alt=""
-          aria-hidden="true"
+          alt="Australian kangaroo illustration"
           width={160}
           height={160}
           decoding="async"
@@ -637,7 +636,7 @@ export default function HomePage() {
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 40 }}>
                 <GlowButton as="a" href="/book-consultation" size="lg" variant="navy"
                   onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}>
-                  Book Free Consultation →
+                  Book a free eligibility call →
                 </GlowButton>
                 <GlowButton as="a" href="#visas" size="lg" variant="gold">
                   Explore Visas
@@ -847,9 +846,9 @@ export default function HomePage() {
               <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 50% 80% at 0% 50%, rgba(232,160,23,0.14) 0%, transparent 55%)', pointerEvents: 'none' }} />
               <Stagger style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '40px 80px', alignItems: 'center', position: 'relative', zIndex: 1 }}>
                 {[
-                  { label: 'MARN 2619467', sub: 'MARA Registered Agent' },
+                  { label: 'MARN 2619467', sub: 'Registered Migration Agent' },
                   { label: '5 Offices', sub: 'Truganina · Geelong · Cranbourne · Canning Vale · Craigieburn' },
-                  { label: 'OMARA', sub: 'Code of Conduct Compliant' },
+                  { label: 'OMARA', sub: 'Registered with OMARA' },
                 ].map(item => (
                   <StaggerItem key={item.label} style={{ textAlign: 'center' }}>
                     <div style={{ fontSize: 24, fontWeight: 800, color: GOLD, letterSpacing: '-0.02em' }}>{item.label}</div>
@@ -1040,13 +1039,13 @@ export default function HomePage() {
             heading: 'Study in Australia —\nwe handle the paperwork',
             body: 'From choosing the right course and institution to meeting genuine student criteria and planning your post-study pathway, we support international students at every step — and help you stay on after graduation.',
             pills: [
-              { label: 'Student Visa (500)', href: '/student-visa' },
+              { label: 'Student Visa (500)', href: '/student-visa-500' },
               { label: 'Post-Study Work Stream', href: '/graduate-visa' },
               { label: 'Student Guardian Visa', href: '/student-guardian' },
               { label: 'Graduate Visa (485)', href: '/graduate-visa' },
             ],
             cta: 'Explore study pathways →',
-            href: '/student-visa',
+            href: '/student-visa-500',
             imgLeft: true,
             illustration: (
               <svg aria-hidden="true" viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }}>
@@ -1194,7 +1193,7 @@ export default function HomePage() {
                 <img className="img-contain" src={MARA_BADGE} alt="MARA Registration Badge — 2619467" width={160} height={110} decoding="async" loading="lazy" style={{ maxHeight: 110, maxWidth: 160, objectFit: 'contain' }} />
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>MARA Registered Agent</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Registered Migration Agent</div>
                 <div style={{ fontSize: 13, color: '#6b7280' }}>MARN 2619467</div>
                 <a href="https://www.mara.gov.au" target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: GOLD, fontWeight: 600, textDecoration: 'none', display: 'inline-block', marginTop: 6 }}>www.mara.gov.au →</a>
               </div>
@@ -1214,17 +1213,17 @@ export default function HomePage() {
             </motion.div>
             </StaggerItem>
 
-            {/* DoHA / OMARA compliance */}
+            {/* OMARA registration */}
             <StaggerItem preset="scale">
             <motion.div whileHover={reduceMotion ? undefined : { y: -6 }} transition={{ duration: 0.22 }} style={{ background: '#ffffff', border: '1.5px solid #e2e8f0', borderRadius: 16, padding: '32px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16, minWidth: 200, flex: '1 1 200px', maxWidth: 260, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', height: '100%' }}>
               <div style={{ height: 110, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ width: 96, height: 96, borderRadius: 20, background: `linear-gradient(135deg, ${NAVY} 0%, #1e3aaa 100%)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
                   <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(245,161,36,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                  <span style={{ fontSize: 10, fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>DoHA</span>
+                  <span style={{ fontSize: 10, fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>OMARA</span>
                 </div>
               </div>
               <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>DoHA Regulated</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 3 }}>Registered with OMARA</div>
                 <div style={{ fontSize: 13, color: '#6b7280' }}>OMARA Code of Conduct Compliant</div>
               </div>
             </motion.div>
@@ -1406,7 +1405,7 @@ export default function HomePage() {
                 variant="navy"
                 onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}
               >
-                Book Free Consultation
+                Book a free eligibility call
               </GlowButton>
             </div>
 
@@ -1566,7 +1565,7 @@ export default function HomePage() {
             boxShadow: '0 -4px 16px rgba(0,0,0,0.2)',
           }}
         >
-          <span style={{ color: '#ffffff', fontSize: 13 }}>Free 30-minute consultation</span>
+          <span style={{ color: '#ffffff', fontSize: 13 }}>Registered Migration Agent · MARN 2619467</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <a href="tel:1300644728" style={{ display: 'flex', alignItems: 'center', color: '#ffffff' }} aria-label="Call us">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -1578,7 +1577,7 @@ export default function HomePage() {
               variant="gold"
               onClick={() => navigate('contact')}
             >
-              Book Free Consultation
+              Book a free eligibility call
             </GlowButton>
           </div>
         </div>

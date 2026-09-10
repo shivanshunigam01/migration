@@ -6,6 +6,8 @@ import { NAVPREET_PHOTO, MARA_BADGE, QEAC_LOGO } from '@/lib/siteAssets'
 import { CtaBand, ComplianceDisclaimer } from '@/components/page'
 import Icon from '@/components/ui/Icon'
 import { GlowButton } from '@/components/ui/GlowButton'
+import { PAGE_META } from '@/data/pageMeta'
+import StructuredData from '@/components/page/StructuredData'
 
 const GOLD = '#f5a124'
 const NAVY = '#1B2B5E'
@@ -79,11 +81,26 @@ const SERVICE_AREAS = [
   { label: 'Reviews & Complex', icon: 'scale', desc: 'ART review, visa cancellations, ministerial intervention and s48 bars.', color: '#dc2626' },
 ]
 
+const ABOUT_FAQS = [
+  { q: 'Can I book a consultation in Hindi, Punjabi or Nepali?', a: 'Yes — all consultations are available in English, Hindi, Punjabi or Nepali. Let us know your preference when booking.' },
+  { q: 'Do you advise clients overseas as well as in Australia?', a: 'Yes. We advise clients who are currently overseas on offshore partner visas, student pathways and employer sponsorship arrangements. Initial consultations happen by video call.' },
+  { q: 'Do I need to be in one of your office states?', a: 'No. While offices are in VIC, WA and NSW, clients are advised across Australia and from overseas. Your migration journey does not have to start where you are standing.' },
+]
+
 export default function AboutPage({ navigate }: { navigate: (page: string) => void }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
+      <StructuredData
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
+          { name: 'About the Practice', url: 'https://www.nanakmigration.com.au/about' },
+        ]}
+        faqs={ABOUT_FAQS.map(f => ({ question: f.q, answer: f.a }))}
+        service={{ name: 'About Nanak Migration Group', description: PAGE_META.about.metaDescription, url: 'https://www.nanakmigration.com.au/about' }}
+        reviewedBy={true}
+      />
 
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
@@ -104,7 +121,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             <div style={{ background: '#fff', border: `1px solid ${GOLD}30`, borderLeft: `4px solid ${GOLD}`, borderRadius: '0 12px 12px 0', padding: '18px 22px', marginBottom: 32, boxShadow: '0 2px 16px rgba(27,43,94,0.06)', maxWidth: 560 }}>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 8 }}>About Nanak Migration</div>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Nanak Migration Group is an Australian migration practice led by <strong style={{ color: NAVY }}>Registered Migration Agent Navpreet Aulakh (MARN 2619467)</strong>, operating alongside Nanak Accountants & Associates. The firm provides regulated migration advice in English, Hindi, Punjabi and Nepali, with offices across Victoria, Western Australia and New South Wales.
+                Nanak Migration Group is the trading name of <strong style={{ color: NAVY }}>1313 Success Group Pty Ltd (ABN 54 674 937 476)</strong>, an Australian migration practice led by <strong style={{ color: NAVY }}>Registered Migration Agent Navpreet Aulakh (MARN 2619467)</strong>, operating alongside Nanak Accountants & Associates. The firm provides regulated migration advice in English, Hindi, Punjabi and Nepali, with offices across Victoria, Western Australia and New South Wales.
               </p>
             </div>
 
@@ -315,12 +332,13 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
                 {[
                   { label: 'Registered name', val: 'Navpreet Aulakh' },
                   { label: 'Registration number', val: 'MARN 2619467' },
-                  { label: 'Practice', val: 'Nanak Migration Group' },
+                  { label: 'Trading as', val: 'Nanak Migration Group' },
+                  { label: 'Legal entity', val: '1313 Success Group Pty Ltd' },
+                  { label: 'ABN', val: '54 674 937 476' },
                   { label: 'Associated entity', val: 'Nanak Accountants & Associates' },
-                  { label: 'ABN', val: '47 648 226 804' },
                   { label: 'Offices', val: 'VIC · WA · NSW' },
                 ].map((row, i) => (
-                  <div key={row.label} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: i < 5 ? '1px solid #f0f2f8' : 'none' }}>
+                  <div key={row.label} style={{ display: 'flex', gap: 12, padding: '8px 0', borderBottom: i < 6 ? '1px solid #f0f2f8' : 'none' }}>
                     <span style={{ fontSize: 13, color: '#6b7280', flex: '0 0 160px' }}>{row.label}</span>
                     <span style={{ fontSize: 14, fontWeight: 600, color: NAVY }}>{row.val}</span>
                   </div>
@@ -396,11 +414,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {[
-              { q: 'Can I book a consultation in Hindi, Punjabi or Nepali?', a: 'Yes — all consultations are available in English, Hindi, Punjabi or Nepali. Let us know your preference when booking.' },
-              { q: 'Do you advise clients overseas as well as in Australia?', a: 'Yes. We advise clients who are currently overseas on offshore partner visas, student pathways and employer sponsorship arrangements. Initial consultations happen by video call.' },
-              { q: 'Do I need to be in one of your office states?', a: 'No. While offices are in VIC, WA and NSW, clients are advised across Australia and from overseas. Your migration journey does not have to start where you are standing.' },
-            ].map((item, i) => (
+            {ABOUT_FAQS.map((item, i) => (
               <div key={item.q} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 14, overflow: 'hidden' }}>
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>

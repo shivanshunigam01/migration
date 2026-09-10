@@ -19,4 +19,6 @@ export const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
   "employer-obligations": "sponsorship-obligations",
   "labour-agreement": "labour-agreements",
   book: "book-consultation",
+  "skills-in-demand-482": "skills-in-demand-visa",
+  "student-visa": "student-visa-500",
 }

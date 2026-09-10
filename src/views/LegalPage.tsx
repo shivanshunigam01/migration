@@ -14,11 +14,11 @@ const COPY: Record<LegalKind, { title: string; eyebrow: string; description: str
   privacy: {
     title: "Privacy Policy",
     eyebrow: "Legal",
-    description: "How Nanak Migration Group Pty Ltd collects, uses and protects personal information.",
+    description: "How 1313 Success Group Pty Ltd trading as Nanak Migration Group collects, uses and protects personal information.",
     sections: [
       {
         h: "Who we are",
-        p: "Nanak Migration Group Pty Ltd (ABN 54 674 937 476) provides migration assistance through a MARA-registered agent (MARN 2619467). Contact: visa@nanakmigration.com.au · 1300 644 728.",
+        p: "1313 Success Group Pty Ltd trading as Nanak Migration Group (ABN 54 674 937 476) provides migration assistance through a Registered Migration Agent (MARN 2619467). Contact: visa@nanakmigration.com.au · 1300 644 728.",
       },
       {
         h: "Information we collect",
@@ -41,11 +41,11 @@ const COPY: Record<LegalKind, { title: string; eyebrow: string; description: str
   terms: {
     title: "Terms of Use",
     eyebrow: "Legal",
-    description: "Terms governing use of the Nanak Migration Group website.",
+    description: "Terms governing use of the Nanak Migration Group website, operated by 1313 Success Group Pty Ltd trading as Nanak Migration Group.",
     sections: [
       {
         h: "Website information",
-        p: "Content on this website is general information only and is not immigration assistance or legal advice. Requirements change — verify current criteria with the Department of Home Affairs or obtain advice from a registered migration agent before lodging.",
+        p: "This website is operated by 1313 Success Group Pty Ltd trading as Nanak Migration Group (ABN 54 674 937 476). Content on this website is general information only and is not immigration assistance or legal advice. Requirements change — verify current criteria with the Department of Home Affairs or obtain advice from a registered migration agent before lodging.",
       },
       {
         h: "No client relationship",
@@ -57,7 +57,7 @@ const COPY: Record<LegalKind, { title: string; eyebrow: string; description: str
       },
       {
         h: "Liability",
-        p: "To the extent permitted by law, Nanak Migration Group Pty Ltd is not liable for loss arising from reliance on website content alone.",
+        p: "To the extent permitted by law, 1313 Success Group Pty Ltd trading as Nanak Migration Group (ABN 54 674 937 476) is not liable for loss arising from reliance on website content alone.",
       },
     ],
   },

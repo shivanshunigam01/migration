@@ -40,8 +40,8 @@ export default function ContactPage({ navigate }: { navigate: (page: string) => 
         maraBadge
         eyebrow="Contact"
         title="Talk to a registered migration agent"
-        deck="Call 1300 644 728, email visa@nanakmigration.com.au, or send a message below. We advise in English, Hindi and Punjabi."
-        primaryCta={{ label: "Book free consultation", page: "book-consultation" }}
+        deck="Call 1300 644 728, email visa@nanakmigration.com.au, or send a message below. We advise in English, Hindi, Punjabi and Nepali."
+        primaryCta={{ label: "Book a free eligibility call", page: "book-consultation" }}
         accent={GOLD}
       />
 

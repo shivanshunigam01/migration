@@ -139,9 +139,6 @@ return (
               marginBottom: 32,
             }}
           >
-            <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-              <StarRow count={5} size={24} />
-            </div>
             <div style={{ fontSize: 15, fontWeight: 600, color: 'rgba(255,255,255,0.85)', marginTop: 4 }}>
               Google Reviews
             </div>
@@ -189,12 +186,32 @@ return (
           >
             Read reviews on Google &rarr;
           </a>
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              marginLeft: 12,
+              background: 'transparent',
+              color: '#fff',
+              fontWeight: 600,
+              fontSize: 15,
+              padding: '13px 22px',
+              borderRadius: 8,
+              textDecoration: 'none',
+              border: '1.5px solid rgba(255,255,255,0.35)',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            Leave a review
+          </a>
         </div>
       </section>
 
       <section style={{ background: '#ffffff', padding: '80px 24px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <SectionHeading kicker="Verified Google Reviews" title="Client Experiences" accent={GOLD} />
+          <SectionHeading kicker="Google Reviews" title="Client Experiences" accent={GOLD} />
 
           {hasReviews ? (
             <div
@@ -286,9 +303,28 @@ return (
                   padding: '12px 24px',
                   borderRadius: 8,
                   textDecoration: 'none',
+                  marginRight: 12,
                 }}
               >
-                View on Google &rarr;
+                Read reviews on Google &rarr;
+              </a>
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  background: 'transparent',
+                  color: NAVY,
+                  fontWeight: 700,
+                  fontSize: 14,
+                  padding: '12px 24px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  border: `1.5px solid ${NAVY}`,
+                }}
+              >
+                Leave a review
               </a>
             </div>
           )}
@@ -328,30 +364,49 @@ return (
                 G
               </div>
               <div>
-                <div style={{ fontWeight: 700, color: NAVY, fontSize: 16 }}>Read all our reviews on Google</div>
+                <div style={{ fontWeight: 700, color: NAVY, fontSize: 16 }}>Read reviews on Google</div>
                 <div style={{ fontSize: 13, color: '#6b7280', marginTop: 2 }}>
-                  Public reviews on our Google Business profile — independently verifiable.
+                  Public reviews on our Google Business profile — independently verifiable. Leave a review after we work together.
                 </div>
               </div>
             </div>
-            <a
-              href={GOOGLE_REVIEWS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                background: NAVY,
-                color: '#fff',
-                fontWeight: 700,
-                fontSize: 14,
-                padding: '11px 24px',
-                borderRadius: 8,
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-              }}
-            >
-              View on Google &rarr;
-            </a>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', flexShrink: 0 }}>
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: NAVY,
+                  color: '#fff',
+                  fontWeight: 700,
+                  fontSize: 14,
+                  padding: '11px 24px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Read reviews on Google &rarr;
+              </a>
+              <a
+                href={GOOGLE_REVIEWS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: 'transparent',
+                  color: NAVY,
+                  fontWeight: 700,
+                  fontSize: 14,
+                  padding: '11px 24px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                  border: `1.5px solid ${NAVY}`,
+                }}
+              >
+                Leave a review
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -404,8 +459,8 @@ return (
 
       <CtaBand
         title="Ready to work with us?"
-        body="Nanak Migration Group (MARN 2619467) — MARA-registered agents serving clients across Australia in English, Hindi, Punjabi and Nepali."
-        primaryCta={{ label: 'Request a free discussion', page: 'book-consultation' }}
+        body="Nanak Migration Group (MARN 2619467) — Registered Migration Agent serving clients across Australia in English, Hindi, Punjabi and Nepali."
+        primaryCta={{ label: 'Book a free eligibility call', page: 'book-consultation' }}
         navigate={navigate}
       />
 

@@ -111,7 +111,7 @@ const steps = [
 ]
 
 const RELATED: RelatedPage[] = [
-  { title: 'Skills in Demand (482)', desc: 'The temporary visa that leads to the 186 via the TRT stream.', icon: 'zap', page: 'skills-in-demand-482', color: GREEN },
+  { title: 'Skills in Demand (482)', desc: 'The temporary visa that leads to the 186 via the TRT stream.', icon: 'zap', page: 'skills-in-demand-visa', color: GREEN },
   { title: 'Standard Business Sponsorship', desc: 'Your employer must hold SBS before nominating you for the 186.', icon: 'briefcase', page: 'standard-business-sponsorship', color: GREEN },
   { title: '186 Skill Requirements', desc: 'Occupation, skills assessment, and work experience requirements.', icon: 'check', page: '186-skill-requirements', color: GREEN },
   { title: 'English Requirements', desc: 'Competent English requirements and approved tests for the 186.', icon: 'globe', page: 'english-requirements', color: GREEN },
@@ -465,7 +465,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
         title={<>Ready to make Australia <em style={{ fontStyle: 'italic', color: GOLD }}>your permanent home?</em></>}
         body="Our registered migration agents will assess your eligibility, guide your employer through the nomination, and build a complete 186 application. Navpreet Aulakh — MARN 2619467."
         primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
-        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-482' }}
+        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-visa' }}
         accent={GREEN}
         footnote="MARA-registered · MARN 2619467 · Permanent residence from day of grant"
         navigate={navigate}

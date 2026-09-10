@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import NanakLogo from '@/components/layout/NanakLogo'
 import { PAGE_META } from '@/data/pageMeta'
+import StructuredData from '@/components/page/StructuredData'
 import {
   fetchPendingOafBookings,
   submitPublicOaf,
@@ -128,6 +129,14 @@ let el = document.querySelector('meta[name="description"]')
 
   return (
     <div className="nm-book-page">
+      <StructuredData
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
+          { name: 'Pre-consult Assessment', url: 'https://www.nanakmigration.com.au/pre-assessment' },
+        ]}
+        service={{ name: 'Pre-consult Assessment', description: meta.metaDescription, url: 'https://www.nanakmigration.com.au/pre-assessment' }}
+        reviewedBy={true}
+      />
       <header className="nm-book-header">
         <div className="nm-book-header-inner">
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>

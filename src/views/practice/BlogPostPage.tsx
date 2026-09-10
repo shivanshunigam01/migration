@@ -8,7 +8,7 @@ import { ComplianceDisclaimer } from "@/components/page/ComplianceDisclaimer"
 import StructuredData from "@/components/page/StructuredData"
 import { NAV_ITEMS } from "@/data/navItems"
 import { ROUTE } from "@/data/routes"
-import { fetchBlogBySlug } from "@/lib/contentApi"
+import { fetchBlogBySlug, type PublicBlogPost } from "@/lib/contentApi"
 import { useArticleSeo } from "@/lib/usePageSeo"
 import { notFound } from "next/navigation"
 
@@ -29,37 +29,48 @@ function wrapTablesForScroll(root: HTMLElement | null) {
   })
 }
 
-export default function BlogPostPage({ navigate }: { navigate: (page: string) => void }) {
+function mapPost(remote: PublicBlogPost) {
+  return {
+    title: remote.title,
+    standfirst: remote.standfirst,
+    body: remote.body,
+    category: remote.category,
+    date: formatDate(remote.publishedAt),
+    publishedAt: remote.publishedAt,
+    tags: remote.tags || [],
+    relatedRoute: remote.relatedRoute,
+  }
+}
+
+export default function BlogPostPage({
+  navigate,
+  initialPost,
+}: {
+  navigate: (page: string) => void
+  initialPost?: PublicBlogPost | null
+}) {
   const { slug = "" } = useParams()
   const bodyRef = useRef<HTMLDivElement>(null)
-  const [post, setPost] = useState<{
-    title: string
-    standfirst: string
-    body: string
-    category: string
-    date: string
-    tags: string[]
-    relatedRoute: string
-  } | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [post, setPost] = useState<ReturnType<typeof mapPost> | null>(() =>
+    initialPost && (!initialPost.status || initialPost.status === "published")
+      ? mapPost(initialPost)
+      : null,
+  )
+  const [loading, setLoading] = useState(!initialPost)
 
   useEffect(() => {
+    if (initialPost && (!initialPost.status || initialPost.status === "published")) {
+      setPost(mapPost(initialPost))
+      setLoading(false)
+      return
+    }
     let cancelled = false
     setLoading(true)
     fetchBlogBySlug(slug).then((remote) => {
       if (cancelled) return
       if (remote && remote.status === "published") {
-        setPost({
-          title: remote.title,
-          standfirst: remote.standfirst,
-          body: remote.body,
-          category: remote.category,
-          date: formatDate(remote.publishedAt),
-          tags: remote.tags || [],
-          relatedRoute: remote.relatedRoute,
-        })
+        setPost(mapPost(remote))
       } else {
-        // Never fall back to [DRAFT] static stubs — drafts are not public.
         setPost(null)
       }
       setLoading(false)
@@ -67,7 +78,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
     return () => {
       cancelled = true
     }
-  }, [slug])
+  }, [slug, initialPost])
 
   useEffect(() => {
     wrapTablesForScroll(bodyRef.current)
@@ -96,12 +107,20 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: "#fff", color: TEXT }}>
+      {/* Client schema kept as supplement; server page also emits BlogPosting + breadcrumbs */}
       <StructuredData
         breadcrumbs={[
           { name: "Home", url: "https://www.nanakmigration.com.au/" },
           { name: "Blog", url: `https://www.nanakmigration.com.au/${ROUTE.blog}` },
           { name: displayTitle, url: `https://www.nanakmigration.com.au/${ROUTE.blog}/${slug}` },
         ]}
+        blogPosting={{
+          headline: displayTitle,
+          description: post.standfirst,
+          url: `https://www.nanakmigration.com.au/${ROUTE.blog}/${slug}`,
+          datePublished: post.publishedAt,
+          dateModified: post.publishedAt,
+        }}
       />
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
@@ -112,7 +131,7 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
         title={displayTitle}
         deck={post.standfirst}
         currentAsAt={post.date}
-        primaryCta={{ label: "Book Free Consultation", page: "book-consultation" }}
+        primaryCta={{ label: "Book a free eligibility call", page: "book-consultation" }}
         accent={NAVY}
       />
 
@@ -123,6 +142,11 @@ export default function BlogPostPage({ navigate }: { navigate: (page: string) =>
           padding: "48px 24px 64px",
         }}
       >
+        <p style={{ fontSize: 14, color: "#6b7280", margin: "0 0 28px", lineHeight: 1.6 }}>
+          Reviewed by <strong style={{ color: NAVY }}>Navpreet Aulakh</strong>, Registered Migration Agent
+          MARN 2619467
+          {post.date ? ` · Last reviewed ${post.date}` : ""}
+        </p>
         {post.body ? (
           <div
             ref={bodyRef}

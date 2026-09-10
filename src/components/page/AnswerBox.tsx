@@ -9,13 +9,26 @@ export interface AnswerBoxProps {
   routeKey?: string
 }
 
+/** Join whitespace-split JSX text nodes so linkify still runs. */
+function extractPlainText(children: React.ReactNode): string | null {
+  if (typeof children === "string" || typeof children === "number") return String(children)
+  if (Array.isArray(children)) {
+    const parts: string[] = []
+    for (const child of children) {
+      if (child == null || child === false || child === true) continue
+      if (typeof child === "string" || typeof child === "number") {
+        parts.push(String(child))
+        continue
+      }
+      return null
+    }
+    return parts.length ? parts.join("") : null
+  }
+  return null
+}
+
 export function AnswerBox({ children, routeKey }: AnswerBoxProps) {
-  const textChild =
-    typeof children === "string"
-      ? children
-      : Array.isArray(children) && children.length === 1 && typeof children[0] === "string"
-        ? children[0]
-        : null
+  const textChild = extractPlainText(children)
 
   const content =
     routeKey && textChild != null ? (

@@ -8,6 +8,8 @@ import { GOLD, NAVY, NAVY_DARK, HERO_GRAD } from '@/theme'
 import { ShieldGlow } from '@/components/motion'
 import { GlowButton } from '@/components/ui/GlowButton'
 import { startCtaTheatreBreath } from '@/lib/theatreCta'
+import { PAGE_META } from '@/data/pageMeta'
+import StructuredData from '@/components/page/StructuredData'
 import '@/components/booking/booking.css'
 
 export default function BookConsultationPage({ navigate }: { navigate: (page: string) => void }) {
@@ -44,6 +46,14 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
+      <StructuredData
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
+          { name: 'Book Consultation', url: 'https://www.nanakmigration.com.au/book-consultation' },
+        ]}
+        service={{ name: 'Book a Migration Consultation', description: PAGE_META['book-consultation'].metaDescription, url: 'https://www.nanakmigration.com.au/book-consultation' }}
+        reviewedBy={true}
+      />
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <div className="breadcrumb-bar" style={{ background: '#f8f9fc', borderBottom: '1px solid #e8eaf0', padding: '10px 32px' }}>
@@ -66,7 +76,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
         <div style={{ maxWidth: 960, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div ref={headingRef} style={{ textAlign: 'center', marginBottom: 36, opacity: 0 }}>
             <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>
-              Registered Migration Agents
+              Registered Migration Agent · MARN 2619467
             </div>
             <h1
               style={{
@@ -96,6 +106,27 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
             >
               Start booking →
             </GlowButton>
+            <p style={{ fontSize: 14, color: '#6b7280', margin: '18px 0 0', lineHeight: 1.55 }}>
+              Prefer to share details first?{' '}
+              <button
+                type="button"
+                onClick={() => navigate('pre-assessment')}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
+                  color: NAVY,
+                  fontWeight: 700,
+                  textDecoration: 'underline',
+                  cursor: 'pointer',
+                  fontSize: 14,
+                  fontFamily: "'Gilroy', sans-serif",
+                }}
+              >
+                Complete a pre-assessment
+              </button>
+              {' '}before you book.
+            </p>
           </div>
 
           <div id="book-form" ref={cardRef} style={{ opacity: 0 }}>

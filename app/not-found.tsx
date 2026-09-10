@@ -1,10 +1,12 @@
-"use client"
+import type { Metadata } from "next"
+import NotFoundClient from "./NotFoundClient"
 
-import NotFoundPage from "@/views/NotFoundPage"
-import { withNavigate } from "@/lib/withNavigate"
-
-const Page = withNavigate(NotFoundPage as never)
+export const metadata: Metadata = {
+  title: "Page not found | Nanak Migration Group",
+  description: "The page you requested could not be found on Nanak Migration Group.",
+  robots: { index: false, follow: true },
+}
 
 export default function NotFound() {
-  return <Page />
+  return <NotFoundClient />
 }

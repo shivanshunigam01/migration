@@ -7,8 +7,8 @@
   --color-gold: #E8A017;
   --color-gold-light: #F0B53A;
   --color-cream: #ffffff;
-  --font-display: 'Gilroy', sans-serif;
-  --font-body: 'Gilroy', sans-serif;
+  --font-display: var(--font-site, 'Plus Jakarta Sans'), system-ui, sans-serif;
+  --font-body: var(--font-site, 'Plus Jakarta Sans'), system-ui, sans-serif;
 }
 
 *, *::before, *::after {
@@ -17,12 +17,12 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Gilroy', sans-serif;
+  font-family: var(--font-site, 'Plus Jakarta Sans'), system-ui, sans-serif;
   font-size: 17px;
 }
 
 body {
-  font-family: 'Gilroy', sans-serif;
+  font-family: var(--font-site, 'Plus Jakarta Sans'), system-ui, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
@@ -35,7 +35,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gilroy', sans-serif;
+  font-family: var(--font-site, 'Plus Jakarta Sans'), system-ui, sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: -0.02em;

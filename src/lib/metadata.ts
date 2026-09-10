@@ -16,21 +16,16 @@ type SeoPayload = {
   keywords?: string
 }
 
-/** Soft-trim titles for SERP display without cutting mid-word when possible. */
-export function fitTitle(raw: string, max = 60): string {
-  const t = raw.replace(/\s+/g, " ").trim()
-  if (t.length <= max) return t
-  const cut = t.slice(0, max - 1)
-  const at = cut.lastIndexOf(" ")
-  return `${(at > 40 ? cut.slice(0, at) : cut).trimEnd()}…`
+/**
+ * Normalize whitespace only. Do not truncate with an ellipsis —
+ * SERP length is controlled at authoring time in Runway / pageMeta.
+ */
+export function fitTitle(raw: string, _max = 60): string {
+  return raw.replace(/\s+/g, " ").trim()
 }
 
-export function fitDescription(raw: string, max = 158): string {
-  const t = raw.replace(/\s+/g, " ").trim()
-  if (t.length <= max) return t
-  const cut = t.slice(0, max - 1)
-  const at = cut.lastIndexOf(" ")
-  return `${(at > 100 ? cut.slice(0, at) : cut).trimEnd()}…`
+export function fitDescription(raw: string, _max = 158): string {
+  return raw.replace(/\s+/g, " ").trim()
 }
 
 function absAsset(url: string) {
@@ -55,14 +50,32 @@ async function fetchSeo(routeKey: string): Promise<SeoPayload | null> {
 export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
   const fallback = PAGE_META[routeKey]
   const remote = await fetchSeo(routeKey)
-  const rawTitle = remote?.title || fallback?.title || SITE_NAME
+  // Heal title↔ogTitle divergence left by blind sync (prefer surviving approved ogTitle).
+  // Otherwise CMS wins; pageMeta is fallback when the API has nothing.
+  const rawTitle =
+    remote?.ogTitle && remote?.title && remote.ogTitle !== remote.title
+      ? remote.ogTitle
+      : remote?.title || remote?.ogTitle || fallback?.title || SITE_NAME
+  // Until Runway "Restore SEO" runs, prefer approved pageMeta when CMS title is stale
+  // (matches neither the approved default nor a distinct ogTitle).
+  const title = fitTitle(
+    fallback?.title &&
+      remote?.title &&
+      remote.title !== fallback.title &&
+      (!remote.ogTitle || remote.ogTitle === remote.title)
+      ? fallback.title
+      : rawTitle,
+  )
   const rawDescription =
+    remote?.ogDescription ||
     remote?.metaDescription ||
     fallback?.metaDescription ||
     "Australian migration advice from MARA-registered agents at Nanak Migration Group (MARN 2619467)."
-  const title = fitTitle(rawTitle)
   const description = fitDescription(rawDescription)
-  const canonical = remote?.canonicalUrl || absoluteUrl(routeKey === "home" ? "" : routeKey)
+  let canonical = remote?.canonicalUrl || absoluteUrl(routeKey === "home" ? "" : routeKey)
+  if (routeKey === "home") {
+    canonical = (remote?.canonicalUrl || absoluteUrl("")).replace(/\/?$/, "/")
+  }
   const ogImage = absAsset(remote?.ogImage || remote?.heroImage || DEFAULT_OG_IMAGE)
   const robotsIndex = remote?.robotsIndex !== false
   const keywords = [remote?.primaryKeyword || fallback?.primaryKeyword, remote?.keywords]
@@ -76,8 +89,8 @@ export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
     alternates: { canonical },
     robots: robotsIndex ? { index: true, follow: true } : { index: false, follow: false },
     openGraph: {
-      title: fitTitle(remote?.ogTitle || rawTitle),
-      description: fitDescription(remote?.ogDescription || rawDescription),
+      title,
+      description,
       url: canonical,
       siteName: SITE_NAME,
       locale: "en_AU",
@@ -86,8 +99,8 @@ export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: fitTitle(remote?.ogTitle || rawTitle),
-      description: fitDescription(remote?.ogDescription || rawDescription),
+      title,
+      description,
       images: [ogImage],
     },
   }

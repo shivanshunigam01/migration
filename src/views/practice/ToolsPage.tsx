@@ -15,6 +15,7 @@ import { VisaPathwayComparison } from '@/components/tools/VisaPathwayComparison'
 import { ALL_OCCUPATIONS } from '@/data/occupations'
 import { NAV_ITEMS } from '@/data/navItems'
 import { PAGE_META } from '@/data/pageMeta'
+import StructuredData from '@/components/page/StructuredData'
 
 /* ── Types ─────────────────────────────────────────────── */
 export interface ToolsPageProps {
@@ -147,8 +148,14 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
   const [activePanel, setActivePanel] = useState<string | null>(null)
 
   const meta = PAGE_META['tools']
-function openPanel(id: string) {
+  function openPanel(id: string, pushUrl = true) {
     setActivePanel(id)
+    if (pushUrl && typeof window !== 'undefined') {
+      const next = `/tools/${id}`
+      if (window.location.pathname !== next) {
+        window.history.replaceState(null, '', next)
+      }
+    }
     setTimeout(() => {
       const el = document.getElementById(id)
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -156,9 +163,15 @@ function openPanel(id: string) {
   }
 
   useEffect(() => {
+    const path = window.location.pathname.replace(/^\/+|\/+$/g, '')
+    const fromPath = path.startsWith('tools/') ? path.slice('tools/'.length) : ''
     const hash = window.location.hash.replace(/^#/, '')
-    if (hash && TOOL_CARDS.some(c => c.id === hash)) {
-      openPanel(hash)
+    const id = fromPath || hash
+    if (id && TOOL_CARDS.some(c => c.id === id)) {
+      openPanel(id, false)
+      if (hash && !fromPath) {
+        window.history.replaceState(null, '', `/tools/${id}`)
+      }
     }
   }, [])
 
@@ -226,6 +239,13 @@ function openPanel(id: string) {
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: '#1E1E2A' }}>
+      <StructuredData
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
+          { name: 'Migration Tools', url: 'https://www.nanakmigration.com.au/tools' },
+        ]}
+        service={{ name: 'Free Visa Calculators & Tools', description: meta.metaDescription, url: 'https://www.nanakmigration.com.au/tools' }}
+      />
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <PageHero

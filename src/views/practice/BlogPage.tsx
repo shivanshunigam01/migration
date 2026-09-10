@@ -29,14 +29,21 @@ function formatDate(iso?: string) {
   return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
-export default function BlogPage({ navigate }: { navigate: (page: string) => void }) {
+export default function BlogPage({
+  navigate,
+  initialPosts,
+}: {
+  navigate: (page: string) => void
+  initialPosts?: DisplayPost[]
+}) {
   const [query, setQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
-  const [posts, setPosts] = useState<DisplayPost[]>([])
+  const [posts, setPosts] = useState<DisplayPost[]>(initialPosts ?? [])
 
   usePageSeo('blog', PAGE_META['blog'])
 
   useEffect(() => {
+    if (initialPosts && initialPosts.length > 0) return
     fetchPublishedBlogs().then((remote) => {
       // Published CMS posts only — never surface [DRAFT] static stubs.
       setPosts(
@@ -51,7 +58,7 @@ export default function BlogPage({ navigate }: { navigate: (page: string) => voi
         })),
       )
     })
-  }, [])
+  }, [initialPosts])
 
   const ALL_BLOG_CATEGORIES = useMemo(() => Array.from(new Set(posts.map((p) => p.category))), [posts])
 

@@ -274,7 +274,7 @@ export default function SiteHeader({
                       {[
                         { label: 'About the Practice', desc: 'Who we are and how we work', icon: 'user', route: 'about', emph: false },
                         { label: 'Contact', desc: 'Truganina, Geelong, Cranbourne, Canning Vale, Craigieburn', icon: 'phone', route: 'contact', emph: false },
-                        { label: 'Book Free Consultation', desc: 'Free 30-minute consultation', icon: 'calendar', route: 'book-consultation', emph: true },
+                        { label: 'Book a free eligibility call', desc: 'Registered Migration Agent · MARN 2619467', icon: 'calendar', route: 'book-consultation', emph: true },
                       ].map(l => (
                         <Link key={l.label} to={resolveRoute(l.route)}
                           onClick={() => closeNav()}
@@ -517,7 +517,7 @@ export default function SiteHeader({
                       <a href="/book-consultation" onClick={(e) => { e.preventDefault(); navigate('book-consultation') }} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD_LIGHT }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD }}>
-                        Book Free Consultation
+                        Book a free eligibility call
                         <Icon name="arrowright" size={13} color={NAVY_DARK} />
                       </a>
                     </div>
@@ -708,7 +708,7 @@ export default function SiteHeader({
                 variant="gold"
                 onClick={(e) => { e.preventDefault(); navigate('book-consultation'); setMobileOpen(false) }}
               >
-                Book Free Consultation
+                Book a free eligibility call
               </GlowButton>
             </div>
           </div>

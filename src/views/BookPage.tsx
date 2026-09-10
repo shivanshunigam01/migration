@@ -34,7 +34,7 @@ const content = meta.metaDescription
             </div>
             <div>
               <div className="nm-book-brand">Nanak Migration Group</div>
-              <div className="nm-book-marn">MARA-registered · MARN 2619467</div>
+              <div className="nm-book-marn">Registered Migration Agent · MARN 2619467</div>
             </div>
           </div>
           <Link className="nm-book-site-link" to="/">

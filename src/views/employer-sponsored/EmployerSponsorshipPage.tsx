@@ -192,7 +192,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book an Employer Consultation', page: 'book-consultation' }}
-        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-482' }}
+        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-visa' }}
         accent={CAT_EMPLOYER}
         navigate={navigate}
       />

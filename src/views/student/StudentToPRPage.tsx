@@ -229,7 +229,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
         navigate={navigate}
         items={[
           { label: 'Home', page: 'home' },
-          { label: 'Student Visas', page: 'student-visa' },
+          { label: 'Student Visas', page: 'student-visas' },
           { label: 'Student to PR Pathway' },
         ]}
       />

@@ -4,6 +4,8 @@ import SiteFooter from '@/components/layout/SiteFooter'
 import { NAV_ITEMS } from '@/data/navItems'
 import { GOLD, NAVY, NAVY_DARK, HERO_GRAD, CAT_EMPLOYER } from '@/theme'
 import Icon from '@/components/ui/Icon'
+import { PAGE_META } from '@/data/pageMeta'
+import StructuredData from '@/components/page/StructuredData'
 const TEAL = CAT_EMPLOYER
 const ACCENT = CAT_EMPLOYER
 
@@ -104,6 +106,16 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: '#f8fafc', minHeight: '100vh', color: '#1E1E2A' }}>
+      <StructuredData
+        breadcrumbs={[
+          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
+          { name: 'Employer Sponsored Visas', url: 'https://www.nanakmigration.com.au/employer-sponsored-visas' },
+          { name: 'Regional Employer Sponsored (494)', url: 'https://www.nanakmigration.com.au/494-visa' },
+        ]}
+        faqs={FAQS.map(f => ({ question: f.q, answer: f.a }))}
+        service={{ name: 'Regional Employer Sponsored Visa (Subclass 494)', description: PAGE_META['494-visa'].metaDescription, url: 'https://www.nanakmigration.com.au/494-visa' }}
+        reviewedBy={true}
+      />
       {/* Google Fonts */}
       <style>{`
         `}</style>

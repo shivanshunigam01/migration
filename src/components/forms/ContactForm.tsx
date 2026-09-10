@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useIntakeSubmit } from "@/lib/api"
 import { IntakeFormShell, inputStyle, labelStyle } from "@/components/forms/IntakeFormShell"
+import { TurnstileField, turnstileConfigured } from "@/components/forms/TurnstileField"
 import { NAVY_DARK } from "@/theme"
 
 export default function ContactForm() {
@@ -11,6 +12,7 @@ export default function ContactForm() {
   const [message, setMessage] = useState("")
   const [consent, setConsent] = useState(false)
   const [hp, setHp] = useState("")
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
   const [localError, setLocalError] = useState<string | null>(null)
 
   async function handleSubmit(e: React.FormEvent) {
@@ -21,11 +23,11 @@ export default function ContactForm() {
       setLocalError("Please enter your name.")
       return
     }
-    if (!em && !mobile.trim()) {
-      setLocalError("Please enter your email or mobile number.")
+    if (!em) {
+      setLocalError("Please enter your email address.")
       return
     }
-    if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) {
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) {
       setLocalError("Please enter a valid email address.")
       return
     }
@@ -33,9 +35,14 @@ export default function ContactForm() {
       setLocalError("Please tick the consent box to continue.")
       return
     }
+    if (turnstileConfigured() && !turnstileToken) {
+      setLocalError("Please complete the captcha and try again.")
+      return
+    }
 
     await submit({
       company_website: hp,
+      turnstileToken: turnstileToken || undefined,
       lead: {
         name: name.trim(),
         email: em,
@@ -111,6 +118,7 @@ export default function ContactForm() {
           <input
             id="contact-email"
             type="email"
+            required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             style={inputStyle}
@@ -140,6 +148,7 @@ export default function ContactForm() {
             I consent to Nanak Migration Group contacting me by email about my enquiry. General information only — not legal or migration advice.
           </span>
         </label>
+        <TurnstileField onToken={setTurnstileToken} />
       </IntakeFormShell>
     </div>
   )

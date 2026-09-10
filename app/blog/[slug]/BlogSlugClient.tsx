@@ -1,10 +1,10 @@
 "use client"
 
 import BlogPostPage from "@/views/practice/BlogPostPage"
-import { withNavigate } from "@/lib/withNavigate"
+import { useAppNavigate } from "@/lib/navigation"
+import type { PublicBlogPost } from "@/lib/contentApi"
 
-const Page = withNavigate(BlogPostPage as never)
-
-export default function BlogSlugClient() {
-  return <Page />
+export default function BlogSlugClient({ initialPost }: { initialPost?: PublicBlogPost | null }) {
+  const navigate = useAppNavigate()
+  return <BlogPostPage navigate={navigate} initialPost={initialPost} />
 }

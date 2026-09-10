@@ -22,6 +22,7 @@ export interface IntakeBody {
   widget: string
   page?: string
   company_website?: string
+  turnstileToken?: string
   lead?: IntakeLead
   result?: { summary?: string; ref?: string; code?: string; title?: string; urgent?: boolean }
   fields?: Record<string, unknown>

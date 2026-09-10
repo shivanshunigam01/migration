@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { INTERNAL_BODY_LINKS, type BodyLink } from "@/data/internalLinks"
 import { GOLD } from "@/theme"
 
@@ -49,11 +48,12 @@ export function linkifyText(text: string, links: BodyLink[]): React.ReactNode {
     segments = next
   }
 
+  // Plain <a href> so in-body links are present in raw server HTML for crawlers.
   return segments.map((seg, i) =>
     seg.type === "link" ? (
-      <Link key={`${seg.to}-${i}`} to={seg.to} style={LINK_STYLE}>
+      <a key={`${seg.to}-${i}`} href={seg.to} style={LINK_STYLE}>
         {seg.value}
-      </Link>
+      </a>
     ) : (
       <React.Fragment key={`t-${i}`}>{seg.value}</React.Fragment>
     ),

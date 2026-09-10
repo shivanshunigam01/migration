@@ -152,7 +152,7 @@ const FAQS: FaqItem[] = [
 ]
 
 const RELATED: RelatedPage[] = [
-  { title: 'Skills in Demand (482)', desc: 'The most common visa that requires SBS — temporary sponsorship up to 4 years.', icon: 'zap', page: 'skills-in-demand-482', color: CAT_EMPLOYER },
+  { title: 'Skills in Demand (482)', desc: 'The most common visa that requires SBS — temporary sponsorship up to 4 years.', icon: 'zap', page: 'skills-in-demand-visa', color: CAT_EMPLOYER },
   { title: 'Employer Nomination (186)', desc: 'Permanent residence for nominated skilled workers.', icon: 'shield', page: 'employer-nomination-186', color: CAT_EMPLOYER },
   { title: 'Employer Sponsorship Hub', desc: 'Overview of all employer-sponsored visa options.', icon: 'briefcase', page: 'employer-sponsorship', color: CAT_EMPLOYER },
 ]
@@ -190,7 +190,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book an Employer Consultation', page: 'book-consultation' }}
-        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-482' }}
+        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-visa' }}
         accent={CAT_EMPLOYER}
         navigate={navigate}
       />
@@ -412,7 +412,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
         title={<>Need help getting <em style={{ fontStyle: 'italic', color: GOLD }}>SBS approved?</em></>}
         body="Navpreet Aulakh (MARN 2619467) guides employers through the SBS process, nomination, and visa stages — handling the compliance requirements so your business can focus on hiring."
         primaryCta={{ label: 'Book an Employer Consultation', page: 'book-consultation' }}
-        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-482' }}
+        secondaryCta={{ label: 'Skills in Demand (482) →', page: 'skills-in-demand-visa' }}
         accent={CAT_EMPLOYER}
         footnote="MARA-registered · MARN 2619467 · Employer sponsorship specialists"
         navigate={navigate}

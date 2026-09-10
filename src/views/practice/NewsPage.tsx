@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { GOLD, NAVY, NAVY_DARK } from '@/theme'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
@@ -21,6 +22,8 @@ type Article = {
   headline: string
   summary: string
   readTime: string
+  /** When news CMS is empty we fall back to blog URLs. */
+  hrefBase?: 'news' | 'blog'
 }
 
 const CATEGORIES = ['All', 'Policy changes', 'Occupation lists', 'Fees & thresholds', 'Case outcomes', 'Firm news']
@@ -49,16 +52,32 @@ function formatDate(iso?: string) {
   return new Date(iso).toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
 }
 
-export default function NewsPage({ navigate }: { navigate: (page: string) => void }) {
+function articleHref(article: Article) {
+  const base = article.hrefBase === 'blog' ? ROUTE.blog : ROUTE.newsPage
+  return `/${base}/${article.slug}`
+}
+
+export default function NewsPage({
+  navigate,
+  initialArticles,
+}: {
+  navigate: (page: string) => void
+  initialArticles?: Article[]
+}) {
   usePageSeo('news', PAGE_META['news'])
   const cms = useCmsPage()
   const { submit, loading, error, success } = useIntakeSubmit('newsletter')
   const [email, setEmail] = useState('')
   const [activeCategory, setActiveCategory] = useState('All')
-  const [articles, setArticles] = useState<Article[]>([])
-  const [loadingArticles, setLoadingArticles] = useState(true)
+  const [articles, setArticles] = useState<Article[]>(initialArticles ?? [])
+  const [loadingArticles, setLoadingArticles] = useState(initialArticles === undefined)
 
   useEffect(() => {
+    if (initialArticles) {
+      setArticles(initialArticles)
+      setLoadingArticles(false)
+      return
+    }
     let cancelled = false
     setLoadingArticles(true)
     fetchPublishedNews().then((remote) => {
@@ -73,6 +92,7 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
           headline: n.title,
           summary: n.standfirst,
           readTime: n.readTime || '3 min read',
+          hrefBase: 'news' as const,
         }))
       )
       setLoadingArticles(false)
@@ -80,7 +100,7 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [initialArticles])
 
   const featuredArticle = articles.find((a) => a.featured) || articles[0]
   const nonFeaturedArticles = articles.filter((a) => a.id !== featuredArticle?.id)
@@ -105,10 +125,6 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
     e.preventDefault()
     if (!email.trim()) return
     await submit({ lead: { email: email.trim(), source: 'news-page' }, page: '/news' })
-  }
-
-  function openArticle(slug: string) {
-    navigate(`${ROUTE.newsPage}/${slug}`)
   }
 
   return (
@@ -208,13 +224,8 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
           ) : hasArticles ? (
             <>
               {featuredArticle && (activeCategory === 'All' || featuredArticle.category === activeCategory) && (
+                <Link to={articleHref(featuredArticle)} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
                 <article
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => openArticle(featuredArticle.slug)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') openArticle(featuredArticle.slug)
-                  }}
                   style={{
                     background: '#ffffff',
                     border: '1.5px solid #e8edf6',
@@ -297,19 +308,18 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
                     </div>
                   </div>
                 </article>
+                </Link>
               )}
 
               {filteredArticles.length > 0 ? (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="news-grid">
                   {filteredArticles.map((article) => (
-                    <article
+                    <Link
                       key={article.id}
-                      role="button"
-                      tabIndex={0}
-                      onClick={() => openArticle(article.slug)}
-                      onKeyDown={(e) => {
-                        if (e.key === 'Enter' || e.key === ' ') openArticle(article.slug)
-                      }}
+                      to={articleHref(article)}
+                      style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+                    >
+                    <article
                       style={{
                         background: '#ffffff',
                         border: '1.5px solid #e8edf6',
@@ -319,6 +329,7 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
                         flexDirection: 'column',
                         gap: 12,
                         cursor: 'pointer',
+                        height: '100%',
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
@@ -355,6 +366,7 @@ export default function NewsPage({ navigate }: { navigate: (page: string) => voi
                         {article.readTime}
                       </div>
                     </article>
+                    </Link>
                   ))}
                 </div>
               ) : (

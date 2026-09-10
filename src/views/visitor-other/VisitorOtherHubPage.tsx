@@ -71,7 +71,7 @@ const VISITOR_RELATED_PAGES: RelatedPage[] = [
   { title: 'Bridging Visas', desc: 'If you are already in Australia, understand your lawful status while an application is pending.', icon: 'shield', page: 'bridging-visas' },
   { title: 'Australian Citizenship', desc: 'After 4 years as a permanent resident, you may be eligible to apply for citizenship.', icon: 'star', page: 'australian-citizenship' },
   { title: 'Partner Visas (820/801)', desc: 'Onshore partner visa for those in a genuine relationship with an Australian citizen or PR holder.', icon: 'users', page: 'partner-visa-820' },
-  { title: 'Student Visa (500)', desc: 'Studying in Australia — eligibility, the Genuine Student requirement, and what to prepare.', icon: 'book', page: 'student-visa' },
+  { title: 'Student Visa (500)', desc: 'Studying in Australia — eligibility, the Genuine Student requirement, and what to prepare.', icon: 'book', page: 'student-visa-500' },
 ]
 
 const CURRENT_AS_AT = '1 July 2026'
@@ -228,17 +228,13 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
             </div>
 
             {/* Subclass 601 */}
-            <div style={{ background: '#fff', borderRadius: 18, border: '1.5px solid #e5eaf4', boxShadow: '0 4px 20px rgba(27,43,94,0.06)', overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-              {/* Coming soon overlay badge */}
-              <div style={{ position: 'absolute', top: 18, right: 18, background: '#f5a124', color: '#fff', fontSize: 11, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', borderRadius: 100, padding: '4px 10px', zIndex: 2 }}>
-                Coming Soon
-              </div>
+            <div style={{ background: '#fff', borderRadius: 18, border: '1.5px solid #e5eaf4', boxShadow: '0 4px 20px rgba(27,43,94,0.06)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ padding: '28px 28px 24px', flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 16 }}>
                   <div style={{ width: 52, height: 52, borderRadius: 13, background: `rgba(3,105,161,0.1)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <Icon name="globe" size={26} color={TEAL} />
                   </div>
-                  <span style={{ fontSize: 12, fontWeight: 700, color: '#6b7a8d', background: '#f0f2f8', border: '1px solid #e5eaf4', borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap', marginRight: 72 }}>38 Countries</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: '#6b7a8d', background: '#f0f2f8', border: '1px solid #e5eaf4', borderRadius: 100, padding: '4px 10px', letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>38 Countries</span>
                 </div>
                 <div style={{ fontSize: 12, color: '#9ca3af', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 4 }}>Subclass 601</div>
                 <h3 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 21, fontWeight: 700, color: NAVY, margin: '0 0 10px', lineHeight: 1.25 }}>Electronic Travel Authority (ETA)</h3>
@@ -259,6 +255,16 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
                   For passport holders from 38 eligible countries including the US, UK, Canada, Japan, and South Korea. Best for tourism, short business visits, and transit.
                 </p>
                 <p style={{ fontSize: 13, color: '#9ca3af', lineHeight: 1.6 }}>Eligible countries: USA, UK, Canada, Japan, South Korea, Singapore, Hong Kong, Malaysia, Brunei, and more.</p>
+              </div>
+              <div style={{ padding: '0 28px 24px' }}>
+                <button
+                  onClick={() => navigate('eta-601')}
+                  style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${TEAL}`, background: 'transparent', color: TEAL, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
+                  onMouseEnter={e => { const el = e.currentTarget; el.style.background = TEAL; el.style.color = '#fff' }}
+                  onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = TEAL }}
+                >
+                  Learn more →
+                </button>
               </div>
             </div>
 
@@ -293,7 +299,7 @@ export default function VisitorOtherHubPage({ navigate }: { navigate: (page: str
               </div>
               <div style={{ padding: '0 28px 24px' }}>
                 <button
-                  onClick={() => navigate('visitor-visa')}
+                  onClick={() => navigate('evisitor-651')}
                   style={{ width: '100%', padding: '12px', borderRadius: 9, border: `1.5px solid ${TEAL}`, background: 'transparent', color: TEAL, fontSize: 14, fontWeight: 700, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.2s' }}
                   onMouseEnter={e => { const el = e.currentTarget; el.style.background = TEAL; el.style.color = '#fff' }}
                   onMouseLeave={e => { const el = e.currentTarget; el.style.background = 'transparent'; el.style.color = TEAL }}

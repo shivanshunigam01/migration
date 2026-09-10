@@ -18,17 +18,27 @@ export interface ServiceSchema {
   url: string
 }
 
+export interface BlogPostingSchema {
+  headline: string
+  description: string
+  url: string
+  datePublished?: string
+  dateModified?: string
+  image?: string
+}
+
 export interface StructuredDataProps {
   breadcrumbs: BreadcrumbItem[]
   faqs?: FaqSchemaItem[]
   service?: ServiceSchema
   pageUrl?: string
   reviewedBy?: boolean
+  blogPosting?: BlogPostingSchema
 }
 
 const ORG_ID = 'https://www.nanakmigration.com.au/#organization'
 
-export default function StructuredData({ breadcrumbs, faqs, service, pageUrl, reviewedBy }: StructuredDataProps) {
+export default function StructuredData({ breadcrumbs, faqs, service, pageUrl, reviewedBy, blogPosting }: StructuredDataProps) {
   const schemas: object[] = []
 
   // BreadcrumbList — always
@@ -42,6 +52,33 @@ export default function StructuredData({ breadcrumbs, faqs, service, pageUrl, re
       item: bc.url,
     })),
   })
+
+  if (blogPosting) {
+    schemas.push({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: blogPosting.headline,
+      description: blogPosting.description,
+      url: blogPosting.url,
+      mainEntityOfPage: blogPosting.url,
+      datePublished: blogPosting.datePublished,
+      dateModified: blogPosting.dateModified || blogPosting.datePublished,
+      image: blogPosting.image,
+      author: {
+        '@type': 'Person',
+        name: 'Navpreet Aulakh',
+        jobTitle: 'Registered Migration Agent',
+        identifier: 'MARN 2619467',
+      },
+      publisher: { '@id': ORG_ID },
+      reviewedBy: {
+        '@type': 'Person',
+        name: 'Navpreet Aulakh',
+        jobTitle: 'Registered Migration Agent',
+        identifier: 'MARN 2619467',
+      },
+    })
+  }
 
   // FAQPage — only include items whose answer is a plain string (not JSX)
   const stringFaqs = (faqs ?? []).filter(f => typeof f.answer === 'string') as Array<{ question: string; answer: string }>

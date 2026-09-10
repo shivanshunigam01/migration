@@ -3,7 +3,7 @@ export const SITE_URL = "https://www.nanakmigration.com.au"
 
 export const SITE_NAME = "Nanak Migration Group"
 
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export const DEFAULT_SITE_DESCRIPTION =
   "Nanak Migration Group — MARA-registered agents helping skilled workers, students and families navigate Australia's visa system."

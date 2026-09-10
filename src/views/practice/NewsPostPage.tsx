@@ -8,7 +8,7 @@ import { ComplianceDisclaimer } from "@/components/page/ComplianceDisclaimer"
 import StructuredData from "@/components/page/StructuredData"
 import { NAV_ITEMS } from "@/data/navItems"
 import { ROUTE } from "@/data/routes"
-import { fetchNewsBySlug } from "@/lib/contentApi"
+import { fetchNewsBySlug, type PublicNewsArticle } from "@/lib/contentApi"
 import { useArticleSeo } from "@/lib/usePageSeo"
 import { notFound } from "next/navigation"
 
@@ -28,43 +28,48 @@ function wrapTablesForScroll(root: HTMLElement | null) {
   })
 }
 
-export default function NewsPostPage({ navigate }: { navigate: (page: string) => void }) {
+function mapPost(remote: PublicNewsArticle) {
+  return {
+    title: remote.title,
+    standfirst: remote.standfirst,
+    body: remote.body,
+    category: remote.category,
+    date: formatDate(remote.publishedAt),
+    readTime: remote.readTime || "3 min read",
+    tags: remote.tags || [],
+    relatedRoute: remote.relatedRoute,
+    seoTitle: remote.seoTitle,
+    seoDescription: remote.seoDescription,
+    ogImage: remote.ogImage,
+  }
+}
+
+export default function NewsPostPage({
+  navigate,
+  initialPost,
+}: {
+  navigate: (page: string) => void
+  initialPost?: PublicNewsArticle | null
+}) {
   const { slug = "" } = useParams()
   const bodyRef = useRef<HTMLDivElement>(null)
-  const [post, setPost] = useState<{
-    title: string
-    standfirst: string
-    body: string
-    category: string
-    date: string
-    readTime: string
-    tags: string[]
-    relatedRoute: string
-    seoTitle?: string
-    seoDescription?: string
-    ogImage?: string
-  } | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [post, setPost] = useState<ReturnType<typeof mapPost> | null>(() =>
+    initialPost ? mapPost(initialPost) : null,
+  )
+  const [loading, setLoading] = useState(!initialPost)
 
   useEffect(() => {
+    if (initialPost) {
+      setPost(mapPost(initialPost))
+      setLoading(false)
+      return
+    }
     let cancelled = false
     setLoading(true)
     fetchNewsBySlug(slug).then((remote) => {
       if (cancelled) return
       if (remote) {
-        setPost({
-          title: remote.title,
-          standfirst: remote.standfirst,
-          body: remote.body,
-          category: remote.category,
-          date: formatDate(remote.publishedAt),
-          readTime: remote.readTime || "3 min read",
-          tags: remote.tags || [],
-          relatedRoute: remote.relatedRoute,
-          seoTitle: remote.seoTitle,
-          seoDescription: remote.seoDescription,
-          ogImage: remote.ogImage,
-        })
+        setPost(mapPost(remote))
       } else {
         setPost(null)
       }
@@ -73,7 +78,7 @@ export default function NewsPostPage({ navigate }: { navigate: (page: string) =>
     return () => {
       cancelled = true
     }
-  }, [slug])
+  }, [slug, initialPost])
 
   useEffect(() => {
     wrapTablesForScroll(bodyRef.current)

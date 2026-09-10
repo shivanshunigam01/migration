@@ -13,13 +13,14 @@ import { ROUTE } from '@/data/routes'
 import { useIntakeSubmit } from '@/lib/api'
 import { useSiteContent } from '@/hooks/useSiteContent'
 import { resolveRoute } from '@/lib/navigation'
+import { TurnstileField, turnstileConfigured } from '@/components/forms/TurnstileField'
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': ['Organization', 'LegalService'],
+      '@type': ['Organization', 'ProfessionalService'],
       '@id': 'https://www.nanakmigration.com.au/#organization',
       name: 'Nanak Migration Group',
       url: 'https://www.nanakmigration.com.au',
@@ -51,6 +52,8 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
   const { submit, loading, error, success } = useIntakeSubmit('newsletter')
   const [email, setEmail] = useState('')
   const [hp, setHp] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
+  const [consent, setConsent] = useState(false)
 
   if (success)
     return (
@@ -103,9 +106,11 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
       onSubmit={async (e) => {
         e.preventDefault()
         const em = email.trim()
-        if (!em) return
+        if (!em || !consent) return
+        if (turnstileConfigured() && !turnstileToken) return
         await submit({
           company_website: hp,
+          turnstileToken: turnstileToken || undefined,
           lead: { email: em, name: 'Newsletter subscriber', consent: { email: true } },
         }).catch(() => {})
       }}
@@ -160,6 +165,21 @@ function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: strin
         {loading ? 'Subscribing…' : buttonLabel}
       </button>
       </div>
+      <label style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginTop: 10, cursor: 'pointer' }}>
+        <input
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          style={{ marginTop: 2, flexShrink: 0 }}
+          required
+        />
+        <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.75)', lineHeight: 1.45 }}>
+          I agree to receive immigration updates by email and have read the{' '}
+          <Link to="/privacy" style={{ color: GOLD, textDecoration: 'underline' }}>Privacy Policy</Link>.
+          Unsubscribe any time.
+        </span>
+      </label>
+      <TurnstileField onToken={setTurnstileToken} />
       <input
         type="text"
         name="company_website"
@@ -377,7 +397,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
     { label: 'Australian Permanent Residency', route: ROUTE.skilledMigration },
     { label: 'ART Review Assistance',        route: ROUTE.artReview },
     { label: 'Bridging Visa Australia',      route: ROUTE.bridgingVisas },
-    { label: 'MARA Registered Agent',        route: 'home' },
+    { label: 'Registered Migration Agent · MARN 2619467', route: 'home' },
     { label: 'Immigration Advice Melbourne', route: 'home' },
     { label: 'Skilled Occupation List 2026', route: ROUTE.coreSkillsOccupationList },
     { label: 'TR to PR Australia',           route: ROUTE.pathway482ToPR },
@@ -500,8 +520,8 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
           {[
             'MARN 2619467',
             'ABN 54 674 937 476',
-            'OMARA Member',
-            'DoHA Regulated',
+            'Registered Migration Agent MARN 2619467',
+            'Registered with OMARA',
             'OMARA Code of Conduct Compliant',
           ].map((item, i, arr) => (
             <Fragment key={item}>

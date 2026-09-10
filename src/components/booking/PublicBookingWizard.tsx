@@ -221,7 +221,7 @@ export default function PublicBookingWizard({ className }: Props) {
           <div style={{ position: 'relative', zIndex: 1, fontSize: 18, fontWeight: 700, opacity: 0.75 }}>Choose a consultation to begin</div>
         )}
         <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.16)', paddingTop: 12, fontSize: 11, color: 'rgba(255,255,255,0.82)', display: 'flex', flexDirection: 'column', gap: 6 }}>
-          <div><span style={{ letterSpacing: '0.12em', color: GOLD }}>★★★★★</span> Google-rated migration practice</div>
+          <div>Read reviews on Google · Leave a review after we work together</div>
           <div>✓ Registered Migration Agent</div>
           <div>✓ 5 offices · Punjabi · Hindi · English · Nepali</div>
           <div>✓ Confirmation in seconds, reminders built in</div>

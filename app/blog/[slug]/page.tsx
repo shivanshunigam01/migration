@@ -4,8 +4,20 @@ import BlogSlugClient from "./BlogSlugClient"
 import { getApiBaseUrl } from "@/lib/apiBase"
 import { fitDescription, fitTitle } from "@/lib/metadata"
 import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/data/site"
+import { fetchPublishedBlogsSSR } from "@/lib/serverContent"
 
 type Props = { params: Promise<{ slug: string }> }
+
+export const dynamicParams = true
+
+export async function generateStaticParams() {
+  try {
+    const blogs = await fetchPublishedBlogsSSR()
+    return blogs.map((b) => ({ slug: b.slug }))
+  } catch {
+    return []
+  }
+}
 
 async function fetchPublishedBlog(slug: string) {
   try {
@@ -15,7 +27,6 @@ async function fetchPublishedBlog(slug: string) {
     if (!res.ok) return null
     const json = await res.json()
     const post = json?.data
-    // Public endpoint is published-only; do not reject titles that still contain a seed "[DRAFT]" prefix.
     if (!post) return null
     if (post.status && post.status !== "published") return null
     return post
@@ -24,14 +35,58 @@ async function fetchPublishedBlog(slug: string) {
   }
 }
 
+function blogJsonLd(post: {
+  title: string
+  standfirst?: string
+  seoDescription?: string
+  publishedAt?: string
+  updatedAt?: string
+  ogImage?: string
+  slug: string
+}) {
+  const headline = String(post.title || "").replace(/^\[DRAFT\]\s*/i, "")
+  const url = `${SITE_URL}/blog/${post.slug}`
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+          { "@type": "ListItem", position: 3, name: headline, item: url },
+        ],
+      },
+      {
+        "@type": "BlogPosting",
+        headline,
+        description: post.seoDescription || post.standfirst || "",
+        url,
+        mainEntityOfPage: url,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt || post.publishedAt,
+        image: post.ogImage || DEFAULT_OG_IMAGE,
+        author: {
+          "@type": "Person",
+          name: "Navpreet Aulakh",
+          jobTitle: "Registered Migration Agent",
+          identifier: "MARN 2619467",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+        },
+      },
+    ],
+  }
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = await fetchPublishedBlog(slug)
   if (!post) {
-    return {
-      title: `Article not found | ${SITE_NAME}`,
-      robots: { index: false, follow: false },
-    }
+    notFound()
   }
   const title = fitTitle(post.seoTitle || `${post.title} | ${SITE_NAME}`)
   const description = fitDescription(
@@ -58,5 +113,14 @@ export default async function Page({ params }: Props) {
   const { slug } = await params
   const post = await fetchPublishedBlog(slug)
   if (!post) notFound()
-  return <BlogSlugClient />
+  const jsonLd = blogJsonLd({ ...post, slug })
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogSlugClient initialPost={post} />
+    </>
+  )
 }
