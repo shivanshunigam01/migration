@@ -1,4 +1,8 @@
+'use client'
+
 import React from 'react'
+import { usePageFaqs } from '@/hooks/usePageFaqs'
+import type { FaqItem } from '@/components/page/FaqAccordion'
 
 export interface BreadcrumbItem {
   name: string
@@ -34,11 +38,15 @@ export interface StructuredDataProps {
   pageUrl?: string
   reviewedBy?: boolean
   blogPosting?: BlogPostingSchema
+  /** CMS page key; defaults to RouteKeyProvider value */
+  pageKey?: string
 }
 
 const ORG_ID = 'https://www.nanakmigration.com.au/#organization'
 
-export default function StructuredData({ breadcrumbs, faqs, service, pageUrl, reviewedBy, blogPosting }: StructuredDataProps) {
+export default function StructuredData({ breadcrumbs, faqs, service, pageUrl, reviewedBy, blogPosting, pageKey }: StructuredDataProps) {
+  const fallback: FaqItem[] = (faqs ?? []).map((f) => ({ question: f.question, answer: f.answer }))
+  const resolvedFaqs = usePageFaqs(fallback, pageKey)
   const schemas: object[] = []
 
   // BreadcrumbList — always
@@ -81,7 +89,7 @@ export default function StructuredData({ breadcrumbs, faqs, service, pageUrl, re
   }
 
   // FAQPage — only include items whose answer is a plain string (not JSX)
-  const stringFaqs = (faqs ?? []).filter(f => typeof f.answer === 'string') as Array<{ question: string; answer: string }>
+  const stringFaqs = resolvedFaqs.filter(f => typeof f.answer === 'string') as Array<{ question: string; answer: string }>
   if (stringFaqs.length > 0) {
     schemas.push({
       '@context': 'https://schema.org',

@@ -22,6 +22,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Reveal, Stagger, StaggerItem, ShieldGlow } from '@/components/motion'
 import { fadeUp, slideRight, staggerContainer } from '@/components/motion/variants'
 import { GlowButton } from '@/components/ui/GlowButton'
+import { usePageFaqQa } from '@/hooks/usePageFaqs'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
@@ -429,17 +430,7 @@ const FAQS = [
 
 function FaqSection() {
   const [open, setOpen] = useState<number | null>(null)
-  const [faqs, setFaqs] = useState(FAQS)
-
-  React.useEffect(() => {
-    import('@/lib/contentApi').then(({ fetchFaqByPageKey }) => {
-      fetchFaqByPageKey('homepage').then((col) => {
-        if (col?.items?.length) {
-          setFaqs(col.items.map((item) => ({ q: item.q, a: item.a })))
-        }
-      })
-    })
-  }, [])
+  const faqs = usePageFaqQa(FAQS, 'homepage')
 
   return (
     <section style={{ background: '#ffffff', padding: '88px 24px', borderTop: '1px solid #eef0f6', position: 'relative', overflow: 'hidden' }}>

@@ -1,8 +1,11 @@
+'use client'
+
 import React, { useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY } from '@/theme'
 import { Stagger, StaggerItem } from '@/components/motion'
+import { usePageFaqs } from '@/hooks/usePageFaqs'
 
 export interface FaqItem {
   question: string
@@ -14,15 +17,18 @@ export interface FaqAccordionProps {
   accent?: string
   /** Render on a dark (navy) background */
   dark?: boolean
+  /** CMS page key; defaults to RouteKeyProvider value */
+  pageKey?: string
 }
 
-export function FaqAccordion({ items, accent = NAVY, dark = false }: FaqAccordionProps) {
+export function FaqAccordion({ items, accent = NAVY, dark = false, pageKey }: FaqAccordionProps) {
+  const resolved = usePageFaqs(items, pageKey)
   const [open, setOpen] = useState<number | null>(null)
   const reduce = useReducedMotion()
 
   return (
     <Stagger style={{ display: 'flex', flexDirection: 'column' as const, gap: dark ? 6 : 3 }}>
-      {items.map((item, i) => (
+      {resolved.map((item, i) => (
         <StaggerItem key={i}>
           <div
             style={{

@@ -8,6 +8,7 @@ import Icon from '@/components/ui/Icon'
 import { GlowButton } from '@/components/ui/GlowButton'
 import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
+import { usePageFaqQa } from '@/hooks/usePageFaqs'
 
 const GOLD = '#f5a124'
 const NAVY = '#1B2B5E'
@@ -89,6 +90,7 @@ const ABOUT_FAQS = [
 
 export default function AboutPage({ navigate }: { navigate: (page: string) => void }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const aboutFaqs = usePageFaqQa(ABOUT_FAQS, 'about')
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: NAVY }}>
@@ -97,7 +99,8 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
           { name: 'Home', url: 'https://www.nanakmigration.com.au' },
           { name: 'About the Practice', url: 'https://www.nanakmigration.com.au/about' },
         ]}
-        faqs={ABOUT_FAQS.map(f => ({ question: f.q, answer: f.a }))}
+        faqs={aboutFaqs.map(f => ({ question: f.q, answer: f.a }))}
+        pageKey="about"
         service={{ name: 'About Nanak Migration Group', description: PAGE_META.about.metaDescription, url: 'https://www.nanakmigration.com.au/about' }}
         reviewedBy={true}
       />
@@ -414,7 +417,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {ABOUT_FAQS.map((item, i) => (
+            {aboutFaqs.map((item, i) => (
               <div key={item.q} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 14, overflow: 'hidden' }}>
                 <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   style={{ width: '100%', display: 'flex', alignItems: 'center', gap: 12, padding: '14px 18px', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
