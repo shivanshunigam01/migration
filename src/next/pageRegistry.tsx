@@ -350,7 +350,15 @@ export const PAGE_REGISTRY: Record<string, AppPageComponent> = {
 
 export function getRegistryPage(slugPath: string): AppPageComponent | null {
   const key = slugPath.replace(/^\/+|\/+$/g, "")
-  if (key.startsWith("tools/")) return PAGE_REGISTRY["tools"] ?? null
+  if (key.startsWith("tools/")) {
+    const Hub = PAGE_REGISTRY["tools"]
+    if (!Hub) return null
+    const toolId = key.slice("tools/".length)
+    return function ToolDeepPage() {
+      // @ts-expect-error toolId is accepted by ToolsPage via withNavigate passthrough
+      return <Hub toolId={toolId} />
+    }
+  }
   return PAGE_REGISTRY[key] ?? null
 }
 

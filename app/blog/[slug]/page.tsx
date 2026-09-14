@@ -8,7 +8,7 @@ import { fetchPublishedBlogsSSR } from "@/lib/serverContent"
 
 type Props = { params: Promise<{ slug: string }> }
 
-export const dynamicParams = true
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   try {
@@ -27,8 +27,7 @@ async function fetchPublishedBlog(slug: string) {
     if (!res.ok) return null
     const json = await res.json()
     const post = json?.data
-    if (!post) return null
-    if (post.status && post.status !== "published") return null
+    if (!post || post.status !== "published") return null
     return post
   } catch {
     return null

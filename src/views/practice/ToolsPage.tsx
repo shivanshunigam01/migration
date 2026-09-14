@@ -20,6 +20,8 @@ import StructuredData from '@/components/page/StructuredData'
 /* ── Types ─────────────────────────────────────────────── */
 export interface ToolsPageProps {
   navigate: (page: string) => void
+  /** When set (deep link /tools/:id), render unique SSR H1 + intro for that tool. */
+  toolId?: string
 }
 
 /* ── Tool card data ─────────────────────────────────────── */
@@ -144,38 +146,49 @@ interface AccordionPanel {
 }
 
 /* ── ToolsPage ──────────────────────────────────────────── */
-export default function ToolsPage({ navigate }: ToolsPageProps) {
-  const [activePanel, setActivePanel] = useState<string | null>(null)
+export default function ToolsPage({ navigate, toolId }: ToolsPageProps) {
+  const activeTool = TOOL_CARDS.find((c) => c.id === toolId) || null
+  const [activePanel, setActivePanel] = useState<string | null>(activeTool?.id ?? null)
 
-  const meta = PAGE_META['tools']
+  const meta = PAGE_META[activeTool ? `tools/${activeTool.id}` : "tools"] || PAGE_META["tools"]
   function openPanel(id: string, pushUrl = true) {
     setActivePanel(id)
-    if (pushUrl && typeof window !== 'undefined') {
+    if (pushUrl && typeof window !== "undefined") {
       const next = `/tools/${id}`
       if (window.location.pathname !== next) {
-        window.history.replaceState(null, '', next)
+        window.history.replaceState(null, "", next)
       }
     }
     setTimeout(() => {
       const el = document.getElementById(id)
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" })
     }, 50)
   }
 
   useEffect(() => {
-    const path = window.location.pathname.replace(/^\/+|\/+$/g, '')
-    const fromPath = path.startsWith('tools/') ? path.slice('tools/'.length) : ''
-    const hash = window.location.hash.replace(/^#/, '')
+    if (activeTool) return
+    const path = window.location.pathname.replace(/^\/+|\/+$/g, "")
+    const fromPath = path.startsWith("tools/") ? path.slice("tools/".length) : ""
+    const hash = window.location.hash.replace(/^#/, "")
     const id = fromPath || hash
-    if (id && TOOL_CARDS.some(c => c.id === id)) {
+    if (id && TOOL_CARDS.some((c) => c.id === id)) {
       openPanel(id, false)
       if (hash && !fromPath) {
-        window.history.replaceState(null, '', `/tools/${id}`)
+        window.history.replaceState(null, "", `/tools/${id}`)
       }
     }
-  }, [])
+  }, [activeTool])
 
-  const DISCLAIMER_TEXT = "These results are indicative only — not an assessment, not migration advice. Contact a registered migration agent (MARN 2619467) for advice tailored to your circumstances."
+  const DISCLAIMER_TEXT =
+    "These results are indicative only — not an assessment, not migration advice. Contact a registered migration agent (MARN 2619467) for advice tailored to your circumstances."
+
+  const heroTitle = activeTool ? activeTool.name : "Migration Tools"
+  const heroDeck = activeTool
+    ? `${activeTool.benefit} Indicative only — not migration advice. MARN 2619467.`
+    : "Free interactive tools to explore your options before you speak to an agent — indicative only, never an assessment."
+  const pageUrl = activeTool
+    ? `https://www.nanakmigration.com.au/tools/${activeTool.id}`
+    : "https://www.nanakmigration.com.au/tools"
 
   const PANELS: AccordionPanel[] = [
     {
@@ -241,34 +254,60 @@ export default function ToolsPage({ navigate }: ToolsPageProps) {
     <div style={{ fontFamily: "'Gilroy', sans-serif", backgroundColor: '#ffffff', color: '#1E1E2A' }}>
       <StructuredData
         breadcrumbs={[
-          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
-          { name: 'Migration Tools', url: 'https://www.nanakmigration.com.au/tools' },
+          { name: "Home", url: "https://www.nanakmigration.com.au/" },
+          { name: "Migration Tools", url: "https://www.nanakmigration.com.au/tools" },
+          ...(activeTool
+            ? [{ name: activeTool.name, url: pageUrl }]
+            : []),
         ]}
-        service={{ name: 'Free Visa Calculators & Tools', description: meta.metaDescription, url: 'https://www.nanakmigration.com.au/tools' }}
+        service={{
+          name: activeTool ? activeTool.name : "Free Visa Calculators & Tools",
+          description: meta.metaDescription,
+          url: pageUrl,
+        }}
       />
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <PageHero
         variant="standard"
-        title="Migration Tools"
-        deck="Free interactive tools to explore your options before you speak to an agent — indicative only, never an assessment."
+        title={heroTitle}
+        deck={heroDeck}
         maraBadge
         accent={NAVY}
         navigate={navigate}
         eyebrow="Free Tools"
-        eyebrowSub="Home / Tools"
+        eyebrowSub={activeTool ? `Home / Tools / ${activeTool.name}` : "Home / Tools"}
       />
 
       {/* ── Body ───────────────────────────────────────────── */}
-      <section style={{ maxWidth: 1100, margin: '0 auto', padding: '56px 24px' }}>
+      <section style={{ maxWidth: 1100, margin: "0 auto", padding: "56px 24px" }}>
 
-        {/* Answer box */}
+        {/* Answer box — unique copy per tool URL for SSR uniqueness */}
         <div style={{ marginBottom: 48 }}>
           <AnswerBox>
-            Nanak Migration Group (MARN 2619467) offers five free interactive migration tools to help individuals and employers explore Australian visa options before seeking registered migration advice.
-            {' '}Each tool is indicative only and is not a migration assessment or immigration advice.
+            {activeTool
+              ? `${activeTool.name} from Nanak Migration Group (MARN 2619467): ${activeTool.benefit} ${activeTool.bullets.join(" ")} This tool is indicative only and is not a migration assessment or immigration advice.`
+              : `Nanak Migration Group (MARN 2619467) offers five free interactive migration tools to help individuals and employers explore Australian visa options before seeking registered migration advice. Each tool is indicative only and is not a migration assessment or immigration advice.`}
           </AnswerBox>
         </div>
+
+        {activeTool && (
+          <div style={{ marginBottom: 40 }}>
+            <h2 style={{ margin: "0 0 12px", fontSize: 22, fontWeight: 700, color: NAVY }}>
+              What this tool covers
+            </h2>
+            <ul style={{ margin: 0, paddingLeft: 20, color: NAVY, lineHeight: 1.7, fontSize: 16 }}>
+              {activeTool.bullets.map((b) => (
+                <li key={b}>{b}</li>
+              ))}
+            </ul>
+            <p style={{ marginTop: 16, fontSize: 15, color: "#6b7280" }}>
+              <a href="/tools" style={{ color: NAVY, fontWeight: 600 }}>
+                ← All migration tools
+              </a>
+            </p>
+          </div>
+        )}
 
         {/* ── Product card grid ─────────────────────────────── */}
         <div className="tools-card-grid"

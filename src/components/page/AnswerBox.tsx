@@ -2,6 +2,8 @@ import React from 'react'
 import { NAVY, GOLD } from '@/theme'
 import { Reveal } from '@/components/motion'
 import { LinkedProse } from '@/components/page/LinkedProse'
+import { RelatedGuides } from '@/components/page/RelatedGuides'
+import { useRouteKey } from '@/components/page/RouteKeyContext'
 
 export interface AnswerBoxProps {
   children: React.ReactNode
@@ -28,11 +30,13 @@ function extractPlainText(children: React.ReactNode): string | null {
 }
 
 export function AnswerBox({ children, routeKey }: AnswerBoxProps) {
+  const ctxKey = useRouteKey()
+  const key = routeKey || ctxKey || undefined
   const textChild = extractPlainText(children)
 
   const content =
-    routeKey && textChild != null ? (
-      <LinkedProse routeKey={routeKey}>{textChild.trim()}</LinkedProse>
+    key && textChild != null ? (
+      <LinkedProse routeKey={key}>{textChild.trim()}</LinkedProse>
     ) : (
       children
     )
@@ -61,6 +65,7 @@ export function AnswerBox({ children, routeKey }: AnswerBoxProps) {
       }}>
         {content}
       </div>
+      <RelatedGuides routeKey={key} />
     </Reveal>
   )
 }

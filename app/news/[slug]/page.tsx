@@ -8,7 +8,7 @@ import { fetchPublishedNewsSSR } from "@/lib/serverContent"
 
 type Props = { params: Promise<{ slug: string }> }
 
-export const dynamicParams = true
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   try {

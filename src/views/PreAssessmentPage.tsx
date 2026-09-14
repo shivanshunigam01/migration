@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import NanakLogo from '@/components/layout/NanakLogo'
 import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
@@ -31,15 +31,15 @@ function fmtWhen(iso: string) {
  */
 export default function PreAssessmentPage({ navigate }: { navigate: (page: string) => void }) {
   const meta = PAGE_META['pre-assessment']
-  const [params] = useSearchParams()
-  const bookingFromUrl = params.get('booking') || ''
+  // Read booking id after mount — avoid useSearchParams so SSR keeps the H1.
+  const [bookingFromUrl, setBookingFromUrl] = useState('')
 
   const [step, setStep] = useState<'email' | 'form' | 'done'>('email')
   const [email, setEmail] = useState('')
   const [pending, setPending] = useState(false)
   const [error, setError] = useState('')
   const [bookings, setBookings] = useState<PendingOafBooking[]>([])
-  const [bookingId, setBookingId] = useState(bookingFromUrl)
+  const [bookingId, setBookingId] = useState('')
   const [hp, setHp] = useState('')
   const [doneAt, setDoneAt] = useState('')
   const [doneType, setDoneType] = useState('')
@@ -57,6 +57,19 @@ export default function PreAssessmentPage({ navigate }: { navigate: (page: strin
     history: '',
     docs: false,
   })
+
+  useEffect(() => {
+    try {
+      const q = new URLSearchParams(window.location.search)
+      const b = q.get('booking') || ''
+      if (b) {
+        setBookingFromUrl(b)
+        setBookingId(b)
+      }
+    } catch {
+      /* ignore */
+    }
+  }, [])
 
   useEffect(() => {
 let el = document.querySelector('meta[name="description"]')
@@ -131,11 +144,23 @@ let el = document.querySelector('meta[name="description"]')
     <div className="nm-book-page">
       <StructuredData
         breadcrumbs={[
-          { name: 'Home', url: 'https://www.nanakmigration.com.au' },
+          { name: 'Home', url: 'https://www.nanakmigration.com.au/' },
           { name: 'Pre-consult Assessment', url: 'https://www.nanakmigration.com.au/pre-assessment' },
         ]}
         service={{ name: 'Pre-consult Assessment', description: meta.metaDescription, url: 'https://www.nanakmigration.com.au/pre-assessment' }}
         reviewedBy={true}
+        faqs={[
+          {
+            question: 'What is the pre-consult assessment?',
+            answer:
+              'A short form that briefs your Nanak Migration Group agent before your booked consultation. It takes about two minutes and does not provide immigration advice.',
+          },
+          {
+            question: 'Do I need a booking first?',
+            answer:
+              'Yes. Use the email from your consultation booking so we can attach your answers to the right appointment.',
+          },
+        ]}
       />
       <header className="nm-book-header">
         <div className="nm-book-header-inner">
@@ -159,7 +184,7 @@ let el = document.querySelector('meta[name="description"]')
           Before your appointment
         </p>
         <h1 style={{ margin: '0 0 12px', fontSize: 'clamp(28px, 4vw, 36px)', fontWeight: 700, lineHeight: 1.15, color: NAVY }}>
-          Pre-consult assessment
+          Free visa pre-assessment
         </h1>
         <p style={{ margin: '0 0 28px', fontSize: 16, lineHeight: 1.65, color: '#3f4b5f' }}>
           About 2 minutes. This briefs your agent for the consultation — no advice is given on this form.

@@ -14,6 +14,7 @@ import { useIntakeSubmit } from '@/lib/api'
 import { useSiteContent } from '@/hooks/useSiteContent'
 import { resolveRoute } from '@/lib/navigation'
 import { TurnstileField, turnstileConfigured } from '@/components/forms/TurnstileField'
+import { RelatedGuides } from '@/components/page/RelatedGuides'
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────
 const jsonLd = {
@@ -410,6 +411,10 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 24px 0' }}>
+        <RelatedGuides />
+      </div>
 
       {/* ── Band 1: Newsletter ───────────────────────────────────────── */}
       <div

@@ -58,23 +58,31 @@ export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
       : remote?.title || remote?.ogTitle || fallback?.title || SITE_NAME
   // Until Runway "Restore SEO" runs, prefer approved pageMeta when CMS title is stale
   // (matches neither the approved default nor a distinct ogTitle).
-  const title = fitTitle(
-    fallback?.title &&
+  const titleHealed =
+    !!(
+      fallback?.title &&
       remote?.title &&
       remote.title !== fallback.title &&
       (!remote.ogTitle || remote.ogTitle === remote.title)
-      ? fallback.title
-      : rawTitle,
-  )
-  const rawDescription =
-    remote?.ogDescription ||
-    remote?.metaDescription ||
-    fallback?.metaDescription ||
-    "Australian migration advice from MARA-registered agents at Nanak Migration Group (MARN 2619467)."
+    )
+  const title = fitTitle(titleHealed ? fallback!.title : rawTitle)
+  // When titles were restored but descriptions were left stale, prefer approved pageMeta.
+  const rawDescription = titleHealed
+    ? fallback?.metaDescription ||
+      remote?.ogDescription ||
+      remote?.metaDescription ||
+      "Australian migration advice from MARA-registered agents at Nanak Migration Group (MARN 2619467)."
+    : remote?.ogDescription ||
+      remote?.metaDescription ||
+      fallback?.metaDescription ||
+      "Australian migration advice from MARA-registered agents at Nanak Migration Group (MARN 2619467)."
   const description = fitDescription(rawDescription)
   let canonical = remote?.canonicalUrl || absoluteUrl(routeKey === "home" ? "" : routeKey)
   if (routeKey === "home") {
     canonical = (remote?.canonicalUrl || absoluteUrl("")).replace(/\/?$/, "/")
+  } else {
+    // Non-home: no trailing slash (matches sitemap + Next default routing)
+    canonical = canonical.replace(/\/$/, "")
   }
   const ogImage = absAsset(remote?.ogImage || remote?.heroImage || DEFAULT_OG_IMAGE)
   const robotsIndex = remote?.robotsIndex !== false

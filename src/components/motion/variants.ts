@@ -56,12 +56,12 @@ export const slideRight: Variants = {
 }
 
 export const shieldPop: Variants = {
-  hidden: { opacity: 0, scale: 0.88, filter: "blur(6px)" },
+  // Keep opacity 1 so SSR/crawlers always see AnswerBox prose + links.
+  hidden: { opacity: 1, scale: 0.98 },
   visible: {
     opacity: 1,
     scale: 1,
-    filter: "blur(0px)",
-    transition: { duration: 0.7, ease: easeOutExpo },
+    transition: { duration: 0.45, ease: easeOutExpo },
   },
 }
 
