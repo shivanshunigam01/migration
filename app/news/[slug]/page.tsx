@@ -37,7 +37,7 @@ async function fetchPublishedNews(slug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = await fetchPublishedNews(slug)
-  if (!post) notFound()
+  if (!post) return {}
   const title = fitTitle(post.seoTitle || `${post.title} | ${SITE_NAME}`)
   const description = fitDescription(
     post.seoDescription || post.standfirst || "Australian immigration news and policy updates.",

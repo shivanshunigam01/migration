@@ -11,6 +11,8 @@ type Props = { params: Promise<{ slug: string[] }> }
 
 /** Only known marketing paths; everything else is a real HTTP 404. */
 export const dynamicParams = false
+/** Serve from CDN for 5 minutes; rebuild in background after. */
+export const revalidate = 300
 
 export function generateStaticParams() {
   const paths = getPublicSitemapPaths()

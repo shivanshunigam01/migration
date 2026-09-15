@@ -85,7 +85,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const post = await fetchPublishedBlog(slug)
   if (!post) {
-    notFound()
+    // Let the not-found route own metadata (avoid soft-404 title on 404).
+    return {}
   }
   const title = fitTitle(post.seoTitle || `${post.title} | ${SITE_NAME}`)
   const description = fitDescription(

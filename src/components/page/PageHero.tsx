@@ -6,6 +6,7 @@ import { GlowButton } from '@/components/ui/GlowButton'
 import { fadeUp, slideRight, staggerContainer, easeOutExpo } from '@/components/motion/variants'
 import { resolveRoute } from '@/lib/navigation'
 import { useCmsPage } from '@/components/page/CmsPageProvider'
+import { cmsBodyLooksLikeHtml, sanitizeCmsHtml } from '@/lib/sanitizeCmsHtml'
 
 export interface PageHeroCtaButton {
   label: string
@@ -67,6 +68,7 @@ export function PageHero({
   const resolvedTitle = cms?.h1?.trim() ? cms.h1.trim() : title
   const resolvedDeck = cms?.body?.trim() ? cms.body.trim() : deck
   const heroImage = cms?.heroImage?.trim() || ''
+  const deckIsHtml = !!(cms?.body?.trim() && cmsBodyLooksLikeHtml(cms.body))
 
   const leftContent = (
     <motion.div
@@ -89,9 +91,17 @@ export function PageHero({
         {resolvedTitle}
       </motion.h1>
 
-      <motion.p variants={fadeUp} style={{ fontSize: 18.5, color: '#3f4b5f', lineHeight: 1.72, margin: '0 0 8px', maxWidth: variant === 'standard' ? 640 : 520, whiteSpace: 'pre-wrap' as const }}>
-        {resolvedDeck}
-      </motion.p>
+      {deckIsHtml ? (
+        <motion.div
+          variants={fadeUp}
+          style={{ fontSize: 18.5, color: '#3f4b5f', lineHeight: 1.72, margin: '0 0 8px', maxWidth: variant === 'standard' ? 640 : 520 }}
+          dangerouslySetInnerHTML={{ __html: sanitizeCmsHtml(String(resolvedDeck)) }}
+        />
+      ) : (
+        <motion.p variants={fadeUp} style={{ fontSize: 18.5, color: '#3f4b5f', lineHeight: 1.72, margin: '0 0 8px', maxWidth: variant === 'standard' ? 640 : 520, whiteSpace: 'pre-wrap' as const }}>
+          {resolvedDeck}
+        </motion.p>
+      )}
 
       {heroImage ? (
         <motion.div variants={fadeUp} style={{ margin: '18px 0 28px' }}>

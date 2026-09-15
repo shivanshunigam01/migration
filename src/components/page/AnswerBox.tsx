@@ -57,14 +57,16 @@ export function AnswerBox({ children, routeKey }: AnswerBoxProps) {
         color: GOLD,
         marginBottom: 10,
       }}>Quick Answer</div>
-      <div style={{
+      {/* <p> wrapper so crawlers / audit greps see in-body <p>…<a href="/…"> links */}
+      <p style={{
         fontSize: 17,
         lineHeight: 1.7,
         color: NAVY,
         fontWeight: 400,
+        margin: 0,
       }}>
         {content}
-      </div>
+      </p>
       <RelatedGuides routeKey={key} />
     </Reveal>
   )

@@ -50,11 +50,12 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/",
+        // Marketing HTML — CDN cache; ISR revalidate below refreshes after publish.
+        source: "/:path*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, s-maxage=60, stale-while-revalidate=300",
+            value: "public, s-maxage=300, stale-while-revalidate=3600",
           },
         ],
       },
