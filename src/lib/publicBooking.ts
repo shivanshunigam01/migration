@@ -58,6 +58,63 @@ export async function createPublicBooking(body: Record<string, unknown>) {
   }
 }
 
+export async function createPublicCheckout(body: Record<string, unknown>) {
+  const res = await fetch(`${getApiBaseUrl()}/public/bookings/checkout`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  const json = await res.json().catch(() => ({}))
+  if (!res.ok || json.success === false) {
+    throw new Error(json.message || `Checkout failed (${res.status})`)
+  }
+  return json.data as {
+    ok: boolean
+    bookingId: string
+    sessionId: string
+    url: string
+    amountCents: number
+    consultType: PublicConsultType
+  }
+}
+
+export async function confirmPublicPayment(sessionId: string) {
+  const res = await fetch(`${getApiBaseUrl()}/public/bookings/confirm-payment`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sessionId }),
+  })
+  const json = await res.json().catch(() => ({}))
+  if (!res.ok || json.success === false) {
+    throw new Error(json.message || `Payment confirmation failed (${res.status})`)
+  }
+  return json.data as {
+    ok: boolean
+    paid: boolean
+    id: string
+    at: string
+    type: string
+    mode: string
+    office: string
+    name: string
+    consultType: PublicConsultType
+    payment?: { status: string; amountCents: number; paidAt?: string }
+  }
+}
+
+export async function cancelPendingBooking(bookingId: string) {
+  const res = await fetch(`${getApiBaseUrl()}/public/bookings/cancel-pending`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ bookingId }),
+  })
+  const json = await res.json().catch(() => ({}))
+  if (!res.ok || json.success === false) {
+    throw new Error(json.message || `Cancel failed (${res.status})`)
+  }
+  return json.data as { ok: boolean }
+}
+
 export async function fetchPendingOafBookings(email: string): Promise<PendingOafBooking[]> {
   const q = new URLSearchParams({ email: email.trim().toLowerCase() })
   const res = await fetch(`${getApiBaseUrl()}/public/bookings/pending-oaf?${q}`)

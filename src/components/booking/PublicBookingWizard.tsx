@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import {
   createPublicBooking,
+  createPublicCheckout,
   fetchPublicBookingOptions,
   type PublicConsultType,
 } from '@/lib/publicBooking'
@@ -59,9 +60,13 @@ function toast(msg: string) {
   window.setTimeout(() => el.remove(), 2800)
 }
 
-type Props = { className?: string }
+type Props = {
+  className?: string
+  /** Called after a free booking or after returning from paid success UI inside wizard */
+  onBooked?: () => void
+}
 
-export default function PublicBookingWizard({ className }: Props) {
+export default function PublicBookingWizard({ className, onBooked }: Props) {
   const [loading, setLoading] = useState(true)
   const [loadError, setLoadError] = useState(false)
   const [types, setTypes] = useState<PublicConsultType[]>(FALLBACK_TYPES)
@@ -160,7 +165,7 @@ export default function PublicBookingWizard({ className }: Props) {
     }
     setPending(true)
     try {
-      await createPublicBooking({
+      const payload = {
         name,
         email,
         mobile,
@@ -172,12 +177,22 @@ export default function PublicBookingWizard({ className }: Props) {
         heard,
         vevo,
         company_website: hp,
-      })
+      }
+
+      if (t?.fee && t.fee > 0) {
+        const checkout = await createPublicCheckout(payload)
+        if (!checkout.url) throw new Error('Payment link was not returned')
+        toast('Redirecting to secure Stripe payment…')
+        window.location.href = checkout.url
+        return
+      }
+
+      await createPublicBooking(payload)
       setLastAt(slot)
       setLastType(t)
       setStep(4)
       toast("You're booked — check your email for confirmation")
-      // Refresh taken slots
+      onBooked?.()
       try {
         const data = await fetchPublicBookingOptions()
         setTakenSlots(data.takenSlots ?? [])

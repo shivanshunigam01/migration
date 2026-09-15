@@ -343,3 +343,115 @@
     padding-right: 18px !important;
   }
 }
+
+/* ── Booking popup modal ─────────────────────────────── */
+.nm-book-modal-root {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+}
+
+.nm-book-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  cursor: pointer;
+  background: rgba(10, 16, 36, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+.nm-book-modal-panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(960px, 100%);
+  max-height: 100dvh;
+  margin: 0;
+  background: #f4f6fb;
+  box-shadow: 0 24px 80px rgba(10, 16, 36, 0.35);
+  overflow: hidden;
+}
+
+.nm-book-modal-toolbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  flex-shrink: 0;
+}
+
+.nm-book-modal-kicker {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8a017;
+}
+
+.nm-book-modal-title {
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #152448;
+  line-height: 1.35;
+}
+
+.nm-book-modal-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1.5px solid #e8eaf0;
+  background: #fff;
+  font-size: 26px;
+  line-height: 1;
+  color: #6b7280;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.nm-book-modal-body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nm-book-modal-wizard.nm-cw {
+  min-height: min(560px, calc(100dvh - 88px));
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(16, 28, 85, 0.1);
+}
+
+@media (min-width: 720px) {
+  .nm-book-modal-root {
+    align-items: center;
+    padding: 24px 16px;
+  }
+
+  .nm-book-modal-panel {
+    max-height: min(92dvh, 820px);
+    border-radius: 20px;
+  }
+
+  .nm-book-modal-toolbar {
+    padding: 16px 20px;
+  }
+
+  .nm-book-modal-body {
+    padding: 16px 18px 18px;
+  }
+}
+
+@media (max-width: 719px) {
+  .nm-book-modal-wizard.nm-cw {
+    border-radius: 14px;
+  }
+}
