@@ -898,7 +898,9 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             </span>
             {[
               { label: 'Privacy Policy', to: '/privacy' },
-              { label: 'Terms of Use', to: '/terms' },
+              { label: 'Terms & Conditions', to: '/terms' },
+              { label: 'Governance', to: '/governance' },
+              { label: 'Refunds', to: '/refund-request' },
               { label: 'Accessibility', to: '/accessibility' },
               { label: 'Sitemap', to: '/site-map' },
               { label: 'XML Sitemap', to: '/sitemap.xml', external: true },

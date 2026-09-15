@@ -24,6 +24,8 @@ import ChecklistsPageRaw from "@/views/practice/ChecklistsPage"
 import ChildVisa101PageRaw from "@/views/partner-family/ChildVisa101Page"
 import ChildVisa802PageRaw from "@/views/partner-family/ChildVisa802Page"
 import ContactPageRaw from "@/views/ContactPage"
+import GovernancePageRaw from "@/views/GovernancePage"
+import RefundRequestPageRaw from "@/views/RefundRequestPage"
 import ContributoryAgedParent864PageRaw from "@/views/partner-family/ContributoryAgedParent864Page"
 import ContributoryAgedParent884PageRaw from "@/views/partner-family/ContributoryAgedParent884Page"
 import ContributoryParent143PageRaw from "@/views/partner-family/ContributoryParent143Page"
@@ -134,6 +136,8 @@ const ChecklistsPage = withNavigate(ChecklistsPageRaw as never)
 const ChildVisa101Page = withNavigate(ChildVisa101PageRaw as never)
 const ChildVisa802Page = withNavigate(ChildVisa802PageRaw as never)
 const ContactPage = withNavigate(ContactPageRaw as never)
+const GovernancePage = withNavigate(GovernancePageRaw as never)
+const RefundRequestPage = withNavigate(RefundRequestPageRaw as never)
 const ContributoryAgedParent864Page = withNavigate(ContributoryAgedParent864PageRaw as never)
 const ContributoryAgedParent884Page = withNavigate(ContributoryAgedParent884PageRaw as never)
 const ContributoryParent143Page = withNavigate(ContributoryParent143PageRaw as never)
@@ -260,6 +264,8 @@ export const PAGE_REGISTRY: Record<string, AppPageComponent> = {
   "child-visa-101": ChildVisa101Page,
   "child-visa-802": ChildVisa802Page,
   "contact": ContactPage,
+  "governance": GovernancePage,
+  "refund-request": RefundRequestPage,
   "contributory-aged-parent-864": ContributoryAgedParent864Page,
   "contributory-aged-parent-884": ContributoryAgedParent884Page,
   "contributory-parent-143": ContributoryParent143Page,

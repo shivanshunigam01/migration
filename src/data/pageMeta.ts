@@ -46,9 +46,22 @@ export const PAGE_META: Record<string, PageMeta> = {
     primaryKeyword: 'privacy policy',
   },
   terms: {
-    title: 'Terms of Use | Nanak Migration Group',
-    metaDescription: 'Terms governing use of the Nanak Migration Group website.',
-    primaryKeyword: 'terms of use',
+    title: 'Terms and Conditions | Nanak Migration Group',
+    metaDescription:
+      'Terms and conditions for the Nanak Migration Group website, bookings, refunds and online services. ABN 54 674 937 476 · MARN 2619467.',
+    primaryKeyword: 'terms and conditions migration agent',
+  },
+  governance: {
+    title: 'Governance & Complaints | Nanak Migration Group',
+    metaDescription:
+      'Raise a complaint, feedback or service concern with Nanak Migration Group. Tickets are reviewed by our practice team. MARN 2619467.',
+    primaryKeyword: 'migration agent complaints Australia',
+  },
+  'refund-request': {
+    title: 'Refund Request | Nanak Migration Group',
+    metaDescription:
+      'Request a refund for consultation fees or services with Nanak Migration Group. Submissions are reviewed by our practice team. MARN 2619467.',
+    primaryKeyword: 'migration agent refund request',
   },
   accessibility: {
     title: 'Accessibility | Nanak Migration Group',

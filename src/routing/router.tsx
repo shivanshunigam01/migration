@@ -353,6 +353,12 @@ const PreAssessmentPage = withNavigate(PreAssessmentPageLazy as never)
 const ContactPageLazy = lazy(() => import("@/views/ContactPage"))
 const ContactPage = withNavigate(ContactPageLazy as never)
 
+const GovernancePageLazy = lazy(() => import("@/views/GovernancePage"))
+const GovernancePage = withNavigate(GovernancePageLazy as never)
+
+const RefundRequestPageLazy = lazy(() => import("@/views/RefundRequestPage"))
+const RefundRequestPage = withNavigate(RefundRequestPageLazy as never)
+
 const PrivacyPageLazy = lazy(() =>
   import("@/views/LegalPage").then((m) => ({
     default: function PrivacyPage(p: { navigate: (page: string) => void }) {
@@ -495,6 +501,8 @@ const Pages = {
   Book: BookPage,
   PreAssessment: PreAssessmentPage,
   Contact: ContactPage,
+  Governance: GovernancePage,
+  RefundRequest: RefundRequestPage,
   Privacy: PrivacyPage,
   Terms: TermsPage,
   Accessibility: AccessibilityPage,
@@ -514,6 +522,8 @@ export default function AppRouter() {
       <Route path={`/${ROUTE.bookConsultation}`} element={<Pages.BookConsultation />} />
       <Route path={`/${ROUTE.preAssessment}`} element={<Pages.PreAssessment />} />
       <Route path="/contact" element={<Pages.Contact />} />
+      <Route path="/governance" element={<Pages.Governance />} />
+      <Route path="/refund-request" element={<Pages.RefundRequest />} />
       <Route path="/privacy" element={<Pages.Privacy />} />
       <Route path="/terms" element={<Pages.Terms />} />
       <Route path="/accessibility" element={<Pages.Accessibility />} />

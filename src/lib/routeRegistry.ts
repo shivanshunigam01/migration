@@ -82,12 +82,16 @@ export function buildPublicRouteRegistry(): PublicRouteRecord[] {
     ["about", "About"],
     ["contact", "Contact"],
     ["privacy", "Privacy Policy"],
-    ["terms", "Terms of Use"],
+    ["terms", "Terms and Conditions"],
+    ["governance", "Governance & Complaints"],
+    ["refund-request", "Refund Request"],
     ["accessibility", "Accessibility"],
     [ROUTE.bookConsultation, "Book a Consultation"],
     [ROUTE.preAssessment, "Pre-Assessment"],
     ["site-map", "HTML Sitemap"],
   ] as const
+
+  const legalSlugs = new Set(["privacy", "terms", "accessibility", "governance", "refund-request"])
 
   for (const [slug, label] of legal) {
     const meta = PAGE_META[slug]
@@ -95,13 +99,13 @@ export function buildPublicRouteRegistry(): PublicRouteRecord[] {
       slug,
       pathname: `/${slug}`,
       type: slug === "site-map" ? "other" : slug.includes("book") || slug.includes("pre-") ? "other" : "legal",
-      status: slug === "privacy" || slug === "terms" || slug === "accessibility" ? "legal" : "published",
+      status: legalSlugs.has(slug) ? "legal" : "published",
       title: meta?.title || label,
       description: meta?.metaDescription || "",
       canonicalUrl: abs(slug),
       sitemap: true,
       navigation: slug === "about" || slug === "contact" || slug === ROUTE.bookConsultation,
-      category: slug === "privacy" || slug === "terms" || slug === "accessibility" ? "Legal" : "Other",
+      category: legalSlugs.has(slug) ? "Legal" : "Other",
       priority: 0.5,
     })
   }
