@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY } from '@/theme'
 import { Stagger, StaggerItem } from '@/components/motion'
+import { resolveRoute } from '@/lib/navigation'
 
 export interface RelatedPage {
   title: string
@@ -19,7 +21,7 @@ export interface RelatedPagesProps {
 
 const BORDER = '#e8edf6'
 
-export function RelatedPages({ pages, navigate, columns = 4 }: RelatedPagesProps) {
+export function RelatedPages({ pages, navigate: _navigate, columns = 4 }: RelatedPagesProps) {
   const reduce = useReducedMotion()
 
   return (
@@ -28,8 +30,8 @@ export function RelatedPages({ pages, navigate, columns = 4 }: RelatedPagesProps
         const color = r.color ?? NAVY
         return (
           <StaggerItem key={i} preset="scale">
-            <motion.button
-              onClick={() => navigate(r.page)}
+            <Link to={resolveRoute(r.page)} style={{ textDecoration: 'none', display: 'block' }}>
+            <motion.div
               whileHover={reduce ? undefined : { y: -5, boxShadow: '0 12px 32px rgba(27,43,94,0.12)' }}
               whileTap={reduce ? undefined : { scale: 0.98 }}
               transition={{ duration: 0.22 }}
@@ -54,7 +56,8 @@ export function RelatedPages({ pages, navigate, columns = 4 }: RelatedPagesProps
               <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 8, lineHeight: 1.3 }}>{r.title}</div>
               <div style={{ fontSize: 13.5, color: '#6b7280', lineHeight: 1.6 }}>{r.desc}</div>
               <div style={{ marginTop: 14, fontSize: 13, fontWeight: 700, color }}>Read more →</div>
-            </motion.button>
+            </motion.div>
+            </Link>
           </StaggerItem>
         )
       })}

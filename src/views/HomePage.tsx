@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import { useAppNavigate } from '@/lib/navigation'
 import { intakeRefNumber, useIntakeSubmit } from '@/lib/api'
 import ContactForm from '@/components/forms/ContactForm'
@@ -632,10 +633,11 @@ export default function HomePage() {
               </motion.p>
 
               <motion.div variants={fadeUp} style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 40 }}>
-                <GlowButton as="a" href="/book-consultation" size="lg" variant="navy"
-                  onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}>
-                  Book a free eligibility call →
-                </GlowButton>
+                <Link to="/book-consultation" style={{ textDecoration: 'none' }}>
+                  <GlowButton as="button" type="button" size="lg" variant="navy">
+                    Book a free eligibility call →
+                  </GlowButton>
+                </Link>
                 <GlowButton as="a" href="#visas" size="lg" variant="gold">
                   Explore Visas
                 </GlowButton>
@@ -1106,22 +1108,20 @@ export default function HomePage() {
               <p style={{ fontSize: 15, color: '#6b7280', lineHeight: 1.75, margin: '0 0 28px' }}>{row.body}</p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 32 }}>
                 {row.pills.map(p => (
-                  <a key={p.label} href={p.href}
-                    onClick={p.href === '/employer-sponsored-visas' ? (e) => { e.preventDefault(); navigate('employer-sponsored-visas') } : undefined}
+                  <Link key={p.label} to={p.href}
                     style={{ padding: '6px 15px', borderRadius: 100, border: '1.5px solid rgba(27,43,94,0.22)', fontSize: 13, fontWeight: 500, color: NAVY, background: 'rgba(27,43,94,0.04)', textDecoration: 'none', cursor: 'pointer', transition: 'all 0.15s' }}
                     onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = NAVY; el.style.color = '#fff'; el.style.borderColor = NAVY; }}
                     onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'rgba(27,43,94,0.04)'; el.style.color = NAVY; el.style.borderColor = 'rgba(27,43,94,0.22)'; }}
-                  >{p.label}</a>
+                  >{p.label}</Link>
                 ))}
               </div>
-              <a href={row.href}
-                onClick={row.href === '/employer-sponsored-visas' ? (e) => { e.preventDefault(); navigate('employer-sponsored-visas') } : undefined}
+              <Link to={row.href}
                 style={{ display: 'inline-flex', alignSelf: 'flex-start', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, transition: 'color 0.15s' }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#f5a124'}
                 onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
               >
                 {row.cta}
-              </a>
+              </Link>
             </div>
             {/* Illustration panel — right */}
             {!row.imgLeft && (
@@ -1262,13 +1262,12 @@ export default function HomePage() {
                 Migration news &amp; <span style={{ fontWeight: 600, color: GOLD }}>policy changes</span>
               </h2>
             </div>
-            <a
-              href={`/${ROUTE.newsPage}`}
-              onClick={(e) => { e.preventDefault(); navigate(ROUTE.newsPage) }}
+            <Link
+              to={`/${ROUTE.newsPage}`}
               style={{ fontSize: 14, fontWeight: 700, color: NAVY_DARK, textDecoration: 'none', borderBottom: `2px solid ${GOLD}`, paddingBottom: 2, whiteSpace: 'nowrap', flexShrink: 0, transition: 'color 0.15s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY_DARK}
-            >View all articles →</a>
+            >View all articles →</Link>
           </Reveal>
 
           {/* Featured + side cards */}
@@ -1277,14 +1276,16 @@ export default function HomePage() {
             {/* Featured card — navy panel, no image */}
             {news[0] && (
               <StaggerItem preset="scale" style={{ gridRow: '1 / 3' }}>
-              <motion.article
-                style={{ height: '100%', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
-                onClick={() => {
+              <Link
+                to={(() => {
                   const item = news[0] as { slug?: string; hrefBase?: string }
                   const base = item.hrefBase || ROUTE.newsPage
-                  if (item.slug) navigate(`${base}/${item.slug}`)
-                  else navigate(base)
-                }}
+                  return item.slug ? `/${base}/${item.slug}` : `/${base}`
+                })()}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+              >
+              <motion.article
+                style={{ height: '100%', background: NAVY, borderRadius: 16, padding: '40px 36px 36px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
                 whileHover={reduceMotion ? undefined : { y: -4, boxShadow: '0 16px 48px rgba(13,22,50,0.35)' }}
                 transition={{ duration: 0.22 }}
               >
@@ -1302,38 +1303,26 @@ export default function HomePage() {
                   {news[0].standfirst}
                 </p>
                 {/* Read more */}
-                <a
-                  href={(() => {
-                    const item = news[0] as { slug?: string; hrefBase?: string }
-                    const base = item.hrefBase || ROUTE.newsPage
-                    return item.slug ? `/${base}/${item.slug}` : `/${base}`
-                  })()}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    const item = news[0] as { slug?: string; hrefBase?: string }
-                    const base = item.hrefBase || ROUTE.newsPage
-                    if (item.slug) navigate(`${base}/${item.slug}`)
-                    else navigate(base)
-                  }}
-                  style={{ fontSize: 14, fontWeight: 700, color: GOLD, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2, transition: 'border-color 0.15s' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = GOLD}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(245,161,36,0.4)'}
-                >Read more →</a>
+                <span
+                  style={{ fontSize: 14, fontWeight: 700, color: GOLD, alignSelf: 'flex-start', borderBottom: `1.5px solid rgba(245,161,36,0.4)`, paddingBottom: 2 }}
+                >Read more →</span>
               </motion.article>
+              </Link>
               </StaggerItem>
             )}
 
             {/* Side cards — SURFACE, gold hairline top, no image */}
             {news.slice(1).map((n, i) => (
               <StaggerItem key={i} preset="scale">
-              <motion.article
-                onClick={() => {
+              <Link
+                to={(() => {
                   const item = n as { slug?: string; hrefBase?: string }
                   const base = item.hrefBase || ROUTE.newsPage
-                  if (item.slug) navigate(`${base}/${item.slug}`)
-                  else navigate(base)
-                }}
+                  return item.slug ? `/${base}/${item.slug}` : `/${base}`
+                })()}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+              >
+              <motion.article
                 whileHover={reduceMotion ? undefined : { y: -3, boxShadow: '0 8px 32px rgba(27,43,94,0.1)' }}
                 transition={{ duration: 0.22 }}
                 style={{ height: '100%', background: '#ffffff', borderRadius: 16, borderTop: `3px solid ${GOLD}`, padding: '28px 28px 28px', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
@@ -1352,25 +1341,11 @@ export default function HomePage() {
                   {n.standfirst}
                 </p>
                 {/* Read more */}
-                <a
-                  href={(() => {
-                    const item = n as { slug?: string; hrefBase?: string }
-                    const base = item.hrefBase || ROUTE.newsPage
-                    return item.slug ? `/${base}/${item.slug}` : `/${base}`
-                  })()}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                    const item = n as { slug?: string; hrefBase?: string }
-                    const base = item.hrefBase || ROUTE.newsPage
-                    if (item.slug) navigate(`${base}/${item.slug}`)
-                    else navigate(base)
-                  }}
-                  style={{ fontSize: 13, fontWeight: 700, color: NAVY, textDecoration: 'none', alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1, transition: 'color 0.15s' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = GOLD}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = NAVY}
-                >Read more →</a>
+                <span
+                  style={{ fontSize: 13, fontWeight: 700, color: NAVY, alignSelf: 'flex-start', borderBottom: `1.5px solid ${GOLD}`, paddingBottom: 1 }}
+                >Read more →</span>
               </motion.article>
+              </Link>
               </StaggerItem>
             ))}
 
@@ -1396,15 +1371,11 @@ export default function HomePage() {
 
             {/* CTA button */}
             <div style={{ marginBottom: 28 }}>
-              <GlowButton
-                as="a"
-                href="/book-consultation"
-                size="lg"
-                variant="navy"
-                onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}
-              >
-                Book a free eligibility call
-              </GlowButton>
+              <Link to="/book-consultation" style={{ textDecoration: 'none' }}>
+                <GlowButton as="button" type="button" size="lg" variant="navy">
+                  Book a free eligibility call
+                </GlowButton>
+              </Link>
             </div>
 
 

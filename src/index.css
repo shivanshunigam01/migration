@@ -430,14 +430,10 @@ body.menu-open {
     display: none !important;
   }
 
-  /* Collapse content by default */
+  /* Keep footer links visible — accordion only highlights the active column */
   .footer-col-content {
-    display: none;
-    padding-bottom: 16px;
-  }
-
-  .footer-col-content.footer-col-open {
     display: block;
+    padding-bottom: 16px;
   }
 }
 

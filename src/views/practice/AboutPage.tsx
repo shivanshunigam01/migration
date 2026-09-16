@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import SiteHeader from '@/components/layout/SiteHeader'
 import SiteFooter from '@/components/layout/SiteFooter'
 import { NAV_ITEMS } from '@/data/navItems'
@@ -178,15 +179,11 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
             </div>
 
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-              <GlowButton
-                as="a"
-                href="/book-consultation"
-                size="lg"
-                variant="gold"
-                onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}
-              >
-                Book a Consultation
-              </GlowButton>
+              <Link to="/book-consultation" style={{ textDecoration: 'none' }}>
+                <GlowButton as="button" type="button" size="lg" variant="gold">
+                  Book a Consultation
+                </GlowButton>
+              </Link>
               <a href="#journey" style={{ backgroundColor: 'transparent', color: NAVY, border: `2px solid ${NAVY}30`, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 600 }}>
                 The founder&apos;s journey
               </a>

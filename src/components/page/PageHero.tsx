@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
 import { NAVY, GOLD, HERO_GRAD } from '@/theme'
@@ -146,41 +147,38 @@ export function PageHero({
             const href = ctaHref(primaryCta)
             if (!href) return null
             const external = href.startsWith('http') || href.endsWith('.pdf')
+            if (external) {
+              return (
+                <GlowButton as="a" href={href} size="lg" variant="gold">
+                  {primaryCta.label}
+                </GlowButton>
+              )
+            }
             return (
-              <GlowButton
-                as="a"
-                href={href}
-                size="lg"
-                variant="gold"
-                onClick={(e) => {
-                  if (external) return
-                  e.preventDefault()
-                  navigate(primaryCta.page ?? (href.replace(/^\//, '') || 'home'))
-                }}
-              >
-                {primaryCta.label}
-              </GlowButton>
+              <Link to={href} style={{ textDecoration: 'none' }}>
+                <GlowButton as="button" type="button" size="lg" variant="gold">
+                  {primaryCta.label}
+                </GlowButton>
+              </Link>
             )
           })()}
           {secondaryCta && (() => {
             const href = ctaHref(secondaryCta)
             if (!href) return null
             const external = href.startsWith('http') || href.endsWith('.pdf')
+            if (external) {
+              return (
+                <GlowButton as="a" href={href} size="lg" variant="navy" glow={false}>
+                  {secondaryCta.label}
+                </GlowButton>
+              )
+            }
             return (
-              <GlowButton
-                as="a"
-                href={href}
-                size="lg"
-                variant="navy"
-                glow={false}
-                onClick={(e) => {
-                  if (external) return
-                  e.preventDefault()
-                  navigate(secondaryCta.page ?? (href.replace(/^\//, '') || 'home'))
-                }}
-              >
-                {secondaryCta.label}
-              </GlowButton>
+              <Link to={href} style={{ textDecoration: 'none' }}>
+                <GlowButton as="button" type="button" size="lg" variant="navy" glow={false}>
+                  {secondaryCta.label}
+                </GlowButton>
+              </Link>
             )
           })()}
         </motion.div>

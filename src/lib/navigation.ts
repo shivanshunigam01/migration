@@ -5,6 +5,17 @@ import { LEGACY_ROUTE_REDIRECTS } from "@/data/legacyRedirects"
 
 export { LEGACY_ROUTE_REDIRECTS }
 
+/** Footer / legal pages — also surfaced in the Practice nav menu. */
+export const LEGAL_NAV_LINKS = [
+  { label: "Privacy Policy", route: "privacy" },
+  { label: "AI Policy", route: "ai-policy" },
+  { label: "Terms of Use", route: "terms" },
+  { label: "Governance", route: "governance" },
+  { label: "Refund Policy", route: "refund-request" },
+  { label: "Accessibility", route: "accessibility" },
+  { label: "Sitemap", route: "site-map" },
+] as const
+
 export function resolveRoute(page: string): string {
   if (page === "home" || page === "") return "/"
   if (page === "contact") return "/contact"

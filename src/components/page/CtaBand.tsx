@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { NAVY, NAVY_DARK, NAVY_GRAD, GOLD } from '@/theme'
 import { Reveal } from '@/components/motion'
 import { GlowButton } from '@/components/ui/GlowButton'
@@ -126,53 +127,71 @@ export function CtaBand({ title, body, primaryCta, secondaryCta, accent = GOLD, 
             const href = ctaHref(primaryCta)
             if (!href) return null
             const external = href.startsWith('http')
+            if (external) {
+              return (
+                <GlowButton as="a" href={href} size="lg" variant="gold" style={{ ['--glow-ring' as string]: accent }}>
+                  {primaryCta.label}
+                </GlowButton>
+              )
+            }
+            if (href.startsWith('#')) {
+              return (
+                <GlowButton
+                  as="a"
+                  href={href}
+                  size="lg"
+                  variant="gold"
+                  style={{ ['--glow-ring' as string]: accent }}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  {primaryCta.label}
+                </GlowButton>
+              )
+            }
             return (
-              <GlowButton
-                as="a"
-                href={href}
-                size="lg"
-                variant="gold"
-                style={{ ['--glow-ring' as string]: accent }}
-                onClick={(e) => {
-                  if (external || href.startsWith('#')) {
-                    if (href.startsWith('#')) {
-                      e.preventDefault()
-                      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-                    }
-                    return
-                  }
-                  e.preventDefault()
-                  navigate(primaryCta.page ?? (href.replace(/^\//, '') || 'home'))
-                }}
-              >
-                {primaryCta.label}
-              </GlowButton>
+              <Link to={href} style={{ textDecoration: 'none', display: 'block' }}>
+                <GlowButton as="button" type="button" size="lg" variant="gold" style={{ ['--glow-ring' as string]: accent, width: '100%' }}>
+                  {primaryCta.label}
+                </GlowButton>
+              </Link>
             )
           })()}
           {secondaryCta && (() => {
             const href = ctaHref(secondaryCta)
             if (!href) return null
             const external = href.startsWith('http')
+            if (external) {
+              return (
+                <GlowButton as="a" href={href} size="md" variant="outline">
+                  {secondaryCta.label}
+                </GlowButton>
+              )
+            }
+            if (href.startsWith('#')) {
+              return (
+                <GlowButton
+                  as="a"
+                  href={href}
+                  size="md"
+                  variant="outline"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                >
+                  {secondaryCta.label}
+                </GlowButton>
+              )
+            }
             return (
-              <GlowButton
-                as="a"
-                href={href}
-                size="md"
-                variant="outline"
-                onClick={(e) => {
-                  if (external || href.startsWith('#')) {
-                    if (href.startsWith('#')) {
-                      e.preventDefault()
-                      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-                    }
-                    return
-                  }
-                  e.preventDefault()
-                  navigate(secondaryCta.page ?? (href.replace(/^\//, '') || 'home'))
-                }}
-              >
-                {secondaryCta.label}
-              </GlowButton>
+              <Link to={href} style={{ textDecoration: 'none', display: 'block' }}>
+                <GlowButton as="button" type="button" size="md" variant="outline" style={{ width: '100%' }}>
+                  {secondaryCta.label}
+                </GlowButton>
+              </Link>
             )
           })()}
           {footnote && (

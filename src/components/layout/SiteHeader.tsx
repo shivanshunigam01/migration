@@ -5,7 +5,7 @@ import { CompassDecor } from '@/components/page/CtaBand'
 import NanakLogo from '@/components/layout/NanakLogo'
 import Icon from '@/components/ui/Icon'
 import { GlowButton } from '@/components/ui/GlowButton'
-import { resolveRoute } from '@/lib/navigation'
+import { LEGAL_NAV_LINKS, resolveRoute } from '@/lib/navigation'
 
 /* ── Types ──────────────────────────────────────────────── */
 type NavSubItem = { label: string; desc: string; icon: string; code?: string; href?: string; route?: string }
@@ -31,22 +31,18 @@ function resolveNavHref(topLabel: string, item: NavSubItem): string | undefined 
 function resolveNavClick(
   _topLabel: string,
   item: NavSubItem,
-  navigate: (page: string) => void,
   closeNav: () => void,
 ): ((e: React.MouseEvent) => void) | undefined {
   const href = resolveNavHref(_topLabel, item)
-  if (!href || !item.route) return undefined
-  return (e: React.MouseEvent) => {
-    if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) return
-    e.preventDefault()
-    closeNav()
-    navigate(item.route!)
+  if (!href || href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return undefined
   }
+  return () => closeNav()
 }
 
 /* ── SiteHeader ─────────────────────────────────────────── */
 export default function SiteHeader({
-  navigate,
+  navigate: _navigate,
   navItems,
 }: {
   navigate: (page: string) => void
@@ -182,9 +178,9 @@ export default function SiteHeader({
         <div style={{ maxWidth: 1400, margin: '0 auto', display: 'flex', alignItems: 'center', gap: 32, height: 72 }}>
 
           {/* Logo */}
-          <button onClick={() => navigate('home')} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, flexShrink: 0 }} aria-label="Nanak Migration Group home">
+          <Link to="/" onClick={() => closeNav()} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, flexShrink: 0, display: 'block', textDecoration: 'none' }} aria-label="Nanak Migration Group home">
             <NanakLogo size={42} />
-          </button>
+          </Link>
 
           {/* Desktop nav */}
           <nav className="nav-desktop" style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -261,11 +257,11 @@ export default function SiteHeader({
                 <div
                   onMouseEnter={cancelClose}
                   onMouseLeave={scheduleClose}
-                  style={{ position: 'absolute', top: 'calc(100% + 10px)', right: 0, backgroundColor: '#ffffff', borderRadius: 14, boxShadow: '0 16px 56px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.06)', border: '1px solid #e8eaf0', zIndex: 400, width: 680, maxWidth: 'calc(100vw - 48px)' }}>
+                  style={{ position: 'absolute', top: 'calc(100% + 10px)', right: 0, backgroundColor: '#ffffff', borderRadius: 14, boxShadow: '0 16px 56px rgba(0,0,0,0.16), 0 2px 8px rgba(0,0,0,0.06)', border: '1px solid #e8eaf0', zIndex: 400, width: 900, maxWidth: 'calc(100vw - 48px)' }}>
                   {/* Invisible hover bridge */}
                   <div style={{ position: 'absolute', top: -10, left: 0, right: 0, height: 10, background: 'transparent' }} />
-                  {/* Three-column body */}
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
+                  {/* Four-column body */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 0 }}>
 
                     {/* Column 1: The Practice */}
                     <div style={{ padding: '24px 20px 20px', borderRight: '1px solid #f0f2f7' }}>
@@ -305,7 +301,6 @@ export default function SiteHeader({
                         <Link key={l.label} to={`/tools#${l.anchor}`}
                           onClick={() => {
                             closeNav()
-                            navigate('tools')
                             setTimeout(() => {
                               const el = document.getElementById(l.anchor)
                               if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -360,6 +355,21 @@ export default function SiteHeader({
                         </Link>
                       ))}
                     </div>
+
+                    {/* Column 4: Legal & policies */}
+                    <div style={{ padding: '24px 20px 20px', borderLeft: '1px solid #f0f2f7' }}>
+                      <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, marginBottom: 10, fontFamily: "'Gilroy', sans-serif" }}>Legal & Policies</div>
+                      <div style={{ height: 1, background: '#f0f2f7', marginBottom: 12 }} />
+                      {LEGAL_NAV_LINKS.map(l => (
+                        <Link key={l.label} to={resolveRoute(l.route)}
+                          onClick={() => closeNav()}
+                          style={{ display: 'block', padding: '8px 6px', borderRadius: 8, textDecoration: 'none', transition: 'background 0.12s', marginBottom: 2 }}
+                          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = 'rgba(17,30,62,0.10)' }}
+                          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent' }}>
+                          <div style={{ fontSize: 14, fontWeight: 600, color: '#1E1E2A', fontFamily: "'Gilroy', sans-serif", lineHeight: 1.3 }}>{l.label}</div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Footer strip */}
@@ -389,16 +399,11 @@ export default function SiteHeader({
           </nav>
 
           {/* Desktop CTA */}
-          <GlowButton
-            as="a"
-            href="/book-consultation" className="nav-cta-desktop"
-            size="md"
-            variant="gold"
-            style={{ flexShrink: 0, whiteSpace: 'nowrap' }}
-            onClick={(e) => { e.preventDefault(); navigate('book-consultation') }}
-          >
-            Book Consultation
-          </GlowButton>
+          <Link to="/book-consultation" onClick={() => closeNav()} className="nav-cta-desktop" style={{ flexShrink: 0, whiteSpace: 'nowrap', textDecoration: 'none' }}>
+            <GlowButton as="button" type="button" size="md" variant="gold">
+              Book Consultation
+            </GlowButton>
+          </Link>
 
           {/* Hamburger (mobile) */}
           <button className="nav-hamburger" onClick={() => setMobileOpen(v => !v)}
@@ -469,7 +474,6 @@ export default function SiteHeader({
                               <Link key={l.label} to={l.anchor ? `/tools#${l.anchor}` : '/tools'}
                                 onClick={() => {
                                   closeNav()
-                                  navigate('tools')
                                   setTimeout(() => {
                                     if (l.anchor) {
                                       const el = document.getElementById(l.anchor)
@@ -514,12 +518,12 @@ export default function SiteHeader({
                         </a>
                       </div>
                       {/* Gold button — unchanged */}
-                      <a href="/book-consultation" onClick={(e) => { e.preventDefault(); navigate('book-consultation') }} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
+                      <Link to="/book-consultation" onClick={() => closeNav()} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD_LIGHT }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD }}>
                         Book a free eligibility call
                         <Icon name="arrowright" size={13} color={NAVY_DARK} />
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 )
@@ -535,7 +539,7 @@ export default function SiteHeader({
                     <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                       {cat.items.map(navItem => {
                         const href = resolveNavHref(activeNavItem.label, navItem)
-                        const clickHandler = resolveNavClick(activeNavItem.label, navItem, navigate, closeNav)
+                        const clickHandler = resolveNavClick(activeNavItem.label, navItem, closeNav)
                         if (!href) {
                           return (
                             <span key={navItem.label} style={{ display: 'flex', alignItems: 'flex-start', gap: 12, padding: '10px 8px', opacity: 0.5 }}>
@@ -584,7 +588,7 @@ export default function SiteHeader({
                       const hubHref = resolveRoute(viewAll)
                       return (
                         <Link to={hubHref}
-                          onClick={() => { closeNav(); navigate(viewAll) }}
+                          onClick={() => closeNav()}
                           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 12, padding: '10px 12px', backgroundColor: `${iconColor}0d`, borderRadius: 8, border: `1px solid ${iconColor}18`, textDecoration: 'none', transition: 'background 0.12s' }}
                           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}18` }}
                           onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = `${iconColor}0d` }}>
@@ -627,14 +631,21 @@ export default function SiteHeader({
                       <div key={cat.heading} style={{ marginBottom: 16 }}>
                         <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GOLD, marginBottom: 8, paddingLeft: 4 }}>{cat.heading}</div>
                         {cat.items.map(navItem => {
-                          const clickHandler = resolveNavClick(item.label, navItem, navigate, () => { closeNav(); setMobileOpen(false) })
+                          const href = resolveNavHref(item.label, navItem)
+                          if (!href) {
+                            return (
+                              <span key={navItem.label} style={{ display: 'block', padding: '12px 12px', color: 'rgba(255,255,255,0.45)', fontSize: 17, fontFamily: "'Gilroy', sans-serif" }}>
+                                {navItem.label}
+                              </span>
+                            )
+                          }
                           return (
-                            <button key={navItem.label}
-                              onClick={clickHandler ? (e) => { clickHandler(e); setMobileOpen(false) } : undefined}
-                              style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 17, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}
+                            <Link key={navItem.label} to={href}
+                              onClick={() => { closeNav(); setMobileOpen(false) }}
+                              style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 17, fontFamily: "'Gilroy', sans-serif", borderRadius: 6, textDecoration: 'none' }}
                             >
                               {navItem.label}
-                            </button>
+                            </Link>
                           )
                         })}
                       </div>
@@ -663,10 +674,10 @@ export default function SiteHeader({
                     { label: 'Immigration News', route: 'news' },
                     { label: 'Contact', route: 'contact' },
                   ].map(l => (
-                    <button key={l.label} onClick={() => { navigate(l.route); setMobileOpen(false) }}
-                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
+                    <Link key={l.label} to={resolveRoute(l.route)} onClick={() => setMobileOpen(false)}
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6, textDecoration: 'none' }}>
                       {l.label}
-                    </button>
+                    </Link>
                   ))}
                   {/* Group: Free Tools */}
                   <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Free Tools</div>
@@ -677,10 +688,11 @@ export default function SiteHeader({
                     { label: 'Visa Comparison', anchor: 'visa-pathway-comparison' },
                     { label: 'All Tools', anchor: '' },
                   ].map(l => (
-                    <button key={l.label} onClick={() => { navigate('tools'); setTimeout(() => { if (l.anchor) { const el = document.getElementById(l.anchor); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) } }, 80); setMobileOpen(false) }}
-                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
+                    <Link key={l.label} to={l.anchor ? `/tools#${l.anchor}` : '/tools'}
+                      onClick={() => { setTimeout(() => { if (l.anchor) { const el = document.getElementById(l.anchor); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }) } }, 80); setMobileOpen(false) }}
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6, textDecoration: 'none' }}>
                       {l.label}
-                    </button>
+                    </Link>
                   ))}
                   {/* Group: Resources */}
                   <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Resources</div>
@@ -690,26 +702,29 @@ export default function SiteHeader({
                     { label: 'Checklists', route: 'checklists' },
                     { label: 'Resources Hub', route: 'resources' },
                   ].map(l => (
-                    <button key={l.label} onClick={() => { navigate(l.route); setMobileOpen(false) }}
-                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6 }}>
+                    <Link key={l.label} to={resolveRoute(l.route)} onClick={() => setMobileOpen(false)}
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6, textDecoration: 'none' }}>
                       {l.label}
-                    </button>
+                    </Link>
+                  ))}
+                  {/* Group: Legal & policies */}
+                  <div style={{ fontSize: 11, fontWeight: 800, letterSpacing: '0.14em', textTransform: 'uppercase', color: GOLD, margin: '10px 0 6px', paddingLeft: 4, fontFamily: "'Gilroy', sans-serif" }}>Legal & Policies</div>
+                  {LEGAL_NAV_LINKS.map(l => (
+                    <Link key={l.label} to={resolveRoute(l.route)} onClick={() => setMobileOpen(false)}
+                      style={{ display: 'block', width: '100%', textAlign: 'left', padding: '12px 12px', minHeight: 44, background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.8)', fontSize: 16, fontFamily: "'Gilroy', sans-serif", borderRadius: 6, textDecoration: 'none' }}>
+                      {l.label}
+                    </Link>
                   ))}
                 </div>
               )}
             </div>
 
             <div style={{ marginTop: 24 }}>
-              <GlowButton
-                as="a"
-                href="/book-consultation"
-                block
-                size="md"
-                variant="gold"
-                onClick={(e) => { e.preventDefault(); navigate('book-consultation'); setMobileOpen(false) }}
-              >
-                Book a free eligibility call
-              </GlowButton>
+              <Link to="/book-consultation" onClick={() => setMobileOpen(false)} style={{ display: 'block', textDecoration: 'none' }}>
+                <GlowButton as="button" type="button" block size="md" variant="gold">
+                  Book a free eligibility call
+                </GlowButton>
+              </Link>
             </div>
           </div>
         </div>

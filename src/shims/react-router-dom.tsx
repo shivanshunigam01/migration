@@ -46,8 +46,9 @@ export const Link = forwardRef<
   HTMLAnchorElement,
   AnchorHTMLAttributes<HTMLAnchorElement> & { to: To; replace?: boolean }
 >(function Link({ to, replace, children, ...rest }, ref) {
+  const href = toHref(to)
   return (
-    <NextLink ref={ref} href={toHref(to)} replace={replace} {...rest}>
+    <NextLink ref={ref} href={href} replace={replace} scroll={!href.includes("#")} {...rest}>
       {children}
     </NextLink>
   )
