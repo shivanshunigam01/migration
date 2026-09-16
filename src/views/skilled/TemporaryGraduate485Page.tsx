@@ -537,7 +537,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               <div>
                 <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: 14 }}>Duration by Degree</div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 20 }}>
-                  {Object.entries(stream.duration).map(([key, yrs]) => (
+                  {Object.entries(stream.duration as unknown as Record<string, number>).map(([key, yrs]) => (
                     <div key={key} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 14px', background: '#fff', borderRadius: 8, border: '1px solid #f0f2f8' }}>
                       <span style={{ fontSize: 14, color: '#6b7280', textTransform: 'capitalize' }}>{key.replace(/([A-Z])/g, ' $1')}</span>
                       <span style={{ fontSize: 15, fontWeight: 700, color: stream.color }}>{yrs} yr{yrs !== 1 ? 's' : ''}</span>
