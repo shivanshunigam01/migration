@@ -5,25 +5,20 @@ import SiteHeader from "@/components/layout/SiteHeader"
 import SiteFooter from "@/components/layout/SiteFooter"
 import { PageHero } from "@/components/page/PageHero"
 import { ComplianceDisclaimer } from "@/components/page/ComplianceDisclaimer"
+import { PolicyArticle, type PolicySection } from "@/components/page/PolicyArticle"
 import StructuredData from "@/components/page/StructuredData"
+import { ACCESSIBILITY_POLICY, TERMS_OF_USE } from "@/data/legalPolicies"
 import { NAV_ITEMS } from "@/data/navItems"
 import { usePageSeo } from "@/lib/usePageSeo"
 
 type LegalKind = "privacy" | "terms" | "accessibility" | "ai-policy"
-
-type LegalSection = {
-  h: string
-  p?: string | string[]
-  bullets?: string[]
-  table?: { head: [string, string]; rows: [string, string][] }
-}
 
 type LegalCopy = {
   title: string
   eyebrow: string
   description: string
   meta?: string[]
-  sections: LegalSection[]
+  sections: PolicySection[]
 }
 
 const PRACTICE_META = [
@@ -370,86 +365,8 @@ const COPY: Record<LegalKind, LegalCopy> = {
       },
     ],
   },
-  terms: {
-    title: "Terms and Conditions",
-    eyebrow: "Legal",
-    description:
-      "Terms and conditions governing use of the Nanak Migration Group website and related online services, operated by 1313 Success Group Pty Ltd trading as Nanak Migration Group.",
-    sections: [
-      {
-        h: "1. Who we are",
-        p: "This website (nanakmigration.com.au) is operated by 1313 Success Group Pty Ltd trading as Nanak Migration Group (ABN 54 674 937 476 · ACN 674 937 476). Migration assistance is provided by a Registered Migration Agent (MARN 2619467). Contact: visa@nanakmigration.com.au · 1300 644 728.",
-      },
-      {
-        h: "2. Website information only",
-        p: "Content on this website is general information only and is not immigration assistance or legal advice. Australian migration law and policy change frequently. Always verify current criteria with the Department of Home Affairs or obtain advice from a registered migration agent before lodging an application or making decisions based on website content.",
-      },
-      {
-        h: "3. No client relationship from browsing or forms",
-        p: "Using this website, booking a consultation online, submitting an enquiry, governance ticket or refund request does not by itself create an agent–client relationship. A professional relationship begins only when you engage us under a written agreement (for example a Form of Authority / costs agreement) that we accept.",
-      },
-      {
-        h: "4. Accuracy of tools and content",
-        p: "We aim to keep information current but do not warrant completeness, accuracy or fitness for a particular purpose. Calculators, checklists, eligibility tools and FAQ answers are indicative only and may not reflect your full circumstances.",
-      },
-      {
-        h: "5. Online bookings and payments",
-        p: "Paid consultations booked through this website are charged via our payment provider (Stripe) at the fee shown at checkout. By completing payment you confirm that the booking details are correct and that you have read these terms. Free eligibility calls, where offered, remain subject to availability and our fair-use practices.",
-      },
-      {
-        h: "6. Cancellations and refunds",
-        p: "If you need to cancel or reschedule a paid consultation, contact us as soon as possible on 1300 644 728 or visa@nanakmigration.com.au. Fees for consultations that have already been delivered are generally non-refundable. Unused paid bookings may be considered for refund or credit at our discretion, taking into account notice given, payment method and any written agreement. To request a refund, use the refund request form on this website or email us with your booking or invoice reference. Approved refunds are ordinarily returned to the original payment method.",
-      },
-      {
-        h: "7. Governance and complaints",
-        p: "We welcome feedback and take complaints seriously. You may lodge a governance ticket via this website. We aim to acknowledge tickets within two business days where practicable. You may also contact the Office of the Migration Agents Registration Authority (OMARA) regarding the conduct of a registered migration agent.",
-      },
-      {
-        h: "8. Acceptable use",
-        p: "You must not misuse this website — including attempting to disrupt services, scrape content at scale without permission, submit false or abusive information, or use automated means to overload forms. We may refuse or remove submissions that appear fraudulent or abusive.",
-      },
-      {
-        h: "9. Privacy and artificial intelligence",
-        p: "Personal information collected through forms, bookings and tickets is handled in accordance with our Privacy Policy. Where artificial intelligence is used in our practice, it is governed by our Artificial Intelligence Policy, which requires advance explanation and specific written consent before your personal information is entered into an AI system. By submitting information you consent to us contacting you about your enquiry or request using the details you provide.",
-      },
-      {
-        h: "10. Intellectual property",
-        p: "Website text, branding, layout and materials are owned by or licensed to Nanak Migration Group. You may view and print pages for personal, non-commercial use. You must not reproduce or redistribute substantial content without prior written consent.",
-      },
-      {
-        h: "11. Liability",
-        p: "To the extent permitted by law, 1313 Success Group Pty Ltd trading as Nanak Migration Group is not liable for loss arising from reliance on website content alone, from third-party sites linked from this website, or from temporary unavailability of online services. Nothing in these terms excludes rights that cannot be excluded under Australian Consumer Law.",
-      },
-      {
-        h: "12. Changes",
-        p: "We may update these terms from time to time by publishing a revised version on this page. Continued use of the website after changes are posted constitutes acceptance of the updated terms. Last updated: September 2026.",
-      },
-    ],
-  },
-  accessibility: {
-    title: "Accessibility",
-    eyebrow: "Practice",
-    description: "Our commitment to making nanakmigration.com.au usable for more people.",
-    sections: [
-      {
-        h: "Our approach",
-        p: "We design pages with clear typography, keyboard-friendly controls where practical, and meaningful link text. We continue improving contrast, focus states and mobile usability.",
-      },
-      {
-        h: "Feedback",
-        p: "If you experience a barrier on this site, email visa@nanakmigration.com.au with the page URL and a short description. We will work to address issues promptly.",
-      },
-      {
-        h: "Alternatives",
-        p: "You can also reach us by phone on 1300 644 728 for assistance accessing information about our services.",
-      },
-    ],
-  },
-}
-
-function paragraphs(p: LegalSection["p"]): string[] {
-  if (!p) return []
-  return Array.isArray(p) ? p : [p]
+  terms: TERMS_OF_USE,
+  accessibility: ACCESSIBILITY_POLICY,
 }
 
 export default function LegalPage({
@@ -486,99 +403,9 @@ export default function LegalPage({
         deck={c.description}
         primaryCta={{ label: "Contact us", page: "contact" }}
       />
-      <article style={{ maxWidth: 820, margin: "0 auto", padding: "48px 24px 72px" }}>
-        {c.meta && (
-          <div
-            style={{
-              marginBottom: 36,
-              padding: "18px 22px",
-              background: "#f8fafc",
-              border: "1px solid rgba(21,36,72,0.08)",
-              borderRadius: 12,
-            }}
-          >
-            {c.meta.map((line) => (
-              <div key={line} style={{ fontSize: 14, lineHeight: 1.7, color: "#4b5563" }}>
-                {line}
-              </div>
-            ))}
-          </div>
-        )}
+      <PolicyArticle doc={{ ...c, meta: c.meta ?? PRACTICE_META }} />
 
-        {c.sections.map((s) => (
-          <section key={s.h} style={{ marginBottom: 28 }}>
-            <h2 style={{ fontSize: 20, fontWeight: 700, color: NAVY, margin: "0 0 10px" }}>{s.h}</h2>
-            {paragraphs(s.p).map((para) => (
-              <p key={para.slice(0, 48)} style={{ fontSize: 16, lineHeight: 1.75, color: "#374151", margin: "0 0 12px" }}>
-                {para}
-              </p>
-            ))}
-            {s.bullets && (
-              <ul style={{ margin: "0 0 12px", paddingLeft: 22 }}>
-                {s.bullets.map((b) => (
-                  <li key={b.slice(0, 48)} style={{ fontSize: 16, lineHeight: 1.75, color: "#374151", marginBottom: 8 }}>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            )}
-            {s.table && (
-              <div style={{ overflowX: "auto", marginTop: 8 }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15 }}>
-                  <thead>
-                    <tr>
-                      {s.table.head.map((th) => (
-                        <th
-                          key={th}
-                          style={{
-                            textAlign: "left",
-                            padding: "10px 12px",
-                            background: "#f1f5f9",
-                            color: NAVY,
-                            fontWeight: 700,
-                            border: "1px solid rgba(21,36,72,0.10)",
-                          }}
-                        >
-                          {th}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {s.table.rows.map(([recipient, purpose]) => (
-                      <tr key={recipient}>
-                        <td
-                          style={{
-                            padding: "10px 12px",
-                            border: "1px solid rgba(21,36,72,0.10)",
-                            color: "#374151",
-                            lineHeight: 1.6,
-                            verticalAlign: "top",
-                            fontWeight: 600,
-                          }}
-                        >
-                          {recipient}
-                        </td>
-                        <td
-                          style={{
-                            padding: "10px 12px",
-                            border: "1px solid rgba(21,36,72,0.10)",
-                            color: "#374151",
-                            lineHeight: 1.6,
-                            verticalAlign: "top",
-                          }}
-                        >
-                          {purpose}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </section>
-        ))}
-
+      <div style={{ maxWidth: 820, margin: "0 auto", padding: "0 24px 72px" }}>
         {kind === "privacy" && (
           <p style={{ marginTop: 32, fontSize: 15, color: "#64748b", lineHeight: 1.7 }}>
             Read this policy together with our{" "}
@@ -587,7 +414,7 @@ export default function LegalPage({
             </Link>{" "}
             and{" "}
             <Link to="/terms" style={{ color: GOLD, fontWeight: 700 }}>
-              Terms and Conditions
+              Website Terms of Use
             </Link>
             .
           </p>
@@ -600,7 +427,7 @@ export default function LegalPage({
             </Link>{" "}
             and{" "}
             <Link to="/terms" style={{ color: GOLD, fontWeight: 700 }}>
-              Terms and Conditions
+              Website Terms of Use
             </Link>
             .
           </p>
@@ -609,7 +436,7 @@ export default function LegalPage({
         <p style={{ marginTop: 20, fontSize: 14, color: "#64748b" }}>
           Questions? <Link to="/contact" style={{ color: GOLD, fontWeight: 700 }}>Contact the practice</Link>.
         </p>
-      </article>
+      </div>
       <ComplianceDisclaimer />
       <SiteFooter navigate={navigate} />
     </div>

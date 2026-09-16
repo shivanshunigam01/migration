@@ -53,27 +53,28 @@ export const PAGE_META: Record<string, PageMeta> = {
     primaryKeyword: 'migration agent AI policy',
   },
   terms: {
-    title: 'Terms and Conditions | Nanak Migration Group',
+    title: 'Website Terms of Use | Nanak Migration Group',
     metaDescription:
-      'Terms and conditions for the Nanak Migration Group website, bookings, refunds and online services. ABN 54 674 937 476 · MARN 2619467.',
-    primaryKeyword: 'terms and conditions migration agent',
+      'Terms on which you may use nanakmigration.com.au — general information only, not immigration assistance. ABN 54 674 937 476 · MARN 2619467.',
+    primaryKeyword: 'website terms of use migration agent',
   },
   governance: {
-    title: 'Governance & Complaints | Nanak Migration Group',
+    title: 'Governance | Nanak Migration Group',
     metaDescription:
-      'Raise a complaint, feedback or service concern with Nanak Migration Group. Tickets are reviewed by our practice team. MARN 2619467.',
-    primaryKeyword: 'migration agent complaints Australia',
+      'How Nanak Migration Group is structured, supervised and held to account — professional responsibility, complaints and practice standards. MARN 2619467.',
+    primaryKeyword: 'migration agent governance Australia',
   },
   'refund-request': {
-    title: 'Refund Request | Nanak Migration Group',
+    title: 'Refund Policy | Nanak Migration Group',
     metaDescription:
-      'Request a refund for consultation fees or services with Nanak Migration Group. Submissions are reviewed by our practice team. MARN 2619467.',
-    primaryKeyword: 'migration agent refund request',
+      'When fees are refundable, how refunds are calculated, and how to request one from Nanak Migration Group. MARN 2619467.',
+    primaryKeyword: 'migration agent refund policy',
   },
   accessibility: {
     title: 'Accessibility | Nanak Migration Group',
-    metaDescription: 'Accessibility information for the Nanak Migration Group website.',
-    primaryKeyword: 'accessibility',
+    metaDescription:
+      'Our commitment to making nanakmigration.com.au and our services usable by everyone. WCAG 2.2 Level AA review in progress. MARN 2619467.',
+    primaryKeyword: 'website accessibility migration agent',
   },
   'employer-sponsored-visas': {
     title: "Employer Sponsored Visas - 482 & 186 | Nanak Migration",
