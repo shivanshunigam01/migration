@@ -231,6 +231,7 @@ const WorkingHoliday417Page = withNavigate(WorkingHoliday417PageRaw as never)
 const HtmlSitemapPage = withNavigate(HtmlSitemapPageRaw as never)
 const Home = withNavigate(HomePage as never)
 const Privacy = withNavigate(function Privacy(p: { navigate: (page: string) => void }) { return <LegalPage kind="privacy" navigate={p.navigate} /> } as never)
+const AiPolicy = withNavigate(function AiPolicy(p: { navigate: (page: string) => void }) { return <LegalPage kind="ai-policy" navigate={p.navigate} /> } as never)
 const Terms = withNavigate(function Terms(p: { navigate: (page: string) => void }) { return <LegalPage kind="terms" navigate={p.navigate} /> } as never)
 const Accessibility = withNavigate(function Accessibility(p: { navigate: (page: string) => void }) { return <LegalPage kind="accessibility" navigate={p.navigate} /> } as never)
 
@@ -306,6 +307,7 @@ export const PAGE_REGISTRY: Record<string, AppPageComponent> = {
   "points-test": PointsTestPage,
   "pre-assessment": PreAssessmentPage,
   "privacy": Privacy,
+  "ai-policy": AiPolicy,
   "prospective-marriage-300": ProspectiveMarriage300Page,
   "protection-visa-866": ProtectionVisa866Page,
   "re-entry-bans": ReEntryBansPage,

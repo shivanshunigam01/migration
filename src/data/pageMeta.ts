@@ -42,8 +42,15 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   privacy: {
     title: 'Privacy Policy | Nanak Migration Group',
-    metaDescription: 'How Nanak Migration Group Pty Ltd collects, uses and protects personal information.',
-    primaryKeyword: 'privacy policy',
+    metaDescription:
+      'How Nanak Migration Group collects, holds, uses and discloses personal information, overseas handling, AI consent, retention, access and complaints. MARN 2619467.',
+    primaryKeyword: 'privacy policy migration agent',
+  },
+  'ai-policy': {
+    title: 'Artificial Intelligence Policy | Nanak Migration Group',
+    metaDescription:
+      'How Nanak Migration Group uses artificial intelligence on migration matters — permitted uses, prohibited uses, written consent, human review and complaints. MARN 2619467.',
+    primaryKeyword: 'migration agent AI policy',
   },
   terms: {
     title: 'Terms and Conditions | Nanak Migration Group',

@@ -82,6 +82,7 @@ export function buildPublicRouteRegistry(): PublicRouteRecord[] {
     ["about", "About"],
     ["contact", "Contact"],
     ["privacy", "Privacy Policy"],
+    ["ai-policy", "Artificial Intelligence Policy"],
     ["terms", "Terms and Conditions"],
     ["governance", "Governance & Complaints"],
     ["refund-request", "Refund Request"],
@@ -91,7 +92,7 @@ export function buildPublicRouteRegistry(): PublicRouteRecord[] {
     ["site-map", "HTML Sitemap"],
   ] as const
 
-  const legalSlugs = new Set(["privacy", "terms", "accessibility", "governance", "refund-request"])
+  const legalSlugs = new Set(["privacy", "ai-policy", "terms", "accessibility", "governance", "refund-request"])
 
   for (const [slug, label] of legal) {
     const meta = PAGE_META[slug]

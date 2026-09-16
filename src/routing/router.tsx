@@ -368,6 +368,15 @@ const PrivacyPageLazy = lazy(() =>
 )
 const PrivacyPage = withNavigate(PrivacyPageLazy as never)
 
+const AiPolicyPageLazy = lazy(() =>
+  import("@/views/LegalPage").then((m) => ({
+    default: function AiPolicyPage(p: { navigate: (page: string) => void }) {
+      return <m.default kind="ai-policy" navigate={p.navigate} />
+    },
+  })),
+)
+const AiPolicyPage = withNavigate(AiPolicyPageLazy as never)
+
 const TermsPageLazy = lazy(() =>
   import("@/views/LegalPage").then((m) => ({
     default: function TermsPage(p: { navigate: (page: string) => void }) {
@@ -504,6 +513,7 @@ const Pages = {
   Governance: GovernancePage,
   RefundRequest: RefundRequestPage,
   Privacy: PrivacyPage,
+  AiPolicy: AiPolicyPage,
   Terms: TermsPage,
   Accessibility: AccessibilityPage,
   NotFound: NotFoundPage,
@@ -525,6 +535,7 @@ export default function AppRouter() {
       <Route path="/governance" element={<Pages.Governance />} />
       <Route path="/refund-request" element={<Pages.RefundRequest />} />
       <Route path="/privacy" element={<Pages.Privacy />} />
+      <Route path="/ai-policy" element={<Pages.AiPolicy />} />
       <Route path="/terms" element={<Pages.Terms />} />
       <Route path="/accessibility" element={<Pages.Accessibility />} />
       <Route path="/about" element={<Pages.About />} />

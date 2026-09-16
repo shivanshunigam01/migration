@@ -45,6 +45,7 @@ export function getAllPublicPathEntries(): PublicPathEntry[] {
     { path: "about", title: "About Nanak Migration Group", category: "Other" },
     { path: "contact", title: "Contact", category: "Other" },
     { path: "privacy", title: "Privacy Policy", category: "Legal" },
+    { path: "ai-policy", title: "Artificial Intelligence Policy", category: "Legal" },
     { path: "terms", title: "Terms and Conditions", category: "Legal" },
     { path: "governance", title: "Governance & Complaints", category: "Legal" },
     { path: "refund-request", title: "Refund Request", category: "Legal" },

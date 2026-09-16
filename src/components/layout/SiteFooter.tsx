@@ -898,6 +898,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             </span>
             {[
               { label: 'Privacy Policy', to: '/privacy' },
+              { label: 'AI Policy', to: '/ai-policy' },
               { label: 'Terms & Conditions', to: '/terms' },
               { label: 'Governance', to: '/governance' },
               { label: 'Refunds', to: '/refund-request' },
