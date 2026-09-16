@@ -50,11 +50,15 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Marketing HTML — CDN cache; ISR revalidate below refreshes after publish.
+        // Browser revalidates; CDN caches prerendered HTML (ISR + on-demand revalidate).
         source: "/:path*",
         headers: [
           {
             key: "Cache-Control",
+            value: "public, max-age=0, must-revalidate",
+          },
+          {
+            key: "Vercel-CDN-Cache-Control",
             value: "public, s-maxage=300, stale-while-revalidate=3600",
           },
         ],

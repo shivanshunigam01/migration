@@ -120,23 +120,41 @@ export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: SITE_NAME,
-    url: SITE_URL,
-    logo: `${SITE_URL}/nanak-migration-logo.png`,
-    image: DEFAULT_OG_IMAGE,
-    description:
-      "MARA-registered migration agents helping skilled workers, students and families with Australian visas.",
-    areaServed: "AU",
-    address: {
-      "@type": "PostalAddress",
-      addressCountry: "AU",
-    },
-    sameAs: [],
-    identifier: {
-      "@type": "PropertyValue",
-      name: "MARN",
-      value: "2619467",
-    },
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/nanak-migration-logo.png`,
+        image: DEFAULT_OG_IMAGE,
+        identifier: {
+          "@type": "PropertyValue",
+          name: "MARN",
+          value: "2619467",
+        },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${SITE_URL}/#professional-service`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        logo: `${SITE_URL}/nanak-migration-logo.png`,
+        image: DEFAULT_OG_IMAGE,
+        description:
+          "MARA-registered migration agents helping skilled workers, students and families with Australian visas.",
+        areaServed: "AU",
+        address: {
+          "@type": "PostalAddress",
+          addressCountry: "AU",
+        },
+        sameAs: [],
+        identifier: {
+          "@type": "PropertyValue",
+          name: "MARN",
+          value: "2619467",
+        },
+      },
+    ],
   }
 }

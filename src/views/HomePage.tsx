@@ -23,6 +23,7 @@ import { Reveal, Stagger, StaggerItem, ShieldGlow } from '@/components/motion'
 import { fadeUp, slideRight, staggerContainer } from '@/components/motion/variants'
 import { GlowButton } from '@/components/ui/GlowButton'
 import { usePageFaqQa } from '@/hooks/usePageFaqs'
+import StructuredData from '@/components/page/StructuredData'
 
 /* ── Data ─────────────────────────────────────────────── */
 const VISA_TYPES = [
@@ -571,6 +572,12 @@ export default function HomePage() {
           },
         ],
       }) }} />
+
+      <StructuredData
+        pageKey="homepage"
+        breadcrumbs={[{ name: 'Home', url: 'https://www.nanakmigration.com.au/' }]}
+        faqs={FAQS.map((f) => ({ question: f.q, answer: f.a }))}
+      />
 
       {/* ── SITE HEADER ───────────────────────────────────── */}
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />

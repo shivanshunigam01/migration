@@ -5,6 +5,7 @@ import SiteHeader from "@/components/layout/SiteHeader"
 import SiteFooter from "@/components/layout/SiteFooter"
 import { PageHero } from "@/components/page/PageHero"
 import { ComplianceDisclaimer } from "@/components/page/ComplianceDisclaimer"
+import StructuredData from "@/components/page/StructuredData"
 import { NAV_ITEMS } from "@/data/navItems"
 import { usePageSeo } from "@/lib/usePageSeo"
 
@@ -465,8 +466,17 @@ export default function LegalPage({
     primaryKeyword: c.title.toLowerCase(),
   })
 
+  const slug = kind === "ai-policy" ? "ai-policy" : kind
+  const pageTitle = COPY[kind].title
+
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: "#fff", color: TEXT }}>
+      <StructuredData
+        breadcrumbs={[
+          { name: "Home", url: "https://www.nanakmigration.com.au/" },
+          { name: pageTitle, url: `https://www.nanakmigration.com.au/${slug}` },
+        ]}
+      />
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
       <PageHero
         navigate={navigate}

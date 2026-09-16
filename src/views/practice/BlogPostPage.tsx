@@ -5,7 +5,6 @@ import SiteHeader from "@/components/layout/SiteHeader"
 import SiteFooter from "@/components/layout/SiteFooter"
 import { PageHero } from "@/components/page/PageHero"
 import { ComplianceDisclaimer } from "@/components/page/ComplianceDisclaimer"
-import StructuredData from "@/components/page/StructuredData"
 import { NAV_ITEMS } from "@/data/navItems"
 import { ROUTE } from "@/data/routes"
 import { fetchBlogBySlug, type PublicBlogPost } from "@/lib/contentApi"
@@ -107,21 +106,7 @@ export default function BlogPostPage({
 
   return (
     <div style={{ fontFamily: "'Gilroy', sans-serif", background: "#fff", color: TEXT }}>
-      {/* Client schema kept as supplement; server page also emits BlogPosting + breadcrumbs */}
-      <StructuredData
-        breadcrumbs={[
-          { name: "Home", url: "https://www.nanakmigration.com.au/" },
-          { name: "Blog", url: `https://www.nanakmigration.com.au/${ROUTE.blog}` },
-          { name: displayTitle, url: `https://www.nanakmigration.com.au/${ROUTE.blog}/${slug}` },
-        ]}
-        blogPosting={{
-          headline: displayTitle,
-          description: post.standfirst,
-          url: `https://www.nanakmigration.com.au/${ROUTE.blog}/${slug}`,
-          datePublished: post.publishedAt,
-          dateModified: post.publishedAt,
-        }}
-      />
+      {/* BlogPosting + breadcrumbs are emitted once in app/blog/[slug]/page.tsx (server HTML). */}
       <SiteHeader navigate={navigate} navItems={NAV_ITEMS} />
 
       <PageHero

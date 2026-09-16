@@ -6,6 +6,7 @@ import { pathnameToRouteKey } from "@/lib/pathnameToRouteKey"
 import { getPublicSitemapPaths } from "@/data/publicPaths"
 import { isKnownPublicPath } from "@/lib/isKnownPublicPath"
 import { SITE_NAME } from "@/data/site"
+import { cmsFaqsToMap, getFaqs } from "@/lib/faqs"
 
 type Props = { params: Promise<{ slug: string[] }> }
 
@@ -51,5 +52,8 @@ export default async function CatchAllPage({ params }: Props) {
   const { slug } = await params
   const path = slug.join("/")
   if (!isKnownPublicPath(path)) notFound()
-  return <PageRenderer path={path} />
+  const routeKey = pathnameToRouteKey(`/${path}`) || path
+  const faqs = await getFaqs(routeKey)
+  const cmsFaqs = cmsFaqsToMap(routeKey, faqs)
+  return <PageRenderer path={path} cmsFaqs={cmsFaqs} />
 }

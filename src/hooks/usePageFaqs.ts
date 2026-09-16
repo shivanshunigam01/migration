@@ -2,25 +2,22 @@
 
 import { useEffect, useRef, useState } from "react"
 import { useRouteKey } from "@/components/page/RouteKeyContext"
+import { useCmsFaqsFromContext } from "@/context/CmsFaqContext"
 import type { FaqItem } from "@/components/page/FaqAccordion"
 import { fetchFaqByPageKey } from "@/lib/contentApi"
+import { faqPageKeys } from "@/lib/faqKeys"
 
-/** Alias CMS keys so homepage works as both `home` (SEO) and `homepage` (legacy FAQ). */
-export function faqPageKeys(routeKey: string): string[] {
-  const key = routeKey.replace(/^\/+|\/+$/g, "").toLowerCase() || "home"
-  if (key === "home" || key === "homepage") return ["homepage", "home"]
-  return [key]
-}
+export { faqPageKeys }
 
 type CmsFaq = { q: string; a: string }
 
-const cache = new Map<string, Promise<CmsFaq[] | null>>()
+const clientCache = new Map<string, Promise<CmsFaq[] | null>>()
 
 async function loadCmsFaqs(routeKey: string): Promise<CmsFaq[] | null> {
   const keys = faqPageKeys(routeKey)
   const cacheKey = keys.join("|")
-  if (!cache.has(cacheKey)) {
-    cache.set(
+  if (!clientCache.has(cacheKey)) {
+    clientCache.set(
       cacheKey,
       (async () => {
         for (const key of keys) {
@@ -37,7 +34,7 @@ async function loadCmsFaqs(routeKey: string): Promise<CmsFaq[] | null> {
       })()
     )
   }
-  return cache.get(cacheKey)!
+  return clientCache.get(cacheKey)!
 }
 
 function normalizeFallback(items: FaqItem[]): FaqItem[] {
@@ -52,17 +49,24 @@ function toFaqItems(rows: CmsFaq[]): FaqItem[] {
 }
 
 /**
- * Resolve FAQs for the current page: CMS collection by routeKey when published,
- * otherwise the hardcoded fallback from the page component.
+ * Resolve FAQs for the current page: server-provided CMS data first (SSR HTML),
+ * then client refresh, otherwise the hardcoded fallback from the page component.
  */
 export function usePageFaqs(fallback: FaqItem[], pageKey?: string | null): FaqItem[] {
   const ctxKey = useRouteKey()
   const key = (pageKey || ctxKey || "").trim()
   const fallbackRef = useRef(fallback)
   fallbackRef.current = fallback
-  const [items, setItems] = useState<FaqItem[]>(() => normalizeFallback(fallback))
+  const serverFaqs = useCmsFaqsFromContext(key)
+  const [items, setItems] = useState<FaqItem[]>(() =>
+    serverFaqs?.length ? serverFaqs : normalizeFallback(fallback)
+  )
 
   useEffect(() => {
+    if (serverFaqs?.length) {
+      setItems(serverFaqs)
+      return
+    }
     setItems(normalizeFallback(fallbackRef.current))
     if (!key) return
     let cancelled = false
@@ -73,7 +77,7 @@ export function usePageFaqs(fallback: FaqItem[], pageKey?: string | null): FaqIt
     return () => {
       cancelled = true
     }
-  }, [key])
+  }, [key, serverFaqs])
 
   return items
 }
