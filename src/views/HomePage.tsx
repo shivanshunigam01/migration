@@ -1159,9 +1159,11 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          <GlowButton size="lg" variant="gold" onClick={() => navigate('tools')} style={{ flexShrink: 0 }}>
-            Explore all tools →
-          </GlowButton>
+          <Link to="/tools" style={{ textDecoration: 'none', flexShrink: 0 }}>
+            <GlowButton as="button" type="button" size="lg" variant="gold">
+              Explore all tools →
+            </GlowButton>
+          </Link>
         </Reveal>
       </section>
 
@@ -1541,13 +1543,11 @@ export default function HomePage() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.29 6.29l.52-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/>
               </svg>
             </a>
-            <GlowButton
-              size="md"
-              variant="gold"
-              onClick={() => navigate('contact')}
-            >
-              Book a free eligibility call
-            </GlowButton>
+            <Link to="/book-consultation" style={{ textDecoration: 'none' }}>
+              <GlowButton as="button" type="button" size="md" variant="gold">
+                Book a free eligibility call
+              </GlowButton>
+            </Link>
           </div>
         </div>
       )}

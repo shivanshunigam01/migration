@@ -17,6 +17,7 @@ import {
   useEffect,
   useMemo,
   type AnchorHTMLAttributes,
+  type MouseEvent,
   type ReactNode,
 } from "react"
 
@@ -42,13 +43,66 @@ function toHref(to: To): string {
   return `${path}${search}${hash}`
 }
 
+function normalizePath(path: string): string {
+  const base = path.split("#")[0]?.split("?")[0] ?? "/"
+  return base.replace(/\/+$/, "") || "/"
+}
+
 export const Link = forwardRef<
   HTMLAnchorElement,
   AnchorHTMLAttributes<HTMLAnchorElement> & { to: To; replace?: boolean }
->(function Link({ to, replace, children, ...rest }, ref) {
+>(function Link({ to, replace, children, onClick, ...rest }, ref) {
+  const router = useRouter()
+  const pathname = usePathname() || "/"
   const href = toHref(to)
+
+  const handleClick = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
+      onClick?.(e)
+      if (e.defaultPrevented) return
+      if (
+        href.startsWith("http") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        e.metaKey ||
+        e.ctrlKey ||
+        e.shiftKey ||
+        e.altKey ||
+        e.button !== 0
+      ) {
+        return
+      }
+
+      const targetPath = normalizePath(href)
+      const currentPath = normalizePath(pathname)
+      if (targetPath === currentPath && !href.includes("#")) return
+
+      e.preventDefault()
+      if (replace) router.replace(href)
+      else router.push(href)
+
+      // Leaving `/` used to stay on the home segment; hard-nav if soft routing stalls.
+      if (currentPath === "/") {
+        window.setTimeout(() => {
+          const live = normalizePath(window.location.pathname)
+          if (live === "/" && targetPath !== "/") {
+            window.location.assign(href)
+          }
+        }, 120)
+      }
+    },
+    [href, onClick, pathname, replace, router],
+  )
+
   return (
-    <NextLink ref={ref} href={href} replace={replace} scroll={!href.includes("#")} {...rest}>
+    <NextLink
+      ref={ref}
+      href={href}
+      replace={replace}
+      scroll={!href.includes("#")}
+      onClick={handleClick}
+      {...rest}
+    >
       {children}
     </NextLink>
   )
@@ -60,6 +114,8 @@ export function NavLink(props: AnchorHTMLAttributes<HTMLAnchorElement> & { to: T
 
 export function useNavigate() {
   const router = useRouter()
+  const pathname = usePathname() || "/"
+
   return useCallback(
     (to: To | number, opts?: { replace?: boolean }) => {
       if (typeof to === "number") {
@@ -68,17 +124,27 @@ export function useNavigate() {
         return
       }
       const href = toHref(to)
+      const targetPath = normalizePath(href)
+      const currentPath = normalizePath(pathname)
+
       if (opts?.replace) router.replace(href)
       else router.push(href)
+
+      if (currentPath === "/" && targetPath !== "/") {
+        window.setTimeout(() => {
+          const live = normalizePath(window.location.pathname)
+          if (live === "/" && targetPath !== "/") {
+            window.location.assign(href)
+          }
+        }, 120)
+      }
     },
-    [router],
+    [pathname, router],
   )
 }
 
 export function useLocation() {
   const pathname = usePathname() || "/"
-  // Do NOT call useSearchParams() here — it forces a CSR bailout for the whole route
-  // (empty HTML body for crawlers). Read search/hash only on the client after mount.
   const search =
     typeof window !== "undefined" && window.location.search ? window.location.search : ""
   const hash =
@@ -97,7 +163,6 @@ export function useLocation() {
 
 export function useParams<T extends Record<string, string | string[]> = Record<string, string>>() {
   const params = useNextParams()
-  // Next catch-all gives string[]; blog/[slug] gives string — normalize slug to string when array of 1
   const out: Record<string, string> = {}
   for (const [k, v] of Object.entries(params || {})) {
     if (Array.isArray(v)) out[k] = v[v.length - 1] || v.join("/")
@@ -148,7 +213,6 @@ export function useSearchParams() {
     [pathname, router],
   )
 
-  // Match react-router-dom tuple API: const [params] = useSearchParams()
   return [params, setSearchParams] as const
 }
 
