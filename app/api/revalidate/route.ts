@@ -1,4 +1,4 @@
-import { revalidateTag } from "next/cache"
+import { revalidatePath, revalidateTag } from "next/cache"
 import { timingSafeEqual } from "node:crypto"
 import type { NextRequest } from "next/server"
 
@@ -20,10 +20,19 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json().catch(() => ({}))
   const tags: string[] = Array.isArray(body.tags) ? body.tags : ["faqs"]
+  const paths: string[] = Array.isArray(body.paths) ? body.paths : []
 
   for (const tag of tags) {
     if (typeof tag === "string" && tag.trim()) revalidateTag(tag.trim())
   }
 
-  return Response.json({ revalidated: true, tags, now: Date.now() })
+  const revalidatedPaths: string[] = []
+  for (const path of paths) {
+    if (typeof path === "string" && path.startsWith("/")) {
+      revalidatePath(path)
+      revalidatedPaths.push(path)
+    }
+  }
+
+  return Response.json({ revalidated: true, tags, paths: revalidatedPaths, now: Date.now() })
 }

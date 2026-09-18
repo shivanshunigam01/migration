@@ -8,7 +8,9 @@ import { fetchPublishedNewsSSR } from "@/lib/serverContent"
 
 type Props = { params: Promise<{ slug: string }> }
 
-export const dynamicParams = false
+/** Allow news posts published after deploy (Runway) — not only build-time slugs. */
+export const dynamicParams = true
+export const revalidate = 60
 
 export async function generateStaticParams() {
   try {

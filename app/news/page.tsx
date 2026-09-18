@@ -4,6 +4,8 @@ import NewsListingClient from "./NewsListingClient"
 import { fetchNewsOrBlogFallbackSSR } from "@/lib/serverContent"
 import { cleanBlogTitle } from "@/lib/contentApi"
 
+export const revalidate = 60
+
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata("news")
 }
