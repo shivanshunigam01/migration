@@ -21,4 +21,7 @@ export const LEGACY_ROUTE_REDIRECTS: Record<string, string> = {
   book: "book-consultation",
   "skills-in-demand-482": "skills-in-demand-visa",
   "student-visa": "student-visa-500",
+  "employer-nomination-186": "employer-nomination-scheme",
+  "482-to-pr": "482-to-pr-pathway",
+  "pre-assessment": "book-consultation",
 }

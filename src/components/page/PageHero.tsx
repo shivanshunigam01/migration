@@ -1,4 +1,23 @@
 import React from 'react'
+
+/** Split hero titles use <br />; crawlers need a real space between lines (audit T31). */
+function normalizeHeroTitle(title: React.ReactNode): React.ReactNode {
+  if (!React.isValidElement(title) || title.type !== React.Fragment) return title
+  const kids = React.Children.toArray(title.props.children)
+  const brIndex = kids.findIndex((k) => React.isValidElement(k) && k.type === 'br')
+  if (brIndex === -1) return title
+  const before = kids.slice(0, brIndex)
+  const after = kids.slice(brIndex + 1)
+  return (
+    <>
+      {before}
+      {' '}
+      <span className="page-hero-h1-line2" style={{ display: 'block' }}>
+        {after}
+      </span>
+    </>
+  )
+}
 import { Link } from 'react-router-dom'
 import { motion, useReducedMotion } from 'framer-motion'
 import Icon from '@/components/ui/Icon'
@@ -88,8 +107,8 @@ export function PageHero({
         </motion.div>
       )}
 
-      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontFamily: "'Gilroy', sans-serif", fontSize: variant === 'flagship' ? 'clamp(36px, 5vw, 54px)' : 'clamp(30px, 5vw, 56px)', fontWeight: 700, color: NAVY, lineHeight: 1.06, margin: '0 0 24px', letterSpacing: '-0.035em' }}>
-        {resolvedTitle}
+      <motion.h1 variants={fadeUp} className={variant === 'flagship' ? 'page-hero-h1 page-hero-h1-flagship' : 'page-hero-h1'} style={{ fontSize: variant === 'flagship' ? 'clamp(36px, 5vw, 54px)' : 'clamp(30px, 5vw, 56px)', fontWeight: 700, color: NAVY, lineHeight: 1.06, margin: '0 0 24px', letterSpacing: '-0.035em' }}>
+        {normalizeHeroTitle(resolvedTitle)}
       </motion.h1>
 
       {deckIsHtml ? (

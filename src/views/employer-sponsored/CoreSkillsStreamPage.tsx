@@ -12,6 +12,7 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
+import { CSIT_LABEL } from '@/lib/visa-constants'
 
 const CURRENT_AS_AT = 'August 2026'
 const ACCENT = CAT_EMPLOYER
@@ -31,7 +32,7 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   {
     icon: 'dollar',
-    value: '$79,499 p.a.',
+    value: CSIT_LABEL,
     label: 'Core Skills Income Threshold (CSIT)',
     note: 'Minimum annual earnings for Core Skills stream from 1 July 2026. Annual market salary rate must also be met. Figures current at August 2026.',
   },

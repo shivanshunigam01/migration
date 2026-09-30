@@ -30,6 +30,8 @@ async function fetchPublishedBlog(slug: string) {
     const json = await res.json()
     const post = json?.data
     if (!post || post.status !== "published") return null
+    const body = typeof post.body === "string" ? post.body.trim() : ""
+    if (!body) return null
     return post
   } catch {
     return null

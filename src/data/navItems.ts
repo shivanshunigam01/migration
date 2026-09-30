@@ -15,7 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
         viewAllRoute: ROUTE.employerSponsoredVisas,
         items: [
           { label: 'Employer Sponsored Visas (hub)', desc: 'Overview of all employer sponsorship pathways — start here.',           icon: 'briefcase', code: 'Hub',  route: ROUTE.employerSponsoredVisas },
-          { label: 'Skills in Demand (482)',          desc: 'Employer-sponsored temporary visa — Core Skills, Specialist and Foundation streams.', icon: 'star', code: 'SID',  route: ROUTE.skillsInDemandVisa },
+          { label: 'Skills in Demand (482)',          desc: 'Employer-sponsored temporary visa — Specialist Skills, Core Skills and Labour Agreement streams.', icon: 'star', code: 'SID',  route: ROUTE.skillsInDemandVisa },
           { label: 'Employer Nomination Scheme (186)', desc: 'Permanent residence via employer nomination.',                        icon: 'award',     code: '186',  route: ROUTE.employerNominationScheme },
           { label: '494 Regional Employer Sponsored', desc: '5-year provisional visa for workers in designated regional areas.',    icon: 'mappin',    code: '494',  route: ROUTE.visa494 },
           { label: '482 Core Skills Stream',          desc: 'For CSOL occupations meeting the CSIT ($79,499 p.a. from 1 Jul 2026).', icon: 'clipboard', code: 'Core', route: ROUTE.coreSkillsStream482 },

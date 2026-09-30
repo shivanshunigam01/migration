@@ -30,8 +30,10 @@ import Icon from '@/components/ui/Icon'
 import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
+import { SSIT_PLUS } from '@/lib/visa-constants'
 
 const CURRENT_AS_AT = 'August 2026'
+const SSIT_DISPLAY = `${SSIT_PLUS} p.a.`
 const ACCENT = CAT_EMPLOYER
 const BORDER = '#e8edf6'
 const GREY_BG = '#fafbfe'
@@ -51,7 +53,7 @@ const KEY_FACTS: KeyFact[] = [
   { icon: 'calendar', value: '28 days', label: 'Minimum advertising period', note: 'Advertising must run for at least 28 days before the nomination is lodged.' },
   { icon: 'clock', value: '4 months', label: 'Look-back window', note: 'Advertising must have occurred within the four months before nomination lodgement.' },
   { icon: 'building', value: '2+ platforms', label: 'Required advertising channels', note: 'Workforce Australia is mandatory. At least one additional platform must be used.' },
-  { icon: 'dollar', value: '$135,000+', label: 'Specialist stream LMT exemption', note: 'Nominations for the Specialist stream (earnings $135,000+ p.a.) are generally exempt from LMT.' },
+  { icon: 'dollar', value: SSIT_PLUS, label: 'Specialist Skills LMT exemption', note: `Nominations for the Specialist Skills stream (earnings ${SSIT_DISPLAY} from 1 July 2026) are generally exempt from LMT.` },
 ]
 
 const STEPS: TimelineStep[] = [
@@ -80,7 +82,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'Does LMT apply to all 482 nominations?',
-    answer: 'LMT applies to the Core Skills and Foundation streams of the subclass 482. The Specialist stream is generally exempt from LMT where the nominee\'s earnings will be $135,000 or more per annum. International trade obligations may also exempt certain nationalities — check with a registered migration agent.',
+    answer: `LMT applies to the Core Skills stream of the subclass 482. The Specialist Skills stream is generally exempt from LMT where the nominee's earnings will meet the SSIT (${SSIT_DISPLAY}). Labour Agreement streams follow the agreement terms. International trade obligations may also exempt certain nationalities — check with a registered migration agent.`,
   },
   {
     question: 'What counts as a compliant advertising platform?',
@@ -181,7 +183,7 @@ return (
             The Department of Home Affairs assesses LMT evidence as part of the nomination application. If LMT evidence is absent, incomplete or does not meet the regulatory standards, the nomination may be refused. Nanak Migration Group (MARN 2619467) assists employers in preparing LMT-compliant advertising strategies and nomination documentation.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#374151', marginTop: 16 }}>
-            LMT applies to nominations for the Core Skills and Foundation streams of the subclass 482 visa. The Specialist stream is generally exempt where the nominee will earn $135,000 or more per annum.
+            LMT applies to nominations for the Core Skills stream of the subclass 482 visa. The Specialist Skills stream is generally exempt where the nominee will meet the SSIT ({SSIT_DISPLAY}).
           </p>
         </div>
       </section>
@@ -219,7 +221,7 @@ return (
             intro="Certain nominations are exempt from LMT requirements under the Migration Regulations or international trade obligations." />
           <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
             {[
-              { heading: 'Specialist stream (earnings $135,000+)', detail: 'Nominations where the nominee will earn $135,000 or more per annum under the Specialist stream of the subclass 482 are generally exempt from LMT.' },
+              { heading: `Specialist Skills stream (SSIT ${SSIT_PLUS})`, detail: `Nominations where the nominee will meet the Specialist Skills Income Threshold (${SSIT_DISPLAY}) under the subclass 482 are generally exempt from LMT.` },
               { heading: 'International trade obligations', detail: "Nationals of countries with relevant free trade agreements (FTAs) with Australia may be exempt. This includes certain categories under the Australia–United States Free Trade Agreement (AUSFTA), the China–Australia Free Trade Agreement (ChAFTA), the Singapore–Australia Free Trade Agreement (SAFTA), the Thailand–Australia Free Trade Agreement (TAFTA), and the ASEAN–Australia–New Zealand Free Trade Agreement (AANZFTA). Each agreement has its own conditions and occupation lists." },
               { heading: 'Occupations on the LMT exemption list', detail: 'The Department of Home Affairs may publish or maintain a list of occupations that are exempt from LMT. Employers should check the current legislative instrument before commencing advertising.' },
             ].map(item => (
@@ -242,7 +244,7 @@ return (
             intro="Not all job advertising platforms satisfy the LMT requirement. The following guidance reflects current Departmental expectations." />
           <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
             {[
-              { platform: 'Workforce Australia', mandatory: true, detail: 'Previously known as jobactive/jobsearch.gov.au. Mandatory for most Core Skills and Foundation stream nominations. Register as an employer and post the vacancy through the platform.' },
+              { platform: 'Workforce Australia', mandatory: true, detail: 'Previously known as jobactive/jobsearch.gov.au. Mandatory for most Core Skills stream nominations. Register as an employer and post the vacancy through the platform.' },
               { platform: 'Seek', mandatory: false, detail: "One of Australia's largest job boards and widely accepted as a compliant second platform. National reach satisfies the requirement that advertising is likely to attract suitably qualified Australian workers." },
               { platform: 'LinkedIn', mandatory: false, detail: 'Accepted as a compliant national platform. Particularly appropriate for professional, managerial and specialist roles. Paid postings are preferred over free listings to demonstrate genuine advertising spend.' },
               { platform: 'Indeed', mandatory: false, detail: 'A national platform with broad coverage. Generally accepted as a compliant second platform. Sponsored postings are recommended to demonstrate genuine effort.' },

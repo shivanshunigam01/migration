@@ -6,6 +6,7 @@ import { GOLD, NAVY, NAVY_DARK, HERO_GRAD, CAT_EMPLOYER } from '@/theme'
 import Icon from '@/components/ui/Icon'
 import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
+import { CSIT_LABEL } from '@/lib/visa-constants'
 const TEAL = CAT_EMPLOYER
 const ACCENT = CAT_EMPLOYER
 
@@ -17,14 +18,15 @@ const ACCENT = CAT_EMPLOYER
 // Data
 // ---------------------------------------------------------------------------
 const REGIONAL_AREAS = [
-  { state: 'WA', label: 'All regional' },
-  { state: 'SA', label: 'All regional' },
-  { state: 'TAS', label: 'All regional' },
-  { state: 'NT', label: 'All regional' },
-  { state: 'ACT', label: 'Canberra included' },
-  { state: 'QLD', label: 'Regional (excl. Brisbane CBD)' },
-  { state: 'NSW', label: 'Regional (excl. Sydney / Newcastle / Wollongong CBDs)' },
-  { state: 'VIC', label: 'Regional (excl. Melbourne)' },
+  { state: 'Excluded', label: 'Sydney, Melbourne & Brisbane metropolitan areas', regional: false },
+  { state: 'NSW', label: 'Regional incl. Newcastle & Wollongong (Sydney metro excluded)', regional: true },
+  { state: 'VIC', label: 'Regional incl. Geelong (Melbourne metro excluded)', regional: true },
+  { state: 'QLD', label: 'Regional incl. Gold Coast (Brisbane metro excluded)', regional: true },
+  { state: 'WA', label: 'All regional (incl. Perth)', regional: true },
+  { state: 'SA', label: 'All regional (incl. Adelaide)', regional: true },
+  { state: 'TAS', label: 'All regional (incl. Hobart)', regional: true },
+  { state: 'NT', label: 'All regional', regional: true },
+  { state: 'ACT', label: 'Canberra — regional', regional: true },
 ]
 
 const STATS = [
@@ -38,7 +40,7 @@ const ELIGIBILITY = [
   { icon: 'briefcase', title: 'Approved Sponsor', body: 'Your employer must be an approved sponsor located in a designated regional area of Australia.' },
   { icon: 'list', title: 'Eligible Occupation', body: 'Your occupation must appear on the MLTSSL or STSOL plus the regional occupation list.' },
   { icon: 'file', title: 'Skills Assessment', body: 'A positive skills assessment from the relevant assessing authority is required before lodging.' },
-  { icon: 'dollar', title: 'TSMIT Compliance', body: 'Salary must meet the Temporary Skilled Migration Income Threshold (~$73,150 p.a.).' },
+  { icon: 'dollar', title: 'CSIT / TSMIT compliance', body: `Salary must meet the Core Skills Income Threshold (${CSIT_LABEL} from 1 July 2026) and the annual market salary rate.` },
   { icon: 'globe', title: 'English Language', body: 'At least "competent" English (IELTS 6.0 in each band, or equivalent).' },
   { icon: 'user', title: 'Age Under 45', body: 'You must be under 45 years of age at the time of invitation or application.' },
 ]
@@ -74,7 +76,7 @@ const CONSIDERATIONS = [
 const FAQS = [
   {
     q: 'What counts as a "designated regional area"?',
-    a: 'Most of Australia outside the major CBDs qualifies. Specifically excluded are the Sydney, Melbourne, and Brisbane CBD areas, as well as the Newcastle and Wollongong CBDs. Gold Coast, Adelaide, Hobart, Darwin, Canberra, and all of WA, SA, TAS, and NT are regional. Check the Department of Home Affairs postcode checker for specific locations.',
+    a: 'Designated regional areas exclude the Sydney, Melbourne and Brisbane metropolitan areas. Everywhere else is regional — including Perth, Adelaide, the Gold Coast, Canberra, Newcastle, Wollongong, Geelong and Hobart. Check the Department of Home Affairs designated regional area postcode list for a specific address.',
   },
   {
     q: 'Can I move to a different regional area while on the 494?',
@@ -220,13 +222,10 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                 </h3>
               </div>
               <p style={{ color: '#6b7280', fontSize: 14, marginBottom: 18 }}>
-                Most of Australia outside major CBDs qualifies. Check your state below.
+                Sydney, Melbourne and Brisbane metro areas are excluded. All other areas — including Newcastle, Wollongong, Geelong and the Gold Coast — are regional.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {REGIONAL_AREAS.map((r) => {
-                  const isFullRegional = ['WA', 'SA', 'TAS', 'NT'].includes(r.state)
-                  const isIncluded = r.state === 'ACT'
-                  return (
+                {REGIONAL_AREAS.map((r) => (
                     <div key={r.state} style={{
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                       background: '#f8fafc', borderRadius: 8,
@@ -236,17 +235,25 @@ export default function RegionalEmployer494Page({ navigate }: { navigate: (page:
                       <span style={{ color: NAVY, fontWeight: 600, fontSize: 15 }}>{r.state}</span>
                       <span style={{
                         fontSize: 13, fontWeight: 600, padding: '3px 10px', borderRadius: 100,
-                        background: isFullRegional || isIncluded
-                          ? 'rgba(3,105,161,0.2)' : 'rgba(245,161,36,0.15)',
-                        color: isFullRegional || isIncluded ? TEAL : GOLD,
-                        border: `1px solid ${isFullRegional || isIncluded ? 'rgba(3,105,161,0.3)' : 'rgba(245,161,36,0.3)'}`,
+                        background: r.regional ? 'rgba(3,105,161,0.2)' : 'rgba(220,38,38,0.12)',
+                        color: r.regional ? TEAL : '#b91c1c',
+                        border: `1px solid ${r.regional ? 'rgba(3,105,161,0.3)' : 'rgba(220,38,38,0.25)'}`,
                       }}>
                         {r.label}
                       </span>
                     </div>
-                  )
-                })}
+                  ))}
               </div>
+              <p style={{ marginTop: 14, fontSize: 13, lineHeight: 1.55 }}>
+                <a
+                  href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skill-occupation-list/designated-regional-area-postcodes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: TEAL, fontWeight: 600 }}
+                >
+                  Home Affairs regional postcode list →
+                </a>
+              </p>
               <p style={{ color: '#9ca3af', fontSize: 12, marginTop: 14, marginBottom: 0 }}>
                 Always verify your specific postcode via the Department of Home Affairs postcode checker.
               </p>

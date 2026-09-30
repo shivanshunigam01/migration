@@ -15,6 +15,7 @@ import { useSiteContent } from '@/hooks/useSiteContent'
 import { resolveRoute } from '@/lib/navigation'
 import { TurnstileField, turnstileConfigured } from '@/components/forms/TurnstileField'
 import { RelatedGuides } from '@/components/page/RelatedGuides'
+import { COPYRIGHT_LINE } from '@/lib/legal-entity'
 
 // ── JSON-LD ──────────────────────────────────────────────────────────────
 const jsonLd = {
@@ -24,6 +25,7 @@ const jsonLd = {
       '@type': ['Organization', 'ProfessionalService'],
       '@id': 'https://www.nanakmigration.com.au/#organization',
       name: 'Nanak Migration Group',
+      legalName: '1313 Success Group Pty Ltd',
       url: 'https://www.nanakmigration.com.au',
       logo: 'https://www.nanakmigration.com.au/logo.png',
       description:
@@ -890,7 +892,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
             }}
           >
             <span style={{ fontSize: 12, color: FOOTER_SOFT, whiteSpace: 'nowrap' }}>
-              © 2026 Nanak Migration Group Pty Ltd. All rights reserved.
+              {COPYRIGHT_LINE}. All rights reserved.
             </span>
             <span style={{ fontSize: 12, color: FOOTER_LINE }}>|</span>
             <span style={{ fontSize: 12, color: FOOTER_SOFT, whiteSpace: 'nowrap' }}>

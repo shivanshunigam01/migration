@@ -18,54 +18,54 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
+import { CSIT_LABEL, SSIT_PLUS, SID_COMMENCEMENT } from '@/lib/visa-constants'
 
 const CURRENT_AS_AT = 'August 2026'
 
-
 const streams = [
   {
-    key: 'foundation',
-    label: 'Foundation',
-    color: '#4f46e5',
-    duration: '2 years',
-    salary: 'No specific threshold',
-    lmt: 'Yes',
-    pr: 'No',
-    occupations: ['Meat worker', 'Aged care worker', 'Child care worker'],
-    note: 'Limited occupations. No pathway to permanent residence.',
-  },
-  {
-    key: 'core',
-    label: 'Core',
-    color: CAT_EMPLOYER,
-    duration: '4 years',
-    salary: 'TSMIT ~$73,150+',
-    lmt: 'Yes',
-    pr: 'Yes — via 186 TRT',
-    occupations: ['Accountant', 'Software engineer', 'Registered nurse'],
-    note: 'Most common stream. PR pathway via subclass 186 after 2 years.',
-  },
-  {
     key: 'specialist',
-    label: 'Specialist',
+    label: 'Specialist Skills',
     color: GOLD,
-    duration: '4 years',
-    salary: '$135,000+ earnings',
+    duration: 'Up to 4 years',
+    salary: `${SSIT_PLUS} p.a. (SSIT)`,
     lmt: 'No',
     pr: 'Yes — via 186 TRT',
     occupations: ['Senior executive', 'Data scientist', 'Specialist surgeon'],
-    note: 'No LMT required. Fast-tracked processing for high earners.',
+    note: 'No LMT required. For high-income specialists meeting the Specialist Skills Income Threshold.',
+  },
+  {
+    key: 'core',
+    label: 'Core Skills',
+    color: CAT_EMPLOYER,
+    duration: 'Up to 4 years',
+    salary: `${CSIT_LABEL} (CSIT)`,
+    lmt: 'Yes',
+    pr: 'Yes — via 186 TRT',
+    occupations: ['Accountant', 'Software engineer', 'Registered nurse'],
+    note: 'Most common stream. Occupation on the Core Skills Occupation List. PR pathway via subclass 186 after 2 years.',
+  },
+  {
+    key: 'labour',
+    label: 'Labour Agreement',
+    color: '#4f46e5',
+    duration: 'As per agreement',
+    salary: 'As per labour agreement',
+    lmt: 'Varies',
+    pr: 'May be available',
+    occupations: ['Roles covered by an approved agreement'],
+    note: 'Requires a labour agreement between the employer and the Australian Government.',
   },
 ]
 
 const faqs = [
   {
     q: 'How does the 482 SID differ from the old TSS visa?',
-    a: 'The Skills in Demand (subclass 482) replaced the Temporary Skills Shortage (TSS) visa in November 2024. Key changes include the introduction of three distinct streams (Foundation, Core, Specialist) replacing the Short-Term and Medium-Term streams, a new salary-based Specialist stream, and clearer PR pathways. The SBS (Standard Business Sponsorship) requirement remains.',
+    a: `The Skills in Demand (subclass 482) replaced the Temporary Skills Shortage (TSS) visa from ${SID_COMMENCEMENT}. Key changes include Specialist Skills, Core Skills and Labour Agreement streams (replacing the old short- and medium-term streams), updated income thresholds and clearer PR pathways. Standard Business Sponsorship still applies.`,
   },
   {
     q: 'Is Labour Market Testing (LMT) required?',
-    a: 'LMT is required for the Core stream — the employer must demonstrate they attempted to recruit an Australian citizen or permanent resident before nominating an overseas worker. The Specialist stream is exempt from LMT due to the high salary threshold ($135,000+). The Foundation stream also requires LMT.',
+    a: `LMT is required for the Core Skills stream — the employer must demonstrate they attempted to recruit an Australian citizen or permanent resident before nominating an overseas worker. The Specialist Skills stream is generally exempt from LMT where earnings meet the SSIT (${SSIT_PLUS} p.a. from 1 July 2026). Labour Agreement streams follow the terms of the agreement.`,
   },
   {
     q: 'Can my family members come with me on a 482 visa?',
@@ -90,7 +90,7 @@ const faqItems: FaqItem[] = faqs.map(f => ({ question: f.q, answer: f.a }))
 const eligibilityItems = [
   { icon: 'briefcase', title: 'Employer sponsorship', desc: 'Your employer must hold or apply for Standard Business Sponsorship (SBS) before nominating you.' },
   { icon: 'file', title: 'Approved occupation', desc: 'The nominated occupation must appear on the relevant MLTSSL, STSOL, or regional occupation list for the stream.' },
-  { icon: 'dollar', title: 'Salary threshold (TSMIT)', desc: 'Core stream requires earnings at or above the Temporary Skilled Migration Income Threshold (~$73,150 p.a.). Specialist stream requires $135,000+.' },
+  { icon: 'dollar', title: 'Salary threshold', desc: `Core Skills stream requires earnings at or above the CSIT (${CSIT_LABEL} from 1 July 2026). Specialist Skills stream requires the SSIT (${SSIT_PLUS} p.a.).` },
   { icon: 'user', title: 'Skills & qualifications', desc: 'Relevant qualifications, skills assessment (for some occupations), and at least 2 years of relevant work experience.' },
   { icon: 'shield', title: 'English language', desc: 'At least competent English (IELTS 6 or equivalent). Some Specialist stream high earners may be exempt.' },
   { icon: 'calendar', title: 'Age under 45', desc: 'You must be under 45 at the time of visa application. Limited exemptions apply for certain roles and streams.' },
@@ -101,14 +101,14 @@ const steps = [
   { num: '02', title: 'Employer lodges nomination', desc: 'The employer nominates the position and occupation, demonstrating the role meets salary and LMT requirements.' },
   { num: '03', title: 'You apply for the visa', desc: 'Once the nomination is approved (or concurrently), you lodge the subclass 482 visa application with supporting documents.' },
   { num: '04', title: 'Visa granted — begin work', desc: 'On grant, you (and any secondary applicants) can enter Australia and commence work in the nominated occupation.' },
-  { num: '05', title: 'Transition to 186 ENS (optional)', desc: 'After 2 years in the Core or Specialist stream, apply for permanent residence via the 186 TRT stream with the same employer.' },
+  { num: '05', title: 'Transition to 186 ENS (optional)', desc: 'After 2 years in the Core Skills or Specialist Skills stream, apply for permanent residence via the 186 TRT stream with the same employer.' },
 ]
 
 const RELATED: RelatedPage[] = [
-  { title: 'Employer Nomination Scheme (186)', desc: 'The permanent residence pathway for 482 Core and Specialist stream holders.', icon: 'trending', page: 'employer-nomination-186', color: CAT_EMPLOYER },
+  { title: 'Employer Nomination Scheme (186)', desc: 'The permanent residence pathway for 482 Core and Specialist stream holders.', icon: 'trending', page: 'employer-nomination-scheme', color: CAT_EMPLOYER },
   { title: 'Standard Business Sponsorship', desc: 'Your employer must obtain SBS before nominating you on a 482.', icon: 'briefcase', page: 'standard-business-sponsorship', color: CAT_EMPLOYER },
   { title: 'English Requirements', desc: 'Competent English is required for most 482 applicants — see approved tests and scores.', icon: 'globe', page: 'english-requirements', color: CAT_EMPLOYER },
-  { title: '482 Pathway to PR', desc: 'How to transition from the Skills in Demand visa to permanent residence.', icon: 'shield', page: '482-to-pr', color: CAT_EMPLOYER },
+  { title: '482 Pathway to PR', desc: 'How to transition from the Skills in Demand visa to permanent residence.', icon: 'shield', page: '482-to-pr-pathway', color: CAT_EMPLOYER },
 ]
 
 export default function SkillsInDemand482Page({ navigate }: { navigate: (page: string) => void }) {
@@ -233,7 +233,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
         variant="flagship"
         eyebrow="Employer Sponsored · Subclass 482"
         title={<>Skills in Demand Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 482</em></>}
-        deck="A temporary employer-sponsored visa for skilled workers across three streams based on salary and occupation type. Replaced the TSS visa in November 2024."
+        deck={`A temporary employer-sponsored visa for skilled workers across Specialist Skills, Core Skills and Labour Agreement streams. Commenced ${SID_COMMENCEMENT}, replacing the TSS visa.`}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
@@ -345,11 +345,11 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
               </thead>
               <tbody>
                 {[
-                  { label: 'Duration', vals: ['2 years', '4 years', '4 years'] },
-                  { label: 'Salary threshold', vals: ['No TSMIT', '~$73,150', '$135,000+'] },
-                  { label: 'LMT required', vals: ['Yes', 'Yes', 'No'] },
-                  { label: 'PR pathway', vals: ['No', 'Yes (186)', 'Yes (186)'] },
-                  { label: 'Skills assessment', vals: ['Sometimes', 'Sometimes', 'Rarely'] },
+                  { label: 'Duration', vals: streams.map((s) => s.duration) },
+                  { label: 'Salary threshold', vals: streams.map((s) => s.salary) },
+                  { label: 'LMT required', vals: ['No', 'Yes', 'Varies'] },
+                  { label: 'PR pathway', vals: ['Yes (186)', 'Yes (186)', 'May apply'] },
+                  { label: 'Skills assessment', vals: ['Sometimes', 'Sometimes', 'Varies'] },
                   { label: 'English requirement', vals: ['Competent', 'Competent', 'Competent*'] },
                 ].map((row, i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? '#f8fafc' : 'white', borderTop: '1px solid #e2e8f0' }}>

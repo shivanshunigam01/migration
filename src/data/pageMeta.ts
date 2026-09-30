@@ -103,12 +103,12 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '482-core-skills-stream': {
     title: '482 Core Skills Stream — Skills in Demand Visa | Nanak Migration Group',
-    metaDescription: 'The Core Skills stream of the subclass 482 Skills in Demand visa requires a CSOL occupation and CSIT salary of $79,499 p.a. from 1 July 2026. Agent MARN 2619467.',
+    metaDescription: 'The Core Skills stream of the subclass 482 Skills in Demand visa requires a CSOL occupation and CSIT salary of $79,423 p.a. from 1 July 2026. Agent MARN 2619467.',
     primaryKeyword: '482 core skills stream CSOL CSIT',
   },
   '482-specialist-skills-stream': {
     title: '482 Specialist Skills Stream — Skills in Demand Visa | Nanak Migration Group',
-    metaDescription: 'The Specialist Skills stream of the subclass 482 visa requires earnings of $146,717 p.a. (SSIT from 1 July 2026) and is exempt from Labour Market Testing. MARN 2619467.',
+    metaDescription: 'The Specialist Skills stream of the subclass 482 visa requires earnings of $146,576 p.a. (SSIT from 1 July 2026) and is exempt from Labour Market Testing. MARN 2619467.',
     primaryKeyword: '482 specialist skills stream SSIT no LMT',
   },
   '482-to-pr-pathway': {

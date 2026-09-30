@@ -137,7 +137,7 @@ export default function AboutPage({ navigate }: { navigate: (page: string) => vo
               />
               <div>
                 <div style={{ fontSize: 13, color: '#6b7280', fontWeight: 500 }}>Founded by</div>
-                <div style={{ fontSize: 17, fontWeight: 700, color: NAVY }}>Nanak Migration Group</div>
+                <div style={{ fontSize: 17, fontWeight: 700, color: NAVY }}>Navpreet Aulakh</div>
               </div>
             </div>
 

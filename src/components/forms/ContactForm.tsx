@@ -145,7 +145,8 @@ export default function ContactForm() {
             style={{ marginTop: 3, flexShrink: 0 }}
           />
           <span style={{ fontSize: 13, color: "#6b7280", lineHeight: 1.55 }}>
-            I consent to Nanak Migration Group contacting me by email about my enquiry. General information only — not legal or migration advice.
+            I consent to Nanak Migration Group contacting me by email
+            {mobile.trim() ? ', phone or SMS' : ''} about my enquiry. General information only — not legal or migration advice.
           </span>
         </label>
         <TurnstileField onToken={setTurnstileToken} />

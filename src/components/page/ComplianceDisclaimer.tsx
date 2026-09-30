@@ -78,7 +78,7 @@ export function ComplianceDisclaimer({
         <div>
           <div style={microHeading}>No outcome representation</div>
           <p style={bodyText}>
-            Nanak Migration Group Pty Ltd makes no representation that information on this site is complete, current or applicable to your circumstances. Nothing here guarantees, implies or represents any visa outcome, approval likelihood or processing time.
+            1313 Success Group Pty Ltd trading as Nanak Migration Group makes no representation that information on this site is complete, current or applicable to your circumstances. Nothing here guarantees, implies or represents any visa outcome, approval likelihood or processing time.
           </p>
         </div>
         <div>

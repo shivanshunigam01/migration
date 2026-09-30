@@ -739,7 +739,7 @@ export default function HomePage() {
               {
                 id: 'refused',
                 label: 'My visa was refused or cancelled',
-                desc: 'Review rights, AAT/ART applications and complex case options.',
+                desc: 'Review rights, ART applications and complex case options.',
                 cta: 'Explore review options',
                 route: 'visa-refusal-review',
                 icon: (

@@ -153,7 +153,7 @@ const FAQS: FaqItem[] = [
 
 const RELATED: RelatedPage[] = [
   { title: 'Skills in Demand (482)', desc: 'The most common visa that requires SBS — temporary sponsorship up to 4 years.', icon: 'zap', page: 'skills-in-demand-visa', color: CAT_EMPLOYER },
-  { title: 'Employer Nomination (186)', desc: 'Permanent residence for nominated skilled workers.', icon: 'shield', page: 'employer-nomination-186', color: CAT_EMPLOYER },
+  { title: 'Employer Nomination (186)', desc: 'Permanent residence for nominated skilled workers.', icon: 'shield', page: 'employer-nomination-scheme', color: CAT_EMPLOYER },
   { title: 'Employer Sponsorship Hub', desc: 'Overview of all employer-sponsored visa options.', icon: 'briefcase', page: 'employer-sponsorship', color: CAT_EMPLOYER },
 ]
 

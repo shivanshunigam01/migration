@@ -91,7 +91,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Does the SAF Levy apply to all 482 streams?',
-    answer: 'The SAF Levy applies to nominations for the Core Skills, Specialist and Foundation streams of the subclass 482. Certain exempt categories exist for non-profits and specific program nominations. Confirm whether any exemption applies to your situation before lodging.',
+    answer: 'The SAF Levy applies to nominations for the Specialist Skills, Core Skills and Labour Agreement streams of the subclass 482. Certain exempt categories exist for non-profits and specific program nominations. Confirm whether any exemption applies to your situation before lodging.',
   },
 ]
 
@@ -218,11 +218,11 @@ return (
               </div>
             </div>
 
-            {/* 482 Foundation */}
+            {/* 482 Labour Agreement */}
             <div style={{ background: '#fff', borderRadius: 14, border: `1px solid ${BORDER}`, overflow: 'hidden' }}>
               <div style={{ background: ACCENT, padding: '16px 24px' }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.8)', marginBottom: 2 }}>482 Foundation Stream</div>
-                <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>2-year visa</div>
+                <div style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.8)', marginBottom: 2 }}>482 Labour Agreement stream</div>
+                <div style={{ fontSize: 18, fontWeight: 700, color: '#fff' }}>Term as per agreement</div>
               </div>
               <div style={{ padding: '20px 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: 14, borderBottom: `1px solid ${BORDER}` }}>

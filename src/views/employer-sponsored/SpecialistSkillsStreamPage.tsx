@@ -116,7 +116,7 @@ const RELATED: RelatedPage[] = [
   },
   {
     title: 'Skills in Demand Visa (482)',
-    desc: 'Full overview of all three 482 streams — Core Skills, Specialist Skills and Foundation.',
+    desc: 'Full overview of all three 482 streams — Specialist Skills, Core Skills and Labour Agreement.',
     icon: 'star',
     page: 'skills-in-demand-visa',
     color: CAT_EMPLOYER,

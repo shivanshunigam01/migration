@@ -18,8 +18,10 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
+import { TSMIT_LABEL } from '@/lib/visa-constants'
 
 const CURRENT_AS_AT = 'August 2026'
+const TSMIT_DISPLAY = `${TSMIT_LABEL} (from 1 July 2026)`
 
 const EMPLOYER_RELATED: RelatedPage[] = [
   { title: 'Employer Nomination Scheme (186)', desc: 'Permanent residency via employer nomination.', icon: 'award', page: 'employer-nomination-scheme' },
@@ -67,8 +69,8 @@ const VISA_INFO = [
     tagColor: GOLD,
     duration: 'Up to 4 years',
     prPathway: 'Yes — via 186',
-    stream: 'Medium-term or Short-term',
-    tsmit: '$73,150 (2024–25)',
+    stream: 'Specialist Skills, Core Skills or Labour Agreement',
+    tsmit: TSMIT_DISPLAY,
     summary: 'The go-to visa for businesses needing to fill skill gaps quickly. Sponsor overseas workers in approved occupations while they build a pathway to permanent residence.',
     bestFor: ['Filling immediate skill shortages', 'Tech, healthcare, trades', 'Businesses of any size'],
     obligations: ['Pay equivalent local salary', 'Maintain sponsorship approval', 'Notify DHA of changes'],
@@ -82,7 +84,7 @@ const VISA_INFO = [
     duration: 'Permanent',
     prPathway: 'This IS PR',
     stream: 'Direct Entry or TRT',
-    tsmit: '$73,150 (2024–25)',
+    tsmit: TSMIT_DISPLAY,
     summary: 'Nominate a skilled worker for permanent residence directly, or via the Temporary Residence Transition stream after 3 years on a 482 visa.',
     bestFor: ['Long-term retention of key staff', 'Rewarding 482 visa holders', 'Direct entry for experienced workers'],
     obligations: ['Genuine position must exist', 'Pay at least the nominated salary', 'Ongoing business operation'],
@@ -96,7 +98,7 @@ const VISA_INFO = [
     duration: '5 years',
     prPathway: 'Yes — via 191 after 3 yrs',
     stream: 'Employer Sponsored',
-    tsmit: '$73,150 (2024–25)',
+    tsmit: TSMIT_DISPLAY,
     summary: 'Sponsor skilled workers to live and work in designated regional Australia. Stronger occupation lists and a clear pathway to permanent residence via Subclass 191.',
     bestFor: ['Regional employers outside major cities', 'Agriculture, mining, healthcare in regions', 'Businesses wanting longer tenure'],
     obligations: ['Business must be in designated regional area', 'Worker must live and work regionally', 'Adhere to labour market requirements'],
