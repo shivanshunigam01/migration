@@ -64,6 +64,9 @@ export interface PageHeroProps {
   rightColumn?: React.ReactNode
   /** Small italic footnote beneath the short-answer card */
   footnote?: string
+  /** Cover image when CMS hero is empty (e.g. Runway news ogImage) */
+  heroImage?: string
+  heroImageAlt?: string
   navigate: (page: string) => void
 }
 
@@ -81,13 +84,15 @@ export function PageHero({
   currentAsAt,
   rightColumn,
   footnote,
+  heroImage: coverImageUrl,
+  heroImageAlt,
   navigate,
 }: PageHeroProps) {
   const reduce = useReducedMotion()
   const cms = useCmsPage()
   const resolvedTitle = cms?.h1?.trim() ? cms.h1.trim() : title
   const resolvedDeck = cms?.body?.trim() ? cms.body.trim() : deck
-  const heroImage = cms?.heroImage?.trim() || ''
+  const heroImage = cms?.heroImage?.trim() || coverImageUrl?.trim() || ''
   const deckIsHtml = !!(cms?.body?.trim() && cmsBodyLooksLikeHtml(cms.body))
 
   const leftContent = (
@@ -128,7 +133,7 @@ export function PageHero({
           {/* CMS URLs may be remote — keep <img> with explicit dimensions for CLS */}
           <img
             src={heroImage}
-            alt=""
+            alt={heroImageAlt?.trim() || ""}
             width={1120}
             height={630}
             loading="lazy"

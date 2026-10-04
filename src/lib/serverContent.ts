@@ -41,6 +41,7 @@ export async function fetchNewsOrBlogFallbackSSR() {
       publishedAt: n.publishedAt,
       featured: Boolean(n.featured),
       readTime: n.readTime || "3 min read",
+      ogImage: n.ogImage,
     }))
   }
   const blogs = await fetchPublishedBlogsSSR()
@@ -54,5 +55,6 @@ export async function fetchNewsOrBlogFallbackSSR() {
     publishedAt: b.publishedAt,
     featured: false,
     readTime: "4 min read",
+    ogImage: b.ogImage,
   }))
 }

@@ -13,6 +13,7 @@ type Article = {
   summary: string
   readTime: string
   hrefBase?: "news" | "blog"
+  ogImage?: string
 }
 
 export default function NewsListingClient({ initialArticles }: { initialArticles: Article[] }) {

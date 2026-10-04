@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "www.nanakmigration.com.au" },
       { protocol: "https", hostname: "api.nanakmigration.com.au" },
+      { protocol: "https", hostname: "images.pexels.com" },
     ],
   },
   async headers() {

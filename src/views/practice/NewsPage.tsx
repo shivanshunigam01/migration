@@ -24,6 +24,7 @@ type Article = {
   readTime: string
   /** When news CMS is empty we fall back to blog URLs. */
   hrefBase?: 'news' | 'blog'
+  ogImage?: string
 }
 
 const CATEGORIES = ['All', 'Policy changes', 'Occupation lists', 'Fees & thresholds', 'Case outcomes', 'Firm news']
@@ -55,6 +56,77 @@ function formatDate(iso?: string) {
 function articleHref(article: Article) {
   const base = article.hrefBase === 'blog' ? ROUTE.blog : ROUTE.newsPage
   return `/${base}/${article.slug}`
+}
+
+function NewsCardThumbnail({
+  ogImage,
+  headline,
+  variant,
+}: {
+  ogImage?: string
+  headline: string
+  variant: 'featured' | 'card'
+}) {
+  const featured = variant === 'featured'
+  const boxStyle: React.CSSProperties = featured
+    ? {
+        width: 240,
+        minWidth: 200,
+        height: 180,
+        borderRadius: 10,
+        flexShrink: 0,
+        flexGrow: 1,
+        maxWidth: 280,
+        overflow: 'hidden',
+        position: 'relative',
+      }
+    : {
+        width: '100%',
+        height: 160,
+        borderRadius: 10,
+        overflow: 'hidden',
+        position: 'relative',
+        marginBottom: 4,
+      }
+
+  if (ogImage?.trim()) {
+    return (
+      <div style={boxStyle}>
+        <img
+          src={ogImage.trim()}
+          alt={headline}
+          width={featured ? 480 : 640}
+          height={featured ? 360 : 320}
+          loading="lazy"
+          decoding="async"
+          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        />
+      </div>
+    )
+  }
+
+  return (
+    <div
+      style={{
+        ...boxStyle,
+        background: 'linear-gradient(135deg, #1B2B5E 0%, #243570 100%)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      {featured ? (
+        <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+          Featured
+        </span>
+      ) : (
+        <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0 12px', textAlign: 'center' }}>
+          {headline.slice(0, 48)}
+          {headline.length > 48 ? '…' : ''}
+        </span>
+      )}
+    </div>
+  )
 }
 
 export default function NewsPage({
@@ -93,6 +165,7 @@ export default function NewsPage({
           summary: n.standfirst,
           readTime: n.readTime || '3 min read',
           hrefBase: 'news' as const,
+          ogImage: n.ogImage,
         }))
       )
       setLoadingArticles(false)
@@ -240,25 +313,7 @@ export default function NewsPage({
                     cursor: 'pointer',
                   }}
                 >
-                  <div
-                    style={{
-                      width: 240,
-                      minWidth: 200,
-                      height: 180,
-                      borderRadius: 10,
-                      background: 'linear-gradient(135deg, #1B2B5E 0%, #243570 100%)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                      flexGrow: 1,
-                      maxWidth: 280,
-                    }}
-                  >
-                    <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.4)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                      Featured
-                    </span>
-                  </div>
+                  <NewsCardThumbnail ogImage={featuredArticle.ogImage} headline={featuredArticle.headline} variant="featured" />
                   <div style={{ flexGrow: 1, minWidth: 240 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14, flexWrap: 'wrap' }}>
                       <span
@@ -332,6 +387,7 @@ export default function NewsPage({
                         height: '100%',
                       }}
                     >
+                      <NewsCardThumbnail ogImage={article.ogImage} headline={article.headline} variant="card" />
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
                         <span
                           style={{

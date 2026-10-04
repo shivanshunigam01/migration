@@ -123,6 +123,8 @@ export default function NewsPostPage({
         eyebrow={post.category}
         title={post.title}
         deck={post.standfirst}
+        heroImage={post.ogImage}
+        heroImageAlt={post.title}
         currentAsAt={`${post.date}${post.readTime ? ` · ${post.readTime}` : ""}`}
         primaryCta={{ label: "Book Free Consultation", page: "book-consultation" }}
         accent={NAVY}

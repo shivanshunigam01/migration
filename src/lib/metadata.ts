@@ -28,7 +28,8 @@ export function fitDescription(raw: string, _max = 158): string {
   return raw.replace(/\s+/g, " ").trim()
 }
 
-function absAsset(url: string) {
+/** Absolute URL for OG/Twitter images and JSON-LD. */
+export function absAsset(url: string) {
   if (!url) return DEFAULT_OG_IMAGE
   if (url.startsWith("http")) return url
   return `${SITE_URL}${url.startsWith("/") ? url : `/${url}`}`

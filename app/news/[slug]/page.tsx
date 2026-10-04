@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import NewsSlugClient from "./NewsSlugClient"
 import { getApiBaseUrl } from "@/lib/apiBase"
-import { fitDescription, fitTitle } from "@/lib/metadata"
+import { absAsset, fitDescription, fitTitle } from "@/lib/metadata"
 import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/data/site"
 import { fetchPublishedNewsSSR } from "@/lib/serverContent"
 
@@ -45,7 +45,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.seoDescription || post.standfirst || "Australian immigration news and policy updates.",
   )
   const canonical = `${SITE_URL}/news/${slug}`
-  const ogImage = post.ogImage || DEFAULT_OG_IMAGE
+  const headline = String(post.title || "").replace(/^\[DRAFT\]\s*/i, "")
+  const ogImage = absAsset(post.ogImage || DEFAULT_OG_IMAGE)
   return {
     title,
     description,
@@ -55,7 +56,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url: canonical,
       type: "article",
-      images: [{ url: ogImage, width: 1200, height: 630 }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: headline }],
     },
     twitter: { card: "summary_large_image", title, description, images: [ogImage] },
   }
@@ -85,6 +86,7 @@ export default async function Page({ params }: Props) {
         url,
         datePublished: post.publishedAt,
         dateModified: post.updatedAt || post.publishedAt,
+        image: absAsset(post.ogImage || DEFAULT_OG_IMAGE),
         author: {
           "@type": "Person",
           name: "Navpreet Aulakh",

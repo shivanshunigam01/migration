@@ -27,6 +27,7 @@ export default async function NewsListingPage() {
     summary: n.standfirst,
     readTime: n.readTime,
     hrefBase: n.source,
+    ogImage: n.ogImage,
   }))
   return <NewsListingClient initialArticles={initialArticles} />
 }
