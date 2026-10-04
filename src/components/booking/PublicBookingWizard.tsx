@@ -452,7 +452,7 @@ export default function PublicBookingWizard({ className, onBooked }: Props) {
               Book another appointment
             </button>
             <a
-              href="/pre-assessment"
+              href="/book-consultation"
               style={{ display: 'block', marginTop: 12, textAlign: 'center', fontSize: 13, fontWeight: 700, color: NAVY, textDecoration: 'none' }}
             >
               Complete pre-consult assessment →

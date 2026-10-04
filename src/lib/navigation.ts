@@ -20,8 +20,6 @@ export function resolveRoute(page: string): string {
   if (page === "home" || page === "") return "/"
   if (page === "contact") return "/contact"
   if (page === "book" || page === "book-consultation" || page === "pre-assessment") {
-    if (page === "book") return "/book"
-    if (page === "pre-assessment") return "/pre-assessment"
     return "/book-consultation"
   }
   if (page === "privacy") return "/privacy"

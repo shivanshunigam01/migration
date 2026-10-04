@@ -78,16 +78,11 @@ export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
       fallback?.metaDescription ||
       "Australian migration advice from MARA-registered agents at Nanak Migration Group (MARN 2619467)."
   const description = fitDescription(rawDescription)
-  let canonical = remote?.canonicalUrl || absoluteUrl(routeKey === "home" ? "" : routeKey)
-  if (routeKey === "home") {
-    // Always trailing slash so sitemap + canonical agree.
-    // Use path "/" (not absolute) so Next metadataBase keeps the slash —
-    // absolute "…com.au/" is normalized to "…com.au" by the Metadata API.
-    canonical = `${SITE_URL}/`
-  } else {
-    // Non-home: no trailing slash (matches sitemap + Next default routing)
-    canonical = canonical.replace(/\/$/, "")
-  }
+  const homeCanonical = `${SITE_URL}/`
+  let canonical =
+    routeKey === "home"
+      ? homeCanonical
+      : (remote?.canonicalUrl || absoluteUrl(routeKey)).replace(/\/$/, "")
   const ogImage = absAsset(remote?.ogImage || remote?.heroImage || DEFAULT_OG_IMAGE)
   const robotsIndex = remote?.robotsIndex !== false
 
@@ -96,14 +91,14 @@ export async function buildPageMetadata(routeKey: string): Promise<Metadata> {
     description,
     // Do not emit keywords meta — public SEO strategy stays in admin only.
     alternates: {
-      // Home: relative "/" preserves trailing slash under metadataBase.
-      canonical: routeKey === "home" ? "/" : canonical,
+      // Home: absolute URL with trailing slash (matches sitemap loc; avoids duplicate / vs /).
+      canonical: routeKey === "home" ? homeCanonical : canonical,
     },
     robots: robotsIndex ? { index: true, follow: true } : { index: false, follow: false },
     openGraph: {
       title,
       description,
-      url: routeKey === "home" ? `${SITE_URL}/` : canonical,
+      url: routeKey === "home" ? homeCanonical : canonical,
       siteName: SITE_NAME,
       locale: "en_AU",
       type: "website",

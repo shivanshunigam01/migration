@@ -208,7 +208,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
                   A confirmation email is on its way. Complete a pre-assessment before your appointment so your agent is briefed.
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-                  <GlowButton as="button" size="md" variant="gold" onClick={() => navigate('pre-assessment')}>
+                  <GlowButton as="button" size="md" variant="gold" onClick={() => navigate('book-consultation')}>
                     Pre-assessment →
                   </GlowButton>
                   <button
@@ -241,7 +241,7 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
                   Prefer to share details first?{' '}
                   <button
                     type="button"
-                    onClick={() => navigate('pre-assessment')}
+                    onClick={() => navigate('book-consultation')}
                     style={{
                       background: 'none',
                       border: 'none',

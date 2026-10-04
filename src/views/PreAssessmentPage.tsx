@@ -145,9 +145,9 @@ let el = document.querySelector('meta[name="description"]')
       <StructuredData
         breadcrumbs={[
           { name: 'Home', url: 'https://www.nanakmigration.com.au/' },
-          { name: 'Pre-consult Assessment', url: 'https://www.nanakmigration.com.au/pre-assessment' },
+          { name: 'Pre-consult Assessment', url: 'https://www.nanakmigration.com.au/book-consultation' },
         ]}
-        service={{ name: 'Pre-consult Assessment', description: meta.metaDescription, url: 'https://www.nanakmigration.com.au/pre-assessment' }}
+        service={{ name: 'Pre-consult Assessment', description: meta.metaDescription, url: 'https://www.nanakmigration.com.au/book-consultation' }}
         reviewedBy={true}
         faqs={[
           {
@@ -173,7 +173,7 @@ let el = document.querySelector('meta[name="description"]')
               <div className="nm-book-marn">Pre-consult assessment · MARN 2619467</div>
             </div>
           </div>
-          <Link className="nm-book-site-link" to="/book">
+          <Link className="nm-book-site-link" to="/book-consultation">
             Book a consultation
           </Link>
         </div>
@@ -207,7 +207,7 @@ let el = document.querySelector('meta[name="description"]')
             />
             <p style={{ fontSize: 13, color: '#6b7280', margin: '12px 0 0', lineHeight: 1.55 }}>
               We&apos;ll match this to your upcoming consultation. Don&apos;t have a booking yet?{' '}
-              <button type="button" onClick={() => navigate('book')} style={{ background: 'none', border: 'none', color: GOLD, fontWeight: 700, cursor: 'pointer', padding: 0, fontSize: 13 }}>
+              <button type="button" onClick={() => navigate('book-consultation')} style={{ background: 'none', border: 'none', color: GOLD, fontWeight: 700, cursor: 'pointer', padding: 0, fontSize: 13 }}>
                 Book here first →
               </button>
             </p>
@@ -358,7 +358,7 @@ let el = document.querySelector('meta[name="description"]')
               <Link to="/" style={{ padding: '12px 20px', borderRadius: 10, background: NAVY, color: '#fff', textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
                 Back to website
               </Link>
-              <Link to="/book" style={{ padding: '12px 20px', borderRadius: 10, border: `1.5px solid ${NAVY}`, color: NAVY, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
+              <Link to="/book-consultation" style={{ padding: '12px 20px', borderRadius: 10, border: `1.5px solid ${NAVY}`, color: NAVY, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
                 Book another time
               </Link>
             </div>

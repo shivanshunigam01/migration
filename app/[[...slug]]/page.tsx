@@ -5,7 +5,7 @@ import { PageRenderer } from "@/next/PageRenderer"
 import { pathnameToRouteKey } from "@/lib/pathnameToRouteKey"
 import { getPublicSitemapPaths } from "@/data/publicPaths"
 import { isKnownPublicPath } from "@/lib/isKnownPublicPath"
-import { SITE_NAME, SITE_URL } from "@/data/site"
+import { SITE_NAME } from "@/data/site"
 import { cmsFaqsToMap, getFaqs } from "@/lib/faqs"
 
 type Props = { params: Promise<{ slug?: string[] }> }
@@ -60,12 +60,7 @@ export default async function MarketingPage({ params }: Props) {
   if (path === "") {
     const faqs = await getFaqs("homepage")
     const cmsFaqs = cmsFaqsToMap("homepage", faqs)
-    return (
-      <>
-        <link rel="canonical" href={`${SITE_URL}/`} />
-        <PageRenderer path="" cmsFaqs={cmsFaqs} />
-      </>
-    )
+    return <PageRenderer path="" cmsFaqs={cmsFaqs} />
   }
 
   if (!isKnownPublicPath(path)) notFound()

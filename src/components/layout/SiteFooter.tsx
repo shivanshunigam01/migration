@@ -17,39 +17,6 @@ import { TurnstileField, turnstileConfigured } from '@/components/forms/Turnstil
 import { RelatedGuides } from '@/components/page/RelatedGuides'
 import { COPYRIGHT_LINE } from '@/lib/legal-entity'
 
-// ── JSON-LD ──────────────────────────────────────────────────────────────
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': ['Organization', 'ProfessionalService'],
-      '@id': 'https://www.nanakmigration.com.au/#organization',
-      name: 'Nanak Migration Group',
-      legalName: '1313 Success Group Pty Ltd',
-      url: 'https://www.nanakmigration.com.au',
-      logo: 'https://www.nanakmigration.com.au/logo.png',
-      description:
-        'Registered migration agents helping individuals and employers navigate Australian immigration.',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '8 Tallis Cct',
-        addressLocality: 'Truganina',
-        addressRegion: 'VIC',
-        postalCode: '3029',
-        addressCountry: 'AU',
-      },
-      telephone: '+61 1300 644 728',
-      email: 'visa@nanakmigration.com.au',
-      areaServed: 'AU',
-      identifier: [
-        { '@type': 'PropertyValue', name: 'MARN', value: '2619467' },
-        { '@type': 'PropertyValue', name: 'ABN', value: '54 674 937 476' },
-      ],
-      sameAs: [],
-    },
-  ],
-}
-
 // ── Newsletter form (preserved exactly) ─────────────────────────────────
 function NewsletterForm({ buttonLabel = 'Subscribe →' }: { buttonLabel?: string }) {
   const { submit, loading, error, success } = useIntakeSubmit('newsletter')
@@ -408,12 +375,6 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
 
   return (
     <footer role="contentinfo" style={{ fontFamily: "'Gilroy', sans-serif" }}>
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '24px 24px 0' }}>
         <RelatedGuides />
       </div>
