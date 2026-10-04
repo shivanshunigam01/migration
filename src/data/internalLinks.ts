@@ -30,10 +30,10 @@ export const INTERNAL_BODY_LINKS: Record<string, BodyLink[]> = {
   ],
   "186-occupations-list": [
     { anchor: "Employer Nomination Scheme (subclass 186)", to: "employer-nomination-scheme" },
+    { anchor: "186 skill requirements", to: "186-skill-requirements" },
     { anchor: "Core Skills Occupation List", to: "core-skills-occupation-list" },
-    { anchor: "Temporary Residence Transition", to: "482-to-pr-pathway" },
-    { anchor: "skills assessment", to: "186-skill-requirements" },
-    { anchor: "subclass 482", to: "skills-in-demand-visa" },
+    { anchor: "482 to PR pathway", to: "482-to-pr-pathway" },
+    { anchor: "Skills in Demand (482)", to: "skills-in-demand-visa" },
   ],
   "skills-in-demand-visa": [
     { anchor: "Employer Nomination Scheme (subclass 186)", to: "employer-nomination-scheme" },
@@ -216,12 +216,5 @@ export const INTERNAL_BODY_LINKS: Record<string, BodyLink[]> = {
     { anchor: "Employer sponsored visas", to: "employer-sponsored-visas" },
     { anchor: "482 to PR pathway", to: "482-to-pr-pathway" },
     { anchor: "Standard Business Sponsorship", to: "standard-business-sponsorship" },
-  ],
-  "186-occupations-list": [
-    { anchor: "Employer Nomination Scheme (subclass 186)", to: "employer-nomination-scheme" },
-    { anchor: "186 skill requirements", to: "186-skill-requirements" },
-    { anchor: "Core Skills Occupation List", to: "core-skills-occupation-list" },
-    { anchor: "482 to PR pathway", to: "482-to-pr-pathway" },
-    { anchor: "Skills in Demand (482)", to: "skills-in-demand-visa" },
   ],
 }
