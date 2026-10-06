@@ -178,13 +178,13 @@ const STATS: KeyFact[] = [
   { value: '1',       label: 'Application for both stages' },
   { value: '1',       label: 'Government charge paid' },
   { value: '~2 yrs',  label: 'Before 801 assessment' },
-  { value: 'Onshore', label: 'Required at lodgement & 820 grant' },
+  { value: 'Onshore', label: 'Required at lodgement' },
 ]
 
 const FLOW_STAGES: TimelineStep[] = [
   { code: 'LODGE', title: '820 Lodgement',   color: '#6b7280', duration: 'Day 0',          desc: 'Lodge Form 47SP + 40SP via ImmiAccount. Pay one government fee. Must be onshore. Bridging Visa A activates automatically. Two-year clock starts.' },
   { code: 'BVA',   title: 'Bridging Visa A', color: '#2563eb', duration: 'While pending',   desc: "Grants lawful stay in Australia while the 820 is assessed. Work rights preserved. Apply for a BVB before any overseas travel — BVA alone won't allow re-entry." },
-  { code: '820',   title: '820 Grant',       color: '#4f46e5', duration: '20–36+ months',   desc: 'Temporary Partner visa granted. You can be in or outside Australia when it is granted. Full work rights, Medicare access, unlimited travel (with BVB).' },
+  { code: '820',   title: '820 Grant',       color: '#4f46e5', duration: 'About 22 to 30 months',   desc: 'Temporary Partner visa granted. You can be in or outside Australia when it is granted. Full work rights, Medicare access, unlimited travel (with BVB).' },
   { code: '2YR',   title: '2-Year Mark',     color: AMBER,     duration: 'From lodgement',  desc: 'Two years from lodgement date — not from 820 grant. DHA may now assess the 801 stage and will request updated evidence of the ongoing relationship.' },
   { code: '801',   title: '801 Assessment',  color: '#0e7490', duration: 'Automatic',        desc: 'DHA reassesses the relationship. Updated evidence required. Exceptions for family violence or children apply if relationship ended.' },
   { code: 'PR',    title: '801 Grant',       color: '#0d1632', duration: 'Permanent',        desc: 'Permanent Partner visa granted. Right to live, work and study in Australia indefinitely. Pathway to citizenship once you meet the residence requirement - generally 4 years living in Australia on a valid visa, including the last 12 months as a permanent resident.' },
@@ -203,10 +203,10 @@ const COMPARE_ROWS: ComparisonRow[] = [
   { feature: '2-year clock starts',        v820: 'Date of lodgement',                                  v309: 'Date of lodgement' },
   { feature: 'Travel rights on temp visa', v820: 'Unlimited travel',                                   v309: 'Unlimited travel' },
   { feature: 'Work rights',                v820: 'Full — any job, any hours',                          v309: 'Full — any job, any hours' },
-  { feature: 'Medicare',                   v820: 'Yes — from grant of 820',                            v309: 'Yes (where reciprocal agreement exists)' },
+  { feature: 'Medicare',                   v820: 'Yes — from grant of 820',                            v309: 'Yes' },
   { feature: 'Bridging visa on lodgement', v820: 'Yes — Bridging Visa A activates automatically',      v309: 'N/A (applicant is offshore)' },
-  { feature: 'Govt fee (2025–26)',          v820: 'Govt fee (2026-27): AUD11,710 primary applicant* (both columns)',                     v309: 'Govt fee (2026-27): AUD11,710 primary applicant* (both columns)' },
-  { feature: 'Current processing',         v820: '20–36+ months (75th percentile)',                    v309: '18–36+ months (75th percentile)' },
+  { feature: 'Govt fee (2026-27)',          v820: 'AUD11,710 primary applicant*',                     v309: 'AUD11,710 primary applicant*' },
+  { feature: 'Current processing',         v820: '22 months (50%) / 30 months (90%)',                    v309: '21 months (50%) / 32 months (90%)' },
 ]
 
 const STAGE_801_CARDS: PageCard[] = [
@@ -224,7 +224,10 @@ const FAQ_ITEMS: FaqItem[] = [
   { question: 'What evidence do I need to submit at the 801 stage?', answer: 'At the 801 stage DHA will request an updated evidence statement covering the period since your 820 was granted. This typically includes updated financial evidence (bank statements, joint accounts), proof of cohabitation, social evidence (photos, declarations), and a narrative describing how your relationship has continued. Begin building this evidence file from day one of your 820 grant.' },
   { question: 'What if the relationship ends before the 801 is decided?', answer: 'If the relationship breaks down genuinely and you separate, the 801 will generally not be granted. However, there are important exceptions: if there are dependent children of the relationship, or if the Australian sponsor or their family member subjected the applicant to family violence, the 801 may still be granted on those grounds. Seek urgent advice from a registered agent if your relationship ends before the 801 decision.' },
   { question: 'What is the section 48 bar and does it affect me?', answer: 'Section 48 of the Migration Act prevents certain applicants who have had a visa refused or cancelled while onshore from making further visa applications in Australia. The 820 is one of a limited class of visa subclasses that can still be applied for despite the s48 bar — but only in specific circumstances. If you have a prior refusal while in Australia, you must get qualified advice before lodging.' },
-  { question: 'How is the 820/801 different from the 309/100?', answer: "The only practical difference is location. The 820/801 is for applicants already in Australia; the 309/100 is for applicants offshore. Both cost the same government fee, both follow the same two-stage structure, and both lead to permanent residence. The 820 grants a Bridging Visa A automatically on lodgement; the 309 does not (the applicant remains offshore). Choose based solely on where you are — and where you plan to be — at lodgement." },
+  { question: 'How is the 820/801 different from the 309/100?', answer: "The only practical difference is location. The 820/801 is for applicants already in Australia; the 309/100 is for applicants offshore. Both cost the same government fee, both follow the same two-stage structure, and both lead to permanent residence. The 820 grants a Bridging Visa A automatically on lodgement; the 309 does not (the applicant must lodge outside Australia). Choose based on where you must be at lodgement." },
+  { question: 'How long does an 820 partner visa take?', answer: 'As at October 2026, Home Affairs decides 50 per cent of subclass 820 applications in 22 months and 90 per cent in 30 months. Processing varies with case complexity.' },
+  { question: 'How long on an 820 to get the 801 visa?', answer: 'The two-year qualifying period runs from lodgement. The published 801 processing time of 8 months at the median (19 months for 90 per cent) runs from that eligibility date, not from lodgement.' },
+  { question: 'Can I include my children in an 820/801 partner visa application?', answer: 'Yes — dependent children can be included as secondary applicants. There is an additional application charge for each child — AUD5,860 for each applicant aged 18 or over and AUD2,935 for each child under 18 (2026-27).' },
 ]
 
 /* ─── Page ─── */
@@ -275,9 +278,9 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
                   <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: ROSE }}>The Short Answer</span>
                 </div>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                  The <strong style={{ color: NAVY }}>820/801 is the onshore two-stage partner visa</strong> for people already in Australia. You lodge <strong>one application</strong> and pay <strong>one government charge</strong>. The temporary 820 is decided first; the permanent 801 is assessed approximately two years after the original lodgement date. You must be <strong>sponsored by an Australian citizen, permanent resident, or eligible NZ citizen</strong>, and you must be <strong>onshore at lodgement and onshore at the time the 820 is granted</strong>.
+                  The <strong style={{ color: NAVY }}>820/801 is the onshore two-stage partner visa</strong> for people already in Australia. You lodge <strong>one application</strong> and pay <strong>one government charge</strong>. The temporary 820 is decided first; the permanent 801 is assessed approximately two years after the original lodgement date. You must be <strong>sponsored by an Australian citizen, permanent resident, or eligible NZ citizen</strong>, and you must be <strong>in Australia when you lodge</strong>. You can be in or outside Australia when Home Affairs decides the temporary 820 application.
                 </p>
-                <p style={{ fontSize: 12.5, color: '#9ca3af', margin: '10px 0 0', fontStyle: 'italic' }}>Verified as at 1 July 2026 — verify current fees and processing times with the Department of Home Affairs.</p>
+                <p style={{ fontSize: 12.5, color: '#9ca3af', margin: '10px 0 0', fontStyle: 'italic' }}>Verified as at October 2026 — verify current fees and processing times with the Department of Home Affairs.</p>
               </div>
               <div style={{ display: 'flex', gap: 12 }}>
                 <a href="#eligibility-checker" style={{ backgroundColor: GOLD, color: NAVY_DARK, padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, boxShadow: "0 4px 20px rgba(245,161,36,0.40)" }}>Check My Eligibility</a>
@@ -314,7 +317,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
               <Icon name="alert" size={16} color={ROSE} />
             </div>
             <div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>Must be onshore at both lodgement and the 820 grant</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>Must be onshore at lodgement</div>
               <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>Unlike the 309/100 offshore route, the 820 requires you to be in Australia at lodgement. Home Affairs can decide the 820 while you are in or outside Australia. If you need to travel while on a Bridging Visa A, apply for a Bridging Visa B before you leave so you can return.</div>
             </div>
           </div>
@@ -324,11 +327,11 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
       {/* ── 820 vs 309 COMPARISON ── */}
       <section style={{ background: '#fff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <SectionHeading kicker="Section 2" title="820 vs 309 — Which Applies to You?" intro="Same destination. Same government fee. The only practical difference is where you are at lodgement — and where you must be at the first grant." accent={ROSE} />
+          <SectionHeading kicker="Section 2" title="820 vs 309 — Which Applies to You?" intro="Same destination. Same government fee. The main difference is where you must be at lodgement." accent={ROSE} />
           <div style={{ textAlign: 'center', marginBottom: 24 }}>
             <button onClick={() => navigate('partner-visa-309-100')} style={{ background: 'none', border: 'none', color: ROSE, fontSize: 15, fontWeight: 700, cursor: 'pointer', textDecoration: 'underline', fontFamily: "'Gilroy', sans-serif" }}>Read the full 309/100 guide →</button>
           </div>
-          <ComparisonTable columns={COMPARE_COLS} rows={COMPARE_ROWS} accent={ROSE} caption="* Verified as at 1 July 2026 — verify current fees with the Department of Home Affairs before lodgement." />
+          <ComparisonTable columns={COMPARE_COLS} rows={COMPARE_ROWS} accent={ROSE} caption="* Verified as at October 2026 — verify current fees with the Department of Home Affairs before lodgement." />
         </div>
       </section>
 
@@ -398,7 +401,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
           <SectionHeading kicker="Section 5" title="What Changes at the 801 Stage" intro="The 801 is not a new application — it is DHA reassessing your case automatically. But several things require active attention." accent={ROSE} light />
           <CardGrid cards={STAGE_801_CARDS} columns={2} dark />
           <div style={{ marginTop: 28, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: '16px 24px', textAlign: 'center' }}>
-            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>All information verified as at 1 July 2026. Processing times and fees change regularly — always verify with the Department of Home Affairs before lodgement.</span>
+            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>All information verified as at October 2026. Processing times and fees change regularly — always verify with the Department of Home Affairs before lodgement.</span>
           </div>
         </div>
       </section>
@@ -421,7 +424,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="July 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

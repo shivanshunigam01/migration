@@ -46,7 +46,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What is the Australian Study Requirement and when does it apply?",
-    answer: "The Australian Study Requirement (ASR) requires at least two academic years (92 weeks) of full-time (or equivalent) study at a CRICOS-registered Australian institution, with the principal course at the relevant level of qualification. The ASR is a prerequisite for the 485 Temporary Graduate visa (Post-Study Work stream) and is also the basis for the Australian Study bonus points (5 points) in the skilled migration points test. Study completed offshore, even as part of an Australian university's offshore program, generally does not satisfy the ASR.",
+    answer: "The Australian Study Requirement (ASR) requires at least two academic years (92 weeks) of full-time (or equivalent) study at a CRICOS-registered Australian institution. The ASR is a prerequisite for the 485 Temporary Graduate visa (Post-Higher Education Work and Post-Vocational Education Work streams) and is also the basis for the Australian Study bonus points (5 points) in the skilled migration points test. Study completed offshore, even as part of an Australian university's offshore program, generally does not satisfy the ASR.",
   },
   {
     question: "Are trade qualifications (TAFE) as useful as university degrees for PR?",

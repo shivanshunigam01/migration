@@ -255,10 +255,9 @@ return (
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginTop: 4 }}>Confirm on DoHA — arrangements may change</div>
               </div>
               <div style={{ padding: '20px', display: 'flex', flexWrap: 'wrap' as const, gap: '8px 12px' }}>
-                {['Belgium', 'Cyprus', 'Estonia', 'Finland', 'Germany', 'Hong Kong', 'Iceland', 'Israel', 'Japan', 'Malta', 'Netherlands', 'Norway', 'Portugal', 'Republic of Korea', 'Spain', 'Sweden', 'Taiwan', 'United States of America*'].map(c => (
+                {['Belgium', 'Estonia', 'Hong Kong', 'Japan', 'Malta', 'Netherlands', 'Norway', 'Sweden', 'Taiwan'].map(c => (
                   <span key={c} style={{ fontSize: 13, color: '#374151', background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 6, padding: '4px 10px', lineHeight: 1.4 }}>{c}</span>
                 ))}
-                <div style={{ width: '100%', fontSize: 12, color: '#9ca3af', marginTop: 4 }}>* USA nationals may be eligible for the 417 — confirm on DoHA as arrangements are subject to change.</div>
               </div>
             </div>
 
@@ -269,7 +268,7 @@ return (
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.75)', marginTop: 4 }}>These countries have a higher upper age limit — confirm on DoHA</div>
               </div>
               <div style={{ padding: '20px', display: 'flex', flexWrap: 'wrap' as const, gap: '8px 12px' }}>
-                {['Canada', 'Denmark', 'France', 'Hong Kong', 'Ireland', 'Italy', 'Republic of Korea', 'Taiwan', 'United Kingdom'].map(c => (
+                {['Canada', 'Cyprus', 'Denmark', 'Finland', 'France', 'Germany', 'Ireland', 'Italy', 'Republic of Korea', 'United Kingdom'].map(c => (
                   <span key={c} style={{ fontSize: 13, color: '#374151', background: `${ACCENT}10`, border: `1px solid ${ACCENT}30`, borderRadius: 6, padding: '4px 10px', lineHeight: 1.4 }}>{c}</span>
                 ))}
               </div>
@@ -277,7 +276,7 @@ return (
           </div>
 
           <Callout variant="warning" panel={true} title="Confirm your country and age limit on DoHA">
-            The partner country list and age eligibility thresholds for the subclass 417 can change as Australia enters or updates working holiday arrangements. Before applying, confirm on the Department of Home Affairs website that your country is currently listed and check which age upper limit applies to your passport. Some countries appear in both tables above — always rely on the DoHA website for the definitive current position.
+            The partner country list and age eligibility thresholds for the subclass 417 can change as Australia enters or updates working holiday arrangements. Before applying, confirm on the Department of Home Affairs website that your country is currently listed and check which age upper limit applies to your passport. USA passport holders are not eligible for the 417 — they may be eligible for the Work and Holiday visa (subclass 462).
           </Callout>
         </div>
       </section>

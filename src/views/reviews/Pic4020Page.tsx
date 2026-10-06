@@ -233,7 +233,7 @@ return (
             <div style={{ border: '1px solid #e8edf6', borderTop: `3px solid ${ACCENT}`, borderRadius: '0 0 12px 12px', padding: 24 }}>
               <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 12 }}>Compassionate or compelling circumstances</div>
               <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', margin: 0 }}>
-                The waiver may also be granted where there are compassionate or compelling circumstances affecting the applicant — usually involving serious hardship to the applicant or their close family members. Examples: a dependent child in Australia who would be severely affected by the refusal, a serious medical condition, or other significant personal hardship. The waiver is not automatic — it requires a substantive and evidenced submission.
+                The waiver may also be granted where there are compassionate or compelling circumstances affecting the interests of an Australian citizen, Australian permanent resident or eligible New Zealand citizen — for example, an Australian citizen partner or child who would be seriously affected by the refusal. Hardship to the applicant alone is not a waiver ground. The waiver is not automatic — it requires a substantive and evidenced submission.
               </p>
             </div>
           </div>

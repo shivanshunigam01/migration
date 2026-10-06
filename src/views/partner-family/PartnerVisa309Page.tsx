@@ -85,7 +85,7 @@ const STAGES: TimelineStep[] = [
     ],
   },
   {
-    code: '309', title: 'Subclass 309 — Temporary', color: '#4f46e5', duration: '18–36 months',
+    code: '309', title: 'Subclass 309 — Temporary', color: '#4f46e5', duration: '21 months (50%) / 32 months (90%)',
     points: [
       'First assessment of relationship genuineness',
       'Health and character must be satisfied',
@@ -119,7 +119,7 @@ const COMPARE_ROWS: ComparisonRow[] = [
   { feature: 'Permanent stage',       v309: 'Subclass 100',                        v820: 'Subclass 801' },
   { feature: '2-year clock starts',   v309: 'Date of lodgement',                  v820: 'Date of lodgement' },
   { feature: 'Work rights on temp visa', v309: 'Yes — unlimited',                 v820: 'Yes — unlimited' },
-  { feature: 'Medicare',              v309: 'Yes (where reciprocal agreement)',    v820: 'Yes' },
+  { feature: 'Medicare',              v309: 'Yes',                                 v820: 'Yes' },
   { feature: 'Govt fee (2026-27)',     v309: 'AUD11,710 (primary)',               v820: 'AUD11,710 (primary)' },
   { feature: 'Processing (current)',   v309: '21 months (50%) / 32 months (90%)',    v820: '22 months (50%) / 30 months (90%)' },
 ]
@@ -161,13 +161,15 @@ const CHECKLIST_GROUPS: ChecklistGroup[] = [
 
 const FAQ_ITEMS: FaqItem[] = [
   { question: 'Can I apply for an Australian partner visa from outside Australia?', answer: 'Yes — the Subclass 309/100 is designed for applicants outside Australia. You lodge the application offshore and remain outside while it is assessed. The 309 (temporary) is granted first, and it converts to the permanent 100 approximately two years after the original lodgement date — not two years after the 309 grant.' },
-  { question: 'Where do I need to be when the 309 is granted?', answer: 'The applicant must be outside Australia at the time the Subclass 309 is granted. This is a genuine strategic point: if you travel to Australia and happen to be there when the 309 is decided, you will not meet the grant requirement. If you are nearing the expected decision window, stay offshore or plan returns carefully. Your agent should flag this timing.' },
+  { question: 'Where do I need to be when the 309 is granted?', answer: 'You must be outside Australia when you lodge the 309/100 application. Home Affairs can grant the Subclass 309 while you are in or outside Australia — you do not need to leave Australia for the decision. Plan travel around your bridging visa or other visa conditions if you are in Australia while the application is processed.' },
   { question: 'When does the Subclass 100 stage start?', answer: 'The two-year qualifying period for the Subclass 100 runs from the date the application was lodged, not from the 309 grant date. In practice this means the waiting time on the 309 is part of the qualifying period. Once the two years have elapsed, DHA will assess the 100 stage — and the applicant must still be in a genuine relationship at that point.' },
   { question: 'Do we lose evidence value because we live apart?', answer: 'No — the four pillars (financial, social, commitment, household) all translate for distance relationships. Financial transfers and joint accounts, communication records, video call logs, social media and third-party declarations from people who know you as a couple all speak to genuineness across borders. The important thing is to document the arrangement: why you are living apart, how you maintain the relationship, and what your plans are to live together.' },
-  { question: 'Can the applicant work in Australia on the 309 visa?', answer: 'Yes — the Subclass 309 visa grants full work rights in Australia. The applicant can live and work anywhere in Australia with no restrictions on the type of employment or hours. Medicare access is also available on the 309, as Australia has reciprocal health agreements with many countries.' },
+  { question: 'Can the applicant work in Australia on the 309 visa?', answer: 'Yes — the Subclass 309 visa grants full work rights in Australia. The applicant can live and work anywhere in Australia with no restrictions on the type of employment or hours. 309 holders can apply for access to Medicare.' },
   { question: 'What happens if the sponsor and applicant separate before the 100 is granted?', answer: 'If the relationship breaks down before the 100 is granted, the 100 will generally not be approved. However, there are exceptions: if there are children of the relationship, or if the Australian sponsor (or their family member) engaged in family violence against the applicant, the 100 may still be granted on those grounds. This is one reason why preserving evidence of the relationship throughout the processing period matters.' },
   { question: 'Is there a lower cost route than the 309/100?', answer: 'The government fee for a partner visa (309/100) is set by DHA and is the same base fee regardless of how the application is lodged. The onshore route (820/801) costs the same government fee but has different location requirements. What varies is agent fees and the cost of obtaining evidence — there is no lower-fee DHA route to partner permanent residency.' },
   { question: 'How many photos do we need?', answer: 'There is no prescribed number. In practice, 20–40 well-captioned photos spanning the history of the relationship perform best — covering early meetings, milestones (trips, family events, celebrations), and recent life together. Each photo should have a date, location, and a brief note of context. Quality and evidence of history matters more than volume.' },
+  { question: 'How long does a 309 visa take?', answer: 'As at October 2026, Home Affairs decides 50 per cent of subclass 309 applications in 21 months and 90 per cent in 32 months. Processing varies with case complexity and requests for further information.' },
+  { question: 'Is it faster to apply onshore or offshore?', answer: 'The current figures are 30 months at the 90th percentile for the 820 and 32 months for the 309. Location at lodgement is a strategic choice — not only a processing-time choice.' },
 ]
 
 /* ─── Timeline planner (page-specific interactive widget — stays local) ─── */
@@ -182,7 +184,7 @@ function TimelinePlanner() {
     return [
       { label: 'Application lodged', offset: 0, note: 'Two-year qualifying period starts today', type: 'start' },
       { label: 'Biometrics / health / police due', offset: 1, note: 'Complete these within the timeframe given — delays stall the case', type: 'action' },
-      { label: 'Bridging visa (BVA) if in Australia', offset: 0, note: 'If applicant entered Australia on another visa — BVA activates automatically on lodgement', type: 'info' },
+      { label: 'Offshore lodgement', offset: 0, note: 'No bridging visa is granted with a 309 application — the applicant must be outside Australia when it is lodged', type: 'info' },
       { label: 'Two-year qualifying period reached', offset: 24, note: 'DHA may now assess the Subclass 100 stage', type: 'milestone' },
       { label: 'Expected 100 decision window (75th pct)', offset: 30, note: 'Varies significantly by case complexity and queue position', type: 'milestone' },
     ].map(ev => {
@@ -244,7 +246,9 @@ function TimelinePlanner() {
                     ? { bg: 'rgba(245,161,36,0.12)', border: 'rgba(245,161,36,0.3)', dot: '#f5a124' }
                     : ev.type === 'action'
                       ? { bg: `${GOLD}10`, border: `${GOLD}25`, dot: GOLD }
-                      : { bg: 'rgba(255,255,255,0.04)', border: 'rgba(255,255,255,0.1)', dot: '#0369a1' }
+                      : ev.type === 'info'
+                        ? { bg: 'rgba(255,255,255,0.04)', border: 'rgba(255,255,255,0.1)', dot: '#0369a1' }
+                        : { bg: 'rgba(255,255,255,0.04)', border: 'rgba(255,255,255,0.1)', dot: '#6b7280' }
                 return (
                   <div key={i} style={{ display: 'flex', gap: 20 }}>
                     <div style={{ flexShrink: 0, width: 42, display: 'flex', justifyContent: 'center', paddingTop: 16 }}>
@@ -373,7 +377,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
                   <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: ROSE }}>The Short Answer</span>
                 </div>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                  <strong style={{ color: NAVY }}>Yes — you can apply from outside Australia.</strong> The 309/100 is lodged offshore, one application with two stages. The permanent 100 becomes assessable two years from the lodgement date — so the waiting time doubles as the qualifying period. The applicant generally needs to be <em>outside Australia when the 309 is granted</em>, which makes travel timing around the decision a genuine part of the strategy.
+                  <strong style={{ color: NAVY }}>Yes — you can apply from outside Australia.</strong> The 309/100 is lodged offshore, one application with two stages. The permanent 100 becomes assessable two years from the lodgement date — so the waiting time doubles as the qualifying period. The applicant must be outside Australia when the application is lodged, but can be in or outside Australia when the 309 is decided.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 12 }}>
@@ -395,11 +399,11 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
                   { label: 'First stage', val: 'Subclass 309 — Temporary Partner', icon: 'plane' },
                   { label: 'Second stage', val: 'Subclass 100 — Permanent Partner', icon: 'shield' },
                   { label: 'Two-year clock', val: 'Starts at lodgement, not 309 grant', icon: 'calendar' },
-                  { label: 'At 309 grant', val: 'Applicant must be outside Australia', icon: 'alert' },
+                  { label: 'At 309 grant', val: 'Applicant can be in or outside Australia', icon: 'alert' },
                   { label: 'Work rights (309)', val: 'Unlimited — any job, any hours', icon: 'zap' },
                   { label: 'Relationship types', val: 'Married or genuine de facto (12+ months)', icon: 'heart' },
                   { label: 'Govt fee (2026-27)', val: 'Govt fee (2026-27): AUD11,710 primary applicant', icon: 'dollar' },
-                  { label: 'Current processing', val: '18–36+ months (varies by case)', icon: 'clock' },
+                  { label: 'Current processing', val: '21 months (50%) / 32 months (90%) — varies by case', icon: 'clock' },
                   { label: 'Children can be included', val: 'Yes — as secondary applicants', icon: 'users' },
                 ].map((row, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '11px 24px', borderBottom: i < 10 ? '1px solid #f3f4f8' : 'none' }}>
@@ -432,9 +436,9 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
           <SectionHeading kicker="How the Visa Works" title="Two Stages — One Application" intro="You lodge once. DHA assesses twice. The second assessment happens automatically — you don't re-apply." accent={ROSE} />
           <StepTimeline steps={STAGES} variant="cards" accent={ROSE} />
           <div style={{ maxWidth: 800, margin: '32px auto 0' }}>
-            <Callout variant="danger" panel borderWidth={2}>
-              <strong style={{ display: 'block', fontSize: 15, color: NAVY, marginBottom: 4 }}>The Grant-Day Travel Rule</strong>
-              The applicant must be <strong>outside Australia</strong> when the Subclass 309 is granted. If the expected decision window is approaching and the applicant is in Australia, they risk being in the wrong location at the moment of grant. Navpreet monitors cases as they approach decision stage and advises on travel positioning — this is active case management, not paperwork.
+            <Callout variant="note" panel borderWidth={2}>
+              <strong style={{ display: 'block', fontSize: 15, color: NAVY, marginBottom: 4 }}>Where you need to be at decision</strong>
+              Where you are at decision time no longer affects the 309. Home Affairs can grant the 309 while you are in or outside Australia, so you do not need to leave Australia for the decision. You must still be outside Australia when you lodge.
             </Callout>
           </div>
         </div>
@@ -482,14 +486,14 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
       {/* ── CTA ── */}
       <CtaBand
         title={<>Separated by borders.<br /><span style={{ color: ROSE }}>United by process.</span></>}
-        body="Navpreet Aulakh (MARN 2619467) manages partner visa cases from lodgement through the 100 grant — including evidence structuring, the grant-day travel rule, and keeping cases moving through DHA's queue."
+        body="Navpreet Aulakh (MARN 2619467) manages partner visa cases from lodgement through the 100 grant — including evidence structuring, lodgement timing, and keeping cases moving through DHA's queue."
         primaryCta={{ label: 'Book a Partner Visa Consultation', page: 'book-consultation' }}
         accent={ROSE}
         footnote="Free initial assessment · MARN 2619467"
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="July 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

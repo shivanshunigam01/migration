@@ -76,7 +76,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'How does the Balance of Family Test work?',
-    answer: "The Balance of Family Test requires that more than half of the parent's children live permanently in Australia as citizens or permanent residents, or that the number of children permanently in Australia is at least equal to the number who are not. 'Children' in this context includes biological children, adopted children, and step-children. The test looks at all the parent's children — not just those who are sponsoring the visa. Visit the Balance of Family Test page for worked examples.",
+    answer: "At least half of the parent's children and stepchildren must be eligible children (Australian citizens, or permanent residents or eligible New Zealand citizens usually resident in Australia), or there must be more eligible children than children living in any other single country. Visit the Balance of Family Test page for worked examples.",
   },
 ]
 
@@ -196,7 +196,7 @@ return (
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: '#fff', borderRadius: '0 8px 8px 0', padding: 20 }}>
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 10px' }}>2. Balance of Family Test</h3>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                More than half of the parent's children must be Australian citizens, permanent residents, or eligible New Zealand citizens — or the number of children who are Australian or eligible must be equal to or greater than those who are not. This is a hard requirement — it cannot be waived. See the Balance of Family Test page for worked examples.
+                At least half of the parent's children and stepchildren must be eligible children (Australian citizens, or permanent residents or eligible New Zealand citizens usually resident in Australia), or there must be more eligible children than children living in any other single country. This is a hard requirement — it cannot be waived. See the Balance of Family Test page for worked examples.
               </p>
             </div>
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: '#fff', borderRadius: '0 8px 8px 0', padding: 20 }}>
@@ -268,7 +268,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Financial obligation" title="Assurance of Support" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 32 }}>
-            An Assurance of Support (AoS) is a legally binding commitment by the sponsor (the Australian child or their partner) to support the parent financially and to repay certain Centrelink welfare payments if the parent accesses them within a specified period. The AoS requires a security bond — a substantial sum deposited with the Department of Human Services.
+            An Assurance of Support (AoS) is a legally binding commitment by the sponsor (the Australian child or their partner) to support the parent financially and to repay certain Centrelink welfare payments if the parent accesses them within a specified period. For the 804 the AoS period is 4 years and the assurer must provide a bank guarantee backed by a Commonwealth Bank term deposit — AUD5,000 for one adult or AUD7,000 for two adults (individual assurer).
           </p>
           <Callout variant="note" panel={true} title="Confirm current AoS amounts and bond requirements on DoHA">
             The security bond amount and the AoS terms are set by the Department and may change. Confirm the current requirements before proceeding.
@@ -316,7 +316,7 @@ return (
                 {[
                   { feature: 'Outcome', v804: 'Permanent (after decades)', v864: 'Permanent', v870: 'Temporary (up to 10 years)' },
                   { feature: 'Application charge', v804: 'Low (few thousand)', v864: 'Very high (~$43,600+ per adult 2nd instalment — confirm)', v870: 'Moderate per stage' },
-                  { feature: 'Wait for permanent', v804: 'Decades', v864: 'about 18 years (new applications)', v870: 'N/A (temporary)' },
+                  { feature: 'Wait for permanent', v804: 'About 42 years (new applications)', v864: 'about 18 years (new applications)', v870: 'N/A (temporary)' },
                   { feature: 'Work rights', v804: 'No', v864: 'No', v870: 'No' },
                   { feature: 'Medicare', v804: 'No', v864: 'Generally no - you must hold adequate health insurance unless you are covered by a Reciprocal Health Care Agreement', v870: 'No' },
                   { feature: 'Balance of Family Test', v804: 'Yes', v864: 'Yes', v870: 'No' },

@@ -27,7 +27,7 @@ const PURPLE = CAT_SKILLED
 const TEAL = CAT_EMPLOYER
 const AMBER = GOLD
 
-const DISCLAIMER = 'Figures current as at 1 July 2026 — verify with Home Affairs'
+const DISCLAIMER = 'Figures current as at October 2026 — verify with Home Affairs'
 
 const PARTNER_RELATED: RelatedPage[] = [
   { title: 'Partner Visa Onshore (820/801)', desc: 'Apply for a partner visa while in Australia.', icon: 'heart', page: 'partner-visa-820-801' },
@@ -44,7 +44,7 @@ const PARTNER_CARDS = [
 ]
 
 const PARENT_CARDS = [
-  { code: '143', name: 'Contributory Parent', tag: '~18 yr queue', tagColor: PURPLE, body: 'Permanent visa for parents. Significant government fee (~$48,415 per primary applicant) but a dramatically shorter queue than the non-contributory pathway.', route: null as string | null, note: '~$48,415 govt fee per primary applicant' },
+  { code: '143', name: 'Contributory Parent', tag: '~18 yr queue', tagColor: PURPLE, body: 'Permanent visa for parents. Significant government fee (AUD49,900 for most primary applicants from 1 July 2026) but a dramatically shorter queue than the non-contributory pathway.', route: null as string | null, note: 'AUD49,900 govt charges (most primary applicants)' },
   { code: '173', name: 'Contributory Parent (Temp)', tag: 'Step toward 143', tagColor: PURPLE, body: 'Temporary step toward the permanent 143. Lower upfront fee (~$31,085). The remaining levy is paid when transitioning to the 143 permanent visa.', route: null as string | null, note: 'Temporary — transitions to 143' },
   { code: '864', name: 'Contributory Aged Parent', tag: 'Aged — faster queue', tagColor: '#4f46e5', body: 'Permanent visa for aged parents who meet the balance of family test. Similar fee structure to the 143. Faster queue than the non-contributory 804.', route: null as string | null, note: 'Must meet aged parent definition' },
   { code: '804', name: 'Aged Parent', tag: '40+ yr queue', tagColor: '#9ca3af', body: 'Non-contributory permanent visa for aged parents. No large government fee — but the current queue is about 42 years. Rarely practical for most families.', route: null as string | null, note: 'About 42 year queue — verify with Home Affairs' },
@@ -97,16 +97,16 @@ const PILLARS = [
 
 /* ── Processing time table ───────────────────────────────── */
 const PROCESSING = [
-  { visa: '309 Partner (Offshore)', stage: 'Temporary grant', time: '2–4 years', color: ROSE },
-  { visa: '100 Partner (Offshore)', stage: 'Permanent grant (from 309)', time: 'Eligible 2 years after lodgement, then 100: 9 months (50%) / 21 months (90%); 801: 8 months (50%) / 19 months (90%)', color: ROSE },
-  { visa: '820 Partner (Onshore)', stage: 'Temporary grant', time: '2–4 years', color: ROSE },
-  { visa: '801 Partner (Onshore)', stage: 'Permanent grant (from 820)', time: 'Eligible 2 years after lodgement, then 100: 9 months (50%) / 21 months (90%); 801: 8 months (50%) / 19 months (90%)', color: ROSE },
-  { visa: '300 Prospective Marriage', stage: 'Visa grant', time: '6–12 months', color: AMBER },
-  { visa: '143 Contributory Parent', stage: 'Permanent grant', time: 'about 18 years', color: PURPLE },
-  { visa: '173 Contributory Parent Temp', stage: 'Temporary grant', time: '2–3 years', color: PURPLE },
+  { visa: '309 Partner (Offshore)', stage: 'Temporary grant', time: '21 months (50%) / 32 months (90%)', color: ROSE },
+  { visa: '100 Partner (Offshore)', stage: 'Permanent grant (from 309)', time: 'Eligible 2 years after lodgement, then 100: 9 months (50%) / 21 months (90%)', color: ROSE },
+  { visa: '820 Partner (Onshore)', stage: 'Temporary grant', time: '22 months (50%) / 30 months (90%)', color: ROSE },
+  { visa: '801 Partner (Onshore)', stage: 'Permanent grant (from 820)', time: 'Eligible 2 years after lodgement, then 801: 8 months (50%) / 19 months (90%)', color: ROSE },
+  { visa: '300 Prospective Marriage', stage: 'Visa grant', time: '14 months (50%) / 26 months (90%)', color: AMBER },
+  { visa: '143 Contributory Parent', stage: 'Permanent grant', time: 'Around 18 years for new applications (capped and queued)', color: PURPLE },
+  { visa: '173 Contributory Parent Temp', stage: 'Temporary grant', time: 'Around 18 years for new applications (capped and queued)', color: PURPLE },
   { visa: '870 Sponsored Parent (Temp)', stage: '3-year grant', time: '6–12 months', color: TEAL },
-  { visa: '103 / 804 Parent', stage: 'Non-contributory queue', time: '30+ years', color: '#9ca3af' },
-  { visa: '101 / 802 Child Visa', stage: 'Permanent grant', time: '12–24 months', color: GREEN },
+  { visa: '103 / 804 Parent', stage: 'Non-contributory queue', time: 'Around 42 years for new applications', color: '#9ca3af' },
+  { visa: '101 / 802 Child Visa', stage: 'Permanent grant', time: '101: 24 months (50%) / 33 months (90%); 802: 21 months (50%) / 31 months (90%)', color: GREEN },
 ]
 
 /* ── FAQs ────────────────────────────────────────────────── */
@@ -117,7 +117,7 @@ const FAQS = [
   },
   {
     q: 'How long does a partner visa take?',
-    a: "The initial temporary grant (309/820) is currently taking 2–4 years for most applicants. After the temporary grant, a further 2-year wait applies before the permanent stage is assessed. Total time from lodgement to permanent residence is typically 4–6 years. Complex cases, high-demand periods and requests for further information can extend processing significantly. Figures current as at 1 July 2026 — verify with Home Affairs.",
+    a: "Home Affairs currently decides 50% of subclass 820 applications within 22 months and 90% within 30 months (subclass 309: 21 and 32 months). The permanent stage becomes assessable 2 years after the combined application was lodged — not 2 years after the temporary grant — and Home Affairs then decides 50% of permanent-stage cases within 8 to 9 months of that date. Times vary with the individual case. Figures current as at October 2026 — verify with Home Affairs.",
   },
   {
     q: 'What evidence is required for a partner visa?',
@@ -125,7 +125,7 @@ const FAQS = [
   },
   {
     q: 'Can de facto partners apply for a partner visa?',
-    a: "Yes. De facto relationships are fully recognised for partner visa purposes. You must have lived together in a genuine de facto relationship for at least 12 months immediately before applying — unless you are registered under a state or territory relationship register, or you have a dependent child together. There is no requirement to be married.",
+    a: "Yes. De facto relationships are fully recognised for partner visa purposes. You must usually have been in a genuine de facto relationship for at least 12 months immediately before applying. This does not apply if your relationship is registered with an Australian state or territory authority, if compelling and compassionate circumstances exist (for example, a dependent child of the relationship), or in certain permanent humanitarian visa cases. There is no requirement to be married.",
   },
   {
     q: 'What is the Contributory Parent visa and is it worth it?',

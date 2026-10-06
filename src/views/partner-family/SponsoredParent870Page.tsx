@@ -42,8 +42,8 @@ const STEPS: TimelineStep[] = [
 
 const FAQ: FaqItem[] = [
   { question: "Can my parent apply for the 870 if they cannot pass the Balance of Family test?", answer: "Yes — the Balance of Family test is not required for the subclass 870. This is one of the primary advantages of the 870 over the permanent parent visa subclasses. A parent whose family configuration fails the Balance of Family test (e.g. more children outside Australia than in Australia) can still apply for the 870, provided the sponsoring child meets the income threshold and other requirements." },
-  { question: "Can my parent hold a 870 visa and also be in the permanent 143 queue at the same time?", answer: "Yes, if the permanent application is lodged first. A parent with a pending permanent parent visa application, such as a 143, can apply for and be granted an 870 to visit Australia while it is processed. It does not work the other way: a parent who has applied for or holds an 870, or who held one and has not left Australia since it ended, cannot lodge a 143 or any other parent visa. Families wanting both should get advice on the order of applications before lodging anything. — the parent lives in Australia on the 870 while waiting for the 143 to be processed, which currently takes about 18 years for new applications. When the 143 is granted, the parent becomes a permanent resident and the 870 is no longer needed." },
-  { question: "Does the 870 count toward the residence requirement for citizenship?", answer: "No. Time spent in Australia on a temporary visa — including the subclass 870 — does not count toward the 4-year lawful residence required for Australian citizenship by conferral. Only time spent as a permanent resident counts toward the 12-month permanent residence component. If the parent's goal is citizenship, they need to become a permanent resident first (through the 143 or another permanent pathway), then accrue the required residence period." },
+  { question: "Can my parent hold a 870 visa and also be in the permanent 143 queue at the same time?", answer: "Yes, if the permanent application is lodged first. A parent with a pending permanent parent visa application, such as a 143, can apply for and be granted an 870 to visit Australia while it is processed. It does not work the other way: a parent who has applied for or holds an 870, or who held one and has not left Australia since it ended, cannot lodge a 143 or any other parent visa. Families wanting both should get advice on the order of applications before lodging anything." },
+  { question: "Does the 870 count toward the residence requirement for citizenship?", answer: "Partly. Time living in Australia on a valid visa, including the 870, can count toward the 4 years of residence required for citizenship, but the applicant must also have held a permanent visa for the last 12 months and meet the absence limits. The parent must become a permanent resident first." },
   { question: "What health insurance does my parent need?", answer: "The parent must hold comprehensive private health insurance that covers hospital treatment for the full duration of the 870 visa. The insurance must be from an approved provider. The Department assesses the adequacy of the coverage. The specific requirements for what counts as approved and adequate coverage should be confirmed with the Department of Home Affairs or your migration agent before purchasing a policy. Standard visitor travel insurance may not be sufficient." },
   { question: "Can both of my parents apply together on one 870 application?", answer: "No. Family members cannot be included in an 870 application, so each parent lodges their own application. One approved Parent Sponsor can cover up to 2 parents per household at a time. Each applicant pays the visa application charge separately (AUD6,370 for up to 3 years or AUD12,440 for up to 5 years). Figures current at October 2026 — confirm on DoHA." },
   { question: "What if my parent's 870 expires and they have not applied for a renewal — are they unlawful?", answer: "If a 870 holder does not lodge a renewal application before their current visa expires, and they are still in Australia, they become unlawful — which can have serious consequences including removal from Australia and a re-entry bar. The 870 cannot be extended. A further 870 must generally be lodged from outside Australia (unless Home Affairs has given permission to apply in Australia), and it cannot be granted until the parent has been outside Australia for at least 90 consecutive days. Plan departure before the current visa ends. An agent should monitor the expiry date and initiate renewal proceedings well in advance. If the parent's 870 has already expired while they are in Australia, they should seek urgent migration advice." },
@@ -128,7 +128,7 @@ return (
             The subclass 870 Sponsored Parent (Temporary) visa was introduced in 2019 as a pragmatic option for families who want a parent to spend extended time in Australia — without the complexity, cost, or queue of the permanent parent visa pathways. It is temporary and provides no direct pathway to permanent residence, but it allows a parent to live in Australia alongside their family for up to 10 years in total.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 40 }}>
-            The 870 is also commonly used as a &quot;bridge&quot; strategy while a parent is waiting in the permanent parent visa queue. A parent can hold a subclass 870 and be in the permanent queue for a 143 simultaneously — meaning they can live in Australia while waiting for their permanent application to be processed. This requires the sponsoring child to be an approved parent sponsor.
+            The 870 is sometimes used while a permanent parent visa is processing — but only if the permanent application was lodged first. A parent with a pending permanent parent visa application can apply for and be granted an 870 to visit Australia while it is processed. A parent who has applied for or holds an 870 cannot lodge a permanent parent visa until they have left Australia after the 870 ended (subject to the 90-day rule for further 870 grants). Get advice on the order of applications before lodging.
           </p>
 
           {/* 2-column feature grid */}
@@ -245,7 +245,7 @@ return (
                 </tr>
                 <tr style={{ background: '#fff' }}>
                   <td style={{ padding: '14px 20px', fontWeight: 600 }}>5-year grant</td>
-                  <td style={{ padding: '14px 20px' }}>~AUD 2,900</td>
+                  <td style={{ padding: '14px 20px' }}>AUD12,440</td>
                   <td style={{ padding: '14px 20px', color: '#6b7280', fontSize: 13 }}>Per applicant. Confirm on DoHA.</td>
                 </tr>
               </tbody>
@@ -253,7 +253,7 @@ return (
           </div>
 
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, marginBottom: 28 }}>
-            If both parents are applying, each pays the visa application charge separately. A couple applying for a 5-year 870 visa would pay approximately AUD 5,800 in total government charges. Agent fees are separate.
+            If both parents are applying, each pays the visa application charge separately. A couple applying for a 5-year 870 visa would pay AUD24,880 in total government charges. Agent fees are separate.
           </p>
 
           <Callout variant="warning" panel={true} title="Health insurance costs are additional and ongoing">

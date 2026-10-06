@@ -51,16 +51,16 @@ const KEY_FACTS: KeyFact[] = [
   },
   {
     icon: 'plane',
-    value: 'Offshore only',
-    label: 'Parent must be outside Australia when the 173 is lodged',
-    note: 'The 173 is an offshore visa. The onshore contributory parent alternative is the subclass 864 (Contributory Aged Parent).',
+    value: 'In or outside Australia',
+    label: 'Parent can apply from in or outside Australia',
+    note: 'The parent and family members can be in or outside Australia (but not in immigration clearance) when they apply for the 173. The onshore aged contributory alternative is subclass 884/864.',
   },
 ]
 
 const STEPS: TimelineStep[] = [
   {
     title: 'Apply for the subclass 173 (offshore)',
-    desc: 'The parent applies for the 173 from outside Australia. The application charge for the 173 is the first-stage contributory charge — a smaller amount than the full 143 charge. The balance of family test, assurance of support, and all eligibility documents are submitted at this stage.',
+    desc: 'The parent applies for the 173 from in or outside Australia. The 173 charges (AUD4,245 at lodgement and AUD29,130 before grant) are the first stage of the two-step contributory route. The balance of family test, assurance of support, and all eligibility documents are submitted at this stage.',
   },
   {
     title: '173 granted — parent moves to Australia',
@@ -79,11 +79,11 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'Can I apply for the 173 from within Australia?',
-    answer: 'No. The subclass 173 is an offshore visa — the parent must be outside Australia at the time of lodging the 173 application. If the parent is already in Australia and wants a contributory parent pathway, the onshore option is the subclass 864 (Contributory Aged Parent), provided the parent meets the age pension age requirement.',
+    answer: 'Yes. The parent and any family members can be in or outside Australia (but not in immigration clearance) when they apply for the 173. If the parent is in Australia on a visa with a no further stay condition, the application will be invalid unless the condition is waived. If the parent is of pension age and in Australia, the onshore contributory aged route (884/864) may be more appropriate.',
   },
   {
     question: 'Does the 173 give me a faster pathway to permanent residence than the direct 143?',
-    answer: 'The 173 allows the parent to enter Australia sooner than waiting offshore for the 143. However, both the 173+143 route and the direct 143 ultimately face the same 143 permanent queue. The 173 does not jump the queue — it allows the parent to live in Australia with work rights and Medicare while the permanent outcome is processed.',
+    answer: 'No. The 173 is capped and queued in the same contributory parent queue as the 143 — it is not granted sooner. Once a 173 holder applies for the 143, Home Affairs currently processes that permanent stage quickly. The 173 route still allows the parent to live in Australia with work rights and Medicare while waiting.',
   },
   {
     question: 'What is the assurance of support and how does it work?',
@@ -274,12 +274,12 @@ return (
                 {[
                   {
                     label: 'First payment',
-                    direct: 'Full 143 first-instalment charge (approx. ~$5,640 per adult — confirm DoHA)',
+                    direct: 'AUD6,300 first instalment (main applicant) — confirm Home Affairs',
                     staged: '173 application charge (smaller first instalment — confirm DoHA)',
                   },
                   {
                     label: 'Second payment',
-                    direct: 'None (permanent granted after first charge — health/character costs aside)',
+                    direct: 'AUD43,600 per adult second instalment, payable before the 143 is granted',
                     staged: '143 application charge (larger second instalment — confirm DoHA)',
                   },
                   {
@@ -381,7 +381,7 @@ return (
             Processing times change regularly. The information below is current at October 2026 — always confirm on the DoHA website.
           </Callout>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 32, marginBottom: 20 }}>
-            The subclass 173 has a shorter processing queue than the permanent 143 — the two-stage route is designed so that the parent can enter Australia sooner while the permanent pathway is pursued.
+            The subclass 173 is capped and queued in the same contributory parent queue as the 143, so it does not get the parent to Australia sooner. Home Affairs currently estimates about 18 years for new contributory parent applications.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75 }}>
             The subclass 143 queue is substantial — new applications typically face a processing time of about 18 years. The 173 itself processes faster, but the underlying permanent 143 grant still requires the same wait. Planning for the long-term total timeline is essential.

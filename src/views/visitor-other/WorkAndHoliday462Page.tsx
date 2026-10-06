@@ -251,10 +251,11 @@ return (
           <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 14, padding: 28, marginBottom: 32 }}>
             <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: '10px 14px' }}>
               {[
-                'Argentina', 'Bangladesh', 'Chile', "China (People's Republic)", 'Ecuador', 'India',
-                'Indonesia', 'Israel', 'Malaysia', 'Mongolia', 'Nepal', 'Oman', 'Peru', 'Philippines',
-                'Poland', 'Portugal', 'Singapore', 'Spain', 'Sri Lanka', 'Thailand', 'Turkey',
-                'United Arab Emirates', 'United States of America', 'Uruguay', 'Vietnam',
+                'Argentina', 'Austria', 'Brazil', 'Chile', 'China', 'Czech Republic', 'Ecuador', 'Greece',
+                'Hungary', 'India', 'Indonesia', 'Israel', 'Luxembourg', 'Malaysia', 'Mongolia',
+                'Papua New Guinea', 'Peru', 'Poland', 'Portugal', 'San Marino', 'Singapore',
+                'Slovak Republic', 'Slovenia', 'Spain', 'Switzerland', 'Thailand', 'Turkiye',
+                'Uruguay', 'United States of America', 'Vietnam',
               ].map(c => (
                 <span key={c} style={{ fontSize: 13, color: '#374151', background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 6, padding: '5px 12px', lineHeight: 1.4 }}>{c}</span>
               ))}
@@ -486,7 +487,7 @@ return (
                   { feature: 'Age range', v417: '18–30 (up to 35 for some countries including UK, Canada, Ireland, France, Italy)', v462: '18–30 (no country has an extended upper age limit as at October 2026 — confirm on DoHA)' },
                   { feature: 'Additional requirements', v417: 'Generally none beyond the universal criteria', v462: 'Government support letter, tertiary education, functional English (requirements vary by country)' },
                   { feature: 'Annual caps and ballot', v417: 'Generally no annual cap or ballot system', v462: 'Some countries have annual caps and a ballot (lottery) — applicants must hold an invitation before applying' },
-                  { feature: '6-month employer limit', v417: 'Yes (UK passport holders currently exempt — confirm)', v462: 'Yes (no current exemptions)' },
+                  { feature: '6-month employer limit', v417: 'Yes (applies to all nationalities, including UK passport holders)', v462: 'Yes (applies to all nationalities, including UK passport holders)' },
                   { feature: 'Study cap', v417: '4 months', v462: '4 months' },
                   { feature: 'Second year', v417: '88 days regional work (UK exempt from regional work requirement)', v462: '88 days regional work' },
                   { feature: 'Third year', v417: '6 months regional work', v462: '6 months regional work' },

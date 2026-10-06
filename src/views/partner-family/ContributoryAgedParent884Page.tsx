@@ -43,9 +43,9 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '~AUD 5,040',
+    value: 'AUD6,300 + AUD29,130',
     label: 'Approximate first instalment charge (884 stage) — confirm on DoHA',
-    note: 'The 884 first instalment is approximately AUD 5,040 per adult at the 884 stage. The second (larger) instalment of approximately AUD 43,600 per adult is payable at the 864 stage. Charges are indexed — confirm current amounts on the DoHA website.',
+    note: 'AUD6,300 at lodgement of the 884 and AUD29,130 before the 884 is granted (AUD35,430 for a single applicant). The later 864 costs AUD555 at lodgement and AUD19,420 before grant. Confirm current amounts on Home Affairs.',
   },
   {
     icon: 'shield',
@@ -58,10 +58,10 @@ const FACTS: KeyFact[] = [
 const STEPS: TimelineStep[] = [
   { code: '01', title: 'Confirm Balance of Family test', desc: 'Confirm that the parent passes the Balance of Family test — more of their children must be Australian permanent residents or citizens (or deceased) than residing in any other single country. Gather documents proving each child\'s location and status.' },
   { code: '02', title: 'Confirm pension-age eligibility', desc: 'The parent must have reached Australian pension age at the time of application. Pension age varies — confirm the current age threshold on the Services Australia website. The parent must also be physically in Australia when the 884 is lodged.' },
-  { code: '03', title: 'Pay first instalment (884 stage)', desc: 'Approximately AUD 5,040 per adult applicant is payable at the 884 stage (plus the base application charge). Confirm current charges on the Department of Home Affairs website before lodging. Charges are indexed annually.' },
+  { code: '03', title: 'Pay first instalment (884 stage)', desc: 'AUD6,300 at lodgement of the 884, plus AUD29,130 before the 884 is granted. Confirm current charges on the Department of Home Affairs website before lodging.' },
   { code: '04', title: 'Lodge the subclass 884 application', desc: 'The 884 must be lodged on paper while the parent is in Australia (not in immigration clearance). Only the 103, 143, 804 and 864 are lodged online. Attach identity documents, Balance of Family evidence, health assessments, and character documents.' },
   { code: '05', title: 'Hold the 884 visa — plan for the 864 application', desc: 'The 884 is valid for 2 years. During this period the parent lives in Australia. Before the 884 expires, the parent (or their migration agent) must prepare and lodge the subclass 864 Contributory Aged Parent (permanent) application.' },
-  { code: '06', title: 'Lodge the subclass 864 and pay second instalment', desc: 'The 864 is lodged while the 884 is still valid. The second and larger instalment (approximately AUD 43,600 per adult) is payable at this stage. Confirm current charges on DoHA. The parent receives a Bridging Visa A on lodgement of the 864 and remains in Australia while the 864 is processed.' },
+  { code: '06', title: 'Lodge the subclass 864 and pay second instalment', desc: 'The 864 is lodged while the 884 is still valid. Pay AUD555 at lodgement and AUD19,420 before grant. Confirm current charges on Home Affairs. The parent receives a Bridging Visa A on lodgement of the 864 and remains in Australia while the 864 is processed.' },
 ]
 
 const FAQ: FaqItem[] = [
@@ -131,7 +131,7 @@ return (
         eyebrowSub="Parent Visas · Subclass 884"
         title={<>Contributory Aged Parent<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 884 — Temporary stage before permanent 864</em></>}
         deck="The subclass 884 is a 2-year onshore temporary visa for pension-age parents, allowing them to split the large contributory charges over two stages before transitioning to the permanent subclass 864. The Balance of Family test applies. The 884 must be followed by a 864 application before it expires."
-        shortAnswer={<>The <strong style={{ color: NAVY }}>subclass 884 Contributory Aged Parent (Temporary) visa</strong> is the onshore, pension-age equivalent of the subclass 173. It is a <strong style={{ color: NAVY }}>2-year temporary visa</strong> that splits the large contributory charges: a first instalment of approximately <strong style={{ color: NAVY }}>AUD 5,040</strong> at the 884 stage, and the larger instalment of approximately <strong style={{ color: NAVY }}>AUD 43,600 per adult</strong> when the permanent <strong style={{ color: NAVY }}>subclass 864</strong> is lodged. The <strong style={{ color: NAVY }}>Balance of Family test</strong> is required. The parent must be in Australia and have reached <strong style={{ color: NAVY }}>Australian pension age</strong>. The 864 must be lodged before the 884 expires. Confirm current charges and pension-age thresholds on the Department of Home Affairs and Services Australia websites. Nanak Migration Group (MARN 2619467) can advise. No outcome guarantees.</>}
+        shortAnswer={<>The <strong style={{ color: NAVY }}>subclass 884 Contributory Aged Parent (Temporary) visa</strong> is the onshore, pension-age equivalent of the subclass 173. It is a <strong style={{ color: NAVY }}>2-year temporary visa</strong> that splits contributory charges: <strong style={{ color: NAVY }}>AUD6,300</strong> at lodgement of the 884 and <strong style={{ color: NAVY }}>AUD29,130</strong> before the 884 is granted (AUD35,430 for a single applicant). The later <strong style={{ color: NAVY }}>subclass 864</strong> costs <strong style={{ color: NAVY }}>AUD555</strong> at lodgement and <strong style={{ color: NAVY }}>AUD19,420</strong> before grant. The <strong style={{ color: NAVY }}>Balance of Family test</strong> is required. The parent must be in Australia and have reached <strong style={{ color: NAVY }}>Australian pension age</strong>. The 864 must be lodged before the 884 expires. Confirm current charges on Home Affairs. Nanak Migration Group (MARN 2619467) can advise.</>}
         maraBadge={true}
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -167,7 +167,7 @@ return (
             Contributory aged parent visas involve some of the highest government charges in the Australian immigration system. The subclass 864 (permanent) requires payment of approximately AUD 43,600 per adult as the second instalment at the time the permanent visa is lodged. For many families, paying the entire second instalment at the point of the 864 application is financially demanding.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 32 }}>
-            The subclass 884 exists as a stepping stone. By lodging the 884 first, the family pays a smaller first instalment (~AUD 5,040 per adult) and the parent can live in Australia for 2 years on the 884. Before the 884 expires, the family lodges the 864 and pays the larger second instalment at that point. This spreads the financial commitment over two stages.
+            The subclass 884 exists as a stepping stone. By lodging the 884 first, the family pays a smaller first instalment (AUD6,300 (884 lodgement) per adult) and the parent can live in Australia for 2 years on the 884. Before the 884 expires, the family lodges the 864 and pays the larger second instalment at that point. This spreads the financial commitment over two stages.
           </p>
           <Callout variant="warning" panel={true} title="The 864 must be lodged before the 884 expires — do not leave this late">
             The 884 is valid for 2 years. If the subclass 864 is not lodged before the 884 expires, the parent will no longer hold a substantive visa. Start preparing the 864 application well before the 884 expiry date.
@@ -232,9 +232,9 @@ return (
               </thead>
               <tbody>
                 {[
-                  { charge: '884 base application charge', amount: '~AUD 5,040 per adult', when: 'At lodgement of the 884' },
+                  { charge: '884 base application charge', amount: 'AUD6,300 (884 lodgement) per adult', when: 'At lodgement of the 884' },
                   { charge: '884 additional charge (first contributory instalment)', amount: 'Included in above figure — confirm on DoHA', when: 'At lodgement of the 884' },
-                  { charge: '864 second (main contributory) instalment', amount: '~AUD 43,600 per adult', when: 'At lodgement of the 864 (before the 884 expires)' },
+                  { charge: '864 second (main contributory) instalment', amount: 'AUD19,420 (864 before grant) per adult', when: 'At lodgement of the 864 (before the 884 expires)' },
                   { charge: 'Assurance of Support bond', amount: '~AUD 10,000 main + ~AUD 4,000 per additional adult', when: 'At 864 stage — lodged with Services Australia' },
                 ].map((row, i) => (
                   <tr key={row.charge} style={{ background: i % 2 === 0 ? '#fff' : GREY_BG, borderBottom: `1px solid ${BORDER}` }}>
@@ -267,8 +267,8 @@ return (
               </thead>
               <tbody>
                 {[
-                  { factor: 'First payment', a: '~AUD 5,040 at 884 stage', b: 'Full second instalment ~AUD 43,600 at lodgement' },
-                  { factor: 'Second payment', a: '~AUD 43,600 at 864 stage (~2 years later)', b: 'No second payment — all paid upfront' },
+                  { factor: 'First payment', a: 'AUD6,300 (884 lodgement) at 884 stage', b: 'Full second instalment AUD19,420 (864 before grant) at lodgement' },
+                  { factor: 'Second payment', a: 'AUD19,420 (864 before grant) at 864 stage (~2 years later)', b: 'No second payment — all paid upfront' },
                   { factor: 'Total charges', a: 'Slightly higher — additional 884 base charge', b: 'Slightly lower — no 884 charge' },
                   { factor: 'Cash-flow benefit', a: 'Significant — spreads large payment over 2 years', b: 'None — full amount required at lodgement' },
                   { factor: 'Processing complexity', a: 'Two separate applications required', b: 'Single application' },

@@ -57,7 +57,7 @@ const FACTS: KeyFact[] = [
 const FAQ: FaqItem[] = [
   {
     question: "How do I know if I have a PIC 4013 or 4014 re-entry ban?",
-    answer: "PIC 4013 applies if your visa was cancelled under certain grounds (most commonly section 116 of the Migration Act) while you were in Australia. PIC 4014 applies if you departed Australia as an unlawful non-citizen — that is, while you had no valid visa. The exclusion period runs from the date of cancellation (for PIC 4013) or from the date of departure (for PIC 4014). If you are unsure whether a ban applies to you, you can contact the Department of Home Affairs or seek advice from a registered migration agent who can review your immigration record. The existence of an exclusion can sometimes be confirmed through a Freedom of Information (FOI) request for your immigration file.",
+    answer: "PIC 4013 applies if your visa was cancelled under certain grounds in sections 109, 116, 128, 133A, 133C or 137J of the Migration Act (for example, working without permission or incorrect information). PIC 4014 applies if you departed Australia as an unlawful non-citizen, or while holding a Bridging C, D or E visa, unless you left within 28 days after your last substantive visa ceased. The exclusion period runs from cancellation (PIC 4013) or departure (PIC 4014). Seek advice if you are unsure whether a ban applies.",
   },
   {
     question: "If I departed as an unlawful non-citizen within 28 days of my visa expiring, is the PIC 4014 ban avoided?",
@@ -65,7 +65,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can a PIC 4013 or 4014 ban be waived for a partner visa?",
-    answer: "Yes — the partner visa (subclass 820/801 onshore and 309/100 offshore) is one of the visa classes for which PIC 4013 and 4014 can be waived if the decision-maker is satisfied that there are compelling circumstances affecting an Australian citizen or permanent resident. Compelling circumstances commonly include: the impact on an Australian-citizen spouse or de facto partner, the impact on Australian-citizen children, and situations where the exclusion would have a disproportionate effect on the Australian family members. The waiver is a genuine discretion — it is not automatic and must be supported by specific evidence of the compelling circumstances affecting the Australian citizen or PR.",
+    answer: "Partner visas (820/801 and 309/100) do not include PIC 4013 or 4014, so these exclusion periods do not apply to a partner visa application (other criteria such as Schedule 3, PIC 4020 and character still apply). PIC 4013 and 4014 mainly apply to temporary visas, and for those visas the exclusion can be waived where there are compelling or compassionate circumstances.",
   },
   {
     question: "What is the difference between a PIC 4013/4014 ban and a section 501 exclusion?",
@@ -77,7 +77,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Is there anything I can do to return to Australia before the 3-year ban ends?",
-    answer: "If the 3-year exclusion applies to you and has not yet ended, your options are limited. For some visa classes (particularly partner visas), the ban can be waived if there are compelling circumstances affecting an Australian citizen or permanent resident. For any visa that includes PIC 4013 or 4014, the exclusion can be waived if there are compelling circumstances affecting the interests of Australia, or compassionate or compelling circumstances affecting an Australian citizen, permanent resident or eligible New Zealand citizen. Visas that do not include these criteria are not affected by them. If you have strong Australian connections — a citizen spouse, Australian-citizen children — seek advice on whether a waiver is available for the visa you are considering. No agent can guarantee a waiver outcome.",
+    answer: "If the 3-year exclusion applies to you and has not yet ended, your options depend on the visa you need. For any visa that includes PIC 4013 or 4014, the exclusion can be waived if there are compelling circumstances affecting the interests of Australia, or compassionate or compelling circumstances affecting an Australian citizen, permanent resident or eligible New Zealand citizen. Partner visas do not include PIC 4013/4014. Seek advice on whether a waiver is available for the visa you are considering.",
   },
 ]
 
@@ -119,7 +119,7 @@ return (
         eyebrowSub="Guides & Rules · Re-entry Bans"
         title={<>Re-entry Bans and Exclusion Periods<br /><em style={{ fontStyle: 'italic', color: GOLD }}>PIC 4013, PIC 4014 and Section 501</em></>}
         deck="Departing Australia unlawfully or having a visa cancelled can trigger a 3-year exclusion period that prevents re-entry. Understanding when the ban applies, how the 28-day window can help, and when a waiver is possible is essential for planning a lawful return."
-        shortAnswer={<><strong style={{ color: NAVY }}>PIC 4013</strong> imposes a 3-year exclusion after cancellation of a visa under certain grounds. <strong style={{ color: NAVY }}>PIC 4014</strong> imposes a 3-year exclusion after departing Australia as an unlawful non-citizen. The critical exception: <strong style={{ color: NAVY }}>departing within 28 days</strong> of the visa expiry generally avoids triggering PIC 4014. Both bans can be <strong style={{ color: NAVY }}>waived for some visa classes</strong> — most notably partner visas — where compelling circumstances affect an Australian citizen or permanent resident. <strong style={{ color: NAVY }}>Section 501</strong> character exclusions are a separate, more serious category that do not automatically expire and require ministerial processes to overturn. Nanak Migration Group (MARN 2619467) can advise on whether a ban applies to your situation and what options remain available.</>}
+        shortAnswer={<><strong style={{ color: NAVY }}>PIC 4013</strong> imposes a 3-year exclusion after cancellation of a visa under certain grounds. <strong style={{ color: NAVY }}>PIC 4014</strong> imposes a 3-year exclusion after departing Australia as an unlawful non-citizen. The critical exception: <strong style={{ color: NAVY }}>departing within 28 days</strong> of the visa expiry generally avoids triggering PIC 4014. Both exclusion periods mainly affect temporary visas (such as visitor, student and work visas), and they can be waived where there are compelling circumstances affecting the interests of Australia, or compassionate or compelling circumstances affecting an Australian citizen, permanent resident or eligible New Zealand citizen. Partner visas do not include these criteria. <strong style={{ color: NAVY }}>Section 501</strong> character exclusions are a separate, more serious category. Nanak Migration Group (MARN 2619467) can advise on whether a ban applies to your situation and what options remain available.</>}
         maraBadge={true}
         currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -155,7 +155,7 @@ return (
             Re-entry bans — formally called exclusion periods — prevent a person from being granted an Australian visa for a defined period after a migration compliance failure. The two main exclusion criteria in the <em>Migration Regulations 1994</em> that affect returning former residents or overstayers are PIC 4013 and PIC 4014.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 32 }}>
-            Both PIC 4013 and PIC 4014 impose a 3-year exclusion period. The exclusion means that the person cannot be granted a visa — for any purpose — unless the exclusion has expired or has been waived. Understanding which criterion applies, when the exclusion period started, and whether a waiver is available is the first step in assessing options for return.
+            Both PIC 4013 and PIC 4014 impose a 3-year exclusion period. The exclusion means the person cannot be granted a visa that includes PIC 4013 or 4014 (mainly temporary visas) unless the exclusion has expired or has been waived. Understanding which criterion applies, when the exclusion period started, and whether a waiver is available is the first step in assessing options for return.
           </p>
           <Callout variant="warning" panel={true} title="Overstaying and leaving without checking your status can trigger a 3-year ban">
             Many people are unaware that departing Australia after the expiry of their visa — without having either renewed it or departed within 28 days of expiry — triggers PIC 4014. The ban is applied automatically on any future visa application and is not prominently signposted at the time of departure. If you have previously overstayed and departed, seek advice before attempting to apply for a new Australian visa.
@@ -174,7 +174,7 @@ return (
                 code: 'PIC 4013',
                 heading: 'Exclusion after visa cancellation',
                 points: [
-                  'Applies where the person\'s visa was cancelled under section 116, section 128, or section 134 of the Migration Act',
+                  'Applies where the person\'s visa was cancelled under certain grounds in sections 109, 116, 128, 133A, 133C or 137J of the Migration Act',
                   'The 3-year exclusion runs from the date the cancellation took effect',
                   'Applies to cancellations for breach of visa conditions (e.g. condition 8105 work limitation, student condition 8202)',
                   'Applies only to the cancellation grounds listed in PIC 4013 - check the cancellation notice for the section and ground used',
@@ -303,7 +303,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Options for early return" title="When a PIC 4013 or 4014 Ban Can Be Waived" />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 32 }}>
-            A waiver of PIC 4013 or 4014 is available for defined visa classes where there are compelling circumstances affecting an Australian citizen or permanent resident. The waiver does not apply to all visa types — it is most commonly relevant to partner visas and some family visas.
+            The waiver is available for every visa that includes PIC 4013 or 4014 — mainly temporary visas such as visitor, student and work visas — where there are compelling circumstances affecting the interests of Australia, or compassionate or compelling circumstances affecting an Australian citizen, permanent resident or eligible New Zealand citizen. Partner visas do not include PIC 4013/4014.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 32 }}>
             <div style={{ background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 12, padding: 22 }}>

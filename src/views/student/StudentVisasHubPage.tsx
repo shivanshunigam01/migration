@@ -172,7 +172,7 @@ const STEPS = [
 const FAQS = [
   {
     q: 'What is the Genuine Student (GS) requirement and how is it different from the old GTE test?',
-    a: "The Genuine Student requirement replaced the Genuine Temporary Entrant (GTE) test on 23 March 2024. Both assess whether your primary purpose is study, but the GS requirement is evaluated as a holistic, positive test — DHA assesses whether you are a genuine student, not merely whether you intend to leave Australia after your course. Your GS statement, choice of course, financial position, ties to your home country, and immigration history are all considered. There is no set word count or format for the statement — but it must directly and honestly address the relevant factors. Our agents review every GS statement before lodgement.",
+    a: "The Genuine Student requirement replaced the Genuine Temporary Entrant (GTE) test on 23 March 2024. Both assess whether your primary purpose is study, but the GS requirement is evaluated as a holistic, positive test — DHA assesses whether you are a genuine student, not merely whether you intend to leave Australia after your course. The GS questions are answered in the online application form, with a limit of 150 words per response in English. Home Affairs prefers answers in the form rather than a separate statement, and gives more weight to answers supported by evidence. Our agents can review your answers and evidence before lodgement.",
   },
   {
     q: 'How many hours can I work on a student visa?',
@@ -184,7 +184,7 @@ const FAQS = [
   },
   {
     q: 'What financial evidence does DHA require?',
-    a: "DHA requires evidence that you can fund your tuition, living costs and return airfare for the entire course duration. The living-cost evidence threshold is approximately $29,710 per year per student as at 1 July 2026, with additional amounts for a partner (AUD10,394/yr) and each child (~$4,449/yr). Evidence typically includes 3–6 months of bank statements, scholarship letters, loan approvals, or statutory declarations from sponsors. Figures current as at 1 July 2026 — verify with Home Affairs.",
+    a: "DHA requires evidence that you can fund travel, the first 12 months of course fees and 12 months of living costs (AUD29,710 for the student), with additional amounts for a partner (AUD10,394/yr) and each child (AUD4,449/yr) where family can be included. Evidence typically includes bank statements, scholarship letters, loan approvals, or official government income documents. Figures current as at October 2026 — verify with Home Affairs.",
   },
   {
     q: 'What is OSHC and is it mandatory?',
@@ -192,7 +192,7 @@ const FAQS = [
   },
   {
     q: 'What is the pathway from a student visa to permanent residence?',
-    a: "The most common pathway is: Subclass 500 Student Visa → Subclass 485 Temporary Graduate Visa (2–6 years depending on qualification) → skills assessment in your occupation → Expression of Interest via SkillSelect → invitation to apply for 189, 190 or 491. The 485 gives you work experience to build points and complete your skills assessment. Your course must be a CRICOS-listed qualification in an occupation on the relevant skilled migration occupation list. Not all courses lead to a viable PR pathway — course choice at the start is critical.",
+    a: "The most common pathway is: Subclass 500 Student Visa → Subclass 485 Temporary Graduate visa (up to 18 months in the Post-Vocational Education Work stream, or generally 2 to 3 years in the Post-Higher Education Work stream depending on qualification) → skills assessment → Expression of Interest via SkillSelect → invitation to apply for 189, 190 or 491. Not all courses lead to a viable PR pathway — course choice at the start is critical.",
   },
 ]
 

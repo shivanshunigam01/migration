@@ -30,7 +30,7 @@ const FACTS: KeyFact[] = [
     icon: 'dollar',
     value: '~AUD 95,000',
     label: 'Total government charges for a couple',
-    note: 'First instalment (~$5,040 per applicant) at lodgement; second instalment (~$43,600 per adult) before grant. Figures current at October 2026 — confirm on DoHA.',
+    note: 'First instalment AUD6,300 (main applicant) at lodgement; second instalment AUD43,600 per adult before grant. Figures current at October 2026 — confirm on Home Affairs.',
   },
   {
     icon: 'calendar',
@@ -83,7 +83,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: "Can I include my other parent (the other applicant's spouse) in the same application?",
-    answer: "Yes. If both parents are applying, both can be included in the same application as primary and secondary applicants. Each adult applicant pays both the first and second instalment of charges — approximately $5,040 each at lodgement and approximately $43,600 each before grant, meaning a couple pays roughly $97,280 in total government charges. These figures are current at October 2026 — confirm on DoHA.",
+    answer: "Yes. If both parents are applying, both can be included in the same application as primary and secondary applicants. Each adult applicant pays both instalments — a couple applying together faces total government charges of about AUD95,625 (AUD6,300 plus AUD2,125 first instalment, and AUD87,200 second instalment). These figures are current at October 2026 — confirm on Home Affairs.",
   },
   {
     question: "What if my parent is refused — can the charges be refunded?",
@@ -104,6 +104,14 @@ const FAQ: FaqItem[] = [
   {
     question: "What is the Assurance of Support bond and when is it returned?",
     answer: "The Assurance of Support bond is a financial deposit lodged with Services Australia (formerly DHS) by the assurer as part of the AoS process. The bond amount varies by visa type and number of applicants. For the 143, the AoS period is typically 10 years. If no recoverable welfare payments are made to the visa holder during the AoS period, the bond is refunded at the end of the period with interest. The bond is intended to reduce the risk that the parent becomes a burden on the welfare system.",
+  },
+  {
+    question: "How long is the wait for a Contributory Parent visa?",
+    answer: "Home Affairs publishes an estimate of about 18 years for new Contributory Parent applications. As at 31 August 2026 it was releasing applications with a queue date up to November 2018 for final processing, and assessing applications lodged around April 2024 against the core criteria.",
+  },
+  {
+    question: "Is the 143 faster than the non-contributory parent visa?",
+    answer: "Home Affairs estimates about 18 years for Contributory Parent visas against about 42 years for the Parent and Aged Parent visas.",
   },
 ]
 
@@ -165,7 +173,7 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
         eyebrowSub="Partner & Family · Subclass 143"
         title={<>Contributory Parent Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 143 — Permanent Residence</em></>}
         deck="The subclass 143 Contributory Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. It is the most common permanent parent pathway — but applicants must be prepared for significant government charges and a processing queue currently estimated at about 18 years for new applications."
-        shortAnswer={<>The subclass 143 Contributory Parent visa grants <strong style={{ color: NAVY }}>permanent residence</strong> to parents whose child is a settled Australian citizen, permanent resident, or eligible New Zealand citizen — provided the parent can pass the <strong style={{ color: NAVY }}>Balance of Family test</strong> and the sponsoring child can provide an Assurance of Support. Government charges are approximately <strong style={{ color: NAVY }}>AUD 5,040 at lodgement</strong> (first instalment) and approximately <strong style={{ color: NAVY }}>AUD 43,600 per adult applicant</strong> (second instalment, payable before grant) — meaning a couple faces roughly <strong style={{ color: NAVY }}>AUD 95,000 in total government charges</strong>. Current processing times for new applications are about 18 years. Nanak Migration Group (MARN 2619467) can assess your eligibility before you commit to the charges.</>}
+        shortAnswer={<>The subclass 143 Contributory Parent visa grants <strong style={{ color: NAVY }}>permanent residence</strong> to parents whose child is a settled Australian citizen, permanent resident, or eligible New Zealand citizen — provided the parent can pass the <strong style={{ color: NAVY }}>Balance of Family test</strong> and the sponsoring child can provide an Assurance of Support. Government charges are <strong style={{ color: NAVY }}>AUD6,300 at lodgement</strong> for the main applicant (first instalment) and <strong style={{ color: NAVY }}>AUD43,600 per adult</strong> (second instalment, payable before grant) — meaning a couple faces roughly <strong style={{ color: NAVY }}>AUD95,625 in total government charges</strong>. Current processing times for new applications are about 18 years. Nanak Migration Group (MARN 2619467) can assess your eligibility before you commit to the charges.</>}
         maraBadge={true}
         currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -306,8 +314,8 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
               </div>
               <div style={{ padding: 24 }}>
                 {[
-                  { label: 'Primary applicant', value: '~AUD 5,040' },
-                  { label: 'Each secondary adult', value: '~AUD 5,040' },
+                  { label: 'Primary applicant', value: 'AUD6,300' },
+                  { label: 'Each secondary adult', value: 'AUD2,125' },
                   { label: 'Each secondary child (under 18)', value: '~AUD 1,260' },
                 ].map((row, i) => (
                   <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: i < 2 ? '1px solid #f0f2f7' : 'none' }}>
@@ -383,12 +391,12 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 20px' }}>How it works</h3>
               <ol style={{ margin: 0, padding: '0 0 0 20px', display: 'flex', flexDirection: 'column' as const, gap: 12 }}>
                 {[
-                  'Lodge the 173 application (first instalment only — ~$3,400 per applicant; lower than the 143 first instalment)',
-                  'The 173 is processed faster than the 143 (typically 2–5 years for the temporary stage)',
+                  'Lodge the 173 application and pay the first instalment (AUD4,245 for the main applicant). The 173 second instalment (AUD29,130) is paid before the 173 is granted',
+                  'The 173 is capped and queued in the same contributory queue as the 143 — it is not granted sooner',
                   'The parent is granted the 173 temporary visa and can live in Australia',
                   'The permanent 143 queue continues processing',
-                  'When the 143 is ready to be granted, the second instalment becomes payable',
-                  'The 173 is converted to the permanent 143',
+                  'When the 143 is ready to be granted, pay AUD555 plus AUD19,420 (for 173 holders moving to 143)',
+                  'The parent is granted the permanent 143',
                 ].map((step, i) => (
                   <li key={i} style={{ fontSize: 13, color: '#374151', lineHeight: 1.65 }}>{step}</li>
                 ))}

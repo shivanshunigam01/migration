@@ -87,7 +87,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Can the guardian study while in Australia on a 590?',
-    answer: 'The 590 does not specifically include study rights for the guardian. However, a guardian may be able to undertake limited incidental study. If the guardian wants to study substantively, they would need to apply for a student visa in their own right. Seek advice before enrolling in any course.',
+    answer: '590 holders can study ELICOS for less than 20 hours per week, or any other study or training for no more than 3 months. Substantive longer study requires a student visa in their own right.',
   },
   {
     question: 'What if the student changes schools?',
@@ -96,6 +96,10 @@ const FAQ: FaqItem[] = [
   {
     question: 'What financial evidence is required?',
     answer: 'The guardian must demonstrate sufficient funds to cover their living expenses in Australia for the full duration of the stay without working. Evidence may include: bank statements showing savings, evidence of overseas income (investments, rental income, salary that will continue remotely), a support letter from a sponsor outside Australia, or a combination of these. The specific evidence requirements are set by the Department — confirm on the DoHA website.',
+  },
+  {
+    question: 'Can I bring my other children with me on a Student Guardian visa?',
+    answer: 'Only in limited cases. Home Affairs will not grant the visa if any member of your family unit is under 6 years old, even if they are not travelling, unless there are compelling and compassionate reasons or a significant benefit to Australia\'s relations with another country. Any family members included must show funds and meet health and character requirements.',
   },
 ]
 
@@ -139,7 +143,7 @@ const CAN_DO = [
 
 const CANNOT_DO = [
   'Work in Australia in any paid capacity — no employment, no freelance, no contracting',
-  'Study for their own purposes (limited personal study may be possible — seek advice)',
+  'Study more than permitted — ELICOS under 20 hours per week, or other study for up to 3 months only',
   'Allow another adult to take over the guardian role without following the correct process with the education provider and Department',
   "Stay in Australia after the student's visa expires or after the student turns 18 (in most cases)",
 ]

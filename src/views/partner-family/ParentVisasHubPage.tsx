@@ -29,7 +29,7 @@ const FACTS: KeyFact[] = [
     icon: 'calendar',
     value: 'about 18 yrs',
     label: 'Current wait for Contributory Parent (143)',
-    note: 'New applications lodged today face approximately about 18 years of processing. Non-contributory parent visas face a substantially longer queue. Figures current at October 2026 — confirm on DoHA.',
+    note: 'Home Affairs currently estimates about 18 years for new Contributory Parent visa applications and about 42 years for new Parent and Aged Parent visa applications. Figures current at October 2026 — confirm on Home Affairs.',
   },
   {
     icon: 'dollar',
@@ -161,7 +161,7 @@ const VISA_CARDS: VisaCardData[] = [
     fields: [
       { label: 'Onshore/Offshore', value: 'Offshore (or after 173 temporary stage)' },
       { label: 'Balance of Family test', value: 'Required' },
-      { label: 'Charges', value: '~AUD 5,040 (first instalment) + ~AUD 43,600/adult (second instalment before grant)' },
+      { label: 'Charges', value: 'AUD6,300 (first instalment) + AUD43,600/adult (second instalment before grant)' },
       { label: 'Current queue', value: 'about 18 years (new applications)' },
       { label: 'Work rights', value: 'Yes (on grant)' },
     ],
@@ -257,13 +257,13 @@ const VISA_CARDS: VisaCardData[] = [
 
 /* Comparison table rows */
 const COMPARISON_ROWS = [
-  { visa: '143 Contributory Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: '~$5,040 + ~$43,600/adult', queue: 'about 18 years', work: 'Yes (on grant)', highlight: true },
+  { visa: '143 Contributory Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: 'AUD6,300 + AUD43,600/adult', queue: 'about 18 years', work: 'Yes (on grant)', highlight: true },
   { visa: '173 Contributory Parent (Temp)', permanent: 'No (leads to 143)', boft: 'Yes', location: 'Offshore', charges: '~$3,400 first instalment', queue: 'Same queue as 143', work: 'Limited', highlight: false },
   { visa: '103 Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: '~$4,990', queue: 'Several decades', work: 'Yes (on grant)', highlight: false },
   { visa: '804 Aged Parent', permanent: 'Yes', boft: 'Yes', location: 'Onshore only', charges: '~$4,990', queue: 'Several decades', work: 'Yes (on grant)', highlight: false },
-  { visa: '864 Contributory Aged Parent', permanent: 'Yes', boft: 'Yes', location: 'Onshore only', charges: '~$5,040 + ~$43,600/adult', queue: '10+ years', work: 'Yes (on grant)', highlight: false },
+  { visa: '864 Contributory Aged Parent', permanent: 'Yes', boft: 'Yes', location: 'Onshore only', charges: 'AUD6,300 + AUD43,600/adult', queue: 'about 18 years', work: 'Yes (on grant)', highlight: false },
   { visa: '870 Sponsored Parent (Temp)', permanent: 'No', boft: 'No', location: 'Both', charges: '~$1,100 (3yr) / AUD12,440 (5yr)', queue: 'Relatively quick', work: 'None', highlight: true },
-  { visa: '884 Contributory Aged Parent (Temp)', permanent: 'No (leads to 864)', boft: 'Yes', location: 'Onshore only', charges: '~$5,040 first + ~$43,600/adult at 864 stage', queue: 'Same as 864', work: 'Generally none', highlight: false },
+  { visa: '884 Contributory Aged Parent (Temp)', permanent: 'No (leads to 864)', boft: 'Yes', location: 'Onshore only', charges: 'AUD6,300 + AUD29,130 (884); AUD555 + AUD19,420 (864)', queue: 'about 18 years', work: 'Work and study on 884', highlight: false },
 ]
 
 export default function ParentVisasHubPage({ navigate }: { navigate: (page: string) => void }) {
@@ -488,7 +488,7 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
             <div style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 12, padding: 24 }}>
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Non-contributory pathways (103, 804)</h3>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                The subclass 103 (Parent) and subclass 804 (Aged Parent) are non-contributory pathways with much lower government charges (~AUD 4,990). The trade-off is a processing queue that is extraordinarily long. The Department has publicly stated that wait times for non-contributory parent applications currently extend to several decades. For a parent who is already in their 60s, a non-contributory permanent visa is not a realistic near-term option. Nanak Migration Group does not recommend lodging a non-contributory parent application if the family expects a decision within 10–15 years.
+                The subclass 103 (Parent) and subclass 804 (Aged Parent) are non-contributory pathways with much lower government charges (~AUD 4,990). The trade-off is a processing queue that is extraordinarily long. The Department has publicly stated that wait times for non-contributory parent applications currently extend to several decades. For a parent who is already in their 60s, a non-contributory permanent visa is not a realistic near-term option. Nanak Migration Group does not recommend lodging a non-contributory parent application if the family expects a decision within a few decades — Home Affairs currently estimates about 42 years for new Parent and Aged Parent applications.
               </p>
             </div>
             <div style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 12, padding: 24 }}>

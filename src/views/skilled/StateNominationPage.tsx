@@ -106,10 +106,10 @@ const JURISDICTION_ROWS: ComparisonRow[] = [
     apply:     'Tasmanian Skilled Migration portal (online). Tasmania is generally accessible for interstate and offshore applicants.',
   },
   {
-    feature:   'Visas offered cell for ACT: change '190' to '190, 491'',
+    feature:   'ACT (Australian Capital Territory)',
     visas:     '190, 491',
     focus:     'Healthcare, engineering, ICT, government-sector adjacent roles. ACT generally requires a genuine connection to Canberra.',
-    residency: 'Typically requires living and working in the ACT or a formal ACT job offer at the time of application.',
+    residency: 'Canberra Matrix criteria — living, working or studying in the ACT, or other connection pathways published by ACT Migration.',
     apply:     'ACT Skilled Migration portal (Canberra Matrix). The ACT nominates for both the 190 and 491 — Canberra is a designated regional area (Category 2).',
   },
   {
@@ -133,7 +133,7 @@ const COMPARE_ROWS: ComparisonRow[] = [
   { feature: 'Where you must live', v190: 'In the nominating state generally for 2 years', v491: 'In a designated regional area for the full 5 years' },
   { feature: 'Work rights',         v190: 'Unrestricted from grant',      v491: 'Must live and work in regional Australia' },
   { feature: 'PR pathway',          v190: 'Already permanent',            v491: 'Apply for 191 after 3 years meeting conditions' },
-  { feature: 'ACT eligible',        v190: 'Yes',                          v491: 'No — ACT is not a designated regional area' },
+  { feature: 'ACT eligible',        v190: 'Yes',                          v491: 'Yes — Canberra is a designated regional area (Category 2)' },
 ]
 
 /* ─── Commitment section ─── */
@@ -168,6 +168,14 @@ const FAQ: FaqItem[] = [
   {
     question: "What is the difference between a state nomination and a relative sponsorship for the 491?",
     answer: "For the subclass 491 visa, there are two pathways: state/territory nomination (administered by the state migration program) and sponsorship by an eligible relative living in a designated regional area of Australia. The relative sponsorship pathway allows an eligible Australian citizen, permanent resident, or eligible New Zealand citizen living regionally to sponsor you — which is separate from the state nomination programs. Both add 15 points. A registered migration agent can advise on which pathway is more accessible for your circumstances.",
+  },
+  {
+    question: "What commitment do I make to the nominating state?",
+    answer: "For the 190, you make an undertaking to live and work in the nominating state — it is not a visa condition, but you should only accept nomination if you genuinely intend to honour it. For the 491, the visa condition is to live, work and study only in a designated regional area while you hold the visa, and complying with it is needed for the later subclass 191.",
+  },
+  {
+    question: "Do occupation ceilings apply to state nomination?",
+    answer: "Occupation ceilings do not apply to the 190 or state-nominated 491. They can apply in departmental rounds for the 189 and family-sponsored 491.",
   },
 ]
 

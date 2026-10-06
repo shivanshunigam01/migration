@@ -141,7 +141,7 @@ const REFUSAL_REASONS = [
   },
   {
     title: 'School costs for children not accounted for',
-    desc: "Applicants who include school-age children as secondary applicants but fail to account for the schooling cost component of financial capacity. Each school-age child requires evidence of additional funds to cover schooling costs (approximately AUD 8,000 per year — verify on DoHA website).",
+    desc: "Applicants who include school-age children as secondary applicants but fail to account for the schooling cost component of financial capacity. Each school-age child requires evidence of additional funds to cover schooling costs (at least AUD 13,502 per year).",
   },
 ]
 
@@ -149,7 +149,7 @@ const FEE_ROWS = [
   { component: 'Primary applicant living costs', amount: 'AUD 29,710 per year (from 10 May 2024, indexed)' },
   { component: 'Spouse or de facto partner', amount: 'AUD 10,394 per year additional' },
   { component: 'Each dependent child (under 18)', amount: 'AUD 4,449 per year additional' },
-  { component: 'School costs for each school-age child', amount: 'Approximately AUD 8,000 per year (varies by state — check DoHA)' },
+  { component: 'School costs for each school-age child', amount: 'At least AUD 13,502 per year for each school-age child' },
   { component: 'Course fees', amount: 'Full annual tuition as stated in your Confirmation of Enrolment (CoE)' },
   { component: 'Travel costs', amount: 'Return airfare to Australia for you and any secondary applicants (actual cost estimate)' },
 ]
@@ -181,8 +181,8 @@ return (
         eyebrow="Student Visa"
         eyebrowSub="Subclass 500 · Financial Capacity"
         title={<>Financial Capacity for Student Visas<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Funds Evidence Required for the Subclass 500</em></>}
-        deck="The subclass 500 student visa requires evidence that you can meet your living costs, tuition fees, and travel costs while studying in Australia. The Department assesses financial capacity as part of the Genuine Student requirement — and insufficient or unreliable evidence is a common reason for refusal."
-        shortAnswer={<>The minimum living costs component for the subclass 500 is <strong style={{ color: NAVY }}>AUD 29,710 per year</strong> (from 10 May 2024, indexed annually), plus course fees and travel costs. If you are bringing a spouse or partner, add <strong style={{ color: NAVY }}>AUD 10,394</strong>. For each dependent child, add <strong style={{ color: NAVY }}>AUD 4,449</strong>, plus school costs. These figures are indexed and may have been updated — <strong style={{ color: NAVY }}>always confirm current amounts on the Department of Home Affairs website before applying</strong>. Acceptable evidence includes funds held in a bank account for at least 3 months, education loans from approved institutions, scholarships, or evidence that a parent or guardian earns at least AUD 87,856 per year. Nanak Migration Group, a registered migration agent (MARN 2619467), can review your financial evidence before you lodge.</>}
+        deck="The subclass 500 student visa requires evidence that you can meet your living costs, tuition fees, and travel costs while studying in Australia. Financial capacity is a separate requirement from the Genuine Student requirement — and insufficient or unreliable evidence is a common reason for refusal."
+        shortAnswer={<>The minimum living costs component for the subclass 500 is <strong style={{ color: NAVY }}>AUD 29,710 per year</strong> (unchanged since 10 May 2024), plus course fees and travel costs. If you are eligible to include a spouse or partner (from 2 October 2026 only certain applicants, such as PhD students and sponsored or scholarship students, can include family), add <strong style={{ color: NAVY }}>AUD 10,394</strong>. For each dependent child, add <strong style={{ color: NAVY }}>AUD 4,449</strong>, plus school costs. <strong style={{ color: NAVY }}>Always confirm current amounts on the Department of Home Affairs website before applying</strong>. Financial capacity is separate from the Genuine Student requirement. Acceptable evidence includes bank deposits, loans, scholarships, or an income test using official government documents. Nanak Migration Group, a registered migration agent (MARN 2619467), can review your financial evidence before you lodge.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -218,7 +218,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="The requirement" title="Financial Capacity — What the Department Is Assessing" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, marginBottom: 28 }}>
-            The subclass 500 student visa requires the applicant to demonstrate financial capacity — the ability to meet their living costs, course fees, and travel costs for the duration of their study. The Department assesses financial capacity as part of the broader Genuine Student requirement. An applicant who cannot demonstrate sufficient, genuine financial capacity may be refused on the grounds that they do not satisfy the financial requirement, or that the financial evidence undermines their genuine student status.
+            The subclass 500 student visa requires the applicant to demonstrate financial capacity — the ability to meet travel costs, the first 12 months of course fees, and 12 months of living costs. Financial capacity is a separate requirement from the Genuine Student requirement, although your financial circumstances can also be relevant to GS. Insufficient or unreliable evidence is a common reason for refusal.
           </p>
           <Callout variant="note" panel={true} title="Financial capacity is assessed at the time of decision, not just at lodgement">
             You should ensure your financial evidence is current at the time the Department makes a decision on your application — not just at the time you lodge. If your bank balance falls significantly between lodgement and decision, this may affect the outcome. Providing evidence of ongoing income (e.g. salary statements, scholarship letters) can help demonstrate sustained capacity.
@@ -243,7 +243,7 @@ return (
             ))}
           </div>
           <Callout variant="warning" panel={true} title="These figures are indexed and may have changed">
-            The living costs figures are indexed annually by the Department of Home Affairs. The amounts stated above (AUD 29,710 / AUD 10,394 / AUD 4,449) applied from 10 May 2024. Confirm the current figures on the Department of Home Affairs website before preparing your financial evidence or lodging your application. Nanak Migration Group (MARN 2619467) will always verify current figures before advising clients on financial preparation.
+            The living costs amounts stated above (AUD 29,710 / AUD 10,394 / AUD 4,449) have applied since 10 May 2024. Confirm the current figures on the Department of Home Affairs website before preparing your financial evidence or lodging your application. Nanak Migration Group (MARN 2619467) will always verify current figures before advising clients on financial preparation.
           </Callout>
         </div>
       </section>

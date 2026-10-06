@@ -45,6 +45,10 @@ const FAQ_ITEMS: FaqItem[] = [
     answer: 'The Core Skills Occupation List (CSOL) is used for the Core Skills stream of the Skills in Demand (482) visa and for the Employer Nomination Scheme (186) Direct Entry stream. The Medium and Long-term Strategic Skills List (MLTSSL) is used for points-tested visas such as the 189, 190 and 491, and for the 494. It is no longer used for the 186. The Short-term Skilled Occupation List (STSOL) is used for some 190, 491 and 494 applications. The 482 no longer has a short-term stream — since 7 December 2024 the 482 Core Skills stream and the 186 Direct Entry stream use the CSOL. The lists are administered separately and updated at different times — always check the current version on the Department of Home Affairs website.',
   },
   {
+    question: 'What is the Regional Occupation List (ROL) and does it apply to the 186 visa?',
+    answer: 'A 186 Direct Entry nomination needs the occupation to be on the CSOL (or covered by a Labour Agreement); the TRT stream has no occupation list. The ROL is used for some regional skilled visas such as the 494 — it is not a list for the 186 Direct Entry stream.',
+  },
+  {
     question: 'My occupation is on the STSOL. Can I still apply for a 186?',
     answer: 'The STSOL is not used for the 186. For Direct Entry, what matters is whether the occupation is on the Core Skills Occupation List (CSOL) - many former STSOL occupations are on it. The TRT stream has no occupation list, and a Labour Agreement can cover occupations that are not on the CSOL. The eligibility of each specific occupation should be verified against the current legislative instrument and any applicable labour agreement.',
   },
