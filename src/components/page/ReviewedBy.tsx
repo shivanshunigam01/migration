@@ -5,7 +5,7 @@ interface ReviewedByProps {
   lastReviewed?: string
 }
 
-export default function ReviewedBy({ lastReviewed = 'July 2026' }: ReviewedByProps) {
+export default function ReviewedBy({ lastReviewed = 'October 2026' }: ReviewedByProps) {
   return (
     <div style={{
       background: 'rgba(27,43,94,0.03)',

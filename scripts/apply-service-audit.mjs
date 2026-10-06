@@ -136,6 +136,11 @@ function isSafeCsvReplacement(find, repl) {
   if (/^[\d\s/]+$/.test(find.trim())) return false
   if (/^(Remove these|Correct the|Change the|Visas offered cell)/i.test(repl.trim())) return false
   if (/change\s+'\d+'\s+to/i.test(repl)) return false
+  if (/^Rename the two cards/i.test(repl.trim())) return false
+  if (/^Delete the '/i.test(repl.trim())) return false
+  if (/^Correct the (ANZSCO|codes)/i.test(repl.trim())) return false
+  if (/^LMT required:/i.test(repl.trim())) return false
+  if (/^Remove these/i.test(repl.trim())) return false
   if (repl.length > 800) return false
   return true
 }

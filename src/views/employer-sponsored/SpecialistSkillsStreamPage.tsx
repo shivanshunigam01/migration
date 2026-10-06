@@ -161,7 +161,7 @@ const ELIGIBILITY_CARDS = [
   {
     icon: 'globe',
     title: 'English language',
-    desc: 'Competent English is generally required (IELTS 6 or equivalent). High-income earners may qualify for an English exemption in some circumstances — confirm current rules with a migration agent.',
+    desc: 'For tests taken from 13 September 2025, you need at least IELTS 5.0 in each component or equivalent. Exemptions apply to some passport holders, applicants with five years of English-medium study, and employees of an overseas business nominated by that business who will earn at least AUD96,400.',
   },
 ]
 

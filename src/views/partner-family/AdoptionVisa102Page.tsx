@@ -234,7 +234,7 @@ return (
                 'Satisfies health requirements for the visa',
                 'Satisfies character requirements (adapted appropriately for age)',
                 'Has not been adopted in a way that contravenes Australian law or policy',
-                'Is not already an Australian citizen or permanent resident; Was under 18 when adopted, when the application is made and when it is decided; Is outside Australia when the application is made and when it is decided; Was under 18 when adopted, when the application is made and when it is decided; Is outside Australia when the application is made and when it is decided; Was under 18 when adopted, when the application is made and when it is decided; Is outside Australia when the application is made and when it is decided',
+                'Is not already an Australian citizen or permanent resident',
                 'Was under 18 when adopted, when the application is made and when it is decided',
                 'Is outside Australia when the application is made and when it is decided',
               ].map((p, i) => (

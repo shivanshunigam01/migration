@@ -27,9 +27,9 @@ const TOC = [
 const FACTS: KeyFact[] = [
   {
     icon: 'calendar',
-    value: '12–15 yrs',
+    value: 'about 18 yrs',
     label: 'Current wait for Contributory Parent (143)',
-    note: 'New applications lodged today face approximately 12–15 years of processing. Non-contributory parent visas face a substantially longer queue. Figures current at October 2026 — confirm on DoHA.',
+    note: 'New applications lodged today face approximately about 18 years of processing. Non-contributory parent visas face a substantially longer queue. Figures current at October 2026 — confirm on DoHA.',
   },
   {
     icon: 'dollar',
@@ -70,7 +70,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "How does the 173-to-143 staged pathway work?",
-    answer: "The subclass 173 Contributory Parent (Temporary) allows a parent to come to Australia while their permanent 143 application is processed. Rather than waiting offshore for 12–15 years, the parent lodges a 173 application (first instalment of charges only), is granted the temporary 173 visa, and can live in Australia while the permanent queue processes. When the 143 is ready to be granted, the second instalment of charges becomes payable (~$43,600 per adult). This staged approach splits the financial burden and allows the parent to be in Australia while waiting. The parent is in the same permanent queue as a direct 143 applicant — the 173 does not provide a separate faster queue.",
+    answer: "The subclass 173 Contributory Parent (Temporary) allows a parent to come to Australia while their permanent 143 application is processed. Rather than waiting offshore for about 18 years, the parent lodges a 173 application (first instalment of charges only), is granted the temporary 173 visa, and can live in Australia while the permanent queue processes. When the 143 is ready to be granted, the second instalment of charges becomes payable (~$43,600 per adult). This staged approach splits the financial burden and allows the parent to be in Australia while waiting. The parent is in the same permanent queue as a direct 143 applicant — the 173 does not provide a separate faster queue.",
   },
 ]
 
@@ -162,7 +162,7 @@ const VISA_CARDS: VisaCardData[] = [
       { label: 'Onshore/Offshore', value: 'Offshore (or after 173 temporary stage)' },
       { label: 'Balance of Family test', value: 'Required' },
       { label: 'Charges', value: '~AUD 5,040 (first instalment) + ~AUD 43,600/adult (second instalment before grant)' },
-      { label: 'Current queue', value: '12–15 years (new applications)' },
+      { label: 'Current queue', value: 'about 18 years (new applications)' },
       { label: 'Work rights', value: 'Yes (on grant)' },
     ],
     route: 'contributory-parent-143',
@@ -257,7 +257,7 @@ const VISA_CARDS: VisaCardData[] = [
 
 /* Comparison table rows */
 const COMPARISON_ROWS = [
-  { visa: '143 Contributory Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: '~$5,040 + ~$43,600/adult', queue: '12–15 years', work: 'Yes (on grant)', highlight: true },
+  { visa: '143 Contributory Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: '~$5,040 + ~$43,600/adult', queue: 'about 18 years', work: 'Yes (on grant)', highlight: true },
   { visa: '173 Contributory Parent (Temp)', permanent: 'No (leads to 143)', boft: 'Yes', location: 'Offshore', charges: '~$3,400 first instalment', queue: 'Same queue as 143', work: 'Limited', highlight: false },
   { visa: '103 Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: '~$4,990', queue: 'Several decades', work: 'Yes (on grant)', highlight: false },
   { visa: '804 Aged Parent', permanent: 'Yes', boft: 'Yes', location: 'Onshore only', charges: '~$4,990', queue: 'Several decades', work: 'Yes (on grant)', highlight: false },
@@ -299,7 +299,7 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
         eyebrowSub="Parent Migration"
         title={<>Parent Visas<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Hub</em></>}
         deck="Australia offers multiple pathways for parents to join their children — ranging from long-term temporary visits to permanent residence. The right pathway depends on whether you can pass the Balance of Family test, how much you can pay in government charges, and how long you are prepared to wait."
-        shortAnswer={<>Australia has several parent visa pathways, but they vary significantly in cost, processing time, and permanence. The non-contributory <strong style={{ color: NAVY }}>Parent visa (subclass 103)</strong> and <strong style={{ color: NAVY }}>Aged Parent visa (subclass 804)</strong> have extremely long queues — new applications lodged today could wait several decades. The <strong style={{ color: NAVY }}>Contributory Parent (subclass 143)</strong> is faster but carries government charges of approximately <strong style={{ color: NAVY }}>AUD 95,000 for a couple</strong> and currently processes in 12–15 years for new applications. The <strong style={{ color: NAVY }}>Sponsored Parent (Temporary) visa (subclass 870)</strong> allows stays of up to 10 years (in 3-year or 5-year grants) with no Balance of Family test — making it the most accessible option for parents who want extended visits without entering the permanent queue. Nanak Migration Group (MARN 2619467) can assess your family's situation and recommend the most realistic pathway.</>}
+        shortAnswer={<>Australia has several parent visa pathways, but they vary significantly in cost, processing time, and permanence. The non-contributory <strong style={{ color: NAVY }}>Parent visa (subclass 103)</strong> and <strong style={{ color: NAVY }}>Aged Parent visa (subclass 804)</strong> have extremely long queues — new applications lodged today could wait several decades. The <strong style={{ color: NAVY }}>Contributory Parent (subclass 143)</strong> is faster but carries government charges of approximately <strong style={{ color: NAVY }}>AUD 95,000 for a couple</strong> and currently processes in about 18 years for new applications. The <strong style={{ color: NAVY }}>Sponsored Parent (Temporary) visa (subclass 870)</strong> allows stays of up to 10 years (in 3-year or 5-year grants) with no Balance of Family test — making it the most accessible option for parents who want extended visits without entering the permanent queue. Nanak Migration Group (MARN 2619467) can assess your family's situation and recommend the most realistic pathway.</>}
         maraBadge={true}
         currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -494,7 +494,7 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
             <div style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 12, padding: 24 }}>
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>Contributory pathways (143, 173, 864)</h3>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                The subclass 143 (Contributory Parent) is the most common permanent parent pathway. The higher charges fund the contributory queue, which is shorter — but still currently estimated at 12–15 years for new applications at the back of the queue. A child who sponsors a parent today should plan for the parent to spend those 12–15 years visiting on visitor visas or living in Australia on the subclass 870 while the permanent application is processed. The 173 Contributory Parent Temporary visa allows the parent to live in Australia on a temporary basis while the permanent 143 application processes.
+                The subclass 143 (Contributory Parent) is the most common permanent parent pathway. The higher charges fund the contributory queue, which is shorter — but still currently estimated at about 18 years for new applications at the back of the queue. A child who sponsors a parent today should plan for the parent to spend those about 18 years visiting on visitor visas or living in Australia on the subclass 870 while the permanent application is processed. The 173 Contributory Parent Temporary visa allows the parent to live in Australia on a temporary basis while the permanent 143 application processes.
               </p>
             </div>
             <div style={{ background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 12, padding: 24 }}>
