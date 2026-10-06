@@ -69,7 +69,7 @@ const FIELD_CARDS = [
   {
     icon: 'heart',
     heading: 'Nursing and Allied Health',
-    occupations: 'Registered Nurse (254111), Midwife (254111 — separate), Physiotherapist (252511), Occupational Therapist (251211), Radiographer (251211), Sonographer (251213)',
+    occupations: 'Registered Nurse (2544 codes, e.g. Registered Nurse (Medical) 254418), Midwife (254111), Physiotherapist (252511), Occupational Therapist (252411), Medical Diagnostic Radiographer (251211), Sonographer (251214)',
     authority: 'ANMAC (nursing/midwifery); relevant allied health bodies',
     pathway: '189/190/491 via points test; employer sponsorship via 482 or 186; 482 Core Skills stream',
     note: "Nursing has been consistently on the CSOL and state lists. ANMAC assessment is rigorous — ensure your qualification is ANMAC-approved and your English meets the registration standard.",
@@ -85,7 +85,7 @@ const FIELD_CARDS = [
   {
     icon: 'graduationcap',
     heading: 'Teaching (including Early Childhood)',
-    occupations: 'Primary School Teacher (241111), Secondary School Teacher (241411), Early Childhood Teacher (241111 — separate registration), Special Needs Teacher (241511)',
+    occupations: 'Primary School Teacher (241213), Secondary School Teacher (241411), Early Childhood (Pre-primary School) Teacher (241111), Special Needs Teacher (241511)',
     authority: 'AITSL (Australian Institute for Teaching and School Leadership)',
     pathway: '189/190/491; state government employers; some 186 ENS pathways',
     note: 'Early Childhood Education has become an increasingly sought occupation for state nomination. AITSL assessment requires the qualification to be an approved teacher education program and includes a recency-of-practice requirement.',
@@ -93,7 +93,7 @@ const FIELD_CARDS = [
   {
     icon: 'tool',
     heading: 'Trades via TAFE',
-    occupations: 'Electrician (341111), Plumber (334111), Carpenter (331212), Metal Fabricator (322211)',
+    occupations: 'Electrician (General) (341111), Plumber (General) (334116), Carpenter (331212), Metal Fabricator (322311)',
     authority: 'TRA (Trades Recognition Australia)',
     pathway: '482 Core Skills stream; 186 ENS; 494 Regional; state 491 nomination',
     note: "Trade qualifications from TAFE (Certificate III level or equivalent) can lead to skills assessments via TRA. Many trades are on the CSOL and state lists, particularly for regional sponsorship. A trade qualification typically needs to be at AQF Level 3 or equivalent.",
@@ -109,7 +109,7 @@ const FIELD_CARDS = [
   {
     icon: 'user',
     heading: 'Social Work',
-    occupations: 'Social Worker (272511), Youth Worker (411716), Community Worker (411311)',
+    occupations: 'Social Worker (272511), Youth Worker (411716), Community Worker (411711)',
     authority: 'AASW (Australian Association of Social Workers) for Social Worker; TRA or VETASSESS for others',
     pathway: '189/190/491; government and community sector employers; 482 Core Skills',
     note: 'Social Work has consistent presence on state nomination lists. AASW membership (or eligibility) is typically required for a positive skills assessment. Social Work qualifications must meet AASW program accreditation standards.',
@@ -208,7 +208,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="The connection" title="How Course Choice Influences a PR Pathway" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, marginBottom: 20 }}>
-            Most Australian skilled visa pathways — including the subclass 189 (Skilled Independent), 190 (Skilled Nominated), 491 (Skilled Work Regional), and most employer-sponsored visas — require the applicant to have their qualifications and work experience assessed positively by the relevant skills assessing authority for their nominated occupation. The assessing authority looks at whether your qualification is relevant to the occupation. This is why your course choice matters: studying nursing means you can seek a skills assessment as a Registered Nurse (ANZSCO 254111); studying engineering allows assessment as an engineering professional. A qualification in an unrelated field will not support a skills assessment in a skilled occupation.
+            Most Australian skilled visa pathways — including the subclass 189 (Skilled Independent), 190 (Skilled Nominated), 491 (Skilled Work Regional), and most employer-sponsored visas — require the applicant to have their qualifications and work experience assessed positively by the relevant skills assessing authority for their nominated occupation. The assessing authority looks at whether your qualification is relevant to the occupation. This is why your course choice matters: studying nursing means you can seek a skills assessment as a Registered Nurse (ANZSCO 2544 specialisations, e.g. 254418); studying engineering allows assessment as an engineering professional. A qualification in an unrelated field will not support a skills assessment in a skilled occupation.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, marginBottom: 28 }}>
             However, the link is indirect and contingent. Whether you can use your skills assessment to enter the visa points pool (or receive employer sponsorship) depends on whether your occupation is on the relevant list at the time of your application, whether you meet the points threshold at the time of an invitation round, and whether any caveats or conditions on the occupation affect your nomination. Occupation lists are legislative instruments that can change — occupations are added and removed. A course you chose based on current occupation list access may lead to an occupation that is no longer accessible by the time you complete your studies and skills assessment.

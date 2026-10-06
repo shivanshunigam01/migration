@@ -279,7 +279,7 @@ const CARDS = [
     name: 'Judicial Review',
     tag: 'Legal error only',
     tagColor: NAVY_MID,
-    body: 'Federal Court review is available only for legal error — not to re-argue the merits. Requires legal representation. Costs can be significant. Not a substitute for ART review.',
+    body: 'Federal Court review is available only for legal error — not to re-argue the merits. Legal representation is strongly recommended. Costs can be significant. Not a substitute for ART review.',
     route: null as string | null,
     urgent: false,
   },

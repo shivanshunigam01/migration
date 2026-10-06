@@ -416,7 +416,7 @@ return (
               {
                 num: '01',
                 title: 'Strict time limit for lodging the ART application',
-                desc: "The time limit for applying to the ART is stated in the refusal letter — it is typically 9 working days for onshore decisions. This is extremely tight. Missing the deadline may mean you lose your right to review. If you receive a refusal decision, seek advice from a registered migration agent or migration lawyer immediately — do not wait.",
+                desc: "The time limit for applying to the ART is stated in the refusal letter — for a protection visa refusal you must apply within 28 days after you are notified of the decision (or 14 days if you are in immigration detention on the day you are notified), and the ART has no power to extend this time limit. Refusals on character or security grounds follow different rules, so always check your decision letter. This is extremely tight. Missing the deadline may mean you lose your right to review. If you receive a refusal decision, seek advice from a registered migration agent or migration lawyer immediately — do not wait.",
               },
               {
                 num: '02',

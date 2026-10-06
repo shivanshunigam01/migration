@@ -216,7 +216,7 @@ return (
             </div>
           </div>
           <Callout variant="warning" panel={true} title="Points are not verified at the EOI stage">
-            Your EOI points are accepted by the system without verification. The Department verifies your claimed points when you lodge the actual visa application. If you cannot evidence a claim at application stage, the Department may refuse the visa and find that you made a false or misleading statement — with consequences including a 3-year bar from making further visa applications under PIC 4020.
+            Your EOI points are accepted by the system without verification. The Department verifies your claimed points when you lodge the actual visa application. If you cannot evidence a claim at application stage, the Department may refuse the visa and find that you made a false or misleading statement — with consequences under public interest criterion 4020, which can prevent the grant of many visas for a period after the refusal.
           </Callout>
         </div>
       </section>
@@ -283,7 +283,7 @@ return (
             ))}
           </div>
           <Callout variant="warning" panel={true} title="PIC 4020 — the misrepresentation provision">
-            Under Public Interest Criterion 4020 of the Migration Regulations, if the Department finds that an applicant provided false or misleading information in support of a visa application — including at the EOI stage — it may refuse the application and impose a 3-year bar on the applicant making any further visa application. Nanak Migration Group (MARN 2619467) reviews EOI profiles to identify and address points claims that carry PIC 4020 risk before submission.
+            Under Public Interest Criterion 4020 of the Migration Regulations, if the Department finds that an applicant provided false or misleading information in support of a visa application — including at the EOI stage — it may refuse the application, and PIC 4020 can then prevent the grant of many visas to that person for 3 years (or 10 years where the refusal was because they did not establish their identity), unless the requirement is waived. Nanak Migration Group (MARN 2619467) reviews EOI profiles to identify and address points claims that carry PIC 4020 risk before submission.
           </Callout>
         </div>
       </section>

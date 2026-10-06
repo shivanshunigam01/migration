@@ -30,8 +30,8 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   { icon: 'shield', value: '5 years', label: 'SBS approval period', note: 'Standard Business Sponsorship is granted for up to 5 years and must be renewed before expiry.' },
   { icon: 'clock', value: '28 days', label: 'Notification window', note: 'Many reportable events must be notified to the Department within 28 days of occurrence.' },
-  { icon: 'dollar', value: '$93,900', label: 'Maximum civil penalty (individual)', note: 'Civil penalties apply for each sponsor obligation breach. Figures current at October 2026.' },
-  { icon: 'building', value: '$469,500', label: 'Maximum civil penalty (body corporate)', note: 'Body corporate penalties are five times the individual penalty. Figures current at October 2026.' },
+  { icon: 'dollar', value: '$87,360 - 240 penalty units per breach (breaches from 1 July 2026)', label: 'Maximum civil penalty (individual)', note: 'Civil penalties apply for each sponsor obligation breach. Figures current at October 2026.' },
+  { icon: 'building', value: '$436,800 - 1,200 penalty units per breach (breaches from 1 July 2026)', label: 'Maximum civil penalty (body corporate)', note: 'Body corporate penalties are five times the individual penalty. Figures current at October 2026.' },
 ]
 
 const OBLIGATION_CARDS = [

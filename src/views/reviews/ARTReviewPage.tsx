@@ -56,7 +56,7 @@ const DECISION_TYPES = [
     examples: ['Subclass 600', 'ETA', 'eVisitor'],
     days: null,
     extendable: false,
-    notes: 'Visitor visa decisions are generally not reviewable at the ART (they are merits-review excluded). Options are limited — seek advice immediately.',
+    notes: 'Some visitor visa refusals can be reviewed by the ART. If you applied in Australia, a refusal is generally reviewable, as long as the decision was not made while you were in immigration clearance and you are still in Australia when you apply for review. If you applied from outside Australia, a refusal is only reviewable where you were coming to visit an Australian citizen or permanent resident parent, spouse, de facto partner, child, brother or sister whose details were included in your application. In that case the relative applies to the ART. Check your refusal letter, which states whether review is available and the time limit. Options are limited — seek advice immediately.',
     severity: 'amber',
   },
   {

@@ -163,7 +163,7 @@ const STEPS = [
   {
     num: '05',
     title: 'Decision and travel',
-    body: 'DHA processes your application. Median processing for straightforward 500 applications is 4–8 weeks, but complex cases can take longer. Once granted, check your visa grant notice for conditions — especially Condition 8105 (work restriction).',
+    body: 'DHA processes your application. Processing times vary. Offshore Student visa applications lodged on or after 14 November 2025 are prioritised under Ministerial Direction No. 115, which sets priority levels based on the education sector and the provider. Applications made in Australia are generally assessed in the order they are lodged. Check the Home Affairs visa processing times guide for current figures. Once granted, check your visa grant notice for conditions — especially Condition 8105 (work restriction).',
     timing: '4–16 weeks (median)',
   },
 ]

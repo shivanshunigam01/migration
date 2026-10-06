@@ -320,7 +320,7 @@ return (
             </Callout>
           </div>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151' }}>
-            The base application charge for the subclass 407 Training visa is a few hundred Australian dollars for the main applicant, with reduced charges for secondary applicants (dependants). Exact figures should be confirmed on the DoHA website. There is no Skills in Demand levy (SAF levy) requirement for the 407 — that levy applies to subclass 482 and 186 nominations, not to the temporary activities framework.
+            The base application charge for the subclass 407 Training visa is a few hundred Australian dollars for the main applicant, with reduced charges for secondary applicants (dependants). Exact figures should be confirmed on the DoHA website. There is no Skilling Australians Fund (SAF) levy for the 407 — that levy applies to subclass 482 and 186 nominations, not to the temporary activities framework.
           </p>
         </div>
       </section>

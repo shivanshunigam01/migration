@@ -68,7 +68,7 @@ const streams186 = [
     color: GREEN,
     prior482: 'Required (2+ years)',
     skillsAssessment: 'Not usually required',
-    processing: '3–6 months typical',
+    processing: 'Check the Home Affairs processing time guide',
     requirements: ['482 Core or Specialist for 2+ years', 'Same employer throughout', 'Same occupation', 'Under 45, competent English'],
   },
   {

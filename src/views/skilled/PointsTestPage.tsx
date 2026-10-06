@@ -99,7 +99,7 @@ function PointsBreakdownTable() {
           ))}
         </div>
         <p style={{ fontSize: 13, color: '#9ca3af', margin: '20px 0 0', lineHeight: 1.7, textAlign: 'center' }}>
-          Based on the points test set by the Migration (IMMI 23/102) Instrument 2023 and amendments. Subject to legislative change — verify current figures with the Department of Home Affairs.
+          Based on the points test in Schedule 6D of the Migration Regulations 1994 and the Home Affairs points table. Subject to legislative change — verify current figures with the Department of Home Affairs.
         </p>
       </div>
     </section>

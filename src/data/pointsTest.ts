@@ -1,6 +1,6 @@
 // Points test data for Australian skilled migration (subclasses 189, 190, 491).
-// Based on the points test set by the Migration (IMMI 23/102) Instrument 2023 and
-// subsequent amendments. Requirements are subject to legislative change — always
+// Based on the points test in Schedule 6D of the Migration Regulations 1994 and the Home Affairs points table.
+// Requirements are subject to legislative change — always
 // verify current values with the Department of Home Affairs or a registered migration agent.
 
 export interface PointsOption {

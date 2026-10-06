@@ -382,7 +382,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
               { label: 'Govt charge (approx)', vals: ['~$4,990', '~$5,040 + ~$43,600/adult', '~$1,100 or ~$2,900'] },
               { label: 'Queue (new applications)', vals: ['~30 years', '~12–15 years', 'Relatively quick'] },
               { label: 'Work rights', vals: ['Yes (on grant)', 'Yes (on grant)', 'None'] },
-              { label: 'Assurance of Support', vals: ['Yes (at grant)', 'Yes (at lodgement)', 'No'] },
+              { label: 'Assurance of Support', vals: ['Yes (at grant)', 'Yes (requested before grant)', 'No'] },
             ].map((row, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', padding: '13px 20px', gap: 8, alignItems: 'center', background: i % 2 === 0 ? '#ffffff' : '#fafbfe', borderTop: '1px solid #f0f2f7' }}>
                 <div style={{ fontSize: 13, fontWeight: 600, color: NAVY }}>{row.label}</div>

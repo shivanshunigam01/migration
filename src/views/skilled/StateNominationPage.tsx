@@ -294,7 +294,7 @@ export default function StateNominationPage({ navigate }: { navigate: (page: str
             ))}
           </div>
           <Callout variant="note">
-            <strong>Commitment requirements are enforced.</strong> If you accept state nomination and are granted a visa but do not genuinely intend to live in the nominating state, you may be in breach of visa conditions. Obtaining advice from a registered migration agent (MARN 2619467) before committing to a state is strongly recommended.
+            <strong>Commitment requirements are enforced.</strong> If you accept state nomination and are granted a visa but do not genuinely intend to live in the nominating state, you would be giving the state a commitment you do not intend to keep, which carries integrity risks. The state can withdraw its nomination before your visa is granted, and the visa cannot be granted if the nomination is withdrawn. The 190 visa itself has no condition requiring you to live in the nominating state, but the 491 visa requires you to live, work and study only in a designated regional area (condition 8579). Obtaining advice from a registered migration agent (MARN 2619467) before committing to a state is strongly recommended.
           </Callout>
         </div>
       </section>

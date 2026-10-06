@@ -176,7 +176,7 @@ return (
                 <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, marginBottom: 14 }}>The standard health criterion. If PIC 4005 applies and the applicant does not meet it, the visa cannot be granted — there is no discretion to waive.</p>
                 <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 8 }}>Visa classes that typically use PIC 4005</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 8 }}>
-                  {['Skilled Independent (189)', 'Skilled Nominated (190)', 'Skilled Work Regional (491)', 'Temporary Graduate (485)', 'Student Visa (500)', 'Visitor Visa (600)', 'Business Innovation (188)'].map(v => (
+                  {['Skilled Independent (189)', 'Skilled Nominated (190)', 'Skilled Work Regional (491)', 'Temporary Graduate (485)', 'Student Visa (500)', 'Visitor Visa (600)'].map(v => (
                     <span key={v} style={{ fontSize: 12, color: '#374151', background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 6, padding: '3px 8px' }}>{v}</span>
                   ))}
                 </div>

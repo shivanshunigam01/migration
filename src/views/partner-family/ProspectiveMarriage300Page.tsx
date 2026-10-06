@@ -117,7 +117,7 @@ const STEPS: TimelineStep[] = [
     points: [
       'After the marriage, the couple generally applies for the subclass 820 (temporary) partner visa onshore.',
       'The 820 application can be lodged before the 300 visa expires.',
-      'The 820 visa holder receives a bridging visa while the application is processed.',
+      'When the 820/801 application is lodged in Australia while the applicant still holds their 300 visa, they are normally granted a Bridging Visa A. It comes into effect when the 300 visa ends and lets them stay in Australia until the 820 is decided.',
       'The 820 and 801 are applied for together in one application. Home Affairs assesses the permanent 801 stage once 2 years have passed since that application was lodged - no second application is needed.',
     ],
     color: GREEN,

@@ -160,7 +160,7 @@ const ELIGIBILITY_ITEMS = [
   },
   {
     heading: 'Health and character',
-    body: 'You and family members included in the application must meet standard health and character requirements. A conviction does not automatically prevent an application, but character is assessed — seek advice before lodging.',
+    body: 'You and your family members (including family members not coming with you) must meet the character requirement. A criminal conviction, in Australia or overseas, does not automatically mean your application will be refused, but it must be declared and will be considered — get advice before lodging.',
   },
   {
     heading: 'Visa condition compliance',

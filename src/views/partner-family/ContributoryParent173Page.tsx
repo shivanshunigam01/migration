@@ -340,7 +340,7 @@ return (
               {
                 icon: 'shield' as const,
                 title: 'Medicare',
-                body: 'The parent is entitled to enrol in Medicare from the date the 173 is granted. This provides access to subsidised medical and hospital care in Australia — a significant benefit for parents who require ongoing healthcare.',
+                body: 'Subclass 173 holders can enrol in Medicare. Services Australia lists the Contributory Parent visas (including subclass 173) among the temporary visas covered by a Ministerial Order, so the parent can enrol once the 173 is granted and they are in Australia. This provides access to subsidised medical and hospital care in Australia — a significant benefit for parents who require ongoing healthcare.',
               },
               {
                 icon: 'plane' as const,

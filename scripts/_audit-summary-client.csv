@@ -1,0 +1,54 @@
+﻿Nanak Migration Group - Service Page Accuracy Audit,,,,,,,
+"Audit date: 5 October 2026  |  Pages audited: 93 service, visa and requirement pages (blog, news, tools, legal and contact pages excluded)",,,,,,,
+"Sources used: Government only - Home Affairs (immi.homeaffairs.gov.au), Federal Register of Legislation (Migration Act 1958, Migration Regulations 1994 compilation C288, legislative instruments), LEGEND, Administrative Review Tribunal, OMARA, Services Australia, Jobs and Skills Australia, state and territory nomination sites.",,,,,,,
+"Every corrected figure cites the government page it was read on. The 34 rows that originally needed RMA review were checked against LEGEND (stack 02-10-2026) on 6 October 2026 - see the ""RMA Review"" tab. They still need Navpreet Aulakh (MARN 2619467) to approve the final wording before publishing.",,,,,,,
+,,,,,,,
+Findings by category,,,,,,,
+Category,Sheet tab,Pages,High,Medium,Low,Total,RMA sign-off rows
+Employer Sponsored,Employer Sponsored,24,97,83,46,226,6
+Skilled,Skilled,12,40,57,34,131,7
+Student & Visitor,Student & Visitor,13,22,35,28,85,6
+Partner & Family,Partner & Family,14,23,36,18,77,2
+Parent,Parent,10,35,26,19,80,7
+Other Visas & Citizenship,Other Visas,9,12,31,18,61,3
+Reviews & Complex,Reviews & Complex,11,41,39,16,96,3
+Total,,93,270,307,179,756,34
+,,,,,,,
+"Live check of the website - 6 October 2026 (after developer said ""implementation complete"")",,,,,,,
+Category,Fixed,Not fixed,Partly fixed,Schema not updated,Check wording,Total,% fixed
+Employer Sponsored,139,22,10,43,12,226,62%
+Skilled,84,33,0,13,1,131,64%
+Student & Visitor,46,25,0,14,0,85,54%
+Partner & Family,36,23,2,16,0,77,47%
+Parent,37,21,4,18,0,80,46%
+Other Visas & Citizenship,39,10,5,7,0,61,64%
+Reviews & Complex,56,16,7,17,0,96,58%
+Total,437,150,28,128,13,756,58%
+High priority still open (Not fixed + Partly fixed),69,,,,,,
+"...of which are not ""Needs RMA review"" rows (developer had no reason to hold them)",63,,,,,,
+Fixed,Old text gone and the corrected wording or figures are on the live page.,,,,,,
+Not fixed,The old (wrong) text is still visible on the live page.,,,,,,
+Partly fixed,"Both old and new versions show, or the old text was removed but a corrected figure is missing.",,,,,,
+Schema not updated,"Visible page is corrected, but the old wording is still in the FAQ schema (JSON-LD) that Google and AI answers read.",,,,,,
+Check wording,Old text removed but replaced with different wording from the sheet - Navpreet to confirm it is accurate.,,,,,,
+"See the ""Live Check 6 Oct"" tab for new problems found on the live site that were not in the original sheet.",,,,,,,
+,,,,,,,
+,,,,,,,
+Developer progress,,,,,,,
+Done,437,,,,,,
+To do,273,,,,,,
+Query with RMA,46,,,,,,
+% complete,57.8%,,,,,,
+,,,,,,,
+How the developer should use this file,,,,,,,
+"1. Start with the ""Site-wide Fixes"" tab - these repeat on many pages and can be fixed with one find-and-replace each.",,,,,,,
+"2. Then work through each category tab (or ""All Findings""), High priority first. Open the Page URL, press Ctrl+F and search for the ""Current text (find)"" value.",,,,,,,
+"3. Replace it with the ""Replacement text"". Keep the page formatting; only the words change. FAQ answers, tables, calculators and page schema (JSON-LD) must be updated too if they repeat the same text.",,,,,,,
+"4. ""Live check 6 Oct"" shows what was actually on the live site on 6 October 2026. Rows marked Fixed are pre-set to Done; everything else is To do. ""Schema not updated"" means the FAQ schema (JSON-LD) in the page code still has the old wording.",,,,,,,
+"5. Set the Status column to Done, or ""Query with RMA"" for anything unclear. Rows marked ""LEGEND-checked"" are set to ""Query with RMA"" - do not publish them until Navpreet has approved them in the RMA Review tab.",,,,,,,
+"6. After fixes, update each page's ""General information current as at"" line to October 2026.",,,,,,,
+,,,,,,,
+Priority key,,,,,,,
+High,"Legally wrong or could mislead a client (wrong fee, rule, deadline, eligibility). Fix first.",,,,,,
+Medium,Outdated or incomplete - not dangerous on its own but no longer accurate.,,,,,,
+Low,"Terminology, wording and ""current as at"" date stamps.",,,,,,

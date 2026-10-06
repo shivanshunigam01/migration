@@ -475,7 +475,7 @@ export default function ResidentReturnVisaPage({ navigate }: { navigate: (page: 
                   Application location
                 </div>
                 <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                  Must be lodged from outside Australia (offshore only)
+                  Can be lodged in or outside Australia, but not in immigration clearance
                 </p>
               </div>
 

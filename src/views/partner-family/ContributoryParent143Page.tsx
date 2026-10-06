@@ -48,7 +48,7 @@ const FACTS: KeyFact[] = [
     icon: 'building',
     value: 'AoS required',
     label: 'Assurance of Support required from the sponsoring child',
-    note: 'The child in Australia must lodge an Assurance of Support, including a bond with the Department of Human Services, as part of the sponsorship process.',
+    note: 'An assurer (often the child in Australia) must provide an Assurance of Support through Services Australia, including a bond lodged as a Commonwealth Bank guarantee. Home Affairs asks for the AoS near the end of processing, once the application has been released from the queue and other criteria are met, and it must be accepted before the visa can be granted. Do not arrange the bond until Services Australia asks for it in writing.',
   },
 ]
 

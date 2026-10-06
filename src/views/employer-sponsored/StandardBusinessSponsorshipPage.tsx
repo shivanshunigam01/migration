@@ -316,7 +316,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
               <div style={{ display: 'flex', gap: 10, padding: '14px 18px', background: 'rgba(255,255,255,0.05)', borderRadius: 10, alignItems: 'flex-start' }}>
                 <Icon name="alert" size={15} color={GOLD} />
                 <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>
-                  Breaching a sponsorship obligation may result in an infringement notice ($9,400 for a company), a bar on further nominations, or cancellation of the SBS altogether.
+                  Breaching a sponsorship obligation may result in an infringement notice of 240 penalty units (AUD87,360) for a company or 48 penalty units (AUD17,472) for an individual for each breach, at the AUD364 penalty unit that applies from 1 July 2026., a bar on further nominations, or cancellation of the SBS altogether.
                 </div>
               </div>
             </div>

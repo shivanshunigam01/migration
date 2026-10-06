@@ -68,7 +68,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Can the parent work while waiting for the 804?',
-    answer: 'Generally, no. The BVA granted while waiting for the 804 does not usually include work rights. The parent is not permitted to take paid employment. If the family needs the parent to have work rights and Medicare during the wait, the contributory subclass 864 (or the offshore 143 or 173) may be more suitable, despite the higher charge.',
+    answer: 'Generally, no. The BVA granted while waiting for the 804 does not usually include work rights. The parent is not permitted to take paid employment. If the family needs the parent to work, or to have Medicare, while waiting, the two-stage contributory route may suit better despite the higher charge. Subclass 884 (applied for in Australia) and subclass 173 (granted outside Australia) holders have no work restriction and can enrol in Medicare. A bridging visa granted with an onshore 804 or 864 application usually carries the same work conditions as the visa held at lodgement, so a parent who applied while on a visitor visa generally cannot work while waiting, and 804 and 864 applicants are generally not eligible for Medicare until the visa is granted.',
   },
   {
     question: 'Is it possible to withdraw the 804 and apply for the 864 instead?',

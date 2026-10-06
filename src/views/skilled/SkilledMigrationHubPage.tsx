@@ -362,7 +362,7 @@ const ASSESSORS = [
   { name: 'ANMAC', covers: 'Nursing and midwifery', icon: 'heart' },
   { name: 'TRA', covers: 'Trades (electricians, plumbers, etc.)', icon: 'briefcase' },
   { name: 'VETASSESS', covers: 'Diverse professional occupations', icon: 'layers' },
-  { name: 'ACWA', covers: 'Social work and community services', icon: 'users' },
+  { name: 'ACWA', covers: 'Community and welfare occupations (social workers are assessed by AASW)', icon: 'users' },
 ]
 
 const INV_ROUNDS = [

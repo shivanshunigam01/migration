@@ -530,7 +530,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.3)', borderRadius: 12, padding: '16px 18px' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#0d1632', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 4 }}><Icon name="alert" size={12} color="#0d1632" /> DHA Compliance Checks</div>
                 <div style={{ fontSize: 13, color: '#0d1632', lineHeight: 1.6 }}>
-                  The Department of Home Affairs conducts unannounced workplace inspections of approved sponsors. Non-compliance penalties include fines up to $93,900 per breach.
+                  The Department of Home Affairs conducts unannounced workplace inspections of approved sponsors. Breaching a sponsorship obligation can lead to a court-ordered civil penalty of up to 240 penalty units (AUD87,360) for an individual or 1,200 penalty units (AUD436,800) for a body corporate for each breach, based on the AUD364 penalty unit that applies to breaches from 1 July 2026. The Department can also issue an infringement notice, bar the sponsor, cancel sponsorship approval or accept an enforceable undertaking.
                 </div>
               </div>
             </div>

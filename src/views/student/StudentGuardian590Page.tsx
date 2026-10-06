@@ -59,8 +59,8 @@ const KEY_FACTS: KeyFact[] = [
 
 const SPONSOR_STEPS: TimelineStep[] = [
   {
-    title: "Student's education provider accepts a welfare arrangement",
-    desc: 'The student must be enrolled at a registered Australian education provider (CRICOS-registered). The provider must agree that the student requires a guardian in Australia and must accept the welfare arrangement — naming the specific proposed guardian.',
+    title: 'Nominated by the student',
+    desc: "The student nominates you as their guardian on form 157N. You must be the student's parent or custodian, or a relative aged 21 or over whose nomination is supported in writing by the student's parent or custodian, and you must be able to provide appropriate accommodation, support and general welfare for the student.",
   },
   {
     title: 'Confirmation of Enrolment (CoE) and welfare documentation',
@@ -108,8 +108,8 @@ const RELATED: RelatedPage[] = [
 
 const ELIGIBILITY_ITEMS = [
   {
-    heading: "Nominated by the student's education provider",
-    detail: "The student's registered Australian education provider (school, college, or ELICOS provider) must confirm that the student requires a guardian in Australia and name the proposed guardian in the student's welfare arrangements.",
+    heading: 'Nominated by the student',
+    detail: "The student nominates you as their guardian. You must be the student's parent or custodian, or a relative aged 21 or over whose nomination is supported in writing by the student's parent or custodian, and you must be able to provide appropriate accommodation, support and general welfare for the student.",
   },
   {
     heading: 'Relationship to the student',
