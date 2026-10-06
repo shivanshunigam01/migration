@@ -35,7 +35,7 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'calendar',
-    value: '~30 years',
+    value: '~42 years',
     label: 'Realistic wait for new applications',
     note: 'Home Affairs currently estimates about 42 years for new Parent and Aged Parent visa applications. This estimate reflects the current state of the queue — confirm current times on DoHA.',
   },
@@ -72,7 +72,7 @@ const STEPS: TimelineStep[] = [
   {
     code: '04',
     title: 'Application enters the queue',
-    desc: 'The application is placed in the processing queue in order of lodgement date. New applications are realistically waiting approximately 30 years before a decision. There is no mechanism to speed up a non-contributory parent visa application.',
+    desc: 'The application is placed in the processing queue in order of lodgement date. New applications are realistically waiting about 42 years before a decision. There is no mechanism to speed up a non-contributory parent visa application.',
   },
   {
     code: '05',
@@ -89,7 +89,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: "What is the difference between the subclass 103 and the subclass 143?",
-    answer: "The subclass 103 (Parent) and subclass 143 (Contributory Parent) are both offshore permanent parent visas requiring the Balance of Family test and an Assurance of Support. The key difference is cost versus queue time. The 103 charges approximately AUD 4,990 (single instalment) — substantially less than the 143, which charges approximately AUD 5,040 at lodgement plus approximately AUD 43,600 per adult before grant. In exchange for the higher charges, the 143 queue is much shorter: approximately 12–15 years for new applications compared to approximately 30 years for the 103. The 870 Sponsored Parent (Temporary) visa is the only parent option without the Balance of Family test. Confirm current charges and queue estimates on DoHA.",
+    answer: "The subclass 103 (Parent) and subclass 143 (Contributory Parent) are both offshore permanent parent visas requiring the Balance of Family test and an Assurance of Support. The key difference is cost versus queue time. The 103 charges approximately AUD 4,990 (single instalment) — substantially less than the 143, which charges approximately AUD 5,040 at lodgement plus approximately AUD 43,600 per adult before grant. In exchange for the higher charges, the 143 queue is much shorter: approximately 12–15 years for new applications compared to about 42 years for the 103. The 870 Sponsored Parent (Temporary) visa is the only parent option without the Balance of Family test. Confirm current charges and queue estimates on DoHA.",
   },
   {
     question: "If I lodge a 103 application now, can I switch to a 143 later and keep my place in the queue?",
@@ -177,7 +177,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
         eyebrow="Parent Visas"
         eyebrowSub="Partner & Family · Subclass 103"
         title={<>Parent Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 103 — Offshore Permanent</em></>}
-        deck="The subclass 103 Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. Government charges are substantially lower than the contributory parent pathways — but new applications realistically face a processing wait of around 30 years."
+        deck="The subclass 103 Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. Government charges are substantially lower than the contributory parent pathways — but new applications realistically face a processing wait of about 42 years."
         shortAnswer={<>The subclass 103 Parent visa is a <strong style={{ color: NAVY }}>non-contributory offshore permanent</strong> parent visa. It requires the <strong style={{ color: NAVY }}>Balance of Family test</strong> and an <strong style={{ color: NAVY }}>Assurance of Support</strong> (arranged prior to grant). Government charges are approximately <strong style={{ color: NAVY }}>AUD 4,990</strong> — much lower than the contributory subclass 143, but the queue for new applications is realistically around <strong style={{ color: NAVY }}>30 years</strong>. Importantly, time spent waiting in the 103 queue does <strong style={{ color: NAVY }}>not</strong> give any advantage in the contributory queue — the 103 and 143 are entirely separate programs. Nanak Migration Group (MARN 2619467) can assess whether lodging a 103, pursuing the contributory pathway, or using the 870 Sponsored Parent (Temporary) visa is the most realistic strategy for your family. Confirm all current figures on the Department of Home Affairs website.</>}
         maraBadge={true}
         currentAsAt="October 2026"
@@ -245,7 +245,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
           </div>
 
           <Callout variant="warning" panel={true} title="The queue — an honest assessment">
-            The subclass 103 is a capped and queued visa with an extremely long processing wait. The Department of Home Affairs processes applications in lodgement order. New applications realistically face a wait of approximately 30 years before a decision. Families whose parent is already in their 60s or 70s should carefully assess whether a non-contributory permanent parent visa represents a realistic outcome. Figures current at October 2026 — confirm current processing times on DoHA.
+            The subclass 103 is a capped and queued visa with an extremely long processing wait. The Department of Home Affairs processes applications in lodgement order. New applications realistically face a wait of about 42 years before a decision. Families whose parent is already in their 60s or 70s should carefully assess whether a non-contributory permanent parent visa represents a realistic outcome. Figures current at October 2026 — confirm current processing times on DoHA.
           </Callout>
         </div>
       </section>
@@ -330,7 +330,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
 
           <div style={{ borderLeft: '4px solid #dc2626', background: '#fef2f2', padding: '16px 20px', borderRadius: '0 8px 8px 0', marginBottom: 32 }}>
             <p style={{ fontSize: 15, fontWeight: 600, color: '#991b1b', lineHeight: 1.7, margin: 0 }}>
-              New subclass 103 applications lodged today are realistically waiting approximately 30 years before a decision. For an applicant who is currently in their 60s, this means a permanent residence outcome through the 103 may not occur within a realistic planning horizon. Confirm current estimates on DoHA.
+              New subclass 103 applications lodged today are realistically waiting about 42 years before a decision. For an applicant who is currently in their 60s, this means a permanent residence outcome through the 103 may not occur within a realistic planning horizon. Confirm current estimates on DoHA.
             </p>
           </div>
 
@@ -379,8 +379,8 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
             {[
               { label: 'Permanent?', vals: ['Yes', 'Yes', 'No — temp only'] },
               { label: 'Balance of Family test', vals: ['Required', 'Required', 'Not required'] },
-              { label: 'Govt charge (approx)', vals: ['~$4,990', '~$5,040 + ~$43,600/adult', '~$1,100 or ~$2,900'] },
-              { label: 'Queue (new applications)', vals: ['~30 years', '~12–15 years', 'Relatively quick'] },
+              { label: 'Govt charge (approx)', vals: ['from AUD8,665', 'AUD6,300 + AUD43,600/adult', 'AUD6,370 or AUD12,440'] },
+              { label: 'Queue (new applications)', vals: ['~42 years', '~18 years', 'Relatively quick'] },
               { label: 'Work rights', vals: ['Yes (on grant)', 'Yes (on grant)', 'None'] },
               { label: 'Assurance of Support', vals: ['Yes (at grant)', 'Yes (requested before grant)', 'No'] },
             ].map((row, i) => (

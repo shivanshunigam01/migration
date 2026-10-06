@@ -252,7 +252,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 { label: 'Work rights', val: 'Unlimited — anywhere in Australia', icon: 'check' },
                 { label: 'Medicare', val: 'Immediate access', icon: 'check' },
                 { label: 'Pathway to citizenship', val: 'Yes — 4 years PR residence', icon: 'star' },
-                { label: 'Govt fee (2024–25)', val: 'Govt fee (2026-27): AUD6,135 (primary applicant)', icon: 'hash' },
+                { label: 'Govt fee (2026-27)', val: 'Govt fee (2026-27): AUD6,135 (primary applicant)', icon: 'hash' },
               ].map((row, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 24px', borderBottom: i < 9 ? '1px solid #f3f4f8' : 'none' }}>
                   <span style={{ width: 24, height: 24, borderRadius: 6, background: `${NAVY}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>

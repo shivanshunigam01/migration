@@ -30,7 +30,7 @@ const EMPLOYER_RELATED: RelatedPage[] = [
   { title: '482 to PR Pathway', desc: 'Transition from 482 to permanent residence.', icon: 'arrowright', page: '482-to-pr-pathway' },
 ]
 
-// ── Real 2024-25 DHA fee data ────────────────────────────────
+// ── 2026–27 Home Affairs charges (estimator) ───────────────────
 const FEE_DATA: Record<string, {
   safLevy: { small: number; standard: number } | null
   nominationFee: number
@@ -41,7 +41,7 @@ const FEE_DATA: Record<string, {
   '482': {
     safLevy: { small: 1200, standard: 1800 },
     nominationFee: 0,
-    visaFee: { primary: 3115, secondary_adult: 1555, secondary_child: 780 },
+    visaFee: { primary: 4015, secondary_adult: 2005, secondary_child: 1005 },
     agentLow: 3500, agentHigh: 6000,
     processingWeeks: { sbs: '4–8 wks', nomination: '2–6 wks', visa: '8–16 wks' },
   },
@@ -107,7 +107,7 @@ const VISA_INFO = [
 ]
 
 const OBLIGATIONS = [
-  { title: 'Pay Market Salary Rate', desc: 'You must pay the sponsored worker at least the annual market salary rate — or the Temporary Skilled Migration Income Threshold (TSMIT), whichever is higher.', icon: 'dollar', status: 'critical' },
+  { title: 'Pay Market Salary Rate', desc: 'You must pay the sponsored worker at least the annual market salary rate, and no less than the income threshold for the visa — the Core Skills Income Threshold (CSIT) for 482 Core Skills and 186, the Specialist Skills Income Threshold for 482 Specialist Skills, or the TSMIT for 494.', icon: 'dollar', status: 'critical' },
   { title: 'Equivalent Terms & Conditions', desc: "The sponsored worker's employment conditions must not be less favourable than those you'd offer an equivalent Australian citizen in the same role.", icon: 'scale', status: 'critical' },
   { title: 'Cooperate with Inspectors', desc: 'You must allow DHA inspectors access to your premises and records to verify compliance with sponsorship obligations.', icon: 'eye', status: 'important' },
   { title: 'Keep Records', desc: 'Maintain records of all employment terms, payslips and taxation documents for each sponsored worker for the duration of sponsorship and for 2 years after it ends.', icon: 'file', status: 'important' },
@@ -302,7 +302,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
                 Know your costs before you commit
               </h2>
               <p style={{ fontSize: 15, color: '#6b7a8d', lineHeight: 1.7, marginBottom: 32 }}>
-                Real 2024–25 DHA fee data. Adjust the inputs to estimate total government charges for your sponsorship. Agent fees are shown separately as a range.
+                Based on 2026–27 Home Affairs charges. Adjust the inputs to estimate total government charges for your sponsorship. Agent fees are shown separately as a range.
               </p>
 
               {/* Visa type */}
@@ -378,7 +378,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               <div style={{ border: '1.5px solid #e5eaf4', borderRadius: 14, overflow: 'hidden' }}>
                 <div style={{ padding: '16px 24px', background: '#f8fafd', borderBottom: '1px solid #e5eaf4', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontSize: 13, fontWeight: 700, color: NAVY, letterSpacing: '0.06em', textTransform: 'uppercase' }}>Fee Breakdown</span>
-                  <span style={{ fontSize: 12, color: '#9ca3af' }}>2024–25 DHA rates</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af' }}>2026–27 Home Affairs rates</span>
                 </div>
 
                 {[

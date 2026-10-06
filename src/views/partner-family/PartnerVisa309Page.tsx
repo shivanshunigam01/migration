@@ -120,8 +120,8 @@ const COMPARE_ROWS: ComparisonRow[] = [
   { feature: '2-year clock starts',   v309: 'Date of lodgement',                  v820: 'Date of lodgement' },
   { feature: 'Work rights on temp visa', v309: 'Yes — unlimited',                 v820: 'Yes — unlimited' },
   { feature: 'Medicare',              v309: 'Yes (where reciprocal agreement)',    v820: 'Yes' },
-  { feature: 'Govt fee (2024–25)',     v309: 'AUD $9,095 (primary)',               v820: 'AUD $9,095 (primary)' },
-  { feature: 'Processing (current)',   v309: '18–36+ months (75th percentile)',    v820: '20–36+ months (75th percentile)' },
+  { feature: 'Govt fee (2026-27)',     v309: 'AUD11,710 (primary)',               v820: 'AUD11,710 (primary)' },
+  { feature: 'Processing (current)',   v309: '21 months (50%) / 32 months (90%)',    v820: '22 months (50%) / 30 months (90%)' },
 ]
 
 const CHECKLIST_GROUPS: ChecklistGroup[] = [
@@ -398,7 +398,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
                   { label: 'At 309 grant', val: 'Applicant must be outside Australia', icon: 'alert' },
                   { label: 'Work rights (309)', val: 'Unlimited — any job, any hours', icon: 'zap' },
                   { label: 'Relationship types', val: 'Married or genuine de facto (12+ months)', icon: 'heart' },
-                  { label: 'Govt fee (2024–25)', val: 'Govt fee (2026-27): AUD11,710 primary applicant', icon: 'dollar' },
+                  { label: 'Govt fee (2026-27)', val: 'Govt fee (2026-27): AUD11,710 primary applicant', icon: 'dollar' },
                   { label: 'Current processing', val: '18–36+ months (varies by case)', icon: 'clock' },
                   { label: 'Children can be included', val: 'Yes — as secondary applicants', icon: 'users' },
                 ].map((row, i) => (

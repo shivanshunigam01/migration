@@ -59,7 +59,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can a refusal based on financial capacity be reviewed?",
-    answer: "A refusal of a student visa may be reviewable at the Administrative Review Tribunal (ART), subject to meeting the review criteria and strict deadlines (generally 21 days from notification of the decision). Review rights vary depending on the basis of refusal and your circumstances. If your visa is refused, seek advice from a registered migration agent immediately — do not wait, as appeal windows are short.",
+    answer: "A refusal of a student visa may be reviewable at the Administrative Review Tribunal (ART), subject to meeting the review criteria and strict deadlines (generally 28 days from notification of the decision). Review rights vary depending on the basis of refusal and your circumstances. If your visa is refused, seek advice from a registered migration agent immediately — do not wait, as appeal windows are short.",
   },
 ]
 

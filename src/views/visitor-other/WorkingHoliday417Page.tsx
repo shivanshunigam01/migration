@@ -83,7 +83,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'What is the 6-month employer limit and does it apply to UK passport holders?',
-    answer: 'The standard condition on the Working Holiday (417) visa is that you may not work for the same employer for more than 6 months — this applies to the same business, regardless of changes in your role or the location of the work. Working more than 6 months for the same employer is a visa condition breach. Note: as of recent policy changes, UK passport holders on the 417 visa are exempt from the 6-month per employer limit and from the specified work requirement for a second year grant. Confirm the current conditions for your specific visa grant on the DoHA website, as conditions can change.',
+    answer: 'The standard condition on the Working Holiday (417) visa is that you may not work for the same employer for more than 6 months — this applies to the same business, regardless of changes in your role or the location of the work. Working more than 6 months for the same employer is a visa condition breach. The six-month work limitation per employer also applies to UK passport holders. UK passport holders are only exempt from the specified work requirement for second and third visas — confirm your visa conditions on grant.',
   },
   {
     question: "What counts as 'specified regional work' for a second or third year?",
@@ -162,7 +162,7 @@ return (
         eyebrowSub="Working Holiday · Subclass 417"
         title={<>Working Holiday Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 417</em></>}
         deck="The Working Holiday visa (subclass 417) allows eligible young people from partner countries to holiday in Australia for up to 12 months while funding their trip through temporary employment. A second and third year is available after completing specified regional work."
-        shortAnswer={<>The subclass 417 Working Holiday visa is available to passport holders from a set of <strong style={{ color: NAVY }}>partner countries</strong>, generally aged <strong style={{ color: NAVY }}>18 to 30</strong> (or 35 for nationals of some countries including the United Kingdom, Canada, Ireland, France, Italy, and Denmark — confirm current eligibility on the DoHA website). The visa allows a <strong style={{ color: NAVY }}>12-month stay</strong> with full work rights, subject to a <strong style={{ color: NAVY }}>6-month limit per employer</strong> (UK passport holders are currently exempt from this limit). Study is capped at <strong style={{ color: NAVY }}>4 months</strong>. The government application charge is approximately <strong style={{ color: NAVY }}>AUD 650</strong> — confirm the current figure on DoHA. A second or third year grant is available after completing the required regional work. Nanak Migration Group (MARN 2619467) can advise on eligibility and the regional work requirements.</>}
+        shortAnswer={<>The subclass 417 Working Holiday visa is available to passport holders from a set of <strong style={{ color: NAVY }}>partner countries</strong>, generally aged <strong style={{ color: NAVY }}>18 to 30</strong> (or 35 for nationals of some countries including the United Kingdom, Canada, Ireland, France, Italy, and Denmark — confirm current eligibility on the DoHA website). The visa allows a <strong style={{ color: NAVY }}>12-month stay</strong> with full work rights, subject to a <strong style={{ color: NAVY }}>6-month limit per employer</strong> (this also applies to UK passport holders). Study is capped at <strong style={{ color: NAVY }}>4 months</strong>. The government application charge is <strong style={{ color: NAVY }}>AUD 840</strong> for a first visa and <strong style={{ color: NAVY }}>AUD 1,000</strong> for a second or third visa — confirm the current figure on DoHA. A second or third year grant is available after completing the required regional work. Nanak Migration Group (MARN 2619467) can advise on eligibility and the regional work requirements.</>}
         maraBadge={true}
         currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -353,7 +353,7 @@ return (
                   'The limit applies to the same business entity regardless of role, location, or business name changes',
                   'Sub-contracting through a labour-hire firm counts as working for the end employer',
                   'Exceeding 6 months with the same employer is a visa condition breach',
-                  'UK passport holders: currently exempt from the 6-month limit — confirm your specific visa conditions on grant',
+                  'UK passport holders: the 6-month limit applies; only specified-work rules differ for second/third visas — confirm on DoHA',
                 ].map((point, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
                     <div style={{ width: 20, height: 20, borderRadius: '50%', background: `${ACCENT}14`, border: `1px solid ${ACCENT}30`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
@@ -415,7 +415,7 @@ return (
                   {
                     grant: 'Second 417 visa',
                     work: '88 days (3 months) of specified regional work completed on the first 417 visa',
-                    notes: 'UK passport holders are currently exempt from the specified work requirement for a second year — confirm conditions on DoHA.',
+                    notes: 'UK passport holders are exempt from specified work for second/third visas only — confirm conditions on DoHA.',
                   },
                   {
                     grant: 'Third 417 visa',

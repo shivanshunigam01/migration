@@ -57,6 +57,7 @@ export function loadAuditRowsSync(fs, csvPath, { includeRma = false, includeDone
   const statusI = header.indexOf("Status")
   const priI = header.indexOf("Priority")
   const slugI = header.indexOf("Page slug")
+  const sectionI = header.indexOf("Section on page")
   if (findI === -1) return []
 
   const rows = []
@@ -75,6 +76,7 @@ export function loadAuditRowsSync(fs, csvPath, { includeRma = false, includeDone
       repl: repl || "",
       priority: cols[priI] || "",
       slug: cols[slugI] || "",
+      section: sectionI >= 0 ? cols[sectionI] || "" : "",
       verification,
       status,
     })

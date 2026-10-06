@@ -231,7 +231,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <AnswerBox>
-            The Administrative Review Tribunal (ART) provides an independent merits review of visa refusal and cancellation decisions made by the Department of Home Affairs, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Lodging an ART application generally does not stay removal from Australia unless a separate bridging visa is in place. Time limits apply — in most cases you have 21 days from the date of the decision to lodge an application.
+            The Administrative Review Tribunal (ART) provides an independent merits review of visa refusal and cancellation decisions made by the Department of Home Affairs, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. Lodging an ART application generally does not stay removal from Australia unless a separate bridging visa is in place. Time limits apply — in most cases you have 28 days after you are notified of the decision to lodge an application (14 days if you are in immigration detention, and 9 days for a character decision under section 501 if you are in Australia). The Tribunal cannot extend these time limits.
           </AnswerBox>
           <ReviewedBy />
         </div>

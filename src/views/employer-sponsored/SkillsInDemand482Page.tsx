@@ -157,7 +157,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
         {[
           { label: 'Duration', value: currentStream.duration, icon: 'clock' },
           { label: 'Salary threshold', value: currentStream.salary, icon: 'dollar' },
-          { label: 'LMT required', value: currentStream.lmt, icon: 'list', bool: true, boolVal: currentStream.lmt === 'Yes' },
+          { label: 'LMT required: Specialist Skills - Yes; Core Skills - Yes; Labour Agreement - As set by the agreement: Specialist Skills - Yes; Core Skills - Yes; Labour Agreement - As set by the agreement', value: currentStream.lmt, icon: 'list', bool: true, boolVal: currentStream.lmt === 'Yes' },
           { label: 'PR pathway', value: currentStream.pr, icon: 'trending' },
         ].map((row, i) => (
           <div key={i} style={{
@@ -347,7 +347,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                 {[
                   { label: 'Duration', vals: streams.map((s) => s.duration) },
                   { label: 'Salary threshold', vals: streams.map((s) => s.salary) },
-                  { label: 'LMT required', vals: ['Yes', 'Yes', 'Varies'] },
+                  { label: 'LMT required: Specialist Skills - Yes; Core Skills - Yes; Labour Agreement - As set by the agreement: Specialist Skills - Yes; Core Skills - Yes; Labour Agreement - As set by the agreement', vals: ['Yes', 'Yes', 'Varies'] },
                   { label: 'PR pathway', vals: ['Yes (186)', 'Yes (186)', 'May apply'] },
                   { label: 'Skills assessment', vals: ['Sometimes', 'Sometimes', 'Varies'] },
                   { label: 'English requirement', vals: ['Competent', 'Competent', 'Competent*'] },
@@ -355,7 +355,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                   <tr key={i} style={{ background: i % 2 === 0 ? '#f8fafc' : 'white', borderTop: '1px solid #e2e8f0' }}>
                     <td style={{ padding: '13px 20px', color: '#475569', fontSize: 15, fontWeight: 600 }}>{row.label}</td>
                     {row.vals.map((v, j) => {
-                      const isGood = v === 'No' && row.label === 'LMT required'
+                      const isGood = v === 'No' && row.label === 'LMT required: Specialist Skills - Yes; Core Skills - Yes; Labour Agreement - As set by the agreement: Specialist Skills - Yes; Core Skills - Yes; Labour Agreement - As set by the agreement'
                       const isBad = v === 'No' && row.label === 'PR pathway'
                       return (
                         <td key={j} style={{

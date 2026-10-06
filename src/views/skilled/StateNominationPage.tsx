@@ -107,10 +107,10 @@ const JURISDICTION_ROWS: ComparisonRow[] = [
   },
   {
     feature:   'ACT (Australian Capital Territory)',
-    visas:     '190',
+    visas:     '190, 491',
     focus:     'Healthcare, engineering, ICT, government-sector adjacent roles. ACT generally requires a genuine connection to Canberra.',
     residency: 'Typically requires living and working in the ACT or a formal ACT job offer at the time of application.',
-    apply:     'ACT Skilled Migration portal (online). ACT does not nominate for the 491 — it is not a designated regional area.',
+    apply:     'ACT Skilled Migration portal (Canberra Matrix). The ACT nominates for both the 190 and 491 — Canberra is a designated regional area (Category 2).',
   },
   {
     feature:   'NT (Northern Territory)',

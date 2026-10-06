@@ -262,7 +262,7 @@ const COMPARISON_ROWS = [
   { visa: '103 Parent', permanent: 'Yes', boft: 'Yes', location: 'Offshore', charges: '~$4,990', queue: 'Several decades', work: 'Yes (on grant)', highlight: false },
   { visa: '804 Aged Parent', permanent: 'Yes', boft: 'Yes', location: 'Onshore only', charges: '~$4,990', queue: 'Several decades', work: 'Yes (on grant)', highlight: false },
   { visa: '864 Contributory Aged Parent', permanent: 'Yes', boft: 'Yes', location: 'Onshore only', charges: '~$5,040 + ~$43,600/adult', queue: '10+ years', work: 'Yes (on grant)', highlight: false },
-  { visa: '870 Sponsored Parent (Temp)', permanent: 'No', boft: 'No', location: 'Both', charges: '~$1,100 (3yr) / ~$2,900 (5yr)', queue: 'Relatively quick', work: 'None', highlight: true },
+  { visa: '870 Sponsored Parent (Temp)', permanent: 'No', boft: 'No', location: 'Both', charges: '~$1,100 (3yr) / AUD12,440 (5yr)', queue: 'Relatively quick', work: 'None', highlight: true },
   { visa: '884 Contributory Aged Parent (Temp)', permanent: 'No (leads to 864)', boft: 'Yes', location: 'Onshore only', charges: '~$5,040 first + ~$43,600/adult at 864 stage', queue: 'Same as 864', work: 'Generally none', highlight: false },
 ]
 

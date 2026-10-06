@@ -19,7 +19,7 @@ const OUT_SUMMARY = path.join(
   "Nanak_Migration_Service_Page_Audit_Oct2026_CLIENT_SUMMARY.csv"
 )
 
-const DEPLOY_REF = "dc0df40 (migration repo master, Oct 2026)"
+const DEPLOY_REF = "master @ Oct 2026 audit pass (see latest migration commit)"
 const DEPLOY_DATE = "6 October 2026"
 
 function escCsv(val) {
@@ -89,12 +89,11 @@ for (let i = headerIdx + 1; i < records.length; i++) {
     clientInfo = "None required."
     implNote = "Already marked Done in audit sheet."
   } else {
-    done++
-    devStatus = `Done (live site – ${DEPLOY_DATE})`
+    pendingOther++
+    devStatus = "Pending – live site verification"
     clientInfo =
-      "Optional: spot-check section on live URL. No wording approval needed unless you disagree with audit replacement."
-    implNote = `Implemented in website codebase; deployed via Git commit ${DEPLOY_REF}.`
-    if (statusI >= 0) cols[statusI] = "Done"
+      "Confirm on production URL after deploy (Live check column). Do not mark Done in the audit sheet until Fixed."
+    implNote = `Code updated in migration repo — deploy required; verify against ${DEPLOY_REF} or later commit.`
   }
 
   if (devNotesI >= 0) cols[devNotesI] = implNote
@@ -109,16 +108,20 @@ const summaryRows = [
   ["Metric", "Count", "Notes"],
   ["Total findings", String(outRows.length), "All rows from Oct 2026 audit export"],
   [
-    "Done (developer – deployed)",
+    "Done (marked Done in audit sheet)",
     String(done),
-    `Content updated on nanakmigration.com.au build from ${DEPLOY_REF}`,
+    `Rows with Status = Done in the client workbook only`,
   ],
   [
     "Pending – RMA / client sign-off",
     String(pendingRma),
     "Verification column = Needs RMA review; requires Navpreet approval",
   ],
-  ["Other pending", String(pendingOther), ""],
+  [
+    "Pending – live verification",
+    String(pendingOther),
+    "Implemented or in progress in repo; awaiting Fixed on live site (column P)",
+  ],
   ["", "", ""],
   ["How to verify (client)", "", ""],
   [
@@ -164,4 +167,4 @@ fs.writeFileSync(
 
 console.log(`Wrote ${OUT_CSV}`)
 console.log(`Wrote ${OUT_SUMMARY}`)
-console.log(`Done: ${done}, Pending RMA: ${pendingRma}`)
+console.log(`Done (sheet): ${done}, Pending RMA: ${pendingRma}, Pending live verify: ${pendingOther}`)

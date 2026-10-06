@@ -75,6 +75,17 @@ const SITE_WIDE = [
   ["21 days to apply to the AAT", "28 days to apply to the ART"],
 
   ["within 21 days", "within 28 days"],
+  ["you have 21 days from the date of the decision", "you have 28 days from the date of the decision"],
+  ["generally 21 days from notification of the decision", "generally 28 days from notification of the decision"],
+  ["typically 21 days from the date the decision notice is received", "typically 28 days from the date the decision notice is received"],
+  ["AUD $9,095 (primary)", "AUD11,710 (primary)"],
+  ["Govt fee (2024–25)", "Govt fee (2026-27)"],
+  ["~AUD 1,100 / 2,900", "AUD6,370 / AUD12,440"],
+  ["approximately AUD 1,100 (3-year grant)", "AUD6,370 (up to 3 years)"],
+  ["approximately AUD 2,900 (5-year grant)", "AUD12,440 (up to 5 years)"],
+  ["~AUD 1,100", "AUD6,370"],
+  ["~$2,900", "AUD12,440"],
+  ["~$1,100 (3yr) / ~$2,900 (5yr)", "AUD6,370 (3yr) / AUD12,440 (5yr)"],
 
   ["within 21 calendar days", "within 28 calendar days"],
 
@@ -123,7 +134,8 @@ function isSafeCsvReplacement(find, repl) {
   if (find.length < 28) return false
   if (/^\d{6}$/.test(find.trim())) return false
   if (/^[\d\s/]+$/.test(find.trim())) return false
-  if (/^(Remove these|Correct the|Change the)/i.test(repl.trim())) return false
+  if (/^(Remove these|Correct the|Change the|Visas offered cell)/i.test(repl.trim())) return false
+  if (/change\s+'\d+'\s+to/i.test(repl)) return false
   if (repl.length > 800) return false
   return true
 }
@@ -168,7 +180,7 @@ let csvPairs = []
 
 if (fs.existsSync(CSV_PATH)) {
 
-  const rows = loadAuditRowsSync(fs, CSV_PATH)
+  const rows = loadAuditRowsSync(fs, CSV_PATH, { includeDone: true })
 
   csvPairs = rows
 

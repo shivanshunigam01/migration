@@ -498,7 +498,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'parent-visa-103': {
     title: 'Parent Visa (Subclass 103) | Nanak Migration Group',
-    metaDescription: 'The subclass 103 Parent visa is a non-contributory offshore permanent parent visa. Much lower government charges than the 143 but a realistic processing wait of around 30 years for new applications. MARN 2619467.',
+    metaDescription: 'The subclass 103 Parent visa is a non-contributory offshore permanent parent visa. Much lower government charges than the 143 but a realistic processing wait of about 42 years for new applications. MARN 2619467.',
     primaryKeyword: 'parent visa subclass 103 Australia non-contributory',
   },
   'assurance-of-support': {
