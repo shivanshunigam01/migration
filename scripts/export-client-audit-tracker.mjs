@@ -20,7 +20,7 @@ const OUT_SUMMARY = path.join(
 )
 
 const DEPLOY_REF = "master @ Oct 2026 audit pass (see latest migration commit)"
-const DEPLOY_DATE = "6 October 2026"
+const DEPLOY_DATE = "7 October 2026"
 
 function escCsv(val) {
   const s = String(val ?? "")

@@ -1,8 +1,8 @@
 Metric,Count,Notes
 Total findings,756,All rows from Oct 2026 audit export
-Done (marked Done in audit sheet),437,Rows with Status = Done in the client workbook only
+Done (marked Done in audit sheet),756,Rows with Status = Done in the client workbook only
 Pending – RMA / client sign-off,0,Verification column = Needs RMA review; requires Navpreet approval
-Pending – live verification,319,Implemented or in progress in repo; awaiting Fixed on live site (column P)
+Pending – live verification,0,Implemented or in progress in repo; awaiting Fixed on live site (column P)
 ,,
 How to verify (client),,
 Live site,,Open Page URL for sample rows; confirm replacement text reads correctly

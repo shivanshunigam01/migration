@@ -134,7 +134,9 @@ function isSafeCsvReplacement(find, repl) {
   if (find.length < 28) return false
   if (/^\d{6}$/.test(find.trim())) return false
   if (/^[\d\s/]+$/.test(find.trim())) return false
-  if (/^(Remove these|Correct the|Change the|Visas offered cell)/i.test(repl.trim())) return false
+  if (/^(Remove these|Correct the|Change the|Visas offered)/i.test(repl.trim())) return false
+  if (/Rename the two cards/i.test(repl)) return false
+  if (/Visas offered cell/i.test(repl)) return false
   if (/change\s+'\d+'\s+to/i.test(repl)) return false
   if (/^Rename the two cards/i.test(repl.trim())) return false
   if (/^Delete the '/i.test(repl.trim())) return false

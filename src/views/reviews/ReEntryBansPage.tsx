@@ -65,7 +65,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can a PIC 4013 or 4014 ban be waived for a partner visa?",
-    answer: "Partner visas (820/801 and 309/100) do not include PIC 4013 or 4014, so these exclusion periods do not apply to a partner visa application (other criteria such as Schedule 3, PIC 4020 and character still apply). PIC 4013 and 4014 mainly apply to temporary visas, and for those visas the exclusion can be waived where there are compelling or compassionate circumstances.",
+    answer: "Partner visas (820/801) do not include PIC 4013 or 4014, so these exclusion periods do not apply to a partner visa application (other criteria such as Schedule 3, PIC 4020 and character still apply). PIC 4013 and 4014 mainly apply to temporary visas, and for those visas the exclusion can be waived where there are compelling or compassionate circumstances.",
   },
   {
     question: "What is the difference between a PIC 4013/4014 ban and a section 501 exclusion?",
