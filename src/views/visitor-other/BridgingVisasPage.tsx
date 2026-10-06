@@ -37,7 +37,7 @@ const ROSE    = '#e11d48'
 const VIOLET  = '#4f46e5'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',   label: 'Key facts' },
@@ -78,11 +78,11 @@ const BV_ROWS: ComparisonRow[] = [
     granted:  'Granted to a BVA holder who needs to travel outside Australia and return',
     work:     'Generally the same as the associated BVA work rights',
     travel:   'Yes — for the travel period specified in the grant. The holder must return before the BVB travel authorisation expires.',
-    effect:   'Generally when the BVA ceases (on departure from Australia)',
+    effect:   'On grant (if your substantive visa has already ceased) or when your current substantive visa ceases',
   },
   {
     feature:  'Bridging Visa C (BVC)',
-    granted:  'Where an application has been made in circumstances not giving rise to a BVA (e.g., invalid applications in some circumstances)',
+    granted:  'Where a valid application for a substantive visa has been made in Australia by a person who does not hold a substantive visa. An invalid application does not give rise to any bridging visa.',
     work:     'Generally no work rights — unless specifically granted',
     travel:   'No travel rights.',
     effect:   'When the previous visa ceases',
@@ -105,7 +105,7 @@ const BV_ROWS: ComparisonRow[] = [
 
 /* ─── When BV comes into effect / ceases ─── */
 const EFFECT_POINTS = [
-  { icon: 'clock', color: STEEL, heading: 'A BVA does not start immediately on grant', body: "A Bridging Visa A is generally granted before it is needed — while the applicant still holds a valid substantive visa. The BVA only comes into effect when the substantive visa ceases (either by expiry, cancellation, or the grant of the pending application). A person who holds a valid substantive visa and a pending BVA holds both, but the BVA is dormant until the substantive visa ceases." },
+  { icon: 'clock', color: STEEL, heading: 'A BVA does not start immediately on grant', body: "A Bridging Visa A is generally granted before it is needed — while the applicant still holds a valid substantive visa. The BVA only comes into effect when the substantive visa you hold ceases, for example when it expires. If the pending application is granted, the new visa replaces the bridging visa. A person who holds a valid substantive visa and a pending BVA holds both, but the BVA is dormant until the substantive visa ceases." },
   { icon: 'check', color: GREEN, heading: "Continuity of lawful status on the 'same day' rule", body: "If a further substantive visa application is lodged before the current substantive visa expires, a BVA is generally granted and the person's lawful status is continuous. The BVA activates the moment the substantive visa ceases, with no gap in lawful status. This is sometimes called the same-day or automatic bridging arrangement." },
   { icon: 'alert', color: AMBER, heading: 'When a bridging visa ceases', body: "A bridging visa generally ceases when: the pending application is decided (the BV is replaced by the new substantive visa, or ceases at refusal); the BV holder departs Australia on a BVA (most common); the BV conditions are breached; or the BV holder is granted another visa. Check the specific conditions in your visa grant notice." },
   { icon: 'alert', color: ROSE,  heading: 'Becoming unlawful', body: "A person who allows their bridging visa to cease without another visa in place becomes an unlawful non-citizen. Unlawful non-citizens are liable to detention and removal. If there is any risk that a bridging visa may lapse, seek advice from a registered migration agent immediately. A Bridging Visa E may be the only option for an unlawful non-citizen to regain lawful status." },
@@ -113,7 +113,7 @@ const EFFECT_POINTS = [
 
 /* ─── BVB section ─── */
 const BVB_POINTS = [
-  { icon: 'plane', color: STEEL, heading: 'What a Bridging Visa B allows', body: "A Bridging Visa B (BVB) is specifically designed for BVA holders who need to travel outside Australia and return. It replaces the BVA for travel purposes and is granted for a specified travel period during which the holder must return to Australia. If the holder returns within the travel period, the BVB ceases and the BVA is reinstated." },
+  { icon: 'plane', color: STEEL, heading: 'What a Bridging Visa B allows', body: "A Bridging Visa B (BVB) is specifically designed for BVA holders who need to travel outside Australia and return. It replaces the BVA for travel purposes and is granted for a specified travel period during which the holder must return to Australia. If the holder returns within the travel period, they remain on the BVB, which keeps them lawful until the substantive visa application is finally determined. To travel again after the travel period has ended, a new BVB must be granted before departure." },
   { icon: 'alert', color: AMBER, heading: 'Apply for the BVB before you depart', body: "A BVB must be applied for before the BVA holder departs Australia. It cannot generally be applied for from overseas. Departing on a BVA without first obtaining a BVB causes the BVA to cease, leaving the person without a visa to return on." },
   { icon: 'alert', color: ROSE,  heading: 'Return before the BVB travel period expires', body: "The BVB specifies a travel period — a date by which the holder must return to Australia. Returning after the travel period expires means the person re-enters without a valid visa, which may create serious immigration problems. The travel period on a BVB is typically limited and may be shorter than the duration of the underlying pending application." },
   { icon: 'check', color: GREEN, heading: 'Check VEVO before departing', body: "Before any international travel, a person on a bridging visa should check their visa conditions and travel entitlements on the VEVO system (Visa Entitlement Verification Online). If there is any uncertainty about travel rights, seek advice from a registered migration agent before purchasing flights or departing." },

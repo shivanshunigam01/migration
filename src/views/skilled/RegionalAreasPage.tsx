@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = NAVY
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -105,11 +105,11 @@ const OBLIGATIONS = [
   },
   {
     heading: 'Three-year qualifying period for 191 PR',
-    body: 'To apply for the subclass 191, you must have lived and worked in a designated regional area for at least three years while holding the 491 or 494. The three years do not need to be continuous, but periods outside a regional area generally do not count.',
+    body: 'To apply for the subclass 191, you must have held your 491 or 494 for at least 3 years, complied with its conditions (including living, working and studying only in a designated regional area) and have ATO notices of assessment for 3 income years.',
   },
   {
     heading: 'Time outside Australia',
-    body: 'Extended absences from Australia generally do not count toward the three-year qualifying period. Maintain records of your entries and exits and minimise long overseas stays during the qualifying period.',
+    body: 'The 191 requires you to have held your 491 or 494 for 3 years and complied with its conditions - there is no day count, but long absences can raise questions about whether you lived and worked in a regional area. Keep records of your travel. Maintain records of your entries and exits and minimise long overseas stays during the qualifying period.',
   },
 ]
 
@@ -192,7 +192,7 @@ return (
                   'All of the Northern Territory',
                   'All of the Australian Capital Territory (including Canberra)',
                   'Queensland — all areas except Brisbane metropolitan',
-                  'New South Wales — all areas except Sydney, Newcastle, and Wollongong metropolitan',
+                  'New South Wales — all areas except the Sydney metropolitan area (Newcastle/Lake Macquarie and Wollongong/Illawarra are regional)',
                   'Victoria — all areas except Melbourne metropolitan',
                 ].map((item, i) => (
                   <li key={i} style={{ fontSize: 13.5, color: '#166534', lineHeight: 1.6, paddingLeft: 20, position: 'relative' as const }}>
@@ -213,8 +213,6 @@ return (
                   'Sydney metropolitan area (NSW)',
                   'Melbourne metropolitan area (VIC)',
                   'Brisbane metropolitan area (QLD)',
-                  'Newcastle metropolitan area (NSW)',
-                  'Wollongong metropolitan area (NSW)',
                 ].map((item, i) => (
                   <li key={i} style={{ fontSize: 13.5, color: '#991b1b', lineHeight: 1.6, paddingLeft: 20, position: 'relative' as const }}>
                     <span style={{ position: 'absolute' as const, left: 0 }}>-</span>
@@ -233,29 +231,27 @@ return (
       {/* Categories */}
       <section id="categories" style={{ background: GREY_BG, padding: '80px 32px' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <SectionHeading kicker="Two tiers" title="Regional Area Categories for the 491 Visa" accent={ACCENT} />
+          <SectionHeading kicker="Three tiers" title="Regional Area Categories (Home Affairs)" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, maxWidth: 740, marginBottom: 32 }}>
-            Within the regional area definition, there are two categories relevant to state nomination and occupation access. The points bonus for regional nomination is the same regardless of which category applies.
+            Home Affairs groups postcodes into categories. <strong>Category 1</strong> is the major cities (Sydney, Melbourne and Brisbane) — these are <em>not</em> designated regional areas. <strong>Category 2</strong> and <strong>Category 3</strong> are designated regional areas; DAMA priority and the extra two years of post-study work rights generally apply to <strong>Category 3</strong> only.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-            {/* Category 1 */}
-            <div style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderTop: `3px solid ${ACCENT}`, borderRadius: '0 0 14px 14px', padding: 24, boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
-              <div style={{ display: 'inline-block', background: `${ACCENT}12`, border: `1px solid ${ACCENT}30`, borderRadius: 6, padding: '3px 10px', marginBottom: 14 }}>
-                <span style={{ fontSize: 12, fontWeight: 800, color: ACCENT }}>Category 1</span>
-              </div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 10 }}>Cities and Major Regional Centres</div>
-              <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                These are regional areas with populations broadly equivalent to larger cities. The 491 regional points bonus (15 points) applies to both categories — there is no points difference between the two categories. However, Category 1 areas may be subject to different state nomination occupation lists and requirements.
-              </p>
-            </div>
-            {/* Category 2 */}
             <div style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderTop: `3px solid ${ACCENT}`, borderRadius: '0 0 14px 14px', padding: 24, boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
               <div style={{ display: 'inline-block', background: `${ACCENT}12`, border: `1px solid ${ACCENT}30`, borderRadius: 6, padding: '3px 10px', marginBottom: 14 }}>
                 <span style={{ fontSize: 12, fontWeight: 800, color: ACCENT }}>Category 2</span>
               </div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 10 }}>Cities and Major Regional Centres</div>
+              <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                Includes Perth, Adelaide, Gold Coast, Sunshine Coast, Canberra, Newcastle/Lake Macquarie, Wollongong/Illawarra, Geelong and Hobart. These locations are designated regional for most skilled and regional visas, but incentives tied to Category 3 (such as DAMA priority and the extra post-study work period) do not automatically apply here.
+              </p>
+            </div>
+            <div style={{ background: '#fff', border: `1.5px solid ${BORDER}`, borderTop: `3px solid ${ACCENT}`, borderRadius: '0 0 14px 14px', padding: 24, boxShadow: '0 2px 8px rgba(27,43,94,0.04)' }}>
+              <div style={{ display: 'inline-block', background: `${ACCENT}12`, border: `1px solid ${ACCENT}30`, borderRadius: 6, padding: '3px 10px', marginBottom: 14 }}>
+                <span style={{ fontSize: 12, fontWeight: 800, color: ACCENT }}>Category 3</span>
+              </div>
               <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 10 }}>Regional Centres and Other Regional Areas</div>
               <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Smaller regional centres and rural/remote areas. Some occupations and DAMA pathways are only available in Category 2 areas. Regional Australia also has specific programs (such as the Regional Occupation List for 494) that may apply differently based on the remoteness of the location.
+                Smaller regional centres and rural or remote areas. DAMA agreements and the additional post-study work period for international graduates are generally linked to Category 3 postcodes. Always confirm the postcode on the Department&apos;s regional areas tool.
               </p>
             </div>
           </div>

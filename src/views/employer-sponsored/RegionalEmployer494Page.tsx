@@ -38,11 +38,11 @@ const STATS = [
 
 const ELIGIBILITY = [
   { icon: 'briefcase', title: 'Approved Sponsor', body: 'Your employer must be an approved sponsor located in a designated regional area of Australia.' },
-  { icon: 'list', title: 'Eligible Occupation', body: 'Your occupation must appear on the MLTSSL or STSOL plus the regional occupation list.' },
+  { icon: 'list', title: 'Eligible Occupation', body: 'Your occupation must be on the MLTSSL, the STSOL or the Regional Occupation List (ROL).' },
   { icon: 'file', title: 'Skills Assessment', body: 'A positive skills assessment from the relevant assessing authority is required before lodging.' },
   { icon: 'dollar', title: 'CSIT / TSMIT compliance', body: `Salary must meet the Core Skills Income Threshold (${CSIT_LABEL} from 1 July 2026) and the annual market salary rate.` },
   { icon: 'globe', title: 'English Language', body: 'At least "competent" English (IELTS 6.0 in each band, or equivalent).' },
-  { icon: 'user', title: 'Age Under 45', body: 'You must be under 45 years of age at the time of invitation or application.' },
+  { icon: 'user', title: 'Age Under 45', body: 'You must be under 45 when you apply, unless an exemption applies.' },
 ]
 
 const STREAMS = [
@@ -91,7 +91,7 @@ const FAQS = [
     a: 'Yes. Your spouse/de facto partner and dependent children can be included as secondary applicants on your 494. They can live, work, and study in Australia, and they may also be eligible for the 191 PR when you apply.',
   },
   {
-    q: 'How is the 494 different from the 482 TSS visa?',
+    q: 'How is the 494 different from the 482 Skills in Demand visa?',
     a: 'The 482 is not restricted to regional areas and has no direct permanent residence pathway (unless transitioning via 186 TRT). The 494 is regional-only, provisional for 5 years, and has a clearer pathway to permanent residence through the 191 after 3 years of regional living and working.',
   },
   {

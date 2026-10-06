@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = NAVY
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -30,13 +30,13 @@ const TOC = [
 const FACTS: KeyFact[] = [
   { icon: 'clipboard', value: 'Not a visa application', label: 'An EOI is an expression of interest only', note: 'Submitting an EOI does not lodge a visa application and does not give you any visa rights.' },
   { icon: 'calendar', value: '24 months', label: 'EOI validity period', note: 'Your EOI remains active and eligible for invitation rounds for 24 months from submission.' },
-  { icon: 'hash', value: '65 points', label: 'Minimum score to submit an EOI', note: 'You must score at least 65 points to be eligible to submit an EOI, but current invitation cutoffs are typically 80-95+ points depending on the occupation and visa.' },
+  { icon: 'hash', value: '65 points', label: 'Minimum score to submit an EOI', note: 'You must score at least 65 points to be eligible to submit an EOI, but in the June 2026 round minimum scores invited ranged from 65 to 100 depending on the occupation.' },
   { icon: 'alert', value: 'PIC 4020 risk', label: 'Inflated EOI claims carry serious consequences', note: 'Claims that cannot be evidenced at application stage may constitute a misrepresentation — with serious consequences including visa refusal and bars.' },
 ]
 
 const STEPS: TimelineStep[] = [
-  { code: '01', title: 'Submit your EOI in SkillSelect', desc: "Create a myID account (formerly myGovID) and access SkillSelect through ImmiAccount. Complete your profile including occupation (ANZSCO code), claimed points, and visa subclass preferences (189, 190, 491, or any combination)." },
-  { code: '02', title: 'EOI enters the pool', desc: "Your EOI enters the pool of active EOIs ranked by points score, then by EOI submission date as a tie-breaker. EOIs with higher scores appear earlier in the pool." },
+  { code: '01', title: 'Submit your EOI in SkillSelect', desc: "Start your EOI in SkillSelect - Home Affairs emails you an EOI ID and login details. If invited, you lodge the visa application in ImmiAccount. Complete your profile including occupation (ANZSCO code), claimed points, and visa subclass preferences (189, 190, 491, or any combination)." },
+  { code: '02', title: 'EOI enters the pool', desc: "Your EOI enters the pool of active EOIs ranked by points score, then by 'date of effect' (the date and time the EOI reached its points score) as a tie-breaker. EOIs with higher scores appear earlier in the pool." },
   { code: '03', title: 'Invitation rounds are held', desc: "The Department holds invitation rounds — typically monthly. In each round, invitations are issued to the highest-scoring EOIs in each eligible occupation up to the round's allocation. State/territory governments also hold separate nomination rounds drawing from the SkillSelect pool for 190 and 491 invitations." },
   { code: '04', title: 'Receive an invitation to apply', desc: "If your EOI is selected, you receive an invitation to apply. The invitation specifies the visa subclass and the application timeframe — typically 60 days. You must lodge the visa application within this window." },
   { code: '05', title: 'Lodge the visa application', desc: "Lodge the subclass 189, 190, or 491 visa application with all supporting evidence. The Department will verify your claimed EOI points at this stage — any unverifiable claims risk refusal under PIC 4020." },
@@ -104,7 +104,7 @@ const MISTAKES = [
   },
   {
     heading: 'Not understanding partner skills points',
-    body: "Claiming partner/spouse skills points without the partner having a current positive skills assessment or functional English. Points claimed for a partner who does not meet the criterion will be removed.",
+    body: "Claiming partner/spouse skills points without the partner having a suitable skills assessment and Competent English at the time of invitation. Points claimed for a partner who does not meet the criterion will be removed.",
   },
   {
     heading: 'Failing to update an EOI after circumstances change',
@@ -230,7 +230,7 @@ return (
           <div style={{ maxWidth: 800, margin: '40px auto 0', background: GREY_BG, border: `1.5px solid ${BORDER}`, borderRadius: 12, padding: 24 }}>
             <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 10 }}>How points are ranked</div>
             <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-              In each round, EOIs are ranked by total points score. If two EOIs have the same points, the one submitted earlier receives priority. This means that if you are on a common score (e.g. 90 points), the date your EOI was submitted — not just your score — can determine whether you receive an invitation. Avoid updating your EOI unnecessarily, as some updates reset your submission date.
+              In each round, EOIs are ranked by total points score. If two EOIs have the same points, the one with the earlier date of effect - when it reached that score - receives priority. This means that if you are on a common score (e.g. 90 points), the date your EOI was submitted — not just your score — can determine whether you receive an invitation. Avoid updating your EOI unnecessarily, as some updates reset your submission date.
             </p>
           </div>
         </div>

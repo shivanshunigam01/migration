@@ -32,7 +32,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import { SSIT_PLUS } from '@/lib/visa-constants'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const SSIT_DISPLAY = `${SSIT_PLUS} p.a.`
 const ACCENT = CAT_EMPLOYER
 const BORDER = '#e8edf6'
@@ -52,8 +52,8 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   { icon: 'calendar', value: '28 days', label: 'Minimum advertising period', note: 'Advertising must run for at least 28 days before the nomination is lodged.' },
   { icon: 'clock', value: '4 months', label: 'Look-back window', note: 'Advertising must have occurred within the four months before nomination lodgement.' },
-  { icon: 'building', value: '2+ platforms', label: 'Required advertising channels', note: 'Workforce Australia is mandatory. At least one additional platform must be used.' },
-  { icon: 'dollar', value: SSIT_PLUS, label: 'Specialist Skills LMT exemption', note: `Nominations for the Specialist Skills stream (earnings ${SSIT_DISPLAY} from 1 July 2026) are generally exempt from LMT.` },
+  { icon: 'building', value: '2+ platforms', label: 'Required advertising channels', note: 'At least two advertisements on national recruitment platforms (for example Seek, LinkedIn or Indeed).' },
+  { icon: 'calendar', value: '4 weeks', label: 'Minimum run time', note: 'Each advertisement must run for at least 4 weeks within the 4 months before nomination lodgement.' },
 ]
 
 const STEPS: TimelineStep[] = [
@@ -67,7 +67,7 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Advertise on required platforms',
-    desc: 'Post on Workforce Australia plus at least one other national platform (e.g. Seek, LinkedIn) for a minimum of 28 consecutive days.',
+    desc: 'Place at least 2 advertisements on national recruitment platforms (for example Seek, LinkedIn or Indeed) for at least 4 weeks within the 4 months before lodgement.',
   },
   {
     title: 'Record outcomes',
@@ -82,11 +82,11 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'Does LMT apply to all 482 nominations?',
-    answer: `LMT applies to the Core Skills stream of the subclass 482. The Specialist Skills stream is generally exempt from LMT where the nominee's earnings will meet the SSIT (${SSIT_DISPLAY}). Labour Agreement streams follow the agreement terms. International trade obligations may also exempt certain nationalities — check with a registered migration agent.`,
+    answer: `LMT applies to both the Core Skills and Specialist Skills streams of the subclass 482 unless an exemption under Australia's international trade obligations applies. Labour Agreement streams follow the agreement terms. A registered migration agent can confirm whether your nomination requires advertising.`,
   },
   {
     question: 'What counts as a compliant advertising platform?',
-    answer: 'Workforce Australia (jobsearch.gov.au or its successor) is mandatory for most nominations. A second platform must be a national publication or website likely to reach Australian workers — commonly Seek, LinkedIn, or Indeed. State government job boards may be acceptable in some circumstances.',
+    answer: 'You need at least 2 advertisements on national recruitment platforms that are likely to reach suitably qualified Australian workers — commonly Seek, LinkedIn, or Indeed. Workforce Australia is not mandatory. Each ad must run for at least 4 weeks within the 4 months before lodgement.',
   },
   {
     question: 'How long must the advertising run?',
@@ -98,7 +98,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Can LMT be waived in urgent cases?',
-    answer: "There is no general urgency exemption. However, specific occupations listed in Australia's international trade agreements (e.g. certain nationalities under the AUSFTA, ChAFTA or SAFTA) may be exempt from LMT requirements. If your nominee's home country has a relevant trade agreement with Australia, this should be assessed before advertising begins.",
+    answer: "There is no general urgency exemption. However, specific occupations listed in Australia's international trade agreements (for example, certain nationals of China, Japan, Singapore, Thailand or the United Kingdom under the relevant agreements) may be exempt from LMT requirements. If your nominee's home country has a relevant trade agreement with Australia, this should be assessed before advertising begins.",
   },
 ]
 
@@ -137,7 +137,7 @@ return (
         eyebrowSub="Core Skills Stream · Nomination Requirement"
         title={<>Labour Market Testing<br /><em style={{ fontStyle: 'italic', color: GOLD }}>(LMT) Requirements</em></>}
         deck="Before nominating an overseas worker for a subclass 482 Core Skills stream visa, most Australian employers must complete Labour Market Testing — demonstrating genuine attempts to recruit Australian citizens and permanent residents first."
-        shortAnswer={<>LMT requires employers to advertise the position on at least two platforms, including Workforce Australia, for at least 28 days within the four months before the nomination is lodged. Certain occupations and salary thresholds trigger an LMT exemption. A registered migration agent (MARN 2619467) can advise on whether your position qualifies for an exemption and how to structure compliant advertising.</>}
+        shortAnswer={<>LMT requires employers to place at least 2 advertisements on national recruitment platforms for at least 4 weeks within the 4 months before the nomination is lodged. Exemptions may apply under international trade obligations. A registered migration agent (MARN 2619467) can advise on whether your nomination requires advertising and how to structure compliant evidence.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -197,8 +197,8 @@ return (
             {[
               { icon: 'calendar' as const, heading: '28-day minimum', detail: 'Each advertisement must run for a minimum of 28 consecutive days. Advertisements that were live for fewer than 28 days do not satisfy the LMT requirement, regardless of the number of applications received.' },
               { icon: 'clock' as const, heading: '4-month look-back window', detail: 'The advertising must have taken place within the four months immediately before the nomination is lodged. Older advertising will not satisfy LMT even if it otherwise meets the requirements.' },
-              { icon: 'building' as const, heading: 'Two or more platforms', detail: 'At least two platforms must be used. Workforce Australia is mandatory. A second platform must be a national publication or website likely to attract suitably qualified Australian workers.' },
-              { icon: 'file' as const, heading: 'Genuine job advertisement', detail: "The advertisement must accurately describe the position — including the occupation title consistent with the nominated ANZSCO code, the location, the salary or salary range (which must meet or exceed TSMIT), and the employer's identity." },
+              { icon: 'building' as const, heading: 'Two or more platforms', detail: 'Place at least 2 advertisements on national recruitment platforms (for example Seek, LinkedIn or Indeed) that are likely to reach suitably qualified Australian workers.' },
+              { icon: 'file' as const, heading: 'Genuine job advertisement', detail: "The advertisement must accurately describe the position — including the occupation title consistent with the nominated ANZSCO code, the location, the salary or salary range, if the annual earnings for the position are lower than AUD96,400, and the employer's identity." },
             ].map(item => (
               <div key={item.heading} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', background: '#fff', borderRadius: 12, padding: '20px 24px', border: `1px solid ${BORDER}` }}>
                 <div style={{ flexShrink: 0, width: 40, height: 40, borderRadius: 10, background: `${ACCENT}18`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -223,7 +223,7 @@ return (
             {[
               { heading: `Specialist Skills stream (SSIT ${SSIT_PLUS})`, detail: `Nominations where the nominee will meet the Specialist Skills Income Threshold (${SSIT_DISPLAY}) under the subclass 482 are generally exempt from LMT.` },
               { heading: 'International trade obligations', detail: "Nationals of countries with relevant free trade agreements (FTAs) with Australia may be exempt. This includes certain categories under the Australia–United States Free Trade Agreement (AUSFTA), the China–Australia Free Trade Agreement (ChAFTA), the Singapore–Australia Free Trade Agreement (SAFTA), the Thailand–Australia Free Trade Agreement (TAFTA), and the ASEAN–Australia–New Zealand Free Trade Agreement (AANZFTA). Each agreement has its own conditions and occupation lists." },
-              { heading: 'Occupations on the LMT exemption list', detail: 'The Department of Home Affairs may publish or maintain a list of occupations that are exempt from LMT. Employers should check the current legislative instrument before commencing advertising.' },
+              { heading: 'Occupations on the LMT exemption list', detail: 'There are no occupation-based LMT exemptions for the 482 or 494. Some medical practitioner and paramedic nominations can meet LMT through a written submission instead of advertising. Employers should check the current legislative instrument before commencing advertising.' },
             ].map(item => (
               <div key={item.heading} style={{ padding: '20px 24px', borderRadius: 12, border: `1px solid ${BORDER}`, background: GREY_BG }}>
                 <div style={{ fontWeight: 600, fontSize: 15, color: NAVY, marginBottom: 6 }}>{item.heading}</div>
@@ -244,9 +244,8 @@ return (
             intro="Not all job advertising platforms satisfy the LMT requirement. The following guidance reflects current Departmental expectations." />
           <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
             {[
-              { platform: 'Workforce Australia', mandatory: true, detail: 'Previously known as jobactive/jobsearch.gov.au. Mandatory for most Core Skills stream nominations. Register as an employer and post the vacancy through the platform.' },
-              { platform: 'Seek', mandatory: false, detail: "One of Australia's largest job boards and widely accepted as a compliant second platform. National reach satisfies the requirement that advertising is likely to attract suitably qualified Australian workers." },
-              { platform: 'LinkedIn', mandatory: false, detail: 'Accepted as a compliant national platform. Particularly appropriate for professional, managerial and specialist roles. Paid postings are preferred over free listings to demonstrate genuine advertising spend.' },
+              { platform: 'Seek', mandatory: false, detail: "One of Australia's largest job boards and widely accepted as a compliant national platform. National reach satisfies the requirement that advertising is likely to attract suitably qualified Australian workers." },
+              { platform: 'LinkedIn', mandatory: false, detail: 'Widely accepted as a compliant national platform for professional and specialist roles. Paid postings help demonstrate genuine advertising effort.' },
               { platform: 'Indeed', mandatory: false, detail: 'A national platform with broad coverage. Generally accepted as a compliant second platform. Sponsored postings are recommended to demonstrate genuine effort.' },
             ].map(item => (
               <div key={item.platform} style={{ background: '#fff', borderRadius: 12, padding: '20px 22px', border: `1px solid ${BORDER}` }}>
@@ -293,7 +292,7 @@ return (
               </div>
             </div>
             <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', margin: 0 }}>
-              Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+              Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
             </p>
           </div>
         </div>

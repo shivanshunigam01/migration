@@ -27,7 +27,7 @@ const TOC = [
 
 const FACTS: KeyFact[] = [
   { icon: 'calendar', value: 'Up to 10 yrs', label: 'Maximum total stay in Australia', note: 'In grants of 3 years or 5 years, renewable up to a maximum of 10 years cumulative stay in Australia on the 870 visa.' },
-  { icon: 'dollar', value: '~AUD 1,100 / 2,900', label: 'Government fees (3-year / 5-year)', note: 'Approximately AUD 1,100 for a 3-year grant and AUD 2,900 for a 5-year grant. Per applicant. Figures current at August 2026 — confirm on DoHA.' },
+  { icon: 'dollar', value: '~AUD 1,100 / 2,900', label: 'Government fees (3-year / 5-year)', note: 'Approximately AUD 1,100 for a 3-year grant and AUD 2,900 for a 5-year grant. Per applicant. Figures current at October 2026 — confirm on DoHA.' },
   { icon: 'check', value: 'No BoFT', label: 'No Balance of Family test', note: 'Unlike the permanent parent visa subclasses (103, 143, 173, 804, 864), the 870 does not require the Balance of Family test. It is available to parents who fail that test.' },
   { icon: 'alert', value: 'No work rights', label: 'The 870 grants no right to work in Australia', note: 'The visa holder must not work in Australia. Private health insurance is required for the full duration of the visa.' },
 ]
@@ -45,8 +45,8 @@ const FAQ: FaqItem[] = [
   { question: "Can my parent hold a 870 visa and also be in the permanent 143 queue at the same time?", answer: "Yes. A parent can simultaneously hold a subclass 870 visa (allowing them to live in Australia) and have a subclass 143 Contributory Parent permanent visa application in the queue. This is a common strategy — the parent lives in Australia on the 870 while waiting for the 143 to be processed, which currently takes approximately 12–15 years for new applications. When the 143 is granted, the parent becomes a permanent resident and the 870 is no longer needed." },
   { question: "Does the 870 count toward the residence requirement for citizenship?", answer: "No. Time spent in Australia on a temporary visa — including the subclass 870 — does not count toward the 4-year lawful residence required for Australian citizenship by conferral. Only time spent as a permanent resident counts toward the 12-month permanent residence component. If the parent's goal is citizenship, they need to become a permanent resident first (through the 143 or another permanent pathway), then accrue the required residence period." },
   { question: "What health insurance does my parent need?", answer: "The parent must hold comprehensive private health insurance that covers hospital treatment for the full duration of the 870 visa. The insurance must be from an approved provider. The Department assesses the adequacy of the coverage. The specific requirements for what counts as approved and adequate coverage should be confirmed with the Department of Home Affairs or your migration agent before purchasing a policy. Standard visitor travel insurance may not be sufficient." },
-  { question: "Can both of my parents apply together on one 870 application?", answer: "Yes. Both parents can be included as applicants — one as the primary applicant and the other as a secondary applicant. Each applicant pays the visa application charge separately (~AUD 1,100 for 3 years or ~AUD 2,900 for 5 years per person). Each applicant must also meet health, character, and insurance requirements individually. Figures current at August 2026 — confirm on DoHA." },
-  { question: "What if my parent's 870 expires and they have not applied for a renewal — are they unlawful?", answer: "If a 870 holder does not lodge a renewal application before their current visa expires, and they are still in Australia, they become unlawful — which can have serious consequences including removal from Australia and a re-entry bar. It is critical to apply for the renewal (or a bridging visa) before the 870 expires. An agent should monitor the expiry date and initiate renewal proceedings well in advance. If the parent's 870 has already expired while they are in Australia, they should seek urgent migration advice." },
+  { question: "Can both of my parents apply together on one 870 application?", answer: "Yes. Both parents can be included as applicants — one as the primary applicant and the other as a secondary applicant. Each applicant pays the visa application charge separately (~AUD 1,100 for 3 years or ~AUD 2,900 for 5 years per person). Each applicant must also meet health, character, and insurance requirements individually. Figures current at October 2026 — confirm on DoHA." },
+  { question: "What if my parent's 870 expires and they have not applied for a renewal — are they unlawful?", answer: "If a 870 holder does not lodge a renewal application before their current visa expires, and they are still in Australia, they become unlawful — which can have serious consequences including removal from Australia and a re-entry bar. The 870 cannot be extended. A further 870 must generally be lodged from outside Australia (unless Home Affairs has given permission to apply in Australia), and it cannot be granted until the parent has been outside Australia for at least 90 consecutive days. Plan departure before the current visa ends. An agent should monitor the expiry date and initiate renewal proceedings well in advance. If the parent's 870 has already expired while they are in Australia, they should seek urgent migration advice." },
 ]
 
 const RELATED: RelatedPage[] = [
@@ -89,7 +89,7 @@ return (
         deck="The subclass 870 allows a parent to live in Australia for up to 10 years on a temporary basis — without the Balance of Family test, without entering the permanent parent visa queue, and at a fraction of the cost of permanent parent pathways. It requires an approved parent sponsor and comprehensive health insurance."
         shortAnswer={<>The subclass 870 Sponsored Parent (Temporary) visa allows a parent to live in Australia for <strong style={{ color: NAVY }}>up to 10 years</strong> — in consecutive grants of 3 or 5 years — without needing to pass the Balance of Family test. Government fees are approximately <strong style={{ color: NAVY }}>AUD 1,100 (3-year grant)</strong> or <strong style={{ color: NAVY }}>AUD 2,900 (5-year grant)</strong>. The parent's child in Australia must first be approved as a <strong style={{ color: NAVY }}>parent sponsor</strong> before the visa can be applied for. The 870 grants no work rights and requires the parent to hold private health insurance for the full duration of the visa. It does not lead to permanent residence on its own. Nanak Migration Group (MARN 2619467) can advise on whether the 870 suits your family's circumstances.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← All parent visas', page: 'parent-visas' }}
         accent={ACCENT}
@@ -150,7 +150,7 @@ return (
                 </div>
                 <div>
                   <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 6 }}>Health insurance is mandatory for the full stay</div>
-                  <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>The parent must hold private health insurance (equivalent to OSHC-level cover or approved equivalent) for the entire duration of the visa. Medicare access is not included.</div>
+                  <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>The parent must have and maintain adequate health insurance from an Australian health insurance provider for the entire stay. Medicare access is not included.</div>
                 </div>
               </div>
             </div>
@@ -204,8 +204,8 @@ return (
           <h3 style={{ fontSize: 18, fontWeight: 700, color: NAVY, marginBottom: 16, marginTop: 0 }}>The sponsor (the child in Australia)</h3>
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 0, marginBottom: 36 }}>
             {[
-              "The sponsor must be an Australian citizen, Australian permanent resident, or eligible New Zealand citizen, and must be 18 years or older.",
-              "The sponsor must meet a household income threshold (to demonstrate they can support the parent). The threshold is set annually — confirm current amounts on the Department of Home Affairs website. As at August 2026, the household income threshold is approximately AUD 83,454.80 per year for one sponsored parent, with additional amounts for each additional sponsored family member.",
+              "The sponsor must be 18 or older and the child (or the child's partner) of the parent. They must be an Australian citizen, or a permanent resident or eligible New Zealand citizen usually resident in Australia for at least 4 years who has not been unlawful or held a bridging visa (other than BVA, BVB or BVC) in that time.",
+              "The sponsor must meet a household income threshold (to demonstrate they can support the parent). The threshold is set annually — confirm current amounts on the Department of Home Affairs website. As at October 2026, the sponsor's taxable income for the most recent completed income year must be at least AUD83,454.80. A sponsor can combine income with their partner or a sibling who is an Australian citizen, permanent resident or eligible New Zealand citizen, but the sponsor's own income must be at least 50% of that amount. The same threshold applies whether one or two parents are sponsored.",
               "The sponsor must not have been subject to a Family Violence Order or a domestic violence-related criminal conviction — and must have no adverse criminal history in relation to children.",
             ].map((text, i) => (
               <div
@@ -218,7 +218,7 @@ return (
           </div>
 
           <Callout variant="note" panel={true} title="Sponsor approval is a separate process">
-            The child in Australia must apply to be an approved parent sponsor — this is a separate application from the parent&apos;s visa application. The sponsorship approval must be granted before the parent applies for the 870 visa (or can be applied for concurrently in some circumstances, but the visa cannot be granted until the sponsor is approved). Allow additional processing time for the sponsor approval.
+            The child in Australia must apply to be an approved parent sponsor — this is a separate application from the parent&apos;s visa application. The sponsorship must be approved before the parent can lodge the 870. The parent must then apply within 6 months of the sponsorship approval (or 60 days if given permission to apply in Australia). Allow additional processing time for the sponsor approval.
           </Callout>
         </div>
       </section>
@@ -302,7 +302,7 @@ return (
               </div>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 6 }}>No direct pathway to permanent residence</div>
-                <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.75 }}>Holding the 870 does not make the parent eligible for any permanent parent visa. If the family wants the parent to become a permanent resident, they must lodge a separate application in the relevant permanent parent visa queue (e.g. 143), which operates independently of the 870. The 870 and a permanent parent application can be held simultaneously.</div>
+                <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.75 }}>Holding the 870 does not make the parent eligible for any permanent parent visa. A parent who has applied for or holds an 870 cannot apply for a permanent or temporary parent visa. If permanent residence is the goal, get advice before lodging the 870.</div>
               </div>
             </div>
 
@@ -353,7 +353,7 @@ return (
         accent={ACCENT}
         navigate={navigate}
       />
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

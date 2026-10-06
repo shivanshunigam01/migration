@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_EMPLOYER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -33,7 +33,7 @@ const KEY_FACTS: KeyFact[] = [
   { icon: 'clock', value: 'Up to 3 months', label: 'Standard maximum stay (up to 6 months in limited business cases)', note: 'Most subclass 400 visas are granted for up to 3 months. The Department may grant up to 6 months in limited circumstances for business-related specialist work.' },
   { icon: 'shield', value: 'No sponsorship', label: 'No formal Standard Business Sponsorship required', note: 'Unlike the 482, no approved employer sponsorship is required. The Australian business provides a supporting letter confirming the specialist need.' },
   { icon: 'star', value: 'Specialist skills', label: 'Work must be highly specialised and non-ongoing', note: 'The work must be of a highly specialised nature that cannot reasonably be performed by an Australian. Ongoing or routine positions do not qualify.' },
-  { icon: 'dollar', value: 'Modest charge', label: 'Application charge — confirm current fee on DoHA', note: 'Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.' },
+  { icon: 'dollar', value: 'Modest charge', label: 'Application charge — confirm current fee on DoHA', note: 'Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.' },
 ]
 
 const FAQ: FaqItem[] = [
@@ -122,8 +122,8 @@ const CANNOT_DO_ITEMS = [
     detail: 'The same worker cannot be brought to Australia on successive 400 visas to perform the same ongoing role. The Department treats this as a pattern of employment, not a succession of short-term specialist engagements.',
   },
   {
-    heading: 'Roles that meet the 482 CSOL',
-    detail: 'If the occupation is on the Core Skills Occupation List (CSOL), the standard 482 Skills in Demand pathway should be used. The 400 is for specialist work outside or beyond the standard sponsorship framework.',
+    heading: 'Ongoing roles that belong in the 482 program',
+    detail: 'The 400 is for short-term, non-ongoing, highly specialised work. If the role is ongoing, the 482 Skills in Demand pathway is the appropriate option, whether or not the occupation is on the Core Skills Occupation List (CSOL).',
   },
   {
     heading: 'Underpaid or below-market-rate engagements',
@@ -133,7 +133,7 @@ const CANNOT_DO_ITEMS = [
 
 const CONDITION_CARDS = [
   {
-    title: 'Work restriction (Condition 8107 variant / 8108)',
+    title: 'Work limitation (Condition 8107)',
     desc: 'The 400 visa holder must work only in the specific activity and for the specific organisation stated in the visa. They cannot take on other employment, work for a different employer, or perform different work.',
   },
   {
@@ -297,7 +297,7 @@ return (
           <SectionHeading kicker="Application charge" title="Visa Application Charge" accent={ACCENT} />
           <div style={{ marginTop: 32, marginBottom: 24 }}>
             <Callout variant="note" panel={true} title="Confirm current fees on the Department of Home Affairs website">
-              Visa application charges are updated periodically by the Department of Home Affairs. The information below is current at August 2026 and should be confirmed before lodging any application.
+              Visa application charges are updated periodically by the Department of Home Affairs. The information below is current at October 2026 and should be confirmed before lodging any application.
             </Callout>
           </div>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151' }}>

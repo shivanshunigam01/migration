@@ -41,7 +41,7 @@ const TEAL    = '#0e7490'
 const VIOLET  = '#4f46e5'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',    label: 'Key facts' },
@@ -58,7 +58,7 @@ const TOC: NavSection[] = [
 const KEY_FACTS: KeyFact[] = [
   { icon: 'clock',     value: 'Temporary',           label: 'Granted for a set period from the date of grant', note: 'The visa is generally granted for a period within which the marriage must take place. The specific duration is set when the visa is granted.' },
   { icon: 'alert',     value: 'Marry within validity', label: 'The marriage must take place before the visa expires', note: 'If the marriage does not take place before the visa expires, the applicant will generally need to depart Australia. See the Callout below for what generally happens.' },
-  { icon: 'plane',     value: 'Applied from offshore', label: 'Generally applied for and granted while the applicant is outside Australia', note: 'In most circumstances, the applicant must be outside Australia when the application is lodged and when the decision is made.' },
+  { icon: 'plane',     value: 'Applied from offshore', label: 'Generally applied for and granted while the applicant is outside Australia', note: 'The applicant must be outside Australia when the application is lodged, but can be in or outside Australia when it is decided.' },
   { icon: 'user',      value: 'Sponsor must be approved', label: 'The sponsor must be assessed and approved before the visa is granted', note: 'The Australian citizen, permanent resident or eligible New Zealand citizen must be approved as a sponsor by the Department of Home Affairs.' },
   { icon: 'arrowright',value: 'Pathway to 820/801',   label: 'After marrying, the applicant generally applies for the Partner Visa (820) onshore', note: 'The 300 visa itself does not lead to permanent residence. After the marriage, the couple applies for the partner visa (820/801) from within Australia.' },
 ]
@@ -118,7 +118,7 @@ const STEPS: TimelineStep[] = [
       'After the marriage, the couple generally applies for the subclass 820 (temporary) partner visa onshore.',
       'The 820 application can be lodged before the 300 visa expires.',
       'The 820 visa holder receives a bridging visa while the application is processed.',
-      'If the 820 is granted, the couple later applies for the permanent 801 visa after the waiting period.',
+      'The 820 and 801 are applied for together in one application. Home Affairs assesses the permanent 801 stage once 2 years have passed since that application was lodged - no second application is needed.',
     ],
     color: GREEN,
   },
@@ -151,7 +151,7 @@ const COMPARE_ROWS: ComparisonRow[] = [
 /* ─── Meeting in person ─── */
 const MEETING_POINTS = [
   { icon: 'users', color: ROSE,  heading: 'Both parties must know each other personally', body: "A fundamental requirement of the 300 visa — and all partner visa categories — is that the couple must know each other personally. A relationship conducted entirely online, without any in-person meetings, is generally not sufficient. Decision-makers look for evidence that the couple has spent time together in person." },
-  { icon: 'alert', color: AMBER, heading: 'Introduction services — additional requirements may apply', body: "Where the couple met through an introduction or matchmaking service (including online platforms that charge a fee), additional requirements may apply. In some circumstances, the sponsor may be required to have met the applicant in person before the application is lodged. The Department of Home Affairs publishes specific guidance on what additional evidence may be needed in these circumstances." },
+  { icon: 'alert', color: AMBER, heading: 'Introduction services — additional requirements may apply', body: "Where the couple met through an introduction or matchmaking service (including online platforms that charge a fee), additional requirements may apply. Whatever way you met, every subclass 300 applicant must have met their prospective spouse face to face as adults before applying. The Department of Home Affairs publishes specific guidance on what additional evidence may be needed in these circumstances." },
   { icon: 'plane', color: TEAL,  heading: 'Evidence of in-person meetings', body: "Evidence that the couple has met in person can include: passport stamps or travel records showing visits, photographs together (with metadata or other context), hotel or accommodation records, communications referencing visits, and statutory declarations from people who have seen the couple together in person." },
   { icon: 'check', color: GREEN, heading: 'Quality of evidence matters more than quantity', body: "Evidence should be specific and verifiable. Photographs without context, or communications that do not refer to specific meetings, are weaker evidence than records that can be tied to particular times, places, and events. A coherent narrative supported by documents that independently corroborate each other is generally more persuasive." },
 ]
@@ -159,7 +159,7 @@ const MEETING_POINTS = [
 /* ─── After marriage section ─── */
 const AFTER_POINTS = [
   { icon: 'arrowright', color: ROSE,  heading: 'Apply for the 820 partner visa after the ceremony', body: "After the marriage, the couple should apply for the subclass 820 (temporary) partner visa. This application can be lodged from within Australia while the 300 visa is still valid. The 820 application requires a full partner visa evidence file — including the four pillars of relationship evidence — and cannot simply rely on the existence of the marriage certificate." },
-  { icon: 'clock',      color: AMBER, heading: 'There is generally a waiting period before PR', body: "After the 820 is granted, the couple must generally wait before applying for the permanent 801 visa. The waiting period is calculated from the date the partner visa application was first lodged — not from the marriage date. A registered migration agent can advise on the current waiting period that applies to your circumstances." },
+  { icon: 'clock',      color: AMBER, heading: 'There is generally a waiting period before PR', body: "There is no separate application for the permanent 801 visa. It is part of the same application as the 820 and is assessed once 2 years have passed since that application was lodged. The waiting period is calculated from the date the partner visa application was first lodged — not from the marriage date. A registered migration agent can advise on the current waiting period that applies to your circumstances." },
   { icon: 'shield',     color: GREEN, heading: "The 300 visa holder's conditions while waiting", body: "While the 820 application is being processed, the 300 visa holder generally receives a bridging visa that allows them to remain in Australia lawfully. Work rights on the bridging visa are generally available — confirm the specific conditions with a registered migration agent." },
   { icon: 'alert',      color: VIOLET, heading: 'Do not delay the 820 lodgement', body: "Lodging the 820 application promptly after the marriage — and well before the 300 visa expires — is important. If the 300 visa expires before the 820 is lodged, the applicant may not be able to remain in Australia lawfully. Seek advice from a registered migration agent to ensure timing is managed correctly." },
 ]

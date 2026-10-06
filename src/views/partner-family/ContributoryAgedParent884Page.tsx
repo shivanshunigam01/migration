@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
 const ACCENT = CAT_PARTNER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -59,7 +59,7 @@ const STEPS: TimelineStep[] = [
   { code: '01', title: 'Confirm Balance of Family test', desc: 'Confirm that the parent passes the Balance of Family test — more of their children must be Australian permanent residents or citizens (or deceased) than residing in any other single country. Gather documents proving each child\'s location and status.' },
   { code: '02', title: 'Confirm pension-age eligibility', desc: 'The parent must have reached Australian pension age at the time of application. Pension age varies — confirm the current age threshold on the Services Australia website. The parent must also be physically in Australia when the 884 is lodged.' },
   { code: '03', title: 'Pay first instalment (884 stage)', desc: 'Approximately AUD 5,040 per adult applicant is payable at the 884 stage (plus the base application charge). Confirm current charges on the Department of Home Affairs website before lodging. Charges are indexed annually.' },
-  { code: '04', title: 'Lodge the subclass 884 application', desc: 'The 884 is lodged through ImmiAccount while the parent is in Australia. Attach identity documents, Balance of Family evidence, health assessments, and character documents.' },
+  { code: '04', title: 'Lodge the subclass 884 application', desc: 'The 884 must be lodged on paper while the parent is in Australia (not in immigration clearance). Only the 103, 143, 804 and 864 are lodged online. Attach identity documents, Balance of Family evidence, health assessments, and character documents.' },
   { code: '05', title: 'Hold the 884 visa — plan for the 864 application', desc: 'The 884 is valid for 2 years. During this period the parent lives in Australia. Before the 884 expires, the parent (or their migration agent) must prepare and lodge the subclass 864 Contributory Aged Parent (permanent) application.' },
   { code: '06', title: 'Lodge the subclass 864 and pay second instalment', desc: 'The 864 is lodged while the 884 is still valid. The second and larger instalment (approximately AUD 43,600 per adult) is payable at this stage. Confirm current charges on DoHA. The parent receives a Bridging Visa A on lodgement of the 864 and remains in Australia while the 864 is processed.' },
 ]
@@ -79,11 +79,11 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Why would a family choose the 884-then-864 route instead of the direct 864?",
-    answer: "The principal reason is cash-flow management. The direct subclass 864 requires payment of the full second instalment charge (approximately AUD 43,600 per adult) upfront as part of a single application. The 884-then-864 route splits this into two payments over two stages — a smaller first instalment at the 884 stage and the larger second instalment at the 864 stage. This gives the family approximately two years between the two large payments. The total charges payable are slightly higher through the two-stage route than the direct 864 route because of the additional 884 charge, but the cash-flow benefit of spreading payments can be significant for many families.",
+    answer: "The principal reason is cash-flow management. The direct subclass 864 requires AUD6,300 at lodgement and a second instalment of AUD43,600 per adult, which is paid only when Home Affairs asks for it before grant. The 884-then-864 route splits this into two payments over two stages — a smaller first instalment at the 884 stage and the larger second instalment at the 864 stage. This gives the family approximately two years between the two large payments. The total charges payable are slightly higher through the two-stage route than the direct 864 route because of the additional 884 charge, but the cash-flow benefit of spreading payments can be significant for many families.",
   },
   {
     question: "What is the Balance of Family test and how is it assessed for the 884?",
-    answer: "The Balance of Family test requires that more of the parent's children are Australian permanent residents or Australian citizens, or are deceased, than are living in any other single country. For example, if a parent has four children — two living in Australia as permanent residents, one in the UK, and one in India — the parent passes because Australia (2) has more children than any other single country. If instead two children were in Australia and two were in the UK, the parent would fail because Australia does not have more than the UK. All children (biological and adopted) are counted. Step-children are generally not counted. Evidence of each child's location, status, and (if deceased) death certificate is required.",
+    answer: "The Balance of Family test requires that more of the parent's children are Australian permanent residents or Australian citizens, or are deceased, than are living in any other single country. For example, if a parent has four children — two living in Australia as permanent residents, one in the UK, and one in India — the parent passes because Australia (2) has more children than any other single country. If two children were in Australia and two in the UK, the parent would pass, because at least half of their children are eligible children. All children are counted, including adopted children and stepchildren (a current partner's child, or a former partner's child under 18 in the parent's custody or guardianship). Deceased children are not counted. Evidence of each child's location, status, and (if deceased) death certificate is required.",
   },
   {
     question: "Can the parent work in Australia on the subclass 884?",

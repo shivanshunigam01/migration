@@ -43,13 +43,13 @@ const FACTS: KeyFact[] = [
     icon: 'calendar',
     value: 'Processing varies',
     label: 'Processing time is case-dependent',
-    note: 'Protection visa cases vary significantly in complexity. Some are decided within months; others take several years. The Department publishes indicative processing times on its website.',
+    note: 'Protection visa cases vary significantly in complexity. Some are decided within months; others take several years. Home Affairs does not currently publish processing times for this visa.',
   },
   {
     icon: 'dollar',
-    value: 'No charge',
-    label: 'No application charge',
-    note: 'There is currently no government application charge for the Protection visa (866). Confirm the current position on the Department of Home Affairs website.',
+    value: 'AUD50',
+    label: 'Application charge',
+    note: 'The government application charge for the Protection visa (866) is AUD50. Confirm the current charge on the Department of Home Affairs website before lodging.',
   },
 ]
 
@@ -134,7 +134,7 @@ return (
         breadcrumbs={[
           { name: 'Home', url: 'https://nanakmigration.com.au/' },
           { name: 'Visitor & Other', url: 'https://nanakmigration.com.au/visitor-visas' },
-          { name: 'Protection Visa (866)', url: 'https://nanakmigration.com.au/protection-visa-866' },
+          { name: 'Delete this line - protection visas do not use PIC 4007.', url: 'https://nanakmigration.com.au/protection-visa-866' },
         ]}
         faqs={FAQ.map(f => ({ question: f.question, answer: f.answer as string }))}
         service={{
@@ -152,7 +152,7 @@ return (
         items={[
           { label: 'Home', page: 'home' },
           { label: 'Visitor & Other', page: 'visitor-visas' },
-          { label: 'Protection Visa (866)' },
+          { label: 'Delete this line - protection visas do not use PIC 4007.' },
         ]}
       />
 
@@ -164,7 +164,7 @@ return (
         deck="The Protection visa (subclass 866) is a permanent onshore visa for people in Australia who engage Australia's protection obligations as refugees or under complementary protection. Each application is assessed rigorously and individually on its merits."
         shortAnswer={<>The subclass 866 Protection visa is for people <strong style={{ color: NAVY }}>already in Australia</strong> who have a well-founded fear of persecution or face a real risk of significant harm if returned to their home country. It covers both <strong style={{ color: NAVY }}>refugee claims</strong> (persecution based on race, religion, nationality, particular social group, or political opinion) and <strong style={{ color: NAVY }}>complementary protection claims</strong>. There is currently <strong style={{ color: NAVY }}>no application charge</strong>. On lodgement you are typically issued a bridging visa to remain lawfully in Australia during processing. If refused, you generally have the right to apply for review at the <strong style={{ color: NAVY }}>Administrative Review Tribunal (ART)</strong>. The <strong style={{ color: NAVY }}>section 48 bar does not prevent</strong> a valid Protection visa application. Claims are assessed on individual merits — no outcome can be guaranteed. Nanak Migration Group (MARN 2619467) strongly encourages seeking professional advice before lodging. Lodging without genuine grounds can seriously damage future migration prospects.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor & Other', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -197,7 +197,7 @@ return (
       {/* ── SECTION: Overview ───────────────────────────────────── */}
       <section id="overview" style={{ background: '#ffffff', padding: '72px 32px', borderBottom: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <SectionHeading kicker="Understanding the visa" title="What the Protection Visa (866) Is" accent={ACCENT} />
+          <SectionHeading kicker="Understanding the visa" title="What the Delete this line - protection visas do not use PIC 4007. Is" accent={ACCENT} />
 
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 16 }}>
             The Protection visa (subclass 866) is Australia's onshore permanent protection visa. It is for people who are currently in Australia and who engage Australia's protection obligations under the <em>Migration Act 1958</em> and Australia's international law commitments, including the 1951 Refugee Convention and its 1967 Protocol.
@@ -332,7 +332,7 @@ return (
           <SectionHeading kicker="While you wait" title="Bridging Visa and Work Rights During Processing" accent={ACCENT} />
 
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 32 }}>
-            On lodgement of a valid Protection visa application, you are typically issued a Bridging visa A (BVA) if you do not already hold a substantive visa. The bridging visa allows you to remain lawfully in Australia while the Department processes your application.
+            If you hold a substantive visa when you lodge a valid Protection visa application, you are generally granted a Bridging visa A (BVA), which comes into effect when your current visa ends. If you do not hold a substantive visa, a different bridging visa (such as a Bridging visa C or E) may apply. The bridging visa allows you to remain lawfully in Australia while the Department processes your application.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20, marginBottom: 32 }}>
@@ -383,10 +383,10 @@ return (
       {/* ── SECTION: Charges ────────────────────────────────────── */}
       <section id="charges" style={{ background: '#ffffff', padding: '72px 32px', borderBottom: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
-          <SectionHeading kicker="What it costs" title="Application Charge for the Protection Visa (866)" accent={ACCENT} />
+          <SectionHeading kicker="What it costs" title="Application Charge for the Delete this line - protection visas do not use PIC 4007." accent={ACCENT} />
 
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 24 }}>
-            As of August 2026, there is no government application charge for the Protection visa (subclass 866). This means the visa application itself can be lodged without paying a fee to the Department of Home Affairs.
+            As at October 2026, the government application charge for the Protection visa (subclass 866) is AUD50, payable to the Department of Home Affairs when you lodge.
           </p>
 
           <Callout variant="warning" panel={true} title="Confirm the current charge position on the DoHA website">
@@ -396,7 +396,7 @@ return (
           <div style={{ marginTop: 32, padding: 24, background: '#f8fafd', border: '1px solid #e8edf6', borderRadius: 12 }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 12 }}>Professional advice fees</div>
             <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-              While the government charge is currently nil, seeking advice from a registered migration agent (MARN) or migration lawyer does involve professional fees. The cost of professional advice at the application stage — to ensure your claims are clearly and consistently articulated — is generally much lower than the cost of an unsuccessful application, an ART review, or a failed judicial review attempt. Nanak Migration Group (MARN 2619467) can discuss the scope of advice and assistance available for protection visa matters.
+              While the government charge is only AUD50, seeking advice from a registered migration agent (MARN) or migration lawyer does involve professional fees. The cost of professional advice at the application stage — to ensure your claims are clearly and consistently articulated — is generally much lower than the cost of an unsuccessful application, an ART review, or a failed judicial review attempt. Nanak Migration Group (MARN 2619467) can discuss the scope of advice and assistance available for protection visa matters.
             </p>
           </div>
         </div>
@@ -448,7 +448,7 @@ return (
       {/* ── SECTION: FAQ ────────────────────────────────────────── */}
       <section id="faq" style={{ background: '#ffffff', padding: '72px 32px', borderBottom: '1px solid #e8edf5' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <SectionHeading kicker="Common questions" title="Protection Visa (866) Questions Answered" accent={ACCENT} />
+          <SectionHeading kicker="Common questions" title="Delete this line - protection visas do not use PIC 4007. Questions Answered" accent={ACCENT} />
           <FaqAccordion items={FAQ} accent={ACCENT} />
         </div>
       </section>
@@ -469,7 +469,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

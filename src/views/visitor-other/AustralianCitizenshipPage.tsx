@@ -42,7 +42,7 @@ const TEAL    = '#0e7490'
 const VIOLET  = '#4f46e5'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',    label: 'Key facts' },
@@ -89,7 +89,7 @@ const PATHWAY_CARDS: PageCard[] = [
   {
     icon: 'home', color: TEAL,
     title: 'Citizenship by birth in Australia',
-    body: "A person born in Australia is not automatically an Australian citizen at birth (unlike some other countries). A person born in Australia becomes a citizen at birth only if at least one parent was an Australian citizen or permanent resident at the time of birth. Children born in Australia who do not acquire citizenship at birth may become entitled to apply for citizenship after living in Australia for a period.",
+    body: "A person born in Australia is not automatically an Australian citizen at birth (unlike some other countries). A person born in Australia becomes a citizen at birth only if at least one parent was an Australian citizen or permanent resident at the time of birth. A child born in Australia who is not a citizen at birth automatically becomes an Australian citizen on their 10th birthday if they have lived most of their life in Australia (ordinarily resident for those 10 years). No application is needed, although evidence of citizenship can be applied for.",
     note: "If you were born in Australia and are unsure of your citizenship status, seek advice — the rules can be complex for children of visa holders.",
   },
 ]
@@ -120,7 +120,7 @@ const STEPS: TimelineStep[] = [
       'Apply online through the Department of Home Affairs ImmiAccount.',
       'Pay the applicable application fee (check the current fee on the Department of Home Affairs website — fees are not published on this page).',
       'Attach required supporting documents at the time of lodgement.',
-      'Include your Australian Citizenship Pledge declaration as part of the application.',
+      'Make the Australian Values Statement as part of the application. The Australian Citizenship Pledge is made later, at the citizenship ceremony.',
     ],
     color: ROYAL,
   },
@@ -169,7 +169,7 @@ const STEPS: TimelineStep[] = [
 const TEST_POINTS = [
   { icon: 'bookopen', color: ROYAL, heading: 'What the test covers', body: "The Australian citizenship test assesses knowledge of Australian values, the responsibilities and privileges of citizenship, and aspects of Australian history, government and society. The test is based on the resource 'Our Common Bond', which is published by the Department of Home Affairs and is available on the Department's website. All study materials are publicly available — applicants are encouraged to use the official materials before sitting the test." },
   { icon: 'check', color: GREEN, heading: 'Who must take the test', body: "Generally, applicants aged 18–59 years at the time of the test must sit the citizenship test. Children under 18 and some applicants over 60 are generally exempt. Applicants who are unable to sit the test because of a permanent physical or mental incapacity may be exempt — but exemptions require supporting evidence and are assessed by the Department of Home Affairs." },
-  { icon: 'clipboard', color: AMBER, heading: 'The Australian Values Statement', body: "As part of the citizenship application, applicants must make an Australian Values Statement — a declaration that they understand and commit to Australian values, including respect for the law, democracy, and the equal worth of all individuals. The Statement is part of the formal application and is not a separate document from the citizenship pledge made at the ceremony. It is a legal declaration." },
+  { icon: 'clipboard', color: AMBER, heading: 'The Australian Values Statement', body: "As part of the citizenship application, applicants must make an Australian Values Statement — a declaration that they understand and commit to Australian values, including respect for the law, democracy, and the equal worth of all individuals. The Statement is made as part of the application and is separate from the pledge of commitment you make at the citizenship ceremony. It is a legal declaration." },
   { icon: 'alert', color: ROSE, heading: 'The pledge at the ceremony', body: "Australian citizenship is formally conferred when the applicant takes the Australian Citizenship Pledge at a citizenship ceremony. The pledge affirms commitment to Australia and to upholding its values, laws and democratic traditions. The pledge is a legal requirement — citizenship approval does not result in conferral until the pledge is taken at a ceremony." },
 ]
 

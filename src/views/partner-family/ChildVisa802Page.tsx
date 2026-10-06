@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_PARTNER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -69,7 +69,7 @@ const ELIGIBILITY_ITEMS = [
   },
   {
     heading: 'In Australia at the time of application',
-    detail: 'The child must be in Australia when the 802 application is lodged. If the child is outside Australia at lodgement, the offshore subclass 101 is required.',
+    detail: 'The child must be in Australia when the 802 application is lodged and when it is decided. If the child is outside Australia at lodgement, the offshore subclass 101 is required. Plan any overseas travel so the child is back in Australia before a decision is likely.',
     subItems: null,
   },
   {
@@ -277,7 +277,7 @@ return (
           <SectionHeading kicker="Timeline" title="Processing Times" accent={ACCENT} />
           <div style={{ marginTop: 32, marginBottom: 24 }}>
             <Callout variant="note" panel={true} title="Confirm current processing times on the DoHA website">
-              Processing times are updated regularly. The figures below are general guidance as at August 2026 — always check current indicative times on the DoHA website.
+              Processing times are updated regularly. The figures below are general guidance as at October 2026 — always check current indicative times on the DoHA website.
             </Callout>
           </div>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginTop: 24 }}>

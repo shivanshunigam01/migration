@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_PARTNER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -140,7 +140,7 @@ return (
         eyebrowSub="Parent Visas · Subclass 173 (Temporary)"
         title={<>Contributory Parent<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Temporary — Subclass 173</em></>}
         deck="The Contributory Parent (Temporary) visa (subclass 173) is a 2-year temporary visa that forms the first stage of the two-step path to permanent contributory parent residence (subclass 143). It lets families manage the large application charges in two installments rather than all at once."
-        shortAnswer={<>The subclass 173 is a <strong style={{ color: NAVY }}>temporary visa — it is not permanent residence</strong>, and the parent must apply for the permanent 143 before the 173 expires. The 173 and 143 share the same eligibility requirements: the balance of family test, sponsorship by an eligible child, assurance of support, and health and character clearances. The difference is cost and timing — instead of paying the full contributory charge upfront for the 143, the family pays a smaller first installment with the 173 application and then a larger second installment when applying for the 143. The <strong style={{ color: NAVY }}>total cost via 173+143 is slightly higher than going direct-143</strong> (two application charges rather than one), but the cash-flow advantage of splitting the charge can be significant for some families. While on the 173, the parent has <strong style={{ color: NAVY }}>work rights and can access Medicare</strong>. The 173 must be applied for offshore — the parent must be outside Australia at the time of lodging — but the parent can travel to Australia during processing and while holding the 173. Nanak Migration Group (MARN 2619467) can advise on whether the 173 route is appropriate for your family. No outcome is guaranteed.</>}
+        shortAnswer={<>The subclass 173 is a <strong style={{ color: NAVY }}>temporary visa — it is not permanent residence</strong>, and the parent must apply for the permanent 143 before the 173 expires. The 173 and 143 share the same eligibility requirements: the balance of family test, sponsorship by an eligible child, assurance of support, and health and character clearances. The difference is cost and timing — instead of paying the full contributory charge upfront for the 143, the family pays the 173 charges (AUD4,245 at lodgement and AUD29,130 before the 173 is granted) and then a smaller amount for the 143 (AUD555 at lodgement and AUD19,420 before grant). The <strong style={{ color: NAVY }}>total cost via 173+143 is slightly higher than going direct-143</strong> (two application charges rather than one), but the cash-flow advantage of splitting the charge can be significant for some families. While on the 173, the parent has <strong style={{ color: NAVY }}>work rights and can access Medicare</strong>. The 173 must be applied for offshore — the parent must be outside Australia at the time of lodging — but the parent can travel to Australia during processing and while holding the 173. Nanak Migration Group (MARN 2619467) can advise on whether the 173 route is appropriate for your family. No outcome is guaranteed.</>}
         maraBadge={true}
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -256,7 +256,7 @@ return (
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <SectionHeading kicker="Direct 143 vs 173 + 143" title="Cost Comparison: Two Paths to Permanent Contributory Parent Residence" accent={ACCENT} />
           <Callout variant="note" panel={true} title="Confirm all current charges on the DoHA website before lodging">
-            Visa application charges change annually and are updated by the Department. The figures below are indicative of the structure as at August 2026. Always confirm current charges on the DoHA website before making any decisions.
+            Visa application charges change annually and are updated by the Department. The figures below are indicative of the structure as at October 2026. Always confirm current charges on the DoHA website before making any decisions.
           </Callout>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '32px 0 24px' }}>
             Both routes lead to the same permanent 143 outcome, but the cost structure and timing differ:
@@ -378,7 +378,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Timeline" title="Processing Times for the 173 and 143" accent={ACCENT} />
           <Callout variant="note" panel={true} title="Confirm current processing times on DoHA">
-            Processing times change regularly. The information below is current at August 2026 — always confirm on the DoHA website.
+            Processing times change regularly. The information below is current at October 2026 — always confirm on the DoHA website.
           </Callout>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 32, marginBottom: 20 }}>
             The subclass 173 has a shorter processing queue than the permanent 143 — the two-stage route is designed so that the parent can enter Australia sooner while the permanent pathway is pursued.

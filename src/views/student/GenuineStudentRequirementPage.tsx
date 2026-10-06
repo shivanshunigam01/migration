@@ -39,7 +39,7 @@ const TEAL    = '#0e7490'
 const VIOLET  = '#4f46e5'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',     label: 'Key facts' },
@@ -78,7 +78,7 @@ const CHANGES = [
 const KEY_DIFFERENCES = [
   { icon: 'arrowright', color: BLUE, heading: "No longer about 'temporary' intentions", body: "The GS requirement does not require applicants to demonstrate that they plan to leave Australia. It focuses on whether the applicant genuinely wants to study at the nominated provider — not on what they intend to do after their visa expires." },
   { icon: 'arrowright', color: BLUE, heading: 'Structured questions replace the GTE statement', body: "Instead of writing a single free-text statement, applicants answer structured questions in ImmiAccount that correspond to each of the GS assessment factors. There is no single document labelled a 'GS statement'." },
-  { icon: 'arrowright', color: BLUE, heading: 'Assessment factors are codified in the legislation', body: "The Migration Act (as amended from 23 March 2024) sets out the factors a decision-maker must consider. These factors — circumstances in the home country, in Australia, the value of the course, immigration history, and any other relevant matter — are assessed holistically." },
+  { icon: 'arrowright', color: BLUE, heading: 'Assessment factors are codified in the legislation', body: "The Migration Regulations 1994 (as amended from 23 March 2024) contain the Genuine Student criterion, and Ministerial Direction No. 106 sets out the factors a decision-maker must consider. These factors — circumstances in the home country, in Australia, the value of the course, immigration history, and any other relevant matter — are assessed holistically." },
   { icon: 'arrowright', color: BLUE, heading: 'The overall application is assessed — not just the answers', body: "Decision-makers are required to look at the whole application. This means supporting evidence, financial documents, academic records, and any previous immigration history are considered alongside the applicant's GS answers." },
 ]
 
@@ -156,7 +156,7 @@ const CONCERNS = [
     n: '04', color: AMBER,
     heading: 'Financial capacity not clearly or adequately demonstrated',
     body: "Applicants who cannot demonstrate that they can genuinely fund their study and living costs for the duration of the course — or whose financial evidence raises questions about the source of funds — may face GS concerns as well as concerns about financial capacity more broadly.",
-    what: 'Financial evidence should cover the cost of tuition plus living expenses for the duration of the course (not just the first year). Evidence should show funds are accessible — not merely that they exist somewhere.',
+    what: 'Financial evidence should cover travel costs plus 12 months of tuition and living expenses, and show the funds are genuinely available to you. Evidence should show funds are accessible — not merely that they exist somewhere.',
   },
   {
     n: '05', color: AMBER,
@@ -398,12 +398,12 @@ export default function GenuineStudentRequirementPage({ navigate }: { navigate: 
           <SectionHeading
             kicker="What Decision-Makers Consider"
             title="The Five GS Assessment Factors"
-            intro="The Migration Act sets out five factors a decision-maker must consider when assessing the Genuine Student requirement. No single factor is determinative — they are considered together."
+            intro="Ministerial Direction No. 106 sets out the matters a decision-maker must consider when assessing the Genuine Student requirement. No single factor is determinative — they are considered together."
             accent={BLUE}
           />
           <CardGrid cards={FACTOR_CARDS} columns={3} accent={BLUE} />
           <p style={{ fontSize: 13, color: '#9ca3af', marginTop: 20, textAlign: 'center', lineHeight: 1.7 }}>
-            Assessment factors set by Schedule 8 of the Migration Act 1958 (as amended from 23 March 2024). Subject to legislative change.
+            The Genuine Student criterion is in the subclass 500 criteria in the Migration Regulations 1994. The matters decision-makers consider are set out in Ministerial Direction No. 106. Subject to change.
           </p>
         </div>
       </section>

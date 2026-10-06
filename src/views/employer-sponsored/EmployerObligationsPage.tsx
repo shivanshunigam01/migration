@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -30,8 +30,8 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   { icon: 'shield', value: '5 years', label: 'SBS approval period', note: 'Standard Business Sponsorship is granted for up to 5 years and must be renewed before expiry.' },
   { icon: 'clock', value: '28 days', label: 'Notification window', note: 'Many reportable events must be notified to the Department within 28 days of occurrence.' },
-  { icon: 'dollar', value: '$93,900', label: 'Maximum civil penalty (individual)', note: 'Civil penalties apply for each sponsor obligation breach. Figures current at August 2026.' },
-  { icon: 'building', value: '$469,500', label: 'Maximum civil penalty (body corporate)', note: 'Body corporate penalties are five times the individual penalty. Figures current at August 2026.' },
+  { icon: 'dollar', value: '$93,900', label: 'Maximum civil penalty (individual)', note: 'Civil penalties apply for each sponsor obligation breach. Figures current at October 2026.' },
+  { icon: 'building', value: '$469,500', label: 'Maximum civil penalty (body corporate)', note: 'Body corporate penalties are five times the individual penalty. Figures current at October 2026.' },
 ]
 
 const OBLIGATION_CARDS = [
@@ -102,7 +102,7 @@ const SANCTION_TYPES = [
   { label: 'Civil penalty order', desc: 'Sought through the Federal Court.' },
   { label: 'Enforceable undertaking', desc: 'Formal commitment to remedy the breach.' },
   { label: 'Suspension or cancellation of sponsorship approval', desc: 'The Department may suspend or cancel SBS approval.' },
-  { label: 'Bar on future sponsorship applications', desc: 'A sanction may prevent the business from applying for sponsorship in the future.' },
+  { label: 'Bar on future sponsorship applications', desc: 'A sanction may prevent the business from applying for sponsorship in the future. Employers who seriously, deliberately or repeatedly break the law can also be made subject to a prohibition declaration that stops them employing more migrant workers for a period.' },
 ]
 
 export default function EmployerObligationsPage({ navigate }: { navigate: (page: string) => void }) {

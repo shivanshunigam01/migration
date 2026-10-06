@@ -48,9 +48,9 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '~AUD 650',
+    value: 'AUD 840 (first visa) / AUD 1,000 (second or third visa)',
     label: 'Application charge',
-    note: 'Approximate government charge at August 2026. Confirm the current charge on the Department of Home Affairs website before lodging.',
+    note: 'Approximate government charge at October 2026. Confirm the current charge on the Department of Home Affairs website before lodging.',
   },
 ]
 
@@ -165,7 +165,7 @@ return (
         deck="The Work and Holiday visa (subclass 462) allows eligible young people from countries with bilateral arrangements to holiday and work in Australia for up to 12 months. Many 462 countries have additional eligibility requirements and some use an annual ballot (lottery) system to manage demand."
         shortAnswer={<>The subclass 462 Work and Holiday visa is available to nationals from eligible countries including the <strong style={{ color: NAVY }}>USA, China, India, Vietnam, Indonesia, Thailand, Malaysia, Singapore, Argentina, Chile</strong>, and others (confirm the current list on DoHA). Applicants must be aged <strong style={{ color: NAVY }}>18 to 30</strong> and meet any <strong style={{ color: NAVY }}>country-specific requirements</strong> — which for many countries include tertiary education evidence, a functional English demonstration, and a <strong style={{ color: NAVY }}>government support letter</strong> from the home country. Several countries have <strong style={{ color: NAVY }}>annual caps and a ballot system</strong> — places are allocated by lottery, and applicants must hold an invitation before lodging. The government charge is approximately <strong style={{ color: NAVY }}>AUD 650</strong> — confirm the current figure on DoHA. Nanak Migration Group (MARN 2619467) can advise on your country's specific requirements and ballot timing.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor & Other', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -245,7 +245,7 @@ return (
           <SectionHeading kicker="Which nationalities" title="Countries with Work and Holiday (462) Arrangements" accent={ACCENT} />
 
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 32 }}>
-            Australia has Work and Holiday arrangements with the following countries (list current at August 2026 — confirm on the Department of Home Affairs website before applying, as arrangements can change and new countries may be added):
+            Australia has Work and Holiday arrangements with the following countries (list current at October 2026 — confirm on the Department of Home Affairs website before applying, as arrangements can change and new countries may be added):
           </p>
 
           <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 14, padding: 28, marginBottom: 32 }}>
@@ -483,14 +483,14 @@ return (
               <tbody>
                 {[
                   { feature: 'Eligible countries', v417: 'Partner country passport holders (UK, Germany, Japan, South Korea, France, etc.)', v462: 'Countries with bilateral arrangements (USA, China, India, Vietnam, Indonesia, Thailand, etc.)' },
-                  { feature: 'Age range', v417: '18–30 (up to 35 for some countries including UK, Canada, Ireland, France, Italy)', v462: '18–30 (no country has an extended upper age limit as at August 2026 — confirm on DoHA)' },
+                  { feature: 'Age range', v417: '18–30 (up to 35 for some countries including UK, Canada, Ireland, France, Italy)', v462: '18–30 (no country has an extended upper age limit as at October 2026 — confirm on DoHA)' },
                   { feature: 'Additional requirements', v417: 'Generally none beyond the universal criteria', v462: 'Government support letter, tertiary education, functional English (requirements vary by country)' },
                   { feature: 'Annual caps and ballot', v417: 'Generally no annual cap or ballot system', v462: 'Some countries have annual caps and a ballot (lottery) — applicants must hold an invitation before applying' },
                   { feature: '6-month employer limit', v417: 'Yes (UK passport holders currently exempt — confirm)', v462: 'Yes (no current exemptions)' },
                   { feature: 'Study cap', v417: '4 months', v462: '4 months' },
                   { feature: 'Second year', v417: '88 days regional work (UK exempt from regional work requirement)', v462: '88 days regional work' },
                   { feature: 'Third year', v417: '6 months regional work', v462: '6 months regional work' },
-                  { feature: 'Application charge', v417: '~AUD 650 (confirm on DoHA)', v462: '~AUD 650 (confirm on DoHA)' },
+                  { feature: 'Application charge', v417: 'AUD 840 (first visa) / AUD 1,000 (second or third visa) (confirm on DoHA)', v462: 'AUD 840 (first visa) / AUD 1,000 (second or third visa) (confirm on DoHA)' },
                 ].map((row, i) => (
                   <tr key={row.feature} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafd', borderBottom: '1px solid #e8edf6' }}>
                     <td style={{ padding: '13px 18px', fontWeight: 600, color: NAVY, whiteSpace: 'nowrap' as const }}>{row.feature}</td>
@@ -502,7 +502,7 @@ return (
             </table>
           </div>
           <div style={{ marginTop: 16, fontSize: 12, color: '#9ca3af', lineHeight: 1.5 }}>
-            All figures and conditions current at August 2026 — confirm on the Department of Home Affairs website before applying.
+            All figures and conditions current at October 2026 — confirm on the Department of Home Affairs website before applying.
           </div>
         </div>
       </section>
@@ -531,7 +531,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

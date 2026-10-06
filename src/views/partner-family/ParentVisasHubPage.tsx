@@ -29,13 +29,13 @@ const FACTS: KeyFact[] = [
     icon: 'calendar',
     value: '12–15 yrs',
     label: 'Current wait for Contributory Parent (143)',
-    note: 'New applications lodged today face approximately 12–15 years of processing. Non-contributory parent visas face a substantially longer queue. Figures current at August 2026 — confirm on DoHA.',
+    note: 'New applications lodged today face approximately 12–15 years of processing. Non-contributory parent visas face a substantially longer queue. Figures current at October 2026 — confirm on DoHA.',
   },
   {
     icon: 'dollar',
     value: '~AUD 95,000',
     label: 'Government charges for a couple (143)',
-    note: 'Payable in two instalments: approximately $5,040 at lodgement and $43,600 per adult applicant before grant. These are government charges only — agent fees are additional. Confirm current amounts on DoHA.',
+    note: 'Payable in two instalments: AUD6,300 for the main applicant at lodgement (lower amounts for each additional applicant) and AUD43,600 per adult applicant before grant. These are government charges only — agent fees are additional. Confirm current amounts on DoHA.',
   },
   {
     icon: 'calendar',
@@ -58,7 +58,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What is the Assurance of Support and do all parent visas require it?",
-    answer: "An Assurance of Support (AoS) is a legally binding undertaking by an Australian citizen, permanent resident, or eligible New Zealand citizen (the 'assurer') to repay to the Australian Government any certain welfare payments made to the sponsored person during the AoS period. All permanent parent visas (103, 143, 173-to-143, 804, 864) require an AoS. The assurer must demonstrate sufficient income and lodge a bond with the Department of Human Services. The bond is refunded after the AoS period if no welfare payments were made. The AoS is assessed as part of the sponsorship process.",
+    answer: "An Assurance of Support (AoS) is a legally binding undertaking by an Australian citizen, permanent resident, or eligible New Zealand citizen (the 'assurer') to repay to the Australian Government any certain welfare payments made to the sponsored person during the AoS period. All permanent parent visas (103, 143, 173-to-143, 804, 864) require an AoS. The assurer must pass a Services Australia income test and provide a bank guarantee backed by a term deposit with the Commonwealth Bank. The guarantee is released at the end of the AoS period if no recoverable payments were made. Home Affairs asks for the AoS when the application is ready for final processing.",
   },
   {
     question: "What if my parent fails the Balance of Family test?",
@@ -66,7 +66,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can my parent work in Australia on a parent visa?",
-    answer: "Permanent parent visas (103, 143, 804, 864) grant full work rights on grant. The subclass 173 (Contributory Parent Temporary) grants limited work rights. The subclass 870 (Sponsored Parent Temporary) grants no work rights — the visa holder must not work in Australia. For parents who wish to work, the permanent visa grant is the trigger for work rights. Parents waiting in the permanent queue on a subclass 870 do not have work rights during that period.",
+    answer: "Permanent parent visas (103, 143, 804, 864) grant full work rights on grant. The subclass 173 (Contributory Parent Temporary) and subclass 884 (Contributory Aged Parent Temporary) allow the holder to work and study in Australia, but holders do not receive government support. The subclass 870 (Sponsored Parent Temporary) grants no work rights — the visa holder must not work in Australia. For parents who wish to work, the permanent visa grant is the trigger for work rights. Parents waiting in the permanent queue on a subclass 870 do not have work rights during that period.",
   },
   {
     question: "How does the 173-to-143 staged pathway work?",
@@ -175,7 +175,7 @@ const VISA_CARDS: VisaCardData[] = [
     fields: [
       { label: 'Onshore/Offshore', value: 'Offshore' },
       { label: 'Balance of Family test', value: 'Required' },
-      { label: 'Charges', value: '~AUD 3,400 first instalment; second instalment payable when applying for 143' },
+      { label: 'Charges', value: 'AUD4,245 first instalment plus AUD29,130 second instalment before the 173 is granted (AUD33,375 total for a single applicant). The later 143 costs AUD555 plus AUD19,420 for a 173 holder.' },
       { label: 'Current queue', value: 'Same permanent queue as 143 (effectively)' },
     ],
     note: 'Designed as a staged route — lodge 173 first, live in Australia temporarily, then convert to permanent 143 when processed, paying the balance of charges.',
@@ -189,7 +189,7 @@ const VISA_CARDS: VisaCardData[] = [
     fields: [
       { label: 'Onshore/Offshore', value: 'Offshore' },
       { label: 'Balance of Family test', value: 'Required' },
-      { label: 'Charges', value: '~AUD 4,990 (much lower than contributory)' },
+      { label: 'Charges', value: 'AUD8,665 over two instalments for a single applicant (much lower than contributory)' },
       { label: 'Current queue', value: 'Several decades (extremely long)' },
       { label: 'Work rights', value: 'Yes (on grant)' },
     ],
@@ -207,7 +207,7 @@ const VISA_CARDS: VisaCardData[] = [
       { label: 'Charges', value: '~AUD 4,990' },
       { label: 'Queue', value: 'Extremely long (similar to 103)' },
     ],
-    note: 'Must be of Australian age pension age at time of application and must be in Australia on a substantive visa.',
+    note: 'Must be old enough to receive the Australian age pension and must be in Australia (not in immigration clearance) when applying and when the visa is decided. Applicants who do not hold a substantive visa must meet additional Schedule 3 criteria.',
     route: 'aged-parent-804',
   },
   {
@@ -232,7 +232,7 @@ const VISA_CARDS: VisaCardData[] = [
     fields: [
       { label: 'Onshore/Offshore', value: 'Onshore only' },
       { label: 'Balance of Family test', value: 'Required' },
-      { label: 'Charges', value: '~AUD 5,040 first instalment; second (~AUD 43,600/adult) paid at 864 stage' },
+      { label: 'Charges', value: 'AUD6,300 first instalment plus AUD29,130 second instalment before the 884 is granted (AUD35,430 single applicant). The later 864 costs AUD555 plus AUD19,420 for an 884 holder.' },
       { label: 'Duration', value: '2 years — must lodge 864 before expiry' },
     ],
     note: 'Two-stage route for pension-age parents onshore — splits contributory charges over the 884 temporary stage and the permanent 864.',
@@ -246,7 +246,7 @@ const VISA_CARDS: VisaCardData[] = [
     fields: [
       { label: 'Onshore/Offshore', value: 'Onshore or Offshore' },
       { label: 'Balance of Family test', value: 'NOT required' },
-      { label: 'Charges', value: '~AUD 1,100 (3-year) or ~AUD 2,900 (5-year)' },
+      { label: 'Charges', value: 'AUD6,370 (up to 3 years) or AUD12,440 (up to 5 years), paid in two instalments, per applicant' },
       { label: 'Duration', value: 'Up to 10 years total (consecutive grants, 90-day gap required between grants in some scenarios)' },
       { label: 'Work rights', value: 'None' },
       { label: 'PR pathway', value: 'No pathway to permanent through the 870 itself' },
@@ -301,7 +301,7 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
         deck="Australia offers multiple pathways for parents to join their children — ranging from long-term temporary visits to permanent residence. The right pathway depends on whether you can pass the Balance of Family test, how much you can pay in government charges, and how long you are prepared to wait."
         shortAnswer={<>Australia has several parent visa pathways, but they vary significantly in cost, processing time, and permanence. The non-contributory <strong style={{ color: NAVY }}>Parent visa (subclass 103)</strong> and <strong style={{ color: NAVY }}>Aged Parent visa (subclass 804)</strong> have extremely long queues — new applications lodged today could wait several decades. The <strong style={{ color: NAVY }}>Contributory Parent (subclass 143)</strong> is faster but carries government charges of approximately <strong style={{ color: NAVY }}>AUD 95,000 for a couple</strong> and currently processes in 12–15 years for new applications. The <strong style={{ color: NAVY }}>Sponsored Parent (Temporary) visa (subclass 870)</strong> allows stays of up to 10 years (in 3-year or 5-year grants) with no Balance of Family test — making it the most accessible option for parents who want extended visits without entering the permanent queue. Nanak Migration Group (MARN 2619467) can assess your family's situation and recommend the most realistic pathway.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'Contributory Parent (143) →', page: 'contributory-parent-143' }}
         accent={ACCENT}
@@ -465,8 +465,8 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
             })}
           </div>
 
-          <Callout variant="warning" panel={true} title="Figures current at August 2026 — confirm on DoHA">
-            All government charge amounts and processing time estimates on this page are current at August 2026 and may change without notice. Always confirm current amounts and processing times on the Department of Home Affairs website before lodging an application. Nanak Migration Group (MARN 2619467) verifies current figures before advising clients.
+          <Callout variant="warning" panel={true} title="Figures current at October 2026 — confirm on DoHA">
+            All government charge amounts and processing time estimates on this page are current at October 2026 and may change without notice. Always confirm current amounts and processing times on the Department of Home Affairs website before lodging an application. Nanak Migration Group (MARN 2619467) verifies current figures before advising clients.
           </Callout>
         </div>
       </section>
@@ -547,7 +547,7 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
             ))}
           </div>
           <p style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic', margin: 0 }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before relying on these amounts.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before relying on these amounts.
           </p>
         </div>
       </section>
@@ -576,7 +576,7 @@ export default function ParentVisasHubPage({ navigate }: { navigate: (page: stri
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

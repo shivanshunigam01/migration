@@ -18,7 +18,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const GOLD = THEME_GOLD
 const GOLD_LIGHT = '#f7b84b'
@@ -275,7 +275,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                 decisions: [
                   { label: 'Pick an occupation on MLTSSL', impact: 'Opens 189 (independent PR) — the widest door', positive: true },
                   { label: 'Choose a regional campus (if possible)', impact: '+5 points, 491 regional nomination access', positive: true },
-                  { label: 'AQF level: bachelor vs master vs PhD', impact: 'Affects 485 length (2, 3 or 4 yrs) and edu points', positive: true },
+                  { label: 'AQF level: bachelor vs master vs PhD', impact: 'Affects 485 length (2 or 3 yrs) and edu points', positive: true },
                   { label: "Choose a course for prestige, not occupation", impact: 'May leave you with no occupation list options', positive: false },
                 ],
               },
@@ -452,7 +452,7 @@ export default function StudentToPRPage({ navigate }: { navigate: (page: string)
                 <div>
                   <label style={{ fontSize: 13, fontWeight: 600, color: '#6b7280', display: 'block', marginBottom: 8 }}>Degree level (determines 485 length)</label>
                   <div style={{ display: 'flex', gap: 8 }}>
-                    {[{ val: 'bachelor' as const, label: "Bachelor's (2 yrs)" }, { val: 'master' as const, label: "Master's (3 yrs)" }, { val: 'phd' as const, label: 'PhD (4 yrs)' }].map(opt => (
+                    {[{ val: 'bachelor' as const, label: "Bachelor's (2 yrs)" }, { val: 'master' as const, label: "Master's (3 yrs)" }, { val: 'phd' as const, label: "Bachelor's (2 yrs) / Master's by coursework (2 yrs) / Master's by research (3 yrs) / PhD (3 yrs)" }].map(opt => (
                       <button key={opt.val} onClick={() => setDegreeLevel(opt.val)}
                         style={{ flex: 1, padding: '9px 8px', borderRadius: 8, border: `1.5px solid ${degreeLevel === opt.val ? NAVY : '#e0e4ef'}`, background: degreeLevel === opt.val ? NAVY : '#fff', color: degreeLevel === opt.val ? '#fff' : '#374151', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                         {opt.label}

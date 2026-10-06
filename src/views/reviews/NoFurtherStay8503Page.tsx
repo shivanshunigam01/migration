@@ -37,7 +37,7 @@ const FACTS: KeyFact[] = [
     icon: 'alert',
     value: '8534 / 8535',
     label: 'Related no-further-stay conditions',
-    note: 'Condition 8534 restricts onshore applications to a limited set of visa classes. Condition 8535 prevents work and study. Check VEVO for the exact conditions on your visa.',
+    note: 'Condition 8534 restricts onshore applications to a limited set of visa classes. Condition 8535 limits onshore grants to a protection visa or a government-sponsored student visa. Check VEVO for the exact conditions on your visa.',
   },
   {
     icon: 'scale',
@@ -120,7 +120,7 @@ return (
         deck="Condition 8503 is imposed on many visitor visas and prevents the holder from applying for any other visa while in Australia. Understanding when a waiver is possible, what evidence is required, and what exceptions exist is essential before your situation becomes critical."
         shortAnswer={<>Condition 8503 — <strong style={{ color: NAVY }}>No Further Stay</strong> — prevents a visa holder from applying for most other visas while in Australia. It is commonly imposed on <strong style={{ color: NAVY }}>subclass 600 tourist stream</strong> and sponsored family stream grants, as well as some other temporary visa grants. The condition can be checked on <strong style={{ color: NAVY }}>VEVO</strong>. A waiver is available in genuinely compelling and compassionate circumstances — but only where those circumstances arose <strong style={{ color: NAVY }}>after the visa was granted</strong> and could not reasonably have been foreseen. One important exception: <strong style={{ color: NAVY }}>a protection visa (866) application is not prevented by Condition 8503</strong>. Related conditions <strong style={{ color: NAVY }}>8534 and 8535</strong> impose different restrictions — check VEVO for the exact conditions on your grant. Nanak Migration Group (MARN 2619467) can advise on waiver prospects for your specific circumstances.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'Section 48 Bar guide →', page: 'section-48-bar' }}
         accent={ACCENT}
@@ -248,7 +248,7 @@ return (
               <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12 }}>
                 {[
                   { label: 'Part 1', text: 'The circumstances must be compelling and compassionate — they must be serious and specific to the person\'s situation, not merely inconvenient or unfortunate in a general sense.' },
-                  { label: 'Part 2', text: 'The circumstances must have arisen after the visa was granted (or after the original application was made) and must not have been reasonably foreseeable at that time. A relationship that pre-dated the visitor visa application is generally not accepted as unforeseeable.' },
+                  { label: 'Part 2', text: 'Since the visa was granted, compelling and compassionate circumstances must have developed over which you had no control, and they must have resulted in a major change to your circumstances. If a waiver was refused before, the new circumstances must be substantially different. A relationship that pre-dated the visitor visa application is generally not accepted as unforeseeable.' },
                 ].map(item => (
                   <div key={item.label} style={{ borderLeft: `3px solid ${ACCENT}`, paddingLeft: 14 }}>
                     <div style={{ fontSize: 12, fontWeight: 700, color: ACCENT, letterSpacing: '0.06em', marginBottom: 4 }}>{item.label}</div>
@@ -341,7 +341,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

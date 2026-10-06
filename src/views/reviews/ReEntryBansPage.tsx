@@ -77,7 +77,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Is there anything I can do to return to Australia before the 3-year ban ends?",
-    answer: "If the 3-year exclusion applies to you and has not yet ended, your options are limited. For some visa classes (particularly partner visas), the ban can be waived if there are compelling circumstances affecting an Australian citizen or permanent resident. For most other visa classes, the exclusion cannot be waived and you must wait until it expires. If you have strong Australian connections — a citizen spouse, Australian-citizen children — seek advice on whether a waiver is available for the visa you are considering. No agent can guarantee a waiver outcome.",
+    answer: "If the 3-year exclusion applies to you and has not yet ended, your options are limited. For some visa classes (particularly partner visas), the ban can be waived if there are compelling circumstances affecting an Australian citizen or permanent resident. For any visa that includes PIC 4013 or 4014, the exclusion can be waived if there are compelling circumstances affecting the interests of Australia, or compassionate or compelling circumstances affecting an Australian citizen, permanent resident or eligible New Zealand citizen. Visas that do not include these criteria are not affected by them. If you have strong Australian connections — a citizen spouse, Australian-citizen children — seek advice on whether a waiver is available for the visa you are considering. No agent can guarantee a waiver outcome.",
   },
 ]
 
@@ -121,7 +121,7 @@ return (
         deck="Departing Australia unlawfully or having a visa cancelled can trigger a 3-year exclusion period that prevents re-entry. Understanding when the ban applies, how the 28-day window can help, and when a waiver is possible is essential for planning a lawful return."
         shortAnswer={<><strong style={{ color: NAVY }}>PIC 4013</strong> imposes a 3-year exclusion after cancellation of a visa under certain grounds. <strong style={{ color: NAVY }}>PIC 4014</strong> imposes a 3-year exclusion after departing Australia as an unlawful non-citizen. The critical exception: <strong style={{ color: NAVY }}>departing within 28 days</strong> of the visa expiry generally avoids triggering PIC 4014. Both bans can be <strong style={{ color: NAVY }}>waived for some visa classes</strong> — most notably partner visas — where compelling circumstances affect an Australian citizen or permanent resident. <strong style={{ color: NAVY }}>Section 501</strong> character exclusions are a separate, more serious category that do not automatically expire and require ministerial processes to overturn. Nanak Migration Group (MARN 2619467) can advise on whether a ban applies to your situation and what options remain available.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'Visa Cancellation guide →', page: 'visa-cancellation' }}
         accent={ACCENT}
@@ -177,7 +177,7 @@ return (
                   'Applies where the person\'s visa was cancelled under section 116, section 128, or section 134 of the Migration Act',
                   'The 3-year exclusion runs from the date the cancellation took effect',
                   'Applies to cancellations for breach of visa conditions (e.g. condition 8105 work limitation, student condition 8202)',
-                  'Can also apply following a Ministerial Direction or where the person departed after a Non-Citizen in Australia notice',
+                  'Applies only to the cancellation grounds listed in PIC 4013 - check the cancellation notice for the section and ground used',
                   'Waiver is available for certain visa classes where compelling circumstances affect an Australian citizen or PR',
                 ],
               },
@@ -389,7 +389,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

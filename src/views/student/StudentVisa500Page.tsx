@@ -19,7 +19,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const AMBER = CAT_STUDENT
 const ACCENT = AMBER
@@ -240,12 +240,12 @@ export default function StudentVisa500Page({ navigate }: { navigate: (page: stri
           </p>
           <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
             {[
-              { icon: 'clock', color: GOLD, title: 'Visa duration', body: 'Granted for the length of your registered course plus 2 months (up to 5 years). If your course is extended, you must apply for a new student visa.' },
-              { icon: 'briefcase', color: '#2563eb', title: 'Work rights', body: '48 hours per fortnight during semester. Unlimited during scheduled course breaks. Work rights also extend to secondary holders (your partner and dependants over 18).' },
+              { icon: 'clock', color: GOLD, title: 'Visa duration', body: 'Granted in line with your enrolment, for up to 6 years. If you need more time, you can only apply for a further student visa in Australia if you meet an exemption, such as needing up to 12 more months to finish your main course with the same provider. Otherwise you must apply from outside Australia.' },
+              { icon: 'briefcase', color: '#2563eb', title: 'Work rights', body: '48 hours per fortnight during semester. Unlimited during scheduled course breaks. Where family members are included under an exemption, they also have work rights.' },
               { icon: 'shield', color: '#f5a124', title: 'OSHC requirement', body: 'Overseas Student Health Cover is mandatory for the full visa duration. You must purchase it before your visa is granted and maintain it until you leave Australia or your visa expires.' },
               { icon: 'file', color: AMBER, title: 'CRICOS provider', body: 'Your education provider must be registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS). Studying at a non-CRICOS provider breaches your visa conditions.' },
               { icon: 'trending', color: '#4f46e5', title: '500 → 485 pathway', body: "After completing a bachelor's degree or higher from an Australian provider, you may be eligible for the Temporary Graduate (485) visa, giving you 2–4 years of work rights in Australia." },
-              { icon: 'users', color: '#2563eb', title: 'Secondary applicants', body: 'Your spouse/partner and dependent children can be included as secondary applicants on your student visa application, allowing them to live, work, and study in Australia with you.' },
+              { icon: 'users', color: '#2563eb', title: 'Secondary applicants', body: 'From 2 October 2026, most applicants can no longer include a partner or dependent children. Family can only be included if you meet an exemption, such as PhD study, DFAT or Defence sponsorship, a foreign government scholarship, or being an eligible Pacific or ASEAN student. Family members cannot be added after the visa is granted.' },
             ].map((item) => (
               <div key={item.title} style={{
                 background: 'white', borderRadius: 14, padding: '24px 28px',

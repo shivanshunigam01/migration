@@ -120,7 +120,7 @@ return (
         deck="Schedule 3 of the Migration Regulations contains extra criteria that apply when a person applies for a visa (most commonly a partner visa) while not holding a substantive visa. Understanding the 28-day rule, criteria 3001/3003/3004, and the compelling reasons waiver is essential before lodging."
         shortAnswer={<>Schedule 3 criteria apply when a person applies for an onshore visa — most commonly the <strong style={{ color: NAVY }}>Partner visa (subclass 820)</strong> — while they are <strong style={{ color: NAVY }}>unlawful</strong> or <strong style={{ color: NAVY }}>on a bridging visa</strong>. The key criterion is <strong style={{ color: NAVY }}>3001</strong>: an unlawful non-citizen must apply within <strong style={{ color: NAVY }}>28 days</strong> of ceasing to hold a substantive visa. If more than 28 days have elapsed, the applicant must obtain a <strong style={{ color: NAVY }}>waiver of Schedule 3</strong> based on compelling reasons — a discretion that is genuinely difficult to obtain without careful, evidence-rich preparation. The Full Federal Court in <em>Waensila</em> confirmed that compelling reasons can include circumstances arising <strong style={{ color: NAVY }}>after</strong> lodgement. Nanak Migration Group (MARN 2619467) strongly recommends professional advice before lodging or responding to a Schedule 3 issue.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'Partner Visa Onshore →', page: 'partner-visa-820-801' }}
         accent={ACCENT}
@@ -181,13 +181,13 @@ return (
               {
                 code: '3003',
                 heading: 'Criterion 3003 — Compelling reasons (unlawful non-citizens)',
-                body: "Requires that there are compelling reasons for not applying Schedule 3 to the person. This is the criterion that gives the decision-maker a discretion to waive Schedule 3 requirements. If criterion 3001 cannot be met, the applicant must satisfy criterion 3003 — and criterion 3003 is also the vehicle for waiver of criterion 3001. The decision-maker considers whether, in all the circumstances, there are compelling reasons not to apply the Schedule 3 criteria. 'Compelling' is a high bar — inconvenience, preference, or the general difficulty of applying offshore are not sufficient.",
+                body: "Applies to a person who has not held a substantive visa since 1 September 1994 and was an illegal entrant (or held an entry permit that expired) on 31 August 1994. It requires that they became unlawful because of factors beyond their control, that there are compelling reasons for granting the visa, and that they substantially complied with past conditions. For partner visas, the power to set aside Schedule 3 is in the partner visa criteria themselves (for example clause 820.211), which allow the Department not to apply criteria 3001, 3003 and 3004 if there are compelling reasons. If criterion 3001 cannot be met, the applicant must satisfy criterion 3003 — and criterion 3003 is also the vehicle for waiver of criterion 3001. The decision-maker considers whether, in all the circumstances, there are compelling reasons not to apply the Schedule 3 criteria. 'Compelling' is a high bar — inconvenience, preference, or the general difficulty of applying offshore are not sufficient.",
                 badge: 'Waiver criterion',
               },
               {
                 code: '3004',
                 heading: 'Criterion 3004 — Compelling reasons (bridging visa holders)',
-                body: 'Similar to criterion 3003 but applies to applicants who are on a bridging visa (rather than unlawful). A person on a bridging visa when they apply for a partner visa must satisfy criterion 3004 — compelling reasons not to apply Schedule 3. In practice, criterion 3004 is somewhat more commonly met than criterion 3003 because the applicant at least has lawful status, but the compelling reasons threshold still applies and must be addressed with evidence.',
+                body: 'Applies to a person who ceased to hold a substantive visa (or entered Australia unlawfully) on or after 1 September 1994. It requires that they are not holding a substantive visa because of factors beyond their control, that there are compelling reasons for granting the visa, and that they substantially complied with the conditions of their last substantive visa and any later bridging visa. A person on a bridging visa when they apply for a partner visa must satisfy criterion 3004 — compelling reasons not to apply Schedule 3. In practice, criterion 3004 is somewhat more commonly met than criterion 3003 because the applicant at least has lawful status, but the compelling reasons threshold still applies and must be addressed with evidence.',
                 badge: 'Bridging visa holders',
               },
             ].map(item => (
@@ -398,7 +398,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

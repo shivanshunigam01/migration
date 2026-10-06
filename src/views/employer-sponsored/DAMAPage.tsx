@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_EMPLOYER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -39,15 +39,15 @@ const KEY_FACTS: KeyFact[] = [
 const CONCESSIONS = [
   {
     title: 'Concession 1 — Lower salary threshold',
-    desc: "Employers under a DAMA can pay sponsored workers below the standard Temporary Skilled Migration Income Threshold (TSMIT — $79,499 p.a. from 1 July 2026). The specific minimum salary varies by DAMA and occupation. This is particularly important for regional hospitality, tourism, and retail roles where award rates may fall below the standard TSMIT. Confirm current figures on the Department of Home Affairs website.",
+    desc: "Employers under a DAMA can pay sponsored workers below the standard Temporary Skilled Migration Income Threshold (TSMIT — $79,423 p.a. from 1 July 2026). The specific minimum salary varies by DAMA and occupation. This is particularly important for regional hospitality, tourism, and retail roles where award rates may fall below the standard TSMIT. Confirm current figures on the Department of Home Affairs website.",
   },
   {
     title: 'Concession 2 — Higher maximum age',
-    desc: 'The standard 482 visa has an effective age limit (skills assessment requirements can create a practical limit of around 45 for most occupations). Many DAMAs allow sponsorship of workers up to age 55, expanding the pool of eligible overseas workers.',
+    desc: 'The standard 482 has no age limit, but the 186 and 494 permanent and provisional pathways generally require applicants to be under 45. Many DAMAs allow sponsorship of workers up to age 55, expanding the pool of eligible overseas workers.',
   },
   {
     title: 'Concession 3 — Lower English requirements',
-    desc: 'Some DAMAs allow lower English proficiency than the standard 482 requirements — for example, IELTS 4.5 overall instead of 5.0, or Vocational English instead of Competent English. The specific English concession varies by DAMA and occupation.',
+    desc: 'Some DAMAs allow lower English proficiency than the standard 482 requirements — for example, a lower test score than the standard 482 requirement of at least 5.0 in each IELTS component (or equivalent). The specific English concession varies by DAMA and occupation.',
   },
   {
     title: 'Concession 4 — Broader occupation lists',
@@ -91,12 +91,12 @@ const REGIONS = [
   },
   {
     name: 'Far North Queensland DAMA',
-    dar: 'Queensland Government (for the Far North Queensland region)',
+    dar: 'Cairns Chamber of Commerce (DAR)',
     desc: 'Covers the Cairns and Far North Queensland area. Focus on tourism, hospitality, and regional services. PR pathway available.',
   },
   {
     name: 'Goldfields-Esperance (Western Australia) DAMA',
-    dar: 'Goldfields-Esperance Development Commission (DAR)',
+    dar: 'City of Kalgoorlie-Boulder (DAR)',
     desc: 'Covers the Goldfields-Esperance region of WA. Focus on mining services, transport, hospitality, and regional services.',
   },
   {
@@ -106,21 +106,21 @@ const REGIONS = [
   },
   {
     name: 'Pilbara (Western Australia) DAMA',
-    dar: 'Pilbara Development Commission',
+    dar: 'RDA Pilbara (DAR)',
     desc: 'Covers the Pilbara region of WA. Focus on the resources sector, hospitality, and regional services.',
   },
   {
     name: 'Townsville (Queensland) DAMA',
-    dar: 'Townsville City Council (DAR)',
+    dar: 'Townsville Enterprise Limited (DAR)',
     desc: 'Covers the Townsville area of Queensland. Focus on defence industries, healthcare, hospitality, and regional services.',
   },
 ]
 
 const COMPARISON_ROWS = [
   { feature: 'Occupation eligibility', standard482: 'CSOL (Skill Levels 1–3)', dama: 'Extended list incl. Skill Level 4–5' },
-  { feature: 'Salary requirement', standard482: 'TSMIT ($79,499+ p.a. 2026)', dama: 'Below TSMIT possible (DAMA-specific)' },
-  { feature: 'Maximum age', standard482: 'Practical limit ~45 via skills assessment', dama: 'Up to 55 in most DAMAs' },
-  { feature: 'English requirement', standard482: 'Competent English (IELTS 6.0 equivalent)', dama: 'Lower levels in some DAMAs' },
+  { feature: 'Salary requirement', standard482: 'TSMIT ($79,423+ p.a. 2026)', dama: 'Below TSMIT possible (DAMA-specific)' },
+  { feature: 'Maximum age', standard482: 'No age limit for the 482 (under 45 for the 186 and 494)', dama: 'Up to 55 in most DAMAs' },
+  { feature: 'English requirement', standard482: 'IELTS 5.0 in each component (or equivalent), unless exempt', dama: 'Lower levels in some DAMAs' },
   { feature: 'Geographic restriction', standard482: 'None', dama: 'Must be in designated area' },
   { feature: 'PR pathway', standard482: 'Via 186 TRT after 2+ years', dama: 'Direct 186 LA stream after ~3 years' },
   { feature: 'Employer SBS required', standard482: 'Yes (Standard Business Sponsor)', dama: 'Via DAMA endorsement (different process)' },
@@ -182,7 +182,7 @@ return (
         eyebrowSub="Labour Agreements · Support Guide"
         title={<>Designated Area Migration Agreements<br /><em style={{ fontStyle: 'italic', color: GOLD }}>DAMA</em></>}
         deck="Designated Area Migration Agreements (DAMAs) allow employers in specific regional areas to access visa concessions — on salary, age, English, and occupation eligibility — that are not available under the standard subclass 482 pathway. A two-stage process applies: regional endorsement first, then nomination and visa."
-        shortAnswer={<>DAMAs are region-specific Labour Agreements negotiated between the Australian Government and regional authorities (called Designated Area Representatives, or DARs). Each DAMA sets out concessions available to employers in that designated area — including salary below the standard TSMIT, higher age limits (e.g. up to 55), lower English requirements, and access to occupations not on the standard CSOL. The DAMA process is two-stage — first the employer must obtain endorsement from the regional DAR (typically a state or territory government or local council body), then they can nominate workers and the worker applies for a visa (typically a 482 or 186 under the Labour Agreement stream). Many DAMAs now include pathways to permanent residence. Nanak Migration Group (MARN 2619467) can advise on whether a DAMA is available in your area and whether you meet the requirements. This information is general guidance only and does not constitute advice specific to your circumstances.</>}
+        shortAnswer={<>DAMAs are region-specific Labour Agreements negotiated between the Australian Government and regional authorities (called Designated Area Representatives, or DARs). Each DAMA sets out concessions available to employers in that designated area — including salary below the standard TSMIT, higher age limits (e.g. up to 55), lower English requirements, and access to occupations not on the standard CSOL. The DAMA process is two-stage — first the employer must obtain endorsement from the regional DAR (typically a state or territory government or local council body), then they can nominate workers and the worker applies for a visa (a 482, 494 or 186 under the Labour Agreement stream). Many DAMAs now include pathways to permanent residence. Nanak Migration Group (MARN 2619467) can advise on whether a DAMA is available in your area and whether you meet the requirements. This information is general guidance only and does not constitute advice specific to your circumstances.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -267,7 +267,7 @@ return (
           <SectionHeading kicker="Where they operate" title="Current DAMA Regions" accent={ACCENT} />
           <div style={{ marginBottom: 32, marginTop: 16 }}>
             <Callout variant="note" panel={true} title="The DAMA list changes — confirm current regions on DoHA">
-              New DAMAs are negotiated periodically. Existing DAMAs may be renewed, expanded, or lapse. The list below reflects known active DAMAs as at August 2026. Confirm the current status of each DAMA region on the Department of Home Affairs website or by contacting the relevant DAR.
+              New DAMAs are negotiated periodically. Existing DAMAs may be renewed, expanded, or lapse. The list below reflects known active DAMAs as at October 2026. Confirm the current status of each DAMA region on the Department of Home Affairs website or by contacting the relevant DAR.
             </Callout>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 20 }}>
@@ -354,7 +354,7 @@ return (
             ))}
           </div>
           <p style={{ fontSize: 13, color: '#6b7280', marginTop: 14, fontStyle: 'italic' }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
           </p>
         </div>
       </section>

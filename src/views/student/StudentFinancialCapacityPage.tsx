@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const CAT_STUDENT = '#0369a1'
 const ACCENT = CAT_STUDENT
 const GREY_BG = '#fafbfe'
@@ -31,15 +31,15 @@ const TOC = [
 
 const FACTS: KeyFact[] = [
   { icon: 'dollar', value: 'AUD 29,710', label: 'Annual living costs (from 10 May 2024)', note: 'Indexed annually. Confirm current figure on the Department of Home Affairs website before applying. Does not include course fees or travel.' },
-  { icon: 'dollar', value: 'AUD 10,394', label: 'Additional amount for a spouse or partner', note: 'Per year. Figures current at August 2026 — confirm on DoHA website. School costs for dependent children are additional.' },
-  { icon: 'calendar', value: '3+ months', label: 'Minimum period funds must be held', note: 'Bank account balances must generally be held for at least 3 consecutive months prior to the visa application to demonstrate genuine access.' },
+  { icon: 'dollar', value: 'AUD 10,394', label: 'Additional amount for a spouse or partner', note: 'Per year. Figures current at October 2026 — confirm on DoHA website. School costs for dependent children are additional.' },
+  { icon: 'calendar', value: '3+ months', label: 'Minimum period funds must be held', note: 'Home Affairs does not set a minimum holding period, but a history of savings over several months helps show the funds are genuinely available to you.' },
   { icon: 'dollar', value: 'AUD 87,856', label: 'Annual parental income option', note: 'If a parent or guardian earns at least this amount per year (before tax), this may be used as evidence of financial capacity in place of held funds.' },
 ]
 
 const FAQ: FaqItem[] = [
   {
     question: "Do I need to show funds in my own bank account, or can my parents' account be used?",
-    answer: "Funds in a parent's or guardian's account can be used as evidence, provided there is documentation showing the parent's intention to support your study and their capacity to do so. Typically this means providing the parent's bank statements (with the funds held for at least 3 months) together with a sponsor letter. Alternatively, if a parent earns at least AUD 87,856 per year (before tax), their income can be used as evidence in place of held funds — subject to documentary verification. All figures are current at August 2026 — confirm on the Department of Home Affairs website.",
+    answer: "Funds in a parent's or guardian's account can be used as evidence, provided there is documentation showing the parent's intention to support your study and their capacity to do so. Typically this means providing the parent's bank statements (with the funds held for at least 3 months) together with a sponsor letter. Alternatively, if a parent earns at least AUD 87,856 per year (before tax), their income can be used as evidence in place of held funds — subject to documentary verification. All figures are current at October 2026 — confirm on the Department of Home Affairs website.",
   },
   {
     question: "Do I need to show funds for the full duration of my course?",
@@ -92,7 +92,7 @@ const EVIDENCE_CARDS = [
   {
     icon: 'dollar',
     title: 'Parental or guardian annual income statement',
-    desc: "If your parent or guardian earns at least AUD 87,856 per year (before tax), this can be used as evidence of financial capacity in place of held funds. Evidence typically includes tax returns, employment contracts, or payslips. Figures current at August 2026 — confirm on DoHA website.",
+    desc: "If your parent or guardian earns at least AUD 87,856 per year (before tax), this can be used as evidence of financial capacity in place of held funds. The income must be shown by official government documents, such as a tax assessment less than 12 months old. Home Affairs does not accept bank statements or evidence directly from an employer. The threshold is AUD 102,500 if family members are coming with you. Figures current at October 2026 — confirm on DoHA website.",
     note: "This option is particularly useful for applicants whose parents have high incomes but who have not yet accumulated personal savings.",
   },
   {

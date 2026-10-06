@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -31,7 +31,7 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   { icon: 'file', value: 'Negotiated', label: 'Custom Government arrangement', note: 'Each Labour Agreement sets out specific conditions, including occupation, numbers, salary, and any concessions.' },
   { icon: 'clock', value: '5 years', label: 'Maximum agreement term', note: 'Company-specific Labour Agreements are generally approved for up to 5 years.' },
-  { icon: 'building', value: 'Industry peak body', label: 'Endorsement typically required', note: 'Most Labour Agreements require support from the relevant industry peak body before the Department will negotiate.' },
+  { icon: 'building', value: 'Industry peak body', label: 'Endorsement typically required', note: 'Company specific agreements require consultation with relevant stakeholders (such as the industry body, the relevant union and affected community groups). Industry agreements have set terms, and DAMA agreements need endorsement from the Designated Area Representative.' },
   { icon: 'shield', value: 'Limited concessions', label: 'Age, English, salary', note: 'Labour Agreements can include concessions on standard visa requirements, subject to negotiation.' },
 ]
 
@@ -54,7 +54,7 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Sponsor workers under the approved Agreement',
-    desc: 'Once the Labour Agreement is in place, the employer nominates workers under the agreed terms and workers apply for the relevant visa (482 or 186 LA stream).',
+    desc: 'Once the Labour Agreement is in place, the employer nominates workers under the agreed terms and workers apply for the relevant visa (482, 494 or 186 Labour Agreement stream).',
   },
 ]
 
@@ -69,22 +69,22 @@ const AGREEMENT_TYPES = [
   },
   {
     title: 'Industry Labour Agreement',
-    desc: 'Negotiated for a sector rather than a single employer. Individual employers access the agreement by making an on-hire arrangement. Examples: restaurant sector, fishing industry.',
+    desc: 'Negotiated for a sector rather than a single employer. Industry representative bodies negotiate set terms with the Department, and individual employers request an agreement on those fixed, non-negotiable terms. Examples: aged care, meat, horticulture, dairy, fishing, pork, advertising, minister of religion, on-hire and restaurant (premium dining).',
   },
   {
     title: 'On-Hire Labour Agreement',
-    desc: 'Used by labour-hire companies that on-hire workers to client businesses. Allows flexibility in deployment of sponsored workers across multiple work sites.',
+    desc: 'Now offered as the On-hire Industry Labour Agreement, with set, non-negotiable terms. It allows temporary sponsorship of workers in certain occupations who are placed with third parties, with the labour-hire business remaining the direct employer.',
   },
   {
     title: 'Project Labour Agreement',
-    desc: 'Designed for large construction, engineering, or resource projects where peak demand for specialist overseas workers exists for a defined project period. The agreement is tied to the project rather than the employer generally. Typically used for major infrastructure projects where the occupation or scale cannot be met through standard sponsorship pathways.',
+    desc: 'Designed for large construction, engineering, or resource projects where peak demand for specialist overseas workers exists for a defined project period. The agreement is tied to the project rather than the employer generally. Project agreements are only available to project companies whose projects are endorsed by DFAT under the China-Australia Investment Facilitation Agreement, for skills shortages during the construction phase of resource or infrastructure projects.',
   },
 ]
 
 const FAQ: FaqItem[] = [
   {
     question: 'What occupations can be included in a Labour Agreement?',
-    answer: 'Labour Agreements can include occupations at ANZSCO Skill Levels 4 and 5, which are generally not eligible under the standard 482 pathway. They can also include Skill Level 1–3 occupations where specific concessions (age, English, salary) are required. The specific occupations must be justified and agreed with the Department.',
+    answer: 'Company specific labour agreements can include occupations at ANZSCO skill levels 1 to 4. Skill level 5 positions are only considered in exceptional cases for businesses in Category 3 regional areas. Industry agreements and DAMAs cover the occupations set out in each agreement. They can also include Skill Level 1–3 occupations where specific concessions (age, English, salary) are required. The specific occupations must be justified and agreed with the Department.',
   },
   {
     question: 'How long does it take to negotiate a Labour Agreement?',
@@ -96,7 +96,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'What concessions can be included?',
-    answer: 'Depending on the type of agreement and the industry, concessions may include: a lower age limit (e.g. up to 55 instead of 45); lower English proficiency requirements; salary below the standard TSMIT; and access to occupations not on standard lists. All concessions are subject to negotiation and Departmental approval.',
+    answer: 'Depending on the type of agreement and the industry, concessions may include: a higher age limit for the 186 or 494 (e.g. up to 55 instead of under 45); lower English proficiency requirements; salary below the standard TSMIT; and access to occupations not on standard lists. All concessions are subject to negotiation and Departmental approval.',
   },
   {
     question: 'Does a Labour Agreement guarantee visa grants?',
@@ -162,7 +162,7 @@ return (
       <section id="types" style={{ background: '#fff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
           <SectionHeading kicker="Agreement Types" title="Types of Labour Agreement" accent={ACCENT}
-            intro="There are four main types of Labour Agreement. The appropriate type depends on the employer's industry, location, and workforce needs." />
+            intro="Home Affairs lists four types of labour agreement: industry labour agreements, Designated Area Migration Agreements (DAMAs), company specific labour agreements and the Skilled Refugee Labour Agreement Pilot. On-hire arrangements are now an industry labour agreement, and project agreements are limited to approved projects. The appropriate type depends on the employer's industry, location, and workforce needs." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24, marginTop: 40 }}>
             {AGREEMENT_TYPES.map((type, i) => (
               <div key={i} style={{ border: `1px solid ${BORDER}`, borderRadius: 12, padding: '28px 28px', background: GREY_BG, borderTop: `4px solid ${ACCENT}` }}>
@@ -220,7 +220,7 @@ return (
             ))}
           </div>
           <p style={{ fontSize: 13, color: '#6b7280', marginTop: 16, fontStyle: 'italic' }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
           </p>
         </div>
       </section>

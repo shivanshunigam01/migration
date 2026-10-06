@@ -19,7 +19,7 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const STUDENT_RELATED: RelatedPage[] = [
   { title: 'Student Visa (500)', desc: 'Full details of the subclass 500 student visa.', icon: 'graduationcap', page: 'student-visa-500' },
@@ -84,7 +84,7 @@ const CARDS = [
     name: 'Student Guardian Visa',
     tag: 'For parents',
     tagColor: PURPLE,
-    summary: 'Allows a parent or relative to accompany a student under 18 studying in Australia. Must not work more than a limited amount.',
+    summary: 'Allows a parent or relative to accompany a student under 18 studying in Australia. The guardian cannot work in Australia.',
     route: null,
   },
   {
@@ -100,7 +100,7 @@ const CARDS = [
     name: 'Financial Capacity',
     tag: 'Common refusal reason',
     tagColor: '#dc2626',
-    summary: 'DHA requires evidence of funds for tuition, living costs (~$29,710/yr) and return airfare for each year of the course. Incomplete evidence is a leading cause of refusal.',
+    summary: 'Home Affairs requires evidence of funds for travel, the first 12 months of course fees and 12 months of living costs (AUD29,710 for the student). Incomplete evidence is a leading cause of refusal.',
     route: null,
   },
   {
@@ -123,9 +123,9 @@ const CARDS = [
 
 /* ── Costs table ─────────────────────────────────────────── */
 const COSTS = [
-  { item: 'Visa application charge (primary applicant)', amount: '~$710', note: 'As at 1 July 2026' },
-  { item: 'Visa application charge (secondary — adult)', amount: '~$530', note: 'Per additional adult' },
-  { item: 'Visa application charge (secondary — child)', amount: '~$180', note: 'Per dependent child' },
+  { item: 'Visa application charge (primary applicant)', amount: 'AUD2,500 (most sectors; AUD2,050 for ELICOS and Non-Award; lower charges for eligible Pacific Island, Timor-Leste and ASEAN citizens)', note: 'As at 1 July 2026' },
+  { item: 'Visa application charge (secondary — adult)', amount: 'AUD1,530 (AUD1,255 for ELICOS and Non-Award). Family members can only be included if an exemption applies - see note below.', note: 'Per additional adult' },
+  { item: 'Visa application charge (secondary — child)', amount: 'AUD500 (AUD410 for ELICOS and Non-Award). Children can only be included if an exemption applies.', note: 'Per dependent child' },
   { item: 'OSHC — single, 12 months', amount: '~$636–$760', note: 'Provider-dependent; budget ~$65/month' },
   { item: 'OSHC — couple, 12 months', amount: '~$1,440–$1,700', note: 'Provider-dependent' },
   { item: 'Living-cost evidence threshold', amount: '$29,710 / yr', note: 'Per student; additional amounts for dependants' },
@@ -157,7 +157,7 @@ const STEPS = [
   {
     num: '04',
     title: 'Lodge your application via ImmiAccount',
-    body: 'Your registered migration agent lodges the application through ImmiAccount, attaches all documents, and pays the visa application charge. A bridging visa is granted if you are already onshore.',
+    body: 'Your registered migration agent lodges the application through ImmiAccount, attaches all documents, and pays the visa application charge. From 2 October 2026, most applicants must lodge from outside Australia and be outside Australia when the visa is granted. You can only apply in Australia if you hold an eligible visa and meet an exemption, for example needing up to 12 more months with the same provider, PhD study, or progressing to a higher AQF level course.',
     timing: 'Day of lodgement',
   },
   {
@@ -180,11 +180,11 @@ const FAQS = [
   },
   {
     q: 'Can my family come with me on my student visa?',
-    a: "A partner (spouse or de facto) and dependent children can be included as secondary applicants on your student visa. Your partner will typically receive limited work rights (not unlimited). A parent or relative accompanying a student under 18 must apply for the Subclass 590 Student Guardian Visa separately — they cannot be included as a secondary applicant on the 500.",
+    a: "For applications lodged from 2 October 2026, most student visa applicants can no longer include a partner or dependent children. Family can only be included if you meet an exemption, for example PhD students, DFAT or Defence-sponsored students, foreign government scholarship recipients and eligible Pacific and ASEAN students. Family members cannot be added after the visa is granted. Your partner will typically receive limited work rights (not unlimited). A parent or relative accompanying a student under 18 must apply for the Subclass 590 Student Guardian Visa separately — they cannot be included as a secondary applicant on the 500.",
   },
   {
     q: 'What financial evidence does DHA require?',
-    a: "DHA requires evidence that you can fund your tuition, living costs and return airfare for the entire course duration. The living-cost evidence threshold is approximately $29,710 per year per student as at 1 July 2026, with additional amounts for a partner (~$10,345/yr) and each child (~$4,449/yr). Evidence typically includes 3–6 months of bank statements, scholarship letters, loan approvals, or statutory declarations from sponsors. Figures current as at 1 July 2026 — verify with Home Affairs.",
+    a: "DHA requires evidence that you can fund your tuition, living costs and return airfare for the entire course duration. The living-cost evidence threshold is approximately $29,710 per year per student as at 1 July 2026, with additional amounts for a partner (AUD10,394/yr) and each child (~$4,449/yr). Evidence typically includes 3–6 months of bank statements, scholarship letters, loan approvals, or statutory declarations from sponsors. Figures current as at 1 July 2026 — verify with Home Affairs.",
   },
   {
     q: 'What is OSHC and is it mandatory?',

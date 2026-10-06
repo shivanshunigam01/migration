@@ -37,7 +37,7 @@ const ROSE    = '#e11d48'
 const VIOLET  = '#4f46e5'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',   label: 'Key facts' },
@@ -51,7 +51,7 @@ const TOC: NavSection[] = [
 ]
 
 const KEY_FACTS: KeyFact[] = [
-  { icon: 'globe',    value: '5 approved tests',      label: 'IELTS, PTE Academic, TOEFL iBT, OET, Cambridge C1 Advanced',  note: 'Only approved tests are accepted. Check whether your specific visa accepts all five tests or limits the options.' },
+  { icon: 'globe',    value: '9 approved tests: IELTS Academic, IELTS General Training, PTE Academic, TOEFL iBT, OET, Cambridge C1 Advanced, CELPIP General, LANGUAGECERT Academic and Michigan English Test (MET). MET cannot be used for Superior English.',      label: 'IELTS, PTE Academic, TOEFL iBT, OET, Cambridge C1 Advanced',  note: 'Only approved tests are accepted. Check whether your specific visa accepts all five tests or limits the options.' },
   { icon: 'check',    value: 'Each component',        label: 'Scores must meet the threshold in every component — not just the overall', note: "An overall score that meets the threshold is not sufficient if one component falls short. Each band or skill area is assessed individually." },
   { icon: 'clock',    value: 'Generally 3 years',     label: 'Most approved tests are valid for 3 years from the test date',             note: 'Some visa subclasses or assessing authorities may apply a different validity period. Confirm before booking a test.' },
   { icon: 'alert',    value: 'At invitation AND decision', label: 'English must be met twice — at invitation and at visa decision',       note: 'For points-tested skilled visas, if your English test expires between invitation and decision, you may need a new test.' },
@@ -79,7 +79,7 @@ const LEVEL_ROWS: ComparisonRow[] = [
   {
     feature:  'Vocational English',
     ielts:    'Generally 5.0 in each of the 4 components',
-    pte:      'Generally 36 in each of the 4 components',
+    pte:      'Tests from 7 Aug 2025 - PTE Academic: L33 R36 W29 S24 (tests on or before 6 Aug 2025: 36 in each)',
     toefl:    'Varies by context — not always specified',
     oet:      'Generally not accepted for this level',
     cambridge: 'Generally not specified at this level',
@@ -87,7 +87,7 @@ const LEVEL_ROWS: ComparisonRow[] = [
   {
     feature:  'Competent English',
     ielts:    'Generally 6.0 in each of the 4 components',
-    pte:      'Generally 50 in each of the 4 components',
+    pte:      'Tests from 7 Aug 2025 - PTE Academic: L47 R48 W51 S54; TOEFL iBT: L16 R16 W19 S19; C1 Advanced: L163 R163 W170 S179; OET: L290 R310 W290 S330; IELTS: 6 each. (Tests on or before 6 Aug 2025: PTE 50 each, TOEFL L12 R13 W21 S21, C1 169 each, OET B each.)',
     toefl:    'Generally: Reading 13, Listening 12, Speaking 18, Writing 21',
     oet:      'Generally Grade B in each of the 4 components',
     cambridge: 'Generally 169 in each of the 4 components',
@@ -95,7 +95,7 @@ const LEVEL_ROWS: ComparisonRow[] = [
   {
     feature:  'Proficient English',
     ielts:    'Generally 7.0 in each of the 4 components',
-    pte:      'Generally 65 in each of the 4 components',
+    pte:      'Tests from 7 Aug 2025 - PTE Academic: L58 R59 W69 S76; TOEFL iBT: L22 R22 W26 S24; C1 Advanced: L175 R179 W193 S194; OET: L350 R360 W380 S360; IELTS: 7 each. (Tests on or before 6 Aug 2025: PTE 65 each, TOEFL L24 R24 W27 S23, C1 185 each, OET B each.)',
     toefl:    'Generally: Reading 24, Listening 24, Speaking 23, Writing 27',
     oet:      'Generally Grade B in each of the 4 components',
     cambridge: 'Generally 185 in each of the 4 components',
@@ -103,9 +103,9 @@ const LEVEL_ROWS: ComparisonRow[] = [
   {
     feature:  'Superior English',
     ielts:    'Generally 8.0 in each of the 4 components',
-    pte:      'Generally 79 in each of the 4 components',
-    toefl:    'Generally: Reading 24, Listening 24, Speaking 23, Writing 27 (highest tier; confirm current instrument)',
-    oet:      'OET generally does not satisfy Superior English',
+    pte:      'Tests from 7 Aug 2025 - PTE Academic: L69 R70 W85 S88; TOEFL iBT: L26 R27 W30 S28; C1 Advanced: L186 R190 W210 S208; OET: L390 R400 W420 S400; IELTS: 8 each. (Tests on or before 6 Aug 2025: PTE 79 each, TOEFL L28 R29 W30 S26, C1 200 each, OET A each.)',
+    toefl:    'Tests from 7 Aug 2025: Listening 26, Reading 27, Writing 30, Speaking 28. Tests on or before 6 Aug 2025: Listening 28, Reading 29, Writing 30, Speaking 26.',
+    oet:      'OET: Listening 390, Reading 400, Writing 420, Speaking 400 (tests from 7 Aug 2025); grade A in each component for tests on or before 6 Aug 2025',
     cambridge: 'Generally 200 in each of the 4 components',
   },
 ]
@@ -155,7 +155,7 @@ const EXEMPTIONS = [
   { icon: 'flag', color: TEAL, heading: 'Passport-based exemptions', body: "Applicants who are citizens of the United Kingdom, the United States, Canada, New Zealand, or the Republic of Ireland are generally exempt from needing to sit an English test — they are taken to have met the Competent English requirement by virtue of their citizenship. This exemption is specifically defined in the relevant legislative instrument and does not extend to all English-speaking countries." },
   { icon: 'graduationcap', color: GREEN, heading: 'Study in an English-speaking country', body: "For some visa subclasses, completing a specified period of study (typically at least 5 years at secondary or higher level) in English in a recognised English-speaking country may satisfy the English requirement. The specific rules vary by visa — check the criteria for the visa you are applying for." },
   { icon: 'briefcase', color: AMBER, heading: 'Employer-nominated exemptions (some 186 cases)', body: "In the Direct Entry stream of the 186 visa, some applicants with exceptional qualifications or experience may satisfy a different English threshold. Labour agreement streams may also specify different English requirements. Confirm the specific threshold with a registered migration agent before lodging." },
-  { icon: 'alert', color: ROSE, heading: 'OET is occupation-specific', body: "The Occupational English Test (OET) is only available to applicants in specific healthcare-related occupations. It is not accepted as an alternative to IELTS, PTE, TOEFL iBT or Cambridge for non-healthcare occupations or visa applicants outside those occupations. Confirm whether your occupation and visa accept OET before booking." },
+  { icon: 'alert', color: ROSE, heading: 'OET is occupation-specific', body: "The Occupational English Test (OET) is designed for health professionals. Home Affairs lists it as an approved test for Competent, Proficient and Superior English, but check whether your skills assessing authority accepts it. It is not accepted as an alternative to IELTS, PTE, TOEFL iBT or Cambridge for non-healthcare occupations or visa applicants outside those occupations. Confirm whether your occupation and visa accept OET before booking." },
 ]
 
 /* ─── FAQ ─── */
@@ -338,7 +338,7 @@ export default function EnglishRequirementsPage({ navigate }: { navigate: (page:
           />
           <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 14 }}>
             {[
-              { icon: 'clock', color: AMBER, heading: 'Most tests are valid for 3 years', body: "IELTS, PTE Academic, TOEFL iBT, and Cambridge C1 Advanced results are generally accepted for 3 years from the date of the test. OET results are generally accepted for 2 years. Some assessing authorities apply a shorter validity period — check with your authority." },
+              { icon: 'clock', color: AMBER, heading: 'Most tests are valid for 3 years', body: "IELTS, PTE Academic, TOEFL iBT, and Cambridge C1 Advanced results are generally accepted for 3 years from the date of the test. OET results are accepted on the same basis as other approved tests - generally within 3 years before the application (12 months for the subclass 485), depending on the visa. Some assessing authorities apply a shorter validity period — check with your authority." },
               { icon: 'alert', color: ROSE, heading: "Validity runs from the test date, not the results date", body: "The 3-year validity period is calculated from the date you sat the test, not the date you received your results. If you are cutting it close to the expiry date when you receive an invitation, you may have less time than you expect." },
               { icon: 'check', color: GREEN, heading: 'Book early — test centres have limited availability', body: "Test dates at major centres can fill up weeks or months in advance, particularly for IELTS Academic in major cities. If your current test results are approaching expiry, book a new test well before they expire — not after." },
               { icon: 'hash', color: TEAL, heading: 'You can take the test multiple times', body: "There is no limit on how many times you can sit an approved English test (though testing bodies may impose minimum waiting periods between attempts). Most visa applications will consider your most recent valid test results." },

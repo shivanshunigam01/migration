@@ -19,7 +19,7 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const RED = CAT_REVIEWS
 const RED_LIGHT = 'rgba(220,38,38,0.12)'
@@ -207,7 +207,7 @@ const CARDS = [
     name: 'ART Merits Review',
     tag: '28-day window',
     tagColor: RED,
-    body: 'The Administrative Review Tribunal can substitute a more favourable decision. The lodgement deadline is strict — typically 28 days from notification. Fee ~$3,272 (refundable on success).',
+    body: 'The Administrative Review Tribunal can substitute a more favourable decision. The lodgement deadline is strict — typically 28 days from notification. Fee $3,727 from 1 July 2026 (50% refunded if the decision is set aside, varied or remitted; 50% reduction possible for financial hardship).',
     route: 'art-review' as string | null,
     urgent: true,
   },
@@ -243,7 +243,7 @@ const CARDS = [
     name: 'PIC 4020 — Fraud',
     tag: '3 or 10 yr ban',
     tagColor: RED,
-    body: 'A finding of fraud or misrepresentation can result in a 3-year or 10-year bar on certain visa applications. Character of the misrepresentation determines which ban applies.',
+    body: 'A finding of fraud or misrepresentation can result in a 3-year or 10-year bar on certain visa applications. A 3-year bar applies after a refusal for a bogus document or false or misleading information; a 10-year bar applies after a refusal for failing to satisfy the Department of your identity.',
     route: null as string | null,
     urgent: false,
   },
@@ -261,7 +261,7 @@ const CARDS = [
     name: 'Ministerial Intervention',
     tag: 'Last resort',
     tagColor: TEAL,
-    body: 'After ART rights are exhausted, the Minister may substitute a more favourable decision in the public interest under s351 or s417. Discretionary — not a right. Exceptional circumstances only.',
+    body: 'After ART rights are exhausted, the Minister may substitute a more favourable decision in the public interest under section 351 or section 501J. Discretionary — not a right. Exceptional circumstances only.',
     route: null as string | null,
     urgent: false,
   },
@@ -297,7 +297,7 @@ const URGENT_STEPS = [
   {
     num: '02',
     title: 'Note your visa and bridging visa status',
-    body: 'If you are onshore, check whether you hold a Bridging Visa. Lodging an ART application typically grants a Bridging Visa A. If you are unlawful, contact us before lodging anything.',
+    body: 'If you are onshore, check whether you hold a Bridging Visa. If you lodge a valid ART application, the Bridging Visa A granted with your original application generally stays in effect until 35 days after the ART decision. If you are unlawful, contact us before lodging anything.',
     timing: 'Day 1',
     urgent: true,
   },
@@ -311,7 +311,7 @@ const URGENT_STEPS = [
   {
     num: '04',
     title: 'Lodge the ART application before the deadline',
-    body: 'The ART deadline is non-extendable. The Tribunal has no discretion to accept a late application — not even by one day. Once lodged, a Bridging Visa A is typically issued while the review proceeds.',
+    body: 'The ART deadline is non-extendable. The Tribunal has no discretion to accept a late application — not even by one day. Once lodged, your existing bridging visa generally stays in effect while the review proceeds.',
     timing: 'Before deadline',
     urgent: true,
   },
@@ -451,8 +451,8 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
           <div style={{ height: 1, background: 'rgba(27,43,94,0.12)', marginBottom: 28 }} />
           <div className="grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 0 }}>
             {[
-              { val: '28 days', label: 'ART lodgement window (most visas)', note: '35 days for protection' },
-              { val: '~$3,272', label: 'ART application fee', note: 'refunded if successful' },
+              { val: '28 days', label: 'ART lodgement window (most visas)', note: '14 days if in detention' },
+              { val: '~$3,272', label: 'ART application fee', note: '$3,727 ART application fee (from 1 July 2026) - 50% refunded if the decision is set aside, varied or remitted' },
               { val: '9 mo', label: 'Median ART processing', note: '2025–26 estimate' },
               { val: '0 days', label: 'Extension available', note: 'deadline is absolute' },
             ].map((s, i) => (
@@ -518,7 +518,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
                 When you receive a visa refusal, you may have the right to apply to the Administrative Review Tribunal (ART) for a merits review. The Tribunal is an independent body that examines the facts, law and policy afresh.
               </p>
               <p style={{ fontSize: 15, color: '#4b5563', lineHeight: 1.75, marginBottom: 20, fontFamily: "'Gilroy', sans-serif" }}>
-                The Tribunal can affirm the delegate's decision, vary it, set it aside and substitute its own decision, or remit the matter back to DHA with directions. A successful ART review leads to a visa grant in most cases.
+                The Tribunal can affirm the delegate's decision, vary it, set it aside and substitute its own decision, or remit the matter back to DHA with directions. If the ART sets aside the decision, it usually sends the case back to the Department to reconsider with directions. The Department then assesses any remaining criteria before a visa can be granted.
               </p>
               <div style={{ background: `${GOLD}14`, border: `1.5px solid ${GOLD}44`, borderRadius: 12, padding: '14px 16px' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#0d1632', marginBottom: 4, fontFamily: "'Gilroy', sans-serif" }}>ART Processing Time 2025–26</div>
@@ -531,9 +531,9 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
             <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
               {[
                 { num: '01', title: 'Refusal received', desc: 'Read the decision record carefully; note the review deadline (usually 28 days). Contact us immediately — do not wait.' },
-                { num: '02', title: 'ART application lodged', desc: 'We prepare and file the application on your behalf. The Tribunal fee (~$3,272 as at 1 July 2026) is paid at lodgement.' },
-                { num: '03', title: 'Review conference or hearing', desc: 'We represent you before the Tribunal. Depending on the case, this may be a document review or a full hearing with oral evidence.' },
-                { num: '04', title: 'Decision', desc: 'The Tribunal affirms, sets aside or remits the decision. If set aside, DHA proceeds to grant the visa.' },
+                { num: '02', title: 'ART application lodged', desc: 'We prepare and file the application on your behalf. The Tribunal fee ($3,727 from 1 July 2026) must be paid before the review deadline.' },
+                { num: '03', title: 'Review conference or hearing', desc: 'We represent you before the Tribunal. Depending on the case, this may be a document review or a full hearing with oral evidence. From 1 June 2026, most student visa refusal reviews are decided on the papers without a hearing.' },
+                { num: '04', title: 'Decision', desc: "The Tribunal affirms, sets aside or remits the decision. If the decision is remitted, the Department reconsiders the application in line with the Tribunal's directions and assesses any remaining criteria." },
               ].map((step, i) => (
                 <div key={step.num} style={{ display: 'flex', gap: 20, position: 'relative', paddingBottom: i < 3 ? 32 : 0 }}>
                   {i < 3 && <div style={{ position: 'absolute', left: 20, top: 44, width: 2, height: 'calc(100% - 12px)', background: 'linear-gradient(to bottom, rgba(27,43,94,0.15), rgba(27,43,94,0.04))' }} />}
@@ -561,7 +561,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
             {[
               { title: 'Section 48 Bar', impact: 'HIGH', desc: 'If you were refused a visa while onshore, this bar prevents you from applying for most visas in Australia. Exceptions exist for certain subclasses — protection, resolution of status, some family visas.', impactColor: RED },
               { title: 'Schedule 3 Criteria', impact: 'HIGH', desc: 'Triggered by unlawful presence or certain circumstances at application. Requires compelling reasons to waive. The standard is very high and rarely met without evidence.', impactColor: RED },
-              { title: 'PIC 4020 — Fraud / Misrepresentation', impact: 'HIGH', desc: 'A finding of fraud or misrepresentation can result in a 3-year or 10-year bar on certain visa applications. The character and extent of the misrepresentation determines which ban applies.', impactColor: RED },
+              { title: 'PIC 4020 — Fraud / Misrepresentation', impact: 'HIGH', desc: 'A finding of fraud or misrepresentation can result in a 3-year or 10-year bar on certain visa applications. The 3-year bar applies to refusals for bogus documents or false or misleading information; the 10-year bar applies to refusals because identity was not established.', impactColor: RED },
               { title: 'Condition 8503 — No Further Stay', impact: 'MEDIUM', desc: 'Prevents lodging a further visa application in Australia. Waivers are available only in compelling circumstances and are rarely granted. Check your visa grant notice.', impactColor: AMBER },
             ].map(bar => (
               <div key={bar.title} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 18, padding: '24px 24px', backdropFilter: 'blur(12px)' }}>
@@ -645,7 +645,7 @@ export default function VisaRefusalReviewHubPage({ navigate }: { navigate: (page
             {[
               { title: 'Character Test (s501)', icon: 'shield', desc: 'Persons with substantial criminal records (12+ months imprisonment), associations with criminal groups, or not of good character may fail the character test. A visa can be refused or cancelled.' },
               { title: 'Health Requirements', icon: 'heart', desc: 'Most visas require meeting health criteria. Waivers exist for some subclasses where the cost or prejudice to Australia is deemed acceptable. Our agents advise on waiver prospects.' },
-              { title: 'Re-entry Bans', icon: 'clock', desc: 'Overstaying by 28+ days (under 12 months) triggers a 3-year exclusion from Australia. Overstaying by 12+ months triggers a 5-year ban. Waivers exist in some circumstances.' },
+              { title: 'Re-entry Bans', icon: 'clock', desc: 'Leaving Australia more than 28 days after your visa expired (or on a Bridging C, D or E visa) can trigger a 3-year exclusion period for many temporary visas. A waiver may be possible where there are compelling or compassionate circumstances.' },
             ].map(issue => (
               <div key={issue.title} style={{ background: GREY_BAND, borderRadius: 16, border: '1.5px solid #e5eaf4', padding: '26px 24px' }}>
                 <div style={{ width: 42, height: 42, borderRadius: 11, background: 'rgba(27,43,94,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: NAVY, marginBottom: 14, flexShrink: 0 }}>

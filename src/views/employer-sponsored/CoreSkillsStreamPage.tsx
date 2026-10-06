@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 import { CSIT_LABEL } from '@/lib/visa-constants'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -34,7 +34,7 @@ const KEY_FACTS: KeyFact[] = [
     icon: 'dollar',
     value: CSIT_LABEL,
     label: 'Core Skills Income Threshold (CSIT)',
-    note: 'Minimum annual earnings for Core Skills stream from 1 July 2026. Annual market salary rate must also be met. Figures current at August 2026.',
+    note: 'Minimum annual earnings for Core Skills stream from 1 July 2026. Annual market salary rate must also be met. Figures current at October 2026.',
   },
   {
     icon: 'calendar',
@@ -52,7 +52,7 @@ const KEY_FACTS: KeyFact[] = [
     icon: 'shield',
     value: 'PR pathway',
     label: 'Via 186 ENS after 2 years',
-    note: 'After holding a Core Skills 482 for two years with the same employer in the same occupation, holders are generally eligible for the 186 Employer Nomination Scheme.',
+    note: 'After 2 years of full-time sponsored employment on a 482 in the 3 years before applying, holders may be eligible for the 186 TRT stream if nominated by their current sponsor.',
   },
 ]
 
@@ -65,7 +65,7 @@ const STEPS: TimelineStep[] = [
   {
     code: '02',
     title: 'Employer completes Labour Market Testing',
-    desc: 'Before lodging the nomination, the employer must advertise the role on Workforce Australia plus at least one other national platform for at least 28 consecutive days.',
+    desc: 'Before lodging the nomination, the employer must place at least 2 advertisements on national recruitment platforms for at least 4 weeks within the 4 months before lodgement.',
   },
   {
     code: '03',
@@ -87,11 +87,11 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'What is the CSIT and how does it differ from the TSMIT?',
-    answer: 'The Core Skills Income Threshold (CSIT) is the minimum annual earnings that must be paid to a Core Skills stream worker. From 1 July 2026, the CSIT is $79,499 per annum. The TSMIT (Temporary Skilled Migration Income Threshold) was the predecessor to the CSIT and was used under the former TSS visa regime. The CSIT must be met in addition to the annual market salary rate for the occupation — meaning the nominee must be paid at least the CSIT and at least what an equivalent Australian worker would earn.',
+    answer: 'The Core Skills Income Threshold (CSIT) is the minimum annual earnings that must be paid to a Core Skills stream worker. From 1 July 2026, the CSIT is $79,423 per annum. The TSMIT (Temporary Skilled Migration Income Threshold) was the predecessor to the CSIT and was used under the former TSS visa regime. The CSIT must be met in addition to the annual market salary rate for the occupation — meaning the nominee must be paid at least the CSIT and at least what an equivalent Australian worker would earn.',
   },
   {
     question: 'Can I change jobs while on a Core Skills 482?',
-    answer: "Your Core Skills stream 482 visa ties you to your sponsoring employer and nominated occupation under visa condition 8107. If you change employers, your new employer must hold SBS and lodge a new nomination. You generally have up to 60 days after your employment ceases to find a new sponsor. Changing employers may reset the two-year qualifying period for the 186 ENS Temporary Residence Transition stream.",
+    answer: "Your Core Skills stream 482 visa ties you to your sponsoring employer and nominated occupation under visa condition 8607. If you change employers, your new employer must hold SBS and lodge a new nomination. If you stop working for your sponsor, you may have up to 180 days at a time (365 days in total on the visa) to find a new sponsor, apply for another visa or leave. Earlier sponsored employment can count towards the 186 TRT qualifying period — seek advice before changing employers.",
   },
   {
     question: 'What is the PR pathway from the Core Skills stream?',
@@ -152,7 +152,7 @@ const ELIGIBILITY_CARDS = [
   {
     icon: 'dollar',
     title: 'Core Skills Income Threshold (CSIT)',
-    desc: "The nominee's annual earnings must meet or exceed the CSIT ($79,499 from 1 July 2026) and must not be less than the annual market salary rate for that occupation. Figures current at August 2026 — confirm on the Department of Home Affairs website.",
+    desc: "The nominee's annual earnings must meet or exceed the CSIT ($79,423 from 1 July 2026) and must not be less than the annual market salary rate for that occupation. Figures current at October 2026 — confirm on the Department of Home Affairs website.",
   },
   {
     icon: 'user',
@@ -162,12 +162,12 @@ const ELIGIBILITY_CARDS = [
   {
     icon: 'globe',
     title: 'English language',
-    desc: 'Competent English is required (typically IELTS 6 or equivalent in each band, or PTE Academic 50 in each communicative skill). Some exemptions may apply — confirm current requirements with a migration agent.',
+    desc: 'For tests taken from 13 September 2025, you need at least IELTS 5.0 in each component, or the equivalent in another approved test (for PTE Academic: Listening 33, Reading 36, Writing 29, Speaking 24). Some exemptions may apply — confirm current requirements with a migration agent.',
   },
   {
     icon: 'clipboard',
     title: 'Labour Market Testing',
-    desc: 'For most Core Skills nominations, the employer must have conducted LMT — advertising the role on Workforce Australia and at least one other national platform for a minimum of 28 days within the four months before nomination lodgement.',
+    desc: 'For most Core Skills nominations, the employer must have conducted LMT — at least 2 advertisements on national recruitment platforms for at least 4 weeks within the 4 months before nomination lodgement.',
   },
 ]
 
@@ -202,7 +202,7 @@ return (
         eyebrowSub="Core Skills Stream · Employer Sponsored"
         title={<>482 Core Skills Stream<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Skills in Demand Visa</em></>}
         deck="The Core Skills stream of the subclass 482 Skills in Demand visa allows Australian employers to sponsor skilled workers in occupations listed on the Core Skills Occupation List (CSOL). It is the most widely used employer-sponsored temporary visa pathway."
-        shortAnswer={<>The Core Skills stream requires that the nominated occupation appears on the Core Skills Occupation List (CSOL), that the nominee's annual earnings will meet or exceed the Core Skills Income Threshold (CSIT) of <strong style={{ color: NAVY }}>$79,499 per annum from 1 July 2026</strong> (and the annual market salary rate), that the nominee has at least one year of relevant work experience in the past five years, and that the sponsoring employer holds Standard Business Sponsorship and has completed Labour Market Testing. The visa is granted for up to four years. After two years in the Core Skills stream, holders are generally eligible to apply for the subclass 186 ENS for permanent residence. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your occupation and salary meet the current CSIT before your employer lodges a nomination.</>}
+        shortAnswer={<>The Core Skills stream requires that the nominated occupation appears on the Core Skills Occupation List (CSOL), that the nominee's annual earnings will meet or exceed the Core Skills Income Threshold (CSIT) of <strong style={{ color: NAVY }}>$79,423 per annum from 1 July 2026</strong> (and the annual market salary rate), that the nominee has at least one year of relevant work experience in the past five years, and that the sponsoring employer holds Standard Business Sponsorship and has completed Labour Market Testing. The visa is granted for up to four years. After two years in the Core Skills stream, holders are generally eligible to apply for the subclass 186 ENS for permanent residence. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your occupation and salary meet the current CSIT before your employer lodges a nomination.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -303,7 +303,7 @@ return (
               { label: 'Nomination application charge', value: '$330 per nominee' },
               { label: 'SAF Levy — small business (turnover < $10M)', value: '$1,200 per year × visa period (e.g. 4 years = $4,800 upfront)' },
               { label: 'SAF Levy — standard business (turnover ≥ $10M)', value: '$1,800 per year × visa period (e.g. 4 years = $7,200 upfront)' },
-              { label: 'Visa Application Charge — base (primary applicant)', value: '$3,115 approximate — check current VAC on DoHA website' },
+              { label: 'Visa Application Charge — base (primary applicant)', value: '$4,015 approximate — check current VAC on DoHA website' },
               { label: 'Secondary applicant VAC', value: 'Varies by age — check DoHA website' },
             ].map((row, i) => (
               <div
@@ -316,7 +316,7 @@ return (
             ))}
             <div style={{ padding: '20px 28px', background: '#fff8ed', borderTop: `2px solid ${GOLD}40` }}>
               <p style={{ margin: '0 0 8px', fontSize: 13, color: '#92400e', lineHeight: 1.6 }}>
-                Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+                Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
               </p>
               <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.6 }}>
                 <strong>Professional fees:</strong> Nanak Migration Group provides a fixed-fee quote after assessing each matter. Contact us to discuss.

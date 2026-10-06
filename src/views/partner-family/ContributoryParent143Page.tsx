@@ -30,7 +30,7 @@ const FACTS: KeyFact[] = [
     icon: 'dollar',
     value: '~AUD 95,000',
     label: 'Total government charges for a couple',
-    note: 'First instalment (~$5,040 per applicant) at lodgement; second instalment (~$43,600 per adult) before grant. Figures current at August 2026 — confirm on DoHA.',
+    note: 'First instalment (~$5,040 per applicant) at lodgement; second instalment (~$43,600 per adult) before grant. Figures current at October 2026 — confirm on DoHA.',
   },
   {
     icon: 'calendar',
@@ -83,7 +83,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: "Can I include my other parent (the other applicant's spouse) in the same application?",
-    answer: "Yes. If both parents are applying, both can be included in the same application as primary and secondary applicants. Each adult applicant pays both the first and second instalment of charges — approximately $5,040 each at lodgement and approximately $43,600 each before grant, meaning a couple pays roughly $97,280 in total government charges. These figures are current at August 2026 — confirm on DoHA.",
+    answer: "Yes. If both parents are applying, both can be included in the same application as primary and secondary applicants. Each adult applicant pays both the first and second instalment of charges — approximately $5,040 each at lodgement and approximately $43,600 each before grant, meaning a couple pays roughly $97,280 in total government charges. These figures are current at October 2026 — confirm on DoHA.",
   },
   {
     question: "What if my parent is refused — can the charges be refunded?",
@@ -167,7 +167,7 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
         deck="The subclass 143 Contributory Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. It is the most common permanent parent pathway — but applicants must be prepared for significant government charges and a processing queue currently estimated at 12–15 years for new applications."
         shortAnswer={<>The subclass 143 Contributory Parent visa grants <strong style={{ color: NAVY }}>permanent residence</strong> to parents whose child is a settled Australian citizen, permanent resident, or eligible New Zealand citizen — provided the parent can pass the <strong style={{ color: NAVY }}>Balance of Family test</strong> and the sponsoring child can provide an Assurance of Support. Government charges are approximately <strong style={{ color: NAVY }}>AUD 5,040 at lodgement</strong> (first instalment) and approximately <strong style={{ color: NAVY }}>AUD 43,600 per adult applicant</strong> (second instalment, payable before grant) — meaning a couple faces roughly <strong style={{ color: NAVY }}>AUD 95,000 in total government charges</strong>. Current processing times for new applications are approximately 12–15 years. Nanak Migration Group (MARN 2619467) can assess your eligibility before you commit to the charges.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Back to Parent Visas', page: 'parent-visas' }}
         accent={ACCENT}
@@ -245,7 +245,7 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
           </div>
 
           <Callout variant="warning" panel={true} title="The processing queue — an honest assessment">
-            The subclass 143 is a popular visa with a long processing queue. The Department of Home Affairs processes applications in queue order (generally by application date). Families who lodge today should plan for a wait of approximately 12–15 years before the visa is granted. During this time, the parent can visit Australia on visitor visas or apply for the subclass 870 Sponsored Parent (Temporary) visa, or use the subclass 173 staged route to live in Australia while the permanent queue processes. Figures current at August 2026 — confirm on DoHA.
+            The subclass 143 is a popular visa with a long processing queue. The Department of Home Affairs processes applications in queue order (generally by application date). Families who lodge today should plan for a wait of approximately 12–15 years before the visa is granted. During this time, the parent can visit Australia on visitor visas or apply for the subclass 870 Sponsored Parent (Temporary) visa, or use the subclass 173 staged route to live in Australia while the permanent queue processes. Figures current at October 2026 — confirm on DoHA.
           </Callout>
         </div>
       </section>
@@ -350,12 +350,12 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
           {/* Bold total callout */}
           <div style={{ padding: '20px 24px', background: `${ACCENT}08`, border: `1.5px solid ${ACCENT}30`, borderRadius: 12, marginBottom: 24 }}>
             <p style={{ fontSize: 15, fontWeight: 700, color: NAVY, lineHeight: 1.65, margin: 0 }}>
-              A couple applying together faces total government charges of approximately AUD 97,280 (AUD 10,080 first instalment + AUD 87,200 second instalment). These figures are current at August 2026 and are subject to annual indexation.
+              A couple applying together faces total government charges of about AUD95,625 (AUD6,300 plus AUD2,125 first instalment, and AUD87,200 second instalment). These figures are current at October 2026 and are subject to annual indexation.
             </p>
           </div>
 
           <Callout variant="warning" panel={true} title="Charges are indexed annually and non-refundable">
-            Government visa charges are indexed in July each year. The amounts above are current at August 2026 — confirm on the Department of Home Affairs website before lodging. Visa application charges are generally non-refundable even if the application is refused. Nanak Migration Group (MARN 2619467) will confirm current charges before you commit.
+            Government visa charges are indexed in July each year. The amounts above are current at October 2026 — confirm on the Department of Home Affairs website before lodging. Visa application charges are generally non-refundable even if the application is refused. Nanak Migration Group (MARN 2619467) will confirm current charges before you commit.
           </Callout>
         </div>
       </section>
@@ -405,7 +405,7 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
                   {[
                     'Parent can live in Australia while waiting rather than offshore',
                     'First instalment is lower than direct 143 path',
-                    '173 temporary visa gives limited work rights',
+                    '173 holders can work and study in Australia',
                   ].map((pro, i) => (
                     <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <div style={{ width: 18, height: 18, borderRadius: '50%', background: '#dcfce7', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
@@ -467,7 +467,7 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

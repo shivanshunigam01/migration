@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
 const ACCENT = CAT_PARTNER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -43,7 +43,7 @@ const FACTS: KeyFact[] = [
   {
     icon: 'heart',
     value: 'Parent on 309 or 820',
-    label: 'Parent must hold or have applied for a temporary partner visa',
+    label: 'Parent must hold a temporary partner visa (309 or 820)',
     note: 'The 445 is designed specifically for children of a parent who holds or has applied for a temporary partner visa — subclass 309 (offshore) or 820 (onshore). The child then follows the parent through to the permanent stage.',
   },
   {
@@ -126,7 +126,7 @@ return (
         eyebrow="Partner & Family"
         eyebrowSub="Child Visas · Subclass 445"
         title={<>Dependent Child Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 445 — Joining a parent on a temporary partner visa</em></>}
-        deck="The subclass 445 allows a dependent child to join a parent who holds or is applying for a temporary partner visa (subclass 309 or 820) in Australia. It is a temporary visa — the child must then be included in the parent's permanent partner visa application to obtain permanent residence."
+        deck="The subclass 445 allows a dependent child to join a parent who holds a temporary partner visa (subclass 309 or 820) in Australia. It is a temporary visa — the child must then be included in the parent's permanent partner visa application to obtain permanent residence."
         shortAnswer={<>The <strong style={{ color: NAVY }}>subclass 445 Dependent Child visa</strong> is for a child whose parent holds a <strong style={{ color: NAVY }}>temporary partner visa — subclass 309 (offshore) or 820 (onshore)</strong>. It lets the child join the parent in Australia while the couple's relationship is assessed and the permanent partner visa stage (100 or 801) is pending. The 445 is <strong style={{ color: NAVY }}>temporary</strong> — it does not lead to permanent residence on its own. The child must be <strong style={{ color: NAVY }}>included in the parent's permanent partner visa application</strong> to obtain permanent residence. The sponsor is the Australian citizen or PR who is the parent's partner. Nanak Migration Group (MARN 2619467) can advise on the 445 and how to coordinate it with the permanent stage. No outcome guarantees.</>}
         maraBadge={true}
         currentAsAt={CURRENT_AS_AT}

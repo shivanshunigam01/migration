@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_SKILLED
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -31,7 +31,7 @@ const TOC = [
 ]
 
 const KEY_FACTS: KeyFact[] = [
-  { icon: 'calendar', value: 'Monthly', label: 'Invitation rounds are held at least monthly', note: 'The Department is required to hold at least one round per month, but additional rounds may be held. Not every occupation receives invitations in every round.' },
+  { icon: 'calendar', value: 'Monthly', label: 'Invitation rounds are held at least monthly', note: 'Home Affairs runs rounds periodically during the program year. The timing is not fixed or published in advance. Not every occupation receives invitations in every round.' },
   { icon: 'hash', value: 'Points-ranked', label: 'Highest points invited first; ties broken by EOI date', note: 'When two EOIs have the same points score, the one submitted earlier is ranked higher. Keeping your EOI current and accurate is important.' },
   { icon: 'layers', value: '189 + 491 family', label: 'SkillSelect rounds cover 189 and family-sponsored 491 only', note: 'State and territory-nominated 190 and state-nominated 491 invitations are issued by each state/territory on their own schedule — not through these rounds.' },
   { icon: 'shield', value: 'No guarantee', label: 'A high points score does not guarantee an invitation', note: 'Invitation numbers are set by the Department based on planning levels. Even a very high score may not receive an invitation if the occupation cap is reached.' },
@@ -40,7 +40,7 @@ const KEY_FACTS: KeyFact[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'How often are invitation rounds held?',
-    answer: 'The Department is required to hold at least one invitation round per month for each relevant visa subclass. In practice, additional rounds are often held. The schedule is not published in advance — rounds are announced after they have been conducted, when the results are published on the DoHA website.',
+    answer: 'Home Affairs runs rounds periodically and is not required to hold one each month. In 2025-26 there were three 189 rounds (August 2025, November 2025 and June 2026). In practice, additional rounds are often held. The schedule is not published in advance — rounds are announced after they have been conducted, when the results are published on the DoHA website.',
   },
   {
     question: 'What happens to my EOI if I am not invited in a round?',
@@ -227,7 +227,7 @@ return (
         eyebrowSub="SkillSelect · Support Guide"
         title={<>SkillSelect<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Invitation Rounds</em></>}
         deck="SkillSelect invitation rounds determine who receives an invitation to apply for a points-tested skilled visa. Understanding how rounds work — and why cutoffs shift — is essential for anyone building their points and waiting for an invitation."
-        shortAnswer={<>The Department of Home Affairs conducts invitation rounds at least monthly through SkillSelect, inviting the highest-scoring Expressions of Interest (EOIs) to apply for the subclass 189 (Skilled Independent) and the family-sponsored stream of the subclass 491 (Skilled Work Regional). Rounds are NOT used for the state/territory-nominated subclass 190 or state-nominated 491 — those are managed by each state and territory on their own schedule. Each round invites a fixed number of applicants from the EOI pool, selecting by points score (highest first), then by date of EOI submission (older EOIs ranked higher when points are tied). The number of invitations per round, the points cutoff, and which occupations are invited can all vary significantly between rounds. There is no guarantee of an invitation regardless of points score. Nanak Migration Group (MARN 2619467) cannot guarantee an invitation will be issued and recommends checking the DoHA website for current round results.</>}
+        shortAnswer={<>The Department of Home Affairs conducts invitation rounds periodically through SkillSelect, inviting the highest-scoring Expressions of Interest (EOIs) to apply for the subclass 189 (Skilled Independent) and the family-sponsored stream of the subclass 491 (Skilled Work Regional). Rounds are NOT used for the state/territory-nominated subclass 190 or state-nominated 491 — those are managed by each state and territory on their own schedule. Each round invites a fixed number of applicants from the EOI pool, selecting by points score (highest first), then by date of effect - the date and time the EOI reached its points score (earlier date of effect ranks higher when points are tied). The number of invitations per round, the points cutoff, and which occupations are invited can all vary significantly between rounds. There is no guarantee of an invitation regardless of points score. Nanak Migration Group (MARN 2619467) cannot guarantee an invitation will be issued and recommends checking the DoHA website for current round results.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -266,7 +266,7 @@ return (
             SkillSelect is the Department of Home Affairs online system that manages Expressions of Interest (EOIs) for Australia's points-tested skilled migration program. When you submit an EOI, you are not applying for a visa — you are entering a ranked pool of candidates. The Department draws from this pool in regular invitation rounds to issue invitations to apply.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 20, marginBottom: 0 }}>
-            The Migration Act 1958 requires the Minister to hold at least one invitation round per month for each relevant visa subclass. In practice, multiple rounds are often held in a month, and different occupations may be drawn in different rounds.
+            Home Affairs runs invitation rounds periodically during the program year - there is no legal requirement to hold a monthly round. In 2025-26 rounds were held on 21 August 2025, 13 November 2025 and 4 June 2026, and the next 189 round is expected by 31 October 2026. In practice, multiple rounds are often held in a month, and different occupations may be drawn in different rounds.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 20, marginBottom: 0 }}>
             The system is designed so that migration planning — how many people are invited to apply, and in which occupations — is managed by government policy rather than being demand-driven. This means that even a competitive points score in a well-represented occupation does not guarantee an invitation will ever come, if the occupation's cap is already full.
@@ -330,7 +330,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Round results" title="How to Read Published Round Results" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 24, marginBottom: 32 }}>
-            The Department publishes round results after each invitation round on the DoHA website. The results show, for each visa subclass and occupation (where applicable): the date of the round, the number of invitations issued, the lowest points score invited, and the date of the earliest EOI submitted at that points score.
+            The Department publishes round results after each invitation round on the DoHA website. The results show, for each visa subclass and occupation (where applicable): the date of the round, the number of invitations issued, the lowest points score invited, and the tie-break date (month and year) - EOIs at the lowest invited score with a date of effect on or before that date were invited.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 20 }}>
             {RESULT_COMPONENTS.map((item, i) => (

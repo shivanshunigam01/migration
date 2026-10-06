@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_EMPLOYER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -31,9 +31,9 @@ const TOC = [
 
 const KEY_FACTS: KeyFact[] = [
   { icon: 'layers', value: '7 streams', label: 'Broad activity coverage — one visa, multiple purposes', note: 'The 408 covers entertainment, sport, research, religious work, invited participants, exchange arrangements, and Australian-government-endorsed activities.' },
-  { icon: 'clock', value: 'Up to 2 years', label: 'Maximum stay (varies by stream)', note: 'Stay length depends on the activity stream. Some streams allow up to 2 years; others are limited to the duration of the specific event or engagement.' },
+  { icon: 'clock', value: 'Up to 4 years', label: 'Maximum stay (varies by stream)', note: 'Stay length depends on the stream — from up to 3 months (Invited Participant) to up to 2 years for most streams, and for the duration of the event or up to 4 years in the Australian Government Endorsed Events stream, depending on circumstances.' },
   { icon: 'building', value: 'Sponsor required', label: 'Stays over 3 months generally require an approved sponsor', note: 'Short-term activities (under 3 months) may not require a sponsor. Activities exceeding 3 months, or where the stream requires it, need an approved temporary activities sponsor.' },
-  { icon: 'dollar', value: 'Modest charge', label: 'Application charge — confirm current fee on DoHA', note: 'Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.' },
+  { icon: 'dollar', value: 'Modest charge', label: 'Application charge — confirm current fee on DoHA', note: 'Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.' },
 ]
 
 const STREAMS = [
@@ -71,10 +71,10 @@ const STAY_ROWS = [
   { stream: 'Invited participant', stay: 'Typically up to 3 months (varies by event)' },
   { stream: 'Research activities', stay: 'Up to 2 years' },
   { stream: 'Religious or pastoral work', stay: 'Up to 2 years (typically 12 months initially)' },
-  { stream: 'Entertainment work', stay: 'Duration of the engagement (typically up to 12 months)' },
-  { stream: 'Sport and related', stay: 'Duration of the sporting activity (typically weeks to months)' },
+  { stream: 'Entertainment work', stay: 'Up to 2 years' },
+  { stream: 'Sport and related', stay: 'Up to 2 years' },
   { stream: 'Exchange or reciprocal', stay: 'Duration of the exchange program (up to 2 years)' },
-  { stream: 'Australian-government-endorsed', stay: 'Duration of the approved program (up to 2 years)' },
+  { stream: 'Australian-government-endorsed', stay: 'For the duration of the event, or up to 4 years depending on circumstances' },
 ]
 
 const FAQ: FaqItem[] = [
@@ -132,7 +132,7 @@ return (
         eyebrowSub="Temporary Activity · Subclass 408"
         title={<>Temporary Activity Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 408</em></>}
         deck="The Temporary Activity visa (subclass 408) covers a wide range of short-term activities in Australia — from entertainment and sport to research, religious work, and government-endorsed events. Stay lengths and sponsor requirements vary by activity stream."
-        shortAnswer={<>The subclass 408 Temporary Activity visa is a broad temporary visa covering multiple activity streams. Streams include: invited participant in events or programs, research activities, religious or pastoral work, entertainment work, sport and related activities, exchange or reciprocal arrangements, and Australian-government-endorsed events or activities. Stays over 3 months generally require nomination by an approved temporary activities sponsor. Stay lengths vary by stream from a few months up to 2 years. Visa conditions are tied to the approved activity. Nanak Migration Group (MARN 2619467) can advise on which stream applies to a specific situation. This information is general guidance only and does not constitute advice specific to your circumstances.</>}
+        shortAnswer={<>The subclass 408 Temporary Activity visa is a broad temporary visa covering multiple activity streams. The visa has 10 streams: Australian Government Endorsed Events, Special Program, Religious Work, Research Activities, Invited Participant (other social and cultural activity), Sporting Activities, Entertainment Activities, Superyacht Crew, Exchange Arrangements, and Domestic Work for Executives. Stays over 3 months generally require nomination by an approved temporary activities sponsor. Stay lengths vary by stream from up to 3 months to up to 2 years, or up to 4 years in the Australian Government Endorsed Events stream. Visa conditions are tied to the approved activity. Nanak Migration Group (MARN 2619467) can advise on which stream applies to a specific situation. This information is general guidance only and does not constitute advice specific to your circumstances.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -179,7 +179,7 @@ return (
       {/* Activity Streams */}
       <section id="streams" style={{ background: GREY_BG, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <SectionHeading kicker="Activity categories" title="The Seven Main Activity Streams" accent={ACCENT} />
+          <SectionHeading kicker="Activity categories" title="The 408 Activity Streams (add short entries for Special Program - up to 12 months, e.g. youth exchange, cultural enrichment, school language assistants, gap year volunteering; Superyacht Crew - up to 12 months; and Domestic Work for Executives - up to 2 years). Also change the '7 streams' key-fact card to '10 streams'." accent={ACCENT} />
           <div style={{ marginTop: 40 }}>
             {STREAMS.map((stream, i) => (
               <div
@@ -299,7 +299,7 @@ return (
           <SectionHeading kicker="Application charge" title="Visa Application Charge" accent={ACCENT} />
           <div style={{ marginTop: 32 }}>
             <Callout variant="note" panel={true} title="Confirm current fees on the Department of Home Affairs website">
-              Visa application charges are set by the Department of Home Affairs and are updated periodically. The information below is current at August 2026 and should be confirmed before lodging.
+              Visa application charges are set by the Department of Home Affairs and are updated periodically. The information below is current at October 2026 and should be confirmed before lodging.
             </Callout>
           </div>
           <p style={{ fontSize: 15, lineHeight: 1.75, color: '#374151', marginTop: 24 }}>

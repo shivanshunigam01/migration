@@ -44,7 +44,7 @@ const FACTS: KeyFact[] = [
     icon: 'alert',
     value: 'PIC 4020 risk',
     label: 'A section 57 letter often signals potential PIC 4020 findings or cancellation action',
-    note: 'The most serious section 57 letters relate to documents or information the Department considers false or misleading — often raising PIC 4020 concerns. A positive PIC 4020 finding can result in refusal and a 10-year exclusion period.',
+    note: 'The most serious section 57 letters relate to documents or information the Department considers false or misleading — often raising PIC 4020 concerns. A PIC 4020 finding can result in refusal and a 3-year bar on many visas (10 years where identity is not established).',
   },
   {
     icon: 'shield',
@@ -61,7 +61,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What information counts as 'adverse information' for section 57 purposes?",
-    answer: "The Migration Act and Regulations define adverse information as information that: (a) the decision-maker considers would be the reason, or a part of the reason, for refusing the application; (b) is credible, relevant, and significant in the context of the application. Adverse information commonly includes: discrepancies between information in the current application and information in a previous application or visa grant; results of document verification (DVR) that cast doubt on the authenticity of a document; allegations or tip-offs received about the applicant; data-matching results that conflict with claims made; and inconsistencies between the applicant's interview answers and other information on file. Not all concerning information is adverse information — only information that meets the credible, relevant and significant threshold.",
+    answer: "Section 57 of the Migration Act deals with 'relevant information', which is information (other than non-disclosable information) that the Department considers would be the reason, or part of the reason, for refusing the visa, that is specifically about the applicant or another person, and that was not given by the applicant for the purpose of the application. In practice this commonly includes: (a) the decision-maker considers would be the reason, or a part of the reason, for refusing the application; (b) is credible, relevant, and significant in the context of the application. Adverse information commonly includes: discrepancies between information in the current application and information in a previous application or visa grant; results of document verification (DVR) that cast doubt on the authenticity of a document; allegations or tip-offs received about the applicant; data-matching results that conflict with claims made; and inconsistencies between the applicant's interview answers and other information on file. Not all concerning information is adverse information — only information that meets the credible, relevant and significant threshold.",
   },
   {
     question: "Can I ask for more time to respond to a section 57 letter?",
@@ -73,7 +73,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "If the Department found a document I submitted is not genuine, what are my options?",
-    answer: "If a document verification result (DVR) indicates a document you submitted is not genuine, the section 57 letter will typically invite you to respond. Your response must specifically address the DVR. Options may include: providing further evidence about how you obtained the document and its authenticity; providing an alternative document that achieves the same purpose if the original cannot be verified; or explaining circumstances that may account for the DVR result. If the document is not genuine, you must not maintain a false claim — deliberately maintaining a false claim can result in a finding under PIC 4020 that carries a 10-year exclusion. This is a situation where registered migration agent advice is urgently required.",
+    answer: "If a document verification result (DVR) indicates a document you submitted is not genuine, the section 57 letter will typically invite you to respond. Your response must specifically address the DVR. Options may include: providing further evidence about how you obtained the document and its authenticity; providing an alternative document that achieves the same purpose if the original cannot be verified; or explaining circumstances that may account for the DVR result. If the document is not genuine, you must not maintain a false claim — deliberately maintaining a false claim can result in a refusal under PIC 4020, which generally prevents the grant of many visas for 3 years (10 years where the refusal is because your identity could not be established). This is a situation where registered migration agent advice is urgently required.",
   },
   {
     question: "Can the ART review a section 57 natural justice finding?",
@@ -121,7 +121,7 @@ return (
         deck="A section 57 natural justice letter means the Department has found adverse information about your application and must give you the opportunity to respond before refusing. Acting immediately — with a thorough, evidence-based response — is critical."
         shortAnswer={<><strong style={{ color: NAVY }}>Section 57</strong> of the Migration Act requires the Department to put adverse information to an applicant before relying on it in a refusal — this is the procedural fairness obligation. Adverse information includes <strong style={{ color: NAVY }}>document verification failures, inconsistent claims, data-matching discrepancies, and tip-offs</strong>. The response deadline is strict — typically <strong style={{ color: NAVY }}>28 days</strong> — and missing it can mean the Department proceeds to refuse without considering your explanation. A section 57 letter commonly signals a <strong style={{ color: NAVY }}>PIC 4020 (misrepresentation)</strong> or cancellation risk. Respond to every item of adverse information with specific evidence. Nanak Migration Group (MARN 2619467) can help you prepare a comprehensive response.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request urgent advice', page: 'home' }}
         secondaryCta={{ label: 'PIC 4020 explained →', page: 'pic-4020' }}
         accent={ACCENT}
@@ -217,7 +217,7 @@ return (
               </p>
               <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 20 }}>
                 {[
-                  { label: 'When does the clock start?', body: "The period runs from the date the applicant is taken to have received the letter. Regulations prescribe how receipt is counted — typically 3 days for domestic post, or the date of receipt if by email or in person. Check the date carefully." },
+                  { label: 'When does the clock start?', body: "The period runs from the date the applicant is taken to have received the letter. Regulations prescribe how receipt is counted — 7 working days after the date of the letter if posted within Australia, the end of the day it was sent if by email or ImmiAccount, or when handed to you if given in person. Check the date carefully." },
                   { label: "What if I haven't received the letter?", body: "If you have a migration agent on record, the letter will be sent to the agent. If you are unrepresented, ensure the Department has your current contact details. Failure to receive a letter because contact details are out of date does not excuse missing the deadline." },
                   { label: 'Can the Department proceed without waiting?', body: "If the deadline expires without a response, the Department is entitled to proceed to determine the application. In most cases this means a refusal. The Department is not required to follow up or remind the applicant." },
                 ].map(item => (
@@ -282,7 +282,7 @@ return (
               {
                 num: '05',
                 title: 'Do not maintain a false claim',
-                body: "If the adverse information relates to something that is in fact true — for example, that a document is not genuine or that a claim was inaccurate — do not attempt to maintain the false position. Persisting with a false claim after a section 57 notice is strong evidence of deliberate misrepresentation and is likely to result in a PIC 4020 finding and a 10-year exclusion. Seek advice on the implications of correcting the record.",
+                body: "If the adverse information relates to something that is in fact true — for example, that a document is not genuine or that a claim was inaccurate — do not attempt to maintain the false position. Persisting with a false claim after a section 57 notice is strong evidence of deliberate misrepresentation and is likely to result in a PIC 4020 refusal and a 3-year bar on many visas. Seek advice on the implications of correcting the record.",
               },
             ].map(step => (
               <div key={step.num} style={{ borderLeft: `4px solid ${ACCENT}`, background: '#fff', padding: '20px 24px', borderRadius: '0 12px 12px 0' }}>
@@ -308,7 +308,7 @@ return (
             {[
               {
                 label: 'PIC 4020 — misrepresentation',
-                body: "If the letter refers to a document the Department believes is not genuine, to information that appears to have been deliberately false, or to identity concerns — it is likely signalling a potential PIC 4020 finding. A PIC 4020 finding can result in refusal and a 10-year exclusion period for the applicant (and can affect associated applicants). This is the highest-risk category of section 57 letter.",
+                body: "If the letter refers to a document the Department believes is not genuine, to information that appears to have been deliberately false, or to identity concerns — it is likely signalling a potential PIC 4020 finding. A PIC 4020 finding can result in refusal and a 3-year bar on many visas for the applicant and members of their family unit (10 years where the refusal is because identity was not established). This is the highest-risk category of section 57 letter.",
                 border: ACCENT,
               },
               {
@@ -404,7 +404,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

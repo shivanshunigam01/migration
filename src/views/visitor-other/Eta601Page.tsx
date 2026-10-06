@@ -173,7 +173,7 @@ export default function Eta601Page({ navigate }: { navigate: (page: string) => v
         deck="The fastest way for eligible passport holders to get entry authority for Australia — applied through the Australian ETA app, typically processed within minutes, allowing multiple 3-month visits over 12 months."
         shortAnswer={<>The Electronic Travel Authority (subclass 601) is a digital entry authority for <strong style={{ color: NAVY }}>eligible passport holders</strong> — including USA, Canada, Japan, South Korea, Singapore, Hong Kong, Brunei, and Malaysia, among others. Applied via the <strong style={{ color: NAVY }}>Australian ETA app</strong> with a small service charge (~AUD 20 — confirm on DoHA). Allows <strong style={{ color: NAVY }}>multiple visits of up to 3 months each</strong> within 12 months from grant. <strong style={{ color: NAVY }}>Tourism and business visitor activities only — no work.</strong> If refused, the subclass 600 Visitor visa is the alternative. Nanak Migration Group (MARN 2619467) can assist if your ETA is refused or if you need a Visitor visa (600) for a longer or more complex visit. Confirm all current details on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor Visas', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -261,7 +261,7 @@ export default function Eta601Page({ navigate }: { navigate: (page: string) => v
           </div>
 
           <Callout variant="note" panel={true} title="Confirm the current eligibility list on the Department of Home Affairs website">
-            The list of ETA-eligible countries is maintained by the Department of Home Affairs and can be updated. Always confirm your passport country is currently eligible before applying. European Union passport holders are generally directed to the eVisitor (651) rather than the ETA.
+            The list of ETA-eligible countries is maintained by the Department of Home Affairs and can be updated. Always confirm your passport country is currently eligible before applying. Many European passports, including several EU countries such as Austria, Belgium, France, Germany, Ireland, Italy, the Netherlands, Spain and Sweden, are eligible for both the ETA and the eVisitor. Check the Home Affairs lists for your passport.
           </Callout>
         </div>
       </section>
@@ -363,7 +363,7 @@ export default function Eta601Page({ navigate }: { navigate: (page: string) => v
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

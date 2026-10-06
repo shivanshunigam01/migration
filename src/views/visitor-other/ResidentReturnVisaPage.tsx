@@ -40,9 +40,9 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '~AUD 500',
-    label: 'Approximate application charge',
-    note: 'Per applicant. Figures current at August 2026 — confirm on DoHA before applying.',
+    value: 'AUD1,475',
+    label: 'Application charge',
+    note: 'Per applicant. Figures current at October 2026 — confirm on DoHA before applying.',
   },
 ]
 
@@ -191,12 +191,12 @@ export default function ResidentReturnVisaPage({ navigate }: { navigate: (page: 
             least 2 of the last 5 years — or a 1-year facility for those who can demonstrate substantial ties to
             Australia of benefit to the country. The subclass 157 grants a 3-month facility for those who have been in
             Australia for at least 1 day in the last 5 years and have compelling reasons for their absence. Application
-            charge is approximately <strong style={{ color: NAVY }}>AUD 500</strong> per applicant. Nanak Migration
+            charge is <strong style={{ color: NAVY }}>AUD1,475</strong> per applicant when applying online. Nanak Migration
             Group (MARN 2619467) can assess your eligibility before you apply.
           </>
         }
         maraBadge
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor & Other', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -571,23 +571,18 @@ export default function ResidentReturnVisaPage({ navigate }: { navigate: (page: 
                 {[
                   {
                     applicant: 'Primary applicant (subclass 155)',
-                    charge: '~AUD 500',
+                    charge: 'AUD1,475',
                     notes: 'Confirm on DoHA before applying',
                   },
                   {
                     applicant: 'Primary applicant (subclass 157)',
-                    charge: '~AUD 500',
+                    charge: 'AUD1,475',
                     notes: 'Same charge — confirm on DoHA',
                   },
                   {
-                    applicant: 'Secondary applicant (adult)',
-                    charge: '~AUD 500',
-                    notes: 'Per additional adult applicant',
-                  },
-                  {
-                    applicant: 'Secondary applicant (child)',
-                    charge: 'Reduced',
-                    notes: 'Confirm on DoHA',
+                    applicant: 'Family members',
+                    charge: 'AUD1,475 each (separate applications)',
+                    notes: 'Family members cannot be included as secondary applicants. Each family member applies separately. Applications lodged at the same time can be processed together if you declare them.',
                   },
                 ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #f0f2f8', background: i % 2 === 0 ? '#fff' : '#f8fafd' }}>
@@ -601,7 +596,7 @@ export default function ResidentReturnVisaPage({ navigate }: { navigate: (page: 
           </div>
 
           <p style={{ fontSize: 12, color: '#9ca3af', lineHeight: 1.6, marginTop: 12 }}>
-            Figures current at August 2026. Government visa charges are indexed annually. Confirm the current charge on
+            Figures current at October 2026. Government visa charges are indexed annually. Confirm the current charge on
             the Department of Home Affairs website or ImmiAccount before lodging.
           </p>
         </div>
@@ -888,7 +883,7 @@ export default function ResidentReturnVisaPage({ navigate }: { navigate: (page: 
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

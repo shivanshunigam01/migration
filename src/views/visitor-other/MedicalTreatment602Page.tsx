@@ -81,7 +81,7 @@ const STEPS: TimelineStep[] = [
   {
     code: '06',
     title: 'Apply for extensions if treatment continues',
-    desc: "If treatment takes longer than the original visa period, an extension may be available. Extensions must be applied for before the current visa expires. A new letter from the treating provider confirming the ongoing treatment need will be required.",
+    desc: "If treatment takes longer than the original visa period, you will need to apply for a new visa before your current visa expires. A new letter from the treating provider confirming the ongoing treatment need will be required.",
   },
 ]
 
@@ -108,7 +108,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What if I need to extend my stay because treatment is taking longer than expected?",
-    answer: "Extensions of the subclass 602 are available where treatment is genuinely ongoing. To apply for an extension, you will need a further letter from your treating provider confirming the ongoing need for treatment and the expected additional duration. The extension application must be lodged before the current visa expires. If the current visa expires before an extension is lodged, the applicant will be unlawful and should seek urgent advice from a registered migration agent.",
+    answer: "The subclass 602 cannot be extended. If treatment is ongoing, you need to lodge a new visa application (for example, a further subclass 602, which costs AUD480 when lodged in Australia) before your current visa ends. To apply for an extension, you will need a further letter from your treating provider confirming the ongoing need for treatment and the expected additional duration. The extension application must be lodged before the current visa expires. If the current visa expires before an extension is lodged, the applicant will be unlawful and should seek urgent advice from a registered migration agent.",
   },
 ]
 
@@ -177,7 +177,7 @@ export default function MedicalTreatment602Page({ navigate }: { navigate: (page:
         deck="A temporary visa for people travelling to Australia for medical treatment or consultations, organ donation, or to support a patient who cannot travel alone — and for people who cannot depart Australia for medical reasons."
         shortAnswer={<>The subclass 602 Medical Treatment visa is for <strong style={{ color: NAVY }}>patients seeking treatment in Australia</strong>, supporting carers, and organ donors. Applicants must have <strong style={{ color: NAVY }}>confirmed arrangements with an Australian medical provider</strong> and demonstrate the ability to pay for treatment and living costs. Duration is determined by the length of treatment — extensions are available if needed. <strong style={{ color: NAVY }}>No work rights</strong> are generally granted. Medicare access depends on reciprocal health arrangements between Australia and the applicant's country. <strong style={{ color: NAVY }}>Cannot be used for surrogacy-related arrangements.</strong> Nanak Migration Group (MARN 2619467) can assist with complex applications. Confirm all current requirements on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor & Other', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -328,7 +328,7 @@ export default function MedicalTreatment602Page({ navigate }: { navigate: (page:
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

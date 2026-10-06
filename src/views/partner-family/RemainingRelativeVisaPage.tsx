@@ -89,7 +89,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: "Exactly who counts as a 'near relative' for the Remaining Relative visa?",
-    answer: "For the Remaining Relative visa, 'near relatives' are: (1) the applicant's parents (including step-parents and adoptive parents), and (2) the applicant's siblings (including step-siblings and adoptive siblings). Half-siblings also count. The applicant's own children, spouse, or extended family (aunts, uncles, cousins) are not near relatives for this purpose. ALL living near relatives must be settled in Australia as Australian citizens, permanent residents, or eligible New Zealand citizens. Confirm the precise legal definition with your migration agent, as the specific statutory definition must be applied to your family's situation.",
+    answer: "For the Remaining Relative visa, 'near relatives' are: (1) the applicant's parents (including step-parents and adoptive parents), and (2) the applicant's siblings (including step-siblings and adoptive siblings). Half-siblings also count. Near relatives also include adult children who are not dependent on you, and the parents, siblings, step-siblings and non-dependent adult children of your spouse or de facto partner. Aunts, uncles and cousins are not near relatives. ALL living near relatives must be settled in Australia as Australian citizens, permanent residents, or eligible New Zealand citizens. Confirm the precise legal definition with your migration agent, as the specific statutory definition must be applied to your family's situation.",
   },
   {
     question: "What if I have one sibling overseas — does that immediately disqualify me?",
@@ -171,7 +171,7 @@ export default function RemainingRelativeVisaPage({ navigate }: { navigate: (pag
         deck="The Remaining Relative visa is for people whose only near relatives — parents and siblings — are all settled in Australia as citizens or permanent residents. Eligibility is strict: a single living overseas sibling or parent breaks qualification. The visa is capped and queued — new applications realistically face a multi-decade processing wait."
         shortAnswer={<>The Remaining Relative visa (subclass 115 offshore, 835 onshore) grants <strong style={{ color: NAVY }}>permanent residence</strong> to a person whose <strong style={{ color: NAVY }}>only living near relatives</strong> (parents and siblings, including step and adoptive) are all settled in Australia as citizens or permanent residents. The test is strict — <strong style={{ color: NAVY }}>even one overseas sibling or living parent breaks eligibility</strong>. The visa is capped and queued, and new applications realistically face a <strong style={{ color: NAVY }}>multi-decade processing wait</strong>. An Assurance of Support is required before the visa is granted. Families who do not qualify for the Remaining Relative visa should explore alternative pathways. Nanak Migration Group (MARN 2619467) can assess eligibility and discuss realistic alternatives. Confirm all current figures on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Partner & Family', page: 'partner-family-visas' }}
         accent={ACCENT}
@@ -253,7 +253,7 @@ export default function RemainingRelativeVisaPage({ navigate }: { navigate: (pag
           <div style={{ border: `1.5px solid ${ACCENT}30`, background: `${ACCENT}06`, borderRadius: 14, padding: 28, marginBottom: 24 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: ACCENT, marginBottom: 12 }}>Definition</div>
             <p style={{ fontSize: 15, color: NAVY, lineHeight: 1.75, margin: '0 0 16px', fontWeight: 600 }}>
-              "Near relatives" means: the applicant's parents (including step-parents and adoptive parents) and the applicant's siblings (including step-siblings, adoptive siblings, and half-siblings).
+              "Near relatives" means: the parents, brothers, sisters, step-brothers and step-sisters of the applicant or of the applicant's spouse or de facto partner, and any children or step-children of either of them who are 18 or over and not dependent (and certain children under 18).
             </p>
             <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
               ALL living near relatives of the applicant must be settled in Australia as Australian citizens, Australian permanent residents, or eligible New Zealand citizens. If even one living near relative is outside Australia — or is not a citizen or permanent resident — the applicant does not pass the test.
@@ -320,7 +320,7 @@ export default function RemainingRelativeVisaPage({ navigate }: { navigate: (pag
               {
                 num: '2',
                 title: 'Australian sponsor',
-                body: "The applicant must have an Australian citizen, permanent resident, or eligible New Zealand citizen relative settled in Australia who is willing to act as sponsor. The sponsor lodges a sponsorship form with the Department of Home Affairs.",
+                body: "The applicant must be sponsored by a parent or step-parent, brother, sister, step-brother or step-sister (or that relative's eligible partner) who is an Australian citizen, permanent resident or eligible New Zealand citizen usually resident in Australia. The sponsor lodges a sponsorship form with the Department of Home Affairs.",
               },
               {
                 num: '3',
@@ -438,7 +438,7 @@ export default function RemainingRelativeVisaPage({ navigate }: { navigate: (pag
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

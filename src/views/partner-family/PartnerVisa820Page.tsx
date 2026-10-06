@@ -184,10 +184,10 @@ const STATS: KeyFact[] = [
 const FLOW_STAGES: TimelineStep[] = [
   { code: 'LODGE', title: '820 Lodgement',   color: '#6b7280', duration: 'Day 0',          desc: 'Lodge Form 47SP + 40SP via ImmiAccount. Pay one government fee. Must be onshore. Bridging Visa A activates automatically. Two-year clock starts.' },
   { code: 'BVA',   title: 'Bridging Visa A', color: '#2563eb', duration: 'While pending',   desc: "Grants lawful stay in Australia while the 820 is assessed. Work rights preserved. Apply for a BVB before any overseas travel — BVA alone won't allow re-entry." },
-  { code: '820',   title: '820 Grant',       color: '#4f46e5', duration: '20–36+ months',   desc: 'Temporary Partner visa granted. Must be in Australia at the time of grant. Full work rights, Medicare access, unlimited travel (with BVB).' },
+  { code: '820',   title: '820 Grant',       color: '#4f46e5', duration: '20–36+ months',   desc: 'Temporary Partner visa granted. You can be in or outside Australia when it is granted. Full work rights, Medicare access, unlimited travel (with BVB).' },
   { code: '2YR',   title: '2-Year Mark',     color: AMBER,     duration: 'From lodgement',  desc: 'Two years from lodgement date — not from 820 grant. DHA may now assess the 801 stage and will request updated evidence of the ongoing relationship.' },
   { code: '801',   title: '801 Assessment',  color: '#0e7490', duration: 'Automatic',        desc: 'DHA reassesses the relationship. Updated evidence required. Exceptions for family violence or children apply if relationship ended.' },
-  { code: 'PR',    title: '801 Grant',       color: '#0d1632', duration: 'Permanent',        desc: 'Permanent Partner visa granted. Right to live, work and study in Australia indefinitely. Pathway to citizenship after 4 years as a PR.' },
+  { code: 'PR',    title: '801 Grant',       color: '#0d1632', duration: 'Permanent',        desc: 'Permanent Partner visa granted. Right to live, work and study in Australia indefinitely. Pathway to citizenship once you meet the residence requirement - generally 4 years living in Australia on a valid visa, including the last 12 months as a permanent resident.' },
 ]
 
 const COMPARE_COLS = [
@@ -196,8 +196,8 @@ const COMPARE_COLS = [
 ]
 
 const COMPARE_ROWS: ComparisonRow[] = [
-  { feature: 'Where at lodgement',         v820: 'Must be in Australia (onshore)',                   v309: 'Must be outside Australia (offshore)' },
-  { feature: 'Where at first-stage grant', v820: 'Can be anywhere',                                   v309: 'Must be outside Australia' },
+  { feature: 'Where at lodgement',         v820: 'Must be in Australia (onshore)',                   v309: 'Can be in or outside Australia (offshore)' },
+  { feature: 'Where at first-stage grant', v820: 'Can be anywhere',                                   v309: 'Can be in or outside Australia' },
   { feature: 'First stage visa',           v820: 'Subclass 820 — Temporary Partner',                  v309: 'Subclass 309 — Temporary Partner' },
   { feature: 'Permanent stage',            v820: 'Subclass 801',                                       v309: 'Subclass 100' },
   { feature: '2-year clock starts',        v820: 'Date of lodgement',                                  v309: 'Date of lodgement' },
@@ -205,7 +205,7 @@ const COMPARE_ROWS: ComparisonRow[] = [
   { feature: 'Work rights',                v820: 'Full — any job, any hours',                          v309: 'Full — any job, any hours' },
   { feature: 'Medicare',                   v820: 'Yes — from grant of 820',                            v309: 'Yes (where reciprocal agreement exists)' },
   { feature: 'Bridging visa on lodgement', v820: 'Yes — Bridging Visa A activates automatically',      v309: 'N/A (applicant is offshore)' },
-  { feature: 'Govt fee (2025–26)',          v820: 'AUD $9,095 primary applicant*',                     v309: 'AUD $9,095 primary applicant*' },
+  { feature: 'Govt fee (2025–26)',          v820: 'Govt fee (2026-27): AUD11,710 primary applicant* (both columns)',                     v309: 'Govt fee (2026-27): AUD11,710 primary applicant* (both columns)' },
   { feature: 'Current processing',         v820: '20–36+ months (75th percentile)',                    v309: '18–36+ months (75th percentile)' },
 ]
 
@@ -315,7 +315,7 @@ export default function PartnerVisa820Page({ navigate }: { navigate: (page: stri
             </div>
             <div>
               <div style={{ fontSize: 15, fontWeight: 700, color: NAVY, marginBottom: 4 }}>Must be onshore at both lodgement and the 820 grant</div>
-              <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>Unlike the 309/100 offshore route, the 820 requires you to be in Australia at lodgement. You must also be in Australia when the 820 is granted. If you depart Australia during the processing period without a Bridging Visa B (BVB) and your 820 is granted while you are offshore, you will not meet the grant location requirement.</div>
+              <div style={{ fontSize: 14, color: '#4b5563', lineHeight: 1.7 }}>Unlike the 309/100 offshore route, the 820 requires you to be in Australia at lodgement. Home Affairs can decide the 820 while you are in or outside Australia. If you need to travel while on a Bridging Visa A, apply for a Bridging Visa B before you leave so you can return.</div>
             </div>
           </div>
         </div>

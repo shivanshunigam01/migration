@@ -64,7 +64,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What is the difference between protected and non-protected SCV holders?",
-    answer: "A 'protected' Special Category visa holder is a New Zealand citizen who was in Australia as a holder of a Special Category visa on 26 February 2001, or was outside Australia on that date having held a SCV at some point before that date and returned to Australia after. Protected SCV holders have broader access to social security and welfare payments — broadly equivalent to permanent residents. Non-protected SCV holders have more limited access. Most NZ citizens who arrived in Australia after 2001 are non-protected SCV holders. The distinction affects welfare access but not work rights or Medicare.",
+    answer: "A 'protected' Special Category visa holder is a New Zealand citizen who was in Australia as a holder of a Special Category visa on 26 February 2001, or was not in Australia on that date but had been in Australia for at least 365 days between 26 February 1999 and 25 February 2001 and returned after 26 February 2001 (or is otherwise a protected SCV holder under section 7 of the Social Security Act 1991). Protected SCV holders have broader access to social security and welfare payments — broadly equivalent to permanent residents. Non-protected SCV holders have more limited access. Most NZ citizens who arrived in Australia after 2001 are non-protected SCV holders. The distinction affects welfare access but not work rights or Medicare.",
   },
   {
     question: "Can New Zealand citizens now get Australian citizenship directly?",
@@ -72,7 +72,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What visa do the family members of a New Zealand citizen need?",
-    answer: "New Zealand citizens themselves are granted the subclass 444 automatically on arrival. Family members who are NOT New Zealand citizens need a separate visa. The most common option is the subclass 461 New Zealand Citizen Family Relationship visa — a 5-year temporary visa with full work and study rights, renewable onshore. If the NZ citizen has since become an Australian citizen or permanent resident, family members may be able to apply for a partner visa (820/801 or 309/100) or another appropriate family visa instead.",
+    answer: "New Zealand citizens themselves are granted the subclass 444 automatically on arrival. Family members who are NOT New Zealand citizens need a separate visa. The most common option is the subclass 461 New Zealand Citizen Family Relationship visa — a 5-year temporary visa with full work and study rights, renewable onshore. If the NZ citizen is an eligible New Zealand citizen (protected SCV holder), or has become an Australian permanent resident or citizen, family members may be able to apply for a partner visa (820/801 or 309/100) or another family visa instead. The 461 is not available to family of an eligible New Zealand citizen.",
   },
   {
     question: "What happens to the subclass 444 if the NZ citizen remains outside Australia for an extended period?",
@@ -145,7 +145,7 @@ export default function SpecialCategory444Page({ navigate }: { navigate: (page: 
         deck="The subclass 444 is granted automatically to New Zealand citizens on arrival in Australia. It allows indefinite stay with full work and study rights while the holder remains in Australia — and since July 2023, most NZ citizens can apply for Australian citizenship directly."
         shortAnswer={<>The subclass 444 Special Category visa is granted <strong style={{ color: NAVY }}>automatically</strong> to New Zealand citizens on arrival in Australia with a valid NZ passport — there is no application process. It provides <strong style={{ color: NAVY }}>full work and study rights</strong> and access to Medicare. The visa is temporary — it ends on departure and is re-granted on each return. <strong style={{ color: NAVY }}>Since 1 July 2023</strong>, most NZ citizens who have been usually resident in Australia for 4 years can apply for Australian citizenship directly. Family members who are not NZ citizens need a separate visa — typically the <strong style={{ color: NAVY }}>subclass 461</strong>. Nanak Migration Group (MARN 2619467) can assist NZ citizens and their families plan for permanent residence or citizenship. Confirm all current details on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor & Other', page: 'visitor-hub' }}
         accent={ACCENT}
@@ -313,7 +313,7 @@ export default function SpecialCategory444Page({ navigate }: { navigate: (page: 
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16, marginBottom: 32 }}>
             {[
               { title: 'Subclass 461 — NZ Citizen Family Relationship visa', body: 'The most common visa for family members of an NZ citizen on a 444 visa. A 5-year temporary visa with full work and study rights, renewable onshore. Does not lead to permanent residence directly. See the NZ Family Relationship (461) page for full details.' },
-              { title: 'Partner visa (820/801) — after NZ citizen becomes Australian', body: "If the NZ citizen obtains Australian citizenship, their partner can apply for the partner visa (820/801) from inside Australia. This leads to permanent residence and is a meaningful pathway change compared to the 461. The partner must be in a genuine relationship with the Australian citizen." },
+              { title: 'Partner visa (820/801) — after NZ citizen becomes Australian', body: "An eligible New Zealand citizen (a protected SCV holder), an Australian permanent resident or an Australian citizen can sponsor a partner for a permanent partner visa. Other SCV holders can sponsor a partner once they become a permanent resident or an Australian citizen. This leads to permanent residence and is a meaningful pathway change compared to the 461. The partner must be in a genuine relationship with the Australian citizen." },
               { title: 'Other family visas', body: "Depending on the family structure, other family visa pathways may also be relevant — parent visas, child visas, or other relative pathways. A registered migration agent can map out the options for the whole family." },
             ].map(item => (
               <div key={item.title} style={{ display: 'flex', gap: 16, background: '#fafbfe', border: `1px solid ${BORDER}`, borderRadius: 12, padding: 24 }}>
@@ -354,7 +354,7 @@ export default function SpecialCategory444Page({ navigate }: { navigate: (page: 
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

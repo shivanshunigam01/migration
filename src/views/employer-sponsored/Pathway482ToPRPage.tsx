@@ -40,7 +40,7 @@ const GREEN   = '#f5a124'
 const ROSE    = '#e11d48'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 /* ─── On-this-page ─── */
 const TOC: NavSection[] = [
@@ -57,7 +57,7 @@ const TOC: NavSection[] = [
 
 /* ─── Key facts ─── */
 const KEY_FACTS: KeyFact[] = [
-  { icon: 'clock',     value: 'Generally 2 years',   label: 'Qualifying employment period',    note: 'With the same employer in the same occupation on a qualifying 482 visa.' },
+  { icon: 'clock',     value: 'Generally 2 years',   label: 'Qualifying employment period',    note: 'Full-time sponsored employment on a 457 or 482 visa, totalling 2 years in the 3 years before you apply.' },
   { icon: 'briefcase', value: 'Same employer',        label: 'Employer continuity required',    note: 'The 186 must be nominated by the same employer who held the 482 sponsorship.' },
   { icon: 'layers',    value: 'Same occupation',      label: 'Occupation continuity required',  note: 'The nominated occupation must generally match the 482 nominated occupation.' },
   { icon: 'user',      value: 'Generally under 45',  label: 'Age at 186 lodgement',            note: 'Limited exemptions exist — seek advice before the 186 application is lodged.' },
@@ -97,7 +97,7 @@ const TIMELINE_STEPS: TimelineStep[] = [
     duration: 'After eligibility is reached',
     color: TEAL,
     points: [
-      'The nominating employer must hold or renew Standard Business Sponsorship approval for subclass 186.',
+      'The nominating employer must be an Australian business that is actively and lawfully operating in Australia. Standard Business Sponsorship is not required for a 186 nomination.',
       'The nomination must be for the same occupation as the 482 (or a closely related occupation — seek advice).',
       'The employer pays the Skilling Australians Fund (SAF) levy applicable to a permanent nomination.',
       'Nomination can be lodged concurrently with the 186 visa application or before it.',
@@ -148,12 +148,12 @@ const COMPARE_ROWS: ComparisonRow[] = [
   },
   {
     feature: 'Work experience',
-    trt: 'At least 2 years full-time with the nominating employer on a qualifying 482 visa',
+    trt: 'At least 2 years full-time sponsored employment on a 457 or 482 visa in the 3 years before applying',
     de:  'At least 3 years full-time equivalent in the nominated occupation (overseas experience may count)',
   },
   {
     feature: 'Employer continuity',
-    trt: 'Must be the same employer who held the 482 sponsorship; changing employer resets the clock',
+    trt: 'Must be nominated by your current (last) sponsor; earlier sponsored employment with other employers in the 3-year window can count',
     de:  'A new employer can nominate; no requirement for prior employment with that employer',
   },
   {
@@ -181,14 +181,14 @@ const STREAMS = [
     color: TEAL,
     eligible: true,
     body: "Holders of a 482 in the Core Skills stream are generally eligible for the TRT pathway once they have completed at least two years of full-time employment with the same employer in the same nominated occupation. The occupation must be on the Core Skills Occupation List (CSOL) at the time of the 186 nomination — it is not sufficient that it was on the list at the time the 482 was granted.",
-    note: 'Verify the occupation remains on the CSOL at the time of the 186 nomination, not only at 482 grant.',
+    note: 'TRT has no occupation list - check that your duties match the occupation on your most recent 482 visa.',
   },
   {
     name: 'Specialist Skills stream',
     code: 'Specialist Skills',
     color: '#4f46e5',
     eligible: true,
-    body: "Workers sponsored under the Specialist Skills stream (high-earning specialists, no occupation list requirement) may be eligible for the TRT pathway, though the specific conditions may differ. The nominated occupation for the 186 must generally be on a relevant list unless covered by a Labour Agreement. Specialist Skills 482 holders considering a 186 TRT pathway should obtain specialist advice, as the interaction between the stream conditions and the 186 eligibility criteria is complex.",
+    body: "Workers sponsored under the Specialist Skills stream (high-earning specialists, no occupation list requirement) may be eligible for the TRT pathway, though the specific conditions may differ. Specialist Skills holders use the same TRT pathway as other 482 holders. The TRT stream has no occupation list - eligibility is based on the occupation on your most recent 482 visa. Specialist Skills 482 holders considering a 186 TRT pathway should obtain specialist advice, as the interaction between the stream conditions and the 186 eligibility criteria is complex.",
     note: 'Specialist Skills 482 holders should obtain targeted advice — stream-specific conditions apply to the TRT pathway.',
   },
   {
@@ -219,7 +219,7 @@ const RISKS = [
     title: 'Gaps in employment',
     icon: 'clock',
     severity: 'medium' as const,
-    body: "The qualifying work period generally requires continuous full-time employment. Extended leave without pay, stand-down periods, or breaks in employment may reduce the qualifying period or not count towards it. Statutory leave — such as annual leave, personal leave, and parental leave — is generally included in the qualifying period, but the specific rules should be confirmed. Gaps should be documented and, if material, discussed with a migration agent before the nomination is lodged.",
+    body: "The qualifying work period is a total of 2 years of full-time sponsored employment within the 3 years before you apply, so it does not need to be continuous. Extended leave without pay, stand-down periods, or breaks in employment may reduce the qualifying period or not count towards it. Statutory leave — such as annual leave, personal leave, and parental leave — is generally included in the qualifying period, but the specific rules should be confirmed. Gaps should be documented and, if material, discussed with a migration agent before the nomination is lodged.",
   },
   {
     title: 'Approaching visa expiry',
@@ -506,7 +506,7 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
         eyebrow="Subclass 482 → Subclass 186"
         eyebrowSub="Employer Sponsored · TRT Stream"
         title={<>482 to PR Pathway<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Temporary to Permanent</em></>}
-        deck="A Skills in Demand (482) visa holder can generally move to permanent residence through the Employer Nomination Scheme (186) Temporary Residence Transition stream after completing at least two years of full-time employment with the same employer in the same nominated occupation."
+        deck="A Skills in Demand (482) visa holder can generally move to permanent residence through the Employer Nomination Scheme (186) Temporary Residence Transition stream after completing at least 2 years of full-time sponsored employment on a 457 or 482 visa in the 3 years before applying, with a nomination from the employer who last sponsored them."
         shortAnswer={<>The TRT stream is generally the <strong style={{ color: NAVY }}>most straightforward permanent residence pathway</strong> for 482 holders: <strong>no separate skills assessment</strong> is required in most cases, and the qualifying period is <strong>two years</strong> rather than the three years of relevant experience required for Direct Entry. However, the pathway depends on the employer remaining a willing and eligible sponsor — changes to employer, occupation, or visa status can disrupt or permanently end TRT eligibility.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
@@ -594,7 +594,7 @@ export default function Pathway482ToPRPage({ navigate }: { navigate: (page: stri
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <Callout variant="note" panel title="Former TSS (482) visa holders">
               <p style={{ margin: '0 0 10px', fontSize: 15, lineHeight: 1.7, color: '#374151' }}>
-                The Skills in Demand (SID) visa replaced the Temporary Skill Shortage (TSS) visa in December 2024. In most cases, former TSS holders continue to be eligible for the TRT pathway under the 186 visa, subject to meeting the two-year qualifying employment period and other standard TRT conditions. TSS holders whose visas were granted in the short-term stream should seek specific advice, as not all short-term stream TSS holders have a TRT pathway to 186 permanent residence.
+                The Skills in Demand (SID) visa replaced the Temporary Skill Shortage (TSS) visa in December 2024. In most cases, former TSS holders continue to be eligible for the TRT pathway under the 186 visa, subject to meeting the two-year qualifying employment period and other standard TRT conditions. Holders of a TSS visa in any stream, including the short-term stream, can use the TRT pathway if they meet the standard TRT requirements.
               </p>
               <p style={{ margin: 0, fontSize: 14, color: '#374151', lineHeight: 1.7 }}>
                 The specific transitional provisions that apply depend on the visa subclass, grant date, and stream. Obtain advice from a registered migration agent for your specific circumstances.

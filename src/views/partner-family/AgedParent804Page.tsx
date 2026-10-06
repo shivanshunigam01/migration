@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_PARTNER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -190,7 +190,7 @@ return (
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: '#fff', borderRadius: '0 8px 8px 0', padding: 20 }}>
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 10px' }}>1. Australian Age Pension age</h3>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                The parent must have reached Australian Age Pension age at the time of application. As at August 2026, the Age Pension age is 67 for both men and women (recently equalised). Confirm the current age requirement on the DoHA website before lodging.
+                The parent must have reached Australian Age Pension age at the time of application. As at October 2026, the Age Pension age is 67 for both men and women (recently equalised). Confirm the current age requirement on the DoHA website before lodging.
               </p>
             </div>
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: '#fff', borderRadius: '0 8px 8px 0', padding: 20 }}>
@@ -284,7 +284,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="The honest reality" title="The Non-Contributory Parent Visa Queue" accent={ACCENT} />
           <Callout variant="danger" panel={true} title="The wait is measured in decades — not years">
-            The Department of Home Affairs publishes current processing times on its website. Non-contributory parent visas (804, 103) face some of the longest queues in the Australian migration system. New applicants as at August 2026 should expect waits measured in decades — the queue is the result of decades of applications accumulating against a small annual planning level allocation. Confirm current processing times on the DoHA website.
+            The Department of Home Affairs publishes current processing times on its website. Non-contributory parent visas (804, 103) face some of the longest queues in the Australian migration system. New applicants as at October 2026 should expect waits measured in decades — the queue is the result of decades of applications accumulating against a small annual planning level allocation. Confirm current processing times on the DoHA website.
           </Callout>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 32, marginBottom: 20 }}>
             Why is the queue so long? The annual planning level for non-contributory parent visas is very small — the number of visas granted each year is far exceeded by the number of applications in the queue. This creates a structural backlog that new applications join at the back of.
@@ -318,7 +318,7 @@ return (
                   { feature: 'Application charge', v804: 'Low (few thousand)', v864: 'Very high (~$43,600+ per adult 2nd instalment — confirm)', v870: 'Moderate per stage' },
                   { feature: 'Wait for permanent', v804: 'Decades', v864: '12–15 years (new applications)', v870: 'N/A (temporary)' },
                   { feature: 'Work rights', v804: 'No', v864: 'No', v870: 'No' },
-                  { feature: 'Medicare', v804: 'No', v864: 'Yes (from grant)', v870: 'No' },
+                  { feature: 'Medicare', v804: 'No', v864: 'Generally no - you must hold adequate health insurance unless you are covered by a Reciprocal Health Care Agreement', v870: 'No' },
                   { feature: 'Balance of Family Test', v804: 'Yes', v864: 'Yes', v870: 'No' },
                   { feature: 'Onshore/Offshore', v804: 'Onshore only', v864: 'Onshore only', v870: 'Either' },
                   { feature: 'Pension age required', v804: 'Yes', v864: 'Yes', v870: 'No' },
@@ -334,7 +334,7 @@ return (
             </table>
           </div>
           <p style={{ fontSize: 13, color: '#6b7280', marginTop: 16, fontStyle: 'italic' }}>
-            Figures current at August 2026 — confirm all charges and processing times on the DoHA website.
+            Figures current at October 2026 — confirm all charges and processing times on the DoHA website.
           </p>
         </div>
       </section>
@@ -344,14 +344,14 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Application charges" title="Visa Application Charges" accent={ACCENT} />
           <Callout variant="note" panel={true} title="Confirm current charges on the DoHA website">
-            Charges are updated annually. The figures below are indicative as at August 2026.
+            Charges are updated annually. The figures below are indicative as at October 2026.
           </Callout>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 32, marginBottom: 32 }}>
             The 804 application charge is significantly lower than the contributory alternatives — one of its key practical attractions. The low charge reflects the non-contributory nature of the visa: no large financial contribution is required, but the tradeoff is the very long queue.
           </p>
           <div style={{ border: `1px solid ${BORDER}`, borderRadius: 12, overflow: 'hidden' }}>
             {[
-              { label: 'Primary applicant — 804 application charge', value: 'Confirm current amount on DoHA (significantly lower than contributory alternatives)' },
+              { label: 'Primary applicant — 804 application charge', value: 'From AUD8,665 for a single applicant, paid in two instalments (first instalment AUD6,600) - significantly lower than the contributory alternatives. Confirm on Home Affairs before lodging.' },
               { label: 'Secondary applicant (adult)', value: 'Confirm current amount on DoHA' },
               { label: 'Secondary applicant (child under 18)', value: 'Confirm current amount on DoHA' },
               { label: 'Assurance of Support bond', value: 'Substantial bond required — confirm current amount on DoHA' },
@@ -364,7 +364,7 @@ return (
             ))}
           </div>
           <p style={{ fontSize: 13, color: '#6b7280', marginTop: 16, fontStyle: 'italic' }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
           </p>
         </div>
       </section>

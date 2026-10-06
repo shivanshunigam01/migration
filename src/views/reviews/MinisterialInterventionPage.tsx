@@ -78,7 +78,7 @@ const STEPS: TimelineStep[] = [
   {
     code: '05',
     title: 'Lodge the request with the Department of Home Affairs',
-    desc: "Submit the Ministerial intervention request to the Department's Ministerial Intervention Unit along with all supporting documents. Requests are submitted under section 351 (visa refusal/cancellation) or section 417 (after an ART decision) depending on the circumstances. Confirm the current lodgement process and address on the Department of Home Affairs website.",
+    desc: "Submit the request in writing using the online form on the Contact the Minister page, or by post to the Minister for Immigration and Citizenship, PO Box 6022, House of Representatives, Parliament House, Canberra ACT 2600. The request must state which power it relies on (section 351 or 501J), the tribunal decision, and which section 13 criteria apply, with certified supporting documents. Confirm the current lodgement process and address on the Department of Home Affairs website.",
   },
   {
     code: '06',
@@ -94,7 +94,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What are the 'unique and exceptional circumstances' guidelines?",
-    answer: "The Minister for Immigration has issued public interest guidelines describing the kinds of cases in which they are prepared to consider exercising the Ministerial intervention power. The guidelines typically cover: (1) compelling compassionate circumstances that were not or could not have been put before the tribunal; (2) significant Australian family ties (particularly involving Australian citizen children or other immediate family); and (3) cases where granting a visa would result in exceptional economic, scientific, cultural, or other benefit to Australia. The guidelines are not exhaustive, and they are subject to change by each new Minister. Confirm current guidelines on the Department of Home Affairs website.",
+    answer: "The 2016 Minister's Guidelines have been replaced by Ministerial Instructions under sections 351 and 501J (4 September 2025, amended 17 September 2025). A request is referred to the Minister only if it meets one of the criteria in section 13 of the Instructions and is not inappropriate to refer under section 12. Check the current Instructions on the Home Affairs website before preparing a request. The guidelines typically cover: (1) compelling compassionate circumstances that were not or could not have been put before the tribunal; (2) significant Australian family ties (particularly involving Australian citizen children or other immediate family); and (3) cases where granting a visa would result in exceptional economic, scientific, cultural, or other benefit to Australia. The guidelines are not exhaustive, and they are subject to change by each new Minister. Confirm current guidelines on the Department of Home Affairs website.",
   },
   {
     question: "Does lodging a Ministerial intervention request give me a right to stay in Australia?",
@@ -106,7 +106,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What section of the Migration Act covers Ministerial intervention?",
-    answer: "There are two main provisions: section 351 and section 417. Section 351 applies where the Minister is considering a case after a decision to refuse or cancel a visa (including cases that have not yet gone to the ART). Section 417 applies where the case has been decided by the ART (Refugee Review — Migration & Refugee Division) and the tribunal has affirmed a refusal. Different provisions apply to different case types. The Department of Home Affairs website provides guidance on which provision applies and how to make a request.",
+    answer: "There are two main provisions: section 351 and section 417. Section 351 applies only after a merits review tribunal (the ART or the former AAT) has made a decision on your case. Section 417 applies where the case has been decided by the ART (Refugee Review — Migration & Refugee Division) and the tribunal has affirmed a refusal. Different provisions apply to different case types. The Department of Home Affairs website provides guidance on which provision applies and how to make a request.",
   },
   {
     question: "Are there circumstances where Ministerial intervention cannot help?",
@@ -179,7 +179,7 @@ export default function MinisterialInterventionPage({ navigate }: { navigate: (p
         deck="A last-resort mechanism asking the Minister to intervene after a tribunal decision — not a review right, cannot be compelled, only a small fraction succeed, and lodging a request does not normally give you bridging visa status."
         shortAnswer={<>Ministerial intervention under sections 351 and 417 of the Migration Act allows a person to ask the Minister to intervene after a tribunal (ART) decision. It is <strong style={{ color: NAVY }}>not a review right</strong> — the Minister cannot be compelled to consider the request and cannot be challenged for declining to intervene. Only a <strong style={{ color: NAVY }}>small fraction</strong> of requests result in intervention. <strong style={{ color: NAVY }}>Lodging a request does not give bridging visa status or any right to remain in Australia.</strong> Requests should be based on unique and exceptional circumstances — compelling compassion, Australian family ties, or exceptional benefit to Australia — and all other review avenues should have been exhausted first. Nanak Migration Group (MARN 2619467) can assess whether your circumstances justify a request and help prepare it. Confirm all current details on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Reviews & Complex', page: 'visa-refusal-review' }}
         accent={ACCENT}
@@ -215,7 +215,7 @@ export default function MinisterialInterventionPage({ navigate }: { navigate: (p
             The Migration Act gives the Minister for Immigration a personal, non-compellable power to intervene in certain cases where a tribunal has made a decision that the Minister considers warrants a different outcome in the public interest. This is not a right of appeal or review — it is a discretionary power that sits outside the normal review hierarchy.
           </p>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginBottom: 32 }}>
-            The two main provisions are section 351 (which applies in a broader range of cases including some that have not yet gone to tribunal) and section 417 (which applies after a tribunal decision in a protection-related case). Each provision has its own rules about who can request intervention and when.
+            The two provisions are section 351 and section 501J. Both apply only after a merits review tribunal has made a decision on the case. Section 417 has been repealed, but section 351 can be used where section 417 was previously enlivened. Each provision has its own rules about who can request intervention and when.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
@@ -225,7 +225,7 @@ export default function MinisterialInterventionPage({ navigate }: { navigate: (p
             </div>
             <div style={{ background: '#fafbfe', border: `1px solid ${BORDER}`, borderRadius: 14, padding: 24 }}>
               <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.08em', color: ACCENT, marginBottom: 12 }}>Section 417</div>
-              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>Applies to cases involving a decision of the ART (previously Refugee Review Tribunal) on a protection visa application. The Minister may substitute a more favourable decision if satisfied it is in the public interest.</p>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>Section 501J: applies to protection visa cases decided by a merits review tribunal. (Section 417 has been repealed.) The Minister may substitute a more favourable decision if satisfied it is in the public interest.</p>
             </div>
           </div>
         </div>
@@ -284,7 +284,7 @@ export default function MinisterialInterventionPage({ navigate }: { navigate: (p
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="When the Minister may consider" title="The Public Interest Guidelines" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 28 }}>
-            The Minister has issued public guidelines describing the categories of cases they are prepared to consider. These are not exhaustive and are subject to change by each new Minister. The broad categories typically include:
+            The Minister issued new Ministerial Instructions under sections 351 and 501J on 4 September 2025 (amended 17 September 2025). They replace the Minister's Guidelines of 11 March 2016. The Department refers a request only if the power is enlivened, the request is properly made, it is not 'inappropriate to refer' (section 12), and it meets one of the criteria in section 13 of the Instructions. The Department does not assess 'unique or exceptional circumstances'. Requests from people who may be eligible to apply for a Partner visa are finalised without referral. The broad categories typically include:
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16, marginBottom: 32 }}>
@@ -378,7 +378,7 @@ export default function MinisterialInterventionPage({ navigate }: { navigate: (p
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

@@ -18,7 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
           { label: 'Skills in Demand (482)',          desc: 'Employer-sponsored temporary visa — Specialist Skills, Core Skills and Labour Agreement streams.', icon: 'star', code: 'SID',  route: ROUTE.skillsInDemandVisa },
           { label: 'Employer Nomination Scheme (186)', desc: 'Permanent residence via employer nomination.',                        icon: 'award',     code: '186',  route: ROUTE.employerNominationScheme },
           { label: '494 Regional Employer Sponsored', desc: '5-year provisional visa for workers in designated regional areas.',    icon: 'mappin',    code: '494',  route: ROUTE.visa494 },
-          { label: '482 Core Skills Stream',          desc: 'For CSOL occupations meeting the CSIT ($79,499 p.a. from 1 Jul 2026).', icon: 'clipboard', code: 'Core', route: ROUTE.coreSkillsStream482 },
+          { label: '482 Core Skills Stream',          desc: 'For CSOL occupations meeting the CSIT ($79,423 p.a. from 1 Jul 2026).', icon: 'clipboard', code: 'Core', route: ROUTE.coreSkillsStream482 },
           { label: 'Training Visa (407)',              desc: 'Occupational training in an Australian workplace — up to 2 years.',     icon: 'graduationcap', code: '407', route: ROUTE.trainingVisa407 },
         ],
       },
@@ -222,7 +222,7 @@ export const NAV_ITEMS: NavItem[] = [
         items: [
           { label: 'Bridging Visas',              desc: 'Stay lawfully in Australia while your application is processed.',         icon: 'link',   code: 'BV',      route: ROUTE.bridgingVisas },
           { label: 'Australian Citizenship',      desc: 'Requirements and steps to become an Australian citizen.',                 icon: 'flag',   code: 'Citizen', route: ROUTE.australianCitizenship },
-          { label: 'Protection Visa (866)',        desc: 'Onshore permanent protection visa for refugees and people in need of complementary protection.', icon: 'shield', code: '866', route: ROUTE.protectionVisa866 },
+          { label: 'Delete this line - protection visas do not use PIC 4007.',        desc: 'Onshore permanent protection visa for refugees and people in need of complementary protection.', icon: 'shield', code: '866', route: ROUTE.protectionVisa866 },
           { label: 'Special Category Visa (444)', desc: "Automatically granted to NZ citizens on arrival — full work rights, Medicare, and a direct citizenship pathway since July 2023.", icon: 'flag', code: '444', route: ROUTE.specialCategory444 },
         ],
       },

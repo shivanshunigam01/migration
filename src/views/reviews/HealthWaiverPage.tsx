@@ -43,7 +43,7 @@ const FACTS: KeyFact[] = [
     icon: 'scale',
     value: 'Waiver discretion',
     label: "Undue cost and undue prejudice are the two waiver grounds",
-    note: 'Even after a negative health opinion, a decision-maker can waive PIC 4007 if the cost or prejudice is not "undue" having regard to relevant factors including the applicant\'s likely economic and social contributions.',
+    note: 'Even after a negative health opinion, a decision-maker can waive PIC 4007 (except where the applicant has active tuberculosis or a condition that is a threat to public health) if the cost or prejudice is not "undue" having regard to relevant factors including the applicant\'s likely economic and social contributions.',
   },
   {
     icon: 'alert',
@@ -56,7 +56,7 @@ const FACTS: KeyFact[] = [
 const FAQ: FaqItem[] = [
   {
     question: "What is PIC 4007 and which visas use it?",
-    answer: "PIC 4007 (Public Interest Criterion 4007) is the health criterion that applies to certain visa classes — most notably partner visas (subclasses 820/801 and 309/100), child visas (101 and 802), some employer-sponsored visas, regional visas (494, 491), and protection visas. PIC 4007 requires that the applicant meets the health criterion OR that the decision-maker is satisfied that the cost or prejudice involved is not 'undue' having regard to relevant factors. The second limb is the waiver. Not all visa classes use PIC 4007 — most skilled and employer-sponsored visa classes use PIC 4005, which has no waiver. If you are affected by a health issue in your visa application, identifying which PIC applies is the first critical step.",
+    answer: "PIC 4007 (Public Interest Criterion 4007) is the health criterion that applies to certain visa classes — most notably partner visas (subclasses 820/801 and 309/100), child visas (101 and 802), employer-sponsored visas such as the 482 and 494 (and some 186 streams). PIC 4007 requires that the applicant meets the health criterion OR that the decision-maker is satisfied that the cost or prejudice involved is not 'undue' having regard to relevant factors. The second limb is the waiver. Not all visa classes use PIC 4007 — most skilled and employer-sponsored visa classes use PIC 4005, which has no waiver. If you are affected by a health issue in your visa application, identifying which PIC applies is the first critical step.",
   },
   {
     question: "Can I dispute the Medical Officer of the Commonwealth opinion?",
@@ -120,7 +120,7 @@ return (
         deck="A health condition does not automatically end a visa application. For visa classes that use PIC 4007, a decision-maker has a discretion to waive the health requirement if the cost or prejudice involved is not 'undue' in the circumstances. Understanding the waiver test and what evidence helps is essential."
         shortAnswer={<>Australia requires visa applicants to meet a health criterion. For most skilled visas, the criterion is <strong style={{ color: NAVY }}>PIC 4005</strong> — and there is <strong style={{ color: NAVY }}>no waiver available</strong>. For <strong style={{ color: NAVY }}>partner visas, child visas, and some employer-sponsored and regional visas</strong>, the criterion is <strong style={{ color: NAVY }}>PIC 4007</strong>, which includes a <strong style={{ color: NAVY }}>waiver discretion</strong>. The waiver test focuses on whether the health-related cost or prejudice to the Australian community would be <strong style={{ color: NAVY }}>undue</strong> having regard to the applicant's likely economic and social contributions, family support arrangements, and broader circumstances. The <strong style={{ color: NAVY }}>Medical Officer of the Commonwealth opinion</strong> on the health condition itself cannot be disputed — but the waiver factors can be argued with evidence. Nanak Migration Group (MARN 2619467) can assist with health waiver submissions — no outcome can be guaranteed.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'ART Review guide →', page: 'art-review' }}
         accent={ACCENT}
@@ -192,7 +192,7 @@ return (
                 <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, marginBottom: 14 }}>A modified health criterion with a waiver discretion. If PIC 4007 applies and the applicant does not meet the health criterion, the decision-maker may still grant the visa if waiver conditions are met.</p>
                 <div style={{ fontSize: 13, fontWeight: 700, color: NAVY, marginBottom: 8 }}>Visa classes that typically use PIC 4007</div>
                 <div style={{ display: 'flex', flexWrap: 'wrap' as const, gap: 8 }}>
-                  {['Partner Visa (820/801)', 'Partner Visa (309/100)', 'Child Visa (101)', 'Child Visa (802)', 'Regional Employer Sponsored (494)', 'Protection Visa (866)', 'Carer Visa (116/836)'].map(v => (
+                  {['Partner Visa (820/801)', 'Partner Visa (309/100)', 'Child Visa (101)', 'Child Visa (802)', 'Regional Employer Sponsored (494)', 'Skills in Demand (482)'].map(v => (
                     <span key={v} style={{ fontSize: 12, color: '#374151', background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 6, padding: '3px 8px' }}>{v}</span>
                   ))}
                 </div>
@@ -226,7 +226,7 @@ return (
               {
                 num: '03',
                 title: 'Relevant factors the decision-maker considers',
-                body: "The regulations direct the decision-maker to consider specific factors including: the costs that would be incurred; the extent to which the community would benefit from the grant; the applicant's likely economic contribution; the degree of family support available; and the impact on the Australian sponsor or family member. These factors create the structure for a well-organised waiver submission.",
+                body: "The regulations require that the applicant meets all other criteria and that the grant would be unlikely to result in undue cost or undue prejudice. In practice the Department considers factors including: the costs that would be incurred; the extent to which the community would benefit from the grant; the applicant's likely economic contribution; the degree of family support available; and the impact on the Australian sponsor or family member. These factors create the structure for a well-organised waiver submission.",
               },
             ].map(step => (
               <div key={step.num} style={{ borderLeft: `4px solid ${ACCENT}`, background: '#f8fafd', padding: '20px 24px', borderRadius: '0 12px 12px 0' }}>
@@ -357,7 +357,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

@@ -303,7 +303,7 @@ export function EnglishScoreConverter({ navigate }: EnglishScoreConverterProps) 
       </div>
 
       <p style={{ fontSize: 12, color: '#9ca3af', lineHeight: 1.7, margin: 0 }}>
-        Thresholds are general guidance only. The Department of Home Affairs publishes the authoritative benchmark requirements. Current as at July 2026.
+        Thresholds are general guidance only. The Department of Home Affairs publishes the authoritative benchmark requirements. Current as at October 2026.
       </p>
     </div>
   )

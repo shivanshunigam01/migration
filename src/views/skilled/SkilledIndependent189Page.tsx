@@ -19,7 +19,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 // ── Official DHA Points Table (2024–25) ─────────────────────
 const POINTS_CATEGORIES = [
@@ -123,7 +123,7 @@ const BUILDER_FIELDS = [
   { id: 'overseasWork', label: 'Overseas skilled employment', options: [{ label: 'Less than 3 years', val: 0 }, { label: '3–4 years', val: 5 }, { label: '5–7 years', val: 10 }, { label: '8+ years', val: 15 }] },
   { id: 'ausWork', label: 'Australian skilled employment', options: [{ label: 'None', val: 0 }, { label: '1–2 years', val: 5 }, { label: '3–4 years', val: 10 }, { label: '5–7 years', val: 15 }, { label: '8+ years', val: 20 }] },
   { id: 'edu', label: 'Educational qualifications', options: [{ label: 'None or below diploma', val: 0 }, { label: 'Diploma / trade — Australian', val: 10 }, { label: 'Bachelor — Australian', val: 15 }, { label: 'PhD — Australian / recognised', val: 20 }] },
-  { id: 'partner', label: 'Partner situation', options: [{ label: 'Single / partner not applying', val: 10 }, { label: 'Partner — no skills points', val: 0 }, { label: 'Partner — skills assessed + Proficient English', val: 10 }] },
+  { id: 'partner', label: 'Partner situation', options: [{ label: 'Single, or partner is an Australian citizen or permanent resident (+10). Add a separate option: Partner applying with Competent English only (+5).', val: 10 }, { label: 'Partner — no skills points', val: 0 }, { label: 'Partner — skills assessed + Proficient English', val: 10 }] },
   { id: 'naati', label: 'NAATI community language', options: [{ label: 'No', val: 0 }, { label: 'Yes (accredited)', val: 5 }] },
   { id: 'profYear', label: 'Professional Year in Australia', options: [{ label: 'No', val: 0 }, { label: 'Yes (completed)', val: 5 }] },
 ]
@@ -252,7 +252,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 { label: 'Work rights', val: 'Unlimited — anywhere in Australia', icon: 'check' },
                 { label: 'Medicare', val: 'Immediate access', icon: 'check' },
                 { label: 'Pathway to citizenship', val: 'Yes — 4 years PR residence', icon: 'star' },
-                { label: 'Govt fee (2024–25)', val: 'AUD $4,640 (primary applicant)', icon: 'hash' },
+                { label: 'Govt fee (2024–25)', val: 'Govt fee (2026-27): AUD6,135 (primary applicant)', icon: 'hash' },
               ].map((row, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 24px', borderBottom: i < 9 ? '1px solid #f3f4f8' : 'none' }}>
                   <span style={{ width: 24, height: 24, borderRadius: 6, background: `${NAVY}10`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -475,7 +475,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: 12 }}>SkillSelect</div>
               <h2 style={{ fontFamily: "'Gilroy', sans-serif", fontSize: 37, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.2 }}>Recent Invitation Rounds</h2>
               <p style={{ color: '#6b7280', fontSize: 16, lineHeight: 1.7, margin: '0 0 24px' }}>
-                DHA runs monthly invitation rounds. The lowest score invited each round gives you the real floor — not the 65-point legislative minimum. Rounds vary by occupation group.
+                Home Affairs runs 189 invitation rounds periodically - in 2025-26 there were three rounds (21 August 2025, 13 November 2025 and 4 June 2026). The lowest score invited each round gives you the real floor — not the 65-point legislative minimum. Rounds vary by occupation group.
               </p>
               <div style={{ background: `${GOLD}12`, border: `1px solid ${GOLD}30`, borderRadius: 12, padding: '16px 20px' }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
@@ -501,7 +501,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                   </div>
                 ))}
                 <div style={{ padding: '12px 24px', background: '#f8f9fc', borderTop: '1px solid #f0f2f8' }}>
-                  <span style={{ fontSize: 12, color: '#9ca3af' }}>* Indicative figures. Actual scores vary by ANZSCO code. Source: DHA SkillSelect.</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af' }}>Replace the monthly table (Dec 2024 to Jul 2025) with verified rounds: 4 Jun 2026 - 10,000 invitations, minimum 65 to 100 by occupation; 13 Nov 2025 - 10,000 invitations; 21 Aug 2025 - 6,887 invitations; 7 Nov 2024 - 15,000 invitations. Source: Home Affairs SkillSelect invitation rounds.</span>
                 </div>
               </div>
             </div>

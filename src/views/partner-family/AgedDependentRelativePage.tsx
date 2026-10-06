@@ -179,7 +179,7 @@ export default function AgedDependentRelativePage({ navigate }: { navigate: (pag
         deck="A permanent visa for a single, pension-age relative who has been financially dependent on their Australian relative for basic needs for at least 3 years. The visa is capped and queued — honest expectations about the wait are essential."
         shortAnswer={<>The Aged Dependent Relative visa (subclass 114 offshore, 838 onshore) grants <strong style={{ color: NAVY }}>permanent residence</strong> to a <strong style={{ color: NAVY }}>single</strong> (widowed, divorced, separated, or never married) relative of pension age who has been <strong style={{ color: NAVY }}>financially dependent on their Australian relative for at least 3 continuous years</strong>. Sponsorship and an Assurance of Support are required. The visa is capped and queued, and new applications realistically face a <strong style={{ color: NAVY }}>multi-decade processing wait</strong>. Nanak Migration Group (MARN 2619467) can assess eligibility and discuss alternatives. Confirm all current figures on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Partner & Family', page: 'partner-family-visas' }}
         accent={ACCENT}
@@ -369,7 +369,7 @@ export default function AgedDependentRelativePage({ navigate }: { navigate: (pag
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12 }}>
             {[
               { title: 'Remaining Relative Visa (115/835)', body: "If all of the applicant's near relatives (parents and siblings) are settled in Australia as citizens or permanent residents, the Remaining Relative visa may be another option. It has a similarly long queue, but the eligibility criterion is different — it focuses on the near-relative test rather than dependency. The applicant need not be single for this visa." },
-              { title: 'Carer Visa (116/836)', body: "If a relative in Australia has a long-term medical condition and requires ongoing care that cannot reasonably be provided by other means, the Carer visa may be available regardless of the age or marital status of the carer. Eligibility depends on the medical condition of the Australian relative, not the age of the applicant." },
+              { title: 'Skills in Demand (482)', body: "If a relative in Australia has a long-term medical condition and requires ongoing care that cannot reasonably be provided by other means, the Carer visa may be available regardless of the age or marital status of the carer. Eligibility depends on the medical condition of the Australian relative, not the age of the applicant." },
               { title: 'Visitor visa patterns', body: "For families where the relative is in good health and can travel, regular visitor visa stays allow significant time together while other pathways are explored. Visitor visas for parents and relatives may be granted for periods allowing stays of up to 12 months, depending on circumstances. Confirm current visitor visa policy on the Department of Home Affairs website." },
               { title: 'Parent visas (if applicable)', body: "If the relative is a parent of an Australian citizen or permanent resident, parent visa pathways (143, 173, 864, 804) may be more appropriate. Parent visas have their own tests (Balance of Family test, pension age for aged parent subclasses) and their own queues. A registered migration agent can compare pathways." },
             ].map(item => (
@@ -424,7 +424,7 @@ export default function AgedDependentRelativePage({ navigate }: { navigate: (pag
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

@@ -40,7 +40,7 @@ const AMBER  = '#f5a124'
 const ROSE   = '#e11d48'
 const BORDER = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',    label: 'Key facts' },
@@ -67,12 +67,12 @@ const AUTH_COLUMNS: ComparisonColumn[] = [
 ]
 
 const AUTH_ROWS: ComparisonRow[] = [
-  { feature: 'VETASSESS',                 occupations: 'Broad range of professional and trade occupations not covered by other bodies — accountants, HR professionals, librarians, chefs, many others', assesses: 'Qualifications against Australian equivalent level; employment history at the skill level', validity: 'Generally 3 years' },
+  { feature: 'VETASSESS',                 occupations: 'Broad range of professional and trade occupations not covered by other bodies — many professional and some trade occupations not covered by another body (accountants are assessed by CPA Australia, CAANZ or IPA)', assesses: 'Qualifications against Australian equivalent level; employment history at the skill level', validity: 'Generally 3 years' },
   { feature: 'Engineers Australia (EA)',  occupations: 'Engineers, engineering technologists, engineering associates, surveyors, spatial scientists', assesses: 'Academic qualifications, competency demonstration, and English for some pathways', validity: 'Generally 3 years' },
   { feature: 'ACS (Australian Computer Society)', occupations: 'ICT professionals — software engineers, analysts, database administrators, network engineers, ICT managers', assesses: 'Qualifications and employment history against ANZSCO skill level; may require a skills interview', validity: 'Generally 3 years' },
   { feature: 'TRA (Trades Recognition Australia)', occupations: 'Trade occupations — electricians, plumbers, carpenters, welders, refrigeration mechanics and other trades', assesses: 'Trade skills through the TRA pathway; may involve a skills assessment or recognition of overseas qualifications', validity: 'Generally 3 years' },
-  { feature: 'AITSL',                     occupations: 'Teachers — early childhood, primary, secondary (all subjects)', assesses: 'Qualifications, professional standards, and teaching experience against Australian curriculum standards', validity: 'Generally 5 years' },
-  { feature: 'CPA Australia / CAANZ',     occupations: 'Accountants, auditors, finance professionals (shared with VETASSESS for some roles)', assesses: 'Accounting qualifications against the CPA or CA ANZ professional standards and equivalent Australian level', validity: 'Generally 3 years' },
+  { feature: 'AITSL',                     occupations: 'Teachers — early childhood, primary, secondary (all subjects)', assesses: 'Qualifications, professional standards, and teaching experience against Australian curriculum standards', validity: 'Treated as valid for up to 3 years for skilled visas' },
+  { feature: 'CPA Australia / CAANZ / IPA',     occupations: 'Accountants, auditors, finance professionals (shared with VETASSESS for some roles)', assesses: 'Accounting qualifications against the CPA or CA ANZ professional standards and equivalent Australian level', validity: 'Generally 3 years' },
   { feature: 'ANMAC',                     occupations: 'Registered nurses, enrolled nurses, midwives', assesses: 'Nursing or midwifery qualifications, registration, and practice hours against Australian standards', validity: 'Generally 2 years (confirm with ANMAC)' },
 ]
 

@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_PARTNER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -60,11 +60,11 @@ const KEY_FACTS: KeyFact[] = [
 const ELIGIBILITY_ITEMS = [
   {
     heading: 'Australian Age Pension age',
-    detail: "The parent must have reached Australian Age Pension age at the time of application. As at August 2026, this is 67 for both men and women. Confirm the current threshold on the DoHA website.",
+    detail: "The parent must have reached Australian Age Pension age at the time of application. As at October 2026, this is 67 for both men and women. Confirm the current threshold on the DoHA website.",
   },
   {
     heading: 'Balance of Family Test',
-    detail: "More than half of the parent's children must be Australian citizens, permanent residents, or eligible New Zealand citizens, OR the number of children permanently in Australia must be at least equal to those who are not. This test is mandatory and cannot be waived.",
+    detail: "At least half of the parent's children and stepchildren must be eligible children, OR there must be more eligible children than children living in any other single country. This test is mandatory and cannot be waived.",
   },
   {
     heading: 'Sponsorship',
@@ -103,7 +103,7 @@ const CHARGES_ROWS = [
   {
     instalment: 'First instalment',
     when: 'At time of lodging the 864 application',
-    amount: 'Several thousand dollars (confirm on DoHA)',
+    amount: 'AUD6,300 for the main applicant (AUD3,145 each additional adult, AUD1,580 each child)',
   },
   {
     instalment: 'Second instalment',
@@ -337,7 +337,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="The cost" title="Contributory Charges — Two Instalments" accent={ACCENT} />
           <Callout variant="note" panel={true} title="Confirm all current charges on the DoHA website before lodging">
-            Visa application charges are set by the Department and increase annually. The figures below are indicative as at August 2026. Always confirm the current charges on the DoHA website before lodging the application.
+            Visa application charges are set by the Department and increase annually. The figures below are indicative as at October 2026. Always confirm the current charges on the DoHA website before lodging the application.
           </Callout>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, marginTop: 28, marginBottom: 16 }}>
             The 864 involves two application charge instalments:
@@ -360,7 +360,7 @@ return (
             ))}
           </div>
           <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7 }}>
-            Secondary applicants (the parent's partner, if included) pay a reduced second-instalment charge. The second instalment is a substantial sum — families should plan for this expense many years in advance and factor it into their financial planning.
+            Each adult applicant, including a partner, generally pays the full AUD43,600 second instalment. Reduced amounts apply to dependent children (AUD2,095) and to 884 holders (AUD19,420). The second instalment is a substantial sum — families should plan for this expense many years in advance and factor it into their financial planning.
           </p>
         </div>
       </section>

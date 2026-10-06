@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_STUDENT
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -68,7 +68,7 @@ const SPONSOR_STEPS: TimelineStep[] = [
   },
   {
     title: 'The guardian applies for the 590',
-    desc: "With the welfare documentation in hand, the guardian applies for the 590 visa. The application requires the student's visa details, the education provider's documentation, financial evidence, and health/character documents.",
+    desc: "With the welfare documentation in hand, the guardian applies for the 590 visa. From 2 October 2026, most temporary visa holders must be outside Australia when they lodge a Student Guardian visa application and when it is granted. Current 590 holders can still lodge a further 590 application in Australia. The application requires the student's visa details, the education provider's documentation, financial evidence, and health/character documents.",
   },
 ]
 
@@ -113,7 +113,7 @@ const ELIGIBILITY_ITEMS = [
   },
   {
     heading: 'Relationship to the student',
-    detail: "The guardian must be a parent, step-parent, custodian, or other close relative of the student. In limited cases, the guardian may be an adult who has been formally identified as the student's carer — but this is less common. The relationship must be genuine.",
+    detail: "The guardian must be the student's parent, custodian or a relative who is 21 years or older. In limited cases, the guardian may be an adult who has been formally identified as the student's carer — but this is less common. The relationship must be genuine.",
   },
   {
     heading: 'Student is under 18 (in most cases)',
@@ -372,7 +372,7 @@ return (
           <SectionHeading kicker="Application charge" title="Visa Application Charge" accent={ACCENT} />
           <div style={{ marginTop: 32, marginBottom: 24 }}>
             <Callout variant="note" panel={true} title="Confirm current fees on the Department of Home Affairs website">
-              Visa application charges are updated periodically. The information below is current at August 2026 and should be confirmed before lodging.
+              Visa application charges are updated periodically. The information below is current at October 2026 and should be confirmed before lodging.
             </Callout>
           </div>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75 }}>

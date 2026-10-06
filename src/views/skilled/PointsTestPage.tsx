@@ -36,7 +36,7 @@ const ROSE    = '#e11d48'
 const TEAL    = '#0e7490'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 /* ─── On-this-page ─── */
 const TOC: NavSection[] = [
@@ -108,11 +108,11 @@ function PointsBreakdownTable() {
 
 /* ─── How rounds work ─── */
 const ROUND_POINTS = [
-  { icon: 'layers', heading: "Rounds are held at the Department's discretion", body: 'The Department of Home Affairs issues invitations in regular rounds, typically monthly, but timing and frequency are not fixed. The Department does not announce future round dates or cutoff scores in advance.' },
-  { icon: 'hash',   heading: 'Highest-scoring EOIs are invited first', body: "Within each invitation round, the Department invites EOIs in descending order of points score for each visa subclass and occupation. If two EOIs have the same score, the one submitted earliest is generally invited first — so submitting your EOI as early as possible matters." },
+  { icon: 'layers', heading: "Rounds are held at the Department's discretion", body: 'Home Affairs runs invitation rounds for the 189 and family-sponsored 491 periodically - in 2025-26 there were three rounds (August 2025, November 2025 and June 2026). Timing and frequency are not fixed. The Department does not announce future round dates or cutoff scores in advance.' },
+  { icon: 'hash',   heading: 'Highest-scoring EOIs are invited first', body: "Within each invitation round, the Department invites EOIs in descending order of points score for each visa subclass and occupation. If two EOIs have the same score, the one with the earlier 'date of effect' (the date and time the EOI reached that score) is invited first — so submitting your EOI as early as possible matters." },
   { icon: 'clock',  heading: "Cutoffs change every round and can't be predicted", body: "The 'points cutoff' — the minimum score at which an invitation was issued — changes every round depending on how many invitations are issued and the distribution of points scores in the pool. No one can reliably predict the cutoff for a future round." },
   { icon: 'flag',   heading: 'Nomination points are added to your personal score', body: 'If you have a state/territory nomination (190: +5 pts) or regional nomination/sponsorship (491: +15 pts), those points are added to your personal score for the purposes of the round. You will be competing in the 190 or 491 pool separately from the 189 pool.' },
-  { icon: 'alert',  heading: 'Points are assessed at invitation AND at decision', body: 'You must meet the points test on the date of invitation — and again on the date the visa is decided. If your circumstances change (e.g., you turn 45, or your English test expires) between invitation and decision, this can affect the outcome.' },
+  { icon: 'alert',  heading: 'Points are assessed at invitation AND at decision', body: 'You must meet the points test on the date of invitation — and again on the date the visa is decided. Age, English and most other points are assessed at the time of invitation, so turning 45 after you are invited does not stop you applying. You must still evidence every claim as it stood at invitation, and the single/Australian partner claim is assessed when the visa is decided.' },
   { icon: 'check',  heading: 'An invitation is not a visa grant', body: 'Receiving an invitation to apply confirms your points score was high enough for that round. It is not an approval of any kind. You must still lodge the visa application, meet all eligibility criteria, and pass health and character requirements.' },
 ]
 
@@ -396,7 +396,7 @@ export default function PointsTestPage({ navigate }: { navigate: (page: string) 
       />
 
       <ComplianceDisclaimer currentAsAt={CURRENT_AS_AT}
-        pageNote="Points test values, invitation cutoffs, and occupation lists are set by legislative instrument and are subject to change by the Department of Home Affairs without notice. This page does not publish visa application fees." />
+        pageNote="Points test values, invitation cutoffs, and occupation lists are set by legislative instrument and are subject to change by the Department of Home Affairs without notice. Visa application charges shown are those published by Home Affairs from 1 July 2026 and may change." />
 
       <SiteFooter navigate={navigate} />
     </div>

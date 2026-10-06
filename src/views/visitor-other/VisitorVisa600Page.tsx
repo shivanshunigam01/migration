@@ -36,9 +36,9 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '~AUD 200',
+    value: 'AUD 250',
     label: 'Tourist stream charge (offshore)',
-    note: 'Base government charge for the offshore tourist stream application. Onshore applications and sponsored family stream applications have different charges. Figures current at August 2026 — confirm on DoHA.',
+    note: 'Base government charge for the offshore tourist stream application. Onshore applications and sponsored family stream applications have different charges. Figures current at October 2026 — confirm on DoHA.',
   },
   {
     icon: 'calendar',
@@ -142,9 +142,9 @@ return (
         eyebrowSub="Visitor & Other · Subclass 600"
         title={<>Visitor Visa (Subclass 600)<br /><em style={{ fontStyle: 'italic', color: GOLD }}>{"Australia's Universal Visitor Visa"}</em></>}
         deck="The subclass 600 Visitor visa is available to all nationalities — making it the option for passport holders who are not eligible for the ETA or eVisitor. It covers tourism, business visits, family visits, and some frequent traveller applications, with stay periods of 3, 6 or 12 months."
-        shortAnswer={<>The subclass 600 Visitor visa has four main streams: <strong style={{ color: NAVY }}>Tourist</strong> (for tourism, recreation, and family visits), <strong style={{ color: NAVY }}>Sponsored Family</strong> (with an Australian resident as sponsor, where a security bond may apply), <strong style={{ color: NAVY }}>Business Visitor</strong> (for short-term business activities — not employment), and <strong style={{ color: NAVY }}>Frequent Traveller</strong> (for some regular visitors from certain countries). Base government charges start at approximately <strong style={{ color: NAVY }}>AUD 200</strong> for the tourist stream offshore. The key eligibility requirement is satisfying the Department that you are a <strong style={{ color: NAVY }}>genuine visitor</strong> — that you intend to stay temporarily and have sufficient ties to home country to ensure your departure. Nanak Migration Group (MARN 2619467) can review your application before you lodge.</>}
+        shortAnswer={<>The subclass 600 Visitor visa has five streams (including the Approved Destination Status stream for organised tour groups from China), and the four most used are: <strong style={{ color: NAVY }}>Tourist</strong> (for tourism, recreation, and family visits), <strong style={{ color: NAVY }}>Sponsored Family</strong> (with an Australian resident as sponsor, where a security bond may apply), <strong style={{ color: NAVY }}>Business Visitor</strong> (for short-term business activities — not employment), and <strong style={{ color: NAVY }}>Frequent Traveller</strong> (for some regular visitors from certain countries). Base government charges start at approximately <strong style={{ color: NAVY }}>AUD 200</strong> for the tourist stream offshore. The key eligibility requirement is satisfying the Department that you are a <strong style={{ color: NAVY }}>genuine visitor</strong> — that you intend to stay temporarily and have sufficient ties to home country to ensure your departure. Nanak Migration Group (MARN 2619467) can review your application before you lodge.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← All visitor visas', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -201,7 +201,7 @@ return (
               {
                 icon: 'shield',
                 title: 'No work rights',
-                desc: 'Visa holders cannot perform work (paid or unpaid) in Australia. Business visitor activities (meetings, conferences) are permitted but employment is not.',
+                desc: 'Visa holders cannot work in Australia, although some volunteer work may be allowed. Business visitor activities (meetings, conferences) are permitted but employment is not.',
               },
             ].map(feat => (
               <div key={feat.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: 20, background: '#f8fafd', borderRadius: 12, border: '1px solid #e8edf6' }}>
@@ -235,7 +235,7 @@ return (
                   {[
                     { label: 'For', value: 'Nationals of all countries applying from outside Australia' },
                     { label: 'Purpose', value: 'Tourism, recreation, visiting family or friends' },
-                    { label: 'Charge', value: '~AUD 200 (confirm on DoHA)' },
+                    { label: 'Charge', value: 'AUD 250 (confirm on DoHA)' },
                     { label: 'Stay', value: '3, 6 or 12 months (12 months is not automatic)' },
                     { label: 'Multiple entry', value: 'Possible (within validity period)' },
                     { label: 'Condition 8503', value: 'Often applied — prevents further stay application from inside Australia' },
@@ -433,12 +433,12 @@ return (
                 {[
                   {
                     scenario: 'Tourist stream — offshore primary applicant',
-                    charge: '~AUD 200',
+                    charge: 'AUD 250',
                     notes: 'Per person; confirm on DoHA',
                   },
                   {
                     scenario: 'Tourist stream — offshore secondary applicant (adult)',
-                    charge: '~AUD 200',
+                    charge: 'AUD 250',
                     notes: 'Per additional adult',
                   },
                   {
@@ -448,12 +448,12 @@ return (
                   },
                   {
                     scenario: 'Sponsored Family stream',
-                    charge: '~AUD 200 + possible bond',
+                    charge: 'AUD 250 + possible bond',
                     notes: 'Bond may be required — confirm on DoHA',
                   },
                   {
                     scenario: 'Business Visitor stream',
-                    charge: '~AUD 200',
+                    charge: 'AUD 250',
                     notes: 'Confirm on DoHA',
                   },
                 ].map((row, i) => (
@@ -468,7 +468,7 @@ return (
           </div>
 
           <Callout variant="warning" panel={true} title="Charges are indexed and subject to change">
-            All charges above are approximate amounts current at August 2026. Government visa charges are indexed annually and may change. Confirm the current charge on the Department of Home Affairs ImmiAccount system before lodging. Security bond amounts (for the Sponsored Family stream) are set by the Department and vary by applicant — confirm before applying.
+            All charges above are approximate amounts current at October 2026. Government visa charges are indexed annually and may change. Confirm the current charge on the Department of Home Affairs ImmiAccount system before lodging. Security bond amounts (for the Sponsored Family stream) are set by the Department and vary by applicant — confirm before applying.
           </Callout>
         </div>
       </section>
@@ -616,7 +616,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

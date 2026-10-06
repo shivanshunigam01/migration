@@ -178,7 +178,7 @@ export default function OrphanRelativeVisaPage({ navigate }: { navigate: (page: 
         deck="A permanent visa for a child under 18 whose parents are deceased, permanently incapacitated, or of unknown whereabouts — sponsored by an eligible Australian relative to provide the child with a stable, permanent home."
         shortAnswer={<>The Orphan Relative visa (subclass 117 offshore, 837 onshore) grants <strong style={{ color: NAVY }}>permanent residence</strong> to a child under 18 who is unmarried and whose parents are <strong style={{ color: NAVY }}>deceased, permanently incapacitated, or genuinely of unknown whereabouts</strong>. The child must be sponsored by an eligible Australian relative — a brother, sister, grandparent, aunt, uncle, step-equivalent, or their partner. The best interests of the child are a primary consideration. These cases are sensitive and require careful, compassionate preparation of evidence. Nanak Migration Group (MARN 2619467) can guide families through the process. Confirm all current requirements on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Partner & Family', page: 'partner-family-visas' }}
         accent={ACCENT}
@@ -401,7 +401,7 @@ export default function OrphanRelativeVisaPage({ navigate }: { navigate: (page: 
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

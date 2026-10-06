@@ -40,9 +40,9 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '~AUD 200',
+    value: 'AUD 250',
     label: 'Visitor visa (600) tourist stream — offshore',
-    note: 'Base government charge for the tourist stream from outside Australia. Charges differ for onshore applications and sponsored streams. Figures current at August 2026 — confirm on DoHA.',
+    note: 'Base government charge for the tourist stream from outside Australia. Charges differ for onshore applications and sponsored streams. Figures current at October 2026 — confirm on DoHA.',
   },
   {
     icon: 'calendar',
@@ -136,7 +136,7 @@ return (
         deck="Australia offers several ways to visit — from free electronic authorisations for eligible passport holders to a paid Visitor visa (subclass 600) that covers tourists, business visitors, and family visits from any country. Choosing the right option depends on your passport, how long you want to stay, and whether you have family in Australia."
         shortAnswer={<>Most visitors to Australia use one of three options: the <strong style={{ color: NAVY }}>eVisitor (subclass 651)</strong> — free, for eligible European passport holders, up to 3 months per visit; the <strong style={{ color: NAVY }}>Electronic Travel Authority (subclass 601)</strong> — a small service charge applies, for eligible passport holders, up to 3 months per visit; or the <strong style={{ color: NAVY }}>Visitor visa (subclass 600)</strong> — available to all passport holders, covering tourist, business visitor, sponsored family, and frequent traveller streams, with stays of 3, 6 or 12 months and multi-year multiple entry in some cases. Transit visas are also available for short airport transits. Nanak Migration Group (MARN 2619467) assists primarily with the subclass 600 — particularly for sponsored family visitors, longer-stay applications, and applicants with previous refusals.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'Visitor Visa 600 →', page: 'visitor-visa-600' }}
         accent={ACCENT}
@@ -234,7 +234,7 @@ return (
               <h3 style={{ fontFamily: 'Fraunces, Georgia, serif', fontSize: 18, fontWeight: 700, color: NAVY, margin: '0 0 16px', lineHeight: 1.25 }}>Visitor Visa</h3>
               <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 10 }}>
                 {[
-                  { label: 'Cost', value: 'From ~AUD 200 (tourist stream offshore); varies by stream and location — confirm on DoHA' },
+                  { label: 'Cost', value: 'From AUD 250 (tourist stream offshore); varies by stream and location — confirm on DoHA' },
                   { label: 'Passport eligibility', value: 'All passport holders' },
                   { label: 'Stay', value: '3, 6 or 12 months depending on stream and assessment' },
                   { label: 'Application', value: 'Online via ImmiAccount' },
@@ -296,7 +296,7 @@ return (
                   {
                     visa: 'Visitor 600 — Tourist (offshore)',
                     who: 'All nationalities',
-                    cost: '~AUD 200',
+                    cost: 'AUD 250',
                     stay: '3–12 months',
                     multi: 'Possible',
                     notes: 'Most common path for ineligible passport holders',
@@ -312,7 +312,7 @@ return (
                   {
                     visa: 'Visitor 600 — Sponsored Family',
                     who: 'Any nationality; family in Australia sponsors',
-                    cost: '~AUD 200+ (bond may apply)',
+                    cost: 'AUD 250+ (bond may apply)',
                     stay: '3–12 months',
                     multi: 'Yes',
                     notes: 'Sponsor in Australia; bond possible for higher-risk applicants',
@@ -320,7 +320,7 @@ return (
                   {
                     visa: 'Visitor 600 — Business',
                     who: 'Business-related travel (not employed in Australia)',
-                    cost: '~AUD 200',
+                    cost: 'AUD 250',
                     stay: '3 months typical',
                     multi: 'Yes',
                     notes: 'Must not work in Australia',
@@ -381,7 +381,7 @@ return (
             <div style={{ background: '#fff', border: '1px solid #e8edf6', borderRadius: 12, padding: 24 }}>
               <div style={{ fontSize: 14, fontWeight: 700, color: NAVY, marginBottom: 10 }}>My passport is from India, China, Philippines, Pakistan, Nepal, or another country not on the ETA/eVisitor list</div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }}>
-                You need the <strong>Visitor visa (600)</strong> — tourist stream, offshore application. Charges from ~AUD 200. Apply online via ImmiAccount. Ensure you have evidence of ties to home country, financial capacity, and purpose of visit.
+                You need the <strong>Visitor visa (600)</strong> — tourist stream, offshore application. Charges from AUD 250. Apply online via ImmiAccount. Ensure you have evidence of ties to home country, financial capacity, and purpose of visit.
               </p>
               <button
                 onClick={() => navigate('visitor-visa-600')}
@@ -537,7 +537,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

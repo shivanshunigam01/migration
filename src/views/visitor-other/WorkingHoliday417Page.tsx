@@ -47,9 +47,9 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '~AUD 650',
+    value: 'AUD 840 (first visa) / AUD 1,000 (second or third visa)',
     label: 'Application charge',
-    note: 'Approximate government charge at August 2026. Confirm the current charge on the Department of Home Affairs website before lodging.',
+    note: 'Approximate government charge at October 2026. Confirm the current charge on the Department of Home Affairs website before lodging.',
   },
 ]
 
@@ -60,15 +60,15 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Create an ImmiAccount and lodge online',
-    desc: 'The 417 application is lodged online through ImmiAccount. You must be outside Australia at the time of application, or inside Australia on a current valid visa (in which case you must be outside Australia at the time the visa is granted).',
+    desc: 'The 417 application is lodged online through ImmiAccount. For a first Working Holiday visa you must apply from outside Australia and be outside Australia when the visa is granted. Second and third visas can be applied for in or outside Australia, and you must be in the same location when the visa is granted as when you applied.',
   },
   {
     title: 'Pay the application charge and provide biometrics if required',
-    desc: 'Pay the current government application charge (~AUD 650 — confirm on DoHA). Some nationalities are required to provide biometrics. Check the DoHA website for current biometric requirements for your country.',
+    desc: 'Pay the current government application charge (AUD 840 (first visa) / AUD 1,000 (second or third visa) — confirm on DoHA). Some nationalities are required to provide biometrics. Check the DoHA website for current biometric requirements for your country.',
   },
   {
     title: 'Await decision',
-    desc: 'Many 417 applications are granted within a few days to a few weeks. Processing times vary by country and application volume. Monitor your ImmiAccount for correspondence from the Department.',
+    desc: 'Home Affairs expects the average processing time to be around three months. Processing times vary by country and application volume. Monitor your ImmiAccount for correspondence from the Department.',
   },
   {
     title: 'Arrive and work',
@@ -164,7 +164,7 @@ return (
         deck="The Working Holiday visa (subclass 417) allows eligible young people from partner countries to holiday in Australia for up to 12 months while funding their trip through temporary employment. A second and third year is available after completing specified regional work."
         shortAnswer={<>The subclass 417 Working Holiday visa is available to passport holders from a set of <strong style={{ color: NAVY }}>partner countries</strong>, generally aged <strong style={{ color: NAVY }}>18 to 30</strong> (or 35 for nationals of some countries including the United Kingdom, Canada, Ireland, France, Italy, and Denmark — confirm current eligibility on the DoHA website). The visa allows a <strong style={{ color: NAVY }}>12-month stay</strong> with full work rights, subject to a <strong style={{ color: NAVY }}>6-month limit per employer</strong> (UK passport holders are currently exempt from this limit). Study is capped at <strong style={{ color: NAVY }}>4 months</strong>. The government application charge is approximately <strong style={{ color: NAVY }}>AUD 650</strong> — confirm the current figure on DoHA. A second or third year grant is available after completing the required regional work. Nanak Migration Group (MARN 2619467) can advise on eligibility and the regional work requirements.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor & Other', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -211,7 +211,7 @@ return (
               {
                 icon: 'briefcase',
                 title: 'Work for any employer',
-                desc: 'You may work for any employer in Australia — there are no restrictions on the type of work or industry. The key limit is 6 months per employer (except for UK passport holders who are currently exempt).',
+                desc: 'You may work for any employer in Australia — there are no restrictions on the type of work or industry. The key limit is 6 months per employer, unless an exemption or written permission applies. This includes UK passport holders.',
               },
               {
                 icon: 'calendar',
@@ -475,9 +475,9 @@ return (
               </thead>
               <tbody>
                 {[
-                  { item: 'First 417 visa (all nationalities)', amount: '~AUD 650', notes: 'Per application — confirm on DoHA' },
-                  { item: 'Second 417 visa', amount: '~AUD 650', notes: 'Same charge applies — confirm on DoHA' },
-                  { item: 'Third 417 visa', amount: '~AUD 650', notes: 'Same charge applies — confirm on DoHA' },
+                  { item: 'First 417 visa (all nationalities)', amount: 'AUD 840 (first visa) / AUD 1,000 (second or third visa)', notes: 'Per application — confirm on DoHA' },
+                  { item: 'Second 417 visa', amount: 'AUD 840 (first visa) / AUD 1,000 (second or third visa)', notes: 'Same charge applies — confirm on DoHA' },
+                  { item: 'Third 417 visa', amount: 'AUD 840 (first visa) / AUD 1,000 (second or third visa)', notes: 'Same charge applies — confirm on DoHA' },
                 ].map((row, i) => (
                   <tr key={row.item} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafd', borderBottom: '1px solid #e8edf6' }}>
                     <td style={{ padding: '13px 16px', fontWeight: 500, color: NAVY }}>{row.item}</td>
@@ -490,7 +490,7 @@ return (
           </div>
 
           <Callout variant="warning" panel={true} title="Confirm current charges on the Department of Home Affairs website">
-            All charges listed above are approximate amounts current at August 2026. Government visa charges are indexed annually and change. Confirm the current application charge on the DoHA ImmiAccount system before lodging your application.
+            All charges listed above are approximate amounts current at October 2026. Government visa charges are indexed annually and change. Confirm the current application charge on the DoHA ImmiAccount system before lodging your application.
           </Callout>
         </div>
       </section>
@@ -519,7 +519,7 @@ return (
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

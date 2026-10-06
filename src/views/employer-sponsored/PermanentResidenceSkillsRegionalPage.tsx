@@ -21,7 +21,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -45,9 +45,9 @@ const KEY_FACTS: KeyFact[] = [
   },
   {
     icon: 'dollar',
-    value: '$53,900 p.a.',
-    label: 'Income requirement (from 1 July 2025)',
-    note: 'Your annual income must have met this threshold for at least 3 of the past 5 years. The threshold is indexed annually. Figures current at August 2026 — confirm on DoHA website.',
+    value: 'ATO records',
+    label: 'Income evidence (no minimum amount)',
+    note: 'Provide ATO notices of assessment for 3 income years while holding your eligible visa. Home Affairs states there is no minimum income requirement. Figures current at October 2026 — confirm on DoHA website.',
   },
   {
     icon: 'shield',
@@ -72,7 +72,7 @@ const STEPS: TimelineStep[] = [
   {
     code: '02',
     title: 'Gather income evidence',
-    desc: 'Obtain ATO Notices of Assessment for each income year in your qualifying period. Confirm that your taxable income met the income threshold for at least three years.',
+    desc: 'Obtain ATO notices of assessment for at least 3 income years out of the 5 years of your eligible visa. There is no minimum income amount — lodged tax returns are key evidence.',
   },
   {
     code: '03',
@@ -101,8 +101,8 @@ const FAQ: FaqItem[] = [
     answer: 'Time spent outside Australia generally does not count toward the three-year regional living and working requirement. You should minimise extended absences during your qualifying period and keep records of all travel. If you have spent extended periods overseas, seek advice on whether your qualifying period is affected.',
   },
   {
-    question: 'What if my income did not meet the threshold in one year?',
-    answer: 'The income requirement must be met for at least three of the five years before you apply — not necessarily all three years of your qualifying period. If your income fell below the threshold in one year, you may still be eligible provided you met the threshold in at least three other years in the five-year window.',
+    question: 'What income evidence do I need for the 191?',
+    answer: 'You must provide ATO notices of assessment for at least 3 income years out of the 5 years of your eligible subclass 491 or 494 visa. Home Affairs states there is no minimum income requirement — the Department assesses that you have lodged tax returns for the required years.',
   },
   {
     question: 'Can my family members be included in a 191 application?',
@@ -155,12 +155,12 @@ const ELIGIBILITY_ITEMS = [
     body: 'You must have resided and worked in a designated regional area of Australia for at least three years during the qualifying period. Regional areas for the 191 are determined by the same regional definitions as the 491 and 494 visas.',
   },
   {
-    heading: 'Income requirement met for three years',
-    body: 'Your taxable income must have met the income threshold (currently $53,900 p.a. from 1 July 2025, indexed annually) for at least three of the five years before you apply. Evidence includes ATO notices of assessment or income statements. Figures current at August 2026.',
+    heading: 'ATO income evidence for three years',
+    body: 'You must provide ATO notices of assessment for at least 3 income years out of the 5 years of your eligible visa. There is no minimum income requirement. Figures current at October 2026.',
   },
   {
-    heading: 'No Australian criminal convictions',
-    body: 'You must not have been convicted of a criminal offence in Australia during the qualifying period.',
+    heading: 'Health and character',
+    body: 'You and family members included in the application must meet standard health and character requirements. A conviction does not automatically prevent an application, but character is assessed — seek advice before lodging.',
   },
   {
     heading: 'Visa condition compliance',
@@ -169,9 +169,9 @@ const ELIGIBILITY_ITEMS = [
 ]
 
 const FEE_ROWS = [
-  { label: 'Visa Application Charge — primary applicant', value: 'Approximately $4,640' },
-  { label: 'Secondary applicant over 18', value: 'Approximately $2,320' },
-  { label: 'Secondary applicant under 18', value: 'Approximately $1,155' },
+  { label: 'Visa Application Charge — primary applicant', value: 'AUD630 (from 1 July 2026)' },
+  { label: 'Secondary applicant aged 18 or over', value: 'AUD315' },
+  { label: 'Secondary applicant under 18', value: 'AUD160' },
 ]
 
 export default function PermanentResidenceSkillsRegionalPage({ navigate }: { navigate: (page: string) => void }) {
@@ -205,8 +205,8 @@ return (
         eyebrow="Subclass 191"
         eyebrowSub="Permanent Residence (Skilled Regional)"
         title={<>Permanent Residence<br /><em style={{ fontStyle: 'italic', color: GOLD }}>(Skilled Regional) — Subclass 191</em></>}
-        deck="The subclass 191 Permanent Residence (Skilled Regional) visa provides a pathway to permanent residence for holders of a subclass 491 or subclass 494 visa who have lived, worked, and met income requirements in a designated regional area of Australia for at least three years."
-        shortAnswer={<>To be eligible for the subclass 191, you must currently hold a subclass 491 or 494 visa, have lived and worked in a designated regional area of Australia for at least three years, and have met the income threshold (currently <strong style={{ color: NAVY }}>$53,900 per annum</strong> from 1 July 2025, indexed annually) for at least three of the past five years. You must not have had any criminal convictions in Australia during the qualifying period and must have complied with your visa conditions. No employer sponsorship is required at this stage. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your qualifying period and income records meet the current requirements.</>}
+        deck="The subclass 191 Permanent Residence (Skilled Regional) visa provides a pathway to permanent residence for holders of a subclass 491 or subclass 494 visa who have held that visa for at least three years, complied with its conditions, and can provide ATO income evidence."
+        shortAnswer={<>To be eligible for the subclass 191, you must currently hold a subclass 491 or 494 visa, have held it for at least three years, complied with visa conditions, and provide <strong style={{ color: NAVY }}>ATO notices of assessment for 3 income years</strong> out of the 5 years of your eligible visa. Home Affairs states there is <strong style={{ color: NAVY }}>no minimum income requirement</strong>. You must meet health and character requirements. No employer sponsorship is required at this stage. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your qualifying period and tax records meet current requirements.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -263,15 +263,15 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Income evidence" title="Meeting the Income Requirement" accent={ACCENT} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, marginTop: 24, marginBottom: 28 }}>
-            The income requirement must be met for at least three of the five years before you apply for the subclass 191. The Department will assess your taxable income, which is broadly your gross income less allowable deductions as reported to the ATO.
+            You need ATO notices of assessment for at least 3 income years out of the 5 years of your eligible visa. There is no minimum income amount — your lodged tax returns are key evidence that the Department will assess.
           </p>
           <div style={{ marginBottom: 20 }}>
             <Callout variant="note" title="What counts as income" panel={true}>
               Taxable income for the 191 income requirement is based on your Australian Tax Office (ATO) income, as shown on your Notice of Assessment for each income year. This includes wages and salary, rental income, business income, and other assessable amounts. Non-assessable income (e.g. some government payments) generally does not count. Maintain ATO records carefully throughout your qualifying period.
             </Callout>
           </div>
-          <Callout variant="warning" title="Income threshold is indexed annually" panel={true}>
-            The income threshold is indexed each year on 1 July. The figure of $53,900 applies from 1 July 2025 and may be updated. Always confirm the current threshold on the Department of Home Affairs website before applying.
+          <Callout variant="warning" title="Confirm current requirements" panel={true}>
+            Home Affairs requirements for the subclass 191 can change. There is no minimum income figure — confirm the current checklist and evidence requirements on the Department of Home Affairs website before applying.
           </Callout>
         </div>
       </section>
@@ -313,7 +313,7 @@ return (
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 12 }}>
               <Icon name="info" size={14} color={ACCENT} />
               <p style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.65, margin: 0 }}>
-                Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+                Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
               </p>
             </div>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>

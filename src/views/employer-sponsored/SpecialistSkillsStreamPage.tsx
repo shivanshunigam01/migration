@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -31,15 +31,15 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   {
     icon: 'dollar',
-    value: '$146,717 p.a.',
+    value: '$146,576 p.a.',
     label: 'Specialist Skills Income Threshold (SSIT)',
-    note: 'Minimum annual earnings from 1 July 2026. Figures current at August 2026 — confirm on the Department of Home Affairs website.',
+    note: 'Minimum annual earnings from 1 July 2026. Figures current at October 2026 — confirm on the Department of Home Affairs website.',
   },
   {
-    icon: 'star',
-    value: 'No LMT required',
-    label: 'Labour Market Testing exempt',
-    note: 'The Specialist Skills stream is exempt from Labour Market Testing. No advertising is required before nominating.',
+    icon: 'clipboard',
+    value: 'LMT applies',
+    label: 'Labour Market Testing',
+    note: 'At least 2 national job advertisements for 4 weeks within 4 months before nominating, unless a trade-obligation exemption applies.',
   },
   {
     icon: 'calendar',
@@ -59,12 +59,12 @@ const STEPS: TimelineStep[] = [
   {
     code: '01',
     title: 'Confirm salary meets SSIT',
-    desc: 'Before engaging a migration agent, confirm that the total guaranteed annual remuneration for the role will be at least $146,717 (SSIT from 1 July 2026). Discretionary bonuses generally do not count toward the threshold.',
+    desc: 'Before engaging a migration agent, confirm that the total guaranteed annual remuneration for the role will be at least $146,576 (SSIT from 1 July 2026). Discretionary bonuses generally do not count toward the threshold.',
   },
   {
     code: '02',
     title: 'Employer confirms or obtains SBS',
-    desc: 'The employer must hold Standard Business Sponsorship. No Labour Market Testing is required for the Specialist Skills stream — the employer can proceed directly to nomination.',
+    desc: 'The employer must hold Standard Business Sponsorship and complete Labour Market Testing (unless an exemption applies) before lodging the nomination.',
   },
   {
     code: '03',
@@ -90,7 +90,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Is Labour Market Testing ever required for the Specialist Skills stream?',
-    answer: 'No. The Specialist Skills stream is explicitly exempt from Labour Market Testing. Employers do not need to advertise the role before lodging a nomination. This is one of the key advantages of the Specialist Skills stream over the Core Skills stream.',
+    answer: 'Labour Market Testing applies to Specialist Skills nominations in the same way as Core Skills, unless an exemption under international trade obligations applies. The employer must place at least 2 advertisements on national recruitment platforms for at least 4 weeks within the 4 months before lodgement.',
   },
   {
     question: 'Do I need a skills assessment for the Specialist Skills stream?',
@@ -141,12 +141,12 @@ const ELIGIBILITY_CARDS = [
   {
     icon: 'briefcase',
     title: 'Approved sponsor',
-    desc: 'The sponsoring employer must hold Standard Business Sponsorship (SBS). There is no LMT obligation, but the employer must still be an approved sponsor before lodging a nomination.',
+    desc: 'The sponsoring employer must hold Standard Business Sponsorship (SBS) and complete Labour Market Testing before lodging the nomination, unless an exemption applies.',
   },
   {
     icon: 'dollar',
     title: 'Specialist Skills Income Threshold (SSIT)',
-    desc: "The nominee's annual earnings must meet or exceed the SSIT — $146,717 per annum from 1 July 2026. Annual earnings include base salary and guaranteed loadings, but generally exclude discretionary bonuses. Figures current at August 2026 — confirm on the Department of Home Affairs website.",
+    desc: "The nominee's annual earnings must meet or exceed the SSIT — $146,576 per annum from 1 July 2026. Annual earnings include base salary and guaranteed loadings, but generally exclude discretionary bonuses. Figures current at October 2026 — confirm on the Department of Home Affairs website.",
   },
   {
     icon: 'layers',
@@ -193,10 +193,10 @@ return (
       <PageHero
         variant="standard"
         eyebrow="Subclass 482 — Skills in Demand"
-        eyebrowSub="Specialist Skills Stream · No Labour Market Testing"
+        eyebrowSub="Specialist Skills Stream · Priority processing"
         title={<>482 Specialist Skills Stream<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Skills in Demand Visa</em></>}
-        deck="The Specialist Skills stream of the subclass 482 Skills in Demand visa is designed for high-income earners in skilled roles across most ANZSCO occupations. It requires no Labour Market Testing and offers priority processing."
-        shortAnswer={<>The Specialist Skills stream requires that the nominee's annual earnings will meet or exceed the Specialist Skills Income Threshold (SSIT) of <strong style={{ color: NAVY }}>$146,717 per annum from 1 July 2026</strong>. The position may be in any ANZSCO occupation <strong style={{ color: NAVY }}>except</strong> those in ANZSCO major groups 3 (Technicians and Trades Workers), 7 (Machinery Operators and Drivers), or 8 (Labourers). Labour Market Testing is not required. Priority processing applies. The visa is granted for up to four years, and holders are eligible for permanent residence via the subclass 186 ENS. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your role and remuneration qualify for the Specialist Skills stream before lodgement.</>}
+        deck="The Specialist Skills stream of the subclass 482 Skills in Demand visa is designed for high-income earners in skilled roles across most ANZSCO occupations. Labour Market Testing applies unless an exemption applies, and this stream receives processing priority."
+        shortAnswer={<>The Specialist Skills stream requires that the nominee's annual earnings will meet or exceed the Specialist Skills Income Threshold (SSIT) of <strong style={{ color: NAVY }}>$146,576 per annum from 1 July 2026</strong>. The position may be in any ANZSCO occupation <strong style={{ color: NAVY }}>except</strong> those in ANZSCO major groups 3 (Technicians and Trades Workers), 7 (Machinery Operators and Drivers), or 8 (Labourers). Labour Market Testing is required unless a trade-obligation exemption applies. Priority processing applies. The visa is granted for up to four years, and holders may be eligible for permanent residence via the subclass 186 ENS TRT stream. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your role and remuneration qualify for the Specialist Skills stream before lodgement.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -327,7 +327,7 @@ return (
               { label: 'Nomination application charge', value: '$330 per nominee' },
               { label: 'SAF Levy — small business (turnover < $10M)', value: '$1,200 per year × visa period (e.g. 4 years = $4,800 upfront)' },
               { label: 'SAF Levy — standard business (turnover ≥ $10M)', value: '$1,800 per year × visa period (e.g. 4 years = $7,200 upfront)' },
-              { label: 'Visa Application Charge — base (primary applicant)', value: '$3,115 approximate — check current VAC on DoHA website' },
+              { label: 'Visa Application Charge — base (primary applicant)', value: '$4,015 approximate — check current VAC on DoHA website' },
             ].map((row, i) => (
               <div
                 key={i}
@@ -339,7 +339,7 @@ return (
             ))}
             <div style={{ padding: '20px 28px', background: '#fff8ed', borderTop: `2px solid ${GOLD}40` }}>
               <p style={{ margin: 0, fontSize: 13, color: '#92400e', lineHeight: 1.6 }}>
-                Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+                Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
               </p>
             </div>
           </div>

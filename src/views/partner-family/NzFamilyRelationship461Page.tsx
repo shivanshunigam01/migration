@@ -189,7 +189,7 @@ export default function NzFamilyRelationship461Page({ navigate }: { navigate: (p
         deck="A 5-year temporary visa for people who are not New Zealand citizens but are members of the family unit of a New Zealand citizen living in Australia on a subclass 444 Special Category visa. Full work and study rights. Renewable onshore."
         shortAnswer={<>The subclass 461 grants a <strong style={{ color: NAVY }}>5-year temporary visa</strong> to family members of a New Zealand citizen on a <strong style={{ color: NAVY }}>subclass 444 Special Category visa</strong> in Australia. Holders have <strong style={{ color: NAVY }}>full work and study rights</strong> and can renew onshore. The 461 does not lead to permanent residence — a separate pathway is needed. With NZ citizens now able to apply for Australian citizenship directly, family planning options are changing: a partner whose NZ citizen sponsor becomes an Australian citizen may then access the partner visa route to permanent residence. Nanak Migration Group (MARN 2619467) can assess the family's full options. Confirm all current requirements on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Partner & Family', page: 'partner-family-visas' }}
         accent={ACCENT}
@@ -282,7 +282,7 @@ export default function NzFamilyRelationship461Page({ navigate }: { navigate: (p
             {[
               { icon: 'briefcase', title: 'Full work rights', body: 'Work in any occupation, for any employer, without restriction. No skills assessment or employer sponsorship required.' },
               { icon: 'home', title: 'Full study rights', body: 'Study at any level — primary, secondary, vocational, or university — without needing a separate student visa.' },
-              { icon: 'shield', title: 'Medicare access', body: "Holders of the 461 may be eligible for Medicare under the Trans-Tasman Travel Arrangement, subject to reciprocal arrangements. Confirm current eligibility on the Services Australia website." },
+              { icon: 'shield', title: 'Medicare access', body: "Home Affairs advises that 461 holders are personally liable for their healthcare costs and recommends adequate private health insurance. Check with Services Australia whether any reciprocal health care agreement applies to you." },
               { icon: 'plane', title: 'Multiple entry', body: 'The subclass 461 allows multiple entries to Australia within the visa validity period. Travel outside Australia does not cause the visa to expire.' },
               { icon: 'calendar', title: '5-year validity', body: 'Valid for 5 years from the date of grant. Must be renewed before expiry — the renewal application requires the NZ citizen to still hold a valid 444 visa.' },
               { icon: 'arrowright', title: 'Renewable onshore', body: 'The renewal application can be lodged while in Australia. A bridging visa is issued on lodgement, allowing the holder to remain while the renewal is processed.' },
@@ -401,7 +401,7 @@ export default function NzFamilyRelationship461Page({ navigate }: { navigate: (p
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

@@ -19,7 +19,7 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const GREEN = GOLD
 const ROSE = CAT_PARTNER
@@ -40,7 +40,7 @@ const PARTNER_RELATED: RelatedPage[] = [
 const PARTNER_CARDS = [
   { code: '820/801', name: 'Partner Visa Onshore', tag: 'Temp → Permanent', tagColor: ROSE, body: 'For couples where the applicant is already in Australia. Grants temporary (820) then permanent (801) after approximately 2 years — one application, two stages.', route: null as string | null, note: '2-stage — applied once, assessed twice' },
   { code: '309/100', name: 'Partner Visa Offshore', tag: 'Temp → Permanent', tagColor: ROSE, body: 'For couples where the applicant is overseas at lodgement. The 309 grants temporary residence; the 100 permanent stage is assessed automatically after 2 years.', route: 'partner-visa-309-100' as string | null, note: 'Applicant must be offshore at time of lodgement' },
-  { code: '300', name: 'Prospective Marriage', tag: 'Engaged couples', tagColor: AMBER, body: 'Enter Australia to marry your fiancé(e) within 9 months. After marrying, apply for the 820/801 partner visa from onshore. Must not already be married at lodgement.', route: null as string | null, note: 'Must marry within 9 months of entry' },
+  { code: '300', name: 'Prospective Marriage', tag: 'Engaged couples', tagColor: AMBER, body: 'Come to Australia and marry your fiancé(e) before the visa ends. The 300 is granted for 9 to 15 months from the grant date, and the marriage can take place in Australia or overseas. After marrying, apply for the 820/801 partner visa from onshore. Must not already be married at lodgement.', route: null as string | null, note: 'Must marry before the visa ends (9 to 15 months from grant)' },
 ]
 
 const PARENT_CARDS = [
@@ -98,9 +98,9 @@ const PILLARS = [
 /* ── Processing time table ───────────────────────────────── */
 const PROCESSING = [
   { visa: '309 Partner (Offshore)', stage: 'Temporary grant', time: '2–4 years', color: ROSE },
-  { visa: '100 Partner (Offshore)', stage: 'Permanent grant (from 309)', time: '2 further years', color: ROSE },
+  { visa: '100 Partner (Offshore)', stage: 'Permanent grant (from 309)', time: 'Eligible 2 years after lodgement, then 100: 9 months (50%) / 21 months (90%); 801: 8 months (50%) / 19 months (90%)', color: ROSE },
   { visa: '820 Partner (Onshore)', stage: 'Temporary grant', time: '2–4 years', color: ROSE },
-  { visa: '801 Partner (Onshore)', stage: 'Permanent grant (from 820)', time: '2 further years', color: ROSE },
+  { visa: '801 Partner (Onshore)', stage: 'Permanent grant (from 820)', time: 'Eligible 2 years after lodgement, then 100: 9 months (50%) / 21 months (90%); 801: 8 months (50%) / 19 months (90%)', color: ROSE },
   { visa: '300 Prospective Marriage', stage: 'Visa grant', time: '6–12 months', color: AMBER },
   { visa: '143 Contributory Parent', stage: 'Permanent grant', time: '5–7 years', color: PURPLE },
   { visa: '173 Contributory Parent Temp', stage: 'Temporary grant', time: '2–3 years', color: PURPLE },
@@ -113,7 +113,7 @@ const PROCESSING = [
 const FAQS = [
   {
     q: 'What is the two-stage partner visa process?',
-    a: "Partner visas are applied for once but assessed in two stages. Stage 1 grants temporary residence — the 820 (onshore) or 309 (offshore). Stage 2 assesses your relationship again approximately 2 years after the temporary grant and, if the relationship is genuine and ongoing, grants permanent residence (801 or 100). You do not lodge a second application — the permanent assessment is triggered automatically. If your relationship ends before the permanent stage, you may not be eligible for the 801/100 unless family violence provisions apply.",
+    a: "Partner visas are applied for once but assessed in two stages. Stage 1 grants temporary residence — the 820 (onshore) or 309 (offshore). Stage 2 assesses your relationship again once 2 years have passed since you lodged the combined application (not 2 years after the temporary grant) and, if the relationship is genuine and continuing, grants permanent residence (801 or 100). You do not lodge a second application — the permanent assessment is triggered automatically. If your relationship ends before the permanent stage, you may not be eligible for the 801/100 unless family violence provisions apply.",
   },
   {
     q: 'How long does a partner visa take?',
@@ -129,7 +129,7 @@ const FAQS = [
   },
   {
     q: 'What is the Contributory Parent visa and is it worth it?',
-    a: "The Contributory Parent 143 visa costs approximately $48,415 in government fees per primary applicant as at 1 July 2026, with additional amounts for secondary applicants. In return, the queue is roughly 5–7 years. The non-contributory 103/804 has minimal government fees but a queue exceeding 30 years. For most families, the contributory pathway is the only practical option for permanent residence within a reasonable timeframe. Government fees must be verified with Home Affairs before lodging — they change periodically.",
+    a: "The Contributory Parent 143 visa costs AUD49,900 in government charges for most primary applicants from 1 July 2026 (first instalment AUD6,300 plus second instalment AUD43,600 payable before grant), with additional amounts for secondary applicants. In return, the queue is roughly 5–7 years. The non-contributory 103/804 has minimal government fees but a queue exceeding 30 years. For most families, the contributory pathway is the only practical option for permanent residence within a reasonable timeframe. Government fees must be verified with Home Affairs before lodging — they change periodically.",
   },
   {
     q: 'My partner visa was refused — what can I do?',

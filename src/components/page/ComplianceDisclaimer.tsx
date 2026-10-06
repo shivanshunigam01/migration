@@ -4,7 +4,7 @@ export interface ComplianceDisclaimerProps {
 }
 
 export function ComplianceDisclaimer({
-  currentAsAt = 'July 2026',
+  currentAsAt = 'October 2026',
   pageNote,
 }: ComplianceDisclaimerProps) {
   const microHeading: React.CSSProperties = {

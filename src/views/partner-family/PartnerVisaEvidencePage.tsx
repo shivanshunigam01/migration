@@ -42,7 +42,7 @@ const TEAL    = '#0e7490'
 const BLUE    = '#2563eb'
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',    label: 'Key facts' },

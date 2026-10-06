@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -29,10 +29,10 @@ const TOC = [
 ]
 
 const KEY_FACTS: KeyFact[] = [
-  { icon: 'calendar', value: '60 days', label: 'Grace period after employment ends', note: 'You generally have up to 60 days to secure a new sponsor after your employment ceases.' },
+  { icon: 'calendar', value: '180 days', label: 'Grace period after employment ends', note: 'You may have up to 180 days at a time (365 days in total on the visa) to find a new sponsor, apply for another visa or leave.' },
   { icon: 'briefcase', value: 'SBS required', label: 'New employer must be approved', note: 'Your new employer must hold (or apply for) Standard Business Sponsorship before nominating you.' },
   { icon: 'file', value: 'New nomination', label: 'Required for each transfer', note: 'A new nomination application must be lodged by the new employer for your nominated occupation.' },
-  { icon: 'shield', value: 'Stay compliant', label: 'Condition 8107 continues', note: 'You must comply with condition 8107 until a new nomination and any required visa change is in effect.' },
+  { icon: 'shield', value: 'Stay compliant', label: 'Condition 8607 continues', note: 'You must comply with condition 8607 until a new nomination and any required visa change is in effect.' },
 ]
 
 const STEPS: TimelineStep[] = [
@@ -61,15 +61,15 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'Can I start working for my new employer straight away?',
-    answer: 'No. You must wait until your new employer\'s nomination is approved before commencing work with them, unless your current visa conditions otherwise permit it. Starting work before the nomination is approved may breach condition 8107.',
+    answer: 'No. You must wait until your new employer\'s nomination is approved before commencing work with them, unless your current visa conditions otherwise permit it. Starting work before the nomination is approved may breach condition 8607.',
   },
   {
     question: 'Does my new employer need to pay the SAF Levy?',
     answer: "Yes. The SAF Levy is payable by each employer at the time of nominating. If you change employers, your new employer must pay the SAF Levy for the period of the new nomination — even if you have only recently transferred.",
   },
   {
-    question: 'What if I cannot find a new sponsor within 60 days?',
-    answer: 'If you cannot find a new sponsor within the 60-day grace period, you may be required to depart Australia. You should seek advice promptly if your employment ends unexpectedly. Do not wait until day 60 to start the process.',
+    question: 'What if I cannot find a new sponsor within the allowed period?',
+    answer: 'If you cannot find a new sponsor within 180 days (or you reach 365 days in total), you may need to leave Australia or apply for a different visa. You should seek advice promptly if your employment ends unexpectedly. Do not wait until day 60 to start the process.',
   },
   {
     question: 'Can my new employer be in a different industry?',
@@ -77,13 +77,13 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Will changing employers affect my 186 PR application?',
-    answer: 'If you are partway through the 2-year qualifying period for the 186 Temporary Residence Transition (TRT) stream, changing employers resets the clock. You would need to work with the new employer for 2 years (in most cases) before a 186 TRT application can be lodged. Seek advice on your specific situation.',
+    answer: 'If you are partway through the 2-year qualifying period for the 186 Temporary Residence Transition (TRT) stream, changing employers does not reset the clock. Full-time sponsored employment with your previous and new sponsors can count towards the 2 years, as long as it falls within the 3 years before you apply, and your new employer (as your last sponsor) must nominate you. Seek advice on your specific situation.',
   },
 ]
 
 const RELATED: RelatedPage[] = [
   { title: 'Skills in Demand Visa (482)', desc: 'Full guide to the 482 — streams, eligibility and the nomination process.', icon: 'star', page: 'skills-in-demand-visa', color: CAT_EMPLOYER },
-  { title: '482 Visa Conditions', desc: 'What condition 8107 means and how to stay compliant on your 482 visa.', icon: 'clipboard', page: 'visa-conditions-482', color: CAT_EMPLOYER },
+  { title: '482 Visa Conditions', desc: 'What condition 8607 means and how to stay compliant on your 482 visa.', icon: 'clipboard', page: 'visa-conditions-482', color: CAT_EMPLOYER },
   { title: 'Employer Obligations', desc: 'What your current and future sponsors must do to remain compliant.', icon: 'shield', page: 'sponsorship-obligations', color: CAT_EMPLOYER },
   { title: '482 to PR Pathway', desc: 'Transition from the 482 to permanent residence via the 186 TRT stream.', icon: 'trending', page: '482-to-pr-pathway', color: CAT_EMPLOYER },
 ]
@@ -91,11 +91,11 @@ const RELATED: RelatedPage[] = [
 const RISKS = [
   {
     title: 'Gap in sponsorship',
-    desc: 'Working without a valid nomination for your new employer is a breach of condition 8107. Do not start working for the new employer until the nomination is approved (unless a migration agent advises otherwise based on your specific visa grant).',
+    desc: 'Working without a valid nomination for your new employer is a breach of condition 8607. Do not start working for the new employer until the nomination is approved (unless a migration agent advises otherwise based on your specific visa grant).',
   },
   {
     title: '60-day rule',
-    desc: 'The 60-day period is not a visa — it is an administrative grace period. If you remain in Australia beyond 60 days after employment ends without a new sponsor, you may accrue unlawful status.',
+    desc: 'The grace period under condition 8607 is not a separate visa. If you remain in Australia beyond the allowed period without a new sponsor or another valid visa, you may accrue unlawful status.',
   },
   {
     title: 'Occupation mismatch',
@@ -132,7 +132,7 @@ return (
         eyebrowSub="Skills in Demand Visa · Sponsor Transfer"
         title={<>Change of Employer<br /><em style={{ fontStyle: 'italic', color: GOLD }}>on a Subclass 482 Visa</em></>}
         deck="If you hold a subclass 482 Skills in Demand visa and your employment ends — or you wish to move to a new employer — you may be able to transfer your sponsorship without leaving Australia. Your new employer must be an approved sponsor."
-        shortAnswer={<>Changing employers on a subclass 482 requires your new employer to hold Standard Business Sponsorship and to lodge a new nomination for you. You can remain in Australia while the new nomination is being processed, provided you continue to comply with your current visa conditions. If your employment has already ended, you generally have up to 60 days before departure is required. Nanak Migration Group (MARN 2619467) can assess your situation and help coordinate the transfer process.</>}
+        shortAnswer={<>Changing employers on a subclass 482 requires your new employer to hold Standard Business Sponsorship and to lodge a new nomination for you. You can remain in Australia while the new nomination is being processed, provided you continue to comply with your current visa conditions. If your employment has already ended, condition 8607 may allow up to 180 days at a time (365 days in total on the visa) to find a new sponsor, apply for another visa or leave. Nanak Migration Group (MARN 2619467) can assess your situation and help coordinate the transfer process.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -163,8 +163,8 @@ return (
             {[
               { heading: 'You hold a current subclass 482 visa', detail: 'Your visa must be valid at the time the new nomination is lodged. A cancelled or expired 482 visa cannot be transferred — you would need to apply for a new visa.' },
               { heading: 'Your new employer must hold SBS', detail: 'Standard Business Sponsorship must be current. If the employer is not yet approved, they can apply for SBS concurrently with the nomination, but the nomination cannot be approved until SBS is granted.' },
-              { heading: 'The role must meet occupation and salary requirements', detail: 'The new position must appear on the relevant occupation list for your visa stream and must meet the Temporary Skilled Migration Income Threshold (TSMIT) or the applicable stream salary floor.' },
-              { heading: 'You must be within the 60-day period (if employment has ended)', detail: 'If your employment with your previous sponsor has already ended, you have a 60-day period in which to find and be nominated by a new employer before departure from Australia is generally required.' },
+              { heading: 'The role must meet occupation and salary requirements', detail: 'The new position must appear on the relevant occupation list for your visa stream and must meet the annual market salary rate and the Core Skills Income Threshold ($79,423) or Specialist Skills Income Threshold ($146,576) for your stream.' },
+              { heading: 'You must be within the 60-day period (if employment has ended)', detail: 'If your employment with your previous sponsor has already ended, you have up to 180 days in a single period (365 days in total) to be nominated by a new employer or arrange to leave Australia.' },
             ].map((item, i) => (
               <div key={i} style={{ border: `1px solid ${BORDER}`, borderRadius: 10, padding: '20px 24px', background: GREY_BG }}>
                 <div style={{ fontWeight: 600, fontSize: 15, color: NAVY, marginBottom: 6 }}>{item.heading}</div>
@@ -200,7 +200,7 @@ return (
             ))}
           </div>
           <p style={{ fontSize: 13, color: '#6b7280', marginTop: 16, fontStyle: 'italic' }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
           </p>
         </div>
       </section>

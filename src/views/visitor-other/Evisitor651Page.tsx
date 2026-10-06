@@ -184,7 +184,7 @@ export default function Evisitor651Page({ navigate }: { navigate: (page: string)
         deck="A free, electronic entry authority for eligible European passport holders — allowing multiple 3-month visits to Australia over a 12-month period for tourism and business visitor purposes."
         shortAnswer={<>The eVisitor (subclass 651) is a <strong style={{ color: NAVY }}>free</strong> entry authority for citizens of <strong style={{ color: NAVY }}>European Union member states and other eligible European nations</strong>. Applied online through ImmiAccount. Allows <strong style={{ color: NAVY }}>multiple visits of up to 3 months each</strong> within 12 months. Tourism and business visitor activities only — <strong style={{ color: NAVY }}>no work permitted.</strong> Cannot be extended from inside Australia — longer stays require the Visitor visa (600). If you have a US, Canadian, Japanese or other non-European eligible passport, see the ETA (601) page instead. Nanak Migration Group (MARN 2619467) can assist with complex visitor visa situations. Confirm all current details on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Visitor Visas', page: 'visitor-visas' }}
         accent={ACCENT}
@@ -223,7 +223,7 @@ export default function Evisitor651Page({ navigate }: { navigate: (page: string)
             Once granted, the eVisitor allows the holder to enter Australia multiple times within 12 months, staying up to 3 months per visit. It covers tourism and legitimate business visitor activities — attending conferences, business meetings, and negotiations. It does not allow paid work.
           </p>
           <Callout variant="note" panel={true} title="The eVisitor is for European passport holders — US/Canadian/Japanese/other passport holders should check the ETA (601)">
-            The eVisitor and the ETA serve different passport groups. European passport holders typically use the eVisitor; US, Canadian, Japanese, South Korean, and other specified passport holders typically use the ETA. Check the Department of Home Affairs website to confirm which product applies to your nationality.
+            The eVisitor and ETA lists overlap - many European passport holders can use either. European passport holders typically use the eVisitor; US, Canadian, Japanese, South Korean, and other specified passport holders typically use the ETA. Check the Department of Home Affairs website to confirm which product applies to your nationality.
           </Callout>
         </div>
       </section>
@@ -348,7 +348,7 @@ export default function Evisitor651Page({ navigate }: { navigate: (page: string)
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

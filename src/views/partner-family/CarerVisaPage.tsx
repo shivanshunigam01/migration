@@ -89,7 +89,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: "Who qualifies as the Australian relative needing care?",
-    answer: "The Australian relative who needs care must be an Australian citizen, Australian permanent resident, or eligible New Zealand citizen, and must be a relative of the visa applicant. The definition of 'relative' for Carer visa purposes is broadly defined and includes a parent, child, step-parent, step-child, adopted child (who is an adult), sibling, step-sibling, grandparent, grandchild, spouse's parent, spouse's grandparent, and certain other defined relatives. The key requirements are the medical condition and the care need — not just the family relationship in isolation.",
+    answer: "The Australian relative who needs care must be an Australian citizen, Australian permanent resident, or eligible New Zealand citizen, and must be a relative of the visa applicant. The definition of 'relative' for Carer visa purposes is broadly defined and includes a spouse or de facto partner, child, parent, brother or sister, a step-child, step-brother or step-sister, and a grandparent, grandchild, aunt, uncle, niece or nephew (or the step-equivalent of these). The key requirements are the medical condition and the care need — not just the family relationship in isolation.",
   },
   {
     question: "What counts as a 'long-term medical condition' for the Carer visa?",
@@ -171,7 +171,7 @@ export default function CarerVisaPage({ navigate }: { navigate: (page: string) =
         deck="The Carer visa is for a person willing and able to provide substantial ongoing care to an Australian relative with a long-term or permanent medical condition. It is a permanent visa with full work rights. The care need must be certified through the Department of Home Affairs' medical assessment process — and the Department must be satisfied that the care cannot reasonably be provided by Australian services or other Australian relatives."
         shortAnswer={<>The Carer visa (subclass 116 if outside Australia, 836 if already in Australia) grants <strong style={{ color: NAVY }}>permanent residence with full work rights</strong> to a person who will provide substantial care to an Australian relative with a long-term medical condition. The <strong style={{ color: NAVY }}>care need must be certified through a departmental medical assessment</strong> — the relative's own doctor is not sufficient on its own. The Department must also be satisfied that the required care <strong style={{ color: NAVY }}>cannot reasonably be provided by other Australian relatives or Australian community services</strong>. Processing times for the Carer visa are currently multi-year — confirm current estimates on the Department of Home Affairs website. Nanak Migration Group (MARN 2619467) can assess whether the care need criterion is likely to be met in your family's situation before you commit to an application.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Partner & Family', page: 'partner-family-visas' }}
         accent={ACCENT}
@@ -348,7 +348,7 @@ export default function CarerVisaPage({ navigate }: { navigate: (page: string) =
               },
               {
                 title: 'Who conducts the assessment',
-                body: "The Department of Home Affairs appoints a medical officer to assess the relative's condition and care needs. This is a separate process from the standard panel physician health examination. The outcome of this assessment determines whether the care need criterion is satisfied for the visa application.",
+                body: "The relative (or the family member who needs care) must be assessed by Bupa Medical Visa Services and obtain a medical certificate stating the condition and the level of care needed. This is a separate process from the standard panel physician health examination. The outcome of this assessment determines whether the care need criterion is satisfied for the visa application.",
               },
               {
                 title: 'What the assessment considers',
@@ -396,7 +396,7 @@ export default function CarerVisaPage({ navigate }: { navigate: (page: string) =
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 17, fontWeight: 700, color: NAVY, margin: '0 0 12px' }}>The relative in Australia</h3>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, marginBottom: 12 }}>The Australian relative whose care need supports the visa application is broadly defined. Eligible relationships include:</p>
               <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 6, fontSize: 13, color: '#374151', lineHeight: 1.6 }}>
-                {['Parent or step-parent', 'Child or step-child (adult)', 'Sibling or step-sibling', 'Grandparent or grandchild', "Spouse's parent or grandparent", 'Other close relative as defined in the legislation'].map((rel, i) => (
+                {['Parent or step-parent', 'Child or step-child (adult)', 'Sibling or step-sibling', 'Grandparent or grandchild', "Aunt, uncle, niece or nephew (including step-relatives)", 'Other close relative as defined in the legislation'].map((rel, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8 }}>
                     <span style={{ color: ACCENT, fontWeight: 700 }}>·</span>
                     <span>{rel}</span>
@@ -440,7 +440,7 @@ export default function CarerVisaPage({ navigate }: { navigate: (page: string) =
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

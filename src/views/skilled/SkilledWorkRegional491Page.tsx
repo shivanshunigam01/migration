@@ -38,7 +38,7 @@ const INDIGO   = '#4f46e5'
 const TEAL     = '#0e7490'
 const BORDER   = '#e8edf6'
 const GREY_BG  = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 /* ─── On-this-page ─── */
 const TOC: NavSection[] = [
@@ -59,7 +59,7 @@ const KEY_FACTS: KeyFact[] = [
   { icon: 'mappin',  value: 'Regional areas only', label: 'Must live, work and study',         note: 'The visa requires residence in a designated regional area for its full duration.' },
   { icon: 'flag',    value: 'State or relative',  label: 'Nomination or sponsorship required', note: 'Either a state/territory nomination or sponsorship by an eligible relative.' },
   { icon: 'check',   value: 'Generally needed',   label: 'Skills assessment required',         note: 'From the relevant assessing authority for your ANZSCO occupation.' },
-  { icon: 'shield',  value: 'After 3 years',      label: 'Pathway to permanent 191',           note: 'Must meet residence, employment and income requirements to apply for the 191.' },
+  { icon: 'shield',  value: 'After 3 years',      label: 'Pathway to permanent 191',           note: 'Must hold the 491 for 3 years, comply with its conditions and provide ATO notices of assessment for 3 income years.' },
 ]
 
 /* ─── Step timeline ─── */
@@ -96,7 +96,7 @@ const STEPS: TimelineStep[] = [
     points: [
       'For state nomination: apply through the relevant state or territory migration agency; each has its own criteria, occupation lists, and processing times.',
       'For relative sponsorship: an eligible relative living in a designated regional area must sponsor you; they must be an Australian citizen, permanent resident, or eligible NZ citizen.',
-      'Eligible relatives include: spouse or de facto partner, parent, child, brother, sister, aunt, uncle, nephew, niece, or first cousin.',
+      'Eligible relatives are a parent, child or step-child, brother or sister (including adoptive and step), aunt or uncle, nephew or niece, grandparent or first cousin - of you or your partner. A spouse or de facto partner cannot be the sponsor.',
       'Nomination or sponsorship approval must precede an invitation to apply.',
     ],
   },
@@ -132,7 +132,7 @@ const STEPS: TimelineStep[] = [
 /* ─── PR pathway section (local) ─── */
 const PR_REQUIREMENTS = [
   { icon: 'clock',     label: 'At least 3 years residence in a designated regional area', body: "You must have lived in a designated regional area for at least 3 years while holding the 491 visa. Brief absences for travel or work purposes generally do not break continuity, but extended absences may. Document your regional residence throughout the 491 period." },
-  { icon: 'dollar',    label: 'Taxable income at or above the threshold in each year', body: "You must have met the income threshold (indexed annually) in each of the 3 years you are relying on. Verify the applicable threshold for each income year with the Department of Home Affairs — it is subject to change." },
+  { icon: 'dollar',    label: 'ATO notices of assessment for 3 income years. Paragraph: You must provide notices of assessment issued by the ATO for 3 income years out of the 5 years of your eligible visa. Home Affairs currently states there is no minimum income requirement.', body: "You must have met the income threshold (indexed annually) in each of the 3 years you are relying on. Verify the applicable threshold for each income year with the Department of Home Affairs — it is subject to change." },
   { icon: 'briefcase', label: 'Genuine attempt to comply with 491 conditions', body: "The Department of Home Affairs assesses whether you genuinely attempted to comply with the visa conditions — including work, study, and residence in a regional area — throughout the holding period. Non-compliance can affect the 191 application." },
   { icon: 'globe',     label: 'Competent English (generally)', body: "Competent English is generally required for the 191 application. If you already demonstrated Competent English for the 491, confirm whether a new test is required or whether your existing results remain current." },
 ]
@@ -144,7 +144,7 @@ function PRPathwaySection() {
         <SectionHeading
           kicker="Section 3"
           title="Pathway to Permanent Residence — Subclass 191"
-          intro="The 491 is a provisional visa. To obtain permanent residence, you must separately apply for the Skilled Regional (Residence) visa (subclass 191) after meeting the residence, income, and compliance requirements."
+          intro="The 491 is a provisional visa. To obtain permanent residence, you must separately apply for the Permanent Residence (Skilled Regional) visa (subclass 191) after meeting the residence, income, and compliance requirements."
           accent={GREEN}
         />
         <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 28 }}>
@@ -178,10 +178,10 @@ function PRPathwaySection() {
 /* ─── Designated regional areas section (local) ─── */
 function DesignatedRegionalSection() {
   const examples = [
-    { state: 'NSW', areas: 'All areas except Sydney, Newcastle, Wollongong and the Central Coast' },
+    { state: 'NSW', areas: 'All areas except the Sydney metropolitan area (Newcastle/Lake Macquarie and Wollongong/Illawarra are Category 2 regional areas)' },
     { state: 'VIC', areas: 'All areas except Melbourne metropolitan area' },
     { state: 'QLD', areas: 'All areas except Brisbane metropolitan area' },
-    { state: 'WA',  areas: 'All areas except Perth metropolitan area' },
+    { state: 'WA',  areas: 'All of Western Australia (including Perth)' },
     { state: 'SA',  areas: 'All of South Australia (including Adelaide)' },
     { state: 'TAS', areas: 'All of Tasmania' },
     { state: 'NT',  areas: 'All of the Northern Territory' },
@@ -223,12 +223,12 @@ const COMPARE_COLS: ComparisonColumn[] = [
 ]
 const COMPARE_ROWS: ComparisonRow[] = [
   { feature: 'Who can provide it',          state: 'An Australian state or territory government', family: 'An eligible relative (citizen, permanent resident, or eligible NZ citizen) living in a designated regional area' },
-  { feature: 'Eligible relatives',          state: 'Not applicable',                              family: 'Spouse, de facto partner, parent, child, sibling, aunt, uncle, nephew, niece, first cousin' },
+  { feature: 'Eligible relatives',          state: 'Not applicable',                              family: 'Parent, child or step-child, sibling, aunt, uncle, nephew, niece, grandparent or first cousin (including adoptive and step relationships)' },
   { feature: 'Points bonus',                state: '+15 points',                                  family: '+15 points (same bonus)' },
   { feature: 'Occupation list requirement', state: 'MLTSSL or state/territory regional list; states may have their own additional requirements', family: 'MLTSSL; relative sponsor must live in a designated regional area' },
   { feature: 'State-specific criteria',     state: 'Each state sets its own criteria — minimum points, occupation lists, and connection requirements', family: 'Federal criteria only; no separate state program required' },
   { feature: 'Processing',                  state: 'Separate state nomination application required; processing times vary widely by state', family: 'Federal process only; no separate state application' },
-  { feature: 'Geographic flexibility',      state: 'Must live in the nominating state\'s regional areas (in most cases)',     family: 'Must live in any designated regional area where the relative sponsor resides' },
+  { feature: 'Geographic flexibility',      state: 'Must live in the nominating state\'s regional areas (in most cases)',     family: 'Must live, work and study in a designated regional area (not necessarily the same area as your relative). Your relative must usually live in a designated regional area.' },
 ]
 
 /* ─── Obligations section (local) ─── */
@@ -332,7 +332,7 @@ export default function SkilledWorkRegional491Page({ navigate }: { navigate: (pa
         eyebrowSub="Skilled Work Regional (Provisional) · Points-Tested"
         title={<>Skilled Work Regional<br /><em style={{ fontStyle: 'italic', color: GOLD }}>(Provisional) Visa — 491</em></>}
         deck="A five-year provisional visa for skilled workers nominated by a state or territory government, or sponsored by an eligible relative living in designated regional Australia. Provides the highest points bonus of any skilled visa — 15 points — and a pathway to permanent residence through the subclass 191."
-        shortAnswer={<>The 491 suits applicants who need the <strong style={{ color: NAVY }}>15-point regional bonus</strong> to receive an invitation and are willing to live, work, and study in a <strong>designated regional area</strong> for at least five years. It is a provisional visa — permanent residence requires a separate 191 application after at least three years of regional residence and meeting income requirements. The conditions are binding: breaching the regional living requirement can affect current and future visa applications.</>}
+        shortAnswer={<>The 491 suits applicants who need the <strong style={{ color: NAVY }}>15-point regional bonus</strong> to receive an invitation and are willing to live, work, and study in a <strong>designated regional area</strong> for at least five years. It is a provisional visa — permanent residence requires a separate 191 application after holding the 491 for at least three years, complying with its conditions and providing ATO notices of assessment for 3 income years. The conditions are binding: breaching the regional living requirement can affect current and future visa applications.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Assess your 491 eligibility', page: 'book-consultation' }}
@@ -406,7 +406,7 @@ export default function SkilledWorkRegional491Page({ navigate }: { navigate: (pa
       />
 
       <ComplianceDisclaimer currentAsAt={CURRENT_AS_AT}
-        pageNote="Designated regional area boundaries, income thresholds for the 191, and state nomination criteria are subject to change by legislative instrument or state government decision. This page does not publish visa application fees." />
+        pageNote="Designated regional area boundaries, income thresholds for the 191, and state nomination criteria are subject to change by legislative instrument or state government decision. Visa application charges shown are those published by Home Affairs from 1 July 2026 and may change." />
 
       <SiteFooter navigate={navigate} />
     </div>

@@ -30,13 +30,13 @@ const FACTS: KeyFact[] = [
   { icon: 'check', value: '2 ways', label: 'Two alternative ways to pass the Balance of Family test', note: "Half-or-more in Australia, OR more in Australia than in any other single country. Either test passing is sufficient." },
   { icon: 'layers', value: 'Broadly counted', label: 'Biological, adopted and step-children all count', note: "The test counts all of the parent's children broadly — not just the child who is sponsoring the visa." },
   { icon: 'check', value: 'Not required', label: 'The subclass 870 does NOT require the Balance of Family test', note: 'The 870 Sponsored Parent (Temporary) visa is exempt from the Balance of Family test — making it accessible to parents who fail the test for permanent visas.' },
-  { icon: 'shield', value: '5 visas', label: 'The test applies to five permanent parent visa subclasses', note: 'Subclasses 103, 143, 173, 804, and 864 all require the Balance of Family test to be satisfied.' },
+  { icon: 'shield', value: '5 visas', label: 'The test applies to five permanent parent visa subclasses', note: 'Subclasses 103, 143, 173, 804, 864 and 884 all require the balance of family test to be satisfied.' },
 ]
 
 const FAQ: FaqItem[] = [
   { question: "Does my child's spouse count as my child for the Balance of Family test?", answer: "No. Only the parent's own children — biological, legally adopted, or step-children (in qualifying circumstances) — count toward the Balance of Family test. A daughter-in-law or son-in-law does not count. The number of grandchildren also does not affect the count. The test is strictly about the parent's own children." },
   { question: "My child is an Australian permanent resident but not a citizen — do they count?", answer: "Yes. Australian permanent residents count for the Balance of Family test — the test does not require the child to be an Australian citizen. An Australian citizen, an Australian permanent resident, or an eligible New Zealand citizen who is settled (lawfully residing) in Australia all count on the Australian side of the balance." },
-  { question: "What does 'settled' mean for the purposes of the test?", answer: "In the context of the Balance of Family test, 'settled' means that the child is lawfully and habitually resident in Australia as an Australian citizen, Australian permanent resident, or eligible New Zealand citizen. A child who is in Australia on a temporary visa (e.g. a student visa or working holiday visa) is NOT considered settled in Australia for the purposes of the test — even if they have lived there for several years." },
+  { question: "What does 'settled' mean for the purposes of the test?", answer: "For the balance of family test, an eligible child is an Australian citizen, or an Australian permanent resident or eligible New Zealand citizen who is usually resident in Australia. Children in Australia on temporary visas are not treated as usually resident. A child who is in Australia on a temporary visa (e.g. a student visa or working holiday visa) is NOT considered settled in Australia for the purposes of the test — even if they have lived there for several years." },
   { question: "Can the Balance of Family test be assessed at the time of lodgement, or must it be re-assessed at the time of grant?", answer: "The Balance of Family test is assessed at the time of decision on the application (when the visa is being granted), not necessarily at the time of lodgement. For parent visa applications with long processing queues, this means the family configuration at the time of grant — which may be 12–15 years after lodgement — is what matters. If a sibling migrates to Australia in the interim, they would count toward the balance at decision time. If an Australian-resident child dies or leaves Australia and renounces PR, the count changes." },
   { question: "If a child who counted on the Australian side of the balance passes away after lodgement, does the parent fail the test?", answer: "The rules on this are specific and complex. Whether a deceased Australian-resident child continues to count toward the balance depends on the circumstances of their death and settlement. This is an area where the Migration Regulations contain detailed provisions — and where professional legal advice from a registered migration agent or migration lawyer is essential. The Department will apply the rules as at the time of decision." },
 ]
@@ -82,7 +82,7 @@ return (
         deck="The Balance of Family test determines whether a parent has enough of their children settled in Australia to be eligible for a permanent parent visa. It applies to most permanent parent visa subclasses but not to the subclass 870 Sponsored Parent (Temporary) visa."
         shortAnswer={<>The Balance of Family test has <strong style={{ color: NAVY }}>two alternative ways to pass</strong>: (1) at least half of the parent's children are Australian citizens, permanent residents, or eligible New Zealand citizens settled in Australia; OR (2) more of the parent's children are settled in Australia than in any other single country. Children are counted broadly — biological, legally adopted, and step-children from any relationship all count. A child who is deceased or is a refugee is treated under specific rules. The Balance of Family test is required for subclasses 103, 143, 173, 804, and 864 — but <strong style={{ color: NAVY }}>not for the subclass 870</strong>. Nanak Migration Group (MARN 2619467) can assess whether your family satisfies the test before you lodge.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Parent Visas Hub', page: 'parent-visas' }}
         accent={ACCENT}
@@ -177,8 +177,8 @@ return (
             {[
               { icon: 'users', category: 'Biological children', explanation: "All biological children of the parent count, regardless of age, marital status, or whether they are in contact with the parent. Adult children count the same as minor children." },
               { icon: 'check', category: 'Legally adopted children', explanation: "Children who have been legally adopted by the parent (under the law of the country of adoption) count as the parent's children for the Balance of Family test." },
-              { icon: 'users', category: 'Step-children', explanation: "Step-children are counted in some circumstances. The rules for step-children are specific — a child is a step-child of the parent if they are the child of the parent's spouse or de facto partner (current or former). Step-children who are counted must be identified carefully — seek advice if you have step-children in the count." },
-              { icon: 'alert', category: 'Deceased children', explanation: "A child who is deceased is treated as follows: if the child died as an Australian citizen, permanent resident, or eligible New Zealand citizen settled in Australia, they may still count toward the 'Australian' side of the balance. The rules are specific — confirm with a migration agent." },
+              { icon: 'users', category: 'Step-children', explanation: "Step-children are counted in some circumstances. The rules for step-children are specific — a stepchild is your current partner's child, or your former partner's child who is under 18 and for whom you have guardianship, custody or a parenting order under the Family Law Act 1975. Stepchildren from polygamous or concurrent relationships are not counted. Step-children who are counted must be identified carefully — seek advice if you have step-children in the count." },
+              { icon: 'alert', category: 'Deceased children', explanation: "Deceased children are not counted in the balance of family test. The rules are specific — confirm with a migration agent." },
               { icon: 'shield', category: 'Children who are refugees', explanation: "A child who is outside Australia because they are a refugee (within the meaning of the Migration Act) may be excluded from the count in some circumstances. The rules are complex — this is an area where professional advice is important." },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 16, alignItems: 'flex-start', background: '#fafbfe', border: '1px solid #e8edf6', borderRadius: 12, padding: 20 }}>
@@ -385,7 +385,7 @@ return (
         accent={ACCENT}
         navigate={navigate}
       />
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

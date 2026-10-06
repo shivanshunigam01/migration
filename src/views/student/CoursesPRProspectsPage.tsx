@@ -31,14 +31,14 @@ const TOC = [
 const FACTS: KeyFact[] = [
   { icon: 'alert', value: 'No guarantee', label: 'Course choice never guarantees PR', note: 'Occupation lists change. A course that was clearly linked to a strong PR pathway when you enrolled may be restricted or removed by the time you graduate.' },
   { icon: 'calendar', value: '92 weeks', label: 'Minimum study for Australian Study Requirement', note: 'At least 2 academic years (92 weeks) of study at an Australian CRICOS provider qualifies for the Australian Study Requirement — a prerequisite for the 485 Temporary Graduate visa.' },
-  { icon: 'star', value: '+5 points', label: 'Australian study bonus in the points test', note: 'Completing a Bachelor degree or higher in Australia gives 5 additional points in the skilled migration points test — applicable to the 189, 190 and 491.' },
+  { icon: 'star', value: '+5 points', label: 'Australian study bonus in the points test', note: 'Holding at least one Australian degree, diploma or trade qualification that meets the Australian study requirement gives 5 additional points in the skilled migration points test — applicable to the 189, 190 and 491.' },
   { icon: 'mappin', value: '+5 points', label: 'Regional study bonus', note: 'Study at a regional institution (outside Sydney/Melbourne/Brisbane metro) adds a further 5 points to your skilled migration score on top of the Australian study bonus.' },
 ]
 
 const FAQ: FaqItem[] = [
   {
     question: "Does studying in Australia guarantee I can apply for a 485 Temporary Graduate visa?",
-    answer: "Not automatically. To be eligible for the 485 Graduate Work stream, your occupation must be on the relevant list (MLTSSL) at the time of application and you must have an Australian study requirement qualification. For the Post-Study Work stream, you need to have studied at least two academic years in Australia at AQF Bachelor level or above. Your individual circumstances at the time of applying — not at the time of enrolling — determine eligibility. Occupation lists and visa eligibility requirements can change during your study.",
+    answer: "Not automatically. For the 485 Post-Vocational Education Work stream, you need an associate degree, diploma or trade qualification that meets the Australian study requirement and is relevant to an occupation on the skilled occupation list. For the 485 Post-Higher Education Work stream, you need a bachelor degree or higher that meets the Australian study requirement. You must generally be 35 or under (exceptions apply). Your circumstances at the time of applying — not at enrolment — determine eligibility.",
   },
   {
     question: "Can I choose any course and later switch to a PR-friendly occupation?",
@@ -50,7 +50,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Are trade qualifications (TAFE) as useful as university degrees for PR?",
-    answer: "Trade qualifications can support strong PR pathways — particularly through employer-sponsored pathways (482 Core Skills, 186 ENS, 494 Regional) and some state nomination programs. Many trades are on the CSOL. The 485 Temporary Graduate visa is generally not available for vocational (TAFE) qualifications below AQF Level 8 (Graduate Diploma) — but this does not prevent a trade-qualified person from pursuing employer-sponsored PR pathways. A Certificate III or IV in a relevant trade that leads to a TRA-assessed occupation can be highly effective.",
+    answer: "Trade qualifications can support strong PR pathways — particularly through employer-sponsored pathways (482 Core Skills, 186 ENS, 494 Regional) and some state nomination programs. Many trades are on the CSOL. Graduates with an eligible associate degree, diploma or trade qualification may be able to apply for the 485 Post-Vocational Education Work stream (up to 18 months) if the qualification is relevant to an occupation on the skilled occupation list. A Certificate III or IV in a relevant trade that leads to a TRA-assessed occupation can be highly effective.",
   },
   {
     question: "How do I know if an occupation is still on the relevant list when I graduate?",
@@ -120,7 +120,7 @@ const CHECKLIST_ITEMS = [
   {
     icon: 'check',
     title: 'CRICOS registration',
-    desc: "The institution and specific course must be registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS). An unregistered course is not approved for a student visa. Verify on the CRICOS database at cricos.teqsa.gov.au before applying.",
+    desc: "The institution and specific course must be registered on the Commonwealth Register of Institutions and Courses for Overseas Students (CRICOS). An unregistered course is not approved for a student visa. Verify on the CRICOS register at cricos.education.gov.au before applying.",
   },
   {
     icon: 'check',
@@ -135,7 +135,7 @@ const CHECKLIST_ITEMS = [
   {
     icon: 'check',
     title: 'Occupation on the relevant list',
-    desc: "Before enrolling, check whether your intended occupation is currently on the CSOL (for 482 Core Skills or 186 employer nomination), the MLTSSL (for 189 direct entry or 482 occupation eligibility), and any relevant state or territory occupation list for 190 or 491 nomination. Use current, official sources — not third-party summaries.",
+    desc: "Before enrolling, check whether your intended occupation is currently on the CSOL (for 482 Core Skills or 186 employer nomination), the MLTSSL (for the 189 and 485 Post-Vocational Education Work stream), and any relevant state or territory occupation list for 190 or 491 nomination. Use current, official sources — not third-party summaries.",
   },
   {
     icon: 'check',
@@ -287,7 +287,7 @@ return (
                 {[
                   "You must have completed at least 2 academic years (92 weeks) of study at an Australian institution in a designated regional area",
                   "The institution must be in a designated regional area — which excludes the Sydney, Melbourne, and Brisbane metropolitan areas",
-                  "The degree must be at Bachelor level or above (or a Masters or Doctoral degree)",
+                  "The qualification can be a degree, diploma or trade qualification that meets the Australian study requirement, obtained while you lived in and studied at a campus in a designated regional area (not by distance education)",
                   "The study must have been completed after 1 February 2013",
                 ].map((point, i) => (
                   <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>

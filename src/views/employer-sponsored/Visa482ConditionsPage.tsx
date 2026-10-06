@@ -13,14 +13,14 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
 const TOC = [
   { id: 'overview', label: 'Overview' },
-  { id: 'condition-8107', label: 'Condition 8107' },
+  { id: 'condition-8607', label: 'Condition 8607' },
   { id: 'work-rights', label: 'Work rights' },
   { id: 'travel', label: 'Travel' },
   { id: 'secondary', label: 'Secondary applicants' },
@@ -29,10 +29,10 @@ const TOC = [
 ]
 
 const KEY_FACTS: KeyFact[] = [
-  { icon: 'briefcase', value: 'Condition 8107', label: 'Work restriction', note: 'Must work for the sponsoring employer in the nominated occupation only.' },
+  { icon: 'briefcase', value: 'Condition 8607', label: 'Work restriction', note: 'Must work for the sponsoring employer in the nominated occupation only.' },
   { icon: 'globe', value: 'Multiple travel', label: 'Travel entitlement', note: 'Most 482 visas include multiple travel facilitation for the duration of the visa.' },
   { icon: 'user', value: 'Secondary visa', label: 'Family members', note: 'Dependent family members generally receive the same visa period and similar work/study rights.' },
-  { icon: 'calendar', value: '60 days', label: 'Change-of-employer period', note: 'Visa holders who cease employment may have up to 60 days to find a new sponsor before departure is required.' },
+  { icon: 'calendar', value: '180 days', label: 'Change-of-employer period', note: 'If you stop working for your sponsor, you may have up to 180 days at a time (365 days in total on the visa) to find a new sponsor, apply for another visa or leave.' },
 ]
 
 const CAN_DO = [
@@ -52,15 +52,15 @@ const CANNOT_DO = [
 const FAQ: FaqItem[] = [
   {
     question: 'Can I do any work for a different employer on my 482?',
-    answer: "Generally no. Condition 8107 restricts you to your sponsoring employer and nominated occupation. Working for a different employer without a new nomination is a breach of your visa conditions. An exception may apply if you also hold another visa that grants broader work rights, but this is rare. Seek advice before accepting any secondary employment.",
+    answer: "Generally no. Condition 8607 restricts you to your sponsoring employer and nominated occupation. Working for a different employer without a new nomination is a breach of your visa conditions. An exception may apply if you also hold another visa that grants broader work rights, but this is rare. Seek advice before accepting any secondary employment.",
   },
   {
     question: 'What happens if I lose my job while on a 482?',
-    answer: "If your employment ends, you generally have up to 60 days to find a new approved sponsor and have a new nomination lodged, or to depart Australia. The 60-day period is not guaranteed and depends on individual circumstances. Nanak Migration Group (MARN 2619467) can advise on your options if your employment ends unexpectedly.",
+    answer: "If you stop working for your sponsor, condition 8607 allows up to 180 days at a time (and up to 365 days in total while you hold the visa) to find a new sponsor, apply for another visa or leave Australia. Nanak Migration Group (MARN 2619467) can advise on your options if your employment ends unexpectedly.",
   },
   {
     question: "Does my partner have to work for my employer too?",
-    answer: "No. Secondary applicants (spouse, de facto partner) on a subclass 482 are generally permitted to work for any employer in any occupation. Condition 8107 applies only to the primary visa holder.",
+    answer: "No. Secondary applicants (spouse, de facto partner) on a subclass 482 are generally permitted to work for any employer in any occupation. Condition 8607 applies only to the primary visa holder.",
   },
   {
     question: 'Can I change employers and keep my 482 visa?',
@@ -68,7 +68,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What does 'commence work within 90 days' mean?",
-    answer: "Condition 8107 generally requires you to commence work with your sponsoring employer within 90 days of your visa being granted (or your first entry if you were offshore at grant). If you are delayed starting work — for example, due to a late start date or relocation — you should document the reason and seek advice to ensure you are not considered to have breached your conditions.",
+    answer: "Condition 8607 generally requires you to commence work with your sponsoring employer within 90 days of your visa being granted (or your first entry if you were offshore at grant). If you are delayed starting work — for example, due to a late start date or relocation — you should document the reason and seek advice to ensure you are not considered to have breached your conditions.",
   },
 ]
 
@@ -104,7 +104,7 @@ return (
         eyebrowSub="Skills in Demand Visa · Visa Conditions"
         title={<>482 Visa Conditions<br /><em style={{ fontStyle: 'italic', color: GOLD }}>What You Must Comply With</em></>}
         deck="The subclass 482 Skills in Demand visa is subject to specific conditions that govern where you can work, how long you can stay, and what your family members are permitted to do in Australia."
-        shortAnswer="The most important condition on a subclass 482 visa is condition 8107, which restricts the visa holder to working for the sponsoring employer in the nominated occupation. Condition 8107 does not prevent you from working for a different employer entirely — but it does mean you must obtain a new nomination before starting work with a new employer. Nanak Migration Group (MARN 2619467) can advise on your specific conditions and how to remain compliant."
+        shortAnswer="The most important condition on a subclass 482 visa is condition 8607, which restricts the visa holder to working for the sponsoring employer in the nominated occupation. Condition 8607 does not prevent you from working for a different employer entirely — but it does mean you must obtain a new nomination before starting work with a new employer. Nanak Migration Group (MARN 2619467) can advise on your specific conditions and how to remain compliant."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Get condition-specific advice', page: 'home' }}
@@ -129,13 +129,13 @@ return (
         <KeyFactsStrip facts={KEY_FACTS} accent={ACCENT} />
       </div>
 
-      {/* Condition 8107 section */}
-      <section id="condition-8107" style={{ background: '#fff', padding: '80px 32px' }}>
+      {/* Condition 8607 section */}
+      <section id="condition-8607" style={{ background: '#fff', padding: '80px 32px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <SectionHeading kicker="Key condition" title="Condition 8107 — Work Restriction" accent={ACCENT}
-            intro="Condition 8107 is attached to every primary subclass 482 visa holder. Understanding what it requires is essential for maintaining visa compliance." />
+          <SectionHeading kicker="Key condition" title="Condition 8607 — Work Restriction" accent={ACCENT}
+            intro="Condition 8607 is attached to every primary subclass 482 visa holder. Understanding what it requires is essential for maintaining visa compliance." />
           <div style={{ border: `2px solid ${ACCENT}`, borderRadius: 12, padding: '28px 32px', background: GREY_BG, marginTop: 32 }}>
-            <p style={{ margin: '0 0 16px', fontSize: 15, fontWeight: 600, color: NAVY_DARK }}>Condition 8107 requires you to:</p>
+            <p style={{ margin: '0 0 16px', fontSize: 15, fontWeight: 600, color: NAVY_DARK }}>Condition 8607 requires you to:</p>
             <ol style={{ margin: 0, paddingLeft: 24, display: 'flex', flexDirection: 'column', gap: 10 }}>
               <li style={{ fontSize: 15, color: NAVY, lineHeight: 1.65 }}>Work only for your sponsoring employer;</li>
               <li style={{ fontSize: 15, color: NAVY, lineHeight: 1.65 }}>Work only in your nominated occupation;</li>
@@ -229,7 +229,7 @@ return (
                 <li style={{ fontSize: 15, color: NAVY, lineHeight: 1.65 }}>The right to enrol in study at any institution.</li>
               </ol>
               <p style={{ margin: '20px 0 0', fontSize: 14, color: '#4b5563', lineHeight: 1.65, padding: '12px 16px', background: GREY_BG, borderRadius: 8, border: `1px solid ${BORDER}` }}>
-                Secondary applicants do not hold condition 8107 — only the primary visa holder does.
+                Secondary applicants do not hold condition 8607 — only the primary visa holder does.
               </p>
             </div>
           </div>
@@ -252,7 +252,7 @@ return (
         </div>
       </section>
 
-      <CtaBand title="Understand your 482 visa conditions" body="Nanak Migration Group (MARN 2619467) can review your visa conditions and advise on compliance with condition 8107 and any proposed employment change." primaryCta={{ label: 'Request a discussion', page: 'home' }} accent={ACCENT} navigate={navigate} />
+      <CtaBand title="Understand your 482 visa conditions" body="Nanak Migration Group (MARN 2619467) can review your visa conditions and advise on compliance with condition 8607 and any proposed employment change." primaryCta={{ label: 'Request a discussion', page: 'home' }} accent={ACCENT} navigate={navigate} />
       <ComplianceDisclaimer currentAsAt={CURRENT_AS_AT} />
       <SiteFooter navigate={navigate} />
     </div>

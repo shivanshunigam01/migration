@@ -19,7 +19,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const PURPLE = CAT_SKILLED
 const GREEN = GOLD
@@ -39,15 +39,15 @@ const STREAMS = [
     requirements: [
       'Australian bachelor, bachelor honours, master by coursework, or doctoral degree',
       'Degree from an Australian institution in Australia (not offshore delivery)',
-      'Competent English (IELTS 6 or equivalent)',
-      'Genuine student throughout enrolment (GSR)',
+      'IELTS 6.5 overall with at least 5.5 in each component (or equivalent), taken in the 12 months before you apply',
+      'Held a student visa in the last 6 months',
       'Apply within 6 months of results release',
-      'Under 35 at time of application (exemptions apply)',
+      '35 or under at time of application (exemptions apply)',
     ],
     workRights: 'Unlimited — no restriction on hours or employer',
     studyRights: 'Yes — can enrol in further study',
     pathways: ['189 / 190 / 491 skilled visas', '482 → 186 employer sponsorship'],
-    note: 'The most common stream. Duration varies by degree level — a bachelor gives 2 years, a PhD gives 4.',
+    note: 'The most common stream. Duration varies by degree level — a bachelor or coursework masters gives 2 years, and a masters by research or PhD gives 3.',
   },
   {
     code: 'PVEW',
@@ -60,9 +60,9 @@ const STREAMS = [
       'Australian Certificate III or above, or diploma or higher vocational qualification',
       'Qualification in an occupation on the relevant skilled occupation list',
       'Skills assessment from the relevant assessing authority',
-      'Competent English (IELTS 6 or equivalent)',
+      'IELTS 6.5 overall with at least 5.5 in each component (or equivalent), taken in the 12 months before you apply',
       'Apply within 6 months of results release',
-      'Under 35 at time of application',
+      '35 or under at time of application',
     ],
     workRights: 'Unlimited',
     studyRights: 'Yes',
@@ -303,15 +303,15 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               { label: 'Visa type', val: 'Temporary Graduate (work rights)', icon: 'briefcase', hi: false },
               { label: 'Streams (from mid-2024)', val: 'PHEW · PVEW · 2PHEW', icon: 'refresh', hi: false },
               { label: 'Application window', val: '6 months from results release', icon: 'calendar', hi: true },
-              { label: 'Age limit (PHEW / PVEW)', val: 'Under 35 at time of application', icon: 'alert', hi: true },
+              { label: 'Age limit (PHEW / PVEW)', val: '35 or under at time of application', icon: 'alert', hi: true },
               { label: 'Age limit (2PHEW)', val: 'Under 50', icon: 'info', hi: false },
               { label: 'Duration — Bachelor / Honours', val: '2 years', icon: 'clock', hi: false },
               { label: "Duration — Master's by coursework", val: '3 years', icon: 'clock', hi: false },
               { label: 'Duration — PhD / Doctoral', val: '4 years', icon: 'clock', hi: false },
               { label: 'Work rights', val: 'Unlimited — any employer, any hours', icon: 'zap', hi: false },
-              { label: 'English requirement', val: 'Competent (IELTS 6 or equivalent)', icon: 'book', hi: false },
-              { label: 'Medicare', val: 'Yes (from grant)', icon: 'shield', hi: false },
-              { label: 'PhD age exemption', val: 'No age limit for PhD graduates', icon: 'star', hi: true },
+              { label: 'English requirement', val: 'IELTS 6.5 overall with at least 5.5 in each component (or equivalent), test taken in the 12 months before you apply', icon: 'book', hi: false },
+              { label: 'Medicare', val: 'Generally no - you must hold adequate health insurance unless you are covered by a Reciprocal Health Care Agreement', icon: 'shield', hi: false },
+              { label: 'PhD age exemption', val: 'Under 50 for Masters by research and PhD graduates', icon: 'star', hi: true },
             ].map((row, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 22px', borderBottom: i < 11 ? '1px solid #f3f4f8' : 'none', background: row.hi ? `${PURPLE}06` : 'transparent' }}>
                 <span style={{ width: 26, height: 26, borderRadius: 6, background: row.hi ? `${PURPLE}15` : '#f0f2f8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -367,8 +367,8 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                     { val: 'bachelor' as const, label: "Bachelor's", yrs: 2 },
                     { val: 'honours' as const, label: "Bachelor Honours", yrs: 2 },
                     { val: 'masters' as const, label: "Master's by coursework", yrs: 3 },
-                    { val: 'phd' as const, label: 'PhD / Doctoral (no age limit)', yrs: 4 },
-                    { val: 'diploma' as const, label: 'Diploma / Certificate III+', yrs: 1 },
+                    { val: 'phd' as const, label: "Bachelor / Honours (2 yrs); Master's by coursework (2 yrs); Master's by research (3 yrs); PhD / Doctoral (3 yrs)", yrs: 3 },
+                    { val: 'diploma' as const, label: 'Associate degree, diploma or trade qualification (Post-Vocational Education Work) - up to 18 months', yrs: 1 },
                   ].map(opt => (
                     <button key={opt.val} onClick={() => setDegreeLevel(opt.val)}
                       style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '9px 14px', borderRadius: 8, border: `1.5px solid ${degreeLevel === opt.val ? 'rgba(79,70,229,0.5)' : 'rgba(255,255,255,0.1)'}`, background: degreeLevel === opt.val ? 'rgba(79,70,229,0.2)' : 'rgba(255,255,255,0.04)', color: degreeLevel === opt.val ? 'rgba(79,70,229,0.3)' : 'rgba(255,255,255,0.65)', fontSize: 14, fontWeight: degreeLevel === opt.val ? 700 : 400, cursor: 'pointer', textAlign: 'left' }}>
@@ -564,7 +564,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               <SectionHeading kicker="From mid-2024" title="The 485 Age Limit: 35, With Exemptions" accent={PURPLE} />
 
               <p style={{ color: '#6b7280', fontSize: 16, lineHeight: 1.7, margin: '0 0 24px' }}>
-                The age limit of 35 was introduced in mid-2024 for the PHEW and PVEW streams. It is tested at the time of application — not at grant. If you turn 35 on the day before you lodge, you are ineligible (subject to exemptions below).
+                The age limit of 35 was introduced in mid-2024 for the PHEW and PVEW streams. It is tested at the time of application — not at grant. You must be 35 or under when you apply, so you are still eligible at 35 and become ineligible from your 36th birthday (subject to the exemptions below).
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
@@ -605,7 +605,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
                     },
                     {
                       title: 'The PhD exemption is categorical',
-                      body: "Doctoral graduates have no age limit on the PHEW stream. If you completed a PhD in Australia, the age test does not apply — this is one of the more useful exemptions and is often misunderstood.",
+                      body: "Masters by research and doctoral graduates can apply for the PHEW stream if they are under 50. If you completed a PhD in Australia, the age test does not apply — this is one of the more useful exemptions and is often misunderstood.",
                     },
                     {
                       title: 'Age and results: both must pass',
@@ -675,7 +675,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
           <RelatedPages pages={[
             { title: 'Student Visa (500)', desc: 'The subclass 500 you need before applying for the 485.', icon: 'file', page: 'student-visa-500', color: PURPLE },
             { title: 'Skilled Independent (189)', desc: 'Points-tested permanent residence — a common destination after 485 work experience.', icon: 'shield', page: 'skilled-independent-189', color: PURPLE },
-            { title: 'Skills Assessment', desc: 'Needed for the Graduate Work stream and skilled migration pathways.', icon: 'check', page: 'skills-assessment', color: PURPLE },
+            { title: 'Skills Assessment', desc: 'Relevant to the Post-Vocational Education Work stream and to skilled migration pathways.', icon: 'check', page: 'skills-assessment', color: PURPLE },
             { title: 'Student to PR Pathways', desc: 'From subclass 500/485 to permanent residence — the common routes.', icon: 'trending', page: 'student-to-pr', color: PURPLE },
           ] as RelatedPage[]} navigate={navigate} />
         </div>

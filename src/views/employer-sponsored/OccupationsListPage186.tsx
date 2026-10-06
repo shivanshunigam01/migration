@@ -26,7 +26,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 const GREEN = CAT_EMPLOYER
 const BORDER = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 // 186-relevant occupations: those with '186' in their visas array
 const OCCS_186 = ALL_OCCUPATIONS.filter(o => o.visas.includes('186'))
@@ -42,11 +42,11 @@ const TOC: NavSection[] = [
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'What is the difference between CSOL, MLTSSL and STSOL?',
-    answer: 'The Core Skills Occupation List (CSOL) is used for the Core Skills stream of the Skills in Demand (482) visa and for the Employer Nomination Scheme (186) Direct Entry stream. The Medium and Long-term Strategic Skills List (MLTSSL) is used for points-tested permanent visas (189, 190, 491) and for employer-sponsored visas including the 186. The Short-term Skilled Occupation List (STSOL) is generally used for the short-term stream of the 482 visa and in most cases does not confer a pathway to 186 permanent residence. The lists are administered separately and updated at different times — always check the current version on the Department of Home Affairs website.',
+    answer: 'The Core Skills Occupation List (CSOL) is used for the Core Skills stream of the Skills in Demand (482) visa and for the Employer Nomination Scheme (186) Direct Entry stream. The Medium and Long-term Strategic Skills List (MLTSSL) is used for points-tested visas such as the 189, 190 and 491, and for the 494. It is no longer used for the 186. The Short-term Skilled Occupation List (STSOL) is used for some 190, 491 and 494 applications. The 482 no longer has a short-term stream — since 7 December 2024 the 482 Core Skills stream and the 186 Direct Entry stream use the CSOL. The lists are administered separately and updated at different times — always check the current version on the Department of Home Affairs website.',
   },
   {
     question: 'My occupation is on the STSOL. Can I still apply for a 186?',
-    answer: 'In most cases, STSOL occupations do not qualify for the 186 Employer Nomination Scheme via the Direct Entry stream. However, some STSOL occupations may be available under a Labour Agreement pathway if a specific agreement covers that occupation, or under the Temporary Residence Transition (TRT) stream if a sponsoring employer has separately arranged a pathway. The eligibility of each specific occupation should be verified against the current legislative instrument and any applicable labour agreement.',
+    answer: 'The STSOL is not used for the 186. For Direct Entry, what matters is whether the occupation is on the Core Skills Occupation List (CSOL) - many former STSOL occupations are on it. The TRT stream has no occupation list, and a Labour Agreement can cover occupations that are not on the CSOL. The eligibility of each specific occupation should be verified against the current legislative instrument and any applicable labour agreement.',
   },
   {
     question: 'How often are the occupation lists updated?',
@@ -131,8 +131,8 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
         eyebrow="Subclass 186 · Direct Entry & TRT"
         eyebrowSub="Employer Nomination Scheme"
         title={<>186 Occupations List<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Eligible occupations</em></>}
-        deck="Occupation eligibility for the subclass 186 Employer Nomination Scheme depends on the stream and the occupation list that applies. This page shows occupations on the CSOL and MLTSSL that are generally available for the 186 visa."
-        shortAnswer={<>Most 186 Direct Entry nominations require the occupation to appear on the <strong>Core Skills Occupation List (CSOL)</strong> or <strong>MLTSSL</strong>. For the Temporary Residence Transition (TRT) stream, the requirement is generally employment with the same sponsoring employer in the same occupation for at least two years on a qualifying 482 visa — the occupation list requirement may differ. Eligibility is subject to the legislative instrument current at the time the nomination is lodged; lists change without notice.</>}
+        deck="Occupation eligibility for the subclass 186 Employer Nomination Scheme depends on the stream and the occupation list that applies. This page shows sample occupations from the Core Skills Occupation List (CSOL), which is the list used for the 186 Direct Entry stream."
+        shortAnswer={<>186 Direct Entry nominations require the occupation to be on the <strong>Core Skills Occupation List (CSOL)</strong>. The Temporary Residence Transition (TRT) stream has no occupation list — you usually need at least 2 years of full-time sponsored employment in the last 3 years while holding a 457 or 482 visa, and this can include time with more than one sponsor. Eligibility is subject to the legislative instrument current at the time the nomination is lodged; lists change without notice.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Check your 186 eligibility', page: 'book-consultation' }}
@@ -161,7 +161,7 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
           <SectionHeading
             kicker={`${OCCS_186.length} occupations shown`}
             title="Search 186 Eligible Occupations"
-            intro="Filtered to occupations on the CSOL or MLTSSL that are generally available for the 186 Employer Nomination Scheme. STSOL occupations appear where a Labour Agreement or other specific pathway may apply."
+            intro="Sample occupations from the Core Skills Occupation List (CSOL) that are generally available for the 186 Direct Entry stream. Always confirm the current Home Affairs skilled occupation list before lodging a nomination."
             accent={GREEN}
           />
           <OccupationTable
@@ -221,7 +221,7 @@ export default function OccupationsListPage186({ navigate }: { navigate: (page: 
 
       <ComplianceDisclaimer
         currentAsAt={CURRENT_AS_AT}
-        pageNote="Occupation lists, assessing authority assignments and caveats are subject to change by the Department of Home Affairs. This page does not publish visa application fees."
+        pageNote="Occupation lists, assessing authority assignments and caveats are subject to change by the Department of Home Affairs. Visa application charges shown are those published by Home Affairs from 1 July 2026 and may change."
       />
 
       <SiteFooter navigate={navigate} />

@@ -37,7 +37,7 @@ const FACTS: KeyFact[] = [
     icon: 'calendar',
     value: '~30 years',
     label: 'Realistic wait for new applications',
-    note: 'New applications lodged today realistically face a wait of around 30 years before a decision is made. This estimate reflects the current state of the queue — confirm current times on DoHA.',
+    note: 'Home Affairs currently estimates about 42 years for new Parent and Aged Parent visa applications. This estimate reflects the current state of the queue — confirm current times on DoHA.',
   },
   {
     icon: 'check',
@@ -180,7 +180,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
         deck="The subclass 103 Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. Government charges are substantially lower than the contributory parent pathways — but new applications realistically face a processing wait of around 30 years."
         shortAnswer={<>The subclass 103 Parent visa is a <strong style={{ color: NAVY }}>non-contributory offshore permanent</strong> parent visa. It requires the <strong style={{ color: NAVY }}>Balance of Family test</strong> and an <strong style={{ color: NAVY }}>Assurance of Support</strong> (arranged prior to grant). Government charges are approximately <strong style={{ color: NAVY }}>AUD 4,990</strong> — much lower than the contributory subclass 143, but the queue for new applications is realistically around <strong style={{ color: NAVY }}>30 years</strong>. Importantly, time spent waiting in the 103 queue does <strong style={{ color: NAVY }}>not</strong> give any advantage in the contributory queue — the 103 and 143 are entirely separate programs. Nanak Migration Group (MARN 2619467) can assess whether lodging a 103, pursuing the contributory pathway, or using the 870 Sponsored Parent (Temporary) visa is the most realistic strategy for your family. Confirm all current figures on the Department of Home Affairs website.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Back to Parent Visas', page: 'parent-visas' }}
         accent={ACCENT}
@@ -245,7 +245,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
           </div>
 
           <Callout variant="warning" panel={true} title="The queue — an honest assessment">
-            The subclass 103 is a capped and queued visa with an extremely long processing wait. The Department of Home Affairs processes applications in lodgement order. New applications realistically face a wait of approximately 30 years before a decision. Families whose parent is already in their 60s or 70s should carefully assess whether a non-contributory permanent parent visa represents a realistic outcome. Figures current at August 2026 — confirm current processing times on DoHA.
+            The subclass 103 is a capped and queued visa with an extremely long processing wait. The Department of Home Affairs processes applications in lodgement order. New applications realistically face a wait of approximately 30 years before a decision. Families whose parent is already in their 60s or 70s should carefully assess whether a non-contributory permanent parent visa represents a realistic outcome. Figures current at October 2026 — confirm current processing times on DoHA.
           </Callout>
         </div>
       </section>
@@ -318,7 +318,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
           </div>
 
           <Callout variant="note" panel={true} title="Charges are indexed annually — confirm on DoHA">
-            Government charges are indexed each financial year. The amounts above are indicative at August 2026. Always confirm current charges on the Department of Home Affairs website before lodging. Nanak Migration Group (MARN 2619467) confirms current charges before clients commit.
+            Government charges are indexed each financial year. The amounts above are indicative at October 2026. Always confirm current charges on the Department of Home Affairs website before lodging. Nanak Migration Group (MARN 2619467) confirms current charges before clients commit.
           </Callout>
         </div>
       </section>
@@ -393,7 +393,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
             ))}
           </div>
           <p style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic', margin: 0 }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before relying on these amounts.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before relying on these amounts.
           </p>
         </div>
       </section>
@@ -430,7 +430,7 @@ export default function ParentVisa103Page({ navigate }: { navigate: (page: strin
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

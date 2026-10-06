@@ -31,7 +31,7 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const BORDER = '#e8edf6'
 const GREY_BG = '#fafbfe'
@@ -83,11 +83,11 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'What is the SAF Levy for a 186 permanent visa?',
-    answer: 'For the subclass 186 Employer Nomination Scheme, a flat SAF Levy applies rather than an annual rate: $5,000 for small businesses (annual turnover under $10 million) and $7,000 for other businesses. Figures current at August 2026 — confirm on the Department of Home Affairs website.',
+    answer: 'For the subclass 186 Employer Nomination Scheme, a flat SAF Levy applies rather than an annual rate: $3,000 for small businesses (annual turnover under $10 million) and $5,000 for other businesses. Figures current at October 2026 — confirm on the Department of Home Affairs website.',
   },
   {
     question: 'Is the SAF Levy refundable if the visa is refused?',
-    answer: 'The SAF Levy is generally non-refundable once the nomination has been lodged and processed, even if the subsequent visa application is refused. Partial refunds may be available in limited circumstances such as a nomination withdrawal before processing or a Departmental error. You should confirm current refund rules on the Department of Home Affairs website.',
+    answer: 'Refunds are limited, but the levy can be refunded in set cases - for example, if the nomination is approved but the visa is refused on health or character grounds, the worker never arrives or starts work, or a 482 or 494 worker leaves within the first 12 months (unused full years only). Partial refunds may be available in limited circumstances such as a nomination withdrawal before processing or a Departmental error. You should confirm current refund rules on the Department of Home Affairs website.',
   },
   {
     question: 'Does the SAF Levy apply to all 482 streams?',
@@ -185,7 +185,7 @@ return (
       <section id="rates" style={{ background: GREY_BG, padding: '80px 32px' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto' }}>
           <SectionHeading kicker="Rates" title="SAF Levy Rates by Visa Type" accent={ACCENT}
-            intro="The levy rate depends on the employer's annual turnover and the visa type being nominated. The following figures are current at August 2026." />
+            intro="The levy rate depends on the employer's annual turnover and the visa type being nominated. The following figures are current at October 2026." />
 
           <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             {/* 482 Core Skills */}
@@ -261,7 +261,7 @@ return (
                     <div style={{ fontSize: 12, color: '#9ca3af' }}>Turnover under $10 million</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY }}>$5,000 flat</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY }}>$3,000 flat</div>
                     <div style={{ fontSize: 12, color: '#9ca3af' }}>One-time payment</div>
                   </div>
                 </div>
@@ -271,7 +271,7 @@ return (
                     <div style={{ fontSize: 12, color: '#9ca3af' }}>Turnover $10 million or more</div>
                   </div>
                   <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY }}>$7,000 flat</div>
+                    <div style={{ fontSize: 16, fontWeight: 700, color: NAVY }}>$3,000 flat</div>
                     <div style={{ fontSize: 12, color: '#9ca3af' }}>One-time payment</div>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ return (
           </div>
 
           <p style={{ fontSize: 13, fontStyle: 'italic', color: '#9ca3af', marginTop: 24 }}>
-            Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.
+            Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.
           </p>
         </div>
       </section>
@@ -301,7 +301,7 @@ return (
       <section id="exemptions" style={{ background: GREY_BG, padding: '80px 32px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="Exemptions" title="SAF Levy Exemptions" accent={ACCENT}
-            intro="A limited number of nomination categories are exempt from the SAF Levy obligation." />
+            intro="Only ministers of religion and religious assistants nominated under a labour agreement are exempt from the SAF Levy. All other sponsors, including labour agreement sponsors, must pay it." />
           <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 14 }}>
             {[
               'Nominations by non-profit organisations approved as exempt by the Department',
@@ -330,7 +330,7 @@ return (
           <SectionHeading kicker="Refunds" title="SAF Levy Refunds" accent={ACCENT}
             intro="The SAF Levy refund rules are narrow. Employers should understand these rules before lodging." />
           <Callout variant="warning" title="The SAF Levy is generally non-refundable">
-            If a nomination is withdrawn or refused, the SAF Levy is generally not refundable unless specific circumstances apply (such as a technical error by the Department). The visa application charge (VAC) is a separate fee and has its own refund rules. Confirm current refund conditions on the Department of Home Affairs website before lodging.
+            If a nomination is withdrawn before any decision is made, the nomination fee and SAF Levy may be refunded. After approval, refunds are only available in the limited cases Home Affairs lists, such as the worker not starting work, a visa refusal on health or character grounds, or the worker leaving within the first 12 months. The visa application charge (VAC) is a separate fee and has its own refund rules. Confirm current refund conditions on the Department of Home Affairs website before lodging.
           </Callout>
           <div style={{ marginTop: 24, padding: '20px 24px', background: GREY_BG, borderRadius: 12, border: `1px solid ${BORDER}` }}>
             <div style={{ fontWeight: 600, fontSize: 15, color: NAVY, marginBottom: 8 }}>Circumstances where a refund may be available</div>

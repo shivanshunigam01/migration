@@ -31,7 +31,7 @@ const FACTS: KeyFact[] = [
   { icon: 'alert', value: '3-year ban', label: 'PIC 4020 refusal triggers a 3-year visa ban', note: 'After a PIC 4020 refusal, the person generally cannot be granted most Australian visas for 3 years from the date of the refusal.' },
   { icon: 'alert', value: '10-year ban', label: 'Identity fraud triggers a 10-year ban', note: "Where PIC 4020 is triggered by identity fraud (using a false identity), a 10-year ban applies instead of the 3-year ban." },
   { icon: 'shield', value: 'No-knowledge no defence', label: 'PIC 4020 can apply even if the applicant did not know', note: "The applicant is responsible for the correctness of what is lodged on their behalf — even if an agent or employer provided false information without the applicant's knowledge." },
-  { icon: 'check', value: 'Waiver available', label: 'A waiver can be sought in compelling or compassionate circumstances', note: 'The waiver requires compelling circumstances affecting Australian interests OR compassionate or compelling circumstances affecting the applicant. It is not automatic.' },
+  { icon: 'check', value: 'Waiver available', label: 'A waiver can be sought in compelling or compassionate circumstances', note: 'The waiver requires compelling circumstances affecting the interests of Australia OR compassionate or compelling circumstances affecting the interests of an Australian citizen, permanent resident or eligible New Zealand citizen. It is not automatic.' },
 ]
 
 const FAQ: FaqItem[] = [
@@ -45,11 +45,11 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can a PIC 4020 refusal be reviewed at the ART?",
-    answer: "Yes — in most cases, a PIC 4020 refusal is reviewable at the Administrative Review Tribunal (ART) within 21 days of being notified of the refusal. At the ART, the Tribunal can review the merits of the decision — including whether PIC 4020 was correctly applied, and whether the waiver grounds are made out. ART review is often worth pursuing, as the Tribunal can set aside a refusal where the Department's decision was incorrect or the waiver grounds are compelling. Seek advice immediately — the 21-day deadline is strict.",
+    answer: "Yes — in most cases, a PIC 4020 refusal is reviewable at the Administrative Review Tribunal (ART) within 28 days of being notified of the refusal. At the ART, the Tribunal can review the merits of the decision — including whether PIC 4020 was correctly applied, and whether the waiver grounds are made out. ART review is often worth pursuing, as the Tribunal can set aside a refusal where the Department's decision was incorrect or the waiver grounds are compelling. Seek advice immediately — the 21-day deadline is strict.",
   },
   {
     question: "If my visa is refused on PIC 4020 grounds, can I apply for another visa immediately?",
-    answer: "No — not for most visa types. A PIC 4020 refusal triggers a 3-year (or 10-year for identity fraud) ban on most Australian visa applications. Applying for another visa during the ban period will result in refusal on PIC 4020 grounds (because the ban is itself a criterion that must be satisfied). The ban can potentially be lifted if the original refusal is overturned on ART review, or if a waiver is granted. Submitting multiple applications during the ban period does not remove or shorten the ban.",
+    answer: "No — not for most visa types. A PIC 4020 refusal triggers a 3-year (or 10-year for identity fraud) ban on most Australian visa applications. Applying for another visa during the ban period will result in refusal on PIC 4020 grounds (because the ban is itself a criterion that must be satisfied). The 3-year bar can potentially be overcome if the original refusal is overturned on ART review, or if a waiver is granted. The 10-year identity bar cannot be waived. Submitting multiple applications during the ban period does not remove or shorten the ban.",
   },
   {
     question: "How does PIC 4020 relate to section 109 visa cancellation?",
@@ -94,7 +94,7 @@ return (
         deck="PIC 4020 (Public Interest Criterion 4020) applies to most Australian skilled, family and student visa applications. A visa will generally be refused — and a multi-year ban applied — if a bogus document or false or misleading information was provided in the application or the 12 months before it, even if the applicant did not know."
         shortAnswer={<>PIC 4020 is an integrity criterion in the Migration Regulations that applies to most skilled, family, and student visa applications. A visa must generally be refused if a <strong style={{ color: NAVY }}>bogus document</strong> or <strong style={{ color: NAVY }}>false or misleading information</strong> was given in connection with the application — or in the 12-month period before the application was made. A PIC 4020 refusal triggers a <strong style={{ color: NAVY }}>3-year ban</strong> on most Australian visa applications; identity fraud triggers a <strong style={{ color: NAVY }}>10-year ban</strong>. Crucially, PIC 4020 can apply even if the information was provided by a migration agent or employer <strong style={{ color: NAVY }}>without the applicant's knowledge</strong> — the applicant bears the risk of what is lodged on their behalf. A waiver exists for compelling or compassionate circumstances — but it is not automatically available. Nanak Migration Group (MARN 2619467) can review PIC 4020 natural justice letters and advise on waiver applications.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← ART Review', page: 'art-review' }}
         accent={ACCENT}
@@ -129,7 +129,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="The criterion" title="What Is PIC 4020?" />
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 20 }}>
-            PIC 4020 stands for Public Interest Criterion 4020, a criterion prescribed in Schedule 4 of the Migration Regulations 1994. It applies to most skilled, family, student, and visitor visa subclasses. To be granted one of these visas, an applicant must satisfy PIC 4020 — meaning they must not have given a bogus document or false or misleading information in connection with the application or the visa application made in the 12 months before.
+            PIC 4020 stands for Public Interest Criterion 4020, a criterion prescribed in Schedule 4 of the Migration Regulations 1994. It applies to most skilled, family, student, and visitor visa subclasses. To be granted one of these visas, an applicant must satisfy PIC 4020 — meaning they must not have given a bogus document or information that is false or misleading in a material particular in relation to the application, or in relation to a visa they held in the 12 months before the application was made.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 32 }}>
             If PIC 4020 is not satisfied — because a bogus document or false information was involved — the visa must generally be refused, and a 3-year (or 10-year) ban is imposed. The criterion is broad: it covers information given by the applicant, by a migration agent acting on their behalf, by an employer who provided a support letter, and by anyone else involved in the application.
@@ -156,7 +156,7 @@ return (
             },
             {
               title: 'Information from a 12-month look-back period',
-              desc: "PIC 4020 does not only look at the current application — it also covers the 12-month period before the current application was lodged. If a bogus document or false information was submitted in a visa application made in the 12 months before the current application, PIC 4020 can still apply to the current application.",
+              desc: "PIC 4020 does not only look at the current application — it also covers the 12-month period before the current application was lodged. If a bogus document or false or misleading information was given in relation to a visa you held in the 12 months before the current application, PIC 4020 can still apply to the current application.",
             },
             {
               title: 'Documents or information provided by third parties',
@@ -350,7 +350,7 @@ return (
         accent={ACCENT}
         navigate={navigate}
       />
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

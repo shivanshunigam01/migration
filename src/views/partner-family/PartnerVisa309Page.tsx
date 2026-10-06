@@ -80,7 +80,7 @@ const STAGES: TimelineStep[] = [
       'Lodge Form 47SP + 40SP online via ImmiAccount',
       'Pay government fee in full',
       'Applicant must be outside Australia at lodgement',
-      'If in Australia on another visa, BVA activates automatically',
+      'No bridging visa is granted with a 309 application, because the applicant must be outside Australia when it is lodged',
       'Two-year qualifying period starts now',
     ],
   },
@@ -89,9 +89,9 @@ const STAGES: TimelineStep[] = [
     points: [
       'First assessment of relationship genuineness',
       'Health and character must be satisfied',
-      'Applicant must be outside Australia at grant',
+      'Applicant can be in or outside Australia at grant',
       'Once granted: live, work, study in Australia freely',
-      'Medicare access (reciprocal agreement countries)',
+      'Can apply for Medicare',
     ],
   },
   {
@@ -114,7 +114,7 @@ const COMPARE_COLS = [
 const COMPARE_ROWS: ComparisonRow[] = [
   { feature: 'Who applies?',          v309: 'Applicant outside Australia',        v820: 'Applicant inside Australia' },
   { feature: 'Where at lodgement?',   v309: 'Offshore',                           v820: 'Onshore' },
-  { feature: 'Where at 309/820 grant?', v309: 'Must be outside Australia',        v820: 'Can be anywhere' },
+  { feature: 'Where at 309/820 grant?', v309: 'Can be in or outside Australia',        v820: 'Can be anywhere' },
   { feature: 'First stage visa',      v309: 'Subclass 309 (temporary)',            v820: 'Subclass 820 (temporary)' },
   { feature: 'Permanent stage',       v309: 'Subclass 100',                        v820: 'Subclass 801' },
   { feature: '2-year clock starts',   v309: 'Date of lodgement',                  v820: 'Date of lodgement' },
@@ -398,7 +398,7 @@ export default function PartnerVisa309Page({ navigate }: { navigate: (page: stri
                   { label: 'At 309 grant', val: 'Applicant must be outside Australia', icon: 'alert' },
                   { label: 'Work rights (309)', val: 'Unlimited — any job, any hours', icon: 'zap' },
                   { label: 'Relationship types', val: 'Married or genuine de facto (12+ months)', icon: 'heart' },
-                  { label: 'Govt fee (2024–25)', val: 'AUD $9,095 primary applicant', icon: 'dollar' },
+                  { label: 'Govt fee (2024–25)', val: 'Govt fee (2026-27): AUD11,710 primary applicant', icon: 'dollar' },
                   { label: 'Current processing', val: '18–36+ months (varies by case)', icon: 'clock' },
                   { label: 'Children can be included', val: 'Yes — as secondary applicants', icon: 'users' },
                 ].map((row, i) => (

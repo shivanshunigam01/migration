@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_SKILLED
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -58,7 +58,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'I hold a 491 visa — can I apply for the 887?',
-    answer: 'No. The 887 is only available to holders of eligible provisional visas: subclass 489, 475, 487, 495 or 496. The 491 is not an eligible provisional visa for the 887. If you hold a 491, your permanent residence pathway is the subclass 191 (Permanent Residence — Skilled Regional), which requires 3 years of regional residence and an income threshold.',
+    answer: 'No. The 887 is only available to holders of eligible provisional visas: subclass 489, 475, 487, 495 or 496. The 491 is not an eligible provisional visa for the 887. If you hold a 491, your permanent residence pathway is the subclass 191 (Permanent Residence — Skilled Regional), which requires you to have held your 491 for 3 years, complied with its conditions and provide ATO notices of assessment for 3 income years (there is no minimum income).',
   },
   {
     question: 'Does my work have to be in the same regional area as my residence?',
@@ -92,7 +92,7 @@ const RELATED: RelatedPage[] = [
 const COMPARISON_ROWS = [
   { feature: 'Eligible provisional visas', visa887: '489, 475, 487, 495, 496', visa191: '491, 494' },
   { feature: 'Residence requirement', visa887: '2 years in regional area', visa191: '3 years in regional area' },
-  { feature: 'Work requirement', visa887: '1 year full-time regional work', visa191: 'Income threshold ($53,900 p.a. from 1 Jul 2023 — confirm on DoHA)' },
+  { feature: 'Income evidence', visa887: 'Not applicable (887 pathway)', visa191: 'ATO notices of assessment for 3 income years (no minimum income — confirm on DoHA)' },
   { feature: 'Income threshold', visa887: 'None', visa191: 'Yes — must earn above the threshold for 3 years' },
   { feature: 'Skills assessment required', visa887: 'No (held at time of provisional visa)', visa191: 'No (held at time of provisional visa)' },
   { feature: 'Points test required', visa887: 'No', visa191: 'No' },
@@ -190,7 +190,7 @@ return (
             If you hold a current subclass 489 (or older 475/487/495/496) provisional visa, or have already been granted one, the 887 remains your permanent residence pathway — provided you meet the residence and work requirements.
           </p>
           <Callout variant="note" panel={true} title="Holding a 491 or 494 visa? The 191 is your PR pathway — not the 887">
-            If you hold a subclass 491 (Skilled Work Regional) or subclass 494 (Employer Sponsored Regional) visa, the subclass 887 is NOT your permanent residence pathway. You must apply for the subclass 191 (Permanent Residence — Skilled Regional) visa instead. The 191 has different requirements, including an income threshold. Do not apply for the 887 if you are on a 491 or 494.
+            If you hold a subclass 491 (Skilled Work Regional) or subclass 494 (Employer Sponsored Regional) visa, the subclass 887 is NOT your permanent residence pathway. You must apply for the subclass 191 (Permanent Residence — Skilled Regional) visa instead. The 191 has different requirements, including ATO notices of assessment for 3 income years (there is no minimum income amount). Do not apply for the 887 if you are on a 491 or 494.
           </Callout>
         </div>
       </section>
@@ -219,7 +219,7 @@ return (
               },
               {
                 heading: 'Applies from any location',
-                detail: 'The 887 can be applied for from inside Australia (onshore) or from outside Australia (offshore). There is no requirement to be in a regional area at the time of application — the 2-year residence and 1-year work requirements apply to the period while on the provisional visa.',
+                detail: 'You must be in Australia and hold an eligible visa when you apply for the 887 (limited COVID-19 concessions applied to some people whose visa expired while they were outside Australia). There is no requirement to be in a regional area at the time of application — the 2-year residence and 1-year work requirements apply to the period while on the provisional visa.',
               },
             ].map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: 16, border: `1px solid ${BORDER}`, borderRadius: 10, padding: '22px 24px', background: '#fff' }}>
@@ -304,7 +304,7 @@ return (
           </div>
           <div style={{ marginTop: 32 }}>
             <Callout variant="note" panel={true} title="Confirm current cutoffs on the Department of Home Affairs website">
-              Figures current at August 2026 — confirm on the Department of Home Affairs website before relying on this information. The income threshold for the 191 is reviewed periodically.
+              Figures current at October 2026 — confirm on the Department of Home Affairs website before relying on this information. The income threshold for the 191 is reviewed periodically.
             </Callout>
           </div>
           <div style={{ marginTop: 20 }}>
@@ -321,11 +321,11 @@ return (
           <SectionHeading kicker="Time limits" title="Transitional Deadlines and Visa Expiry" accent={ACCENT} />
           <div style={{ marginTop: 28 }}>
             <Callout variant="note" panel={true} title="Confirm current deadlines on the Department of Home Affairs website">
-              The 489 visa cohort is winding down. Transitional arrangements and deadlines change. The information below is current at August 2026 — always confirm current deadlines and transitional provisions on the Department of Home Affairs website before relying on this information.
+              The 489 visa cohort is winding down. Transitional arrangements and deadlines change. The information below is current at October 2026 — always confirm current deadlines and transitional provisions on the Department of Home Affairs website before relying on this information.
             </Callout>
           </div>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 28, marginBottom: 0 }}>
-            The subclass 489 provisional visa has a maximum 4-year stay. The 887 application must generally be made while you hold a valid substantive visa. You do not need to be in Australia or in a regional area at the time you apply for the 887, but you must have held a valid provisional visa (or a Bridging Visa A covering it) at the time of application.
+            The subclass 489 provisional visa has a maximum 4-year stay. The 887 application must generally be made while you hold a valid substantive visa. You must be in Australia when you apply for the 887 (you do not need to be in a regional area at that time), but you must have held a valid provisional visa (or a Bridging Visa A covering it) at the time of application.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginTop: 20, marginBottom: 0 }}>
             If your provisional visa is approaching expiry and you have not yet met the work and residence requirements, you may need to extend your stay — possibly via a Bridging Visa. Seek migration advice well before your provisional visa expires if you are concerned about meeting the requirements in time.

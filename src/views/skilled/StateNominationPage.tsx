@@ -36,7 +36,7 @@ const AMBER   = GOLD
 const TEAL    = CAT_EMPLOYER
 const BORDER  = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const TOC: NavSection[] = [
   { id: 'key-facts',     label: 'Key facts' },
@@ -67,15 +67,15 @@ const JURISDICTION_ROWS: ComparisonRow[] = [
     feature:   'NSW (New South Wales)',
     visas:     '190, 491',
     focus:     'Healthcare, engineering, construction, ICT, accountants, education. Prioritises applicants living and working in NSW.',
-    residency: 'Typically requires you to be living in NSW or have an NSW job offer. Job offer may be required for some streams.',
-    apply:     'NSW Skills & Talent portal (online). NSW publishes its own occupation lists and criteria.',
+    residency: 'For the 190, NSW requires you to be working in NSW in your nominated occupation (at least 20 hours a week), or to have lived in NSW for at least 6 months, or to have lived offshore for at least 6 months. A job offer is not required.',
+    apply:     'NSW does not take direct 190 applications - it invites candidates from SkillSelect EOIs. Check nsw.gov.au for 491 pathways. NSW publishes its own occupation lists and criteria.',
   },
   {
     feature:   'VIC (Victoria)',
     visas:     '190, 491',
     focus:     'Skilled workers with a Victorian job offer or studying/living in Victoria. Priority sectors include health, engineering, trades.',
     residency: 'Victorian connection strongly preferred — studying, living, or working in Victoria. Job offer may be required.',
-    apply:     'Skilled Visa Victoria portal (online). Victoria publishes occupation lists and periodically pauses programs.',
+    apply:     'Registration of Interest (ROI) through Live in Melbourne. Victoria publishes occupation lists and periodically pauses programs.',
   },
   {
     feature:   'QLD (Queensland)',
@@ -95,8 +95,8 @@ const JURISDICTION_ROWS: ComparisonRow[] = [
     feature:   'WA (Western Australia)',
     visas:     '190, 491',
     focus:     'Mining, engineering, resources sector, healthcare, construction trades, regional WA. Western Australia has its own robust skilled migration program.',
-    residency: 'Preference for applicants with a WA job offer or working in WA. Job offer is generally required or heavily prioritised.',
-    apply:     'WA Skilled Migration portal and Work and Stay WA program (online).',
+    residency: 'Preference for applicants with a WA job offer or working in WA. General stream applicants usually need a WA employment contract (building and construction trades excepted); the Graduate stream has no employment contract requirement.',
+    apply:     'State Nominated Migration Program (SNMP) - lodge an EOI in SkillSelect, then apply if invited by WA Migration Services.',
   },
   {
     feature:   'TAS (Tasmania)',
@@ -138,7 +138,7 @@ const COMPARE_ROWS: ComparisonRow[] = [
 
 /* ─── Commitment section ─── */
 const COMMITMENT_POINTS = [
-  { icon: 'mappin', color: VIOLET, heading: 'Legal obligation for 190 holders', body: "If you hold the subclass 190 visa, you are generally required to live and work in the nominating state or territory for two years from the date of visa grant. This is a legislative obligation, not merely an expectation. Failing to comply may affect eligibility for citizenship." },
+  { icon: 'mappin', color: VIOLET, heading: 'Legal obligation for 190 holders', body: "If you hold the subclass 190 visa, you are generally required to live and work in the nominating state or territory for two years from the date of visa grant. This is a commitment you make to the state when you accept nomination. It is not a condition of the 190 visa, which lets you live and work anywhere in Australia, but you should only accept nomination if you genuinely intend to honour it." },
   { icon: 'mappin', color: VIOLET, heading: 'Stronger obligation for 491 holders', body: "The 491 visa requires you to live, work, and study only in a designated regional area throughout the five-year provisional visa period. This condition applies to your family members who hold a secondary 491 visa as well. Meeting this condition is also required before applying for the permanent 191 visa." },
   { icon: 'alert',  color: AMBER,  heading: "State nomination is not a binding contract from the state", body: "Receiving state nomination confirms the state considers you suitable under its current criteria. It does not mean the state will support you through the visa process or provide employment. The federal Department of Home Affairs assesses the actual visa application independently." },
   { icon: 'check',  color: GREEN,  heading: 'Commitment is assessed at visa decision', body: "The Department of Home Affairs and the states both take commitment requirements seriously. Applicants who obtain nomination and then relocate elsewhere may face consequences for future applications, including citizenship. Consider your genuine intention to live in the nominating jurisdiction before applying." },

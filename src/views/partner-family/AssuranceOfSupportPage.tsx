@@ -37,7 +37,7 @@ const FACTS: KeyFact[] = [
     icon: 'shield',
     value: 'All parent visas',
     label: 'Mandatory for all permanent parent visa subclasses',
-    note: 'An Assurance of Support is required for subclasses 103, 143, 173 (leading to 143), 804, and 864. It is not required for the subclass 870 Sponsored Parent (Temporary) visa.',
+    note: 'An Assurance of Support is required for subclasses 103, 143, 173 (leading to 143), 804, 864 and 884 (leading to 864). It is not required for the subclass 870 Sponsored Parent (Temporary) visa.',
   },
   {
     icon: 'dollar',
@@ -48,7 +48,7 @@ const FACTS: KeyFact[] = [
   {
     icon: 'calendar',
     value: '10 or 2 years',
-    label: 'AoS period: 10 years for contributory parent visas, 2 years for non-contributory',
+    label: 'AoS period: 10 years for contributory parent visas, 4 years for non-contributory parent visas (103 and 804)',
     note: 'The length of the AoS commitment differs by visa type. Contributory parent visas carry a 10-year AoS; non-contributory parent visas generally carry a shorter period. Confirm current periods on DoHA.',
   },
 ]
@@ -60,7 +60,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can there be more than one assurer (joint assurers)?",
-    answer: "Yes. Joint assurers are permitted. If no single person meets the income test on their own, two eligible people may apply as joint assurers. Joint assurers each bear equal responsibility for the AoS undertaking, and their incomes can be combined to meet the income test. Both joint assurers must be Australian citizens, permanent residents, or eligible New Zealand citizens living in Australia. Using joint assurers can make the AoS achievable for families where no single person earns enough to qualify alone.",
+    answer: "Yes. Joint assurers are permitted. If no single person meets the income test on their own, up to three eligible people may apply together as joint assurers. Joint assurers each bear equal responsibility for the AoS undertaking, and their incomes can be combined to meet the income test. Both joint assurers must be Australian citizens, permanent residents, or eligible New Zealand citizens living in Australia. Using joint assurers can make the AoS achievable for families where no single person earns enough to qualify alone.",
   },
   {
     question: "What if the assurer's circumstances change during the AoS period?",
@@ -145,7 +145,7 @@ export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: 
         deck="An Assurance of Support (AoS) is a legally binding financial undertaking lodged with Services Australia. The assurer — typically the sponsoring child — agrees to repay any recoverable welfare payments the visa holder receives during the AoS period. Understanding the income test, bond amounts, and the period of commitment is essential before applying for a parent visa."
         shortAnswer={<>An Assurance of Support is <strong style={{ color: NAVY }}>mandatory for all permanent parent visas</strong> (subclasses 103, 143, 173, 804 and 864). It is not required for the 870 Sponsored Parent (Temporary) visa. The AoS has two components: an <strong style={{ color: NAVY }}>income test</strong> (the assurer must demonstrate sufficient income) and a <strong style={{ color: NAVY }}>refundable bank bond</strong> lodged with Services Australia for the duration of the AoS period. For contributory parent visas, the AoS period is <strong style={{ color: NAVY }}>10 years</strong> and the bond is approximately <strong style={{ color: NAVY }}>$10,000 for the main applicant and $4,000 for a second adult</strong>. Non-contributory parent visas generally carry a shorter period and smaller bonds. The bond is refunded at the end of the period (with interest) if no recoverable payments are made. Confirm all current amounts on the Services Australia website. Nanak Migration Group (MARN 2619467) can assess AoS eligibility and the assurer requirements for your situation.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: '← Parent Visas', page: 'parent-visas' }}
         accent={ACCENT}
@@ -283,7 +283,7 @@ export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: 
             <div style={{ borderLeft: `3px solid ${ACCENT}`, background: '#fafbfe', borderRadius: '0 12px 12px 0', padding: 28 }}>
               <h3 style={{ fontFamily: "'Fraunces', Georgia, serif", fontSize: 20, fontWeight: 700, color: NAVY, margin: '0 0 16px' }}>2. Refundable bank bond</h3>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, marginBottom: 16 }}>
-                The assurer must lodge a bond (a cash deposit) with Services Australia for the duration of the AoS period. This bond acts as security against recoverable welfare payments. The bond earns interest while it is held. At the end of the AoS period, if no recoverable payments were made to the visa holder, the full bond plus interest is returned to the assurer.
+                When asked in writing by Services Australia, the assurer must arrange a bank guarantee secured by a term deposit with the Commonwealth Bank of Australia, which stays in place for the AoS period. This bond acts as security against recoverable welfare payments. The bond earns interest while it is held. At the end of the AoS period, if no recoverable payments were made to the visa holder, the full bond plus interest is returned to the assurer.
               </p>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
                 If recoverable payments were made during the AoS period, the amount repaid by the visa holder (or deducted from the bond) equals those specific payments. The bond is not a fee — it is a security mechanism that is returned in full if no claim is made.
@@ -292,7 +292,7 @@ export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: 
           </div>
 
           <Callout variant="note" panel={true} title="Confirm current income thresholds on the Services Australia website">
-            The income threshold for the AoS income test is set by Services Australia and updated periodically. The figure current at August 2026 should be confirmed directly with Services Australia or via Nanak Migration Group (MARN 2619467) before committing.
+            The income threshold for the AoS income test is set by Services Australia and updated periodically. The figure current at October 2026 should be confirmed directly with Services Australia or via Nanak Migration Group (MARN 2619467) before committing.
           </Callout>
         </div>
       </section>
@@ -374,7 +374,7 @@ export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: 
           </div>
 
           <Callout variant="warning" panel={true} title="Confirm current bond amounts on the Services Australia website">
-            Bond amounts are updated periodically and may differ from those shown above. Figures current at August 2026 are indicative only. Always confirm the current bond amount for the relevant visa subclass directly with Services Australia or through Nanak Migration Group (MARN 2619467) before lodging an AoS application.
+            Bond amounts are updated periodically and may differ from those shown above. Figures current at October 2026 are indicative only. Always confirm the current bond amount for the relevant visa subclass directly with Services Australia or through Nanak Migration Group (MARN 2619467) before lodging an AoS application.
           </Callout>
         </div>
       </section>
@@ -396,7 +396,7 @@ export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: 
               },
               {
                 title: 'What triggers the end of the AoS period',
-                body: 'The AoS period runs from the date the visa is granted for the specified number of years (10 years for contributory parent visas). It does not end early if the visa holder leaves Australia permanently, becomes an Australian citizen, or passes away — families should confirm the specific rules for their circumstances with Services Australia.',
+                body: 'The AoS period starts on the date the assuree arrives in Australia or is granted the visa, whichever is later, and runs for 10 years (contributory) or 4 years (non-contributory). Services Australia may cancel the AoS if a sole assurer or the assuree dies. — families should confirm the specific rules for their circumstances with Services Australia.',
               },
             ].map(item => (
               <div key={item.title} style={{ background: '#ffffff', border: '1px solid #e8edf6', borderRadius: 12, padding: 24 }}>
@@ -432,7 +432,7 @@ export default function AssuranceOfSupportPage({ navigate }: { navigate: (page: 
         navigate={navigate}
       />
 
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

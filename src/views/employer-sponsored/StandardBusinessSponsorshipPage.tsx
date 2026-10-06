@@ -19,7 +19,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const BLUE = CAT_EMPLOYER
 
@@ -31,7 +31,7 @@ const THREE_STEPS = [
     sub: 'Standard Business Sponsorship (SBS)',
     icon: 'briefcase',
     color: BLUE,
-    detail: 'The company applies to become an approved sponsor. DHA assesses: lawful operation, no adverse record, training record, and genuine need. Granted to the entity, not the individual. Validity: 5 years (standard) or 1 year (new entrant).',
+    detail: 'The company applies to become an approved sponsor. DHA assesses: lawful operation, no adverse record, training record, and genuine need. Granted to the entity, not the individual. Validity: 5 years from approval.',
     badge: 'SBS',
   },
   {
@@ -40,7 +40,7 @@ const THREE_STEPS = [
     sub: 'Nomination',
     icon: 'list',
     color: '#4f46e5',
-    detail: 'Each role nominated must be on the relevant occupation list, meet the TSMIT or annual earnings threshold, and demonstrate market salary rate via payroll evidence or an independent salary survey. This stage is where most employer sponsorship mistakes surface.',
+    detail: 'Each role nominated must be on the relevant occupation list, meet the annual market salary rate and the relevant income threshold (CSIT for Core Skills, SSIT for Specialist Skills, TSMIT for 494), and demonstrate market salary rate via payroll evidence or an independent salary survey. This stage is where most employer sponsorship mistakes surface.',
     badge: 'NOM',
   },
   {
@@ -62,7 +62,7 @@ const OBLIGATIONS = [
     color: BLUE,
   },
   {
-    title: 'Keep records for five years',
+    title: 'Keep records until 2 years after sponsorship ends',
     detail: 'Payslips, contract variations, leave records and any changes to the role must be retained for five years and produced on request. A DHA compliance audit can arrive without warning.',
     icon: 'file',
     color: '#4f46e5',
@@ -97,7 +97,7 @@ const ELIGIBILITY_YES = [
   'Lawfully operating in Australia — registered business with current ABN',
   'Employs or intends to employ workers in genuine positions',
   'No adverse administrative actions under migration law',
-  'Training record or undertaking to maintain training spend',
+  'A strong record of, or demonstrated commitment to, employing local labour, and a declaration that you will not engage in discriminatory recruitment practices',
   'No sanctions, deregistration or winding-up proceedings',
 ]
 
@@ -113,7 +113,7 @@ const COSTS = [
   { item: 'Nomination application fee', amount: '$330', note: 'Per nominated position. Lodged each time a role is nominated.' },
   { item: 'SAF levy — small business (< $10M turnover)', amount: '$1,200 / year', note: 'Per sponsored worker per year of visa duration, paid upfront.' },
   { item: 'SAF levy — all other businesses', amount: '$1,800 / year', note: 'Per sponsored worker per year of visa duration, paid upfront.' },
-  { item: 'Visa application charge', amount: 'Varies', note: '482 base: $3,115 (primary) + $1,545 (secondary applicant). Paid by visa applicant — cannot be recouped from worker.' },
+  { item: 'Visa application charge', amount: 'Varies', note: '482 base: $4,015 (primary) + $1,545 (secondary applicant). Paid by visa applicant — cannot be recouped from worker.' },
 ]
 
 const FAQS: FaqItem[] = [
@@ -123,7 +123,7 @@ const FAQS: FaqItem[] = [
   },
   {
     question: 'What are the employer sponsorship obligations?',
-    answer: 'SBS holders must pay market salary rates, retain employment records for five years, notify DHA of material changes to the role, pay return travel costs on cessation of employment, not transfer sponsorship costs to the worker, and not adversely affect Australian workers\' conditions. Breaches can result in an infringement notice, bar on further nominations, or cancellation of sponsorship.',
+    answer: 'SBS holders must pay market salary rates, keep records for the sponsorship period and for 2 years after it ends, notify DHA of material changes to the role, pay return travel costs on cessation of employment, not transfer sponsorship costs to the worker, and not adversely affect Australian workers\' conditions. Breaches can result in an infringement notice, bar on further nominations, or cancellation of sponsorship.',
   },
   {
     question: 'Can a small business sponsor a worker?',
@@ -135,7 +135,7 @@ const FAQS: FaqItem[] = [
   },
   {
     question: 'Does SBS need to be renewed?',
-    answer: 'Yes. Standard Business Sponsorship is granted for 5 years (established businesses) or 1 year (new entrants). Renewal must be lodged before expiry. Importantly, if SBS lapses, existing sponsored workers can continue on their current visa but new nominations cannot be lodged until SBS is restored.',
+    answer: 'Yes. Standard Business Sponsorship is granted for 5 years from the date of approval. Renewal must be lodged before expiry. Importantly, if SBS lapses, existing sponsored workers can continue on their current visa but new nominations cannot be lodged until SBS is restored.',
   },
   {
     question: "What happens if we change the sponsored worker's role?",
@@ -186,7 +186,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
         variant="standard"
         eyebrow="Employer Sponsored · For Employers"
         title={<>Standard Business<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Sponsorship</em></>}
-        deck="The foundational employer approval that unlocks access to the Skills in Demand (482), Employer Nomination Scheme (186), and regional employer-sponsored (494) visa streams."
+        deck="The employer approval needed to sponsor workers on the Skills in Demand (482) and Skilled Employer Sponsored Regional (494) visas."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book an Employer Consultation', page: 'book-consultation' }}
@@ -198,7 +198,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <AnswerBox routeKey="standard-business-sponsorship">
-            Standard Business Sponsorship is the employer approval needed before nominating workers on Skills in Demand (subclass 482) or the Employer Nomination Scheme (subclass 186), as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It underpins most employer-sponsored visas, including the 482 to PR pathway and roles drawn from the Core Skills Occupation List.
+            Standard Business Sponsorship is the employer approval needed before nominating workers on Skills in Demand (subclass 482) or Skilled Employer Sponsored Regional (subclass 494) visas, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It underpins most employer-sponsored visas, including the 482 to PR pathway and roles drawn from the Core Skills Occupation List.
           </AnswerBox>
           <ReviewedBy />
         </div>

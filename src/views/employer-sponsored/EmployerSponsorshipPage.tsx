@@ -20,7 +20,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 import { TSMIT_LABEL } from '@/lib/visa-constants'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const TSMIT_DISPLAY = `${TSMIT_LABEL} (from 1 July 2026)`
 
 const EMPLOYER_RELATED: RelatedPage[] = [
@@ -85,7 +85,7 @@ const VISA_INFO = [
     prPathway: 'This IS PR',
     stream: 'Direct Entry or TRT',
     tsmit: TSMIT_DISPLAY,
-    summary: 'Nominate a skilled worker for permanent residence directly, or via the Temporary Residence Transition stream after 3 years on a 482 visa.',
+    summary: 'Nominate a skilled worker for permanent residence directly, or via the Temporary Residence Transition stream once they have 2 years of full-time sponsored employment on a 457 or 482 visa.',
     bestFor: ['Long-term retention of key staff', 'Rewarding 482 visa holders', 'Direct entry for experienced workers'],
     obligations: ['Genuine position must exist', 'Pay at least the nominated salary', 'Ongoing business operation'],
     icon: 'award',
@@ -110,7 +110,7 @@ const OBLIGATIONS = [
   { title: 'Pay Market Salary Rate', desc: 'You must pay the sponsored worker at least the annual market salary rate — or the Temporary Skilled Migration Income Threshold (TSMIT), whichever is higher.', icon: 'dollar', status: 'critical' },
   { title: 'Equivalent Terms & Conditions', desc: "The sponsored worker's employment conditions must not be less favourable than those you'd offer an equivalent Australian citizen in the same role.", icon: 'scale', status: 'critical' },
   { title: 'Cooperate with Inspectors', desc: 'You must allow DHA inspectors access to your premises and records to verify compliance with sponsorship obligations.', icon: 'eye', status: 'important' },
-  { title: 'Keep Records', desc: 'Maintain records of all employment terms, payslips, and taxation documents for each sponsored worker for the duration of sponsorship.', icon: 'file', status: 'important' },
+  { title: 'Keep Records', desc: 'Maintain records of all employment terms, payslips and taxation documents for each sponsored worker for the duration of sponsorship and for 2 years after it ends.', icon: 'file', status: 'important' },
   { title: 'Notify DHA of Changes', desc: 'Notify the Department of Home Affairs within 28 days of changes to the sponsored worker\'s employment: termination, role change, location change.', icon: 'clipboard', status: 'important' },
   { title: 'No Cost Recovery from Worker', desc: 'You cannot make the sponsored worker pay or reimburse you for any sponsorship-related costs — including the Skilling Australians Fund levy.', icon: 'xcirc', status: 'critical' },
 ]
@@ -140,12 +140,12 @@ const CASE_STUDIES = [
 
 const FAQS = [
   { q: 'How long does it take to become an approved Standard Business Sponsor?', a: 'SBS approval typically takes 4–8 weeks from lodgement of a complete application. We prepare your application to maximise the quality of your submission — complex cases or businesses with a compliance history may take longer.' },
-  { q: 'Can I sponsor workers in any occupation?', a: 'No. Each employer-sponsored visa has an approved occupation list. The 482 visa uses the MLTSSL and STSOL lists (Short-Term and Medium-Long Term Strategic Skill Lists). The 186 visa (Direct Entry) uses the MLTSSL. The 494 uses a broader regional list. We check your specific role against the current lists as part of our assessment.' },
+  { q: 'Can I sponsor workers in any occupation?', a: 'No. Each employer-sponsored visa has an approved occupation list. The 482 Core Skills stream uses the Core Skills Occupation List (CSOL). The 482 Specialist Skills stream has no occupation list, but trades, machinery operator and labourer occupations are excluded. The 186 Direct Entry stream also uses the CSOL. The 494 uses a broader regional list. We check your specific role against the current lists as part of our assessment.' },
   { q: 'What is the Skilling Australians Fund (SAF) levy and who pays it?', a: 'The SAF levy is a training levy paid by the employer — not the worker. For small businesses (turnover under $10M), it\'s $1,200 per year per worker sponsored. For standard businesses it\'s $1,800 per year. You pay for the full visa period upfront. Critically, you cannot recover this cost from the sponsored worker.' },
   { q: 'What happens if I need to terminate a sponsored worker\'s employment?', a: 'You must notify DHA within 28 days of the worker\'s employment ceasing. You may also be liable to pay reasonable costs of the sponsored worker\'s return travel to their home country. We advise sponsors on their obligations before and when employment ends.' },
   { q: 'Can a sponsored worker change employers?', a: 'A 482 visa holder can change to a new sponsor — but the new employer must apply for sponsorship and nomination in their own right. The worker cannot work for an unapproved employer under any circumstances.' },
   { q: 'Is there a limit on how many workers I can sponsor?', a: 'There is no formal cap on the number of workers an approved sponsor can nominate, provided each nomination meets the genuine position, market salary rate, and occupation list requirements. However, large-scale sponsorship programmes may attract additional scrutiny.' },
-  { q: 'What is Labour Market Testing and when is it required?', a: 'Labour Market Testing (LMT) requires you to demonstrate you advertised the position locally before sponsoring an overseas worker. LMT is generally required for 482 nominations (with limited exemptions) and some 186 Direct Entry nominations. We guide you through LMT requirements so your nomination is not refused on procedural grounds.' },
+  { q: 'What is Labour Market Testing and when is it required?', a: 'Labour Market Testing (LMT) requires you to demonstrate you advertised the position locally before sponsoring an overseas worker. LMT is generally required for 482 Core Skills and Specialist Skills nominations and for 494 nominations, with limited exemptions (mainly under Australia\'s international trade obligations). It is not a requirement for 186 nominations. We guide you through LMT requirements so your nomination is not refused on procedural grounds.' },
 ]
 
 // ── Component ────────────────────────────────────────────────
@@ -456,8 +456,8 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               color: NAVY,
               timing482: '4–8 wks', timing186: '4–8 wks', timing494: '4–8 wks',
               desc: 'Your business must be approved as a Standard Business Sponsor before any nomination can be lodged. We compile your business evidence, trading history, and HR documentation to support a strong application.',
-              steps: ['Business trading evidence', 'Lawful business declaration', 'Training activities evidence', 'DHA lodgement & tracking'],
-              note: 'SBS approval is valid for 5 years and covers all visa subclasses.',
+              steps: ['Business trading evidence', 'Lawful business declaration', 'Evidence of commitment to employing local labour', 'DHA lodgement & tracking'],
+              note: 'SBS approval is valid for 5 years and lets you sponsor workers on the 482 and 494 visas. A 186 nomination does not need SBS - the employer must be an actively and lawfully operating Australian business.',
             },
             {
               phase: '02',
@@ -466,7 +466,7 @@ export default function EmployerSponsorshipPage({ navigate }: { navigate: (page:
               timing482: '2–6 wks', timing186: '4–12 wks', timing494: '4–8 wks',
               desc: 'You nominate a specific worker for a specific position. We prepare the position description, conduct Labour Market Testing (where required), and ensure all occupation and salary criteria are met.',
               steps: ['Position & occupation verification', 'Labour Market Testing (if required)', 'Salary benchmarking', 'Nomination lodgement'],
-              note: 'For 482, the worker can lodged their visa application simultaneously with the nomination.',
+              note: 'For 482, the worker can lodge their visa application at the same time as the nomination.',
             },
             {
               phase: '03',

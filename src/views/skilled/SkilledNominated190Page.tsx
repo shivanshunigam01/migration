@@ -39,7 +39,7 @@ const GREEN    = '#f5a124'
 const AMBER    = '#f5a124'
 const BORDER   = '#e8edf6'
 const GREY_BG  = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 /* ─── On-this-page ─── */
 const TOC: NavSection[] = [
@@ -105,7 +105,7 @@ const STEPS: TimelineStep[] = [
     code: '05', title: 'Receive an invitation to apply', duration: 'After nomination', color: INDIGO,
     points: [
       'Once nominated, the Department of Home Affairs generally issues an invitation to apply for the 190 visa.',
-      'Invitations are issued in regular rounds; the points cutoff for the 190 is generally lower than the 189 because the nomination adds 5 points.',
+      'There are no departmental invitation rounds for the 190. When a state or territory nominates you in SkillSelect, this triggers your invitation. Each state sets its own selection criteria and any minimum points.',
       'An invitation to apply is not a visa grant — it authorises you to lodge a visa application.',
       'The invitation expires; the 190 application must generally be lodged within 60 days of the invitation.',
     ],
@@ -124,8 +124,8 @@ const STEPS: TimelineStep[] = [
     points: [
       'If approved, permanent residence is granted from the date of decision.',
       'Processing times for 190 applications vary — the Department of Home Affairs publishes indicative times on its website.',
-      'The 190 visa includes a two-year travel facility from the date of grant; a Resident Return Visa is required to re-enter Australia as a permanent resident after this expires.',
-      'The condition to live and work in the nominating state for at least two years applies from grant.',
+      'The 190 visa lets you travel to and from Australia for 5 years from the date of grant; after that you need a Resident Return visa (subclass 155 or 157) to re-enter as a permanent resident.',
+      'Most states ask you to commit to living and working in the nominating state for 2 years after grant. This is a state nomination commitment, not a visa condition - the 190 itself lets you live and work anywhere in Australia.',
     ],
   },
 ]
@@ -404,7 +404,7 @@ export default function SkilledNominated190Page({ navigate }: { navigate: (page:
       />
 
       <ComplianceDisclaimer currentAsAt={CURRENT_AS_AT}
-        pageNote="State and territory nomination programs, occupation lists, and points cutoffs are subject to change independently of federal requirements. This page does not publish visa application fees." />
+        pageNote="State and territory nomination programs, occupation lists, and points cutoffs are subject to change independently of federal requirements. Visa application charges shown are those published by Home Affairs from 1 July 2026 and may change." />
 
       <SiteFooter navigate={navigate} />
     </div>

@@ -30,7 +30,7 @@ const FACTS: KeyFact[] = [
   { icon: 'alert', value: 'As little as 7 days', label: 'Typical response window for a NOICC', note: 'Time limits on NOICC responses vary — some are as short as 7 days. Read the notice carefully and contact a migration agent immediately on receipt.' },
   { icon: 'scale', value: 'Mandatory vs discretionary', label: 'Two types of cancellation power', note: 'Some cancellations (e.g. some section 501 character cancellations) are mandatory — the Minister must cancel if criteria are met. Others are discretionary — the delegate weighs the grounds and the response.' },
   { icon: 'shield', value: 'Section 48 bar', label: 'Cancellation may trigger the section 48 bar', note: 'A visa cancelled while the holder is onshore may trigger the section 48 bar — preventing most new visa applications from inside Australia.' },
-  { icon: 'calendar', value: 'ART review available', label: 'Most cancellations can be reviewed at the ART', note: 'A cancellation decision may be reviewable at the Administrative Review Tribunal (ART) — but strict time limits apply. Review must generally be sought within 21 days of notification.' },
+  { icon: 'calendar', value: 'ART review available', label: 'Most cancellations can be reviewed at the ART', note: 'A cancellation decision may be reviewable at the Administrative Review Tribunal (ART) — but strict time limits apply. Review must generally be sought within 28 days of notification.' },
 ]
 
 const FAQ: FaqItem[] = [
@@ -40,7 +40,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can I stay in Australia while I appeal the cancellation?",
-    answer: "A merits review application at the ART generally keeps you lawfully in Australia on a bridging visa while the review is pending — provided the review is lodged within the strict deadline (generally 21 days). This is one of the most important reasons to act quickly after a cancellation decision. If you miss the review deadline, you may become unlawful with no pending application to protect your status. Do not delay — seek advice immediately.",
+    answer: "A merits review application at the ART generally keeps you lawfully in Australia on a bridging visa while the review is pending — provided the review is lodged within the strict deadline (generally 28 days, or 9 days for section 501 character decisions). This is one of the most important reasons to act quickly after a cancellation decision. If you miss the review deadline, you may become unlawful with no pending application to protect your status. Do not delay — seek advice immediately.",
   },
   {
     question: "What is the difference between a cancellation under section 116 and section 501?",
@@ -92,7 +92,7 @@ return (
         deck="Australian visa cancellation can happen swiftly and with serious consequences — including unlawful status, possible detention, and the Section 48 bar. If you have received a Notice of Intention to Consider Cancellation (NOICC) or your visa has already been cancelled, response deadlines are short and professional help matters."
         shortAnswer={<>The Department of Home Affairs has wide powers to cancel Australian visas — including under <strong style={{ color: NAVY }}>section 116</strong> (general grounds: breach of condition, failure to meet criteria, or changed circumstances), <strong style={{ color: NAVY }}>section 109</strong> (incorrect information given in the application), and <strong style={{ color: NAVY }}>section 501</strong> (character grounds, including criminal convictions). Before most cancellations, the Department issues a <strong style={{ color: NAVY }}>Notice of Intention to Consider Cancellation (NOICC)</strong> — you will have a limited time (often as little as 7 days) to respond. A strong, timely response can make a significant difference. If your visa is cancelled, you may be subject to the Section 48 bar, re-entry bans, and detention risk. <strong style={{ color: NAVY }}>Do not wait</strong> — seek advice from a registered migration agent immediately. Nanak Migration Group (MARN 2619467) assists with NOICC responses and cancellation appeals.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request urgent discussion', page: 'home' }}
         secondaryCta={{ label: 'ART Review →', page: 'art-review' }}
         accent={ACCENT}
@@ -189,7 +189,7 @@ return (
               <li style={{ fontSize: 15, lineHeight: 1.7, color: '#374151' }}>The person has been convicted of an offence committed in immigration detention</li>
             </ul>
             <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', margin: 0 }}>
-              Some section 501 cancellations are mandatory — the Minister must cancel in certain circumstances (e.g. sentences of 2 years or more). Others are discretionary. Section 501 cancellations can be reviewed at the ART (if the decision was not made personally by the Minister) or in some cases are subject to a non-revocation power held by the Minister personally.
+              Some section 501 cancellations are mandatory — the Minister must cancel in certain circumstances (e.g. where the person has been sentenced to 12 months or more imprisonment, or for a sexually based offence involving a child, and is serving a full-time custodial sentence). Others are discretionary. Section 501 cancellations can be reviewed at the ART (if the decision was not made personally by the Minister) or in some cases are subject to a non-revocation power held by the Minister personally.
             </p>
           </div>
         </div>
@@ -224,7 +224,7 @@ return (
               {
                 num: '4',
                 title: 'Decision',
-                desc: 'After the response deadline passes, a delegate reviews the response and makes a decision — either to cancel or not to cancel the visa. If the decision is to cancel, the visa holder has review rights at the ART (generally within 21 days). If the decision is not to cancel, the visa continues. The outcome depends on the strength of the response and the specific grounds.',
+                desc: 'After the response deadline passes, a delegate reviews the response and makes a decision — either to cancel or not to cancel the visa. If the decision is to cancel, the visa holder has review rights at the ART (generally within 28 days). If the decision is not to cancel, the visa continues. The outcome depends on the strength of the response and the specific grounds.',
               },
             ].map((step, i, arr) => (
               <div key={i} style={{ display: 'flex', gap: 20, paddingBottom: i < arr.length - 1 ? 0 : 0 }}>
@@ -254,7 +254,7 @@ return (
           {[
             { title: 'Unlawful status', desc: 'When a visa is cancelled, the holder immediately becomes an unlawful non-citizen in Australia. An unlawful non-citizen has no right to remain in Australia and may be detained by the Australian Border Force.' },
             { title: 'Detention risk', desc: 'An unlawful non-citizen — including a person whose visa has just been cancelled — is subject to mandatory immigration detention under the Migration Act. While not all unlawful non-citizens are immediately detained, the risk is real and the Department has wide powers to detain.' },
-            { title: 'Section 48 bar', desc: 'A visa cancellation while the holder is onshore triggers the section 48 bar — preventing them from applying for most visas from inside Australia. Limited exemptions apply (see the Section 48 Bar guide). The section 48 bar means the person generally must leave Australia before they can apply for a new visa.' },
+            { title: 'Section 48 bar', desc: 'A cancellation under certain powers (including sections 109 and 116) while the holder is in Australia will usually trigger the section 48 bar if they do not hold another substantive visa. Section 501 cancellations carry separate, more serious restrictions under section 501E — preventing them from applying for most visas from inside Australia. Limited exemptions apply (see the Section 48 Bar guide). The section 48 bar means the person generally must leave Australia before they can apply for a new visa.' },
             { title: 'Re-entry bans', desc: 'Some cancellations — particularly section 501 character cancellations — result in a formal re-entry ban or exclusion period. This prevents the person from returning to Australia for a specified period (or permanently in some cases). The length of any ban depends on the grounds and the delegate\'s decision.' },
             { title: 'Impact on future visa applications', desc: 'A cancelled visa is a significant adverse immigration history factor. It will be disclosed in any future visa applications and will be considered by the Department when assessing good character and genuine intent. A cancellation for section 109 (false information) is particularly serious — it is closely related to PIC 4020 and may trigger the 3-year or 10-year ban.' },
           ].map((item, i) => (
@@ -321,7 +321,7 @@ return (
         accent={ACCENT}
         navigate={navigate}
       />
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

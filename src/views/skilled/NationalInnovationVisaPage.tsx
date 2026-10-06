@@ -13,7 +13,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = NAVY
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -79,7 +79,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "How recent do my achievements need to be?",
-    answer: "There is no fixed recency requirement for subclass 858 achievements. Past achievements of enduring significance — such as a Nobel Prize, an Olympic medal, or a body of widely-cited research — continue to count. However, more recent evidence of ongoing contribution to the field generally strengthens a 858 application. The Department considers the totality of your record, not just recent activity.",
+    answer: "You must still be prominent in your area - Home Affairs expects you to continue to be active, with recent exceptional achievements. Earlier achievements help establish your record but need to be supported by recent evidence. Past achievements of enduring significance — such as a Nobel Prize, an Olympic medal, or a body of widely-cited research — continue to count. However, more recent evidence of ongoing contribution to the field generally strengthens a 858 application. The Department considers the totality of your record, not just recent activity.",
   },
   {
     question: "Can I nominate myself, or do I need someone else to nominate me?",
@@ -135,7 +135,7 @@ const ELIGIBILITY_ROWS = [
   },
   {
     heading: 'Eligible field',
-    body: "Your achievements must be in one of the four eligible fields: academia and research; sport; the arts; or innovative technology sectors. Achievements in multiple fields may be combined if they relate to a coherent body of work.",
+    body: "Your achievements must be in one of the four eligible areas: a profession; a sport; the arts; or academia and research. Achievements in multiple fields may be combined if they relate to a coherent body of work.",
   },
   {
     heading: 'Nomination',
@@ -178,8 +178,8 @@ return (
         eyebrow="Subclass 858"
         eyebrowSub="Permanent Residence · Skilled Migration"
         title={<>National Innovation Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Permanent Residence for Exceptional Achievers</em></>}
-        deck="The National Innovation Visa (subclass 858) is a permanent residence visa for individuals with an internationally recognised record of exceptional and outstanding achievement in academia and research, sport, the arts, or innovative technology sectors. It replaced the former Global Talent Independent program in December 2024."
-        shortAnswer={<>The National Innovation Visa (subclass 858) requires an internationally recognised record of exceptional and outstanding achievement in an eligible field — academia and research, sport, the arts, or innovative technology. The applicant must be nominated by an eligible Australian citizen, permanent resident, eligible New Zealand citizen, or Australian organisation with a national reputation in the relevant field. The visa is invitation-based: applicants first submit an Expression of Interest, and an invitation to apply is required before lodging. There is no age requirement, no points test, and no skills assessment. The exceptional achievement threshold is high — the Department is looking for achievements that distinguish the applicant from other practitioners in the field, such as international prizes and awards, peer-reviewed publications of significant impact, or elite-level sporting representation. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your career profile meets the threshold before you submit an Expression of Interest.</>}
+        deck="The National Innovation Visa (subclass 858) is a permanent residence visa for individuals with an internationally recognised record of exceptional and outstanding achievement in a profession, a sport, the arts, or academia and research. It replaced the former Global Talent Independent program in December 2024."
+        shortAnswer={<>The National Innovation Visa (subclass 858) requires an internationally recognised record of exceptional and outstanding achievement in an eligible field — a profession, a sport, the arts, or academia and research. The applicant must be nominated by an eligible Australian citizen, permanent resident, eligible New Zealand citizen, or Australian organisation with a national reputation in the relevant field. The visa is invitation-based: applicants first submit an Expression of Interest, and an invitation to apply is required before lodging. You can apply at any age, but if you are under 18 or 55 or older you must show you would be of exceptional benefit to the Australian community. There is no points test and no skills assessment. The exceptional achievement threshold is high — the Department is looking for achievements that distinguish the applicant from other practitioners in the field, such as international prizes and awards, peer-reviewed publications of significant impact, or elite-level sporting representation. Nanak Migration Group, a registered migration agent (MARN 2619467), can assess whether your career profile meets the threshold before you submit an Expression of Interest.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -339,7 +339,7 @@ return (
           </div>
           <div style={{ marginTop: 40, maxWidth: 860, margin: '40px auto 0' }}>
             <Callout variant="note" title="Subclass 858 Visa Application Charge" panel={true}>
-              The Visa Application Charge (VAC) for the subclass 858 is approximately $4,640 for the primary applicant. Additional applicant charges apply. Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging. Professional fees: Nanak Migration Group provides a fixed-fee quote after assessing each matter.
+              The Visa Application Charge (VAC) for the subclass 858 is AUD6,235 for the primary applicant, AUD3,120 for each additional applicant aged 18 or over and AUD1,560 for each applicant under 18 (from 1 July 2026). Additional applicant charges apply. Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging. Professional fees: Nanak Migration Group provides a fixed-fee quote after assessing each matter.
             </Callout>
           </div>
         </div>

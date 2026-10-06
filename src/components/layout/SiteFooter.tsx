@@ -902,7 +902,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
           {/* Row 2 */}
           <div style={{ fontSize: 12, color: FOOTER_SOFT }}>
             General information only. Not legal or migration advice. Consult a registered migration
-            agent before acting. Content current as at July 2026.
+            agent before acting. Content current as at October 2026.
           </div>
         </div>
       </div>

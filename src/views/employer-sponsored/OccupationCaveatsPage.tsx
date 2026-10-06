@@ -20,7 +20,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const ACCENT = CAT_EMPLOYER
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
@@ -52,7 +52,7 @@ const KEY_FACTS: KeyFact[] = [
     icon: 'alert',
     value: 'Nomination refused',
     label: 'Consequence of missing a caveat',
-    note: "If a caveat is not satisfied, the nomination will be refused — even if the occupation is listed on the CSOL and the salary is correct. Nomination refusals cannot be merits-reviewed by the ART.",
+    note: "If a caveat is not satisfied, the nomination will be refused — even if the occupation is listed on the CSOL and the salary is correct. A refused nomination can usually be reviewed by the Administrative Review Tribunal (ART), but review takes time and costs money, so getting it right before lodging matters.",
   },
   {
     icon: 'shield',
@@ -65,7 +65,7 @@ const KEY_FACTS: KeyFact[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'Where can I find the CSOL caveats?',
-    answer: "Caveats are contained in the legislative instrument that gives effect to the CSOL — the Migration (IMMI 24/024 or successor instrument) — available on the Federal Register of Legislation. The caveats are set out in a schedule or annex to the instrument, alongside each ANZSCO code. Do not rely on third-party summaries — always check the version of the instrument current at the date of lodgement.",
+    answer: "Caveats are contained in the legislative instrument that gives effect to the CSOL — the Migration (Specification of Occupations - Subclass 482 Visa) Instrument 2024 (LIN 24/089), as amended — available on the Federal Register of Legislation. The caveats are set out in a schedule or annex to the instrument, alongside each ANZSCO code. Do not rely on third-party summaries — always check the version of the instrument current at the date of lodgement.",
   },
   {
     question: 'Do caveats change over time?',
@@ -121,7 +121,7 @@ const EXAMPLES = [
     code: 'ANZSCO 351411',
     occupation: 'Cook',
     business: 'A small cafe with 3 staff and $600,000 annual revenue',
-    caveat: "Requires the nominating business to be a 'restaurant' (not a cafe or catering business in some circumstances) and may impose a minimum establishment size requirement",
+    caveat: "Cook is not available where the position is in a limited service restaurant (for example, fast food or takeaway) or involves mass production in a factory setting",
     outcome: 'Nomination lodged. Refused because the business type and size did not satisfy the caveat.',
     note: 'This is a common refusal scenario for hospitality nominations. The specific caveat conditions for Cook must be checked in the current CSOL instrument.',
     refused: true,
@@ -130,7 +130,7 @@ const EXAMPLES = [
     code: 'ANZSCO 225113',
     occupation: 'Marketing Specialist',
     business: 'A start-up with 4 employees and $800,000 annual turnover',
-    caveat: 'Some marketing occupations carry a business-size caveat requiring minimum annual turnover or employee count',
+    caveat: 'Marketing Specialist is not available where the position is in a front-line retail setting, mainly involves direct transactional client contact, mainly involves selling education courses to individual students, or is a call-centre role without significant technical product knowledge',
     outcome: "Nomination unable to proceed without satisfying the caveat condition, which the employer's business does not currently meet.",
     note: 'This example is illustrative. Always confirm the current caveat wording in the legislative instrument.',
     refused: true,

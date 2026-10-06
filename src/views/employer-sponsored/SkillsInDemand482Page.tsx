@@ -20,7 +20,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 import { CSIT_LABEL, SSIT_PLUS, SID_COMMENCEMENT } from '@/lib/visa-constants'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const streams = [
   {
@@ -29,10 +29,10 @@ const streams = [
     color: GOLD,
     duration: 'Up to 4 years',
     salary: `${SSIT_PLUS} p.a. (SSIT)`,
-    lmt: 'No',
+    lmt: 'Yes',
     pr: 'Yes — via 186 TRT',
     occupations: ['Senior executive', 'Data scientist', 'Specialist surgeon'],
-    note: 'No LMT required. For high-income specialists meeting the Specialist Skills Income Threshold.',
+    note: 'Labour Market Testing applies to both streams unless a trade-obligation exemption applies. Specialist Skills receives processing priority.',
   },
   {
     key: 'core',
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: 'Is Labour Market Testing (LMT) required?',
-    a: `LMT is required for the Core Skills stream — the employer must demonstrate they attempted to recruit an Australian citizen or permanent resident before nominating an overseas worker. The Specialist Skills stream is generally exempt from LMT where earnings meet the SSIT (${SSIT_PLUS} p.a. from 1 July 2026). Labour Agreement streams follow the terms of the agreement.`,
+    a: `LMT is required for both the Core Skills and Specialist Skills streams unless an exemption under international trade obligations applies — the employer must demonstrate genuine recruitment efforts before nominating an overseas worker. Labour Agreement streams follow the terms of the agreement.`,
   },
   {
     q: 'Can my family members come with me on a 482 visa?',
@@ -89,11 +89,11 @@ const faqItems: FaqItem[] = faqs.map(f => ({ question: f.q, answer: f.a }))
 
 const eligibilityItems = [
   { icon: 'briefcase', title: 'Employer sponsorship', desc: 'Your employer must hold or apply for Standard Business Sponsorship (SBS) before nominating you.' },
-  { icon: 'file', title: 'Approved occupation', desc: 'The nominated occupation must appear on the relevant MLTSSL, STSOL, or regional occupation list for the stream.' },
+  { icon: 'file', title: 'Approved occupation', desc: 'For the Core Skills stream, the nominated occupation must be on the Core Skills Occupation List (CSOL). The Specialist Skills stream has no occupation list but excludes trades, machinery operator and labourer occupations. Labour Agreement occupations are set by the agreement.' },
   { icon: 'dollar', title: 'Salary threshold', desc: `Core Skills stream requires earnings at or above the CSIT (${CSIT_LABEL} from 1 July 2026). Specialist Skills stream requires the SSIT (${SSIT_PLUS} p.a.).` },
-  { icon: 'user', title: 'Skills & qualifications', desc: 'Relevant qualifications, skills assessment (for some occupations), and at least 2 years of relevant work experience.' },
-  { icon: 'shield', title: 'English language', desc: 'At least competent English (IELTS 6 or equivalent). Some Specialist stream high earners may be exempt.' },
-  { icon: 'calendar', title: 'Age under 45', desc: 'You must be under 45 at the time of visa application. Limited exemptions apply for certain roles and streams.' },
+  { icon: 'user', title: 'Skills & qualifications', desc: 'Relevant qualifications, a skills assessment (for some occupations), and at least 1 year of relevant work experience in the nominated occupation or a related field.' },
+  { icon: 'shield', title: 'English language', desc: 'For tests taken from 13 September 2025, at least IELTS 5.0 in each component or an equivalent score in another approved test. Exemptions apply to Canadian, New Zealand, Irish, UK and US passport holders, people with 5 years of English-medium study, and some others.' },
+  { icon: 'calendar', title: 'Age under 45', desc: 'There is no age limit for the 482 visa. Age becomes relevant if you later apply for the subclass 186, where you generally must be under 45 when you apply.' },
 ]
 
 const steps = [
@@ -101,7 +101,7 @@ const steps = [
   { num: '02', title: 'Employer lodges nomination', desc: 'The employer nominates the position and occupation, demonstrating the role meets salary and LMT requirements.' },
   { num: '03', title: 'You apply for the visa', desc: 'Once the nomination is approved (or concurrently), you lodge the subclass 482 visa application with supporting documents.' },
   { num: '04', title: 'Visa granted — begin work', desc: 'On grant, you (and any secondary applicants) can enter Australia and commence work in the nominated occupation.' },
-  { num: '05', title: 'Transition to 186 ENS (optional)', desc: 'After 2 years in the Core Skills or Specialist Skills stream, apply for permanent residence via the 186 TRT stream with the same employer.' },
+  { num: '05', title: 'Transition to 186 ENS (optional)', desc: 'After 2 years of full-time sponsored employment on a 482 visa (any stream), you may be nominated for permanent residence in the 186 TRT stream by the employer who last sponsored you.' },
 ]
 
 const RELATED: RelatedPage[] = [
@@ -347,7 +347,7 @@ export default function SkillsInDemand482Page({ navigate }: { navigate: (page: s
                 {[
                   { label: 'Duration', vals: streams.map((s) => s.duration) },
                   { label: 'Salary threshold', vals: streams.map((s) => s.salary) },
-                  { label: 'LMT required', vals: ['No', 'Yes', 'Varies'] },
+                  { label: 'LMT required', vals: ['Yes', 'Yes', 'Varies'] },
                   { label: 'PR pathway', vals: ['Yes (186)', 'Yes (186)', 'May apply'] },
                   { label: 'Skills assessment', vals: ['Sometimes', 'Sometimes', 'Varies'] },
                   { label: 'English requirement', vals: ['Competent', 'Competent', 'Competent*'] },

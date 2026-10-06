@@ -19,7 +19,7 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const RED = CAT_REVIEWS
 const AMBER = GOLD
@@ -38,9 +38,9 @@ const DECISION_TYPES = [
   {
     visa: 'Protection visa refusals (onshore)',
     examples: ['Subclass 866 Protection'],
-    days: 35,
+    days: 28,
     extendable: false,
-    notes: '35 calendar days from deemed notification. Non-extendable. Lodgement outside this window is jurisdictionally invalid.',
+    notes: '28 days after you are notified of the decision (14 days if you are in immigration detention). Non-extendable. Lodgement outside this window is jurisdictionally invalid.',
     severity: 'red',
   },
   {
@@ -64,7 +64,7 @@ const DECISION_TYPES = [
     examples: ['Partner 309', 'Various offshore classes'],
     days: null,
     extendable: false,
-    notes: 'Offshore refusals are generally not reviewable at the ART. Options may include re-application, ministerial intervention or judicial review.',
+    notes: 'Many offshore refusals are reviewable. If the visa required sponsorship or nomination by an Australian citizen, permanent resident, eligible New Zealand citizen or an Australian business (for example a Partner 309 refusal), the sponsor or nominator can apply to the ART within 28 days. Offshore refusals with no Australian sponsor or nominator are generally not reviewable.',
     severity: 'amber',
   },
   {
@@ -95,7 +95,7 @@ const PROCESS_STEPS = [
   {
     step: '03',
     title: 'Lodge With the ART Before the Deadline',
-    body: 'Lodge via art.gov.au. Pay the fee at lodgement (fee varies by decision type — check art.gov.au for current rates). A bridging visa (BVB) activates upon valid lodgement if you are onshore.',
+    body: 'Lodge via art.gov.au. Pay the fee at lodgement (fee varies by decision type — check art.gov.au for current rates). If you are onshore, the bridging visa you already hold (usually a Bridging Visa A) generally stays in effect while the review is pending.',
     urgent: false,
     icon: 'file',
   },
@@ -116,7 +116,7 @@ const PROCESS_STEPS = [
   {
     step: '06',
     title: 'Decision',
-    body: "The ART can affirm the refusal, set it aside and substitute a grant, or remit it back to DHA with directions. If the ART affirms and you have legal grounds, Federal Circuit Court judicial review may be available — different jurisdiction, much stricter test.",
+    body: "The ART can affirm the refusal, set it aside and substitute a grant, or remit it back to DHA with directions. If the ART affirms and you have legal grounds, judicial review in the Federal Circuit and Family Court of Australia may be available — different jurisdiction, much stricter test.",
     urgent: false,
     icon: 'shield',
   },
@@ -133,11 +133,11 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'Can the ART deadline be extended?',
-    answer: 'For most migration decisions, no. The time limit is jurisdictional — the ART simply has no power to hear a case lodged outside it. There is no "good reason" exception for most visa refusals. This is different from civil courts where extensions are routinely granted. If you have missed the deadline, options are limited to re-application or (in some cases) Ministerial Intervention.',
+    answer: 'For most migration decisions, no. The time limit is jurisdictional — the ART simply has no power to hear a case lodged outside it. There is no "good reason" exception for most visa refusals. This is different from civil courts where extensions are routinely granted. If you have missed the deadline, options are usually limited to a new application (if the section 48 bar or other restrictions allow it) or leaving Australia and applying offshore. Ministerial Intervention is not available unless a review tribunal has made a decision on your case.',
   },
   {
     question: 'Is my bridging visa affected by a refusal?',
-    answer: 'If you are onshore and your substantive visa is refused, your Bridging Visa A (BVA) generally ceases if you do not validly lodge an ART application within the review period. If you lodge a valid ART application, a Bridging Visa B (BVB) activates, allowing you to remain in Australia while the review is pending. If you miss the deadline, you may become unlawful — seek advice immediately as departure bar and re-entry bans may apply.',
+    answer: 'If you are onshore and your substantive visa is refused, your Bridging Visa A (BVA) generally ceases if you do not validly lodge an ART application within the review period. If you lodge a valid ART application, the Bridging Visa A (or other bridging visa) granted with your visa application generally stays in effect until 35 days after the ART makes its decision. A Bridging Visa B is a separate visa you must apply for if you need to travel. If you miss the deadline, you may become unlawful — seek advice immediately as departure bar and re-entry bans may apply.',
   },
   {
     question: 'Does the ART just re-examine what DHA looked at?',
@@ -255,10 +255,10 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
             </div>
             {[
               { label: 'Standard review deadline', val: '28 days from deemed notification', icon: 'clock', urgent: true },
-              { label: 'Deemed notification', val: 'Usually 3 working days after DHA sends letter', icon: 'calendar', urgent: false },
+              { label: 'Deemed notification', val: 'Email or ImmiAccount: end of the day it is sent. Post within Australia: 7 working days after the date of the letter. Check your letter.', icon: 'calendar', urgent: false },
               { label: 'Can the deadline be extended?', val: 'No — for most migration decisions', icon: 'x', urgent: true },
               { label: 'What happens if I miss it?', val: 'ART has no jurisdiction — cannot review', icon: 'alert', urgent: true },
-              { label: 'Bridging visa on lodgement?', val: 'BVB activates if validly lodged onshore', icon: 'shield', urgent: false },
+              { label: 'Bridging visa on lodgement?', val: 'Existing bridging visa (usually BVA) continues while the review is pending', icon: 'shield', urgent: false },
               { label: 'What the ART can do', val: 'Affirm, set aside, or remit to DHA', icon: 'scale', urgent: false },
               { label: 'New evidence allowed?', val: 'Yes — fresh merits review, not just DHA record', icon: 'check', urgent: false },
               { label: 'ART fees', val: 'Check art.gov.au — set by the Tribunal', icon: 'info', urgent: false },
@@ -296,7 +296,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     {[
                       { label: 'Most onshore refusals (student, partner, skilled)', days: 28 },
-                      { label: 'Protection visa refusals', days: 35 },
+                      { label: 'Protection visa refusals', days: 28 },
                       { label: 'Character cancellations (s501)', days: 28 },
                     ].map((opt, i) => (
                       <button key={i} onClick={() => setDecisionTypeIdx(i === 1 ? 1 : i === 2 ? 5 : 0)}

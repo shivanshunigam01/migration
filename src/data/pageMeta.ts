@@ -98,7 +98,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'skills-in-demand-visa': {
     title: "482 Visa - Skills in Demand (SID) | Nanak Migration",
-    metaDescription: 'The subclass 482 Skills in Demand visa lets employers sponsor skilled workers for up to 4 years. Streams: Core Skills, Specialist, Essential. MARN 2619467.',
+    metaDescription: 'The subclass 482 Skills in Demand visa lets employers sponsor skilled workers for up to 4 years. Streams: Specialist Skills, Core Skills, Labour Agreement. MARN 2619467.',
     primaryKeyword: 'skills in demand visa 482',
   },
   '482-core-skills-stream': {
@@ -108,12 +108,12 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   '482-specialist-skills-stream': {
     title: '482 Specialist Skills Stream — Skills in Demand Visa | Nanak Migration Group',
-    metaDescription: 'The Specialist Skills stream of the subclass 482 visa requires earnings of $146,576 p.a. (SSIT from 1 July 2026) and is exempt from Labour Market Testing. MARN 2619467.',
+    metaDescription: 'The Specialist Skills stream of the subclass 482 visa requires earnings of $146,576 p.a. (SSIT from 1 July 2026). Labour Market Testing applies unless a trade exemption applies. MARN 2619467.',
     primaryKeyword: '482 specialist skills stream SSIT no LMT',
   },
   '482-to-pr-pathway': {
     title: "482 to PR - Your Pathway to Residence | Nanak Migration",
-    metaDescription: 'Transition from the subclass 482 to permanent residence via the subclass 186 TRT stream. Generally requires 2 years with the same employer. MARN 2619467.',
+    metaDescription: 'Transition from the subclass 482 to permanent residence via the subclass 186 TRT stream. Generally requires 2 years of full-time sponsored employment in the 3 years before applying. MARN 2619467.',
     primaryKeyword: '482 visa to permanent residence pathway',
   },
   'standard-business-sponsorship': {
@@ -157,9 +157,9 @@ export const PAGE_META: Record<string, PageMeta> = {
     primaryKeyword: 'employer sponsor obligations Australia 482',
   },
   'visa-conditions-482': {
-    title: '482 Visa Conditions — Condition 8107 Explained | Nanak Migration Group',
-    metaDescription: 'Subclass 482 visa conditions — what condition 8107 means, work rights, travel entitlements, and family member rights. Registered agent MARN 2619467.',
-    primaryKeyword: '482 visa conditions condition 8107',
+    title: '482 Visa Conditions — Condition 8607 Explained | Nanak Migration Group',
+    metaDescription: 'Subclass 482 visa conditions — what condition 8607 means, work rights, travel entitlements, and family member rights. Registered agent MARN 2619467.',
+    primaryKeyword: '482 visa conditions condition 8607',
   },
   'change-of-employer': {
     title: 'Change of Employer on a Subclass 482 Visa | Nanak Migration Group',
@@ -203,7 +203,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'temporary-graduate-485': {
     title: "485 Visa - Temporary Graduate Visa Guide | Nanak Migration",
-    metaDescription: 'The subclass 485 Temporary Graduate visa lets graduates work in Australia after study. Streams: Post-Higher Education Work and Graduate Work. MARN 2619467.',
+    metaDescription: 'The subclass 485 Temporary Graduate visa lets graduates work in Australia after study. Streams: Post-Higher Education Work, Post-Vocational Education Work and Second Post-Higher Education Work. MARN 2619467.',
     primaryKeyword: 'temporary graduate visa 485',
   },
   'points-test': {
@@ -303,7 +303,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'prospective-marriage-300': {
     title: "300 Visa - Prospective Marriage Guide | Nanak Migration",
-    metaDescription: 'The subclass 300 Prospective Marriage visa allows entry to Australia to marry your partner within 9 months, then apply for a partner visa. MARN 2619467.',
+    metaDescription: 'The subclass 300 Prospective Marriage visa allows entry to Australia to marry your partner before the visa ends (9 to 15 months from grant), then apply for a partner visa. MARN 2619467.',
     primaryKeyword: 'prospective marriage visa subclass 300',
   },
   'partner-visa-evidence': {
@@ -328,7 +328,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'art-review': {
     title: "ART Review for Visa Refusals - Deadlines & Process | Nanak",
-    metaDescription: 'The Administrative Review Tribunal (ART) reviews visa refusal and cancellation decisions. A 21-day lodgement deadline generally applies. MARN 2619467.',
+    metaDescription: 'The Administrative Review Tribunal (ART) reviews visa refusal and cancellation decisions. A 28-day lodgement deadline generally applies (14 days in immigration detention, 9 days for onshore section 501 character decisions). MARN 2619467.',
     primaryKeyword: 'Administrative Review Tribunal ART visa review Australia',
   },
   '191-visa': {

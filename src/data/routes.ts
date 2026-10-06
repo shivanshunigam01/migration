@@ -221,7 +221,7 @@ export const CANONICAL_ROUTES: readonly CanonicalRoute[] = [
   { path: ROUTE.australianCitizenship,       title: 'Australian Citizenship',             category: 'Visitor & Other',    archetype: 'Flagship' },
   { path: ROUTE.workingHoliday417,           title: 'Working Holiday Visa (417)',          category: 'Visitor & Other',    archetype: 'Standard' },
   { path: ROUTE.workAndHoliday462,           title: 'Work and Holiday Visa (462)',         category: 'Visitor & Other',    archetype: 'Standard' },
-  { path: ROUTE.protectionVisa866,           title: 'Protection Visa (866)',               category: 'Visitor & Other',    archetype: 'Standard' },
+  { path: ROUTE.protectionVisa866,           title: 'Delete this line - protection visas do not use PIC 4007.',               category: 'Visitor & Other',    archetype: 'Standard' },
   { path: ROUTE.temporaryWork403,            title: 'Temporary Work (International Relations) Visa (403)', category: 'Employer Sponsored', archetype: 'Standard' },
   { path: ROUTE.adoptionVisa102,             title: 'Adoption Visa (102)',                category: 'Partner & Family',   archetype: 'Standard' },
   { path: ROUTE.dependentChild445,           title: 'Dependent Child Visa (445)',         category: 'Partner & Family',   archetype: 'Standard' },

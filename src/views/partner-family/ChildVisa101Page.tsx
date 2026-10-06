@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_PARTNER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -261,7 +261,7 @@ return (
           <SectionHeading kicker="Timeline" title="Processing Times and What to Expect" accent={ACCENT} />
           <div style={{ maxWidth: 860, margin: '24px auto 0' }}>
             <Callout variant="note" panel={true} title="Confirm current processing times on the Department of Home Affairs website">
-              Processing times for the subclass 101 vary and are updated regularly. The information below reflects general expectations as at August 2026. Always confirm current indicative times on the DoHA website before lodging.
+              Processing times for the subclass 101 vary and are updated regularly. The information below reflects general expectations as at October 2026. Always confirm current indicative times on the DoHA website before lodging.
             </Callout>
             <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginTop: 28, marginBottom: 20 }}>
               The subclass 101 is a permanent visa with variable processing times. In many cases, processing takes many months to over a year. Processing time depends on the complexity of the application, the completeness of evidence lodged, whether health examinations are required, and the Department's current workload.
@@ -280,7 +280,7 @@ return (
           <SectionHeading kicker="Application charges" title="Visa Application Charges" accent={ACCENT} />
           <div style={{ marginTop: 32, marginBottom: 24 }}>
             <Callout variant="note" panel={true} title="Confirm current charges on the Department of Home Affairs website">
-              Visa application charges are updated periodically. The figures below are indicative only as at August 2026 — confirm current charges on the DoHA website before lodging.
+              Visa application charges are updated periodically. The figures below are indicative only as at October 2026 — confirm current charges on the DoHA website before lodging.
             </Callout>
           </div>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginTop: 24 }}>

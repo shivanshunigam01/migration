@@ -25,7 +25,7 @@ import Icon from '@/components/ui/Icon'
 const BLUE = CAT_EMPLOYER
 const BORDER = '#e8edf6'
 const GREY_BG = '#fafbfe'
-const CURRENT_AS_AT = 'July 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const CSOL_OCCS = ALL_OCCUPATIONS.filter(o => o.list === 'CSOL')
 
@@ -36,7 +36,7 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'Which visas use the CSOL?',
-    answer: "The CSOL is primarily used for the Core Skills stream of the Skills in Demand (SID) subclass 482 visa. Occupations on the CSOL are generally also eligible for the subclass 186 Employer Nomination Scheme (Direct Entry stream) and the subclass 494 Skilled Employer Sponsored Regional (Provisional) visa. The CSOL does not replace the MLTSSL for points-tested permanent visas such as the 189 and 190 — those visas continue to use the MLTSSL.",
+    answer: "The CSOL is primarily used for the Core Skills stream of the Skills in Demand (SID) subclass 482 visa. The CSOL is also the occupation list for the subclass 186 Direct Entry stream. The subclass 494 uses different lists (MLTSSL, STSOL and ROL), so check the 494 list separately. The CSOL does not replace the MLTSSL for points-tested permanent visas such as the 189 and 190 — those visas continue to use the MLTSSL.",
   },
   {
     question: 'What happens to my visa if my occupation is removed from the CSOL?',
@@ -66,7 +66,7 @@ const RELATED: RelatedPage[] = [
 function RemovedFromListSection() {
   const steps = [
     { icon: 'clock', heading: 'Check whether your nomination has been decided', body: 'If the nomination was approved before the occupation was removed, in most cases the approval remains valid. If it has not yet been decided, the current list applies at the time of decision — seek advice immediately.' },
-    { icon: 'clipboard', heading: 'Review any existing visa conditions', body: 'If you already hold a 482 in the occupation and a 186 nomination is pending, the 186 nomination generally needs to meet the list requirement at the time of decision. Removal of the occupation from the list may affect the pending 186 application.' },
+    { icon: 'clipboard', heading: 'Review any existing visa conditions', body: 'If you hold a 482 and are using the 186 Temporary Residence Transition stream, there is no occupation list for that stream. A pending 186 application is not adversely affected by a later removal of the occupation. Removal of the occupation from the list may affect the pending 186 application.' },
     { icon: 'compass', heading: 'Explore alternative pathways', body: 'A Labour Agreement may cover occupations not on the standard list. The Specialist Skills stream of the 482 does not require the occupation to be on the CSOL. A registered migration agent can advise on alternatives specific to your circumstances.' },
     { icon: 'phone', heading: 'Seek specialist advice promptly', body: 'The consequences of a list change depend on the specific circumstances — including which visa is held, which applications are pending, and the timing of the change. Advice should be sought from a registered migration agent without delay.' },
   ]
@@ -98,8 +98,8 @@ function RemovedFromListSection() {
 function WhatIsCsol() {
   const bullets = [
     { label: 'Core Skills stream of the 482 visa',              note: 'The primary use of the CSOL. Employers must nominate an occupation on this list to sponsor workers under the Core Skills stream.' },
-    { label: 'Subclass 186 Direct Entry stream',                note: 'Most 186 Direct Entry nominations require the occupation to appear on the CSOL or MLTSSL at the time of nomination.' },
-    { label: 'Subclass 494 Skilled Employer Sponsored Regional', note: 'Regional employer-sponsored nominations generally require the occupation to be on the CSOL or MLTSSL.' },
+    { label: 'Subclass 186 Direct Entry stream',                note: '186 Direct Entry nominations require the occupation to be on the CSOL.' },
+    { label: 'Subclass 494 Skilled Employer Sponsored Regional', note: 'The 494 does not use the CSOL. Its occupations come from the MLTSSL, STSOL and Regional Occupation List (ROL).' },
     { label: 'Some Labour Agreement pathways',                  note: 'Labour agreements may reference the CSOL to determine eligible occupations, though specific terms vary.' },
   ]
   return (
@@ -233,7 +233,7 @@ export default function CoreSkillsOccupationListPage({ navigate }: { navigate: (
 
       <ComplianceDisclaimer
         currentAsAt={CURRENT_AS_AT}
-        pageNote="Occupation lists and legislative instruments are subject to change by the Department of Home Affairs. This page does not publish visa application fees."
+        pageNote="Occupation lists and legislative instruments are subject to change by the Department of Home Affairs. Visa application charges shown are those published by Home Affairs from 1 July 2026 and may change."
       />
 
       <SiteFooter navigate={navigate} />

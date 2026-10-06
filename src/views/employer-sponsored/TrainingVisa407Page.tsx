@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_EMPLOYER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -30,16 +30,16 @@ const TOC = [
 ]
 
 const KEY_FACTS: KeyFact[] = [
-  { icon: 'clock', value: 'Up to 2 years', label: 'Maximum stay for most training activities', note: 'Stay is limited to the approved training period. Extensions may be possible if training requirements are not yet complete.' },
+  { icon: 'clock', value: 'Up to 2 years', label: 'Maximum stay for most training activities', note: 'Stay is limited to the approved training period. The visa cannot be extended - if more time is needed, a new nomination and a new visa application are required.' },
   { icon: 'building', value: 'Approved sponsor', label: 'An approved temporary activities sponsor must nominate you', note: 'Either an approved temporary activities sponsor or the training organisation itself (if approved) must nominate the training activity.' },
   { icon: 'check', value: 'Genuine training', label: 'Training must be the primary purpose of the stay', note: 'The visa is not a substitute for a work visa. The Department scrutinises whether the training activity is genuine and structured.' },
-  { icon: 'dollar', value: 'Modest charge', label: 'Application charge — confirm current fee on DoHA', note: 'Figures current at August 2026 — confirm on the Department of Home Affairs website before lodging.' },
+  { icon: 'dollar', value: 'Modest charge', label: 'Application charge — confirm current fee on DoHA', note: 'Figures current at October 2026 — confirm on the Department of Home Affairs website before lodging.' },
 ]
 
 const FAQ: FaqItem[] = [
   {
     question: 'Can I work while on a subclass 407 visa?',
-    answer: "Yes — but only as part of your approved training activity. The work must be directly related to and necessary for the training program nominated by your sponsor. You cannot take on additional employment outside the training activity. If your visa includes Condition 8543, you must work only for the approved sponsor in the approved training. Working outside these bounds can result in visa cancellation.",
+    answer: "Yes — but only as part of your approved training activity. The work must be directly related to and necessary for the training program nominated by your sponsor. You cannot take on additional employment outside the training activity. Condition 8102 applies, so you must not work other than in relation to your approved training with your approved sponsor. Working outside these bounds can result in visa cancellation.",
   },
   {
     question: 'Is the subclass 407 a pathway to permanent residence?',
@@ -93,7 +93,7 @@ const TRAINING_TYPES = [
       'Training programs aimed at building the capacity of workers for overseas employment — including internships or placements in Australian organisations for workers whose positions are overseas-based, and government-supported training programs. Key points:',
       'Includes placements funded or supported by the Australian government, a foreign government, or an international organisation',
       'The trainee must have an overseas employment position to return to',
-      'Includes programs such as those run under the Australia Awards, Pacific Australia Labour Mobility scheme components, and similar',
+      'Includes overseas qualification, government-supported and professional development training programs',
       'Maximum stay is generally up to 2 years',
     ],
   },
@@ -161,7 +161,7 @@ return (
         eyebrow="Employer Sponsored"
         eyebrowSub="Training Visa · Subclass 407"
         title={<>Training Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 407</em></>}
-        deck="The Training visa (subclass 407) allows eligible people to travel to Australia to undertake occupational training in a workplace, study for tertiary qualifications, or participate in a professional development program. It is not a work visa — training must be the main activity."
+        deck="The Training visa (subclass 407) allows eligible people to travel to Australia to take part in workplace-based occupational training to improve their skills for their job, area of tertiary study or field of expertise, or to take part in a professional development training program. It is not a work visa — training must be the main activity."
         shortAnswer={<>The subclass 407 Training visa is a temporary visa for occupational training in Australia. It requires an approved temporary activities sponsor and a nomination for an approved training activity. There are three types of approved training activity: training required for professional registration or licensing, structured workplace training to enhance skills in an eligible skilled occupation, and capacity-building programs for overseas workers. Visa holders may stay for up to 2 years (limited to the approved training period). Applicants must be genuine temporary entrants with strong ties to their home country. Work is permitted only as part of the approved training program — the 407 cannot be used as a backdoor work visa. Nanak Migration Group (MARN 2619467) can advise on whether the 407 suits your situation. No outcomes can be guaranteed.</>}
         maraBadge
         currentAsAt={CURRENT_AS_AT}
@@ -303,8 +303,8 @@ return (
             </div>
           </div>
           <div style={{ marginTop: 32 }}>
-            <Callout variant="warning" panel={true} title="Condition 8543 — stay and work for approved sponsor">
-              Subclass 407 visa holders are typically subject to Condition 8543 (or a similar condition) requiring them to remain employed by and work only for the approved sponsor in the approved training activity. Working outside the approved activity can result in visa cancellation.
+            <Callout variant="warning" panel={true} title="Condition 8102 — work only in the approved training">
+              Subclass 407 visa holders are subject to Condition 8102, which means they must not work in Australia other than in relation to the approved training. Changing sponsor or training program requires a new nomination (and, if the program changes, a new visa). Working outside the approved activity can result in visa cancellation.
             </Callout>
           </div>
         </div>
@@ -316,7 +316,7 @@ return (
           <SectionHeading kicker="Application charge" title="Visa Application Charge" accent={ACCENT} />
           <div style={{ marginTop: 32, marginBottom: 24 }}>
             <Callout variant="note" panel={true} title="Confirm current fees on the Department of Home Affairs website">
-              Visa application charges are updated periodically by the Department. The information below reflects the position as at August 2026 and should be confirmed on the Department of Home Affairs website before lodging any application.
+              Visa application charges are updated periodically by the Department. The information below reflects the position as at October 2026 and should be confirmed on the Department of Home Affairs website before lodging any application.
             </Callout>
           </div>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151' }}>

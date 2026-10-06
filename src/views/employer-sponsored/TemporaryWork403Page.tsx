@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_EMPLOYER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -78,7 +78,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What is the Foreign Government Agency stream — who uses it?",
-    answer: "The Foreign Government Agency stream of the 403 visa is for employees of a foreign government who are employed in that foreign government's official capacity and need to work in Australia on a temporary basis. This covers staff of foreign embassies, consulates, and official government bodies who do not hold diplomatic status (which would otherwise be covered by the Diplomatic visa). The foreign government agency is the supporting party for this stream. This is distinct from the Domestic Worker (Diplomatic or Consular) stream, which covers domestic staff employed by a diplomat or consular officer at their residence.",
+    answer: "The Foreign Government Agency stream of the 403 visa is for employees of a foreign government who are employed in that foreign government's official capacity and need to work in Australia on a temporary basis. It covers representatives of a foreign government agency that does not have official status in Australia, and foreign language teachers employed by a foreign government to teach in Australian schools. The foreign government agency is the supporting party for this stream. This is distinct from the Domestic Worker (Diplomatic or Consular) stream, which covers domestic staff employed by a diplomat or consular officer at their residence.",
   },
   {
     question: "What conditions apply to subclass 403 visa holders?",
@@ -170,7 +170,7 @@ return (
         eyebrow="Employer Sponsored"
         eyebrowSub="Specialist Visas · Subclass 403"
         title={<>Temporary Work Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 403 — International Relations</em></>}
-        deck="The subclass 403 covers five distinct streams: Government Agreement, Foreign Government Agency, Domestic Worker (Diplomatic or Consular), Privileges and Immunities, and the Pacific Australia Labour Mobility (PALM) scheme. Each stream has its own sponsor, eligibility criteria, and stay period."
+        deck="The subclass 403 has six streams: Government Agreement, Foreign Government Agency, Domestic Worker (Diplomatic or Consular), Privileges and Immunities, Pacific Australia Labour Mobility (PALM), and the Mobility Arrangement for Talented Early-professionals Scheme (MATES), which lets selected Indian graduates and early-career professionals live and work in Australia for up to 2 years. Each stream has its own sponsor, eligibility criteria, and stay period."
         shortAnswer={<>The <strong style={{ color: NAVY }}>subclass 403 Temporary Work (International Relations) visa</strong> is not a standard employer-sponsored commercial visa — it covers defined international relations contexts including bilateral government agreements, foreign government agency staff, diplomatic domestic workers, international organisation officials, and workers under the <strong style={{ color: NAVY }}>Pacific Australia Labour Mobility (PALM) scheme</strong>. The PALM stream allows workers from approved Pacific countries and Timor-Leste to work for <strong style={{ color: NAVY }}>approved PALM employers</strong> for up to four years in eligible sectors. Each stream has a different sponsoring body and different conditions. Nanak Migration Group (MARN 2619467) can advise on which stream applies and what is required. No outcome guarantees.</>}
         maraBadge={true}
         currentAsAt={CURRENT_AS_AT}

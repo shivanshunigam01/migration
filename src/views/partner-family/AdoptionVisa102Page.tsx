@@ -14,7 +14,7 @@ import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
 const ACCENT = CAT_PARTNER
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 const GREY_BG = '#fafbfe'
 const BORDER = '#e8edf6'
 
@@ -128,7 +128,7 @@ return (
         eyebrow="Partner & Family"
         eyebrowSub="Child Visas · Subclass 102"
         title={<>Adoption Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 102 — Permanent residence for adopted children</em></>}
-        deck="The subclass 102 Adoption visa grants permanent residence to a child adopted (or being adopted) by an Australian citizen, permanent resident, or eligible New Zealand citizen parent. Two pathways exist: intercountry adoptions arranged through a state/territory central authority, and expatriate adoptions by parents who have lived overseas for 12 or more months."
+        deck="The subclass 102 Adoption visa grants permanent residence to a child adopted (or being adopted) by an Australian citizen, permanent resident, or eligible New Zealand citizen parent. Three pathways exist: adoptions arranged with the involvement of an Australian state or territory central authority; Hague Convention adoptions between two countries other than Australia; and expatriate adoptions by parents who have lived outside Australia for more than 12 months immediately before lodging the visa application."
         shortAnswer={<>The <strong style={{ color: NAVY }}>subclass 102 Adoption visa</strong> is a <strong style={{ color: NAVY }}>permanent visa</strong> for children adopted outside Australia by an Australian citizen, PR, or eligible NZ citizen. The main pathways are <strong style={{ color: NAVY }}>intercountry adoption</strong> (arranged through an Australian state or territory central authority program, often under the Hague Convention) and <strong style={{ color: NAVY }}>expatriate/private adoption</strong> (where the parent has lived overseas for 12+ months and the adoption is valid under local law). This is a <strong style={{ color: NAVY }}>specialist area</strong> — state/territory adoption agencies, DFAT, and the Department of Home Affairs are all involved. Nanak Migration Group (MARN 2619467) can advise on the visa aspects of the process. No outcome guarantees.</>}
         maraBadge={true}
         currentAsAt={CURRENT_AS_AT}
@@ -235,6 +235,8 @@ return (
                 'Satisfies character requirements (adapted appropriately for age)',
                 'Has not been adopted in a way that contravenes Australian law or policy',
                 'Is not already an Australian citizen or permanent resident',
+                'Was under 18 when adopted, when the application is made and when it is decided',
+                'Is outside Australia when the application is made and when it is decided',
               ].map((p, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8 }}>
                   <div style={{ width: 5, height: 5, borderRadius: '50%', background: ACCENT, flexShrink: 0, marginTop: 6 }} />
@@ -249,7 +251,7 @@ return (
                 'Is the adoptive parent (or proposed adoptive parent) of the child',
                 'Satisfies character requirements',
                 'Has obtained any required approval from the relevant state/territory central authority (intercountry pathway)',
-                'Has resided outside Australia for 12+ months at the time of the adoption (expatriate pathway)',
+                'Has been living outside Australia for more than 12 months immediately before the visa application is lodged (expatriate pathway)',
                 'Is not prohibited from sponsoring a child under Australian law',
               ].map((p, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8 }}>

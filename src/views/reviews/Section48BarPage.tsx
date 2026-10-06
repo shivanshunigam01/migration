@@ -93,7 +93,7 @@ return (
         deck="If your visa was refused or cancelled while you were in Australia, the section 48 bar may prevent you from applying for most other visas from inside Australia. Understanding which visas are still available — and what your options are — is essential to protecting your status."
         shortAnswer={<>Under section 48 of the Migration Act 1958, a person whose visa was refused or cancelled while they were in Australia generally cannot make a further visa application from inside Australia — with a limited list of exceptions. The key exempt visas that can still be applied for onshore include <strong style={{ color: NAVY }}>partner visas</strong>, <strong style={{ color: NAVY }}>protection visas</strong>, <strong style={{ color: NAVY }}>bridging visas</strong>, and — since November 2021 — the <strong style={{ color: NAVY }}>skilled nominated visa (subclass 190)</strong>, the <strong style={{ color: NAVY }}>skilled work regional visa (subclass 491)</strong>, and the <strong style={{ color: NAVY }}>employer sponsored regional visa (subclass 494)</strong>. If none of the exempt pathways apply to your situation, you may need to leave Australia and apply offshore for a new visa — or pursue review rights to remain onshore while a review is pending. Nanak Migration Group (MARN 2619467) can assess which options remain open for your specific circumstances.</>}
         maraBadge={true}
-        currentAsAt="August 2026"
+        currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
         secondaryCta={{ label: 'Visa Cancellation guide →', page: 'visa-cancellation' }}
         accent={ACCENT}
@@ -128,7 +128,7 @@ return (
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeading kicker="The provision" title="What Is the Section 48 Bar?" />
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 20 }}>
-            Section 48 of the Migration Act 1958 is sometimes called the "section 48 bar" because it bars — prevents — certain people from applying for most Australian visas from inside Australia (onshore). A person is subject to the section 48 bar if they are in Australia and their last substantive visa was refused or cancelled. The bar also applies if they are in Australia and have never held a substantive visa.
+            Section 48 of the Migration Act 1958 is sometimes called the "section 48 bar" because it bars — prevents — certain people from applying for most Australian visas from inside Australia (onshore). A person is subject to the section 48 bar if they are in Australia, do not hold a substantive visa, and since last entering Australia have been refused a visa (other than a bridging visa or a refusal under section 501) or had a visa cancelled under certain powers, such as section 109 or 116.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.8, color: '#374151', marginBottom: 32 }}>
             The bar applies to the person — not to any specific visa. It means that even if the person technically meets the criteria for a new visa, they cannot apply for that visa from inside Australia if they are subject to the bar. They must either: apply for one of the exempt visas, leave Australia and apply offshore, or maintain a pending review application and associated bridging visa to remain onshore while pursuing other options.
@@ -178,7 +178,7 @@ return (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginBottom: 32 }}>
             {[
               {
-                name: 'Partner visas (820/801 and 309/100)',
+                name: 'Partner visas (820/801)',
                 subclasses: '820, 801 (onshore)',
                 condition: 'Must be in a genuine relationship with an Australian citizen, PR, or eligible NZ citizen',
                 note: 'The onshore partner visa (820/801) is one of the most commonly used section 48 bar exemptions. The relationship must be genuine and the sponsor must be eligible.',
@@ -247,7 +247,7 @@ return (
               {
                 icon: 'scale',
                 title: 'Pursue review rights',
-                desc: 'If the original refusal or cancellation is reviewable at the ART, lodge an ART review application within the deadline (generally 21 days). A pending ART review keeps you on a bridging visa onshore and may ultimately set aside the original decision — removing the basis for the section 48 bar. Even if the ART review does not succeed, it preserves your lawful status during the review period and gives more time to assess other options.',
+                desc: 'If the original refusal or cancellation is reviewable at the ART, lodge an ART review application within the deadline (generally 28 days after notification, or 14 days if in immigration detention). A pending ART review keeps you on a bridging visa onshore and may ultimately set aside the original decision — removing the basis for the section 48 bar. Even if the ART review does not succeed, it preserves your lawful status during the review period and gives more time to assess other options.',
                 page: 'art-review',
               },
               {
@@ -259,7 +259,7 @@ return (
               {
                 icon: 'clipboard',
                 title: 'Ministerial intervention',
-                desc: 'In some exceptional cases, a request for Ministerial intervention under section 195A, 351, or 417 of the Migration Act may be considered. Ministerial intervention is a last resort — it is entirely at the Minister\'s discretion and not a reviewable decision. It is relevant only in compelling or unique cases and should be explored only after other options have been exhausted.',
+                desc: 'In some exceptional cases, a request for Ministerial intervention under section 351 or 501J of the Migration Act (after a tribunal decision), or under section 195A for people in immigration detention, may be considered. Ministerial intervention is a last resort — it is entirely at the Minister\'s discretion and not a reviewable decision. It is relevant only in compelling or unique cases and should be explored only after other options have been exhausted.',
                 page: null as string | null,
               },
             ].map((item, i) => (
@@ -350,7 +350,7 @@ return (
         accent={ACCENT}
         navigate={navigate}
       />
-      <ComplianceDisclaimer currentAsAt="August 2026" />
+      <ComplianceDisclaimer currentAsAt="October 2026" />
       <SiteFooter navigate={navigate} />
     </div>
   )

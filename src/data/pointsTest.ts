@@ -40,7 +40,7 @@ export const POINTS_CATEGORIES: PointsCategory[] = [
   {
     id: 'english',
     heading: 'English language ability',
-    description: 'Assessed by an approved English language test (IELTS, PTE Academic, TOEFL iBT, OET, or Cambridge C1 Advanced). Scores must meet the threshold in each component.',
+    description: 'Assessed by an approved English language test taken at a test centre (IELTS Academic or General Training, PTE Academic, TOEFL iBT, OET, Cambridge C1 Advanced, CELPIP General, LANGUAGECERT Academic or Michigan English Test - MET cannot be used for Superior English). Scores must meet the threshold in each component.',
     icon: 'globe',
     color: '#2563eb',
     maxPoints: 20,
@@ -133,7 +133,7 @@ export const POINTS_CATEGORIES: PointsCategory[] = [
   {
     id: 'community_language',
     heading: 'Credentialled community language',
-    description: 'Holds a NAATI credential in a community language at the paraprofessional level or above, or an equivalent accreditation. Must have been granted in the 3 years before the invitation.',
+    description: 'Holds a NAATI credential in a community language at the paraprofessional level or above, or an equivalent accreditation. You must be accredited at the paraprofessional level or above, certified at the certified provisional level or above, or hold a NAATI community language credential for interpreting or translating.',
     icon: 'hash',
     color: '#4f46e5',
     maxPoints: 5,
@@ -163,8 +163,8 @@ export const POINTS_CATEGORIES: PointsCategory[] = [
     maxPoints: 10,
     options: [
       { value: 'none',        label: 'Partner does not have qualifying skills or English', points: 0 },
-      { value: 'single_aus',  label: 'Single, OR partner is an Australian citizen or PR with Competent English', points: 10 },
-      { value: 'skilled',     label: 'Partner has Competent English AND a positive skills assessment in a nominated occupation', points: 10, note: 'The partner must have a positive skills assessment in their own nominated occupation.' },
+      { value: 'single_aus',  label: 'Single, OR partner is an Australian citizen or permanent resident (no English requirement)', points: 10 },
+      { value: 'skilled',     label: 'Partner has Competent English AND a positive skills assessment in a nominated occupation', points: 10, note: 'At invitation your partner must be under 45, have Competent English, nominate an occupation on the same list as yours and hold a suitable skills assessment (not one obtained for a 485 visa). If your partner is applying and has Competent English only, you can claim 5 points.' },
     ],
   },
   {

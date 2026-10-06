@@ -19,7 +19,7 @@ import { PAGE_META } from '@/data/pageMeta'
 import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const GREEN = GOLD
 const BLUE = CAT_STUDENT
@@ -86,7 +86,7 @@ const VISAS = [
     typeColor: GREEN,
     pts: '—',
     ptsColor: '#9ca3af',
-    oneLine: 'Permanent residence after 3 years on a 491 or 494 visa with an income threshold met.',
+    oneLine: 'Permanent residence after holding a 491 or 494 visa for at least 3 years and complying with its conditions. You must provide ATO notices of assessment for 3 income years - Home Affairs states there is no minimum income requirement.',
     sponsor: false,
     stateNom: false,
     regional: true,
@@ -137,14 +137,14 @@ const FACTORS = [
     icon: 'bookopen',
     color: BLUE,
     max: 20,
-    note: 'IELTS 8+ in all bands (Superior) → 20 pts. Proficient → 0 pts (minimum required). Competent not eligible.',
+    note: 'Superior English (IELTS 8 in each band or equivalent) → 20 pts. Proficient English (IELTS 7 in each band) → 10 pts. Competent English (IELTS 6 in each band) → 0 pts - this is the minimum required.',
   },
   {
     label: 'Skilled Work Experience',
     icon: 'briefcase',
     color: GREEN,
     max: 20,
-    note: 'Australian experience 8+ yrs → 20 pts. Overseas experience 8+ yrs → 15 pts. Points stack for both.',
+    note: 'Australian experience 8+ yrs → 20 pts. Overseas experience 8+ yrs → 15 pts. You can combine both, but total employment points are capped at 20.',
   },
   {
     label: 'Qualifications',
@@ -340,7 +340,7 @@ const FAQS = [
   },
   {
     q: 'Can I claim points for my partner?',
-    a: "Yes. If your partner has a positive skills assessment and competent English, you can claim 10 bonus points for a skilled partner. Both partners must meet the requirement at the time of invitation — not just at the time of EOI submission. If your partner does not have a positive skills assessment, you claim 0 points in this category (not negative points).",
+    a: "Yes. If your partner has a positive skills assessment and competent English, you can claim 10 bonus points for a skilled partner. Both partners must meet the requirement at the time of invitation — not just at the time of EOI submission. Skilled partner points (10) need your partner to be under 45, have Competent English, nominate an occupation on the same list as yours and hold a suitable skills assessment at the time of invitation. If your partner is applying with you and has Competent English only, you can claim 5 points. If you are single, or your partner is an Australian citizen or permanent resident, you can claim 10 points.",
   },
   {
     q: 'Can I apply for a state nominated visa without living in that state?',
@@ -616,7 +616,7 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                 </div>
                 {[
                   { cat: 'Age', desc: '25–32 → 30 pts · 18–24/33–39 → 25 · 40–44 → 15', max: 30 },
-                  { cat: 'English (Superior)', desc: 'IELTS 8+ → 20 pts · Superior → 10 · Proficient → 0', max: 20 },
+                  { cat: 'English (Superior)', desc: 'Superior (IELTS 8+) → 20 · Proficient (IELTS 7) → 10 · Competent (IELTS 6) → 0', max: 20 },
                   { cat: 'Overseas experience', desc: '8+ yrs → 15 · 5–7 → 10 · 3–4 → 5', max: 15 },
                   { cat: 'Australian experience', desc: '8+ yrs → 20 · 5–7 → 15 · 3–4 → 10 · 1–2 → 5', max: 20 },
                   { cat: 'Qualifications', desc: 'PhD → 20 · Bachelor/Masters → 15 · Diploma → 10', max: 20 },

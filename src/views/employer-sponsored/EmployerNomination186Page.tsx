@@ -19,18 +19,18 @@ import StructuredData from '@/components/page/StructuredData'
 import ReviewedBy from '@/components/page/ReviewedBy'
 import Icon from '@/components/ui/Icon'
 
-const CURRENT_AS_AT = 'August 2026'
+const CURRENT_AS_AT = 'October 2026'
 
 const GREEN = CAT_EMPLOYER
 
 
 const trtChecklist = [
-  { id: 'held482', label: 'Held a subclass 482 visa for 2+ years (Core or Specialist stream)' },
-  { id: 'sameEmployer', label: 'With the same sponsoring employer throughout' },
-  { id: 'sameOccupation', label: 'Working in the same nominated occupation' },
+  { id: 'held482', label: 'Worked full time for at least 2 of the last 3 years in sponsored employment while holding a subclass 457 or 482 visa (any stream)' },
+  { id: 'sameEmployer', label: 'Your current employer was the last to sponsor you on your 457 or 482 (earlier sponsored employment with other employers can count)' },
+  { id: 'sameOccupation', label: 'Working in an occupation you were granted a 457 or 482 visa to perform' },
   { id: 'under45', label: 'Under 45 years of age at time of 186 application' },
-  { id: 'english', label: 'Competent English (IELTS 6 or equivalent)' },
-  { id: 'employerApproved', label: 'Employer still holds active Standard Business Sponsorship (SBS)' },
+  { id: 'english', label: 'IELTS 6.5 overall with at least 5.5 in each component (or equivalent), taken in the 12 months before you apply' },
+  { id: 'employerApproved', label: "Employer's business is actively and lawfully operating in Australia" },
 ]
 
 const faqs = [
@@ -94,17 +94,17 @@ const streams186 = [
 ]
 
 const eligibilityItems = [
-  { icon: 'briefcase', title: 'Employer nomination', desc: 'Your employer must nominate the position via an active Standard Business Sponsorship (SBS). The nomination must be approved before or concurrently with your visa application.' },
-  { icon: 'clock', title: '2 years on 482 (TRT)', desc: 'For the TRT stream, you must have held a Core or Specialist subclass 482 visa for at least two years, working with the same employer in the same occupation.' },
+  { icon: 'briefcase', title: 'Employer nomination', desc: 'Your employer must nominate the position. The business must be actively and lawfully operating in Australia - it does not need to be an approved standard business sponsor for a 186 nomination. You must apply for the visa within 6 months of the nomination being approved, or lodge it while the nomination is being assessed.' },
+  { icon: 'clock', title: '2 years on 482 (TRT)', desc: 'For the TRT stream, you must usually have worked full time in eligible sponsored employment for at least 2 of the 3 years before you apply, while holding a subclass 457 or 482 visa (any stream). Sponsored employment with more than one employer can count, and your nominating employer must be the last employer to sponsor you.' },
   { icon: 'file', title: 'Skills assessment (Direct Entry)', desc: 'Direct Entry applicants require a positive skills assessment from the relevant assessing authority and at least three years of skilled employment in the nominated occupation.' },
   { icon: 'user', title: 'Age under 45', desc: 'You must be under 45 years of age at the time of visa application. Limited exemptions exist for academics, researchers, and some specialist roles.' },
-  { icon: 'shield', title: 'Competent English', desc: 'Minimum competent English (IELTS 6 overall or equivalent). Exemptions apply to citizens of certain English-speaking countries and those who studied in English.' },
+  { icon: 'shield', title: 'Competent English', desc: 'At least Competent English - for example IELTS 6 in each of the four test components, or an equivalent score in another approved test. Passport holders from the UK, USA, Canada, New Zealand and the Republic of Ireland meet this without a test. There is no English exemption in the TRT stream.' },
   { icon: 'trending', title: 'Character and health', desc: 'All applicants must satisfy health and character requirements. Criminal history checks and medical examinations are required.' },
 ]
 
 const steps = [
   { num: '01', title: 'Confirm stream eligibility', desc: 'Determine whether you qualify for TRT (via 482 history) or Direct Entry (via skills assessment). Get advice before lodging.' },
-  { num: '02', title: 'Employer lodges nomination', desc: 'Your employer nominates the permanent position with the Department of Home Affairs. SBS must be current and the role must meet market salary requirements.' },
+  { num: '02', title: 'Employer lodges nomination', desc: 'Your employer nominates the permanent position with the Department of Home Affairs. The business must be actively and lawfully operating, and the salary must meet the annual market salary rate and the Core Skills Income Threshold (AUD79,423 for nominations lodged from 1 July 2026).' },
   { num: '03', title: 'Prepare supporting documents', desc: 'Gather payslips, employment contracts, skills assessment results (Direct Entry), English test results, health and character documents.' },
   { num: '04', title: 'Lodge the 186 application', desc: 'Submit the visa application online. Secondary applicants (spouse, children) are included at this stage.' },
   { num: '05', title: 'Visa granted — permanent residence', desc: 'On grant, you and any secondary applicants become Australian permanent residents with no further visa requirements.' },
@@ -278,7 +278,7 @@ export default function EmployerNomination186Page({ navigate }: { navigate: (pag
       <section style={{ background: '#ffffff', padding: '32px 32px 0' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <AnswerBox routeKey="employer-nomination-scheme">
-            The Employer Nomination Scheme (subclass 186) visa is a permanent residence visa for skilled workers nominated by an approved Australian employer, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It has three streams: Temporary Residence Transition (often after a subclass 482), Direct Entry (usually needing a skills assessment), and Labour Agreement. Employers generally need Standard Business Sponsorship, and applicants must usually meet competent English and age rules, though limited exemptions apply.
+            The Employer Nomination Scheme (subclass 186) visa is a permanent residence visa for skilled workers nominated by an approved Australian employer, as Nanak Migration Group, a registered migration agent (MARN 2619467), explains. It has three streams: Temporary Residence Transition (often after a subclass 482), Direct Entry (usually needing a skills assessment), and Labour Agreement. Employers must be actively and lawfully operating in Australia (Standard Business Sponsorship is not required for the 186), and applicants must usually meet competent English and age rules, though limited exemptions apply.
           </AnswerBox>
           <ReviewedBy />
         </div>
