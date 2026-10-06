@@ -63,7 +63,7 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Prepare position description',
-    desc: 'Draft a genuine job ad matching the nominated occupation title and ANZSCO code; salary must meet or exceed TSMIT.',
+    desc: 'Draft a genuine job ad matching the nominated occupation title and ANZSCO code; include the salary or salary range if annual earnings are below AUD96,400.',
   },
   {
     title: 'Advertise on required platforms',
@@ -82,11 +82,11 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: 'Does LMT apply to all 482 nominations?',
-    answer: `LMT applies to both the Core Skills and Specialist Skills streams of the subclass 482 unless an exemption under Australia's international trade obligations applies. Labour Agreement streams follow the agreement terms. A registered migration agent can confirm whether your nomination requires advertising.`,
+    answer: 'LMT applies to the Core Skills and Specialist Skills streams of the subclass 482, to 494 nominations, and to Labour Agreement nominations where the agreement requires it. There is no salary-based exemption. Exemptions are limited to Australia\'s international trade obligations and some alternative evidence pathways (for example, roles paying AUD250,000 or more).',
   },
   {
     question: 'What counts as a compliant advertising platform?',
-    answer: 'You need at least 2 advertisements on national recruitment platforms that are likely to reach suitably qualified Australian workers — commonly Seek, LinkedIn, or Indeed. Workforce Australia is not mandatory. Each ad must run for at least 4 weeks within the 4 months before lodgement.',
+    answer: 'Since 11 December 2023, advertising on Workforce Australia is no longer required. You need at least 2 advertisements on a national recruitment website, an industry-specific recruitment site, national print media or national radio (or your own website if you are an accredited sponsor). Each ad must run for at least 4 weeks within the 4 months before lodgement.',
   },
   {
     question: 'How long must the advertising run?',
@@ -98,7 +98,11 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Can LMT be waived in urgent cases?',
-    answer: "There is no general urgency exemption. However, specific occupations listed in Australia's international trade agreements (for example, certain nationals of China, Japan, Singapore, Thailand or the United Kingdom under the relevant agreements) may be exempt from LMT requirements. If your nominee's home country has a relevant trade agreement with Australia, this should be assessed before advertising begins.",
+    answer: "There is no general urgency exemption. However, nominees who qualify under Australia's international trade obligations (for example, certain nationals of China, Japan, Singapore, Thailand or the United Kingdom under the relevant agreements) may be exempt from LMT requirements. If your nominee's home country has a relevant trade agreement with Australia, this should be assessed before advertising begins.",
+  },
+  {
+    question: 'Is Labour Market Testing required for a 186 nomination too, or only the 482?',
+    answer: 'LMT is a requirement for 482 Core Skills and Specialist Skills nominations and 494 nominations. It does not apply to subclass 186 nominations, in either the Direct Entry or TRT stream.',
   },
 ]
 
@@ -183,7 +187,7 @@ return (
             The Department of Home Affairs assesses LMT evidence as part of the nomination application. If LMT evidence is absent, incomplete or does not meet the regulatory standards, the nomination may be refused. Nanak Migration Group (MARN 2619467) assists employers in preparing LMT-compliant advertising strategies and nomination documentation.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#374151', marginTop: 16 }}>
-            LMT applies to nominations for the Core Skills stream of the subclass 482 visa. The Specialist Skills stream is generally exempt where the nominee will meet the SSIT ({SSIT_DISPLAY}).
+            LMT applies to nominations for the Core Skills and Specialist Skills streams of the subclass 482 visa and the subclass 494 Employer Sponsored stream.
           </p>
         </div>
       </section>
@@ -221,9 +225,9 @@ return (
             intro="Certain nominations are exempt from LMT requirements under the Migration Regulations or international trade obligations." />
           <div style={{ marginTop: 32, display: 'flex', flexDirection: 'column', gap: 16 }}>
             {[
-              { heading: `Specialist Skills stream (SSIT ${SSIT_PLUS})`, detail: `Nominations where the nominee will meet the Specialist Skills Income Threshold (${SSIT_DISPLAY}) under the subclass 482 are generally exempt from LMT.` },
-              { heading: 'International trade obligations', detail: "Nationals of countries with relevant free trade agreements (FTAs) with Australia may be exempt. This includes certain categories under the Australia–United States Free Trade Agreement (AUSFTA), the China–Australia Free Trade Agreement (ChAFTA), the Singapore–Australia Free Trade Agreement (SAFTA), the Thailand–Australia Free Trade Agreement (TAFTA), and the ASEAN–Australia–New Zealand Free Trade Agreement (AANZFTA). Each agreement has its own conditions and occupation lists." },
-              { heading: 'Occupations on the LMT exemption list', detail: 'There are no occupation-based LMT exemptions for the 482 or 494. Some medical practitioner and paramedic nominations can meet LMT through a written submission instead of advertising. Employers should check the current legislative instrument before commencing advertising.' },
+              { heading: 'Roles paying AUD250,000 or more', detail: 'Roles with annual earnings of AUD250,000 or more can meet LMT through a submission explaining how the local labour market was tested (for example, an executive search that included Australian applicants).' },
+              { heading: 'International trade obligations', detail: "This includes citizens or nationals of Brunei, China, Japan, Malaysia, Mexico, Peru, Thailand and Vietnam, and citizens, nationals or permanent residents of Canada, Chile, South Korea, New Zealand, Singapore and the United Kingdom, in the exempt categories under each agreement." },
+              { heading: 'Medical practitioners and paramedics', detail: 'There are no occupation-based LMT exemptions for the 482 or 494. Some medical practitioner and paramedic nominations can meet LMT through a written submission instead of advertising.' },
             ].map(item => (
               <div key={item.heading} style={{ padding: '20px 24px', borderRadius: 12, border: `1px solid ${BORDER}`, background: GREY_BG }}>
                 <div style={{ fontWeight: 600, fontSize: 15, color: NAVY, marginBottom: 6 }}>{item.heading}</div>

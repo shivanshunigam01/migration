@@ -52,11 +52,11 @@ const CANNOT_DO = [
 const FAQ: FaqItem[] = [
   {
     question: 'Can I do any work for a different employer on my 482?',
-    answer: "Generally no. Condition 8607 restricts you to your sponsoring employer and nominated occupation. Working for a different employer without a new nomination is a breach of your visa conditions. An exception may apply if you also hold another visa that grants broader work rights, but this is rare. Seek advice before accepting any secondary employment.",
+    answer: "Generally no. Condition 8607 restricts you to your sponsoring employer (or its associated entity) and nominated occupation, except during a permitted period of up to 180 days after your employment ends. Working for a different employer outside that period without a new nomination is a breach of your visa conditions. Seek advice before accepting any secondary employment.",
   },
   {
     question: 'What happens if I lose my job while on a 482?',
-    answer: "If you stop working for your sponsor, condition 8607 allows up to 180 days at a time (and up to 365 days in total while you hold the visa) to find a new sponsor, apply for another visa or leave Australia. Nanak Migration Group (MARN 2619467) can advise on your options if your employment ends unexpectedly.",
+    answer: "If your employment ends, you can stop working (or work for others) for up to 180 days in a single period, and up to 365 days in total over the life of your visa, while you find a new sponsor or arrange to leave Australia. Nanak Migration Group (MARN 2619467) can advise on your options if your employment ends unexpectedly.",
   },
   {
     question: "Does my partner have to work for my employer too?",
@@ -68,7 +68,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "What does 'commence work within 90 days' mean?",
-    answer: "Condition 8607 generally requires you to commence work with your sponsoring employer within 90 days of your visa being granted (or your first entry if you were offshore at grant). If you are delayed starting work — for example, due to a late start date or relocation — you should document the reason and seek advice to ensure you are not considered to have breached your conditions.",
+    answer: "Condition 8607 requires you to start work within 90 days of arriving in Australia (if you were outside Australia when the visa was granted) or within 90 days of the grant date (if you were in Australia). If you are delayed starting work, document the reason and seek advice to ensure you are not considered to have breached your conditions.",
   },
 ]
 

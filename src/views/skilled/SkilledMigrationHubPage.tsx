@@ -26,7 +26,7 @@ const BLUE = CAT_STUDENT
 const PURPLE = CAT_SKILLED
 const TEAL = CAT_EMPLOYER
 
-const DISCLAIMER = 'Figures current as at 1 July 2026 — verify with Home Affairs'
+const DISCLAIMER = 'Figures current as at October 2026 — verify with Home Affairs'
 
 const SKILLED_RELATED: RelatedPage[] = [
   { title: 'Skilled Independent (189)', desc: 'Points-tested permanent residence — no sponsor required.', icon: 'shield', page: 'skilled-independent-189' },
@@ -96,7 +96,7 @@ const VISAS = [
   {
     code: '485',
     name: 'Temporary Graduate',
-    type: 'Temporary — 2–6 yr',
+    type: 'Temporary — 18 months to 5 yrs',
     typeColor: TEAL,
     pts: '—',
     ptsColor: '#9ca3af',
@@ -230,7 +230,7 @@ const FINDER_RESULTS: Record<string, FinderResult> = {
   result_485: {
     visa: 'Temporary Graduate',
     code: '485',
-    why: 'As an Australian graduate, the 485 lets you work in Australia for 2–6 years (depending on your qualification) while you build points and, if eligible, submit an EOI for a permanent skilled visa.',
+    why: 'As an Australian graduate, the 485 lets you work in Australia for 18 months to 3 years (up to 5 years for Hong Kong and BNO passport holders) while you build points and, if eligible, submit an EOI for a permanent skilled visa.',
     color: TEAL,
   },
   result_189: {
@@ -324,7 +324,7 @@ function VisaFinder({ navigate }: { navigate: (page: string) => void }) {
 const FAQS = [
   {
     q: 'What is the minimum points score to be invited to apply?',
-    a: "The minimum to register an Expression of Interest via SkillSelect is 65 points. However, invitation cutoffs — the lowest score actually invited in a round — have historically run 75–90+ depending on the occupation and visa type. Popular occupations in the 189 independent stream have seen cutoffs of 85–90 in recent rounds. Having 65 points gets you into the system; having a competitive score gets you invited. Figures current as at 1 July 2026 — verify with Home Affairs.",
+    a: "The minimum to register an Expression of Interest via SkillSelect is 65 points. However, invitation cutoffs vary by occupation and round. In the 4 June 2026 round, minimum scores invited ranged from 65 for construction trades, to 75–80 for most nursing and allied health roles, 85–95 for several science and engineering roles and up to 100 for some medical specialists. Having 65 points gets you into the system; having a competitive score gets you invited. Figures current as at October 2026 — verify with Home Affairs.",
   },
   {
     q: 'What is the difference between the 189, 190 and 491 visas?',
@@ -350,10 +350,10 @@ const FAQS = [
 
 /* ── Points Estimator data ───────────────────────────────── */
 type AgeBand = '18-24' | '25-32' | '33-39' | '40-44'
-type EnglishLevel = 'Competent' | 'Proficient' | 'Superior' | 'IELTS 8+'
+type EnglishLevel = 'Competent' | 'Proficient' | 'Superior'
 type OverseasExp = '0-2' | '3-4' | '5-7' | '8+'
 const AGE_PTS: Record<AgeBand, number> = { '18-24': 25, '25-32': 30, '33-39': 25, '40-44': 15 }
-const ENG_PTS: Record<EnglishLevel, number> = { 'Competent': 0, 'Proficient': 0, 'Superior': 10, 'IELTS 8+': 20 }
+const ENG_PTS: Record<EnglishLevel, number> = { 'Competent': 0, 'Proficient': 10, 'Superior': 20 }
 const OVS_PTS: Record<OverseasExp, number> = { '0-2': 0, '3-4': 5, '5-7': 10, '8+': 15 }
 
 const ASSESSORS = [
@@ -366,9 +366,9 @@ const ASSESSORS = [
 ]
 
 const INV_ROUNDS = [
-  { round: '2026-05', date: 'May 2026', visa: '189', score: 90, invites: '2,000' },
-  { round: '2026-04', date: 'Apr 2026', visa: '189', score: 85, invites: '1,500' },
-  { round: '2026-03', date: 'Mar 2026', visa: '189', score: 80, invites: '2,200' },
+  { round: '2026-06', date: '4 June 2026', visa: '189', score: '65–100 by occupation', invites: '10,000' },
+  { round: '2025-11', date: '13 November 2025', visa: '189', score: 'Varies by occupation', invites: '10,000' },
+  { round: '2025-08', date: '21 August 2025', visa: '189', score: 'Varies by occupation', invites: '6,887' },
 ]
 
 /* ── Page ────────────────────────────────────────────────── */
@@ -655,9 +655,13 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontSize: 12, fontWeight: 700, color: NAVY, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8, fontFamily: "'Gilroy', sans-serif" }}>English level</div>
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
-                  {(['Competent','Proficient','Superior','IELTS 8+'] as EnglishLevel[]).map(lvl => (
+                  {([
+                    { lvl: 'Competent' as EnglishLevel, label: 'Competent — IELTS 6 (0 pts)' },
+                    { lvl: 'Proficient' as EnglishLevel, label: 'Proficient — IELTS 7 (10 pts)' },
+                    { lvl: 'Superior' as EnglishLevel, label: 'Superior — IELTS 8 (20 pts)' },
+                  ]).map(({ lvl, label }) => (
                     <button key={lvl} onClick={() => setEnglish(lvl)} style={{ padding: '8px 12px', borderRadius: 8, border: `1.5px solid ${english === lvl ? NAVY : '#e5eaf4'}`, background: english === lvl ? NAVY : '#f8fafd', color: english === lvl ? '#fff' : '#374151', fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: "'Gilroy', sans-serif", transition: 'all 0.15s' }}>
-                      {lvl} <span style={{ opacity: 0.6, fontSize: 11 }}>({ENG_PTS[lvl]} pts)</span>
+                      {label}
                     </button>
                   ))}
                 </div>
@@ -759,17 +763,16 @@ export default function SkilledMigrationHubPage({ navigate }: { navigate: (page:
                 Rounds and points cutoffs
               </h2>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
-                DHA runs SkillSelect invitation rounds at irregular intervals — typically monthly for the 189, but timing and cutoff scores change with policy priorities. Being registered with an up-to-date EOI is essential; you cannot be invited if your EOI has lapsed.
+                Home Affairs runs SkillSelect invitation rounds for the 189 and family-sponsored 491 periodically during the program year — in 2025-26 rounds were held in August 2025, November 2025 and June 2026, and the next 189 round is expected by 31 October 2026. Being registered with an up-to-date EOI is essential; you cannot be invited if your EOI has lapsed.
               </p>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, fontFamily: "'Gilroy', sans-serif" }}>
                 Cutoff scores for popular occupations — software engineering, nursing, accounting — have historically been higher than the 65-point minimum. Our agents track live round data and advise on when to update your EOI.
               </p>
             </div>
             <div>
-              <div style={{ background: 'rgba(245,161,36,0.08)', border: '1.5px solid rgba(245,161,36,0.3)', borderRadius: 10, padding: '10px 16px', marginBottom: 16 }}>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#0d1632' }}>[DRAFT]</span>
-                <span style={{ fontSize: 13, color: '#0d1632', marginLeft: 8 }}>Replace with verified DHA data before launch.</span>
-              </div>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 16, fontFamily: "'Gilroy', sans-serif" }}>
+                Recent 189 invitation rounds (Home Affairs): 4 June 2026 — 10,000 invitations, tie-break date 24/04/2026, minimum scores from 65 to 100 depending on occupation; 13 November 2025 — 10,000 invitations; 21 August 2025 — 6,887 invitations. No rounds were held in March, April or May 2026. Check the Home Affairs invitation rounds page for current results.
+              </p>
               <div className="table-scroll-wrap" style={{ borderRadius: 14, overflow: 'hidden', border: '1.5px solid #e5eaf4' }}>
                 <div className="table-scroll-min">
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr 0.8fr 1fr 1fr', background: NAVY, padding: '12px 20px', gap: 8 }}>

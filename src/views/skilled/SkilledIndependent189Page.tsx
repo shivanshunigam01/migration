@@ -89,14 +89,10 @@ const POINTS_CATEGORIES = [
 
 // Recent invitation round data (approximate, indicative)
 const RECENT_ROUNDS = [
-  { month: 'Jul 2025', lowest: 85, invited: 1750 },
-  { month: 'Jun 2025', lowest: 85, invited: 1820 },
-  { month: 'May 2025', lowest: 80, invited: 1690 },
-  { month: 'Apr 2025', lowest: 85, invited: 1580 },
-  { month: 'Mar 2025', lowest: 80, invited: 1740 },
-  { month: 'Feb 2025', lowest: 80, invited: 1610 },
-  { month: 'Jan 2025', lowest: 85, invited: 1450 },
-  { month: 'Dec 2024', lowest: 75, invited: 1820 },
+  { month: '4 Jun 2026', lowest: '65–100 by occupation', invited: 10000 },
+  { month: '13 Nov 2025', lowest: 'Varies by occupation', invited: 10000 },
+  { month: '21 Aug 2025', lowest: 'Varies by occupation', invited: 6887 },
+  { month: '7 Nov 2024', lowest: 'Varies by occupation', invited: 15000 },
 ]
 
 const FAQ_ITEMS: FaqItem[] = [
@@ -105,7 +101,9 @@ const FAQ_ITEMS: FaqItem[] = [
   { question: 'What is a competitive 189 score in 2025?', answer: 'Across most occupations, 80–90 points has been the competitive range in recent rounds. Some in-demand occupations (nurses, engineers) have seen invitations at 70–75 points. High-competition ANZSCO codes regularly require 90+. Use our Points Expiry Planner to know your effective score through time.' },
   { question: 'How long is my skills assessment valid?', answer: 'Most assessing authorities issue assessments valid for 3 years from the date of assessment (not the date of application). Some bodies (e.g. Engineers Australia CDR) are valid indefinitely but require an updated Professional Membership or Provisional Membership date. Check your specific authority — this affects when you must submit your EOI.' },
   { question: 'Can I improve my score while in the pool?', answer: 'Yes. You can update your EOI at any time. Common upgrades: gaining an extra year of Australian work experience, re-sitting an English test to reach Superior, completing a Professional Year, or your partner completing a skills assessment. Each update resets your tie-breaking date (date of invitation), so weigh the score gain against the time cost.' },
-  { question: 'What is the 189 tie-breaking rule?', answer: 'When candidates share the same points score, DHA invites those who submitted their EOI earliest — date-of-invite tie-breaking. This means that if you have 85 points and are unlikely to reach 90, submitting your EOI immediately is beneficial so your tie-breaking position improves with time.' },
+  { question: 'What is the 189 tie-breaking rule?', answer: "When candidates share the same score, Home Affairs invites the EOI with the earlier 'date of effect' — the date and time the EOI reached that points score for the subclass." },
+  { question: 'How long does a 189 visa take?', answer: 'Processing order is set by Ministerial Direction No. 122, which prioritises the construction, healthcare, teaching, agriculture, aquaculture, fishing and resources sectors (and law enforcement and defence interests), then onshore applicants ahead of offshore.' },
+  { question: 'When is the next 189 invitation round?', answer: 'Home Affairs has said the next round is expected by 31 October 2026.' },
 ]
 
 const RELATED: RelatedPage[] = [
@@ -123,7 +121,7 @@ const BUILDER_FIELDS = [
   { id: 'overseasWork', label: 'Overseas skilled employment', options: [{ label: 'Less than 3 years', val: 0 }, { label: '3–4 years', val: 5 }, { label: '5–7 years', val: 10 }, { label: '8+ years', val: 15 }] },
   { id: 'ausWork', label: 'Australian skilled employment', options: [{ label: 'None', val: 0 }, { label: '1–2 years', val: 5 }, { label: '3–4 years', val: 10 }, { label: '5–7 years', val: 15 }, { label: '8+ years', val: 20 }] },
   { id: 'edu', label: 'Educational qualifications', options: [{ label: 'None or below diploma', val: 0 }, { label: 'Diploma / trade — Australian', val: 10 }, { label: 'Bachelor — Australian', val: 15 }, { label: 'PhD — Australian / recognised', val: 20 }] },
-  { id: 'partner', label: 'Partner situation', options: [{ label: 'Single, or partner is an Australian citizen or permanent resident (+10). Add a separate option: Partner applying with Competent English only (+5).', val: 10 }, { label: 'Partner — no skills points', val: 0 }, { label: 'Partner — skills assessed + Proficient English', val: 10 }] },
+  { id: 'partner', label: 'Partner situation', options: [{ label: 'Single, or partner is an Australian citizen or permanent resident (+10)', val: 10 }, { label: 'Partner applying with Competent English only (+5)', val: 5 }, { label: 'Partner — no skills points', val: 0 }, { label: 'Partner — under 45, Competent English, skills assessed in occupation on same list (+10)', val: 10 }] },
   { id: 'naati', label: 'NAATI community language', options: [{ label: 'No', val: 0 }, { label: 'Yes (accredited)', val: 5 }] },
   { id: 'profYear', label: 'Professional Year in Australia', options: [{ label: 'No', val: 0 }, { label: 'Yes (completed)', val: 5 }] },
 ]
@@ -245,13 +243,13 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
               {[
                 { label: 'Visa type', val: 'Permanent Residence', icon: 'shield' },
                 { label: 'Minimum points', val: '65 (pool entry)', icon: 'hash' },
-                { label: 'Effective cutoff (2025)', val: '75–90+ depending on occupation', icon: 'trending' },
+                { label: 'Effective cutoff (June 2026 round)', val: '65–100 depending on occupation', icon: 'trending' },
                 { label: 'Age limit', val: 'Under 45 at invitation', icon: 'calendar' },
                 { label: 'Sponsor required', val: 'No — fully independent', icon: 'check' },
                 { label: 'State nomination', val: 'Not for 189 (use 190/491)', icon: 'check' },
                 { label: 'Work rights', val: 'Unlimited — anywhere in Australia', icon: 'check' },
                 { label: 'Medicare', val: 'Immediate access', icon: 'check' },
-                { label: 'Pathway to citizenship', val: 'Yes — 4 years PR residence', icon: 'star' },
+                { label: 'Pathway to citizenship', val: 'Yes — generally 4 years living in Australia on a valid visa, including the last 12 months as a permanent resident', icon: 'star' },
                 { label: 'Govt fee (2026-27)', val: 'Govt fee (2026-27): AUD6,135 (primary applicant)', icon: 'hash' },
               ].map((row, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '12px 24px', borderBottom: i < 9 ? '1px solid #f3f4f8' : 'none' }}>
@@ -481,7 +479,7 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                   <Icon name="alert" size={15} color={GOLD} />
                   <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.6 }}>
-                    <strong>Tie-breaking rule:</strong> When candidates share the same score, DHA invites those whose EOI was submitted earliest. Submit as soon as you reach a competitive score.
+                    <strong>Tie-breaking rule:</strong> When candidates share the same score, Home Affairs invites the EOI with the earlier date of effect — the date and time the EOI reached that points score for the subclass.
                   </div>
                 </div>
               </div>
@@ -496,12 +494,12 @@ export default function SkilledIndependent189Page({ navigate }: { navigate: (pag
                 {RECENT_ROUNDS.map((row, i) => (
                   <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '13px 24px', borderBottom: i < RECENT_ROUNDS.length - 1 ? '1px solid #f0f2f8' : 'none', background: i === 0 ? `${GOLD}08` : 'transparent' }}>
                     <span style={{ fontSize: 14, fontWeight: i === 0 ? 700 : 400, color: NAVY }}>{row.month}{i === 0 && <span style={{ marginLeft: 6, fontSize: 11, background: GOLD, color: NAVY_DARK, padding: '1px 7px', borderRadius: 10, fontWeight: 700 }}>Latest</span>}</span>
-                    <span style={{ fontSize: 15, fontWeight: 800, color: i === 0 ? GOLD : NAVY }}>{row.lowest} pts</span>
+                    <span style={{ fontSize: 15, fontWeight: 800, color: i === 0 ? GOLD : NAVY }}>{typeof row.lowest === 'number' ? `${row.lowest} pts` : row.lowest}</span>
                     <span style={{ fontSize: 14, color: '#6b7280' }}>{row.invited.toLocaleString()}</span>
                   </div>
                 ))}
                 <div style={{ padding: '12px 24px', background: '#f8f9fc', borderTop: '1px solid #f0f2f8' }}>
-                  <span style={{ fontSize: 12, color: '#9ca3af' }}>Replace the monthly table (Dec 2024 to Jul 2025) with verified rounds: 4 Jun 2026 - 10,000 invitations, minimum 65 to 100 by occupation; 13 Nov 2025 - 10,000 invitations; 21 Aug 2025 - 6,887 invitations; 7 Nov 2024 - 15,000 invitations. Source: Home Affairs SkillSelect invitation rounds.</span>
+                  <span style={{ fontSize: 12, color: '#9ca3af' }}>Source: Home Affairs SkillSelect invitation rounds. Minimum scores vary by ANZSCO occupation code.</span>
                 </div>
               </div>
             </div>

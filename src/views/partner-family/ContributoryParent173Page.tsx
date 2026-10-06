@@ -384,7 +384,7 @@ return (
             The subclass 173 has a shorter processing queue than the permanent 143 — the two-stage route is designed so that the parent can enter Australia sooner while the permanent pathway is pursued.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75 }}>
-            The subclass 143 queue is substantial — new applications typically face a processing time of approximately 12–15 years. The 173 itself processes faster, but the underlying permanent 143 grant still requires the same wait. Planning for the long-term total timeline is essential.
+            The subclass 143 queue is substantial — new applications typically face a processing time of about 18 years. The 173 itself processes faster, but the underlying permanent 143 grant still requires the same wait. Planning for the long-term total timeline is essential.
           </p>
         </div>
       </section>

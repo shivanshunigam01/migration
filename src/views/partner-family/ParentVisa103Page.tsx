@@ -89,7 +89,7 @@ const STEPS: TimelineStep[] = [
 const FAQ: FaqItem[] = [
   {
     question: "What is the difference between the subclass 103 and the subclass 143?",
-    answer: "The subclass 103 (Parent) and subclass 143 (Contributory Parent) are both offshore permanent parent visas requiring the Balance of Family test and an Assurance of Support. The key difference is cost versus queue time. The 103 charges approximately AUD 4,990 (single instalment) — substantially less than the 143, which charges approximately AUD 5,040 at lodgement plus approximately AUD 43,600 per adult before grant. In exchange for the higher charges, the 143 queue is much shorter: approximately 12–15 years for new applications compared to about 42 years for the 103. The 870 Sponsored Parent (Temporary) visa is the only parent option without the Balance of Family test. Confirm current charges and queue estimates on DoHA.",
+    answer: "The subclass 103 (Parent) and subclass 143 (Contributory Parent) are both offshore permanent parent visas requiring the Balance of Family test and an Assurance of Support. The key difference is cost versus queue time. The 103 charges approximately AUD 4,990 (single instalment) — substantially less than the 143, which charges approximately AUD 5,040 at lodgement plus approximately AUD 43,600 per adult before grant. In exchange for the higher charges, the 143 queue is much shorter: about 18 years for new applications compared to about 42 years for the 103. The 870 Sponsored Parent (Temporary) visa is the only parent option without the Balance of Family test. Confirm current charges and queue estimates on DoHA.",
   },
   {
     question: "If I lodge a 103 application now, can I switch to a 143 later and keep my place in the queue?",

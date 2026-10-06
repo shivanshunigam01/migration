@@ -34,7 +34,7 @@ const FACTS: KeyFact[] = [
   },
   {
     icon: 'calendar',
-    value: '12–15 years',
+    value: 'about 18 years',
     label: 'Estimated processing time for new applications',
     note: 'Applies to applications lodged today. The queue has been growing. These are indicative estimates — actual processing may differ. Confirm current estimates on DoHA.',
   },
@@ -76,7 +76,7 @@ const STEPS: TimelineStep[] = [
   {
     code: '05',
     title: 'Wait in queue; pay second instalment before grant',
-    desc: 'The application sits in the queue for approximately 12–15 years (for new applications). When the Department is ready to grant, they request the second instalment (~$43,600 per adult). The visa is granted after payment and final checks.',
+    desc: 'The application sits in the queue for about 18 years (for new applications). When the Department is ready to grant, they request the second instalment (~$43,600 per adult). The visa is granted after payment and final checks.',
   },
 ]
 
@@ -164,8 +164,8 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
         eyebrow="Parent Visas"
         eyebrowSub="Partner & Family · Subclass 143"
         title={<>Contributory Parent Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 143 — Permanent Residence</em></>}
-        deck="The subclass 143 Contributory Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. It is the most common permanent parent pathway — but applicants must be prepared for significant government charges and a processing queue currently estimated at 12–15 years for new applications."
-        shortAnswer={<>The subclass 143 Contributory Parent visa grants <strong style={{ color: NAVY }}>permanent residence</strong> to parents whose child is a settled Australian citizen, permanent resident, or eligible New Zealand citizen — provided the parent can pass the <strong style={{ color: NAVY }}>Balance of Family test</strong> and the sponsoring child can provide an Assurance of Support. Government charges are approximately <strong style={{ color: NAVY }}>AUD 5,040 at lodgement</strong> (first instalment) and approximately <strong style={{ color: NAVY }}>AUD 43,600 per adult applicant</strong> (second instalment, payable before grant) — meaning a couple faces roughly <strong style={{ color: NAVY }}>AUD 95,000 in total government charges</strong>. Current processing times for new applications are approximately 12–15 years. Nanak Migration Group (MARN 2619467) can assess your eligibility before you commit to the charges.</>}
+        deck="The subclass 143 Contributory Parent visa grants permanent residence to parents of settled Australian citizens, permanent residents, or eligible New Zealand citizens. It is the most common permanent parent pathway — but applicants must be prepared for significant government charges and a processing queue currently estimated at about 18 years for new applications."
+        shortAnswer={<>The subclass 143 Contributory Parent visa grants <strong style={{ color: NAVY }}>permanent residence</strong> to parents whose child is a settled Australian citizen, permanent resident, or eligible New Zealand citizen — provided the parent can pass the <strong style={{ color: NAVY }}>Balance of Family test</strong> and the sponsoring child can provide an Assurance of Support. Government charges are approximately <strong style={{ color: NAVY }}>AUD 5,040 at lodgement</strong> (first instalment) and approximately <strong style={{ color: NAVY }}>AUD 43,600 per adult applicant</strong> (second instalment, payable before grant) — meaning a couple faces roughly <strong style={{ color: NAVY }}>AUD 95,000 in total government charges</strong>. Current processing times for new applications are about 18 years. Nanak Migration Group (MARN 2619467) can assess your eligibility before you commit to the charges.</>}
         maraBadge={true}
         currentAsAt="October 2026"
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -245,7 +245,7 @@ export default function ContributoryParent143Page({ navigate }: { navigate: (pag
           </div>
 
           <Callout variant="warning" panel={true} title="The processing queue — an honest assessment">
-            The subclass 143 is a popular visa with a long processing queue. The Department of Home Affairs processes applications in queue order (generally by application date). Families who lodge today should plan for a wait of approximately 12–15 years before the visa is granted. During this time, the parent can visit Australia on visitor visas or apply for the subclass 870 Sponsored Parent (Temporary) visa, or use the subclass 173 staged route to live in Australia while the permanent queue processes. Figures current at October 2026 — confirm on DoHA.
+            The subclass 143 is a popular visa with a long processing queue. The Department of Home Affairs processes applications in queue order (generally by application date). Families who lodge today should plan for a wait of about 18 years before the visa is granted. During this time, the parent can visit Australia on visitor visas or apply for the subclass 870 Sponsored Parent (Temporary) visa, or use the subclass 173 staged route to live in Australia while the permanent queue processes. Figures current at October 2026 — confirm on DoHA.
           </Callout>
         </div>
       </section>

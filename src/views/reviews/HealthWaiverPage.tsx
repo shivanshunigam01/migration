@@ -43,7 +43,7 @@ const FACTS: KeyFact[] = [
     icon: 'scale',
     value: 'Waiver discretion',
     label: "Undue cost and undue prejudice are the two waiver grounds",
-    note: 'Even after a negative health opinion, a decision-maker can waive PIC 4007 (except where the applicant has active tuberculosis or a condition that is a threat to public health) if the cost or prejudice is not "undue" having regard to relevant factors including the applicant\'s likely economic and social contributions.',
+    note: 'Even after a negative health opinion, a decision-maker can waive PIC 4007 (except where the applicant has active tuberculosis or a condition that is a threat to public health) (except where the applicant has active tuberculosis or a condition that is a threat to public health) if the cost or prejudice is not "undue" having regard to relevant factors including the applicant\'s likely economic and social contributions.',
   },
   {
     icon: 'alert',

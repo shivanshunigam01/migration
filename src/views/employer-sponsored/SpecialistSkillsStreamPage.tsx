@@ -327,7 +327,9 @@ return (
               { label: 'Nomination application charge', value: '$330 per nominee' },
               { label: 'SAF Levy — small business (turnover < $10M)', value: '$1,200 per year × visa period (e.g. 4 years = $4,800 upfront)' },
               { label: 'SAF Levy — standard business (turnover ≥ $10M)', value: '$1,800 per year × visa period (e.g. 4 years = $7,200 upfront)' },
-              { label: 'Visa Application Charge — base (primary applicant)', value: '$4,015 approximate — check current VAC on DoHA website' },
+              { label: 'Visa Application Charge — primary applicant', value: '$4,015 (from 1 July 2026)' },
+              { label: 'Visa Application Charge — each dependant 18 or over', value: '$4,015' },
+              { label: 'Visa Application Charge — each dependant under 18', value: '$1,005' },
             ].map((row, i) => (
               <div
                 key={i}

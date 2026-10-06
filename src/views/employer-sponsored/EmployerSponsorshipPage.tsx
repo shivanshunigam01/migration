@@ -40,8 +40,8 @@ const FEE_DATA: Record<string, {
 }> = {
   '482': {
     safLevy: { small: 1200, standard: 1800 },
-    nominationFee: 0,
-    visaFee: { primary: 4015, secondary_adult: 2005, secondary_child: 1005 },
+    nominationFee: 330,
+    visaFee: { primary: 4015, secondary_adult: 4015, secondary_child: 1005 },
     agentLow: 3500, agentHigh: 6000,
     processingWeeks: { sbs: '4–8 wks', nomination: '2–6 wks', visa: '8–16 wks' },
   },

@@ -102,7 +102,7 @@ const SANCTION_TYPES = [
   { label: 'Civil penalty order', desc: 'Sought through the Federal Court.' },
   { label: 'Enforceable undertaking', desc: 'Formal commitment to remedy the breach.' },
   { label: 'Suspension or cancellation of sponsorship approval', desc: 'The Department may suspend or cancel SBS approval.' },
-  { label: 'Bar on future sponsorship applications', desc: 'A sanction may prevent the business from applying for sponsorship in the future. Employers who seriously, deliberately or repeatedly break the law can also be made subject to a prohibition declaration that stops them employing more migrant workers for a period.' },
+  { label: 'Bar on future sponsorship applications', desc: 'A sanction may prevent the business from applying for sponsorship in the future. Employers who seriously, deliberately or repeatedly break the law can also be made subject to a prohibition declaration that stops them employing more migrant workers for a period. Employers who seriously, deliberately or repeatedly break the law can also be made subject to a prohibition declaration that stops them employing more migrant workers for a period.' },
 ]
 
 export default function EmployerObligationsPage({ navigate }: { navigate: (page: string) => void }) {

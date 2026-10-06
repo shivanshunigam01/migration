@@ -34,7 +34,7 @@ const STREAMS = [
     name: 'Post-Higher Education Work',
     oldName: 'Post-Study Work stream',
     color: PURPLE,
-    duration: { bachelor: 2, honours: 2, masters: 3, phd: 4 },
+    duration: { bachelor: 2, honours: 2, mastersCoursework: 2, mastersResearch: 3, phd: 3 },
     ageLimit: 35,
     requirements: [
       'Australian bachelor, bachelor honours, master by coursework, or doctoral degree',
@@ -82,7 +82,7 @@ const STREAMS = [
       'Degree in a field relating to a designated regional area need',
       'Must intend to live, work or study in a designated regional area',
       'Competent English',
-      'Under 50 at time of application',
+      '35 or under (under 50 only if your first 485 relied on a Masters by research or PhD, or you hold a Hong Kong or BNO passport)',
     ],
     workRights: 'Unlimited — but regional living intended',
     studyRights: 'Yes',
@@ -104,7 +104,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What is the 485 age limit?',
-    a: 'For the PHEW (Post-Higher Education Work) and PVEW (Post-Vocational Education Work) streams, you must be under 35 at the time you apply. For the Second PHEW stream, the limit is under 50. Exemptions exist for: doctoral (PhD) graduates from any institution; research masters graduates; and holders of Hong Kong BNO passports. The age test applies at lodgement — if you turn 35 the day before you apply, you are ineligible (subject to exemptions).',
+    a: 'For the PHEW and PVEW streams, you must be 35 or under when you apply. For the Second PHEW stream, the limit is 35 or under (under 50 only if your first 485 relied on a Masters by research or PhD, or you hold a Hong Kong or BNO passport). Masters by research and doctoral graduates can apply for the PHEW stream if they are under 50. The age test applies at lodgement — you are still eligible at 35 and become ineligible from your 36th birthday (subject to exemptions).',
     featured: false,
   },
   {
@@ -114,7 +114,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'What English do I need for the 485?',
-    a: 'Competent English — IELTS 6.0 overall with no band below 5.0, or equivalent in PTE Academic (50), TOEFL iBT (36), OET (B), or Cambridge (169). The 485 does not require Proficient or Superior English. However, if your PR strategy involves a points-tested visa, investing in Superior English (IELTS 8+) during the 485 runway is worth +10 extra points compared to Proficient.',
+    a: 'IELTS 6.5 overall with at least 5.5 in each component (or equivalent), with the test taken in the 12 months before you apply. If your PR strategy involves a points-tested visa, investing in Superior English during the 485 runway can add significant points on a future skilled visa application.',
     featured: false,
   },
   {
@@ -287,7 +287,7 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
         variant="flagship"
         eyebrow="Skilled Migration · Post-Study Work"
         title={<>Temporary Graduate Visa<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 485</em></>}
-        deck="A post-study work visa for international graduates of Australian institutions, providing 2–4 years of work rights to gain Australian experience."
+        deck="A post-study work visa for international graduates of Australian institutions, providing 18 months to 3 years of work rights (up to 5 years for Hong Kong and BNO passport holders) to gain Australian experience."
         maraBadge
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Book a Consultation', page: 'book-consultation' }}
@@ -304,10 +304,10 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               { label: 'Streams (from mid-2024)', val: 'PHEW · PVEW · 2PHEW', icon: 'refresh', hi: false },
               { label: 'Application window', val: '6 months from results release', icon: 'calendar', hi: true },
               { label: 'Age limit (PHEW / PVEW)', val: '35 or under at time of application', icon: 'alert', hi: true },
-              { label: 'Age limit (2PHEW)', val: 'Under 50', icon: 'info', hi: false },
+              { label: 'Age limit (2PHEW)', val: '35 or under (under 50 with eligible prior 485 or HK/BNO passport)', icon: 'info', hi: false },
               { label: 'Duration — Bachelor / Honours', val: '2 years', icon: 'clock', hi: false },
-              { label: "Duration — Master's by coursework", val: '3 years', icon: 'clock', hi: false },
-              { label: 'Duration — PhD / Doctoral', val: '4 years', icon: 'clock', hi: false },
+              { label: "Duration — Master's by coursework", val: "Master's by coursework: 2 years", icon: 'clock', hi: false },
+              { label: 'Duration — Masters by research / PhD', val: '3 years', icon: 'clock', hi: false },
               { label: 'Work rights', val: 'Unlimited — any employer, any hours', icon: 'zap', hi: false },
               { label: 'English requirement', val: 'IELTS 6.5 overall with at least 5.5 in each component (or equivalent), test taken in the 12 months before you apply', icon: 'book', hi: false },
               { label: 'Medicare', val: 'Generally no - you must hold adequate health insurance unless you are covered by a Reciprocal Health Care Agreement', icon: 'shield', hi: false },
@@ -568,11 +568,11 @@ export default function TemporaryGraduate485Page({ navigate }: { navigate: (page
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {[
-                  { label: 'PHEW stream', limit: 35, note: 'Under 35 at application date' },
-                  { label: 'PVEW stream', limit: 35, note: 'Under 35 at application date' },
-                  { label: '2PHEW (Second 485)', limit: 50, note: 'Under 50 — higher limit for regional pathway' },
-                  { label: 'PhD / doctoral graduates', limit: null, note: 'No age limit — applies regardless of age' },
-                  { label: 'Hong Kong / BNO passport holders', limit: 45, note: 'Special arrangements — check DHA guidelines' },
+                  { label: 'PHEW stream', limit: 35, note: '35 or under at time of application' },
+                  { label: 'PVEW stream', limit: 35, note: '35 or under at time of application' },
+                  { label: '2PHEW (Second 485)', limit: 50, note: '35 or under (under 50 only if your first 485 relied on a Masters by research or PhD, or you hold a Hong Kong or BNO passport)' },
+                  { label: 'Masters by research / PhD graduates', limit: 50, note: 'Under 50 at time of application' },
+                  { label: 'Hong Kong / BNO passport holders', limit: 50, note: 'Under 50 at time of application' },
                 ].map((row, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 18px', background: '#fff', border: '1px solid #e8edf6', borderRadius: 10 }}>
                     <div style={{ flex: 1 }}>

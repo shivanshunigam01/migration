@@ -68,7 +68,7 @@ const SPONSOR_STEPS: TimelineStep[] = [
   },
   {
     title: 'The guardian applies for the 590',
-    desc: "With the welfare documentation in hand, the guardian applies for the 590 visa. From 2 October 2026, most temporary visa holders must be outside Australia when they lodge a Student Guardian visa application and when it is granted. Current 590 holders can still lodge a further 590 application in Australia. The application requires the student's visa details, the education provider's documentation, financial evidence, and health/character documents.",
+    desc: "With the welfare documentation in hand, the guardian applies for the 590 visa. From 2 October 2026, most temporary visa holders must be outside Australia when they lodge a Student Guardian visa application and when it is granted. Current 590 holders can still lodge a further 590 application in Australia. From 2 October 2026, most temporary visa holders must be outside Australia when they lodge a Student Guardian visa application and when it is granted. Current 590 holders can still lodge a further 590 application in Australia. The application requires the student's visa details, the education provider's documentation, financial evidence, and health/character documents.",
   },
 ]
 

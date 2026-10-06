@@ -32,7 +32,7 @@ const DECISION_TYPES = [
     examples: ['Partner 820', 'Student 500', 'Skilled 189/190', 'General skilled'],
     days: 28,
     extendable: false,
-    notes: 'Clock runs from deemed notification — usually 3 days after DHA sends the letter via ImmiAccount.',
+    notes: 'Clock runs from when you are notified of the decision — for email or ImmiAccount, that is generally the end of the day it is sent.',
     severity: 'red',
   },
   {
@@ -70,9 +70,9 @@ const DECISION_TYPES = [
   {
     visa: 'Character cancellations (s501)',
     examples: ['Section 501 cancellation'],
-    days: 28,
+    days: 9,
     extendable: false,
-    notes: 'Mandatory and discretionary cancellations under s501 — separate ART jurisdiction. The Minister can override any ART decision in the national interest.',
+    notes: 'Delegate decisions under section 501, and decisions not to revoke a mandatory cancellation (s501CA), can be reviewed at the ART. If you are in Australia the application must be lodged within 9 days of being notified. Decisions made personally by the Minister are not reviewable at the ART.',
     severity: 'red',
   },
 ]
@@ -109,7 +109,7 @@ const PROCESS_STEPS = [
   {
     step: '05',
     title: 'Hearing (If Listed)',
-    body: 'Some cases are decided on documents alone. Others proceed to a hearing — in person, by video or by phone. Your agent prepares you for any questions the ART member may ask.',
+    body: 'Some cases are decided on documents alone. Others proceed to a hearing — in person, by video or by phone. From 1 June 2026, most student visa refusal reviews must be decided on the papers without a hearing, so your written submissions and evidence are critical. Exceptions apply, for example where the refusal relied on certain public interest criteria such as PIC 4020.',
     urgent: false,
     icon: 'trending',
   },
@@ -125,7 +125,7 @@ const PROCESS_STEPS = [
 const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'How long do I have to appeal a visa refusal in Australia?',
-    answer: 'Most onshore visa refusal reviews at the Administrative Review Tribunal (ART) must be lodged within 28 days of deemed notification of the decision. Some decision types allow less time, and for most migration decisions the deadline cannot be extended — lodging even one day late will result in the ART having no jurisdiction to hear your case. Your exact time limit is in your refusal letter.',
+    answer: 'Time limits apply — in most cases you have 28 days after you are notified of the decision to lodge an application (14 days if you are in immigration detention, and 9 days for a character decision under section 501 if you are in Australia). The Tribunal cannot extend these time limits. Lodging even one day late will result in the ART having no jurisdiction to hear your case. Your exact time limit is in your refusal letter.',
   },
   {
     question: 'What replaced the AAT? Is the ART the same thing?',
@@ -153,7 +153,7 @@ const FAQ_ITEMS: FaqItem[] = [
   },
   {
     question: 'My visitor visa was refused. Can I appeal?',
-    answer: "Generally no — visitor visa (Subclass 600, ETA, eVisitor) decisions are merits-review excluded. You cannot take them to the ART. Options are: re-application with stronger evidence, requesting DHA reconsider (no formal right, but occasionally effective), or in some cases Ministerial Intervention. If the refusal relates to character or a more serious matter, the review rights analysis changes — get advice specific to your letter.",
+    answer: "Some visitor visa refusals can be reviewed by the ART. If you applied in Australia, a refusal is generally reviewable, as long as the decision was not made while you were in immigration clearance and you are still in Australia when you apply for review. If you applied from outside Australia, a refusal is only reviewable where you were coming to visit an Australian citizen or permanent resident parent, spouse, de facto partner, child, brother or sister whose details were included in your application. In that case the relative applies to the ART. Check your refusal letter, which states whether review is available and the time limit.",
   },
 ]
 
@@ -165,7 +165,7 @@ const RELATED: RelatedPage[] = [
 export default function ARTReviewPage({ navigate }: { navigate: (page: string) => void }) {
   const [notificationDate, setNotificationDate] = useState('')
   const [decisionTypeIdx, setDecisionTypeIdx] = useState(0)
-  const [deemedDays, setDeemedDays] = useState(3)
+  const [deemedDays, setDeemedDays] = useState(0)
 
   const deadline = useMemo(() => {
     if (!notificationDate) return null
@@ -297,7 +297,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                     {[
                       { label: 'Most onshore refusals (student, partner, skilled)', days: 28 },
                       { label: 'Protection visa refusals', days: 28 },
-                      { label: 'Character cancellations (s501)', days: 28 },
+                      { label: 'Character cancellations (s501)', days: 9 },
                     ].map((opt, i) => (
                       <button key={i} onClick={() => setDecisionTypeIdx(i === 1 ? 1 : i === 2 ? 5 : 0)}
                         style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 14px', borderRadius: 8, border: `1.5px solid ${decisionTypeIdx === (i === 1 ? 1 : i === 2 ? 5 : 0) ? RED : 'rgba(255,255,255,0.12)'}`, background: decisionTypeIdx === (i === 1 ? 1 : i === 2 ? 5 : 0) ? `${RED}15` : 'rgba(255,255,255,0.04)', cursor: 'pointer', textAlign: 'left' }}>
@@ -315,13 +315,13 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                   </label>
                   <div style={{ display: 'flex', gap: 8 }}>
                     {[
-                      { label: 'ImmiAccount / email', days: 3 },
-                      { label: 'Post (regular mail)', days: 7 },
+                      { label: 'ImmiAccount / email', days: 0, sub: 'Received at the end of the day it was sent (no extra days)' },
+                      { label: 'Post (regular mail)', days: 7, sub: '+7 working days deemed receipt (post sent within Australia; 21 days if posted from or to an overseas address)' },
                     ].map(opt => (
                       <button key={opt.label} onClick={() => setDeemedDays(opt.days)}
                         style={{ flex: 1, padding: '10px 12px', borderRadius: 8, border: `1.5px solid ${deemedDays === opt.days ? GOLD : 'rgba(255,255,255,0.12)'}`, background: deemedDays === opt.days ? `${GOLD}12` : 'rgba(255,255,255,0.04)', color: deemedDays === opt.days ? GOLD : 'rgba(255,255,255,0.65)', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                         {opt.label}<br />
-                        <span style={{ fontSize: 11, opacity: 0.7 }}>+{opt.days} days deemed receipt</span>
+                        <span style={{ fontSize: 11, opacity: 0.7 }}>{opt.sub}</span>
                       </button>
                     ))}
                   </div>
@@ -365,7 +365,7 @@ export default function ARTReviewPage({ navigate }: { navigate: (page: string) =
                   <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, overflow: 'hidden' }}>
                     {[
                       { label: 'DHA notification date', date: new Date(notificationDate), color: '#9ca3af' },
-                      { label: `Deemed receipt (+${deemedDays} days)`, date: deadline.deemed, color: GOLD },
+                      { label: deemedDays === 0 ? 'Deemed receipt (end of notification day)' : `Deemed receipt (+${deemedDays} working days)`, date: deadline.deemed, color: GOLD },
                       { label: `ART lodgement deadline (${DECISION_TYPES[decisionTypeIdx].days} days)`, date: deadline.deadlineDate, color: urgencyColor },
                     ].map((row, i) => (
                       <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 22px', borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none' }}>

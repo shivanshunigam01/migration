@@ -63,7 +63,7 @@ const OBLIGATIONS = [
   },
   {
     title: 'Keep records until 2 years after sponsorship ends',
-    detail: 'Payslips, contract variations, leave records and any changes to the role must be retained for five years and produced on request. A DHA compliance audit can arrive without warning.',
+    detail: 'Payslips, contract variations, leave records and any changes to the role must be retained for the sponsorship period and for 2 years after it ends, and produced on request. A DHA compliance audit can arrive without warning.',
     icon: 'file',
     color: '#4f46e5',
   },
@@ -143,7 +143,7 @@ const FAQS: FaqItem[] = [
   },
   {
     question: 'Can the worker change employer after being sponsored?',
-    answer: 'A sponsored worker on a subclass 482 is tied to the sponsoring employer for the occupation nominated. They can change employers if the new employer holds SBS and lodges a nomination for them. There is no sponsorship-free "portability" period on the 482 — the worker must have a new sponsor before leaving the current one.',
+    answer: "If the worker's employment ends, condition 8607 gives them up to 180 days in a single period (365 days in total) to find a new sponsor or leave Australia. They cannot start work for the new employer until its nomination is approved.",
   },
   {
     question: 'What is the SAF levy and who pays it?',
@@ -316,7 +316,7 @@ export default function StandardBusinessSponsorshipPage({ navigate }: { navigate
               <div style={{ display: 'flex', gap: 10, padding: '14px 18px', background: 'rgba(255,255,255,0.05)', borderRadius: 10, alignItems: 'flex-start' }}>
                 <Icon name="alert" size={15} color={GOLD} />
                 <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', lineHeight: 1.65 }}>
-                  Breaching a sponsorship obligation may result in an infringement notice of 240 penalty units (AUD87,360) for a company or 48 penalty units (AUD17,472) for an individual for each breach, at the AUD364 penalty unit that applies from 1 July 2026., a bar on further nominations, or cancellation of the SBS altogether.
+                  Breaching a sponsorship obligation may result in an infringement notice of 240 penalty units (AUD87,360) for a company or 48 penalty units (AUD17,472) for an individual for each breach, at the AUD364 penalty unit that applies from 1 July 2026, a bar on further nominations, or cancellation of the SBS altogether.
                 </div>
               </div>
             </div>

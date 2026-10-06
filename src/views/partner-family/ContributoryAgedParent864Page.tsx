@@ -33,7 +33,7 @@ const TOC = [
 const KEY_FACTS: KeyFact[] = [
   {
     icon: 'clock',
-    value: '12–15 years',
+    value: 'about 18 years',
     label: 'Realistic processing wait for new 864 applications',
     note: 'New applications for the subclass 864 face a substantial queue. Confirm current processing times on the DoHA website — times change as the cohort progresses.',
   },
@@ -95,7 +95,7 @@ const BVA_FEATURES = [
   },
   {
     title: 'Health re-examination before grant',
-    body: "Health clearances are valid for a limited period. Given the 12–15 year wait for new 864 applications, the parent's initial health examination will expire well before the visa is ready to grant. The Department will request updated health examinations closer to the time of grant.",
+    body: "Health clearances are valid for a limited period. Given the about 18-year wait for new 864 applications, the parent's initial health examination will expire well before the visa is ready to grant. The Department will request updated health examinations closer to the time of grant.",
   },
 ]
 
@@ -114,7 +114,7 @@ const CHARGES_ROWS = [
 
 const VS_804_ROWS = [
   { feature: 'Application charge', col864: 'Very large (two instalments, ~$43,600+ per adult second instalment)', col804: 'Low (few thousand — confirm DoHA)' },
-  { feature: 'Processing wait', col864: '12–15 years (new applications)', col804: 'Decades (new applications)' },
+  { feature: 'Processing wait', col864: 'about 18 years (new applications)', col804: 'Decades (new applications)' },
   { feature: 'Work rights on BVA', col864: 'No', col804: 'No' },
   { feature: 'Medicare on BVA', col864: 'No', col804: 'No' },
   { feature: 'Medicare on grant', col864: 'Yes', col804: 'Yes' },
@@ -157,18 +157,18 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Wait — and prepare for the second instalment',
-    desc: 'The application will be in the queue for 12–15 years (new applications). When the Department notifies that the visa is ready to grant, the second instalment must be paid before the visa can be granted. Plan for this payment well in advance.',
+    desc: 'The application will be in the queue for about 18 years (new applications). When the Department notifies that the visa is ready to grant, the second instalment must be paid before the visa can be granted. Plan for this payment well in advance.',
   },
 ]
 
 const FAQ: FaqItem[] = [
   {
     question: 'Is the subclass 864 faster than the 804?',
-    answer: 'Yes — the 864 queue is shorter than the 804 non-contributory queue. New 864 applicants face approximately 12–15 years, whereas new 804 applicants face a wait measured in decades. However, neither is a fast pathway to permanent residence. Both are very long processes. Confirm current processing times on the DoHA website.',
+    answer: 'Yes — the 864 queue is shorter than the 804 non-contributory queue. New 864 applicants face about 18 years, whereas new 804 applicants face a wait measured in decades. However, neither is a fast pathway to permanent residence. Both are very long processes. Confirm current processing times on the DoHA website.',
   },
   {
     question: 'What happens if the parent cannot pay the second instalment when the time comes?',
-    answer: 'The second instalment must be paid before the Department will grant the 864. If the family cannot pay when the time comes, the visa cannot be granted. Planning and saving for the second instalment over the 12–15 year waiting period is essential. Families should build a financial plan for this payment from the time of lodging.',
+    answer: 'The second instalment must be paid before the Department will grant the 864. If the family cannot pay when the time comes, the visa cannot be granted. Planning and saving for the second instalment over the about 18-year waiting period is essential. Families should build a financial plan for this payment from the time of lodging.',
   },
   {
     question: 'Can the parent travel overseas while waiting for the 864?',
@@ -180,7 +180,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'Does the 864 grant Medicare from day one?',
-    answer: 'Medicare is available from the date the 864 is granted — not from the date of the Bridging Visa. During the 12–15 year waiting period on the Bridging Visa, the parent does not have Medicare access. Comprehensive private health insurance for the entire waiting period is strongly recommended.',
+    answer: 'Medicare is available from the date the 864 is granted — not from the date of the Bridging Visa. During the about 18-year waiting period on the Bridging Visa, the parent does not have Medicare access. Comprehensive private health insurance for the entire waiting period is strongly recommended.',
   },
 ]
 
@@ -245,8 +245,8 @@ return (
         eyebrow="Partner & Family"
         eyebrowSub="Parent Visas · Subclass 864 (Contributory Onshore)"
         title={<>Contributory Aged Parent<br /><em style={{ fontStyle: 'italic', color: GOLD }}>Subclass 864</em></>}
-        deck="The Contributory Aged Parent visa (subclass 864) is the onshore counterpart to the offshore subclass 143 — for pension-age parents who are already in Australia. It involves a substantial contributory charge and a 12–15 year processing queue for new applications."
-        shortAnswer={<>The subclass 864 Contributory Aged Parent visa is an onshore permanent visa for parents who have reached Australian Age Pension age and are already in Australia. It is the contributory parent visa — meaning a large application charge (approximately $43,600 per adult as the second instalment — confirm current on DoHA) is payable before the visa is granted. The parent must meet the balance of family test and provide an assurance of support. While the 864 processes, the parent remains in Australia on a Bridging Visa and has access to Medicare from grant. Processing for new applications is realistically 12–15 years — both the 864 and the non-contributory 804 face long queues, but the 864 queue is somewhat shorter. The 864 is the onshore equivalent of the 143 (offshore). The offshore two-stage option (173 + 143) is not available for pension-age parents onshore — they must use the 864 if they want the contributory route in Australia. The temporary subclass 870 is an alternative for families who want the parent in Australia sooner without the very long wait, at a fraction of the cost but only temporarily. Nanak Migration Group (MARN 2619467) can advise on the full comparison. No outcome guarantees.</>}
+        deck="The Contributory Aged Parent visa (subclass 864) is the onshore counterpart to the offshore subclass 143 — for pension-age parents who are already in Australia. It involves a substantial contributory charge and a about 18-year processing queue for new applications."
+        shortAnswer={<>The subclass 864 Contributory Aged Parent visa is an onshore permanent visa for parents who have reached Australian Age Pension age and are already in Australia. It is the contributory parent visa — meaning a large application charge (approximately $43,600 per adult as the second instalment — confirm current on DoHA) is payable before the visa is granted. The parent must meet the balance of family test and provide an assurance of support. While the 864 processes, the parent remains in Australia on a Bridging Visa and has access to Medicare from grant. Processing for new applications is realistically about 18 years — both the 864 and the non-contributory 804 face long queues, but the 864 queue is somewhat shorter. The 864 is the onshore equivalent of the 143 (offshore). The offshore two-stage option (173 + 143) is not available for pension-age parents onshore — they must use the 864 if they want the contributory route in Australia. The temporary subclass 870 is an alternative for families who want the parent in Australia sooner without the very long wait, at a fraction of the cost but only temporarily. Nanak Migration Group (MARN 2619467) can advise on the full comparison. No outcome guarantees.</>}
         maraBadge={true}
         currentAsAt={CURRENT_AS_AT}
         primaryCta={{ label: 'Request a discussion', page: 'home' }}
@@ -288,7 +288,7 @@ return (
             The subclass 864 Contributory Aged Parent visa is an onshore permanent visa for pension-age parents of Australian citizens, permanent residents, or eligible New Zealand citizens. It is the onshore equivalent of the offshore subclass 143 (Contributory Parent — permanent).
           </p>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginBottom: 20 }}>
-            The 864 involves a large contributory application charge, paid in two instalments. The first instalment is payable at the time of lodging the application. The second instalment (the larger of the two) is payable when the Department notifies the applicant that the visa is ready to grant — which, for new applications, is approximately 12–15 years away.
+            The 864 involves a large contributory application charge, paid in two instalments. The first instalment is payable at the time of lodging the application. The second instalment (the larger of the two) is payable when the Department notifies the applicant that the visa is ready to grant — which, for new applications, is about 18 years away.
           </p>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, marginBottom: 32 }}>
             During the processing period, the parent lives in Australia on a Bridging Visa. On grant of the 864, the parent becomes a permanent resident with full rights, including Medicare access.
@@ -319,7 +319,7 @@ return (
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
           <SectionHeading kicker="During the wait" title="Living on a Bridging Visa While the 864 Processes" accent={ACCENT} />
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, maxWidth: 760, marginBottom: 40 }}>
-            After lodging the 864, the parent receives a Bridging Visa A (BVA) that allows them to remain in Australia lawfully throughout the processing period. Given the 12–15 year wait for new applications, the parent will spend a significant period on a Bridging Visa.
+            After lodging the 864, the parent receives a Bridging Visa A (BVA) that allows them to remain in Australia lawfully throughout the processing period. Given the about 18-year wait for new applications, the parent will spend a significant period on a Bridging Visa.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 24 }}>
             {BVA_FEATURES.map((item, i) => (

@@ -316,7 +316,7 @@ return (
                 {[
                   { feature: 'Outcome', v804: 'Permanent (after decades)', v864: 'Permanent', v870: 'Temporary (up to 10 years)' },
                   { feature: 'Application charge', v804: 'Low (few thousand)', v864: 'Very high (~$43,600+ per adult 2nd instalment — confirm)', v870: 'Moderate per stage' },
-                  { feature: 'Wait for permanent', v804: 'Decades', v864: '12–15 years (new applications)', v870: 'N/A (temporary)' },
+                  { feature: 'Wait for permanent', v804: 'Decades', v864: 'about 18 years (new applications)', v870: 'N/A (temporary)' },
                   { feature: 'Work rights', v804: 'No', v864: 'No', v870: 'No' },
                   { feature: 'Medicare', v804: 'No', v864: 'Generally no - you must hold adequate health insurance unless you are covered by a Reciprocal Health Care Agreement', v870: 'No' },
                   { feature: 'Balance of Family Test', v804: 'Yes', v864: 'Yes', v870: 'No' },

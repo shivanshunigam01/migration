@@ -106,7 +106,7 @@ const JURISDICTION_ROWS: ComparisonRow[] = [
     apply:     'Tasmanian Skilled Migration portal (online). Tasmania is generally accessible for interstate and offshore applicants.',
   },
   {
-    feature:   'ACT (Australian Capital Territory)',
+    feature:   'Visas offered cell for ACT: change '190' to '190, 491'',
     visas:     '190, 491',
     focus:     'Healthcare, engineering, ICT, government-sector adjacent roles. ACT generally requires a genuine connection to Canberra.',
     residency: 'Typically requires living and working in the ACT or a formal ACT job offer at the time of application.',

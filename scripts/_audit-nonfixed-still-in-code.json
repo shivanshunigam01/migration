@@ -1,0 +1,38 @@
+[
+  {
+    "live": "Partly fixed",
+    "slug": "186-occupations-list",
+    "find": "254111",
+    "note": "Old text removed, but the corrected figure(s) are not on the page: 2022",
+    "files": [
+      "src\\views\\student\\CoursesPRProspectsPage.tsx"
+    ]
+  },
+  {
+    "live": "Not fixed",
+    "slug": "regional-areas",
+    "find": "Cities and Major Regional Centres",
+    "note": "Old text still visible on the live page",
+    "files": [
+      "src\\views\\skilled\\RegionalAreasPage.tsx"
+    ]
+  },
+  {
+    "live": "Not fixed",
+    "slug": "skills-in-demand-visa",
+    "find": "LMT required",
+    "note": "Old text still visible on the live page",
+    "files": [
+      "src\\views\\employer-sponsored\\SkillsInDemand482Page.tsx"
+    ]
+  },
+  {
+    "live": "Not fixed",
+    "slug": "state-nomination",
+    "find": "ACT (Australian Capital Territory)",
+    "note": "Old text still visible on the live page",
+    "files": [
+      "src\\views\\skilled\\StateNominationPage.tsx"
+    ]
+  }
+]

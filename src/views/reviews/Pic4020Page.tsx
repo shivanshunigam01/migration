@@ -45,7 +45,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: "Can a PIC 4020 refusal be reviewed at the ART?",
-    answer: "Yes — in most cases, a PIC 4020 refusal is reviewable at the Administrative Review Tribunal (ART) within 28 days of being notified of the refusal. At the ART, the Tribunal can review the merits of the decision — including whether PIC 4020 was correctly applied, and whether the waiver grounds are made out. ART review is often worth pursuing, as the Tribunal can set aside a refusal where the Department's decision was incorrect or the waiver grounds are compelling. Seek advice immediately — the 21-day deadline is strict.",
+    answer: "Yes — in most cases, a PIC 4020 refusal is reviewable at the Administrative Review Tribunal (ART) within 28 days of being notified of the refusal. At the ART, the Tribunal can review the merits of the decision — including whether PIC 4020 was correctly applied, and whether the waiver grounds are made out. ART review is often worth pursuing, as the Tribunal can set aside a refusal where the Department's decision was incorrect or the waiver grounds are compelling. Seek advice immediately — the 28-day deadline is strict.",
   },
   {
     question: "If my visa is refused on PIC 4020 grounds, can I apply for another visa immediately?",

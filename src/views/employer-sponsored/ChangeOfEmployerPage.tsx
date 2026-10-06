@@ -42,7 +42,7 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Agree on role and salary',
-    desc: 'Confirm the new role is in the same or a closely related ANZSCO occupation and that the offered salary meets the Temporary Skilled Migration Income Threshold (TSMIT) or the applicable stream threshold.',
+    desc: 'Confirm the new role is in the same or a closely related ANZSCO occupation and that the offered salary meets the annual market salary rate and the Core Skills Income Threshold ($79,423) or Specialist Skills Income Threshold ($146,576) for your stream.',
   },
   {
     title: 'New employer lodges nomination',
@@ -50,7 +50,7 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Await nomination approval',
-    desc: 'The Department processes the new nomination. During this time you should remain employed with your current employer if still employed, or comply with the 60-day rule if employment has already ended.',
+    desc: 'The Department processes the new nomination. During this time you should remain employed with your current employer if still employed, or comply with the 180-day / 365-day periods under condition 8607 if employment has already ended.',
   },
   {
     title: 'Commence work with new employer',
@@ -69,7 +69,7 @@ const FAQ: FaqItem[] = [
   },
   {
     question: 'What if I cannot find a new sponsor within the allowed period?',
-    answer: 'If you cannot find a new sponsor within 180 days (or you reach 365 days in total), you may need to leave Australia or apply for a different visa. You should seek advice promptly if your employment ends unexpectedly. Do not wait until day 60 to start the process.',
+    answer: 'If you cannot find a new sponsor within 180 days (or you reach 365 days in total), you may need to leave Australia or apply for a different visa. You should seek advice promptly if your employment ends unexpectedly — do not wait until the end of the allowed period to start the process.',
   },
   {
     question: 'Can my new employer be in a different industry?',
@@ -94,8 +94,8 @@ const RISKS = [
     desc: 'Working without a valid nomination for your new employer is a breach of condition 8607. Do not start working for the new employer until the nomination is approved (unless a migration agent advises otherwise based on your specific visa grant).',
   },
   {
-    title: '60-day rule',
-    desc: 'The grace period under condition 8607 is not a separate visa. If you remain in Australia beyond the allowed period without a new sponsor or another valid visa, you may accrue unlawful status.',
+    title: '180-day rule',
+    desc: 'The 180-day period is part of your visa condition 8607, not a separate visa. If you go beyond 180 days in a single period (or 365 days in total) without working for a sponsor, you breach your visa condition and your visa may be cancelled.',
   },
   {
     title: 'Occupation mismatch',
@@ -164,7 +164,7 @@ return (
               { heading: 'You hold a current subclass 482 visa', detail: 'Your visa must be valid at the time the new nomination is lodged. A cancelled or expired 482 visa cannot be transferred — you would need to apply for a new visa.' },
               { heading: 'Your new employer must hold SBS', detail: 'Standard Business Sponsorship must be current. If the employer is not yet approved, they can apply for SBS concurrently with the nomination, but the nomination cannot be approved until SBS is granted.' },
               { heading: 'The role must meet occupation and salary requirements', detail: 'The new position must appear on the relevant occupation list for your visa stream and must meet the annual market salary rate and the Core Skills Income Threshold ($79,423) or Specialist Skills Income Threshold ($146,576) for your stream.' },
-              { heading: 'You must be within the 60-day period (if employment has ended)', detail: 'If your employment with your previous sponsor has already ended, you have up to 180 days in a single period (365 days in total) to be nominated by a new employer or arrange to leave Australia.' },
+              { heading: 'You must be within the allowed period (if employment has ended)', detail: 'If your employment with your previous sponsor has already ended, you have up to 180 days in a single period (365 days in total) to be nominated by a new employer or arrange to leave Australia.' },
             ].map((item, i) => (
               <div key={i} style={{ border: `1px solid ${BORDER}`, borderRadius: 10, padding: '20px 24px', background: GREY_BG }}>
                 <div style={{ fontWeight: 600, fontSize: 15, color: NAVY, marginBottom: 6 }}>{item.heading}</div>

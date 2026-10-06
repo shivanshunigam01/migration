@@ -44,7 +44,7 @@ const PARTNER_CARDS = [
 ]
 
 const PARENT_CARDS = [
-  { code: '143', name: 'Contributory Parent', tag: '~5–7 yr queue', tagColor: PURPLE, body: 'Permanent visa for parents. Significant government fee (~$48,415 per primary applicant) but a dramatically shorter queue than the non-contributory pathway.', route: null as string | null, note: '~$48,415 govt fee per primary applicant' },
+  { code: '143', name: 'Contributory Parent', tag: '~18 yr queue', tagColor: PURPLE, body: 'Permanent visa for parents. Significant government fee (~$48,415 per primary applicant) but a dramatically shorter queue than the non-contributory pathway.', route: null as string | null, note: '~$48,415 govt fee per primary applicant' },
   { code: '173', name: 'Contributory Parent (Temp)', tag: 'Step toward 143', tagColor: PURPLE, body: 'Temporary step toward the permanent 143. Lower upfront fee (~$31,085). The remaining levy is paid when transitioning to the 143 permanent visa.', route: null as string | null, note: 'Temporary — transitions to 143' },
   { code: '864', name: 'Contributory Aged Parent', tag: 'Aged — faster queue', tagColor: '#4f46e5', body: 'Permanent visa for aged parents who meet the balance of family test. Similar fee structure to the 143. Faster queue than the non-contributory 804.', route: null as string | null, note: 'Must meet aged parent definition' },
   { code: '804', name: 'Aged Parent', tag: '40+ yr queue', tagColor: '#9ca3af', body: 'Non-contributory permanent visa for aged parents. No large government fee — but the current queue is about 42 years. Rarely practical for most families.', route: null as string | null, note: 'About 42 year queue — verify with Home Affairs' },
@@ -102,7 +102,7 @@ const PROCESSING = [
   { visa: '820 Partner (Onshore)', stage: 'Temporary grant', time: '2–4 years', color: ROSE },
   { visa: '801 Partner (Onshore)', stage: 'Permanent grant (from 820)', time: 'Eligible 2 years after lodgement, then 100: 9 months (50%) / 21 months (90%); 801: 8 months (50%) / 19 months (90%)', color: ROSE },
   { visa: '300 Prospective Marriage', stage: 'Visa grant', time: '6–12 months', color: AMBER },
-  { visa: '143 Contributory Parent', stage: 'Permanent grant', time: '5–7 years', color: PURPLE },
+  { visa: '143 Contributory Parent', stage: 'Permanent grant', time: 'about 18 years', color: PURPLE },
   { visa: '173 Contributory Parent Temp', stage: 'Temporary grant', time: '2–3 years', color: PURPLE },
   { visa: '870 Sponsored Parent (Temp)', stage: '3-year grant', time: '6–12 months', color: TEAL },
   { visa: '103 / 804 Parent', stage: 'Non-contributory queue', time: '30+ years', color: '#9ca3af' },
@@ -129,7 +129,7 @@ const FAQS = [
   },
   {
     q: 'What is the Contributory Parent visa and is it worth it?',
-    a: "The Contributory Parent 143 visa costs AUD49,900 in government charges for most primary applicants from 1 July 2026 (first instalment AUD6,300 plus second instalment AUD43,600 payable before grant), with additional amounts for secondary applicants. In return, the queue is roughly 5–7 years. The non-contributory 103/804 has minimal government fees but a queue of about 42 years. For most families, the contributory pathway is the only practical option for permanent residence within a reasonable timeframe. Government fees must be verified with Home Affairs before lodging — they change periodically.",
+    a: "The Contributory Parent 143 visa costs AUD49,900 in government charges for most primary applicants from 1 July 2026 (first instalment AUD6,300 plus second instalment AUD43,600 payable before grant), with additional amounts for secondary applicants. In return, the queue is about 18 years for new applications. The non-contributory 103/804 has minimal government fees but a queue of about 42 years. For most families, the contributory pathway is the only practical option for permanent residence within a reasonable timeframe. Government fees must be verified with Home Affairs before lodging — they change periodically.",
   },
   {
     q: 'My partner visa was refused — what can I do?',
