@@ -813,6 +813,7 @@ body.menu-open {
   color: #374151;
   overflow-wrap: anywhere;
   word-break: break-word;
+  overflow-x: auto;
 }
 
 .blog-post-body > *:first-child {
@@ -902,6 +903,7 @@ body.menu-open {
 /* Comparison / data tables from CMS */
 .blog-post-body .table-scroll-wrap {
   margin: 1.5em 0;
+  overflow-x: auto;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
   background: #fff;
@@ -911,6 +913,7 @@ body.menu-open {
 .blog-post-body table {
   width: 100%;
   min-width: 520px;
+  margin: 1.5em 0;
   border-collapse: separate;
   border-spacing: 0;
   table-layout: auto;
@@ -926,13 +929,15 @@ body.menu-open {
   font-weight: 700;
   text-align: left;
   padding: 12px 14px;
-  white-space: nowrap;
+  white-space: normal;
   border-bottom: 1px solid #0A1024;
   vertical-align: middle;
 }
 
+/* Keep header text white, including the first cell */
 .blog-post-body thead th:first-child,
 .blog-post-body th:first-child {
+  color: #fff;
   border-top-left-radius: 12px;
 }
 
@@ -966,11 +971,12 @@ body.menu-open {
   border-bottom-right-radius: 12px;
 }
 
-.blog-post-body td:first-child,
-.blog-post-body th:first-child {
+/* Let long first-column body text wrap instead of stretching the table */
+.blog-post-body td:first-child {
   font-weight: 600;
   color: #152448;
-  white-space: nowrap;
+  white-space: normal;
+  min-width: 12em;
 }
 
 @media (max-width: 640px) {
