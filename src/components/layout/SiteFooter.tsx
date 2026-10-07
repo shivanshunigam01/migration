@@ -760,7 +760,7 @@ export default function SiteFooter({ navigate }: { navigate: (page: string) => v
                   <li>
                     <ColLink
                       label="MARA Verification"
-                      href="https://www.mara.gov.au/"
+                      href="https://portal.mara.gov.au/search-the-register-of-migration-agents/"
                       target="_blank"
                     />
                   </li>
