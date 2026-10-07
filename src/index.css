@@ -844,8 +844,14 @@ body.menu-open {
   font-size: 1.05rem;
 }
 
-.blog-post-body ul,
+.blog-post-body ul {
+  list-style: disc;
+  margin: 0 0 1.25em;
+  padding-left: 1.35em;
+}
+
 .blog-post-body ol {
+  list-style: decimal;
   margin: 0 0 1.25em;
   padding-left: 1.35em;
 }
