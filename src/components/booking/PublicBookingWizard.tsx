@@ -114,6 +114,14 @@ export default function PublicBookingWizard({ className, onBooked }: Props) {
   const t = types.find((x) => x.id === typeId) || null
   const slots = day ? slotsForDay(day, takenSlots) : []
 
+  useEffect(() => {
+    if (step === 3) {
+      window.setTimeout(() => {
+        document.getElementById('nm-book-payment-step')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      }, 120)
+    }
+  }, [step])
+
   const cal = useMemo(() => {
     const ref = new Date()
     ref.setDate(1)
@@ -260,7 +268,7 @@ export default function PublicBookingWizard({ className, onBooked }: Props) {
             {[
               [1, 'Service'],
               [2, 'Time'],
-              [3, 'Details'],
+              [3, 'Pay'],
             ].map(([n, label], i) => {
               const state = stepState(Number(n))
               return (
@@ -379,11 +387,11 @@ export default function PublicBookingWizard({ className, onBooked }: Props) {
         )}
 
         {!loading && step === 3 && (
-          <>
+          <div id="nm-book-payment-step">
             <button type="button" onClick={() => setStep(2)} style={{ marginBottom: 10, borderRadius: 999, border: '1px solid #e8eaf0', padding: '4px 12px', fontSize: 12, color: '#6b7280', background: '#fff', cursor: 'pointer' }}>
               ‹ Back
             </button>
-            <div style={{ marginBottom: 14, fontSize: 17, fontWeight: 700, color: NAVY }}>Your details</div>
+            <div style={{ marginBottom: 14, fontSize: 17, fontWeight: 700, color: NAVY }}>Your details &amp; payment</div>
             <input type="text" name="company_website" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: -9999, height: 0, width: 0, opacity: 0 }} />
             <div className="nm-cw-details-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#6b7280' }}>
@@ -435,7 +443,7 @@ export default function PublicBookingWizard({ className, onBooked }: Props) {
             <div style={{ marginTop: 8, fontSize: 11, lineHeight: 1.5, color: '#6b7280' }}>
               Confirmation lands by email, with reminders before your appointment. Registered agent MARN 2619467.
             </div>
-          </>
+          </div>
         )}
 
         {!loading && step === 4 && lastAt && lastType && (

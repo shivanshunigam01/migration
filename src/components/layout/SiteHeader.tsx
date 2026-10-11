@@ -399,7 +399,7 @@ export default function SiteHeader({
           </nav>
 
           {/* Desktop CTA */}
-          <Link to="/book-consultation" onClick={() => closeNav()} className="nav-cta-desktop" style={{ flexShrink: 0, whiteSpace: 'nowrap', textDecoration: 'none' }}>
+          <Link to="/book-consultation#book" onClick={() => closeNav()} className="nav-cta-desktop" style={{ flexShrink: 0, whiteSpace: 'nowrap', textDecoration: 'none' }}>
             <GlowButton as="button" type="button" size="md" variant="gold">
               Book Consultation
             </GlowButton>
@@ -518,7 +518,7 @@ export default function SiteHeader({
                         </a>
                       </div>
                       {/* Gold button — unchanged */}
-                      <Link to="/book-consultation" onClick={() => closeNav()} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
+                      <Link to="/book-consultation#book" onClick={() => closeNav()} style={{ marginTop: 16, backgroundColor: GOLD, color: NAVY_DARK, padding: '11px 16px', borderRadius: 8, textDecoration: 'none', fontSize: 14, fontWeight: 700, fontFamily: "'Gilroy', sans-serif", display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, transition: 'background 0.15s' }}
                         onMouseEnter={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD_LIGHT }}
                         onMouseLeave={e => { (e.currentTarget as HTMLElement).style.backgroundColor = GOLD }}>
                         Book a free eligibility call
@@ -720,7 +720,7 @@ export default function SiteHeader({
             </div>
 
             <div style={{ marginTop: 24 }}>
-              <Link to="/book-consultation" onClick={() => setMobileOpen(false)} style={{ display: 'block', textDecoration: 'none' }}>
+              <Link to="/book-consultation#book" onClick={() => setMobileOpen(false)} style={{ display: 'block', textDecoration: 'none' }}>
                 <GlowButton as="button" type="button" block size="md" variant="gold">
                   Book a free eligibility call
                 </GlowButton>

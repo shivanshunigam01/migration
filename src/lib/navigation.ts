@@ -19,7 +19,10 @@ export const LEGAL_NAV_LINKS = [
 export function resolveRoute(page: string): string {
   if (page === "home" || page === "") return "/"
   if (page === "contact") return "/contact"
-  if (page === "book" || page === "book-consultation" || page === "pre-assessment") {
+  if (page === "book" || page === "book-consultation") {
+    return "/book-consultation#book"
+  }
+  if (page === "pre-assessment") {
     return "/book-consultation"
   }
   if (page === "privacy") return "/privacy"
@@ -48,6 +51,17 @@ export function useAppNavigate(): NavigateFn {
       if (page === "contact") {
         navigate("/contact")
         window.scrollTo({ top: 0, behavior: "smooth" })
+        return
+      }
+
+      if (page === "book" || page === "book-consultation") {
+        const onBookPage = /\/book-consultation\/?$/.test(window.location.pathname)
+        if (onBookPage) {
+          window.history.replaceState(null, "", "/book-consultation#book")
+          document.getElementById("book")?.scrollIntoView({ behavior: "smooth", block: "start" })
+          return
+        }
+        navigate("/book-consultation#book")
         return
       }
 

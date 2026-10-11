@@ -94,6 +94,19 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
 
   useEffect(() => {
     if (typeof window === 'undefined') return
+    const scrollIfHash = () => {
+      const h = window.location.hash
+      if (h === '#book' || h === '#payment') {
+        window.setTimeout(scrollToBook, 80)
+      }
+    }
+    scrollIfHash()
+    window.addEventListener('hashchange', scrollIfHash)
+    return () => window.removeEventListener('hashchange', scrollIfHash)
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
     const params = new URLSearchParams(window.location.search)
     const booking = params.get('booking')
     const sessionId = params.get('session_id')
@@ -295,10 +308,10 @@ export default function BookConsultationPage({ navigate }: { navigate: (page: st
         </div>
       )}
 
-      <section className="nm-bc-desk" id="book" ref={bookRef}>
-        <div className="nm-bc-desk-head">
-          <h2>Choose a consult &amp; time</h2>
-          <p>Select a service, pick an available slot, then enter your details. Paid consults redirect to secure Stripe checkout.</p>
+      <section className="nm-bc-desk" id="book" ref={bookRef} aria-labelledby="nm-bc-book-heading">
+        <div className="nm-bc-desk-head" id="payment">
+          <h2 id="nm-bc-book-heading">Book, pay &amp; confirm</h2>
+          <p>Choose a consult and time, then enter your details. Paid consults continue to secure Stripe checkout.</p>
         </div>
         <div className="nm-bc-inline-wrap">
           <PublicBookingWizard className="nm-book-widget nm-book-inline-wizard" />
