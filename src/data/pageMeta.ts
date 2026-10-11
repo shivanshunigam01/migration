@@ -27,7 +27,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   },
   'book-consultation': {
     title: "Book a Migration Consultation | Nanak Migration",
-    metaDescription: 'Book a consultation with a MARA-registered migration agent (MARN 2619467) about your Australian visa pathway. Skilled, employer, student and family visas.',
+    metaDescription: 'Talk to a registered migration agent this week. Choose your consult, pick a time and pay securely — consult fee credited if you engage us. MARN 2619467.',
     primaryKeyword: 'book migration consultation Australia',
   },
   'pre-assessment': {
